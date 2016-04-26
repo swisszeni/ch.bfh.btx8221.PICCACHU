@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.PicturePage"
+             Title="Übersicht Informationen">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Image x:Name="SelectedImage" Grid.Row="0"/>
+      <Label x:Name="SelectedImageCaption" HorizontalTextAlignment="Center" Grid.Row="1" />
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

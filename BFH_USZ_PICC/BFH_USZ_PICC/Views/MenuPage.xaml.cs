@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
 
@@ -18,7 +19,31 @@ namespace BFH_USZ_PICC.Views
         {
             this.appShell = appShell;
 
-            this.InitializeComponent();
+            InitializeComponent();
+
+            BindingContext = new BaseViewModel
+            {
+                Title = "Hanselman.Forms",
+                Subtitle = "Hanselman.Forms",
+                Icon = "icon.png"
+            };
+
+            ListViewMenu.ItemsSource = menuItems = new List<NavigationMenuItem>
+                {
+                    new NavigationMenuItem { Title = "PICC", MenuItemKey = MenuItemKey.PICC, Icon ="icon.png" },
+                    new NavigationMenuItem { Title = "Glossary", MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
+                    new NavigationMenuItem { Title = "Knowledge", MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" }
+                };
+
+            ListViewMenu.SelectedItem = menuItems[0];
+
+            ListViewMenu.ItemSelected += async (sender, e) =>
+            {
+                if (ListViewMenu.SelectedItem == null)
+                    return;
+
+                await this.appShell.NavigateAsync(((NavigationMenuItem)e.SelectedItem).MenuItemKey);
+            };
         }
     }
 }

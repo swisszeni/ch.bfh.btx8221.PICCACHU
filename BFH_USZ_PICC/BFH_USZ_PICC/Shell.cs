@@ -1,4 +1,5 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Controls;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.ViewModels;
 using BFH_USZ_PICC.Views;
 using System;
@@ -20,8 +21,8 @@ namespace BFH_USZ_PICC
             Master = new MenuPage(this);
             BindingContext = new BaseViewModel
             {
-                Title = "Hanselman",
-                Icon = "slideout.png"
+                Title = "USZ PICC",
+                Icon = "icon.png"
             };
             //setup home page
             NavigateAsync(MenuItemKey.PICC);
@@ -37,23 +38,14 @@ namespace BFH_USZ_PICC
 
                 switch (id)
                 {
-                    case MenuType.About:
-                        Pages.Add(id, new HanselmanNavigationPage(new AboutPage()));
+                    case MenuItemKey.PICC:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new GlossaryPage()));
                         break;
-                    case MenuType.Blog:
-                        Pages.Add(id, new HanselmanNavigationPage(new BlogPage()));
+                    case MenuItemKey.Glossary:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new GlossaryPage()));
                         break;
-                    case MenuType.DeveloperLife:
-                        Pages.Add(id, new HanselmanNavigationPage(new PodcastPage(id)));
-                        break;
-                    case MenuType.Hanselminutes:
-                        Pages.Add(id, new HanselmanNavigationPage(new PodcastPage(id)));
-                        break;
-                    case MenuType.Ratchet:
-                        Pages.Add(id, new HanselmanNavigationPage(new PodcastPage(id)));
-                        break;
-                    case MenuType.Twitter:
-                        Pages.Add(id, new HanselmanNavigationPage(new TwitterPage()));
+                    case MenuItemKey.Knowledge:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new KnowledgeEntrysPage()));
                         break;
                 }
             }
@@ -70,8 +62,8 @@ namespace BFH_USZ_PICC
 
             Detail = newPage;
 
-            if (IsUWPDesktop)
-                return;
+            //if (IsUWPDesktop)
+            //    return;
 
             if (Device.Idiom != TargetIdiom.Tablet)
                 IsPresented = false;

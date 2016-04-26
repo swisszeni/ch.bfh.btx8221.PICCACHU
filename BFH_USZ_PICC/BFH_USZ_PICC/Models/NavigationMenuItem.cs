@@ -12,7 +12,7 @@ namespace BFH_USZ_PICC.Models
         Glossary,
         Knowledge
     }
-    class NavigationMenuItem
+    public class NavigationMenuItem
     {
         public int Id { get; set; }
         public MenuItemKey MenuItemKey { get; set; }
