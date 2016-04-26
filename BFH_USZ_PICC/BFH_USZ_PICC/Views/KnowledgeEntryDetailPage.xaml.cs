@@ -43,13 +43,20 @@ namespace BFH_USZ_PICC.Views
                 //the index variable adds the knowledgeElement to its particular position
                 int index = 0;
 
+                //   < StackLayout x: Name = "KnowledgeEntryPageLayout" Orientation = "Vertical"
+                //HorizontalOptions = "EndAndExpand" VerticalOptions = "FillAndExpand" >
+
+                StackLayout knowledgeEntryView = new StackLayout();
+                knowledgeEntryView.Orientation = StackOrientation.Vertical;
+                knowledgeEntryView.VerticalOptions = LayoutOptions.EndAndExpand;
+
                 //check if the element is either a text or an image
                 foreach (var entry in selectedEntry.knowledgeElements)
                 {
                     if (entry.type == "text")
                     {
 
-                        KnowledgeEntryPageLayout.Children.Insert(index, (new Label
+                        knowledgeEntryView.Children.Insert(index, (new Label
                         {
                             Text = (string)entry.element
                         }));
@@ -66,14 +73,14 @@ namespace BFH_USZ_PICC.Views
                         currentImage.WidthRequest = 150;
 
                         addTabGestureRecognizerToImage(entry);
-                        KnowledgeEntryPageLayout.Children.Insert(index, currentImage);
+                        knowledgeEntryView.Children.Insert(index, currentImage);
                         index++;
 
                         //Checks if a caption is set. If yes, a new label for the caption will be generated
                         KnowledgeEntryImageElement imgElem = (KnowledgeEntryImageElement)entry;
                         if (imgElem.caption != null)
                         {
-                            KnowledgeEntryPageLayout.Children.Insert(index, (new Label
+                            knowledgeEntryView.Children.Insert(index, (new Label
                             {
                                 Text = imgElem.caption,
                                 HorizontalTextAlignment = TextAlignment.Center
@@ -84,6 +91,14 @@ namespace BFH_USZ_PICC.Views
 
                     }
                 }
+
+                knowledgeEntryView.Children.Insert(index, (new Label
+                {
+                    Text = "\n\n\nPassende Glossareinträge",
+                    HorizontalTextAlignment = TextAlignment.Start
+                }));
+
+                GlossaryList.Header = knowledgeEntryView;
             }
         }
 
