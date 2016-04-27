@@ -22,7 +22,7 @@ namespace BFH_USZ_PICC
             BindingContext = new BaseViewModel
             {
                 Title = "USZ PICC",
-                Icon = "icon.png"
+                Icon = "slideout.png"
             };
             //setup home page
             NavigateAsync(MenuItemKey.PICC);
