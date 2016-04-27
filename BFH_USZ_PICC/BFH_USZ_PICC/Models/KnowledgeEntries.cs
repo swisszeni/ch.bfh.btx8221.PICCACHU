@@ -76,7 +76,7 @@ namespace BFH_USZ_PICC.Models
 
                 // "Komfort und Bewegung" page information
                 List<IKnowledgeEntryElement> comfortEntry = new List<IKnowledgeEntryElement>();
-                comfortEntry.Add(new KnowledgeEntryTextElement("Der PICC Katheter schränkt aufgrund seiner Lage am Oberarm Ihre Bewegung nur wenig ein.\n\nAchten Sie darauf, dass keine Zugkräfte auf den PICC Katheter einwirken.\n\nHeben Sie im Alltag keine Gewichte von mehr als 10 Kilogramm.\n\nSport ist grundsätzlich möglich. Es sollte jedoch kein ausgeprägter Kraftaufwand stattﬁnden. Verzichten Sie auf Kontaktsportarten (z.B.Judo, Karate)."));
+                comfortEntry.Add(new KnowledgeEntryTextElement("Der PICC Katheter schränkt aufgrund seiner Lage am Oberarm Ihre Bewegung nur wenig ein.\n\nAchten Sie darauf, dass keine Zugkräfte auf den PICC Katheter einwirken.\n\nHeben Sie im Alltag keine Gewichte von mehr als 10 Kilogramm.\n\nSport ist grundsätzlich möglich. Es sollte jedoch kein ausgeprägter Kraftaufwand stattﬁnden. Verzichten Sie auf Kontaktsportarten (z.B. Judo, Karate)."));
                
                 List<GlossaryEntry> glossaryWordsForComfortEntry = new List<GlossaryEntry>();
                 glossaryWordsForComfortEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
@@ -93,6 +93,27 @@ namespace BFH_USZ_PICC.Models
 
                 KnowledgeEntry body  = new KnowledgeEntry("Körperpflege", bodyCareEntry, glossaryWordsForBodyCareEntry);
                 homeGroup.Add(body);
+
+                // "PflegeEinstichstelle" page information
+                List<IKnowledgeEntryElement>piccPunctureEntry = new List<IKnowledgeEntryElement>();
+                piccPunctureEntry.Add(new KnowledgeEntryTextElement("Die Pflege des PICC Katheters nach dem Spitalaufenthalt muss durch Fachpersonen (Hausarzt, Pflegefachpersonen oder geschulte Angehörige) erfolgen.\n\nWichtig: Bitte desinﬁzieren Sie vor jeder Handlung am Katheter die Hände."));
+
+                List<GlossaryEntry> glossaryWordsForPiccPunctureEntry = new List<GlossaryEntry>();
+                glossaryWordsForPiccPunctureEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
+
+                KnowledgeEntry puncture = new KnowledgeEntry("Pflege PICC-Katheter/Einstichstelle/Verband", piccPunctureEntry, glossaryWordsForPiccPunctureEntry);
+                homeGroup.Add(puncture);
+
+                // "Vorsichtsmassnahmen" page information
+                List<IKnowledgeEntryElement> preventiveMeasuresEntry = new List<IKnowledgeEntryElement>();
+                preventiveMeasuresEntry.Add(new KnowledgeEntryTextElement("Der Bereich, in dem der PICC Katheter aus der Haut austritt, muss stets sauber und trocken sein.\n\nVermeiden Sie den Gebrauch von Scheren oder anderen scharfen Schneideinstrumenten in der Nähe des PICC Katheters."));
+
+                List<GlossaryEntry> glossaryWordsForPreventiveMeasuresEntry = new List<GlossaryEntry>();
+                glossaryWordsForPreventiveMeasuresEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
+                glossaryWordsForPreventiveMeasuresEntry.Add(new GlossaryEntry("Austrittsstelle", "Stelle, an welcher der Katheter aus Ihrem Körper herausführt und sichtbar wird - im Fall eines PICC in der Regel am Arm."));
+                
+                KnowledgeEntry preventiveMeasures = new KnowledgeEntry("Vorsichtsmassnahmen", preventiveMeasuresEntry, glossaryWordsForPreventiveMeasuresEntry);
+                homeGroup.Add(preventiveMeasures);
             }
             return knowledgeEntryList;
         }

@@ -11,6 +11,7 @@ namespace BFH_USZ_PICC.Models
             public string Title { get; set; }
             public string ShortName { get; set; } //will be used for jump lists
             public string Subtitle { get; set; }
+
             public KnowledgeEntryTypeGroup(string title, string shortName)
             {
                 Title = title;
