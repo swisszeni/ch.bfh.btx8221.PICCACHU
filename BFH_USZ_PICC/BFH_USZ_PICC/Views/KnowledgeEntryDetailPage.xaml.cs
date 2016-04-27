@@ -15,9 +15,7 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
             addPageElements(selectedEntry);
-            // TitleProperty.PropertyName.Replace("test", selectedEntry.title);
-
-
+   
         }
 
         void OnSelect(object sender, EventArgs e)

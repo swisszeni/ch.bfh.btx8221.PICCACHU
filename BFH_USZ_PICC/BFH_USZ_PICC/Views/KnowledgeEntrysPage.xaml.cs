@@ -13,7 +13,7 @@ namespace BFH_USZ_PICC.Views
     /// </summary>
     public sealed partial class KnowledgeEntrysPage : ContentPage
     {
-        List<KnowledgeEntry> allEntries = new List<KnowledgeEntry>();
+        List<KnowledgeEntryTypeGroup> allEntries = new List<KnowledgeEntryTypeGroup>();
 
         public KnowledgeEntrysPage()
         {

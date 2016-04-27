@@ -10,10 +10,12 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <ListView x:Name="KnowledgeList" ItemSelected="OnSelect" HorizontalOptions="CenterAndExpand">
+    <ListView x:Name="KnowledgeList" ItemSelected="OnSelect" HorizontalOptions="CenterAndExpand"
+              GroupDisplayBinding="{Binding Title}" GroupShortNameBinding="{Binding ShortName}"
+              IsGroupingEnabled="true">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding title}" />
+          <TextCell Text="{Binding title}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
