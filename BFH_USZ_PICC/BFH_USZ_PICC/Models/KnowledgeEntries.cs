@@ -10,15 +10,22 @@ namespace BFH_USZ_PICC.Models
 {
     public class KnowledgeEntries
     {
-        private static List<KnowledgeEntry> knowledgeEntryList;
+        //private static List<KnowledgeEntry> knowledgeEntryList;
+
+        //test with page type groups
+        private static List<KnowledgeEntryTypeGroup> knowledgeEntryList;
+        
 
         private KnowledgeEntries() { }
 
-        public static List<KnowledgeEntry> getEntries()
+        public static List<KnowledgeEntryTypeGroup> getEntries()
         {
+         
             if (knowledgeEntryList == null)
             {
-                knowledgeEntryList = new List<KnowledgeEntry>();
+                KnowledgeEntryTypeGroup generalGroup = new KnowledgeEntryTypeGroup("Allgemein", "A");
+                KnowledgeEntryTypeGroup homeGroup = new KnowledgeEntryTypeGroup("Zuhause", "Z");
+                knowledgeEntryList = new List<KnowledgeEntryTypeGroup> { generalGroup, homeGroup };
 
                 // "Was ist ein PICC?" page information
                 List<IKnowledgeEntryElement> whatIsAPiccEntry = new List<IKnowledgeEntryElement>();
@@ -31,8 +38,8 @@ namespace BFH_USZ_PICC.Models
                 glossaryWordsForWhatIsAPiccEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
                 glossaryWordsForWhatIsAPiccEntry.Add(new GlossaryEntry("Schutzkappe des nadellosen Injektionssystems (MicroClave)", "Die Schutzkappe des nadellosen Injektionssystems sorgt dafür, dass kein Blut zurück in den Katheter fliesst. Ausserdem kann die Verabreichung von Flüssigkeiten und Medikamenten in den Blutkreislauf direkt über diese Schutzkappe erfolgen. Sie muss vor jeder Verwendung genauestens desinfiziert werden."));
 
-                KnowledgeEntry whatIsAPicc = new KnowledgeEntry("Was ist ein PICC", whatIsAPiccEntry, glossaryWordsForWhatIsAPiccEntry);
-                knowledgeEntryList.Add(whatIsAPicc);
+                KnowledgeEntry whatIsAPicc = new KnowledgeEntry("Was ist ein PICC?", whatIsAPiccEntry, glossaryWordsForWhatIsAPiccEntry);
+                generalGroup.Add(whatIsAPicc);
 
                 // "Wozu wird ein PICC verwendet?" page information
                 List<IKnowledgeEntryElement> whyUseAPiccEntry = new List<IKnowledgeEntryElement>();
@@ -45,7 +52,7 @@ namespace BFH_USZ_PICC.Models
                 glossaryWordsForWhyUseAPiccEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
 
                 KnowledgeEntry whyUseAPicc = new KnowledgeEntry("Wozu wird ein PICC verwendet?", whyUseAPiccEntry, glossaryWordsForWhyUseAPiccEntry);
-                knowledgeEntryList.Add(whyUseAPicc);
+                generalGroup.Add(whyUseAPicc);
 
                 // "Wie wird ein PICC platziert?" page information
                 List<IKnowledgeEntryElement> howToPlaceAPicc = new List<IKnowledgeEntryElement>();
@@ -53,19 +60,39 @@ namespace BFH_USZ_PICC.Models
                 howToPlaceAPicc.Add(new KnowledgeEntryImageElement(new Image { Source = "PiccPlatzierung.PNG" }));
                 howToPlaceAPicc.Add(new KnowledgeEntryTextElement("Ob der PICC richtig platziert ist, überprüfen die Fachleute anhand einer Röntgenaufnahme oder mit einem anderen Abbildungsverfahren. Danach ﬁxieren sie den aus dem Körper herausführenden Abschnitt des Katheters mit einer eigens dafür entwickelten Haftplatte (StatLock) auf der Haut. Den Bereich um die Austrittsstelle des Katheters bedecken sie mit einem sterilen Verband. Lässt die Wirkung des Lokalanästhetikums nach dem Einlegen des Katheters nach, können während ein oder zwei Tagen leichte Schmerzen auftreten."));
 
-                List<GlossaryEntry> glossaryWordsForHowToPlageAPiccEntry = new List<GlossaryEntry>();
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Austrittsstelle", "Stelle, an welcher der Katheter aus Ihrem Körper herausführt und sichtbar wird - im Fall eines PICC in der Regel am Arm."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Heparin", "Medikament, das die Bildung eines Blutgerinnsels verhindern kann."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Intravenöse Therapie (IV-Therapie)", "Ein Medikamenten oder eine Flüssigkeit wird durch eine Vene verabreicht."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Katheter", "Ein weicher Schlauch, der in den Körper eingeführt wird. In diesem Fall handelt es sich um einen peripher eingeführten zentralen Venenkatheter (PICC: Peripherally inserted central venous catheter), der in eine Armvene eingeführt wird. Die Spitze des Katheters beﬁndet sich in einem Bereich mit grosser Blutzirkulation in der Nähe des Herzens. Durch den Katheter können verschiedene Medikamente und Flüssigkeiten verabreicht werden. Dadurch ist es nicht nötig, eine Nadel (Kanüle) direkt in die Vene einzuführen."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Kochsalzlösung", "Eine Lösung aus Salz und Wasser."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Schutzkappe des nadellosen Injektionssystems (MicroClave)", "Die Schutzkappe des nadellosen Injektionssystems sorgt dafür, dass kein Blut zurück in den Katheter fliesst. Ausserdem kann die Verabreichung von Flüssigkeiten und Medikamenten in den Blutkreislauf direkt über diese Schutzkappe erfolgen. Sie muss vor jeder Verwendung genauestens desinfiziert werden."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Spülung mit Kochsalzlösung", "Zum Spülen des Katheters nach der Verabreichung einer Infusion wird sterile Kochsalzlösung verwendet."));
-                glossaryWordsForHowToPlageAPiccEntry.Add(new GlossaryEntry("Verstopfter Katheter", "Ein Katheter mit einem blockierten Hauptkanal. In diesem Fall sind keine Infusionen oder Abnahmen durch den Katheter möglich."));
+                List<GlossaryEntry> glossaryWordsForHowToPlaceAPiccEntry = new List<GlossaryEntry>();
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Austrittsstelle", "Stelle, an welcher der Katheter aus Ihrem Körper herausführt und sichtbar wird - im Fall eines PICC in der Regel am Arm."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Heparin", "Medikament, das die Bildung eines Blutgerinnsels verhindern kann."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Intravenöse Therapie (IV-Therapie)", "Ein Medikamenten oder eine Flüssigkeit wird durch eine Vene verabreicht."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Katheter", "Ein weicher Schlauch, der in den Körper eingeführt wird. In diesem Fall handelt es sich um einen peripher eingeführten zentralen Venenkatheter (PICC: Peripherally inserted central venous catheter), der in eine Armvene eingeführt wird. Die Spitze des Katheters beﬁndet sich in einem Bereich mit grosser Blutzirkulation in der Nähe des Herzens. Durch den Katheter können verschiedene Medikamente und Flüssigkeiten verabreicht werden. Dadurch ist es nicht nötig, eine Nadel (Kanüle) direkt in die Vene einzuführen."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Kochsalzlösung", "Eine Lösung aus Salz und Wasser."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Schutzkappe des nadellosen Injektionssystems (MicroClave)", "Die Schutzkappe des nadellosen Injektionssystems sorgt dafür, dass kein Blut zurück in den Katheter fliesst. Ausserdem kann die Verabreichung von Flüssigkeiten und Medikamenten in den Blutkreislauf direkt über diese Schutzkappe erfolgen. Sie muss vor jeder Verwendung genauestens desinfiziert werden."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Spülung mit Kochsalzlösung", "Zum Spülen des Katheters nach der Verabreichung einer Infusion wird sterile Kochsalzlösung verwendet."));
+                glossaryWordsForHowToPlaceAPiccEntry.Add(new GlossaryEntry("Verstopfter Katheter", "Ein Katheter mit einem blockierten Hauptkanal. In diesem Fall sind keine Infusionen oder Abnahmen durch den Katheter möglich."));
 
-                KnowledgeEntry howToUseAPicc = new KnowledgeEntry("Wie wird ein PICC platziert?", howToPlaceAPicc, glossaryWordsForHowToPlageAPiccEntry);
-                knowledgeEntryList.Add(howToUseAPicc);
+                KnowledgeEntry howToUseAPicc = new KnowledgeEntry("Wie wird ein PICC platziert?", howToPlaceAPicc, glossaryWordsForHowToPlaceAPiccEntry);
+                generalGroup.Add(howToUseAPicc);
+
+                // "Komfort und Bewegung" page information
+                List<IKnowledgeEntryElement> comfortEntry = new List<IKnowledgeEntryElement>();
+                comfortEntry.Add(new KnowledgeEntryTextElement("Der PICC Katheter schränkt aufgrund seiner Lage am Oberarm Ihre Bewegung nur wenig ein.\n\nAchten Sie darauf, dass keine Zugkräfte auf den PICC Katheter einwirken.\n\nHeben Sie im Alltag keine Gewichte von mehr als 10 Kilogramm.\n\nSport ist grundsätzlich möglich. Es sollte jedoch kein ausgeprägter Kraftaufwand stattﬁnden. Verzichten Sie auf Kontaktsportarten (z.B.Judo, Karate)."));
+               
+                List<GlossaryEntry> glossaryWordsForComfortEntry = new List<GlossaryEntry>();
+                glossaryWordsForComfortEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
+                
+                KnowledgeEntry comfort = new KnowledgeEntry("Komfort und Bewegung", comfortEntry, glossaryWordsForComfortEntry);
+                homeGroup.Add(comfort);
+
+                // "Körperpflege" page information
+                List<IKnowledgeEntryElement> bodyCareEntry = new List<IKnowledgeEntryElement>();
+                bodyCareEntry.Add(new KnowledgeEntryTextElement("Duschen ist mit dem wasserabweisenden Folienpflaster problemlos möglich.\n\nBaden und Schwimmen mit einem PICC Katheter sind NICHT erlaubt."));
+
+                List<GlossaryEntry> glossaryWordsForBodyCareEntry = new List<GlossaryEntry>();
+                glossaryWordsForBodyCareEntry.Add(new GlossaryEntry("PICC (peripher eingeführter zentraler Venenkatheter oder peripherally inserted central venous catheter)", "Ein Katheter, der in eine der Armvenen eingeführt wird und bis in die Nähe des Herzens führt. Medikamente, die durch den Katheter verabreicht werden, können sich gut mit dem Blut vermischen. Dieser Katheter kann mit optimaler Pflege bis zu mehreren Monaten im Körper verbleiben."));
+
+                KnowledgeEntry body  = new KnowledgeEntry("Körperpflege", bodyCareEntry, glossaryWordsForBodyCareEntry);
+                homeGroup.Add(body);
             }
             return knowledgeEntryList;
         }

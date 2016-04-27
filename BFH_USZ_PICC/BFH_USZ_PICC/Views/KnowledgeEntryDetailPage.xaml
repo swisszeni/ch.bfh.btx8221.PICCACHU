@@ -12,7 +12,7 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-        <ListView Header="Glossareinträge" x:Name="GlossaryList" ItemSelected="OnSelect" IsPullToRefreshEnabled="false">
+        <ListView x:Name="GlossaryList" ItemSelected="OnSelect" IsPullToRefreshEnabled="false">
           <ListView.ItemTemplate>
             <DataTemplate>
               <TextCell Text="{Binding word}" />
