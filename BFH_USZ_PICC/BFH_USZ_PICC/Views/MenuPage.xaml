@@ -31,7 +31,7 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="Hanselman.Forms"
+              Text="USZ PICC App"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>

@@ -12,19 +12,12 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <ScrollView >
-      <StackLayout x:Name="KnowledgeEntryPageLayout" Orientation="Vertical"
-                   HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand">
-
-        <ListView Header="Glossareinträge" x:Name="GlossaryList" ItemSelected="OnSelect" IsPullToRefreshEnabled="true">
+        <ListView Header="Glossareinträge" x:Name="GlossaryList" ItemSelected="OnSelect" IsPullToRefreshEnabled="false">
           <ListView.ItemTemplate>
             <DataTemplate>
               <TextCell Text="{Binding word}" />
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>
-      </StackLayout>
-    </ScrollView>
-
   </ContentPage.Content>
 </ContentPage>
