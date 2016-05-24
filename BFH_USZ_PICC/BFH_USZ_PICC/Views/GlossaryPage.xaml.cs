@@ -10,21 +10,19 @@ namespace BFH_USZ_PICC.Views
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class GlossaryPage : ContentPage
+    public sealed partial class GlossaryPage : BasePage
     {
-
-
-
-        public GlossaryPage()
+        public GlossaryPage() : base()
         {
             InitializeComponent();
+            
 
             //Adds all glossary entries form the singleton class "GlossaryEntries" to the glossary ListView 
             GlossaryList.ItemsSource = GlossaryEntries.getEntries();
         }
 
         //Constructor with a GlossaryEntry object. The given entry will be displayed
-        public GlossaryPage(GlossaryEntry aSelectedEntry)
+        public GlossaryPage(GlossaryEntry aSelectedEntry) :base()
         {
             InitializeComponent();
 

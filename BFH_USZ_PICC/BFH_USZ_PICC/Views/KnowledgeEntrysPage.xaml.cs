@@ -11,11 +11,11 @@ namespace BFH_USZ_PICC.Views
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class KnowledgeEntrysPage : ContentPage
+    public sealed partial class KnowledgeEntrysPage : BasePage
     {
         List<KnowledgeEntryTypeGroup> allEntries = new List<KnowledgeEntryTypeGroup>();
 
-        public KnowledgeEntrysPage()
+        public KnowledgeEntrysPage() : base()
         {
             InitializeComponent();
             //Get all the knowledge entries and add them to  the ListView
