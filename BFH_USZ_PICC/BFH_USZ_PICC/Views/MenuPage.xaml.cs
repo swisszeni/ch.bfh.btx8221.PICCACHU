@@ -31,8 +31,8 @@ namespace BFH_USZ_PICC.Views
             ListViewMenu.ItemsSource = menuItems = new List<NavigationMenuItem>
                 {
                     new NavigationMenuItem { Title = "PICC", MenuItemKey = MenuItemKey.PICC, Icon ="icon.png" },
-                    new NavigationMenuItem { Title = "Glossary", MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
-                    new NavigationMenuItem { Title = "Knowledge", MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" }
+                    new NavigationMenuItem { Title = "Glossar", MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
+                    new NavigationMenuItem { Title = "Wissenswertes", MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" }
                 };
 
             ListViewMenu.SelectedItem = menuItems[0];
