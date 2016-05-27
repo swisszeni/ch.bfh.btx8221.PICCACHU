@@ -15,7 +15,7 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
             addPageElements(selectedEntry);
-   
+
         }
 
         void OnSelect(object sender, EventArgs e)
@@ -23,12 +23,12 @@ namespace BFH_USZ_PICC.Views
             //   Checks if the GlossaryList.SelectetItem value is null(value will be null after the following "if" statement).
             if (GlossaryList.SelectedItem != null)
             {
-
-                // Casts the selected object to a glossary entry and moves forward to the glossary page
                 GlossaryEntry selectedEntry = (GlossaryEntry)GlossaryList.SelectedItem;
-                Navigation.PushAsync(new GlossaryPage(selectedEntry));
-                GlossaryList.SelectedItem = null;
+                showGlossaryEntry(selectedEntry);
+
             }
+            GlossaryList.SelectedItem = null;
+
         }
 
         // this method adds all the needed knowledge elements to the correct position
@@ -108,8 +108,6 @@ namespace BFH_USZ_PICC.Views
             TapGestureRecognizer tapGesture = new TapGestureRecognizer();
             tapGesture.Tapped += (s, e) =>
             {
-
-
                 if (imageElem != null)
                 {
                     Navigation.PushAsync(new PicturePage((KnowledgeEntryImageElement)imageElem));
@@ -120,6 +118,12 @@ namespace BFH_USZ_PICC.Views
             Image image = (Image)imageElem.element;
 
             image.GestureRecognizers.Add(tapGesture);
+        }
+
+        //displays a glossary entry. The word is the header, the explanation the body
+        private void showGlossaryEntry(GlossaryEntry entry)
+        {
+            this.DisplayAlert(entry.word, entry.explanation, "Ok");
         }
     }
 }

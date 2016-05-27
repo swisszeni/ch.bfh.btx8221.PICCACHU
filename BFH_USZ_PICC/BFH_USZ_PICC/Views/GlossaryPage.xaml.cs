@@ -14,28 +14,11 @@ namespace BFH_USZ_PICC.Views
     {
         public GlossaryPage() : base()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
 
             //Adds all glossary entries form the singleton class "GlossaryEntries" to the glossary ListView 
             GlossaryList.ItemsSource = GlossaryEntries.getEntries();
         }
-
-        //Constructor with a GlossaryEntry object. The given entry will be displayed
-        public GlossaryPage(GlossaryEntry aSelectedEntry) :base()
-        {
-            InitializeComponent();
-
-            //Adds all glossary entries form the singleton class "GlossaryEntries" to a variable. Afterwards, the list with the entries will be added to the glossary ListView.
-            var glossaryWords = GlossaryEntries.getEntries();
-
-            GlossaryList.ItemsSource = glossaryWords;
-
-            showGlossaryEntry(aSelectedEntry);
-
-
-        }
-
 
         // This method checks whitch glossary entry has been selected and displays the related information in a pop up.
         void OnSelect(object sender, EventArgs e)
