@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using HockeyApp;
 
 namespace BFH_USZ_PICC.iOS
 {
@@ -25,6 +26,10 @@ namespace BFH_USZ_PICC.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            // Enable crashlog with HockeyApp
+            var manager = BITHockeyManager.SharedHockeyManager;
+            manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
+            manager.StartManager();
             return base.FinishedLaunching(app, options);
         }
     }

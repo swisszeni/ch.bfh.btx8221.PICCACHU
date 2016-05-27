@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
+using HockeyApp;
 
 namespace BFH_USZ_PICC.Droid
 {
@@ -39,7 +40,8 @@ namespace BFH_USZ_PICC.Droid
             Forms.Init(this, bundle);
             LoadApplication(new App());
 
-
+            // Enable crashlog with HockeyApp
+            CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
         }
     }
 }

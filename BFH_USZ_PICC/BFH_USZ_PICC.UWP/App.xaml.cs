@@ -30,6 +30,9 @@ namespace BFH_USZ_PICC.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            // Enable crashlog with HockeyApp
+            Microsoft.HockeyApp.HockeyClient.Current.Configure("f06f141af5b041b7a0f90c9abf32449b");
         }
 
         /// <summary>
