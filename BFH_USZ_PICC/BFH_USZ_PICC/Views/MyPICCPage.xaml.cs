@@ -10,18 +10,14 @@ namespace BFH_USZ_PICC.Views
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class MyPICCPage : ContentPage
+    public sealed partial class MyPICCPage : BaseContentPage
     {
 
+        public MyPICCPage(ContentPage contained) : base(contained)
+        {
+            InitializeComponent();
 
-
-        //public MyPICCPage()
-        //{
-        //    InitializeComponent();
-
-        //    //Adds all glossary entries form the singleton class "GlossaryEntries" to the glossary ListView 
-        //    GlossaryList.ItemsSource = GlossaryEntries.getEntries();
-        //}
+        }
 
         ////Constructor with a GlossaryEntry object. The given entry will be displayed
         //public MyPICCPage(GlossaryEntry aSelectedEntry)

@@ -24,6 +24,7 @@ namespace BFH_USZ_PICC
                 Title = "USZ PICC",
                 Icon = "slideout.png"
             };
+
             //setup home page
             NavigateAsync(MenuItemKey.PICC);
 
@@ -39,13 +40,13 @@ namespace BFH_USZ_PICC
                 switch (id)
                 {
                     case MenuItemKey.PICC:
-                        Pages.Add(id, new USZ_PICC_NavigationPage(new GlossaryPage()));
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(MyPICCPage))));
                         break;
                     case MenuItemKey.Glossary:
-                        Pages.Add(id, new USZ_PICC_NavigationPage(new GlossaryPage()));
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(GlossaryPage))));
                         break;
                     case MenuItemKey.Knowledge:
-                        Pages.Add(id, new USZ_PICC_NavigationPage(new KnowledgeEntrysPage()));
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(KnowledgeEntrysPage))));
                         break;
                 }
             }

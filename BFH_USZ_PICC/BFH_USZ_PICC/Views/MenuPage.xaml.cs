@@ -23,8 +23,8 @@ namespace BFH_USZ_PICC.Views
 
             BindingContext = new BaseViewModel
             {
-                Title = "Hanselman.Forms",
-                Subtitle = "Hanselman.Forms",
+                Title = "Menu",
+                Subtitle = "Menu",
                 Icon = "icon.png"
             };
 

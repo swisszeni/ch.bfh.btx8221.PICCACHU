@@ -1,22 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.MyPICCPage"
-             Title="Glossar">
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness"
-                iOS="20, 40, 20, 20"
-                Android="20, 20, 20, 20"
-                WinPhone="20, 20, 20, 20" />
-  </ContentPage.Padding>
-  <ContentPage.Content>
-    <ListView x:Name="GlossaryList" ItemSelected="OnSelect">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell Text="{Binding word}" />
-        </DataTemplate>
-
-      </ListView.ItemTemplate>
-    </ListView>
-  </ContentPage.Content>
-</ContentPage>
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
+  <!--<ListView x:Name="GlossaryList" ItemSelected="OnSelect">-->
+  <ListView x:Name="GlossaryList">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell Text="TEST" />
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</d:BaseContentPage>

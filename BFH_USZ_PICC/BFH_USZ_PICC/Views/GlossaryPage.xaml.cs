@@ -1,4 +1,5 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Controls;
+using BFH_USZ_PICC.Models;
 using System;
 using Xamarin.Forms;
 
@@ -10,11 +11,12 @@ namespace BFH_USZ_PICC.Views
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class GlossaryPage : BasePage
+    public sealed partial class GlossaryPage : BaseContentPage
     {
-        public GlossaryPage() : base()
+        public GlossaryPage(ContentPage contained) : base(contained)
         {
-            InitializeComponent();            
+            InitializeComponent();
+            Title = "Glossar";
 
             //Adds all glossary entries form the singleton class "GlossaryEntries" to the glossary ListView 
             GlossaryList.ItemsSource = GlossaryEntries.getEntries();
@@ -35,7 +37,7 @@ namespace BFH_USZ_PICC.Views
         //displays a glossary entry. The word is the header, the explanation the body
         private void showGlossaryEntry(GlossaryEntry entry)
         {
-            this.DisplayAlert(entry.word, entry.explanation, "Ok");
+            DisplayAlert(entry.word, entry.explanation, "ok");
         }
     }
 }

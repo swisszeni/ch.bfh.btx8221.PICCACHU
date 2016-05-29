@@ -1,37 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<d:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.GlossaryPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             Title="Glossar">
-  <ContentPage.Content>
-    <AbsoluteLayout>
-      <ListView x:Name="GlossaryList" ItemSelected="OnSelect" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
-        <ListView.Margin>
-          <OnPlatform x:TypeArguments="Thickness"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
+  
+  <ListView x:Name="GlossaryList" ItemSelected="OnSelect" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+    <ListView.Margin>
+      <OnPlatform x:TypeArguments="Thickness"
                       iOS="20, 40, 20, 20"
                       Android="20, 20, 20, 20"
                       WinPhone="20, 20, 20, 20" />
-        </ListView.Margin>
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <TextCell Text="{Binding word}" />
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-      <Grid  x:Name="overLay" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" RowSpacing="0">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="Auto" />
-          <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="Red" Padding="20" Opacity="1" Grid.Row="0">
-          <Label Text="Haben Sie ein Problem mit ihrem PICC?" TextColor="White" FontSize="20"/>
-          <Label Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." TextColor="White" />
-          <Button Text="TEST" BackgroundColor="White" TextColor="Red"/>
-        </StackLayout>
-        <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
-      </Grid>
-    </AbsoluteLayout>
-    
-  </ContentPage.Content>
-</d:BasePage>
+    </ListView.Margin>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+           <TextCell Text="{Binding word}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+</d:BaseContentPage>

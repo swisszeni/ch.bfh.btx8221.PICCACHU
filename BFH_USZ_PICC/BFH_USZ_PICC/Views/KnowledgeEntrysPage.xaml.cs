@@ -11,15 +11,16 @@ namespace BFH_USZ_PICC.Views
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class KnowledgeEntrysPage : BasePage
+    public sealed partial class KnowledgeEntrysPage : BaseContentPage
     {
         List<KnowledgeEntryTypeGroup> allEntries = new List<KnowledgeEntryTypeGroup>();
 
-        public KnowledgeEntrysPage() : base()
+        public KnowledgeEntrysPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            //Get all the knowledge entries and add them to  the ListView
+            Title = "Wissenswertes";
 
+            //Get all the knowledge entries and add them to  the ListView
             KnowledgeList.ItemsSource = KnowledgeEntries.getEntries();
 
         }
@@ -33,12 +34,7 @@ namespace BFH_USZ_PICC.Views
                 //Casts the selected object to a Knowledge entry object and moves it forward to the glossary page.
                 KnowledgeEntry selectedEntry = (KnowledgeEntry)KnowledgeList.SelectedItem;
 
-                Navigation.PushAsync(new KnowledgeEntryDetailPage(selectedEntry)
-                {
-                    //Sets the title for the new created KnowledgeEntryPage
-                    Title = selectedEntry.title
-                }
-                    );
+                Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { selectedEntry }));
                 KnowledgeList.SelectedItem = null;
             }
 

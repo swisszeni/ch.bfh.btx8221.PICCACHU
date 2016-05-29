@@ -1,23 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<d:BasePage
+<d:BaseContentPage
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.KnowledgeEntryDetailPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             >
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness"
-                iOS="20, 40, 20, 20"
-                Android="20, 20, 20, 20"
-                WinPhone="20, 20, 20, 20" />
-  </ContentPage.Padding>
-  <ContentPage.Content>
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
         <ListView x:Name="GlossaryList" ItemSelected="OnSelect" IsPullToRefreshEnabled="false">
+          <ListView.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                  iOS="20, 40, 20, 20"
+                  Android="20, 20, 20, 20"
+                  WinPhone="20, 20, 20, 20" />
+          </ListView.Margin>
           <ListView.ItemTemplate>
             <DataTemplate>
               <TextCell Text="{Binding word}" />
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>
-  </ContentPage.Content>
-</d:BasePage>
+</d:BaseContentPage>

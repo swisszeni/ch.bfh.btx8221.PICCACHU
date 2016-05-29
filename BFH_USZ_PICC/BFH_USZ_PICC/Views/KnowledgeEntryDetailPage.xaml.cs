@@ -9,11 +9,13 @@ namespace BFH_USZ_PICC.Views
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public partial class KnowledgeEntryDetailPage : BasePage
+    public partial class KnowledgeEntryDetailPage : BaseContentPage
     {
-        public KnowledgeEntryDetailPage(KnowledgeEntry selectedEntry) : base()
+        public KnowledgeEntryDetailPage(ContentPage contained, KnowledgeEntry selectedEntry) : base(contained)
         {
             InitializeComponent();
+
+            Title = selectedEntry.title;
             addPageElements(selectedEntry);
 
         }
