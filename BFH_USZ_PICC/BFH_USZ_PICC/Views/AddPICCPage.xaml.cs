@@ -78,7 +78,7 @@ namespace BFH_USZ_PICC.Views
         {
             if (AllModels.SelectedItem != null)
             {
-                Navigation.PushModalAsync(new BasePage(typeof(PICCDetailPage), new List<object> { AllModels.SelectedItem }));
+                Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { AllModels.SelectedItem }));
                 AllModels.SelectedItem = null;
             }
         }
@@ -91,7 +91,7 @@ namespace BFH_USZ_PICC.Views
         void AddPiccManualButtonClick(object o, EventArgs e)
         {
             PICCModel model = new PICCModel(null, 0, null, null);
-            Navigation.PushModalAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
+            Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
         }
 
         /// <summary>
