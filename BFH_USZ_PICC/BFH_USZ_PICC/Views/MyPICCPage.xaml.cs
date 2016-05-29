@@ -16,41 +16,34 @@ namespace BFH_USZ_PICC.Views
         public MyPICCPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-
+            Title = "Meine PICC";
         }
 
-        ////Constructor with a GlossaryEntry object. The given entry will be displayed
-        //public MyPICCPage(GlossaryEntry aSelectedEntry)
-        //{
-        //    InitializeComponent();
 
-        //    //Adds all glossary entries form the singleton class "GlossaryEntries" to a variable. Afterwards, the list with the entries will be added to the glossary ListView.
-        //    var glossaryWords = GlossaryEntries.getEntries();
+        public async void SelectedFormerPICC(object o, EventArgs e)
+        {
+            // FIXME: total bullshit
+            if (FormerPICCList.SelectedItem != null)
+            {
+                PICC selectedPICC = (PICC)FormerPICCList.SelectedItem;
+                if (selectedPICC.RemovalDate != null)
+                {
+                    await DisplayAlert(selectedPICC.PICCModel.PICCName, "Legedatum: " + selectedPICC.InsertDate.ToString("d") + "\nEntfernungsdatum: " + ((DateTime)selectedPICC.RemovalDate).ToString("d"), "Abbrechen");
 
-        //    GlossaryList.ItemsSource = glossaryWords;
+                }
+                else
+                {
+                    await DisplayAlert(selectedPICC.PICCModel.PICCName, "Legedatum: " + selectedPICC.InsertDate.ToString("d") + "\nEntfernungsdatum: ", "Abbrechen");
 
-        //    showGlossaryEntry(aSelectedEntry);
+                }
 
+                FormerPICCList.SelectedItem = null;
+            }
+        }
 
-        //}
-
-
-        //// This method checks whitch glossary entry has been selected and displays the related information in a pop up.
-        //void OnSelect(object sender, EventArgs e)
-        //{
-        //    if (GlossaryList.SelectedItem != null)
-        //    {
-        //        GlossaryEntry selectedEntry = (GlossaryEntry)GlossaryList.SelectedItem;
-        //        showGlossaryEntry(selectedEntry);
-
-        //    }
-        //    GlossaryList.SelectedItem = null;
-        //}
-
-        ////displays a glossary entry. The word is the header, the explanation the body
-        //private void showGlossaryEntry(GlossaryEntry entry)
-        //{
-        //    this.DisplayAlert(entry.word, entry.explanation, "Ok");
-        //}
+        async void AddPICCClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
+        }
     }
 }

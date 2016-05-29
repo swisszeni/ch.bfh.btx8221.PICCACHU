@@ -41,6 +41,7 @@
     </Compile>
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
+    <Compile Include="Interfaces\IBarcodeScanner.cs" />
     <Compile Include="Models\GlossaryEntries.cs" />
     <Compile Include="Models\GlossaryEntry.cs" />
     <Compile Include="Models\KnowledgeEntries.cs" />
@@ -49,14 +50,23 @@
     <Compile Include="Models\KnowledgeEntryTextElement.cs" />
     <Compile Include="Models\KnowledgeEntryTypeGroup.cs" />
     <Compile Include="Models\NavigationMenuItem.cs" />
+    <Compile Include="Models\PICC.cs" />
+    <Compile Include="Models\PICCModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shell.cs" />
+    <Compile Include="Utilitys\Converters.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryViewModel.cs" />
+    <Compile Include="ViewModels\MyPICCViewModel.cs" />
+    <Compile Include="ViewModels\PICCDetailViewModel.cs" />
+    <Compile Include="ViewModels\PICCModelViewModel.cs" />
     <Compile Include="Views\BaseContentPage.cs" />
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPICCPage.xaml.cs">
+      <DependentUpon>AddPICCPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PICCDetailPage.xaml.cs">
       <DependentUpon>PICCDetailPage.xaml</DependentUpon>
@@ -144,6 +154,13 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddPICCPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.0.38-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.0.38-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

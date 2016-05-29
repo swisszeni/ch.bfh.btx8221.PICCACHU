@@ -5,6 +5,11 @@
              xmlns:controls="clr-namespace:BFH_USZ_PICC.Controls"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              Title="Seite">
+  <!--<ContentPage.Resources>
+    <ResourceDictionary>
+      <Color x:Key="USZBlue">#0057A2</Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>-->
   <ContentPage.Content>
     <AbsoluteLayout x:Name="FlyoutPositioningLayout">
       <!--<ListView x:Name="GlossaryList" ItemSelected="OnSelect" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">-->
@@ -12,4 +17,5 @@
     </AbsoluteLayout>
     
   </ContentPage.Content>
+
 </ContentPage>

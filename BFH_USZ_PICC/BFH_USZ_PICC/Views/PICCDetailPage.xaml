@@ -1,22 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.PICCDetailPage"
+             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              Title="Glossar">
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness"
-                iOS="20, 40, 20, 20"
-                Android="20, 20, 20, 20"
-                WinPhone="20, 20, 20, 20" />
-  </ContentPage.Padding>
-  <ContentPage.Content>
-    <ListView x:Name="GlossaryList" ItemSelected="OnSelect">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell Text="{Binding word}" />
-        </DataTemplate>
+  <Grid.Resources>
+    <ResourceDictionary>
+      <utilitys:PICCInsertPositionToIndexConverter x:Key="PICCInsertPositionToIndexConverter" />
+      <utilitys:PICCInsertSideToIndexConverter x:Key="PICCInsertSideToIndexConverter" />
+      <utilitys:PICCInsertCountryToIndexConverter x:Key="PICCInsertCountryToIndexConverter" />
+    </ResourceDictionary>
+  </Grid.Resources>
+  <ScrollView>
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" >
+      <StackLayout x:Name="PiccInformation" Orientation="Vertical" IsVisible="False" VerticalOptions="FillAndExpand">
+        <Label Text="Modellbezeichnung:"></Label>
+        <Entry x:Name="PiccName" Text="{Binding PiccName}"></Entry>
+        <Image x:Name="PiccImage" Source="{Binding ImageSource}" Aspect="AspectFit" HeightRequest="200" WidthRequest="100"/>
 
-      </ListView.ItemTemplate>
-    </ListView>
-  </ContentPage.Content>
-</ContentPage>
+        <Label Text="Grösse in French:" ></Label>
+        <Entry x:Name="PiccFrench" Text="{Binding FrenchSize}"></Entry>
+
+        <Label Text="Legedatum:" HorizontalOptions="Fill" WidthRequest="80" />
+        <DatePicker x:Name="InsertedDate" Date="{Binding InsertDate}">
+          <DatePicker.Format>d</DatePicker.Format>
+        </DatePicker>
+
+        <Label Text="Legeort:" HorizontalOptions="Fill" WidthRequest="80" />
+        <Picker x:Name="Country" SelectedIndexChanged="CountrySelected" SelectedIndex="{Binding InsertCountry, Converter={StaticResource PICCInsertCountryToIndexConverter}}">
+          <Picker.Items>
+            <x:String>Nicht definiert</x:String>
+            <x:String>Schweiz</x:String>
+            <x:String>Ausland</x:String>
+          </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="InsertCity" Text="{Binding City}" Placeholder="Bitte Institution eingeben"></Entry>
+
+        <Label Text="Körperseite PICC:" ></Label>
+        <Picker x:Name="PiccSide" SelectedIndex="{Binding PiccSide, Converter={StaticResource PICCInsertSideToIndexConverter}}">
+          <Picker.Items>
+            <x:String>Nicht definiert</x:String>
+            <x:String>Links</x:String>
+            <x:String>Rechts</x:String>
+          </Picker.Items>
+        </Picker>
+
+        <Label Text="Position PICC:" ></Label>
+        <Picker x:Name="PiccPosition" SelectedIndex="{Binding PiccPosition, Converter={StaticResource PICCInsertPositionToIndexConverter}}">
+          <Picker.Items>
+            <x:String>Nicht definiert</x:String>
+            <x:String>Unterhalb Ellbogen</x:String>
+            <x:String>Oberhalb Ellbogen</x:String>
+          </Picker.Items>
+        </Picker>
+
+        <StackLayout x:Name="RemovalLayout" Orientation="Vertical">
+          <Button x:Name="PiccRemoveButton" Text="PICC inaktiv setzten" Clicked="PiccRemoveButtonClicked"/>
+          <DatePicker x:Name="RemovalDate" Date="{Binding RemovalDate}" IsVisible="False">
+            <DatePicker.Format>d</DatePicker.Format>
+          </DatePicker>
+        </StackLayout>
+
+      </StackLayout>
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout x:Name="EditAndAddButtons" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="True">
+          <Button x:Name="EditButton" Text="Bearbeiten" Clicked="EditButtonClicked" IsVisible="False"/>
+        </StackLayout>
+        <StackLayout x:Name="SaveAndCancelButtons" Orientation="Horizontal" VerticalOptions="Center" IsVisible="False">
+          <Button x:Name="SaveButton" Text="Speichern" Clicked="SaveButtonClicked"/>
+          <Button x:Name="CancelButton" Text="Abbrechen" Clicked="CancelButtonClicked"/>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</d:BaseContentPage>
