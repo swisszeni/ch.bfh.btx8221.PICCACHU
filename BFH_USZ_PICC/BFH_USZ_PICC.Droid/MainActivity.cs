@@ -16,24 +16,9 @@ namespace BFH_USZ_PICC.Droid
     [Activity(Label = "USZ PICC", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
     {
-        //protected override void OnCreate(Bundle bundle)
-        //{
-        //    base.OnCreate(bundle);
-
-        //    global::Xamarin.Forms.Forms.Init(this, bundle);
-        //    LoadApplication(new App());
-
-        //    if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
-        //    {
-        //        ActionBar.SetIcon(
-        //          new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
-        //    }
-        //}
 
         protected override void OnCreate(Bundle bundle)
         {
-            //FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
-            //FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
             base.OnCreate(bundle);
@@ -42,6 +27,33 @@ namespace BFH_USZ_PICC.Droid
 
             // Enable crashlog with HockeyApp
             CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
+
+            // check for updates of the app
+            CheckForUpdates();
+        }
+
+        void CheckForUpdates()
+        {
+            UpdateManager.Register(this, "244728446c94483cb57c2620f12c9982");
+        }
+
+        void UnregisterManagers()
+        {
+            UpdateManager.Unregister();
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+
+            UnregisterManagers();
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            UnregisterManagers();
         }
     }
 }
