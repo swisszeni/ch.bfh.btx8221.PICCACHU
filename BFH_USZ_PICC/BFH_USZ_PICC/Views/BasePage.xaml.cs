@@ -28,6 +28,9 @@ namespace BFH_USZ_PICC.Views
             BaseContentPage contentElement = (BaseContentPage)Activator.CreateInstance(contentElementType, argsArray);
 
             FlyoutPositioningLayout.Children.Insert(0, contentElement);
+            AbsoluteLayout.SetLayoutBounds(contentElement, new Rectangle(0, 0, 1, 1));
+            AbsoluteLayout.SetLayoutFlags(contentElement, AbsoluteLayoutFlags.All);
+
             Title = contentElement.Title;
 
             ToolbarItem alert = new ToolbarItem("Alarm", "icon.png", () => { EmergencyOverLay.IsVisible = !EmergencyOverLay.IsVisible; });
