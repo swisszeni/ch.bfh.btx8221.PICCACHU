@@ -23,8 +23,8 @@ namespace BFH_USZ_PICC.Models
          
             if (knowledgeEntryList == null)
             {
-                KnowledgeEntryTypeGroup generalGroup = new KnowledgeEntryTypeGroup("Allgemein", "A");
-                KnowledgeEntryTypeGroup homeGroup = new KnowledgeEntryTypeGroup("Zuhause", "Z");
+                KnowledgeEntryTypeGroup generalGroup = new KnowledgeEntryTypeGroup("Allgemein", "Allgemein");
+                KnowledgeEntryTypeGroup homeGroup = new KnowledgeEntryTypeGroup("Zuhause", "Zuhause");
                 knowledgeEntryList = new List<KnowledgeEntryTypeGroup> { generalGroup, homeGroup };
 
                 // "Was ist ein PICC?" page information
