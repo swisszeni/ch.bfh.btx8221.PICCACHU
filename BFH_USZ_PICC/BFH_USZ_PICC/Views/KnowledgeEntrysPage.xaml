@@ -14,7 +14,7 @@
       </ListView.Margin>
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding title}"/>
+          <TextCell Text="{Binding Title}"/>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
