@@ -30,6 +30,7 @@ namespace BFH_USZ_PICC.iOS
             var manager = BITHockeyManager.SharedHockeyManager;
             manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
             manager.StartManager();
+            manager.Authenticator.AuthenticateInstallation();
             return base.FinishedLaunching(app, options);
         }
     }
