@@ -9,15 +9,15 @@ namespace BFH_USZ_PICC.Models
 {
     public class KnowledgeEntry
     {
-        public string title { get; }
-        public List<IKnowledgeEntryElement> knowledgeElements { get; }
-        public List<GlossaryEntry> glossaryEntries { get; }
+        public string Title { get; }
+        public List<IKnowledgeEntryElement> KnowledgeElements { get; }
+        public List<GlossaryEntry> GlossaryEntries { get; }
 
         public KnowledgeEntry(string aTitle, List<IKnowledgeEntryElement> theseKnowledgeElements, List<GlossaryEntry> theseGlossaryEntries)
         {
-            title = aTitle;
-            knowledgeElements = theseKnowledgeElements;
-            glossaryEntries = theseGlossaryEntries;
+            Title = aTitle;
+            KnowledgeElements = theseKnowledgeElements;
+            GlossaryEntries = theseGlossaryEntries;
         }
     }
 }

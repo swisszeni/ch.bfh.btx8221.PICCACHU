@@ -16,7 +16,7 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
 
-            Title = selectedEntry.title;
+            Title = selectedEntry.Title;
             addPageElements(selectedEntry);
 
         }
@@ -39,7 +39,7 @@ namespace BFH_USZ_PICC.Views
         {
             {
                 //Adds the glossary entries to the realted list
-                GlossaryList.ItemsSource = selectedEntry.glossaryEntries;
+                GlossaryList.ItemsSource = selectedEntry.GlossaryEntries;
 
                 //the index variable adds the knowledgeElement to its particular position
                 int index = 0;
@@ -52,7 +52,7 @@ namespace BFH_USZ_PICC.Views
                 knowledgeEntryView.VerticalOptions = LayoutOptions.EndAndExpand;
 
                 //check if the element is either a text or an image
-                foreach (var entry in selectedEntry.knowledgeElements)
+                foreach (var entry in selectedEntry.KnowledgeElements)
                 {
                     if (entry.type == "text")
                     {
