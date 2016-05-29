@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 
@@ -112,7 +113,7 @@ namespace BFH_USZ_PICC.Views
             {
                 if (imageElem != null)
                 {
-                    Navigation.PushAsync(new PicturePage((KnowledgeEntryImageElement)imageElem));
+                    Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { (KnowledgeEntryImageElement)imageElem }));
                 }
 
             };
