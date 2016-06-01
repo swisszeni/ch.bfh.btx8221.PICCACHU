@@ -52,5 +52,11 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
             return manager.PhoneType != PhoneType.None;
         }
 
+        public bool CanMakePhonecall()
+        {
+            TelephonyManager manager = (TelephonyManager)Forms.Context.GetSystemService(Android.Content.Context.TelephonyService);
+
+            return !(manager.PhoneType == PhoneType.None);
+        }
     }
 }

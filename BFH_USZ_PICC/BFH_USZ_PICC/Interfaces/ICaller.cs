@@ -8,7 +8,17 @@ namespace BFH_USZ_PICC.Interfaces
 {
     public interface ICaller
     {
-            bool Dial(string number);
-       
+        /// <summary>
+        /// Checks if the device is able to make a phone call.
+        /// </summary>
+        /// <returns></returns>
+        bool CanMakePhonecall();
+
+        /// <summary>
+        /// Dials the passed number via the integrated system native dialer
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        bool Dial(string number);
     }
 }
