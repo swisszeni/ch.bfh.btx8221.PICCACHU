@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Controls;
 using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.ViewModels;
 using System;
 using Xamarin.Forms;
 
@@ -18,26 +19,15 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
             Title = "Glossar";
 
-            //Adds all glossary entries form the singleton class "GlossaryEntries" to the glossary ListView 
-            GlossaryList.ItemsSource = GlossaryEntries.getEntries();
+            //Binds all glossary entries to the binding context 
+            BindingContext = new GlossaryViewModel();
+            
         }
 
-        // This method checks whitch glossary entry has been selected and displays the related information in a pop up.
-        void OnSelect(object sender, EventArgs e)
+        //This method checks whitch glossary entry has been selected and displays the related information in a pop up.
+        void SelectedEntry(object sender, EventArgs e)
         {
-            if (GlossaryList.SelectedItem != null)
-            {
-                GlossaryEntry selectedEntry = (GlossaryEntry)GlossaryList.SelectedItem;
-                showGlossaryEntry(selectedEntry);
-
-            }
             GlossaryList.SelectedItem = null;
-        }
-
-        //displays a glossary entry. The word is the header, the explanation the body
-        private void showGlossaryEntry(GlossaryEntry entry)
-        {
-            DisplayAlert(entry.word, entry.explanation, "ok");
         }
     }
 }
