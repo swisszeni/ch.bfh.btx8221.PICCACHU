@@ -15,7 +15,7 @@ namespace BFH_USZ_PICC.Models
             {
                 modelList = new List<PICCModel>();
                 modelList.Add(new PICCModel("Einlumiger Picc", 3.4, "EinlumigerPICC.PNG", ""));
-                modelList.Add(new PICCModel("Zweilumiger Picc", 3.9, "DoppellumigerPICC.PNG", "7680561570025"));
+                modelList.Add(new PICCModel("Zweilumiger Picc", 3.9, "DoppellumigerPICC.PNG", "9783468201226"));
                 modelList.Add(new PICCModel("Dreilumiger Picc", 4.4, null, ""));
 
             }

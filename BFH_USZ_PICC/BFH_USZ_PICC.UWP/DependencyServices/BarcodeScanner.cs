@@ -14,7 +14,8 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
     class BarcodeScanner : IBarcodeScanner
     {
         public async Task<string> StringFromBarcode()
-        {
+        {   //FIXME: Implement proper back navigation stack handling. (So back button dismisses scanner view)
+
             // Creates a new MobileBarcodeScanner variable
             MobileBarcodeScanner scanner = new MobileBarcodeScanner();
 
