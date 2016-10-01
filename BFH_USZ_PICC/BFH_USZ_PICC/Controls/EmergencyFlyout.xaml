@@ -41,7 +41,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button Text="USZ Telemedizin kontaktieren" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="ContactUSZTelemedizin"/>
   </StackLayout>
   <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
 </Grid>

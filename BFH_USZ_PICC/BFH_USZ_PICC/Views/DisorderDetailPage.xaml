@@ -4,10 +4,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.DisorderDetailPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
-    <StackLayout Padding="20" Opacity="1" Grid.Row="0">
-    <Label Text="Ursache" VerticalTextAlignment="Center" FontSize="20"/>
-    <Label Text="{Binding reason}"/>
-    <Label Text="Massnahme" VerticalTextAlignment="Center" FontSize="20"/>
-    <Label Text="{Binding action}"/>
+  <Grid.Resources>
+    <ResourceDictionary>
+      <Color x:Key="AlertRed">#A30001</Color>
+    </ResourceDictionary>
+  </Grid.Resources>
+  <Grid.RowDefinitions>
+    <RowDefinition Height="Auto" />
+    <RowDefinition Height="*" />
+  </Grid.RowDefinitions>
+  <StackLayout BackgroundColor="{StaticResource AlertRed}" Padding="20" Opacity="1" Grid.Row="0" >
+    <Label Text="Symptom" VerticalTextAlignment="Center" FontSize="20" TextColor="White"/>
+    <Label Text="{Binding symptom}" TextColor="White"/>
+    <Label Text="Ursache" VerticalTextAlignment="Center" FontSize="20" TextColor="White"/>
+    <Label Text="{Binding reason}" TextColor="White"/>
+    <Label Text="Massnahme" VerticalTextAlignment="Center" FontSize="20" TextColor="White"/>
+    <Label Text="{Binding action}" TextColor="White"/>
+    <StackLayout Orientation="Vertical">
+      <Button Text="Ok" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="LeavePage"/>
+      <Button Text="USZ Telemedizin kontaktieren" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="ContactUSZTelemedizin"/>
+    </StackLayout>
   </StackLayout>
+  <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
 </d:BaseContentPage>
