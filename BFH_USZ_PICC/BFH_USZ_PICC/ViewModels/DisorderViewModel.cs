@@ -66,7 +66,7 @@ namespace BFH_USZ_PICC.ViewModels
                     _selectedSymptom = value;
                     if (value != null)
                     {
-                        App.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new BasePage(typeof(DisorderDetailPage), new List<object> { _selectedSymptom })));
+                        App.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { _selectedSymptom }));
                     }
 
                     OnPropertyChanged("SelectedSymptom");

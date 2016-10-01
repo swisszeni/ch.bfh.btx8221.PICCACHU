@@ -25,5 +25,10 @@ namespace BFH_USZ_PICC.Controls
             BindingContext = new DisorderViewModel();
         }
 
+        //This method sets the selected disorder entry to null (otherwise it would be marked as selected after closing the disorder detail page).
+        void SelectedDisorder(object sender, EventArgs e)
+        {
+            DisorderList.SelectedItem = null;
+        }
     }
 }

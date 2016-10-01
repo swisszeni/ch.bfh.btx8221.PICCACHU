@@ -9,11 +9,7 @@
       <Color x:Key="AlertRed">#A30001</Color>
     </ResourceDictionary>
   </Grid.Resources>
-  <Grid.RowDefinitions>
-    <RowDefinition Height="Auto" />
-    <RowDefinition Height="*" />
-  </Grid.RowDefinitions>
-  <StackLayout BackgroundColor="{StaticResource AlertRed}" Padding="20" Opacity="1" Grid.Row="0" >
+  <StackLayout BackgroundColor="{StaticResource AlertRed}" Padding="20" Opacity="1">
     <Label Text="Symptom" VerticalTextAlignment="Center" FontSize="20" TextColor="White"/>
     <Label Text="{Binding symptom}" TextColor="White"/>
     <Label Text="Ursache" VerticalTextAlignment="Center" FontSize="20" TextColor="White"/>
@@ -25,5 +21,4 @@
       <Button Text="USZ Telemedizin kontaktieren" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="ContactUSZTelemedizin"/>
     </StackLayout>
   </StackLayout>
-  <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
 </d:BaseContentPage>
