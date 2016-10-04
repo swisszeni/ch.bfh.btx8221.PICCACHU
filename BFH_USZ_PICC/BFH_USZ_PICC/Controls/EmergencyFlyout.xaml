@@ -22,26 +22,9 @@
           WinPhone="0, 15, 0, 0" />
       </Label.Margin>
     </Label>
-    <ListView x:Name="DisorderList" HasUnevenRows="True" ItemsSource="{Binding ListOfDisorderEntries}" SelectedItem="{Binding SelectedSymptom, Mode=TwoWay}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" ItemSelected="SelectedDisorder">
-      <ListView.Margin>
-        <OnPlatform x:TypeArguments="Thickness"
-                        iOS="20, 40, 20, 20"
-                        Android="20, 20, 20, 20"
-                        WinPhone="20, 20, 20, 20" />
-      </ListView.Margin>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <ViewCell.View>
-              <StackLayout Orientation="Horizontal" >
-                <Frame BackgroundColor="{StaticResource AlertRed}">
-                  <Label Text="{Binding symptom}" TextColor="White"/>
-                </Frame>                
-              </StackLayout>
-            </ViewCell.View>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
+    
+    <ListView x:Name="DisorderList" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+      
     </ListView>
   </StackLayout>
   <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />

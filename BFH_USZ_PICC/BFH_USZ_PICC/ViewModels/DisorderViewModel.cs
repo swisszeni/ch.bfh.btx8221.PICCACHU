@@ -13,7 +13,12 @@ namespace BFH_USZ_PICC.ViewModels
     class DisorderViewModel : INotifyPropertyChanged
     {
         /// <summary>
-        /// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
+        /// Property for calling a new page with the "PushAsync" method.
+        /// </summary>
+        public INavigation Nav { get; set; }
+
+        /// <summary>
+        /// Adds a list with all "Disorder" objects to the "ListOfDisorderEntries" variable.
         /// </summary>
         public DisorderViewModel()
         {
@@ -63,12 +68,12 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (_selectedSymptom != value)
                 {
-                    _selectedSymptom = value;
                     if (value != null)
                     {
-                        App.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { _selectedSymptom }));
-                    }
+                        Nav.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
 
+                    }
+                    _selectedSymptom = value;
                     OnPropertyChanged("SelectedSymptom");
                 }
             }

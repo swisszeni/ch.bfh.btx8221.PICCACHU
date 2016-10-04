@@ -17,12 +17,7 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
             BindingContext = selectedEntry;
         }
-
-        void LeavePage(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync();
-        }
-
+        
         void ContactUSZTelemedizin(object sender, EventArgs e)
         {
             if (DependencyService.Get<ICaller>().CanMakePhonecall())

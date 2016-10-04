@@ -10,7 +10,8 @@ namespace BFH_USZ_PICC.Models
     {
         PICC,
         Glossary,
-        Knowledge
+        Knowledge, 
+        Disorder
     }
     public class NavigationMenuItem
     {
