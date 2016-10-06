@@ -4,6 +4,7 @@ using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using ZXing.Net.Mobile.Forms;
 
 
 // Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
@@ -101,13 +102,36 @@ namespace BFH_USZ_PICC.Views
         /// <param name="e"></param>
         async void ScanClick(object sender, EventArgs e)
         {
-            var barcode = DependencyService.Get<IBarcodeScanner>();
-            var barcodeResult = await barcode.StringFromBarcode();
+            //var barcode = DependencyService.Get<IBarcodeScanner>();
+            //var barcodeResult = await barcode.StringFromBarcode();
 
-            if (barcodeResult != null)
+            //if (barcodeResult != null)
+            //{
+            //    searchForAPiccModel(barcodeResult);
+            //}
+            //Create a new ZXIngScannerPage
+            var scanPage = new ZXingScannerPage();
+
+            //Disable the FlashButton
+            scanPage.DefaultOverlayShowFlashButton = false;
+            //If the scaner has a result: stop scanning, close the modalpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
+            scanPage.OnScanResult += (result) =>
             {
-                searchForAPiccModel(barcodeResult);
-            }
+                scanPage.IsScanning = false;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Navigation.PopModalAsync();
+                    if (result != null)
+                    {
+                        searchForAPiccModel(result.Text);
+                    }
+                });
+            };
+
+            //Opens the scanPage with the parameters set above
+            await Navigation.PushModalAsync(scanPage);
+
         }
 
         /// <summary>

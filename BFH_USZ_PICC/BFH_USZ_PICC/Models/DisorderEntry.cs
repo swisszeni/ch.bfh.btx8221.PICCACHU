@@ -9,16 +9,18 @@ namespace BFH_USZ_PICC.Models
     //This class contains a disorder entry with the symtom, reason and action
     public class DisorderEntry
     {
-        public string symptom { get; set; }
-        public string reason { get; set; }
-        public string action { get; set; }
+        public string Keyword { get; set; }
+        public string Symptom { get; set; }
+        public string Reason { get; set; }
+        public string Action { get; set; }
 
 
-        public DisorderEntry(string symptom, string reason, string action)
+        public DisorderEntry(string keywordForSymptom, string symptom, string reason, string action)
         {
-            this.symptom = symptom;
-            this.reason = reason;
-            this.action = action;
+            this.Keyword = keywordForSymptom;
+            this.Symptom = symptom;
+            this.Reason = reason;
+            this.Action = action;
         }
     }
 }

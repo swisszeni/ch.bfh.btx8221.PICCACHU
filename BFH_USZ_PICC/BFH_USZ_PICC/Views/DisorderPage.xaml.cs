@@ -19,11 +19,9 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
             Title = "Störungen";
 
-            //Create a new DisorderViewModel and add the and give it the Navgation object of the DisorderPage (in order to be able to call the "PushAsync" method).
-            var vm = new DisorderViewModel();
-            vm.Nav = Navigation;
-            //Binds all disorder entries to the binding context 
-            BindingContext = vm;
+            //Create a new instance of the DisorderViewModel class and add the current Navgation object (DisorderPage) in order to be able to call the "PushAsync" method within the DisorderViewModel class.
+            BindingContext = new DisorderViewModel();
+            
         }
 
         //This method sets the selected disorder entry to null (otherwise it would be marked as selected after closing the disorder detail page).

@@ -2,5 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="uszpicc.uszpicc" android:installLocation="auto" android:versionName="1.0.1" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.FLASHLIGHT" />
 	<application android:label="USZ PICC" android:theme="@style/MyTheme" android:icon="@drawable/ic_launcher"></application>
 </manifest>

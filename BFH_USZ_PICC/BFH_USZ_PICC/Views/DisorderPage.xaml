@@ -21,9 +21,10 @@
       <DataTemplate>
         <ViewCell>
           <ViewCell.View>
-            <StackLayout Orientation="Horizontal" Padding="15">            
-              <Label Text="{Binding symptom}"/>            
-              </StackLayout>
+            <StackLayout Padding="15">
+              <Label Text="{Binding Keyword}" TextColor="Blue" LineBreakMode="WordWrap"/>
+              <Label Text="{Binding Symptom}" LineBreakMode="WordWrap"/>
+            </StackLayout>
           </ViewCell.View>
         </ViewCell>
       </DataTemplate>

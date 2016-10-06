@@ -22,10 +22,7 @@
           WinPhone="0, 15, 0, 0" />
       </Label.Margin>
     </Label>
-    
-    <ListView x:Name="DisorderList" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
-      
-    </ListView>
-  </StackLayout>
+       <Button Text="USZ Telemedizin kontaktieren" Clicked="ContactUSZTelemedizin"/>
+    </StackLayout>
   <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
 </Grid>

@@ -7,11 +7,11 @@
   <ScrollView>
     <StackLayout Padding="20" Opacity="1">
       <Label Text="Symptom" VerticalTextAlignment="Center" FontSize="20"/>
-      <Label Text="{Binding symptom}"/>
+      <Label Text="{Binding Symptom}"/>
       <Label Text="Ursache" VerticalTextAlignment="Center" FontSize="20"/>
-      <Label Text="{Binding reason}"/>
+      <Label Text="{Binding Reason}"/>
       <Label Text="Massnahme" VerticalTextAlignment="Center" FontSize="20"/>
-      <Label Text="{Binding action}"/>
+      <Label Text="{Binding Action}"/>
       <Button Text="USZ Telemedizin kontaktieren" Clicked="ContactUSZTelemedizin"/>
     </StackLayout>
   </ScrollView>
