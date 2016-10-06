@@ -21,7 +21,7 @@ namespace BFH_USZ_PICC.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new BFH_USZ_PICC.App());
+            LoadApplication(new BFH_USZ_PICC.Application());
         }
     }
 }

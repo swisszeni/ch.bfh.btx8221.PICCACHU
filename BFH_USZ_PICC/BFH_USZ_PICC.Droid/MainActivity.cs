@@ -23,7 +23,7 @@ namespace BFH_USZ_PICC.Droid
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
             base.OnCreate(bundle);
             Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new Application());
 
             // Enable crashlog with HockeyApp
             //FIXME

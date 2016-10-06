@@ -26,13 +26,13 @@ namespace BFH_USZ_PICC.Views
             }
             else
             {
-                App.Current.MainPage.DisplayAlert("Fehlgeschlagen", "Ihr Gerät kann die USZ Telemedizin nicht anrufen.\nKontaktieren sie 044 666 66 66", "Ok");
+                Application.Current.MainPage.DisplayAlert("Fehlgeschlagen", "Ihr Gerät kann die USZ Telemedizin nicht anrufen.\nKontaktieren sie 044 666 66 66", "Ok");
             }
         }
 
         async void CallUSZTelemedizin()
         {
-            bool call = await App.Current.MainPage.DisplayAlert("Warnung", "USZ Telemedizin wirklich anrufen?", "Ja", "Nein");
+            bool call = await Application.Current.MainPage.DisplayAlert("Warnung", "USZ Telemedizin wirklich anrufen?", "Ja", "Nein");
             if (call)
             {
                 var dialer = DependencyService.Get<ICaller>();

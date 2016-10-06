@@ -24,7 +24,7 @@ namespace BFH_USZ_PICC.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new BFH_USZ_PICC.Application());
 
             // Enable crashlog with HockeyApp
             var manager = BITHockeyManager.SharedHockeyManager;

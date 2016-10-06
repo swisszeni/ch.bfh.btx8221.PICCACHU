@@ -65,7 +65,7 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     if (value != null)
                     {
-                        ((Shell)App.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
+                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
 
                     }
                     _selectedSymptom = value;
