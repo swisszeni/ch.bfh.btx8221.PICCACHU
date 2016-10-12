@@ -26,11 +26,12 @@ namespace BFH_USZ_PICC.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new BFH_USZ_PICC.Application());
 
+            //FIXME
             // Enable crashlog with HockeyApp
-            var manager = BITHockeyManager.SharedHockeyManager;
-            manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
-            manager.StartManager();
-            manager.Authenticator.AuthenticateInstallation();
+            //var manager = BITHockeyManager.SharedHockeyManager;
+            //manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
+            //manager.StartManager();
+            //manager.Authenticator.AuthenticateInstallation();
             return base.FinishedLaunching(app, options);
         }
     }
