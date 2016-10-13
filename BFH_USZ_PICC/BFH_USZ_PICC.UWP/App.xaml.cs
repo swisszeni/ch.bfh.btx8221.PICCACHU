@@ -20,7 +20,7 @@ namespace BFH_USZ_PICC.UWP
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    sealed partial class App : Windows.UI.Xaml.Application
     {
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -32,7 +32,8 @@ namespace BFH_USZ_PICC.UWP
             this.Suspending += OnSuspending;
 
             // Enable crashlog with HockeyApp
-            Microsoft.HockeyApp.HockeyClient.Current.Configure("f06f141af5b041b7a0f90c9abf32449b");
+            //FIXME
+            //Microsoft.HockeyApp.HockeyClient.Current.Configure("f06f141af5b041b7a0f90c9abf32449b");
         }
 
         /// <summary>

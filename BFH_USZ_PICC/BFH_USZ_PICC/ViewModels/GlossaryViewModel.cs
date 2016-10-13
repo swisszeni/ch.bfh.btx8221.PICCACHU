@@ -63,7 +63,7 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     if (value != null)
                     {
-                        App.Current.MainPage.DisplayAlert(value.word, value.explanation, "Ok");
+                        Application.Current.MainPage.DisplayAlert(value.word, value.explanation, "Ok");
                     }
                     _selectedEntry = value;
                     OnPropertyChanged("SelectedEntry");

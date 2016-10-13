@@ -3,35 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Controls.EmergencyFlyout"
              RowSpacing="0">
-  <Grid.Resources>
-    <ResourceDictionary>
-      <Color x:Key="AlertRed">#A30001</Color>
-    </ResourceDictionary>
-  </Grid.Resources>
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Color x:Key="AlertRed">#A30001</Color>
+        </ResourceDictionary>
+    </Grid.Resources>
     <Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
     </Grid.RowDefinitions>
     <StackLayout BackgroundColor="{StaticResource AlertRed}" Padding="20" Opacity="1" Grid.Row="0">
-      <Label Text="Haben Sie ein Problem mit ihrem PICC?" TextColor="White" FontSize="20"/>
-      <Label Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." TextColor="White" >
-        <Label.Margin>
-          <OnPlatform x:TypeArguments="Thickness"
+        <Label Text="Vorgehen bei Problemen" TextColor="White" FontSize="20"/>
+        <Label Text="In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen." TextColor="White" >
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
             iOS="0, 15, 0, 0"
             Android="0, 15, 0, 0"
             WinPhone="0, 15, 0, 0" />
-        </Label.Margin>
-      </Label>
-      <Button Text="Lösungsschritte" BackgroundColor="White" TextColor="{StaticResource AlertRed}"/>
-      <Label Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua." TextColor="White" >
-        <Label.Margin>
-          <OnPlatform x:TypeArguments="Thickness"
+            </Label.Margin>
+        </Label>
+        <Button x:Uid="DisorderButton" Text="Lösungsschritte" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="DisorderButton_Clicked"/>
+        <Label Text="Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung." TextColor="White" >
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
             iOS="0, 15, 0, 0"
             Android="0, 15, 0, 0"
             WinPhone="0, 15, 0, 0" />
-        </Label.Margin>
-      </Label>
-      <Button Text="USZ Telemedizin kontaktieren" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="ContactUSZTelemedizin"/>
+            </Label.Margin>
+        </Label>
+        <Button x:Uid="CallUSZTelemedizinButton" Text="USZ Telemedizin kontaktieren" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="CallUSZTelemedizinButton_Clicked"/>
     </StackLayout>
     <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
 </Grid>
+
+
+
+
+
+
+

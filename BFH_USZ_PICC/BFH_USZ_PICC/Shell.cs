@@ -48,6 +48,10 @@ namespace BFH_USZ_PICC
                     case MenuItemKey.Knowledge:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(KnowledgeEntrysPage))));
                         break;
+                    case MenuItemKey.Disorder:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(DisorderPage))));
+                        break;
+
                 }
             }
 

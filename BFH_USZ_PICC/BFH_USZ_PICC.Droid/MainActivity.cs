@@ -23,10 +23,11 @@ namespace BFH_USZ_PICC.Droid
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
             base.OnCreate(bundle);
             Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new Application());
 
             // Enable crashlog with HockeyApp
-            CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
+            //FIXME
+            //CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
 
             // check for updates of the app
             CheckForUpdates();
@@ -34,12 +35,15 @@ namespace BFH_USZ_PICC.Droid
 
         void CheckForUpdates()
         {
-            UpdateManager.Register(this, "244728446c94483cb57c2620f12c9982");
+            //FIXME
+
+            //UpdateManager.Register(this, "244728446c94483cb57c2620f12c9982");
         }
 
         void UnregisterManagers()
         {
-            UpdateManager.Unregister();
+            //FIXME
+            //UpdateManager.Unregister();
         }
 
         protected override void OnPause()

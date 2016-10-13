@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.DisorderPage"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
+  <ListView x:Name="DisorderList" HasUnevenRows="True" ItemsSource="{Binding ListOfDisorderEntries}"
+            SelectedItem="{Binding SelectedSymptom, Mode=TwoWay}" ItemSelected="SelectedDisorder">
+    <ListView.Header>
+      <StackLayout>
+        <Label Text = "Vorgehen bei Problemen" FontSize = "20"/>
+        <Label Text = "In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen." />
+      </StackLayout>
+    </ListView.Header>
+    <ListView.Margin>
+      <OnPlatform x:TypeArguments="Thickness"
+                      iOS="20, 40, 20, 20"
+                      Android="20, 20, 20, 20"
+                      WinPhone="20, 20, 20, 20" />
+    </ListView.Margin>
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+            <StackLayout Padding="15">
+              <Label Text="{Binding Keyword}" TextColor="Blue" LineBreakMode="WordWrap"/>
+              <Label Text="{Binding Symptom}" LineBreakMode="WordWrap"/>
+            </StackLayout>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</d:BaseContentPage>
+
