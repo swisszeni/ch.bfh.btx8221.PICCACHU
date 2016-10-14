@@ -26,7 +26,7 @@ namespace BFH_USZ_PICC.Views
             int temp = 0;
             while (temp < 25)
             {
-                test.Add(new BloodWithdrawalEntry(DateTime.Today, DateTime.Today, JournalEntry.HealthInstitution.HomeCare, JournalEntry.HealthPerson.FamilyDoctor, true, BloodWithdrawalEntry.BloodFlow.Speedy));
+                test.Add(new BloodWithdrawalEntry(DateTime.Today, DateTime.Today, JournalEntry.HealthInstitution.HomeCare, JournalEntry.HealthPerson.FamilyDoctor, true, BloodFlow.Speedy));
                             
                 temp++;
             }

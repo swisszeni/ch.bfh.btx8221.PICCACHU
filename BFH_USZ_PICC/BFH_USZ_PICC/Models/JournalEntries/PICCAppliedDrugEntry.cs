@@ -11,22 +11,17 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     class PICCAppliedDrugEntry : JournalEntry
     {
-        public override DateTime CreationDateTime { get; }
-        public override DateTime ProcedureDateTime { get; set; }
-        public override HealthInstitution Institution { get; set; }
-        public override HealthPerson Person { get; set; }
-
         public string Drug { get; set; }
         public string Reason { get; set; }
         
-        public PICCAppliedDrugEntry(DateTime CreationalDateTime, DateTime ProcedureDateTime, HealthInstitution Instiution, HealthPerson Person, string Drug, string Reason)
+        public PICCAppliedDrugEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug, string reason)
         {
-            this.CreationDateTime = CreationalDateTime;
-            this.ProcedureDateTime = ProcedureDateTime;
-            this.Institution = Institution;
-            this.Person = Person;
-            this.Drug = Drug;
-            this.Reason = Reason;
+            CreationDateTime = creationalDateTime;
+            ProcedureDateTime = procedureDateTime;
+            Institution = instiution;
+            Person = person;
+            Drug = drug;
+            Reason = reason;
 
         }
 

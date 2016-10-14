@@ -4,8 +4,7 @@
              x:Class="BFH_USZ_PICC.Views.JournalOverviewPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
   <StackLayout Orientation="Vertical">
-  <Button Text="Neuer Eintrag" Image="icon.png" FontSize="20">         
-  </Button>
+    <Button Text="Neuer Eintrag" Image="icon.png" FontSize="20" />
     <ListView x:Name="JournalList" HorizontalOptions="CenterAndExpand">
       <ListView.Margin>
         <OnPlatform x:TypeArguments="Thickness"

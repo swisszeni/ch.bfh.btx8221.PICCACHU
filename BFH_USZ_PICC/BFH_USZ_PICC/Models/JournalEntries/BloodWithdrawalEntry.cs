@@ -7,32 +7,30 @@ using System.Threading.Tasks;
 namespace BFH_USZ_PICC.Models
 {
     /// <summary>
+    /// 
+    /// </summary>
+    public enum BloodFlow
+    {
+        Speedy,
+        Hesitant,
+        None
+    }
+    /// <summary>
     /// Extends the JournalEntry class with two parameters (IsNaCiFlashDone, Flow) to handle special events for the blood withrawal procedure
     /// </summary>
     class BloodWithdrawalEntry : JournalEntry
-    {
-        public enum BloodFlow
-        {
-            Speedy,
-            Hesitatnt,
-            None
-        }
-        public override DateTime CreationDateTime { get; }
-        public override DateTime ProcedureDateTime { get; set; }
-        public override HealthInstitution Institution { get; set; }
-        public override HealthPerson Person { get; set; }
-
+    {       
         public bool IsNaCiFlashDone { get; set; }
         public BloodFlow Flow { get; set; }        
 
-        public BloodWithdrawalEntry(DateTime CreationalDateTime, DateTime ProcedureDateTime, HealthInstitution Instiution, HealthPerson Person, bool IsNaCiFlashDone, BloodFlow Flow )
+        public BloodWithdrawalEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlashDone, BloodFlow flow )
         {
-            this.CreationDateTime = CreationalDateTime;
-            this.ProcedureDateTime = ProcedureDateTime;
-            this.Institution = Institution;
-            this.Person = Person;
-            this.IsNaCiFlashDone = IsNaCiFlashDone;
-            this.Flow = Flow;
+            CreationDateTime = creationalDateTime;
+            ProcedureDateTime = procedureDateTime;
+            Institution = institution;
+            Person = person;
+            IsNaCiFlashDone = isNaCiFlashDone;
+            Flow = Flow;
 
         }
 
