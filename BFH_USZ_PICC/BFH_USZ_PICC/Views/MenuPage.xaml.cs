@@ -33,7 +33,8 @@ namespace BFH_USZ_PICC.Views
                     new NavigationMenuItem { Title = "PICC", MenuItemKey = MenuItemKey.PICC, Icon ="icon.png" },
                     new NavigationMenuItem { Title = "Glossar", MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
                     new NavigationMenuItem { Title = "Wissenswertes", MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" },
-                    new NavigationMenuItem { Title = "Störungen", MenuItemKey = MenuItemKey.Disorder, Icon = "icon.png" }
+                    new NavigationMenuItem { Title = "Störungen", MenuItemKey = MenuItemKey.Disorder, Icon = "icon.png" },
+                    new NavigationMenuItem { Title = "Journal", MenuItemKey = MenuItemKey.Journal, Icon = "icon.png" }
                 };
 
             ListViewMenu.SelectedItem = menuItems[0];
