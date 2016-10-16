@@ -115,14 +115,14 @@ namespace BFH_USZ_PICC.Views
             //Disable the FlashButton
             scanPage.DefaultOverlayShowFlashButton = false;
             
-            //If the scaner has a result: stop scanning, close the modalpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
+            //If the scaner has a result: stop scanning, close the lpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
             scanPage.OnScanResult += (result) =>
             {
                 scanPage.IsScanning = false;
                 
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    Navigation.PopModalAsync();
+                    Navigation.PopAsync();
                     if (result != null)
                     {
                         searchForAPiccModel(result.Text);

@@ -38,10 +38,10 @@ namespace BFH_USZ_PICC.Views
             SelectedImage.GestureRecognizers.Add(tapGesture);
 
             // Checks if the ImageElement has a caption and add it to the label
-            if (source.caption != null)
+            if (source.Caption != null)
             {
                 SelectedImageCaption.IsVisible = true;
-                SelectedImageCaption.Text = source.caption;
+                SelectedImageCaption.Text = source.Caption;
             }
 
         }

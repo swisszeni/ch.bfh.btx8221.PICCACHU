@@ -13,7 +13,7 @@
           </ListView.Margin>
           <ListView.ItemTemplate>
             <DataTemplate>
-              <TextCell Text="{Binding word}" />
+              <TextCell Text="{Binding Word}" />
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>

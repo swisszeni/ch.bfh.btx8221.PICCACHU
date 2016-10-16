@@ -11,13 +11,13 @@ namespace BFH_USZ_PICC.Models
     public class KnowledgeEntryImageElement : IKnowledgeEntryElement
     {
         Image source;
-        public string caption { get; set; }
+        public string Caption { get; set; }
 
         // Constructor with an image and a caption element
         public KnowledgeEntryImageElement(Image aSource, string aCaption)
         {
             source = aSource;
-            caption = aCaption;
+            Caption = aCaption;
         }
 
         // Constructor with only an image provided.
@@ -26,7 +26,6 @@ namespace BFH_USZ_PICC.Models
             source = aSource;
 
         }
-
 
         object IKnowledgeEntryElement.element
         {

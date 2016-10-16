@@ -12,6 +12,17 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     abstract class JournalEntry
     {   
+        public enum AllPossibleJournalEntries
+        {
+            BandagesChangingEntry,
+            BloodWithdrawalEntry,
+            CatheterFlushEntry,
+            InfusionEntry,
+            MicroClaveEntry,
+            PICCAppliedDrugEntry,
+            StatlockEntry
+        }
+
         public enum HealthInstitution
         {
             None,
@@ -47,5 +58,6 @@ namespace BFH_USZ_PICC.Models
         public HealthInstitution Institution { get; set; }
         public HealthPerson Person { get; set; }
 
+        public static AllPossibleJournalEntries allEntries { get; }
     }
 }
