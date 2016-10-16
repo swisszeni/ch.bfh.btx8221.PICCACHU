@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="fr" original="BFH_USZ_PICC/RESX/APPRESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="BFH_USZ_PICC/RESX/APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="EmergencyFlyoutAssistanceButtonText" translate="yes" xml:space="preserve">
+          <source>Solutions</source>
+          <target state="new">Solutions</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFlyoutTelemedizinButtonText" translate="yes" xml:space="preserve">
+          <source>Call USZ Hotline</source>
+          <target state="new">Call USZ Hotline</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
+          <source>If you have any questions regarding your PICC, don't hesitate to contact the USZ hotline.</source>
+          <target state="new">If you have any questions regarding your PICC, don't hesitate to contact the USZ hotline.</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
+          <source>Approach in case of malfunction</source>
+          <target state="new">Approach in case of malfunction</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFyloutAssistanceDescriptionText" translate="yes" xml:space="preserve">
+          <source>There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</source>
+          <target state="new">There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
