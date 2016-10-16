@@ -12,6 +12,9 @@ using Android.Widget;
 using System.Globalization;
 using System.Threading;
 using BFH_USZ_PICC.Utilitys;
+using Xamarin.Forms;
+
+[assembly: Dependency(typeof(BFH_USZ_PICC.Droid.DependencyServices.Localize))]
 
 namespace BFH_USZ_PICC.Droid.DependencyServices
 {

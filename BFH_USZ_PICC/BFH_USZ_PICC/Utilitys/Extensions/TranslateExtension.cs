@@ -12,7 +12,7 @@ namespace BFH_USZ_PICC.Utilitys.Extensions
     public class TranslateExtension : IMarkupExtension
     {
         readonly CultureInfo ci;
-        const string ResourceId = "UsingResxLocalization.Resx.AppResources";
+        const string ResourceId = "BFH_USZ_PICC.Resx.AppResources";
 
         public TranslateExtension()
         {
