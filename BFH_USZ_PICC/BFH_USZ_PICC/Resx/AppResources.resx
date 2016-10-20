@@ -121,10 +121,40 @@
     <value>Enter PICC manually</value>
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
-    <value>Please enter a PICCname</value>
+    <value>Please enter a PICC name</value>
   </data>
   <data name="AddPICCPageScanButtonText" xml:space="preserve">
     <value>Scan barcode</value>
+  </data>
+  <data name="AddPICCPageTitleText" xml:space="preserve">
+    <value>Add PICC</value>
+  </data>
+  <data name="BasePageTitleText" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="DisorderDetailPageActionLabelText" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="DisorderDetailPageCallUSZButtonText" xml:space="preserve">
+    <value>Call USZ telemedicine</value>
+  </data>
+  <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="DisorderDetailPageSymptomLabelText" xml:space="preserve">
+    <value>Symptom</value>
+  </data>
+  <data name="DisorderDetailPageTitleText" xml:space="preserve">
+    <value>Disorder</value>
+  </data>
+  <data name="DisorderPageIssueApproachDescriptionText" xml:space="preserve">
+    <value>Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues.</value>
+  </data>
+  <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
+    <value>Issue procedure steps</value>
+  </data>
+  <data name="DisorderPageTitleText" xml:space="preserve">
+    <value>Disorders</value>
   </data>
   <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
     <value>Solutions</value>
@@ -140,5 +170,65 @@
   </data>
   <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
     <value>There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</value>
+  </data>
+  <data name="GlossaryPageTitleText" xml:space="preserve">
+    <value>Glossary</value>
+  </data>
+  <data name="KnowledgeEntriesTitleText" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="MyPICCPageAddNewPICCButtonText" xml:space="preserve">
+    <value>Add a new PICC</value>
+  </data>
+  <data name="MyPICCPageCurrentPICCText" xml:space="preserve">
+    <value>Current PICC</value>
+  </data>
+  <data name="MyPICCPageNoPiccEnteredText" xml:space="preserve">
+    <value>It seems you have not entered a PICC yet.</value>
+  </data>
+  <data name="MyPICCPagePreviousPICCText" xml:space="preserve">
+    <value>Previous PICC</value>
+  </data>
+  <data name="MyPICCPageTitleText" xml:space="preserve">
+    <value>My PICC</value>
+  </data>
+  <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="PICCDetailPageEditButtonText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PICCDetailPageInsertCityPlaceholderText" xml:space="preserve">
+    <value>Please enter institution</value>
+  </data>
+  <data name="PICCDetailPagePICCBodysideText" xml:space="preserve">
+    <value>PICC body side:</value>
+  </data>
+  <data name="PICCDetailPagePICCFrenchSizeText" xml:space="preserve">
+    <value>Size in french:</value>
+  </data>
+  <data name="PICCDetailPagePICCInsertedDateText" xml:space="preserve">
+    <value>Inserted on:</value>
+  </data>
+  <data name="PICCDetailPagePICCInsertedPlaceText" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="PICCDetailPagePICCModelNameText" xml:space="preserve">
+    <value>Model name:</value>
+  </data>
+  <data name="PICCDetailPagePICCPositionText" xml:space="preserve">
+    <value>PICC position:</value>
+  </data>
+  <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
+    <value>Set PICC inactive</value>
+  </data>
+  <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PICCDetailPageTitleText" xml:space="preserve">
+    <value>PICC</value>
+  </data>
+  <data name="PicturePageTitleText" xml:space="preserve">
+    <value>Picture detail</value>
   </data>
 </root>

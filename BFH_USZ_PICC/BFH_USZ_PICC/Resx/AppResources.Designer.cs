@@ -71,7 +71,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a PICCname ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a PICC name ähnelt.
         /// </summary>
         public static string AddPICCPagePICCEntryPlaceholderText {
             get {
@@ -85,6 +85,96 @@ namespace BFH_USZ_PICC.Resx {
         public static string AddPICCPageScanButtonText {
             get {
                 return ResourceManager.GetString("AddPICCPageScanButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add PICC ähnelt.
+        /// </summary>
+        public static string AddPICCPageTitleText {
+            get {
+                return ResourceManager.GetString("AddPICCPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Page ähnelt.
+        /// </summary>
+        public static string BasePageTitleText {
+            get {
+                return ResourceManager.GetString("BasePageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Action ähnelt.
+        /// </summary>
+        public static string DisorderDetailPageActionLabelText {
+            get {
+                return ResourceManager.GetString("DisorderDetailPageActionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Call USZ telemedicine ähnelt.
+        /// </summary>
+        public static string DisorderDetailPageCallUSZButtonText {
+            get {
+                return ResourceManager.GetString("DisorderDetailPageCallUSZButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Reason ähnelt.
+        /// </summary>
+        public static string DisorderDetailPageReasonLabelText {
+            get {
+                return ResourceManager.GetString("DisorderDetailPageReasonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Symptom ähnelt.
+        /// </summary>
+        public static string DisorderDetailPageSymptomLabelText {
+            get {
+                return ResourceManager.GetString("DisorderDetailPageSymptomLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Disorder ähnelt.
+        /// </summary>
+        public static string DisorderDetailPageTitleText {
+            get {
+                return ResourceManager.GetString("DisorderDetailPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues. ähnelt.
+        /// </summary>
+        public static string DisorderPageIssueApproachDescriptionText {
+            get {
+                return ResourceManager.GetString("DisorderPageIssueApproachDescriptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Issue procedure steps ähnelt.
+        /// </summary>
+        public static string DisorderPageIssueApproachTitleText {
+            get {
+                return ResourceManager.GetString("DisorderPageIssueApproachTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Disorders ähnelt.
+        /// </summary>
+        public static string DisorderPageTitleText {
+            get {
+                return ResourceManager.GetString("DisorderPageTitleText", resourceCulture);
             }
         }
         
@@ -130,6 +220,186 @@ namespace BFH_USZ_PICC.Resx {
         public static string EmergencyFyloutAssistanceDescriptionText {
             get {
                 return ResourceManager.GetString("EmergencyFyloutAssistanceDescriptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Glossary ähnelt.
+        /// </summary>
+        public static string GlossaryPageTitleText {
+            get {
+                return ResourceManager.GetString("GlossaryPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die FAQ ähnelt.
+        /// </summary>
+        public static string KnowledgeEntriesTitleText {
+            get {
+                return ResourceManager.GetString("KnowledgeEntriesTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add a new PICC ähnelt.
+        /// </summary>
+        public static string MyPICCPageAddNewPICCButtonText {
+            get {
+                return ResourceManager.GetString("MyPICCPageAddNewPICCButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Current PICC ähnelt.
+        /// </summary>
+        public static string MyPICCPageCurrentPICCText {
+            get {
+                return ResourceManager.GetString("MyPICCPageCurrentPICCText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It seems you have not entered a PICC yet. ähnelt.
+        /// </summary>
+        public static string MyPICCPageNoPiccEnteredText {
+            get {
+                return ResourceManager.GetString("MyPICCPageNoPiccEnteredText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Previous PICC ähnelt.
+        /// </summary>
+        public static string MyPICCPagePreviousPICCText {
+            get {
+                return ResourceManager.GetString("MyPICCPagePreviousPICCText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die My PICC ähnelt.
+        /// </summary>
+        public static string MyPICCPageTitleText {
+            get {
+                return ResourceManager.GetString("MyPICCPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
+        /// </summary>
+        public static string PICCDetailPageCancelButtonText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageCancelButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Edit ähnelt.
+        /// </summary>
+        public static string PICCDetailPageEditButtonText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageEditButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter institution ähnelt.
+        /// </summary>
+        public static string PICCDetailPageInsertCityPlaceholderText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageInsertCityPlaceholderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die PICC body side: ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCBodysideText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCBodysideText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Size in french: ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCFrenchSizeText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCFrenchSizeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Inserted on: ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCInsertedDateText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCInsertedDateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Location: ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCInsertedPlaceText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCInsertedPlaceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Model name: ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCModelNameText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCModelNameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die PICC position: ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCPositionText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCPositionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Set PICC inactive ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePICCRemoveButtonText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCRemoveButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
+        /// </summary>
+        public static string PICCDetailPageSaveButtonText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageSaveButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die PICC ähnelt.
+        /// </summary>
+        public static string PICCDetailPageTitleText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Picture detail ähnelt.
+        /// </summary>
+        public static string PicturePageTitleText {
+            get {
+                return ResourceManager.GetString("PicturePageTitleText", resourceCulture);
             }
         }
     }

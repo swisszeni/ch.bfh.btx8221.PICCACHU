@@ -16,7 +16,7 @@ namespace BFH_USZ_PICC.Views
         public MyPICCPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            Title = "Meine PICC";
+           // Title = "Meine PICC";
         }
 
 
