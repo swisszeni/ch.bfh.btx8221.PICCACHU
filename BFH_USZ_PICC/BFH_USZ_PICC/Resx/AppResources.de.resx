@@ -27,4 +27,13 @@
   <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
     <value>In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</value>
   </data>
+  <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
+    <value>Bitte PICC Name eingeben</value>
+  </data>
+  <data name="AddPICCPageScanButtonText" xml:space="preserve">
+    <value>Barcode scannen</value>
+  </data>
+  <data name="AddPICCPageAddPiccManualButtonText" xml:space="preserve">
+    <value>PICC manuell erfassen</value>
+  </data>
 </root>

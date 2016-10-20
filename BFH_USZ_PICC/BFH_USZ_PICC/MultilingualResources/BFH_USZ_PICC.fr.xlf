@@ -26,6 +26,18 @@
           <source>There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</source>
           <target state="new">There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</target>
         </trans-unit>
+        <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
+          <source>Please enter a PICCname</source>
+          <target state="new">Please enter a PICCname</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPageScanButtonText" translate="yes" xml:space="preserve">
+          <source>Scan barcode</source>
+          <target state="new">Scan barcode</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPageAddPiccManualButtonText" translate="yes" xml:space="preserve">
+          <source>Enter PICC manually</source>
+          <target state="new">Enter PICC manually</target>
+        </trans-unit>
       </group>
     </body>
   </file>
