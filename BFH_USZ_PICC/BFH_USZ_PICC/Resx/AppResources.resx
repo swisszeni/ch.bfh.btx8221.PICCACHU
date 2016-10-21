@@ -192,11 +192,17 @@
   <data name="MyPICCPageTitleText" xml:space="preserve">
     <value>My PICC</value>
   </data>
+  <data name="PICCDetailPageAddNewPICCTitle" xml:space="preserve">
+    <value>Add PICC</value>
+  </data>
   <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="PICCDetailPageEditButtonText" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="PICCDetailPageEditPICCTitle" xml:space="preserve">
+    <value>Edit PICC</value>
   </data>
   <data name="PICCDetailPageInsertCityPlaceholderText" xml:space="preserve">
     <value>Please enter an institution</value>
@@ -221,6 +227,27 @@
   </data>
   <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
     <value>Set PICC inactive</value>
+  </data>
+  <data name="PICCDetailPagePickerCountryAbroadText" xml:space="preserve">
+    <value>Abroad</value>
+  </data>
+  <data name="PICCDetailPagePickerCountrySwitzerlandText" xml:space="preserve">
+    <value>Switzerland</value>
+  </data>
+  <data name="PICCDetailPagePickerNotDefinedText" xml:space="preserve">
+    <value>Not defined</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionAboveElbowText" xml:space="preserve">
+    <value>Above elbow</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionBelowElbowText" xml:space="preserve">
+    <value>Below elbow</value>
+  </data>
+  <data name="PICCDetailPagePickerSideLeftText" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="PICCDetailPagePickerSideRightText" xml:space="preserve">
+    <value>Right</value>
   </data>
   <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
     <value>Save</value>

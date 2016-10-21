@@ -126,4 +126,31 @@
   <data name="PicturePageTitleText" xml:space="preserve">
     <value>Bild Detail</value>
   </data>
+  <data name="PICCDetailPageAddNewPICCTitle" xml:space="preserve">
+    <value>PICC erfassen</value>
+  </data>
+  <data name="PICCDetailPageEditPICCTitle" xml:space="preserve">
+    <value>PICC bearbeiten</value>
+  </data>
+  <data name="PICCDetailPagePickerNotDefinedText" xml:space="preserve">
+    <value>Nicht definiert</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionBelowElbowText" xml:space="preserve">
+    <value>Unterhalb Ellbogen</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionAboveElbowText" xml:space="preserve">
+    <value>Oberhalb Ellbogen</value>
+  </data>
+  <data name="PICCDetailPagePickerSideLeftText" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="PICCDetailPagePickerSideRightText" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="PICCDetailPagePickerCountryAbroadText" xml:space="preserve">
+    <value>Ausland</value>
+  </data>
+  <data name="PICCDetailPagePickerCountrySwitzerlandText" xml:space="preserve">
+    <value>Schweiz</value>
+  </data>
 </root>

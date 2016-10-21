@@ -287,6 +287,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add PICC ähnelt.
+        /// </summary>
+        public static string PICCDetailPageAddNewPICCTitle {
+            get {
+                return ResourceManager.GetString("PICCDetailPageAddNewPICCTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
         /// </summary>
         public static string PICCDetailPageCancelButtonText {
@@ -301,6 +310,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string PICCDetailPageEditButtonText {
             get {
                 return ResourceManager.GetString("PICCDetailPageEditButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Edit PICC ähnelt.
+        /// </summary>
+        public static string PICCDetailPageEditPICCTitle {
+            get {
+                return ResourceManager.GetString("PICCDetailPageEditPICCTitle", resourceCulture);
             }
         }
         
@@ -373,6 +391,69 @@ namespace BFH_USZ_PICC.Resx {
         public static string PICCDetailPagePICCRemoveButtonText {
             get {
                 return ResourceManager.GetString("PICCDetailPagePICCRemoveButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Abroad ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerCountryAbroadText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerCountryAbroadText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Switzerland ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerCountrySwitzerlandText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerCountrySwitzerlandText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Not defined ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerNotDefinedText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerNotDefinedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Above elbow ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerPositionAboveElbowText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerPositionAboveElbowText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Below elbow ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerPositionBelowElbowText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerPositionBelowElbowText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Left ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerSideLeftText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerSideLeftText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Right ähnelt.
+        /// </summary>
+        public static string PICCDetailPagePickerSideRightText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePickerSideRightText", resourceCulture);
             }
         }
         

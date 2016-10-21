@@ -5,7 +5,7 @@
              xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate PICCDetailPageTitleText}">
+             >
   <Grid.Resources>
     <ResourceDictionary>
       <utilitys:PICCInsertPositionToIndexConverter x:Key="PICCInsertPositionToIndexConverter" />
@@ -26,29 +26,12 @@
           <DatePicker.Format>d</DatePicker.Format>
         </DatePicker>
         <Label Text="{i18n:Translate PICCDetailPagePICCInsertedPlaceText}" HorizontalOptions="Fill" WidthRequest="80" />
-        <Picker x:Name="Country" SelectedIndexChanged="CountrySelected" SelectedIndex="{Binding InsertCountry, Converter={StaticResource PICCInsertCountryToIndexConverter}}">
-          <Picker.Items>
-            <x:String>Nicht definiert</x:String>
-            <x:String>Schweiz</x:String>
-            <x:String>Ausland</x:String>
-          </Picker.Items>
-        </Picker>
+        <Picker x:Name="CountryPicker" SelectedIndexChanged="CountrySelected" SelectedIndex="{Binding InsertCountry, Converter={StaticResource PICCInsertCountryToIndexConverter}}"/>          
         <Entry x:Name="InsertCity" Text="{Binding City}" Placeholder="{i18n:Translate PICCDetailPageInsertCityPlaceholderText}"/>
         <Label Text="{i18n:Translate PICCDetailPagePICCBodysideText}"/>
-        <Picker x:Name="PiccSide" SelectedIndex="{Binding PiccSide, Converter={StaticResource PICCInsertSideToIndexConverter}}">
-          <Picker.Items>
-            <x:String>Nicht definiert</x:String> 
-            <x:String>Links</x:String>
-            <x:String>Rechts</x:String>
-          </Picker.Items>
-        </Picker>
+        <Picker x:Name="PiccSidePicker" SelectedIndex="{Binding PiccSide, Converter={StaticResource PICCInsertSideToIndexConverter}}"/>        
         <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}"/>
-        <Picker x:Name="PiccPosition" SelectedIndex="{Binding PiccPosition, Converter={StaticResource PICCInsertPositionToIndexConverter}}">
-          <Picker.Items>
-            <x:String>Nicht definiert</x:String>
-            <x:String>Unterhalb Ellbogen</x:String>
-            <x:String>Oberhalb Ellbogen</x:String>
-          </Picker.Items>
+        <Picker x:Name="PiccPositionPicker" SelectedIndex="{Binding PiccPosition, Converter={StaticResource PICCInsertPositionToIndexConverter}}">        
         </Picker>
         <StackLayout x:Name="RemovalLayout" Orientation="Vertical">
           <Button x:Name="PiccRemoveButton" Text="{i18n:Translate PICCDetailPagePICCRemoveButtonText}" Clicked="PiccRemoveButtonClicked"/>
