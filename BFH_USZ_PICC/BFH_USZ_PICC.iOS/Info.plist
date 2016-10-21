@@ -52,5 +52,13 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
 	<string></string>
+  <key>CFBundleLocalizations</key>
+  <array>
+    <string>de</string>
+    <string>it</string>
+    <string>fr</string>
+  </array>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>en</string>
 </dict>
 </plist>

@@ -23,8 +23,7 @@ namespace BFH_USZ_PICC.Views
         public AddPICCPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            Title = "PICC hinzufügen";
-
+           
             if (PICCViewModelInstance != null && PICCViewModelInstance.PICCModels.Count > 0)
             {
                 BindingContext = PICCViewModelInstance;

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="EmergencyFlyoutTelemedizinButtonText" xml:space="preserve">
+    <value>Appelez la ligne d’assistance USZ</value>
+  </data>
+  <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
+    <value>Si vous avez des questions concernant votre PICC, n’hésitez pas à contacter la hotline USZ.</value>
+  </data>
+  <data name="EmergencyFlyoutTitleText" xml:space="preserve">
+    <value>Approche en cas de dysfonctionnement</value>
+  </data>
+  <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
+    <value>Il n’y a pas de complications avec votre PIC à prévoir. Pour votre sécurité, nous aimerions toujours vous informer sur les éventuels problèmes.</value>
+  </data>
+  <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
+    <value>Veuillez entrer un PICC</value>
+  </data>
+  <data name="AddPICCPageScanButtonText" xml:space="preserve">
+    <value>Scanner code-barres</value>
+  </data>
+  <data name="AddPICCPageAddPiccManualButtonText" xml:space="preserve">
+    <value>Entrez manuellement les PICC</value>
+  </data>
+  <data name="AddPICCPageTitleText" xml:space="preserve">
+    <value>Ajouter PICC</value>
+  </data>
+  <data name="BasePageTitleText" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="DisorderDetailPageTitleText" xml:space="preserve">
+    <value>Trouble</value>
+  </data>
+  <data name="DisorderDetailPageSymptomLabelText" xml:space="preserve">
+    <value>Symptôme</value>
+  </data>
+  <data name="DisorderDetailPageActionLabelText" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
+    <value>Raison</value>
+  </data>
+  <data name="DisorderDetailPageCallUSZButtonText" xml:space="preserve">
+    <value>Appel USZ télémédecine</value>
+  </data>
+  <data name="DisorderPageTitleText" xml:space="preserve">
+    <value>Troubles</value>
+  </data>
+  <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
+    <value>Délivrer les étapes de la procédure</value>
+  </data>
+  <data name="DisorderPageIssueApproachDescriptionText" xml:space="preserve">
+    <value>Habituellement il n’y a pas de complications avec votre PIC attendu. Pour des raisons de sécurité, nous aimerions vous montrer des signes possibles de problèmes.</value>
+  </data>
+  <data name="GlossaryPageTitleText" xml:space="preserve">
+    <value>Glossaire</value>
+  </data>
+  <data name="KnowledgeEntriesTitleText" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="MyPICCPageTitleText" xml:space="preserve">
+    <value>Mon PICC</value>
+  </data>
+  <data name="MyPICCPageAddNewPICCButtonText" xml:space="preserve">
+    <value>Ajouter un nouveau PIC</value>
+  </data>
+  <data name="MyPICCPageCurrentPICCText" xml:space="preserve">
+    <value>PICC actuel</value>
+  </data>
+  <data name="MyPICCPageNoPiccEnteredText" xml:space="preserve">
+    <value>Il semble que vous n’avez pas encore entré un PICC.</value>
+  </data>
+  <data name="MyPICCPagePreviousPICCText" xml:space="preserve">
+    <value>PICC précédent</value>
+  </data>
+  <data name="PICCDetailPageTitleText" xml:space="preserve">
+    <value>PICC</value>
+  </data>
+  <data name="PICCDetailPagePICCModelNameText" xml:space="preserve">
+    <value>Nom du modèle :</value>
+  </data>
+  <data name="PICCDetailPagePICCFrenchSizeText" xml:space="preserve">
+    <value>Taille en français :</value>
+  </data>
+  <data name="PICCDetailPagePICCInsertedDateText" xml:space="preserve">
+    <value>Inséré sur :</value>
+  </data>
+  <data name="PICCDetailPagePICCInsertedPlaceText" xml:space="preserve">
+    <value>Zone géographique :</value>
+  </data>
+  <data name="PICCDetailPageInsertCityPlaceholderText" xml:space="preserve">
+    <value>Veuillez entrer une institution</value>
+  </data>
+  <data name="PICCDetailPagePICCBodysideText" xml:space="preserve">
+    <value>Côté du corps PICC :</value>
+  </data>
+  <data name="PICCDetailPagePICCPositionText" xml:space="preserve">
+    <value>Position du PICC :</value>
+  </data>
+  <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
+    <value>PICC Set inactif</value>
+  </data>
+  <data name="PICCDetailPageEditButtonText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="PicturePageTitleText" xml:space="preserve">
+    <value>Détail de la photo</value>
+  </data>
+  <data name="PICCDetailPageAddNewPICCTitle" xml:space="preserve">
+    <value>Ajouter PICC</value>
+  </data>
+  <data name="PICCDetailPageEditPICCTitle" xml:space="preserve">
+    <value>Modifier PICC</value>
+  </data>
+  <data name="PICCDetailPagePickerNotDefinedText" xml:space="preserve">
+    <value>Non défini</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionBelowElbowText" xml:space="preserve">
+    <value>Sous le coude</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionAboveElbowText" xml:space="preserve">
+    <value>Au-dessus de coude</value>
+  </data>
+</root>

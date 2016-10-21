@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="de" original="BFH_USZ_PICC/RESX/APPRESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="BFH_USZ_PICC/RESX/APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="EmergencyFlyoutAssistanceButtonText" translate="yes" xml:space="preserve">
+          <source>Solutions</source>
+          <target state="translated">Lösungsschritte</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFlyoutTelemedizinButtonText" translate="yes" xml:space="preserve">
+          <source>Call USZ Hotline</source>
+          <target state="translated">USZ Telemedizin kontaktieren</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
+          <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
+          <target state="translated">Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
+          <source>Approach in case of malfunction</source>
+          <target state="translated">Vorgehen bei Problemen</target>
+        </trans-unit>
+        <trans-unit id="EmergencyFyloutAssistanceDescriptionText" translate="yes" xml:space="preserve">
+          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
+          <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
+          <source>Please enter a PICC</source>
+          <target state="translated">Bitte PICC Name eingeben</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPageScanButtonText" translate="yes" xml:space="preserve">
+          <source>Scan barcode</source>
+          <target state="translated">Barcode scannen</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPageAddPiccManualButtonText" translate="yes" xml:space="preserve">
+          <source>Enter PICC manually</source>
+          <target state="translated">PICC manuell erfassen</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPageTitleText" translate="yes" xml:space="preserve">
+          <source>Add PICC</source>
+          <target state="translated">PICC hinzufügen</target>
+        </trans-unit>
+        <trans-unit id="BasePageTitleText" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <target state="translated">Seite</target>
+        </trans-unit>
+        <trans-unit id="DisorderDetailPageTitleText" translate="yes" xml:space="preserve">
+          <source>Disorder</source>
+          <target state="translated">Störung</target>
+        </trans-unit>
+        <trans-unit id="DisorderDetailPageSymptomLabelText" translate="yes" xml:space="preserve">
+          <source>Symptom</source>
+          <target state="translated">Symptom</target>
+        </trans-unit>
+        <trans-unit id="DisorderDetailPageActionLabelText" translate="yes" xml:space="preserve">
+          <source>Action</source>
+          <target state="translated">Massnahme</target>
+        </trans-unit>
+        <trans-unit id="DisorderDetailPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Reason</source>
+          <target state="translated">Ursache</target>
+        </trans-unit>
+        <trans-unit id="DisorderDetailPageCallUSZButtonText" translate="yes" xml:space="preserve">
+          <source>Call USZ telemedicine</source>
+          <target state="translated">USZ Telemedizin kontaktieren</target>
+        </trans-unit>
+        <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
+          <source>Disorders</source>
+          <target state="translated">Störungen</target>
+        </trans-unit>
+        <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
+          <source>Issue procedure steps</source>
+          <target state="translated">Vorgehen bei Problemen</target>
+        </trans-unit>
+        <trans-unit id="DisorderPageIssueApproachDescriptionText" translate="yes" xml:space="preserve">
+          <source>Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues.</source>
+          <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
+        </trans-unit>
+        <trans-unit id="GlossaryPageTitleText" translate="yes" xml:space="preserve">
+          <source>Glossary</source>
+          <target state="translated">Glossar</target>
+        </trans-unit>
+        <trans-unit id="KnowledgeEntriesTitleText" translate="yes" xml:space="preserve">
+          <source>FAQ</source>
+          <target state="translated">Wissenswertes</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageTitleText" translate="yes" xml:space="preserve">
+          <source>My PICC</source>
+          <target state="translated">Meine PICC</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageAddNewPICCButtonText" translate="yes" xml:space="preserve">
+          <source>Add a new PICC</source>
+          <target state="translated">Neuer PICC erfassen</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageCurrentPICCText" translate="yes" xml:space="preserve">
+          <source>Current PICC</source>
+          <target state="translated">Aktueller PICC</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageNoPiccEnteredText" translate="yes" xml:space="preserve">
+          <source>It seems that you have not yet entered a PICC.</source>
+          <target state="translated">Sie scheinen momentan noch keinen PICC erfasst zu haben.</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPagePreviousPICCText" translate="yes" xml:space="preserve">
+          <source>Previous PICC</source>
+          <target state="translated">Frühere PICC</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageTitleText" translate="yes" xml:space="preserve">
+          <source>PICC</source>
+          <target state="translated">PICC</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCModelNameText" translate="yes" xml:space="preserve">
+          <source>Model name:</source>
+          <target state="translated">Modellbezeichnung:</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCFrenchSizeText" translate="yes" xml:space="preserve">
+          <source>Size in french:</source>
+          <target state="translated">Grösse in French:</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCInsertedDateText" translate="yes" xml:space="preserve">
+          <source>Inserted on:</source>
+          <target state="translated">Einlagedatum:</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCInsertedPlaceText" translate="yes" xml:space="preserve">
+          <source>Location:</source>
+          <target state="translated">Einlageort:</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageInsertCityPlaceholderText" translate="yes" xml:space="preserve">
+          <source>Please enter an institution</source>
+          <target state="translated">Bitte Institution eingeben</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCBodysideText" translate="yes" xml:space="preserve">
+          <source>PICC body side:</source>
+          <target state="translated">Körperseite PICC:</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCPositionText" translate="yes" xml:space="preserve">
+          <source>PICC position:</source>
+          <target state="translated">Position PICC:</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCRemoveButtonText" translate="yes" xml:space="preserve">
+          <source>Set PICC inactive</source>
+          <target state="translated">PICC inaktiv setzten</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageEditButtonText" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target state="translated">Bearbeiten</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageCancelButtonText" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="translated">Abbrechen</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageSaveButtonText" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="translated">Speichern</target>
+        </trans-unit>
+        <trans-unit id="PicturePageTitleText" translate="yes" xml:space="preserve">
+          <source>Picture detail</source>
+          <target state="translated">Bild Detail</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageAddNewPICCTitle" translate="yes" xml:space="preserve">
+          <source>Add PICC</source>
+          <target state="translated">PICC erfassen</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageEditPICCTitle" translate="yes" xml:space="preserve">
+          <source>Edit PICC</source>
+          <target state="translated">PICC bearbeiten</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerNotDefinedText" translate="yes" xml:space="preserve">
+          <source>Not defined</source>
+          <target state="translated">Nicht definiert</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerPositionBelowElbowText" translate="yes" xml:space="preserve">
+          <source>Below elbow</source>
+          <target state="translated">Unterhalb Ellbogen</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerPositionAboveElbowText" translate="yes" xml:space="preserve">
+          <source>Above elbow</source>
+          <target state="translated">Oberhalb Ellbogen</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerSideLeftText" translate="yes" xml:space="preserve">
+          <source>Left</source>
+          <target state="translated">Links</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerSideRightText" translate="yes" xml:space="preserve">
+          <source>Right</source>
+          <target state="translated">Rechts</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerCountryAbroadText" translate="yes" xml:space="preserve">
+          <source>Abroad</source>
+          <target state="translated">Ausland</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePickerCountrySwitzerlandText" translate="yes" xml:space="preserve">
+          <source>Switzerland</source>
+          <target state="translated">Schweiz</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

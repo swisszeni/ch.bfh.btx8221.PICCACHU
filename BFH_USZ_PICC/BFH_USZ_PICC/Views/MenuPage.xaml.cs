@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,10 @@ namespace BFH_USZ_PICC.Views
 
             ListViewMenu.ItemsSource = menuItems = new List<NavigationMenuItem>
                 {
-                    new NavigationMenuItem { Title = "PICC", MenuItemKey = MenuItemKey.PICC, Icon ="icon.png" },
-                    new NavigationMenuItem { Title = "Glossar", MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
-                    new NavigationMenuItem { Title = "Wissenswertes", MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" },
-                    new NavigationMenuItem { Title = "Störungen", MenuItemKey = MenuItemKey.Disorder, Icon = "icon.png" }
+                    new NavigationMenuItem { Title = AppResources.MyPICCPageTitleText, MenuItemKey = MenuItemKey.PICC, Icon ="icon.png" },
+                    new NavigationMenuItem { Title = AppResources.GlossaryPageTitleText, MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
+                    new NavigationMenuItem { Title = AppResources.KnowledgeEntriesTitleText, MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" },
+                    new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder, Icon = "icon.png" }
                 };
 
             ListViewMenu.SelectedItem = menuItems[0];
