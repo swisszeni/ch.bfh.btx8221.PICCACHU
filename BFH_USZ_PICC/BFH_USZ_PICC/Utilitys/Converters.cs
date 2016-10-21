@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static BFH_USZ_PICC.Models.JournalEntry;
 using static BFH_USZ_PICC.Models.PICC;
 
 namespace BFH_USZ_PICC.Utilitys
@@ -72,6 +73,50 @@ namespace BFH_USZ_PICC.Utilitys
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (PICCInsertCountry)value;
+        }
+    }
+
+    public class AllJournalEntriesConverter
+    {
+        public class EntryAndImage
+        {
+            public string Entry { get; set; }
+            public string Image { get; set; }
+
+            public EntryAndImage(string entry, string image)
+            {
+                Entry = entry;
+                Image = image;
+            }
+        }
+        public EntryAndImage Convert(object value)
+        {   
+        
+            AllPossibleJournalEntries entry = (AllPossibleJournalEntries)value;
+            switch (entry)
+            {
+                case AllPossibleJournalEntries.BandagesChangingEntry:
+                    return new EntryAndImage("Verbandswechsel", "icon.png");
+                case AllPossibleJournalEntries.BloodWithdrawalEntry:
+                    return new EntryAndImage("Blutentnahme", "icon.png");
+                case AllPossibleJournalEntries.CatheterFlushEntry:
+                    return new EntryAndImage("Spülen des Katheters", "icon.png");
+                case AllPossibleJournalEntries.InfusionEntry:
+                    return new EntryAndImage("Verabreichte Infusion", "icon.png");
+                case AllPossibleJournalEntries.MicroClaveEntry:
+                    return new EntryAndImage("Wechsel Microclave", "icon.png");
+                case AllPossibleJournalEntries.PICCAppliedDrugEntry:
+                    return new EntryAndImage("Über den PICC verabreichte Medikamente", "icon.png");
+                case AllPossibleJournalEntries.StatlockEntry:
+                    return new EntryAndImage("Wechsel Statlock", "icon.png");
+            }
+
+            return new EntryAndImage("", "");
+        }
+
+        public object ConvertBack(object value)
+        {
+            return (AllPossibleJournalEntries)value;
         }
     }
 }

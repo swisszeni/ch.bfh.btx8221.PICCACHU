@@ -79,11 +79,11 @@ namespace BFH_USZ_PICC.Views
 
                         //Checks if a caption is set. If yes, a new label for the caption will be generated
                         KnowledgeEntryImageElement imgElem = (KnowledgeEntryImageElement)entry;
-                        if (imgElem.caption != null)
+                        if (imgElem.Caption != null)
                         {
                             knowledgeEntryView.Children.Insert(index, (new Label
                             {
-                                Text = imgElem.caption,
+                                Text = imgElem.Caption,
                                 HorizontalTextAlignment = TextAlignment.Center
 
                             }));
@@ -126,7 +126,7 @@ namespace BFH_USZ_PICC.Views
         //displays a glossary entry. The word is the header, the explanation the body
         private void showGlossaryEntry(GlossaryEntry entry)
         {
-            this.DisplayAlert(entry.word, entry.explanation, "Ok");
+            this.DisplayAlert(entry.Word, entry.Explanation, "Ok");
         }
     }
 }

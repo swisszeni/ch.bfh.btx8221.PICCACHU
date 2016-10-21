@@ -1,5 +1,4 @@
-﻿using BFH_USZ_PICC.Interfaces;
-using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,13 +22,20 @@ namespace BFH_USZ_PICC.Views
         public AddPICCPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-           
+
             if (PICCViewModelInstance != null && PICCViewModelInstance.PICCModels.Count > 0)
             {
                 BindingContext = PICCViewModelInstance;
             }
-        }
 
+            //FIXME
+            //Temporary fix for Search Bar Bug in Android 7 (Nougat) --> Without setting the height, the search bar does not appear (for all other Android, iOS or UWP versions, it works without this workaround...)
+            //https://forums.xamarin.com/discussion/79446/is-there-support-for-searchbar-on-nougat-7-0
+            if (Android.OS.Build.VERSION.SdkInt > Android.OS.BuildVersionCodes.M)
+            {
+                PICCEntry.HeightRequest = 50;
+            }
+        }
 
         /// <summary>
         /// Gets the input string from the SearchBar and checks if a PICC exists with the given information.
@@ -113,14 +119,15 @@ namespace BFH_USZ_PICC.Views
 
             //Disable the FlashButton
             scanPage.DefaultOverlayShowFlashButton = false;
-            //If the scaner has a result: stop scanning, close the modalpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
+
+            //If the scaner has a result: stop scanning, close the lpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
             scanPage.OnScanResult += (result) =>
             {
                 scanPage.IsScanning = false;
 
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    Navigation.PopModalAsync();
+                    Navigation.PopAsync();
                     if (result != null)
                     {
                         searchForAPiccModel(result.Text);
@@ -129,7 +136,7 @@ namespace BFH_USZ_PICC.Views
             };
 
             //Opens the scanPage with the parameters set above
-            await Navigation.PushModalAsync(scanPage);
+            await Navigation.PushAsync(scanPage);
 
         }
 

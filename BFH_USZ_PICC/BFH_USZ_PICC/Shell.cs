@@ -51,6 +51,9 @@ namespace BFH_USZ_PICC
                     case MenuItemKey.Disorder:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(DisorderPage))));
                         break;
+                    case MenuItemKey.Journal:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(JournalOverviewPage))));
+                        break;
 
                 }
             }

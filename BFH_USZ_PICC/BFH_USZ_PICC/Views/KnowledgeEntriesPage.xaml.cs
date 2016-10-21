@@ -18,8 +18,7 @@ namespace BFH_USZ_PICC.Views
         public KnowledgeEntriesPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-           // Title = "Wissenswertes";
-
+           
             //Get all the knowledge entries and add them to  the ListView
             KnowledgeList.ItemsSource = KnowledgeEntries.getEntries();
 
