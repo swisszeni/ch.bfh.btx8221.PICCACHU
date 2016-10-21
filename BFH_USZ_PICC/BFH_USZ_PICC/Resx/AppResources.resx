@@ -132,11 +132,14 @@
   <data name="BasePageTitleText" xml:space="preserve">
     <value>Page</value>
   </data>
+  <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
+    <value>Call USZ telemedicine</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="DisorderDetailPageActionLabelText" xml:space="preserve">
     <value>Action</value>
-  </data>
-  <data name="DisorderDetailPageCallUSZButtonText" xml:space="preserve">
-    <value>Call USZ telemedicine</value>
   </data>
   <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
     <value>Reason</value>
@@ -147,20 +150,17 @@
   <data name="DisorderDetailPageTitleText" xml:space="preserve">
     <value>Disorder</value>
   </data>
-  <data name="DisorderPageIssueApproachDescriptionText" xml:space="preserve">
-    <value>Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues.</value>
-  </data>
   <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
     <value>Issue procedure steps</value>
   </data>
   <data name="DisorderPageTitleText" xml:space="preserve">
     <value>Disorders</value>
   </data>
+  <data name="EditButtonText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
     <value>Solutions</value>
-  </data>
-  <data name="EmergencyFlyoutTelemedizinButtonText" xml:space="preserve">
-    <value>Call USZ Hotline</value>
   </data>
   <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
     <value>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</value>
@@ -168,17 +168,11 @@
   <data name="EmergencyFlyoutTitleText" xml:space="preserve">
     <value>Approach in case of malfunction</value>
   </data>
-  <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
-    <value>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</value>
-  </data>
   <data name="GlossaryPageTitleText" xml:space="preserve">
     <value>Glossary</value>
   </data>
   <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
     <value>New entry</value>
-  </data>
-  <data name="JournalOverviewPageSelectANewNewEntryCancelButtonText" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
     <value>What kind of entry would you like to add?</value>
@@ -204,14 +198,11 @@
   <data name="MyPICCPageTitleText" xml:space="preserve">
     <value>My PICC</value>
   </data>
+  <data name="PICCAssistanceDescriptionText" xml:space="preserve">
+    <value>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</value>
+  </data>
   <data name="PICCDetailPageAddNewPICCTitle" xml:space="preserve">
     <value>Add PICC</value>
-  </data>
-  <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="PICCDetailPageEditButtonText" xml:space="preserve">
-    <value>Edit</value>
   </data>
   <data name="PICCDetailPageEditPICCTitle" xml:space="preserve">
     <value>Edit PICC</value>
@@ -261,13 +252,19 @@
   <data name="PICCDetailPagePickerSideRightText" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
-    <value>Save</value>
-  </data>
   <data name="PICCDetailPageTitleText" xml:space="preserve">
     <value>PICC</value>
   </data>
   <data name="PicturePageTitleText" xml:space="preserve">
     <value>Picture detail</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SettingsPageAppVersionText" xml:space="preserve">
+    <value>App version</value>
+  </data>
+  <data name="SettingsPageTitleText" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>

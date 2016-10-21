@@ -10,7 +10,7 @@
     <ListView.Header>
       <StackLayout>
         <Label Text="{i18n:Translate DisorderPageIssueApproachTitleText}" FontSize = "20"/>
-        <Label Text="{i18n:Translate DisorderPageIssueApproachDescriptionText}" />
+        <Label Text="{i18n:Translate PICCAssistanceDescriptionText}"/>
       </StackLayout>
     </ListView.Header>
     <ListView.Margin>

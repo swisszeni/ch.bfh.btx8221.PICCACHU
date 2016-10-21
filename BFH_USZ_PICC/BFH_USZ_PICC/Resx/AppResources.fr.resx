@@ -15,17 +15,11 @@
   <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
     <value>Solutions</value>
   </data>
-  <data name="EmergencyFlyoutTelemedizinButtonText" xml:space="preserve">
-    <value>Appelez la ligne d’assistance USZ</value>
-  </data>
   <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
     <value>Si vous avez des questions concernant votre PICC, n’hésitez pas à contacter la hotline USZ.</value>
   </data>
   <data name="EmergencyFlyoutTitleText" xml:space="preserve">
     <value>Approche en cas de dysfonctionnement</value>
-  </data>
-  <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
-    <value>Il n’y a pas de complications avec votre PIC à prévoir. Pour votre sécurité, nous aimerions toujours vous informer sur les éventuels problèmes.</value>
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Veuillez entrer un PICC</value>
@@ -54,17 +48,11 @@
   <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
     <value>Raison</value>
   </data>
-  <data name="DisorderDetailPageCallUSZButtonText" xml:space="preserve">
-    <value>Appel USZ télémédecine</value>
-  </data>
   <data name="DisorderPageTitleText" xml:space="preserve">
     <value>Troubles</value>
   </data>
   <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
     <value>Délivrer les étapes de la procédure</value>
-  </data>
-  <data name="DisorderPageIssueApproachDescriptionText" xml:space="preserve">
-    <value>Habituellement il n’y a pas de complications avec votre PIC attendu. Pour des raisons de sécurité, nous aimerions vous montrer des signes possibles de problèmes.</value>
   </data>
   <data name="GlossaryPageTitleText" xml:space="preserve">
     <value>Glossaire</value>
@@ -114,15 +102,6 @@
   <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
     <value>PICC Set inactif</value>
   </data>
-  <data name="PICCDetailPageEditButtonText" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
-    <value>Enregistrer</value>
-  </data>
   <data name="PicturePageTitleText" xml:space="preserve">
     <value>Détail de la photo</value>
   </data>
@@ -140,5 +119,47 @@
   </data>
   <data name="PICCDetailPagePickerPositionAboveElbowText" xml:space="preserve">
     <value>Au-dessus de coude</value>
+  </data>
+  <data name="PICCDetailPagePickerSideLeftText" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="PICCDetailPagePickerSideRightText" xml:space="preserve">
+    <value>Droit</value>
+  </data>
+  <data name="PICCDetailPagePickerCountryAbroadText" xml:space="preserve">
+    <value>À l’étranger</value>
+  </data>
+  <data name="PICCDetailPagePickerCountrySwitzerlandText" xml:space="preserve">
+    <value>Suisse</value>
+  </data>
+  <data name="JournalOverviewPageTitleText" xml:space="preserve">
+    <value>Journal</value>
+  </data>
+  <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
+    <value>Nouvelle entrée</value>
+  </data>
+  <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
+    <value>Quel type d’entrée souhaitez-vous ajouter ?</value>
+  </data>
+  <data name="SettingsPageAppVersionText" xml:space="preserve">
+    <value>Version de l’app</value>
+  </data>
+  <data name="SettingsPageTitleText" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditButtonText" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PICCAssistanceDescriptionText" xml:space="preserve">
+    <value>Il n’y a pas de complications avec votre PIC à prévoir. Pour votre sécurité, nous aimerions toujours vous informer sur les éventuels problèmes.</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
+    <value>Appel USZ télémédecine</value>
   </data>
 </root>

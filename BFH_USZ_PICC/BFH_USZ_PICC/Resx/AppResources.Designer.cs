@@ -107,20 +107,29 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Call USZ telemedicine ähnelt.
+        /// </summary>
+        public static string CallUSZTelemedizinButtonText {
+            get {
+                return ResourceManager.GetString("CallUSZTelemedizinButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
+        /// </summary>
+        public static string CancelButtonText {
+            get {
+                return ResourceManager.GetString("CancelButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Action ähnelt.
         /// </summary>
         public static string DisorderDetailPageActionLabelText {
             get {
                 return ResourceManager.GetString("DisorderDetailPageActionLabelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Call USZ telemedicine ähnelt.
-        /// </summary>
-        public static string DisorderDetailPageCallUSZButtonText {
-            get {
-                return ResourceManager.GetString("DisorderDetailPageCallUSZButtonText", resourceCulture);
             }
         }
         
@@ -152,15 +161,6 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues. ähnelt.
-        /// </summary>
-        public static string DisorderPageIssueApproachDescriptionText {
-            get {
-                return ResourceManager.GetString("DisorderPageIssueApproachDescriptionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Issue procedure steps ähnelt.
         /// </summary>
         public static string DisorderPageIssueApproachTitleText {
@@ -179,20 +179,20 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Edit ähnelt.
+        /// </summary>
+        public static string EditButtonText {
+            get {
+                return ResourceManager.GetString("EditButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Solutions ähnelt.
         /// </summary>
         public static string EmergencyFlyoutAssistanceButtonText {
             get {
                 return ResourceManager.GetString("EmergencyFlyoutAssistanceButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Call USZ Hotline ähnelt.
-        /// </summary>
-        public static string EmergencyFlyoutTelemedizinButtonText {
-            get {
-                return ResourceManager.GetString("EmergencyFlyoutTelemedizinButtonText", resourceCulture);
             }
         }
         
@@ -215,15 +215,6 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems. ähnelt.
-        /// </summary>
-        public static string EmergencyFyloutAssistanceDescriptionText {
-            get {
-                return ResourceManager.GetString("EmergencyFyloutAssistanceDescriptionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Glossary ähnelt.
         /// </summary>
         public static string GlossaryPageTitleText {
@@ -238,15 +229,6 @@ namespace BFH_USZ_PICC.Resx {
         public static string JournalOverviewPageNewEntryButtonText {
             get {
                 return ResourceManager.GetString("JournalOverviewPageNewEntryButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
-        /// </summary>
-        public static string JournalOverviewPageSelectANewNewEntryCancelButtonText {
-            get {
-                return ResourceManager.GetString("JournalOverviewPageSelectANewNewEntryCancelButtonText", resourceCulture);
             }
         }
         
@@ -323,29 +305,20 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems. ähnelt.
+        /// </summary>
+        public static string PICCAssistanceDescriptionText {
+            get {
+                return ResourceManager.GetString("PICCAssistanceDescriptionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Add PICC ähnelt.
         /// </summary>
         public static string PICCDetailPageAddNewPICCTitle {
             get {
                 return ResourceManager.GetString("PICCDetailPageAddNewPICCTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
-        /// </summary>
-        public static string PICCDetailPageCancelButtonText {
-            get {
-                return ResourceManager.GetString("PICCDetailPageCancelButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Edit ähnelt.
-        /// </summary>
-        public static string PICCDetailPageEditButtonText {
-            get {
-                return ResourceManager.GetString("PICCDetailPageEditButtonText", resourceCulture);
             }
         }
         
@@ -494,15 +467,6 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
-        /// </summary>
-        public static string PICCDetailPageSaveButtonText {
-            get {
-                return ResourceManager.GetString("PICCDetailPageSaveButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die PICC ähnelt.
         /// </summary>
         public static string PICCDetailPageTitleText {
@@ -517,6 +481,33 @@ namespace BFH_USZ_PICC.Resx {
         public static string PicturePageTitleText {
             get {
                 return ResourceManager.GetString("PicturePageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Save ähnelt.
+        /// </summary>
+        public static string SaveButtonText {
+            get {
+                return ResourceManager.GetString("SaveButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die App version ähnelt.
+        /// </summary>
+        public static string SettingsPageAppVersionText {
+            get {
+                return ResourceManager.GetString("SettingsPageAppVersionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Settings ähnelt.
+        /// </summary>
+        public static string SettingsPageTitleText {
+            get {
+                return ResourceManager.GetString("SettingsPageTitleText", resourceCulture);
             }
         }
     }

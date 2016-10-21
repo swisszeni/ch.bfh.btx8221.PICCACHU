@@ -15,17 +15,11 @@
   <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
     <value>Soluzioni</value>
   </data>
-  <data name="EmergencyFlyoutTelemedizinButtonText" xml:space="preserve">
-    <value>Chiamate la Hotline USZ</value>
-  </data>
   <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
     <value>Se avete domande riguardanti il vostro PICC, non esitate a contattare la hotline USZ.</value>
   </data>
   <data name="EmergencyFlyoutTitleText" xml:space="preserve">
     <value>Approccio in caso di malfunzionamento</value>
-  </data>
-  <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
-    <value>Non ci sono complicazioni con il vostro PICC da aspettarselo. Per la vostra sicurezza, vorremmo ancora informarvi sui possibili problemi.</value>
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Si prega di inserire un PICC</value>
@@ -54,17 +48,11 @@
   <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
     <value>Motivo</value>
   </data>
-  <data name="DisorderDetailPageCallUSZButtonText" xml:space="preserve">
-    <value>Chiamata USZ telemedicina</value>
-  </data>
   <data name="DisorderPageTitleText" xml:space="preserve">
     <value>Disturbi</value>
   </data>
   <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
     <value>Problema procedura</value>
-  </data>
-  <data name="DisorderPageIssueApproachDescriptionText" xml:space="preserve">
-    <value>Solitamente ci sono complicazioni con il vostro PICC previsto. Per motivi di sicurezza, vorremmo mostrarvi possibili segni di problemi.</value>
   </data>
   <data name="GlossaryPageTitleText" xml:space="preserve">
     <value>Glossario</value>
@@ -114,15 +102,6 @@
   <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
     <value>Set PICC inattivo</value>
   </data>
-  <data name="PICCDetailPageEditButtonText" xml:space="preserve">
-    <value>Modifica</value>
-  </data>
-  <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
-    <value>Annulla</value>
-  </data>
-  <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
-    <value>Salva</value>
-  </data>
   <data name="PicturePageTitleText" xml:space="preserve">
     <value>Foto dettaglio</value>
   </data>
@@ -140,5 +119,47 @@
   </data>
   <data name="PICCDetailPagePickerPositionAboveElbowText" xml:space="preserve">
     <value>Sopra il gomito</value>
+  </data>
+  <data name="PICCDetailPagePickerSideLeftText" xml:space="preserve">
+    <value>Sinistra</value>
+  </data>
+  <data name="PICCDetailPagePickerSideRightText" xml:space="preserve">
+    <value>Diritto</value>
+  </data>
+  <data name="PICCDetailPagePickerCountryAbroadText" xml:space="preserve">
+    <value>All'estero</value>
+  </data>
+  <data name="PICCDetailPagePickerCountrySwitzerlandText" xml:space="preserve">
+    <value>Svizzera</value>
+  </data>
+  <data name="JournalOverviewPageTitleText" xml:space="preserve">
+    <value>Gazzetta</value>
+  </data>
+  <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
+    <value>Nuova voce</value>
+  </data>
+  <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
+    <value>Che tipo di voce vuoi aggiungere?</value>
+  </data>
+  <data name="SettingsPageAppVersionText" xml:space="preserve">
+    <value>Versione app</value>
+  </data>
+  <data name="SettingsPageTitleText" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="EditButtonText" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="PICCAssistanceDescriptionText" xml:space="preserve">
+    <value>Non ci sono complicazioni con il vostro PICC da aspettarselo. Per la vostra sicurezza, vorremmo ancora informarvi sui possibili problemi.</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
+    <value>Chiamata USZ telemedicina</value>
   </data>
 </root>

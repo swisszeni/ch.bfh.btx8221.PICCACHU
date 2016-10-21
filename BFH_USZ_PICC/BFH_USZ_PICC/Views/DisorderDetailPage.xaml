@@ -14,7 +14,7 @@
       <Label Text="{Binding Reason}"/>
       <Label Text="{i18n:Translate DisorderDetailPageActionLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Label Text="{Binding Action}"/>
-      <Button Text="{i18n:Translate DisorderDetailPageCallUSZButtonText}" Clicked="ContactUSZTelemedizin"/>
+      <Button Text="{i18n:Translate CallUSZTelemedizinButtonText}" Clicked="ContactUSZTelemedizin"/>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

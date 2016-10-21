@@ -10,10 +10,6 @@
           <source>Solutions</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Soluzioni</target>
         </trans-unit>
-        <trans-unit id="EmergencyFlyoutTelemedizinButtonText" translate="yes" xml:space="preserve">
-          <source>Call USZ Hotline</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chiamate la Hotline USZ</target>
-        </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
           <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Se avete domande riguardanti il vostro PICC, non esitate a contattare la hotline USZ.</target>
@@ -21,10 +17,6 @@
         <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
           <source>Approach in case of malfunction</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Approccio in caso di malfunzionamento</target>
-        </trans-unit>
-        <trans-unit id="EmergencyFyloutAssistanceDescriptionText" translate="yes" xml:space="preserve">
-          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Non ci sono complicazioni con il vostro PICC da aspettarselo. Per la vostra sicurezza, vorremmo ancora informarvi sui possibili problemi.</target>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
           <source>Please enter a PICC</source>
@@ -62,10 +54,6 @@
           <source>Reason</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Motivo</target>
         </trans-unit>
-        <trans-unit id="DisorderDetailPageCallUSZButtonText" translate="yes" xml:space="preserve">
-          <source>Call USZ telemedicine</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chiamata USZ telemedicina</target>
-        </trans-unit>
         <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorders</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Disturbi</target>
@@ -73,10 +61,6 @@
         <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
           <source>Issue procedure steps</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Problema procedura</target>
-        </trans-unit>
-        <trans-unit id="DisorderPageIssueApproachDescriptionText" translate="yes" xml:space="preserve">
-          <source>Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Solitamente ci sono complicazioni con il vostro PICC previsto. Per motivi di sicurezza, vorremmo mostrarvi possibili segni di problemi.</target>
         </trans-unit>
         <trans-unit id="GlossaryPageTitleText" translate="yes" xml:space="preserve">
           <source>Glossary</source>
@@ -142,18 +126,6 @@
           <source>Set PICC inactive</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Set PICC inattivo</target>
         </trans-unit>
-        <trans-unit id="PICCDetailPageEditButtonText" translate="yes" xml:space="preserve">
-          <source>Edit</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modifica</target>
-        </trans-unit>
-        <trans-unit id="PICCDetailPageCancelButtonText" translate="yes" xml:space="preserve">
-          <source>Cancel</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Annulla</target>
-        </trans-unit>
-        <trans-unit id="PICCDetailPageSaveButtonText" translate="yes" xml:space="preserve">
-          <source>Save</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Salva</target>
-        </trans-unit>
         <trans-unit id="PicturePageTitleText" translate="yes" xml:space="preserve">
           <source>Picture detail</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Foto dettaglio</target>
@@ -180,35 +152,59 @@
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerSideLeftText" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Left</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sinistra</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerSideRightText" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Right</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Diritto</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerCountryAbroadText" translate="yes" xml:space="preserve">
           <source>Abroad</source>
-          <target state="new">Abroad</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">All'estero</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerCountrySwitzerlandText" translate="yes" xml:space="preserve">
           <source>Switzerland</source>
-          <target state="new">Switzerland</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Svizzera</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
           <source>Journal</source>
-          <target state="new">Journal</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Gazzetta</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageNewEntryButtonText" translate="yes" xml:space="preserve">
           <source>New entry</source>
-          <target state="new">New entry</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nuova voce</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageSelectANewNewEntryText" translate="yes" xml:space="preserve">
           <source>What kind of entry would you like to add?</source>
-          <target state="new">What kind of entry would you like to add?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Che tipo di voce vuoi aggiungere?</target>
         </trans-unit>
-        <trans-unit id="JournalOverviewPageSelectANewNewEntryCancelButtonText" translate="yes" xml:space="preserve">
+        <trans-unit id="SettingsPageAppVersionText" translate="yes" xml:space="preserve">
+          <source>App version</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Versione app</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageTitleText" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Impostazioni</target>
+        </trans-unit>
+        <trans-unit id="CancelButtonText" translate="yes" xml:space="preserve">
           <source>Cancel</source>
-          <target state="new">Cancel</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Annulla</target>
+        </trans-unit>
+        <trans-unit id="EditButtonText" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modifica</target>
+        </trans-unit>
+        <trans-unit id="PICCAssistanceDescriptionText" translate="yes" xml:space="preserve">
+          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Non ci sono complicazioni con il vostro PICC da aspettarselo. Per la vostra sicurezza, vorremmo ancora informarvi sui possibili problemi.</target>
+        </trans-unit>
+        <trans-unit id="SaveButtonText" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Salva</target>
+        </trans-unit>
+        <trans-unit id="CallUSZTelemedizinButtonText" translate="yes" xml:space="preserve">
+          <source>Call USZ telemedicine</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chiamata USZ telemedicina</target>
         </trans-unit>
       </group>
     </body>

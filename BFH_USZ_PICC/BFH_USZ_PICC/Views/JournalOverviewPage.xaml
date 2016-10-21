@@ -66,7 +66,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
       <ListView.Footer>
-        <Button x:Name="NewEntryCancelButton" Text="{i18n:Translate JournalOverviewPageSelectANewNewEntryCancelButtonText}" Clicked="NewEntryCancelButtonClicked"/>
+        <Button x:Name="NewEntryCancelButton" Text="{i18n:Translate CancelButtonText}" Clicked="NewEntryCancelButtonClicked"/>
       </ListView.Footer>
     </ListView>
   </Grid>

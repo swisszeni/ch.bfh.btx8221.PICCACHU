@@ -10,10 +10,6 @@
           <source>Solutions</source>
           <target state="translated">Lösungsschritte</target>
         </trans-unit>
-        <trans-unit id="EmergencyFlyoutTelemedizinButtonText" translate="yes" xml:space="preserve">
-          <source>Call USZ Hotline</source>
-          <target state="translated">USZ Telemedizin kontaktieren</target>
-        </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
           <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
           <target state="translated">Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</target>
@@ -21,10 +17,6 @@
         <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
           <source>Approach in case of malfunction</source>
           <target state="translated">Vorgehen bei Problemen</target>
-        </trans-unit>
-        <trans-unit id="EmergencyFyloutAssistanceDescriptionText" translate="yes" xml:space="preserve">
-          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
-          <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
           <source>Please enter a PICC</source>
@@ -62,10 +54,6 @@
           <source>Reason</source>
           <target state="translated">Ursache</target>
         </trans-unit>
-        <trans-unit id="DisorderDetailPageCallUSZButtonText" translate="yes" xml:space="preserve">
-          <source>Call USZ telemedicine</source>
-          <target state="translated">USZ Telemedizin kontaktieren</target>
-        </trans-unit>
         <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorders</source>
           <target state="translated">Störungen</target>
@@ -73,10 +61,6 @@
         <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
           <source>Issue procedure steps</source>
           <target state="translated">Vorgehen bei Problemen</target>
-        </trans-unit>
-        <trans-unit id="DisorderPageIssueApproachDescriptionText" translate="yes" xml:space="preserve">
-          <source>Usually there are no complications with your PICC expected. For safety reasons, we would like to show you possible signs of issues.</source>
-          <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
         </trans-unit>
         <trans-unit id="GlossaryPageTitleText" translate="yes" xml:space="preserve">
           <source>Glossary</source>
@@ -142,18 +126,6 @@
           <source>Set PICC inactive</source>
           <target state="translated">PICC inaktiv setzten</target>
         </trans-unit>
-        <trans-unit id="PICCDetailPageEditButtonText" translate="yes" xml:space="preserve">
-          <source>Edit</source>
-          <target state="translated">Bearbeiten</target>
-        </trans-unit>
-        <trans-unit id="PICCDetailPageCancelButtonText" translate="yes" xml:space="preserve">
-          <source>Cancel</source>
-          <target state="translated">Abbrechen</target>
-        </trans-unit>
-        <trans-unit id="PICCDetailPageSaveButtonText" translate="yes" xml:space="preserve">
-          <source>Save</source>
-          <target state="translated">Speichern</target>
-        </trans-unit>
         <trans-unit id="PicturePageTitleText" translate="yes" xml:space="preserve">
           <source>Picture detail</source>
           <target state="translated">Bild Detail</target>
@@ -198,10 +170,6 @@
           <source>New entry</source>
           <target state="translated">Neuer Eintrag</target>
         </trans-unit>
-        <trans-unit id="JournalOverviewPageSelectANewNewEntryCancelButtonText" translate="yes" xml:space="preserve">
-          <source>Cancel</source>
-          <target state="translated">Abbrechen</target>
-        </trans-unit>
         <trans-unit id="JournalOverviewPageSelectANewNewEntryText" translate="yes" xml:space="preserve">
           <source>What kind of entry would you like to add?</source>
           <target state="translated">Was für ein Eintrag möchten Sie hinzufügen?</target>
@@ -209,6 +177,34 @@
         <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
           <source>Journal</source>
           <target state="translated">Journal</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageAppVersionText" translate="yes" xml:space="preserve">
+          <source>App version</source>
+          <target state="translated">App Version</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageTitleText" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="translated">Einstellungen</target>
+        </trans-unit>
+        <trans-unit id="CancelButtonText" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="translated">Abbrechen</target>
+        </trans-unit>
+        <trans-unit id="EditButtonText" translate="yes" xml:space="preserve">
+          <source>Edit</source>
+          <target state="translated">Bearbeiten</target>
+        </trans-unit>
+        <trans-unit id="PICCAssistanceDescriptionText" translate="yes" xml:space="preserve">
+          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
+          <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
+        </trans-unit>
+        <trans-unit id="SaveButtonText" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="translated">Speichern</target>
+        </trans-unit>
+        <trans-unit id="CallUSZTelemedizinButtonText" translate="yes" xml:space="preserve">
+          <source>Call USZ telemedicine</source>
+          <target state="translated">USZ Telemedizin anrufen</target>
         </trans-unit>
       </group>
     </body>

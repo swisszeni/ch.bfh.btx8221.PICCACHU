@@ -15,17 +15,11 @@
   <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
     <value>Lösungsschritte</value>
   </data>
-  <data name="EmergencyFlyoutTelemedizinButtonText" xml:space="preserve">
-    <value>USZ Telemedizin kontaktieren</value>
-  </data>
   <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
     <value>Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</value>
   </data>
   <data name="EmergencyFlyoutTitleText" xml:space="preserve">
     <value>Vorgehen bei Problemen</value>
-  </data>
-  <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
-    <value>In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</value>
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Bitte PICC Name eingeben</value>
@@ -54,17 +48,11 @@
   <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
     <value>Ursache</value>
   </data>
-  <data name="DisorderDetailPageCallUSZButtonText" xml:space="preserve">
-    <value>USZ Telemedizin kontaktieren</value>
-  </data>
   <data name="DisorderPageTitleText" xml:space="preserve">
     <value>Störungen</value>
   </data>
   <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
     <value>Vorgehen bei Problemen</value>
-  </data>
-  <data name="DisorderPageIssueApproachDescriptionText" xml:space="preserve">
-    <value>In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</value>
   </data>
   <data name="GlossaryPageTitleText" xml:space="preserve">
     <value>Glossar</value>
@@ -114,15 +102,6 @@
   <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
     <value>PICC inaktiv setzten</value>
   </data>
-  <data name="PICCDetailPageEditButtonText" xml:space="preserve">
-    <value>Bearbeiten</value>
-  </data>
-  <data name="PICCDetailPageCancelButtonText" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
-  <data name="PICCDetailPageSaveButtonText" xml:space="preserve">
-    <value>Speichern</value>
-  </data>
   <data name="PicturePageTitleText" xml:space="preserve">
     <value>Bild Detail</value>
   </data>
@@ -152,5 +131,35 @@
   </data>
   <data name="PICCDetailPagePickerCountrySwitzerlandText" xml:space="preserve">
     <value>Schweiz</value>
+  </data>
+  <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
+    <value>Neuer Eintrag</value>
+  </data>
+  <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
+    <value>Was für ein Eintrag möchten Sie hinzufügen?</value>
+  </data>
+  <data name="JournalOverviewPageTitleText" xml:space="preserve">
+    <value>Journal</value>
+  </data>
+  <data name="SettingsPageAppVersionText" xml:space="preserve">
+    <value>App Version</value>
+  </data>
+  <data name="SettingsPageTitleText" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="EditButtonText" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="PICCAssistanceDescriptionText" xml:space="preserve">
+    <value>In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
+    <value>USZ Telemedizin anrufen</value>
   </data>
 </root>

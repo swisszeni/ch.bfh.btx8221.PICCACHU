@@ -42,11 +42,11 @@
       </StackLayout>
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
         <StackLayout x:Name="EditAndAddButtons" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="True">
-          <Button x:Name="EditButton" Text="{i18n:Translate PICCDetailPageEditButtonText}" Clicked="EditButtonClicked" IsVisible="False"/>
+          <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Clicked="EditButtonClicked" IsVisible="False"/>
         </StackLayout>
         <StackLayout x:Name="SaveAndCancelButtons" Orientation="Horizontal" VerticalOptions="Center" IsVisible="False">
-          <Button x:Name="SaveButton" Text="{i18n:Translate PICCDetailPageSaveButtonText}" Clicked="SaveButtonClicked"/>
-          <Button x:Name="CancelButton" Text="{i18n:Translate PICCDetailPageCancelButtonText}" Clicked="CancelButtonClicked"/>
+          <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Clicked="SaveButtonClicked"/>
+          <Button x:Name="CancelButton" Text="{i18n:Translate CancelButtonText}" Clicked="CancelButtonClicked"/>
         </StackLayout>
       </StackLayout>
     </StackLayout>
