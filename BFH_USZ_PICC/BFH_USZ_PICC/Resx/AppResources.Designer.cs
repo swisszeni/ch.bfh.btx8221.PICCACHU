@@ -71,7 +71,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a PICC name ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter a PICC ähnelt.
         /// </summary>
         public static string AddPICCPagePICCEntryPlaceholderText {
             get {
@@ -197,7 +197,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die If you have any questions regarding your PICC, don&apos;t hesitate to contact the USZ hotline. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline. ähnelt.
         /// </summary>
         public static string EmergencyFlyoutTelemedizinDescriptionText {
             get {
@@ -215,7 +215,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die There aren&apos;t any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems. ähnelt.
         /// </summary>
         public static string EmergencyFyloutAssistanceDescriptionText {
             get {
@@ -260,7 +260,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die It seems you have not entered a PICC yet. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die It seems that you have not yet entered a PICC. ähnelt.
         /// </summary>
         public static string MyPICCPageNoPiccEnteredText {
             get {
@@ -305,7 +305,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter institution ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please enter an institution ähnelt.
         /// </summary>
         public static string PICCDetailPageInsertCityPlaceholderText {
             get {

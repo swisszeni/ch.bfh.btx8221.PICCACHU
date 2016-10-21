@@ -121,7 +121,7 @@
     <value>Enter PICC manually</value>
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
-    <value>Please enter a PICC name</value>
+    <value>Please enter a PICC</value>
   </data>
   <data name="AddPICCPageScanButtonText" xml:space="preserve">
     <value>Scan barcode</value>
@@ -163,13 +163,13 @@
     <value>Call USZ Hotline</value>
   </data>
   <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
-    <value>If you have any questions regarding your PICC, don't hesitate to contact the USZ hotline.</value>
+    <value>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</value>
   </data>
   <data name="EmergencyFlyoutTitleText" xml:space="preserve">
     <value>Approach in case of malfunction</value>
   </data>
   <data name="EmergencyFyloutAssistanceDescriptionText" xml:space="preserve">
-    <value>There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</value>
+    <value>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</value>
   </data>
   <data name="GlossaryPageTitleText" xml:space="preserve">
     <value>Glossary</value>
@@ -184,7 +184,7 @@
     <value>Current PICC</value>
   </data>
   <data name="MyPICCPageNoPiccEnteredText" xml:space="preserve">
-    <value>It seems you have not entered a PICC yet.</value>
+    <value>It seems that you have not yet entered a PICC.</value>
   </data>
   <data name="MyPICCPagePreviousPICCText" xml:space="preserve">
     <value>Previous PICC</value>
@@ -199,7 +199,7 @@
     <value>Edit</value>
   </data>
   <data name="PICCDetailPageInsertCityPlaceholderText" xml:space="preserve">
-    <value>Please enter institution</value>
+    <value>Please enter an institution</value>
   </data>
   <data name="PICCDetailPagePICCBodysideText" xml:space="preserve">
     <value>PICC body side:</value>
