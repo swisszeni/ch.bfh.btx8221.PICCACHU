@@ -2,13 +2,15 @@
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.DisorderPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate DisorderPageTitleText}">
   <ListView x:Name="DisorderList" HasUnevenRows="True" ItemsSource="{Binding ListOfDisorderEntries}"
-            SelectedItem="{Binding SelectedSymptom, Mode=TwoWay}" ItemSelected="SelectedDisorder">
+          SelectedItem="{Binding SelectedSymptom, Mode=TwoWay}" ItemSelected="SelectedDisorder">
     <ListView.Header>
       <StackLayout>
-        <Label Text = "Vorgehen bei Problemen" FontSize = "20"/>
-        <Label Text = "In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen." />
+        <Label Text="{i18n:Translate DisorderPageIssueApproachTitleText}" FontSize = "20"/>
+        <Label Text="{i18n:Translate DisorderPageIssueApproachDescriptionText}" />
       </StackLayout>
     </ListView.Header>
     <ListView.Margin>

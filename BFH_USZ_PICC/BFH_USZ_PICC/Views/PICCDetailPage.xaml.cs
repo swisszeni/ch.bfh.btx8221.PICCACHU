@@ -26,7 +26,7 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained) : base(contained)
         {
             InitializeLayout();
-            Title = "PICC";
+            //Title = "PICC";
         }
 
         /// <summary>

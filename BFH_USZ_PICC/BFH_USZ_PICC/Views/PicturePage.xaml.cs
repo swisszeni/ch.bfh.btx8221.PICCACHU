@@ -18,7 +18,7 @@ namespace BFH_USZ_PICC.Views
         public PicturePage(ContentPage contained, KnowledgeEntryImageElement source) : base(contained)
         {
             InitializeComponent();
-            Title = "Bild Detail";
+            //Title = "Bild Detail";
 
             // Cast the ImageElemnt first to a KnowledgeEntryElement and cast its source to an Image
             SelectedImage.Source = ((Image)((IKnowledgeEntryElement)source).element).Source;
