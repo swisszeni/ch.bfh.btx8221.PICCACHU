@@ -34,7 +34,7 @@ namespace BFH_USZ_PICC.Views
                     new NavigationMenuItem { Title = AppResources.MyPICCPageTitleText, MenuItemKey = MenuItemKey.PICC, Icon ="icon.png" },
                     new NavigationMenuItem { Title = AppResources.GlossaryPageTitleText, MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
                     new NavigationMenuItem { Title = AppResources.KnowledgeEntriesTitleText, MenuItemKey = MenuItemKey.Knowledge, Icon = "icon.png" },
-                    new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder, Icon = "icon.png" }
+                    new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder, Icon = "icon.png" },
                     new NavigationMenuItem { Title = AppResources.JournalOverviewPageTitleText, MenuItemKey = MenuItemKey.Journal, Icon = "icon.png" }
                 };
 

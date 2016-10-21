@@ -194,6 +194,22 @@
           <source>Switzerland</source>
           <target state="translated">Schweiz</target>
         </trans-unit>
+        <trans-unit id="JournalOverviewPageNewEntryButtonText" translate="yes" xml:space="preserve">
+          <source>New entry</source>
+          <target state="translated">Neuer Eintrag</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageSelectANewNewEntryCancelButtonText" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="translated">Abbrechen</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageSelectANewNewEntryText" translate="yes" xml:space="preserve">
+          <source>What kind of entry would you like to add?</source>
+          <target state="translated">Was für ein Eintrag möchten Sie hinzufügen?</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
+          <source>Journal</source>
+          <target state="translated">Journal</target>
+        </trans-unit>
       </group>
     </body>
   </file>
