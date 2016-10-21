@@ -15,20 +15,20 @@
           <target state="new">Call USZ Hotline</target>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
-          <source>If you have any questions regarding your PICC, don't hesitate to contact the USZ hotline.</source>
-          <target state="new">If you have any questions regarding your PICC, don't hesitate to contact the USZ hotline.</target>
+          <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
+          <target state="new">If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</target>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
           <source>Approach in case of malfunction</source>
           <target state="new">Approach in case of malfunction</target>
         </trans-unit>
         <trans-unit id="EmergencyFyloutAssistanceDescriptionText" translate="yes" xml:space="preserve">
-          <source>There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</source>
-          <target state="new">There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</target>
+          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
+          <target state="new">There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</target>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
-          <source>Please enter a PICC name</source>
-          <target state="new">Please enter a PICC name</target>
+          <source>Please enter a PICC</source>
+          <target state="new">Please enter a PICC</target>
         </trans-unit>
         <trans-unit id="AddPICCPageScanButtonText" translate="yes" xml:space="preserve">
           <source>Scan barcode</source>
@@ -99,8 +99,8 @@
           <target state="new">Current PICC</target>
         </trans-unit>
         <trans-unit id="MyPICCPageNoPiccEnteredText" translate="yes" xml:space="preserve">
-          <source>It seems you have not entered a PICC yet.</source>
-          <target state="new">It seems you have not entered a PICC yet.</target>
+          <source>It seems that you have not yet entered a PICC.</source>
+          <target state="new">It seems that you have not yet entered a PICC.</target>
         </trans-unit>
         <trans-unit id="MyPICCPagePreviousPICCText" translate="yes" xml:space="preserve">
           <source>Previous PICC</source>
@@ -127,8 +127,8 @@
           <target state="new">Location:</target>
         </trans-unit>
         <trans-unit id="PICCDetailPageInsertCityPlaceholderText" translate="yes" xml:space="preserve">
-          <source>Please enter institution</source>
-          <target state="new">Please enter institution</target>
+          <source>Please enter an institution</source>
+          <target state="new">Please enter an institution</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCBodysideText" translate="yes" xml:space="preserve">
           <source>PICC body side:</source>
@@ -157,6 +157,22 @@
         <trans-unit id="PicturePageTitleText" translate="yes" xml:space="preserve">
           <source>Picture detail</source>
           <target state="new">Picture detail</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
+          <source>Journal</source>
+          <target state="new">Journal</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageNewEntryButtonText" translate="yes" xml:space="preserve">
+          <source>New entry</source>
+          <target state="new">New entry</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageSelectANewNewEntryText" translate="yes" xml:space="preserve">
+          <source>What kind of entry would you like to add?</source>
+          <target state="new">What kind of entry would you like to add?</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageSelectANewNewEntryCancelButtonText" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="new">Cancel</target>
         </trans-unit>
       </group>
     </body>

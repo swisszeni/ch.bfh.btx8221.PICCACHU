@@ -126,4 +126,16 @@
   <data name="PicturePageTitleText" xml:space="preserve">
     <value>Bild Detail</value>
   </data>
+  <data name="JournalOverviewPageTitleText" xml:space="preserve">
+    <value>Journal</value>
+  </data>
+  <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
+    <value>Neuer Eintrag</value>
+  </data>
+  <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
+    <value>Was für einen Eintrag möchten Sie hinzufügen?</value>
+  </data>
+  <data name="JournalOverviewPageSelectANewNewEntryCancelButtonText" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
 </root>

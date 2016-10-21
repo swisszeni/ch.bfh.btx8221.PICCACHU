@@ -15,7 +15,7 @@
           <target state="translated">USZ Telemedizin kontaktieren</target>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
-          <source>If you have any questions regarding your PICC, don't hesitate to contact the USZ hotline.</source>
+          <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
           <target state="translated">Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</target>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
@@ -23,11 +23,11 @@
           <target state="translated">Vorgehen bei Problemen</target>
         </trans-unit>
         <trans-unit id="EmergencyFyloutAssistanceDescriptionText" translate="yes" xml:space="preserve">
-          <source>There aren't any complications with your PICCto be expected. To your own safety, we still would like to inform you about possible problems.</source>
+          <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
           <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
-          <source>Please enter a PICC name</source>
+          <source>Please enter a PICC</source>
           <target state="translated">Bitte PICC Name eingeben</target>
         </trans-unit>
         <trans-unit id="AddPICCPageScanButtonText" translate="yes" xml:space="preserve">
@@ -99,7 +99,7 @@
           <target state="translated">Aktueller PICC</target>
         </trans-unit>
         <trans-unit id="MyPICCPageNoPiccEnteredText" translate="yes" xml:space="preserve">
-          <source>It seems you have not entered a PICC yet.</source>
+          <source>It seems that you have not yet entered a PICC.</source>
           <target state="translated">Sie scheinen momentan noch keinen PICC erfasst zu haben.</target>
         </trans-unit>
         <trans-unit id="MyPICCPagePreviousPICCText" translate="yes" xml:space="preserve">
@@ -127,7 +127,7 @@
           <target state="translated">Einlageort:</target>
         </trans-unit>
         <trans-unit id="PICCDetailPageInsertCityPlaceholderText" translate="yes" xml:space="preserve">
-          <source>Please enter institution</source>
+          <source>Please enter an institution</source>
           <target state="translated">Bitte Institution eingeben</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCBodysideText" translate="yes" xml:space="preserve">
@@ -157,6 +157,22 @@
         <trans-unit id="PicturePageTitleText" translate="yes" xml:space="preserve">
           <source>Picture detail</source>
           <target state="translated">Bild Detail</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
+          <source>Journal</source>
+          <target state="translated">Journal</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageNewEntryButtonText" translate="yes" xml:space="preserve">
+          <source>New entry</source>
+          <target state="translated">Neuer Eintrag</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageSelectANewNewEntryText" translate="yes" xml:space="preserve">
+          <source>What kind of entry would you like to add?</source>
+          <target state="translated">Was für einen Eintrag möchten Sie hinzufügen?</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageSelectANewNewEntryCancelButtonText" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="translated">Abbrechen</target>
         </trans-unit>
       </group>
     </body>

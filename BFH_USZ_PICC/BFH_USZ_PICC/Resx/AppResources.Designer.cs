@@ -233,6 +233,42 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die New entry ähnelt.
+        /// </summary>
+        public static string JournalOverviewPageNewEntryButtonText {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageNewEntryButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
+        /// </summary>
+        public static string JournalOverviewPageSelectANewNewEntryCancelButtonText {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageSelectANewNewEntryCancelButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die What kind of entry would you like to add? ähnelt.
+        /// </summary>
+        public static string JournalOverviewPageSelectANewNewEntryText {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageSelectANewNewEntryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Journal ähnelt.
+        /// </summary>
+        public static string JournalOverviewPageTitleText {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die FAQ ähnelt.
         /// </summary>
         public static string KnowledgeEntriesTitleText {

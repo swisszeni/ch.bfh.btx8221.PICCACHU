@@ -2,13 +2,15 @@
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.JournalOverviewPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate JournalOverviewPageTitleText}">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
-    <Button x:Name="NewEntryButton" Text="Neuer Eintrag" Image="icon.png" FontSize="20" Grid.Row="0" Clicked="NewEntryButtonClicked">
+    <Button x:Name="NewEntryButton" Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}" Image="icon.png" FontSize="20" Grid.Row="0" Clicked="NewEntryButtonClicked">
       <Button.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 0"
@@ -47,7 +49,7 @@
               WinPhone="20, 20, 20, 20" />
       </ListView.Margin>
       <ListView.Header >
-        <Label Text="Was wollen Sie hinzufügen?" HorizontalTextAlignment="Center" FontSize="25" TextColor="Blue" Margin="0,0,0,20"/>
+        <Label Text="{i18n:Translate JournalOverviewPageSelectANewNewEntryText}" HorizontalTextAlignment="Center" FontSize="25" TextColor="Blue" Margin="0,0,0,20"/>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -64,7 +66,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
       <ListView.Footer>
-        <Button x:Name="NewEntryCancelButton" Text="Abbrechen" Clicked="NewEntryCancelButtonClicked"/>
+        <Button x:Name="NewEntryCancelButton" Text="{i18n:Translate JournalOverviewPageSelectANewNewEntryCancelButtonText}" Clicked="NewEntryCancelButtonClicked"/>
       </ListView.Footer>
     </ListView>
   </Grid>

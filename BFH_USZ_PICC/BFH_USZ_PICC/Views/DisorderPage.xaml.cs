@@ -17,8 +17,7 @@ namespace BFH_USZ_PICC.Views
         public DisorderPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-           // Title = "Störungen";
-
+           
             //Create a new instance of the DisorderViewModel class and add the current Navgation object (DisorderPage) in order to be able to call the "PushAsync" method within the DisorderViewModel class.
             BindingContext = new DisorderViewModel();
             
