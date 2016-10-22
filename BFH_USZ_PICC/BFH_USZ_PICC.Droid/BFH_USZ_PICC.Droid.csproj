@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependencyServices\BarcodeScanner.cs" />
+    <Compile Include="DependencyServices\ReminderNotification.cs" />
     <Compile Include="DependencyServices\Caller.cs" />
     <Compile Include="DependencyServices\Localize.cs" />
     <Compile Include="MainActivity.cs" />

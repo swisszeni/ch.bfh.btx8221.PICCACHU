@@ -5,5 +5,19 @@
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
              Title="{i18n:Translate SettingsPageTitleText}">
-	<Label Text="{i18n:Translate SettingsPageAppVersionText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <StackLayout>
+        <Label Text="{i18n:Translate SettingsPageAppVersionText}"/>
+        <Label Text="PICCACHU Version 1.0"/>
+        <Label Text="Wöchentlicher Wartungsreminder einrichten"/>
+        <Switch x:Name="WeeklyMaintenanceReminder" IsToggled="False" Toggled="WeeklyMaintenanceReminderToggled"/>
+        <StackLayout x:Name="EditWeeklyReminder" IsVisible="False">
+            <Label Text="Bitte Startdatum festlegen"/>
+            <DatePicker x:Name="ReminderStartDate"/>
+            <Label Text="Bitte Uhrzeit für Erinnerung festlegen"/>
+            <TimePicker x:Name="ReminderDailyTime"/>
+            <Label Text="Anzahl wöchentlicher Wiederholungen"/>
+            <Picker x:Name="Repetition"/>
+            <Button x:Name="AddNotificationButton" Text="Wartungserinnerungen hinzufügen" Clicked="AddNotificationButtonClicked" />
+        </StackLayout>
+    </StackLayout>	
 </d:BaseContentPage>

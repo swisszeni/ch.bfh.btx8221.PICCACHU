@@ -103,6 +103,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DependencyServices\BarcodeScanner.cs" />
+    <Compile Include="DependencyServices\ReminderNotification.cs" />
     <Compile Include="DependencyServices\Caller.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

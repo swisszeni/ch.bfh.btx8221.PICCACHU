@@ -46,6 +46,7 @@
       <DependentUpon>EmergencyFlyout.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
+    <Compile Include="Interfaces\IReminderNotification.cs" />
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
     <Compile Include="Interfaces\IBarcodeScanner.cs" />
