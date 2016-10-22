@@ -4,9 +4,6 @@ using BFH_USZ_PICC.ViewModels;
 using System;
 using Xamarin.Forms;
 
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
 namespace BFH_USZ_PICC.Views
 {
     /// <summary>
@@ -19,8 +16,7 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
             Title = "Glossar";
 
-            //Binds all glossary entries to the binding context 
-            BindingContext = new GlossaryViewModel();
+            //Binds all glossary entries to the binding context
             
         }
 

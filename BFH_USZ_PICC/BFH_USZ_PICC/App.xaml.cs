@@ -7,10 +7,11 @@ using Xamarin.Forms;
 
 namespace BFH_USZ_PICC
 {
-    public class Application : Xamarin.Forms.Application
+    public partial class Application : Xamarin.Forms.Application
     {
         public Application()
         {
+            InitializeComponent();
             // The root page of your application
             //MainPage = new ContentPage
             //{

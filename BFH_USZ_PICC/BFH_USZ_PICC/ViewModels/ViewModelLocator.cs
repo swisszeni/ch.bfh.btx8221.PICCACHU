@@ -1,0 +1,68 @@
+﻿using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Practices.ServiceLocation;
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BFH_USZ_PICC.ViewModels
+{
+    public class ViewModelLocator : DynamicObject
+    {
+        static ViewModelResolver _resolver;
+
+        public ViewModelLocator()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            SimpleIoc.Default.Register<GlossaryViewModel>();
+        }
+
+        public static ViewModelResolver Resolver
+        {
+            get
+            {
+                if (_resolver == null)
+                {
+                    _resolver = new ViewModelResolver();
+                }
+                return _resolver;
+            }
+        }
+
+        public object this[string viewModelName]
+        {
+            get
+            {
+                return Resolver.Resolve(viewModelName);
+            }
+        }
+
+        public override bool TryGetMember(GetMemberBinder binder, out object result)
+        {
+            result = this[binder.Name];
+            return true;
+        }
+    }
+
+    public class ViewModelResolver
+    {
+        public ViewModelResolver()
+        { }
+
+        public object Resolve(string viewModelName)
+        {
+            var vmtype = this.GetType()
+                .GetTypeInfo()
+                .Assembly
+                .DefinedTypes
+                .FirstOrDefault(t => t.Name.Equals(viewModelName))
+                .AsType();
+
+            return ServiceLocator.Current.GetInstance(vmtype);
+        }
+    }
+}
