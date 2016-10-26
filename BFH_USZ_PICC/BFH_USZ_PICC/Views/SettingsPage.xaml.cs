@@ -9,14 +9,13 @@ namespace BFH_USZ_PICC.Views
         public int MaintenanceReminderRepetition { get; set; }
         public DateTime MaintenanceReminderStartDate { get; set; }
         public TimeSpan MaintenanceReminderDailyTime { get; set; }
-
-        private IReminderNotification notifier = DependencyService.Get<IReminderNotification>();
+        IReminderNotification notifier = DependencyService.Get<IReminderNotification>();
 
 
         public SettingsPage(ContentPage contained) : base(contained)
         {
-            InitializeComponent();                      
-
+            InitializeComponent();
+            
             int temp = 0;
             while (temp < 20)
             {
@@ -35,10 +34,11 @@ namespace BFH_USZ_PICC.Views
             MaintenanceReminderDailyTime = ReminderDailyTime.Time;
             MaintenanceReminderRepetition = Repetition.SelectedIndex;
             
+            var notifier = DependencyService.Get<IReminderNotification>();
             notifier.AddNotification(MaintenanceReminderStartDate, MaintenanceReminderDailyTime, MaintenanceReminderRepetition);
 
             enableInputForNotifications(false);
-            
+
         }
 
         async void WeeklyMaintenanceReminderToggled(object o, EventArgs e)
@@ -53,8 +53,10 @@ namespace BFH_USZ_PICC.Views
                 if (deleteReminders)
                 {
                     EditWeeklyReminder.IsVisible = false;
-                    notifier.RemoveAllNotifications();
+                   
                     enableInputForNotifications(true);
+                    var notifier = DependencyService.Get<IReminderNotification>();
+                    notifier.RemoveAllNotifications();
 
                 }
                 else
