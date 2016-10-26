@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UIKit;
+using UserNotifications;
 using Xamarin.Forms;
 
 
@@ -13,11 +14,11 @@ using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.iOS.DependencyServices
 {
-    public class ReminderNotification : IReminderNotification
+    public class ReminderNotification : Interfaces.IReminderNotification
     {
         public void AddNotification(DateTime maintenanceReminderStartDate, TimeSpan maintenanceReminderDailyTime, int maintenanceReminderRepetition)
         {
-            return;// throw new NotImplementedException();
+            return;
         }
 
         public void RemoveAllNotifications()

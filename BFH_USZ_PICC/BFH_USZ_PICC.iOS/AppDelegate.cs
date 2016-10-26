@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UserNotifications;
 
 using Foundation;
 using UIKit;
@@ -25,6 +26,16 @@ namespace BFH_USZ_PICC.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new BFH_USZ_PICC.Application());
+
+            // Request notification permissions from the user
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
+                // Handle approval
+            });
+
+            // Get current notification settings
+            UNUserNotificationCenter.Current.GetNotificationSettings((settings) => {
+                var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
+            });
 
             // Enable crashlog with HockeyApp
             var manager = BITHockeyManager.SharedHockeyManager;

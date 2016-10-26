@@ -23,20 +23,21 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
 
-            if (PICCViewModelInstance != null && PICCViewModelInstance.PICCModels.Count > 0)
-            {
-                BindingContext = PICCViewModelInstance;
-            }
-
             //FIXME
             //Temporary fix for Search Bar Bug in Android 7 (Nougat) --> Without setting the height, the search bar does not appear (for all other Android, iOS or UWP versions, it works without this workaround...)
             //https://forums.xamarin.com/discussion/79446/is-there-support-for-searchbar-on-nougat-7-0
-            if (Android.OS.Build.VERSION.SdkInt > Android.OS.BuildVersionCodes.M)
-            {
-                PICCEntry.HeightRequest = 50;
-            }
-        }
 
+
+           // #if __ANDROID__     
+            PICCEntry.HeightRequest = 50;
+        //    #endif
+
+            if (PICCViewModelInstance != null && PICCViewModelInstance.PICCModels.Count > 0)
+            {
+                BindingContext = PICCViewModelInstance;
+            }      
+
+        }
         /// <summary>
         /// Gets the input string from the SearchBar and checks if a PICC exists with the given information.
         /// </summary>
@@ -44,6 +45,7 @@ namespace BFH_USZ_PICC.Views
         /// <param name="e"></param>
         void PiccSearchButtonClicked(object o, EventArgs e)
         {
+            
             string searchName = PICCEntry.Text;
             searchForAPiccModel(searchName);
 
