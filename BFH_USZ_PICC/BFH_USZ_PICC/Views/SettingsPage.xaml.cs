@@ -5,13 +5,9 @@ using Xamarin.Forms;
 namespace BFH_USZ_PICC.Views
 {
     public sealed partial class SettingsPage : BaseContentPage
-    {
-        public int MaintenanceReminderRepetition { get; set; }
-        public DateTime MaintenanceReminderStartDate { get; set; }
-        public TimeSpan MaintenanceReminderDailyTime { get; set; }
+    {       
         IReminderNotification notifier = DependencyService.Get<IReminderNotification>();
-
-
+        
         public SettingsPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
@@ -29,13 +25,13 @@ namespace BFH_USZ_PICC.Views
         void AddNotificationButtonClicked(object o, EventArgs e)
         {
             EditWeeklyReminder.IsEnabled = false;
-
-            MaintenanceReminderStartDate = ReminderStartDate.Date;
-            MaintenanceReminderDailyTime = ReminderDailyTime.Time;
-            MaintenanceReminderRepetition = Repetition.SelectedIndex;
             
-            var notifier = DependencyService.Get<IReminderNotification>();
-            notifier.AddNotification(MaintenanceReminderStartDate, MaintenanceReminderDailyTime, MaintenanceReminderRepetition);
+            DateTime reminderStartDate = ReminderStartDate.Date;
+            DateTime maintenanceReminderStartDateTime = reminderStartDate.Add(ReminderDailyTime.Time);
+
+            int MaintenanceReminderRepetition = Repetition.SelectedIndex;
+          
+            notifier.AddNotification(maintenanceReminderStartDateTime, MaintenanceReminderRepetition);
 
             enableInputForNotifications(false);
 
@@ -55,7 +51,6 @@ namespace BFH_USZ_PICC.Views
                     EditWeeklyReminder.IsVisible = false;
                    
                     enableInputForNotifications(true);
-                    var notifier = DependencyService.Get<IReminderNotification>();
                     notifier.RemoveAllNotifications();
 
                 }

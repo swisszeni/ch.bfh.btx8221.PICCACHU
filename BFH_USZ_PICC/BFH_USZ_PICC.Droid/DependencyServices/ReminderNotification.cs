@@ -14,6 +14,7 @@ using BFH_USZ_PICC.Droid.DependencyServices;
 using Xamarin.Forms;
 using Uri = Android.Net.Uri;
 using Android.App;
+using Android.Icu.Util;
 
 [assembly: Dependency(typeof(ReminderNotification))]
 
@@ -29,19 +30,24 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
         {   
             createNotification();
 
-            // time when the first notification should appear. Wihtin the loop, the time will be raised weekly.
-            var reminderTime = maintenanceReminderStartDateAndTime - DateTime.Now;
+            // time when the first notification should appear from now on (if time is in the past, the notification will be fired immediately). 
+            TimeSpan reminderTime = maintenanceReminderStartDateAndTime - DateTime.Now;
+                    
+            //Contains the miliseconds of one week, so the notification can be scheduled weekly    
+            long weekly = AlarmManager.IntervalDay * 7;
+
+            alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, weekly, pendingIntent);
             
-            int reminderRepetition = 0;
-
-            int millisecondsInOneWeek = 604800000;
-
+            //int reminderRepetition = 0;
+            //long millisecondsInOneWeek = 604800000;
             //this loop checks how many reminder repetation the user wants to plan
-            while (reminderRepetition <= maintenanceReminderRepetition)
-            {
-                alarmManager.Set(AlarmType.RtcWakeup, (reminderTime.Ticks + Convert.ToInt64(millisecondsInOneWeek * reminderRepetition)), pendingIntent);
-                reminderRepetition++;
-            }
+            //while (reminderRepetition <= maintenanceReminderRepetition)
+            //{
+            //    alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds + Convert.ToInt64(millisecondsInOneWeek * reminderRepetition), pendingIntent);
+            //    alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, weekly, pendingIntent);
+
+            //    reminderRepetition++;
+            //}
         }
 
         void IReminderNotification.RemoveAllNotifications()
@@ -63,26 +69,5 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
             pendingIntent = PendingIntent.GetBroadcast(Forms.Context, 0, alarmIntent, PendingIntentFlags.UpdateCurrent);
             alarmManager = (AlarmManager)Forms.Context.GetSystemService(Context.AlarmService);
         }
-
-        //FIXME: Erste einfache Version für Notification, Nur Test!!!!
-        // Instantiate the builder and set notification elements:
-        //Notification.Builder builder = new Notification.Builder(Forms.Context);
-
-        //builder.SetContentTitle("Wartung fällig!");
-        //builder.SetContentText("Ihr PICC Katheter sollte gewartet werden.");
-        //builder.SetSmallIcon(Resource.Drawable.icon);
-        //builder.SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis());
-
-        //// Build the notification:
-        //Notification notification = builder.Build();
-
-
-        //// Get the notification manager:
-        //NotificationManager notificationManager = (Forms.Context.ApplicationContext.GetSystemService(Context.NotificationService) as NotificationManager);
-
-
-        //// Publish the notification:
-        //const int notificationId = 0;
-        //notificationManager.Notify(notificationId, notification);
     }
 }
