@@ -11,7 +11,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
 {
     public class ReminderNotification : Interfaces.IReminderNotification
     {
-        public void AddNotification(DateTime maintenanceReminderStartDate, TimeSpan maintenanceReminderDailyTime, int maintenanceReminderRepetition)
+        public void AddNotification(DateTime maintenanceReminderStartDateAndTime, int maintenanceReminderRepetition)
         {
             //Initialize the registration
             UIApplication.SharedApplication.RegisterForRemoteNotifications();

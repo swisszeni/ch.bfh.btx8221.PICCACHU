@@ -25,13 +25,13 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
         Intent alarmIntent = new Intent(Forms.Context, typeof(AlarmReceiver));
         PendingIntent pendingIntent;
 
-        void IReminderNotification.AddNotification(DateTime maintenanceReminderStartDate, TimeSpan maintenanceReminderDailyTime, int maintenanceReminderRepetition)
+        void IReminderNotification.AddNotification(DateTime maintenanceReminderStartDateAndTime, int maintenanceReminderRepetition)
         {   
             createNotification();
 
             // time when the first notification should appear. Wihtin the loop, the time will be raised weekly.
-            var reminderTime = maintenanceReminderStartDate - DateTime.Now + maintenanceReminderDailyTime;
-
+            var reminderTime = maintenanceReminderStartDateAndTime - DateTime.Now;
+            
             int reminderRepetition = 0;
 
             int millisecondsInOneWeek = 604800000;
@@ -39,14 +39,14 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
             //this loop checks how many reminder repetation the user wants to plan
             while (reminderRepetition <= maintenanceReminderRepetition)
             {
-                alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, (reminderTime.Ticks + Convert.ToInt64(millisecondsInOneWeek * reminderRepetition)), pendingIntent);
+                alarmManager.Set(AlarmType.RtcWakeup, (reminderTime.Ticks + Convert.ToInt64(millisecondsInOneWeek * reminderRepetition)), pendingIntent);
                 reminderRepetition++;
             }
         }
 
         void IReminderNotification.RemoveAllNotifications()
         {
-            if (alarmManager.NextAlarmClock != null)
+            if (alarmManager != null || alarmManager.NextAlarmClock != null)
             {
                 alarmManager.Cancel(pendingIntent);
             }
