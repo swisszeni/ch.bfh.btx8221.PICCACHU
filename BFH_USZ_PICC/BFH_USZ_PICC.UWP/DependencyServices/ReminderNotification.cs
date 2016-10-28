@@ -37,7 +37,7 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
         }
 
 
-        void IReminderNotification.AddNotification(DateTime maintenanceReminderStartDateAndTime, int maintenanceReminderRepetition)
+        void IReminderNotification.AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int maintenanceReminderRepetition)
         {
             ToastNotifier ToastNotifier = ToastNotificationManager.CreateToastNotifier();
             Windows.Data.Xml.Dom.XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText02);
@@ -54,10 +54,10 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
             //this loop checks how many reminder repetation the user wants to plan
             while (reminderRepetition <= maintenanceReminderRepetition)
             {
-                DateTime notificationDateTime = maintenanceReminderStartDateAndTime.AddDays(reminderRepetition * WEEKLY);
+                DateTimeOffset notificationDateTime = maintenanceReminderStartDateTime.AddDays(reminderRepetition * WEEKLY);
 
                 //Checks if the notification date time is in the future. If not, the notification can not be planned.
-                if (notificationDateTime > DateTime.Now)
+                if (notificationDateTime > DateTimeOffset.Now)
                 {
                     var stn = new ScheduledToastNotification(toastXml, notificationDateTime);
                     plannedNotifications.Add(stn);

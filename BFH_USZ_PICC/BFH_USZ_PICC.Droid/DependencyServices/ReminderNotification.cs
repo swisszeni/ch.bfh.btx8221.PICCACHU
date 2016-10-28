@@ -26,28 +26,21 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
         Intent alarmIntent = new Intent(Forms.Context, typeof(AlarmReceiver));
         PendingIntent pendingIntent;
 
-        void IReminderNotification.AddNotification(DateTime maintenanceReminderStartDateAndTime, int maintenanceReminderRepetition)
+        void IReminderNotification.AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int maintenanceReminderRepetition)
         {   
             createNotification();
 
             // time when the first notification should appear from now on (if time is in the past, the notification will be fired immediately). 
-            TimeSpan reminderTime = maintenanceReminderStartDateAndTime - DateTime.Now;
-                    
-            //Contains the miliseconds of one week, so the notification can be scheduled weekly    
-            long weekly = AlarmManager.IntervalDay * 7;
+            TimeSpan reminderTime = maintenanceReminderStartDateTime - DateTimeOffset.Now;
+                      
+            long dailyMiliseconds = 86400000;
+            long  weeklyMiliseconds = dailyMiliseconds * 7;
+         
+            alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, weeklyMiliseconds, pendingIntent);
 
-            alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, weekly, pendingIntent);
-            
-            //int reminderRepetition = 0;
-            //long millisecondsInOneWeek = 604800000;
-            //this loop checks how many reminder repetation the user wants to plan
-            //while (reminderRepetition <= maintenanceReminderRepetition)
-            //{
             //    alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds + Convert.ToInt64(millisecondsInOneWeek * reminderRepetition), pendingIntent);
             //    alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, weekly, pendingIntent);
 
-            //    reminderRepetition++;
-            //}
         }
 
         void IReminderNotification.RemoveAllNotifications()

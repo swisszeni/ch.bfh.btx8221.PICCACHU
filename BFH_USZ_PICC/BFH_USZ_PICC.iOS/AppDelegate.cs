@@ -30,6 +30,8 @@ namespace BFH_USZ_PICC.iOS
             // Request notification permissions from the user
             UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
                 // Handle approval
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(registerNotificationTypes);
+                
             });
 
             // Get current notification settings
@@ -43,6 +45,12 @@ namespace BFH_USZ_PICC.iOS
             manager.StartManager();
             manager.Authenticator.AuthenticateInstallation();
             return base.FinishedLaunching(app, options);
+        }
+
+        private void registerNotificationTypes()
+        {
+            var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
+            UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
         }
     }
 }

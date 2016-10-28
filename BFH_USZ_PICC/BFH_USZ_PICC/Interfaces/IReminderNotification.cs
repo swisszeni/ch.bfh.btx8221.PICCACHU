@@ -12,7 +12,7 @@ namespace BFH_USZ_PICC.Interfaces
         /// Add a new notification for a certain amount of time.
         /// </summary>
         /// <returns></returns>
-        void AddNotification(DateTime maintenanceReminderStartDateAndTime, int maintenanceReminderRepetition);
+        void AddNotification(DateTimeOffset maintenanceReminderStartDateAndTime, int maintenanceReminderRepetition);
 
         /// <summary>
         /// Removes all planned notifications in the future

@@ -26,11 +26,9 @@ namespace BFH_USZ_PICC.Views
             //FIXME
             //Temporary fix for Search Bar Bug in Android 7 (Nougat) --> Without setting the height, the search bar does not appear (for all other Android, iOS or UWP versions, it works without this workaround...)
             //https://forums.xamarin.com/discussion/79446/is-there-support-for-searchbar-on-nougat-7-0
-
-
-           // #if __ANDROID__     
+               
             PICCEntry.HeightRequest = 50;
-        //    #endif
+
 
             if (PICCViewModelInstance != null && PICCViewModelInstance.PICCModels.Count > 0)
             {
