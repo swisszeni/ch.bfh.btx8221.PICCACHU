@@ -13,11 +13,22 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
     {
         public void AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int maintenanceReminderRepetition)
         {
-            UILocalNotification noti = new UILocalNotification();
-            noti.FireDate = NSDate.FromTimeIntervalSinceNow(10);
+            UILocalNotification noti = new UILocalNotification();                      
             noti.AlertAction = "Information";
             noti.AlertBody = "Ihr PICC Katheter sollte gewartet werden.";
-            UIApplication.SharedApplication.ScheduleLocalNotification(noti);
+            
+            int countReminderRepetitions = 0;
+            NSDate startDate = DateTimeToNSDate(maintenanceReminderStartDateTime);
+            double WEEKLYSECONDS = 604800;
+
+            while (countReminderRepetitions <= maintenanceReminderRepetition)
+            {
+                noti.FireDate = startDate.AddSeconds(WEEKLYSECONDS * countReminderRepetitions);
+                UIApplication.SharedApplication.ScheduleLocalNotification(noti);
+
+                countReminderRepetitions++;
+            }
+          
             //var content = new UNMutableNotificationContent();
             //content.Title = "Information";
             //content.Body = "Ihr PICC Katheter sollte gewartet werden.";
@@ -75,9 +86,9 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
 
         }
 
-        private NSDate DateTimeToNSDate(DateTime date)
+        private NSDate DateTimeToNSDate(DateTimeOffset date)
         {
-            DateTime reference = TimeZone.CurrentTimeZone.ToLocalTime(
+            DateTimeOffset reference = TimeZone.CurrentTimeZone.ToLocalTime(
                 new DateTime(2001, 1, 1, 0, 0, 0));
             return NSDate.FromTimeIntervalSinceReferenceDate(
                 (date - reference).TotalSeconds);
