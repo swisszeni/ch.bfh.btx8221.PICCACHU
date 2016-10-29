@@ -494,11 +494,65 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Add maintenance reminders ähnelt.
+        /// </summary>
+        public static string SettingsPageAddReminderButtonText {
+            get {
+                return ResourceManager.GetString("SettingsPageAddReminderButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die App version ähnelt.
         /// </summary>
         public static string SettingsPageAppVersionText {
             get {
                 return ResourceManager.GetString("SettingsPageAppVersionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die After how many days will the memory be repeated? ähnelt.
+        /// </summary>
+        public static string SettingsPageMaintenanceReminderFrequencyText {
+            get {
+                return ResourceManager.GetString("SettingsPageMaintenanceReminderFrequencyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die How often should the memory be repeated? ähnelt.
+        /// </summary>
+        public static string SettingsPageMaintenanceReminderRepetitionText {
+            get {
+                return ResourceManager.GetString("SettingsPageMaintenanceReminderRepetitionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please set time for reminder ähnelt.
+        /// </summary>
+        public static string SettingsPageMaintenanceReminderSetDailyTimeText {
+            get {
+                return ResourceManager.GetString("SettingsPageMaintenanceReminderSetDailyTimeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please set start date ähnelt.
+        /// </summary>
+        public static string SettingsPageMaintenanceReminderSetStartDateText {
+            get {
+                return ResourceManager.GetString("SettingsPageMaintenanceReminderSetStartDateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Maintenance reminder ähnelt.
+        /// </summary>
+        public static string SettingsPageMaintenanceReminderText {
+            get {
+                return ResourceManager.GetString("SettingsPageMaintenanceReminderText", resourceCulture);
             }
         }
         

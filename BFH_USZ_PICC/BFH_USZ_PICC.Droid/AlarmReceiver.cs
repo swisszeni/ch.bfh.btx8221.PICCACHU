@@ -42,5 +42,6 @@ namespace BFH_USZ_PICC.Droid
             var manager = NotificationManager.FromContext(context);
             manager.Notify(1337, notification);
         }
+        
     }
 }

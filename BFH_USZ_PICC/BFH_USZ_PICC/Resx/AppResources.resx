@@ -261,8 +261,26 @@
   <data name="SaveButtonText" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="SettingsPageAddReminderButtonText" xml:space="preserve">
+    <value>Add maintenance reminders</value>
+  </data>
   <data name="SettingsPageAppVersionText" xml:space="preserve">
     <value>App version</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderFrequencyText" xml:space="preserve">
+    <value>After how many days will the memory be repeated?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderRepetitionText" xml:space="preserve">
+    <value>How often should the memory be repeated?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetDailyTimeText" xml:space="preserve">
+    <value>Please set time for reminder</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetStartDateText" xml:space="preserve">
+    <value>Please set start date</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
+    <value>Maintenance reminder</value>
   </data>
   <data name="SettingsPageTitleText" xml:space="preserve">
     <value>Settings</value>

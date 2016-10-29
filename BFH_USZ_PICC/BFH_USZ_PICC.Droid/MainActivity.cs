@@ -46,15 +46,22 @@ namespace BFH_USZ_PICC.Droid
         protected override void OnPause()
         {
             base.OnPause();
-
             UnregisterManagers();
         }
 
         protected override void OnDestroy()
-        {
-            base.OnDestroy();
+        {   
+            //FIXME Workaround to make sure the app does not crash after user has clicked on the notification
+            try
+            {
+                base.OnDestroy();
+                UnregisterManagers();
 
-            UnregisterManagers();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

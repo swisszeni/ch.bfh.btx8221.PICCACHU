@@ -8,16 +8,18 @@
     <StackLayout>
         <Label Text="{i18n:Translate SettingsPageAppVersionText}"/>
         <Label Text="PICCACHU Version 1.0"/>
-        <Label Text="Wöchentliche Wartungserinnerung einrichten"/>
+        <Label Text="{i18n:Translate SettingsPageMaintenanceReminderText}"/>
         <Switch x:Name="WeeklyMaintenanceReminder" IsToggled="False" Toggled="WeeklyMaintenanceReminderToggled"/>
         <StackLayout x:Name="EditWeeklyReminder" IsVisible="False">
-            <Label Text="Bitte Startdatum festlegen"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetStartDateText}"/>
             <DatePicker x:Name="ReminderStartDate"/>
-            <Label Text="Bitte Uhrzeit für Erinnerung festlegen"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetDailyTimeText}"/>
             <TimePicker x:Name="ReminderDailyTime"/>
-            <Label Text="Wie oft soll die Erinnerung wiederholt werden?"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderFrequencyText}"/>
+            <Picker x:Name="Frequency"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderRepetitionText}"/>
             <Picker x:Name="Repetition"/>
-            <Button x:Name="AddNotificationButton" Text="Wartungserinnerungen hinzufügen" Clicked="AddNotificationButtonClicked" />
+            <Button x:Name="AddNotificationButton" Text="{i18n:Translate SettingsPageAddReminderButtonText}" Clicked="AddNotificationButtonClicked" />
         </StackLayout>
     </StackLayout>
 </d:BaseContentPage>

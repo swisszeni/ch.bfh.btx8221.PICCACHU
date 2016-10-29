@@ -206,6 +206,30 @@
           <source>Call USZ telemedicine</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Appel USZ télémédecine</target>
         </trans-unit>
+        <trans-unit id="SettingsPageMaintenanceReminderText" translate="yes" xml:space="preserve">
+          <source>Maintenance reminder</source>
+          <target state="new">Maintenance reminder</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageAddReminderButtonText" translate="yes" xml:space="preserve">
+          <source>Add maintenance reminders</source>
+          <target state="new">Add maintenance reminders</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageMaintenanceReminderFrequencyText" translate="yes" xml:space="preserve">
+          <source>After how many days will the memory be repeated?</source>
+          <target state="new">After how many days will the memory be repeated?</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageMaintenanceReminderRepetitionText" translate="yes" xml:space="preserve">
+          <source>How often should the memory be repeated?</source>
+          <target state="new">How often should the memory be repeated?</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageMaintenanceReminderSetDailyTimeText" translate="yes" xml:space="preserve">
+          <source>Please set time for reminder</source>
+          <target state="new">Please set time for reminder</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageMaintenanceReminderSetStartDateText" translate="yes" xml:space="preserve">
+          <source>Please set start date</source>
+          <target state="new">Please set start date</target>
+        </trans-unit>
       </group>
     </body>
   </file>

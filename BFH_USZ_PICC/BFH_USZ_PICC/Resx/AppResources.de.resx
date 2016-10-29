@@ -162,4 +162,22 @@
   <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
     <value>USZ Telemedizin anrufen</value>
   </data>
+  <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
+    <value>Wartungserinnerung einrichten</value>
+  </data>
+  <data name="SettingsPageAddReminderButtonText" xml:space="preserve">
+    <value>Wartungserinnerungen hinzufügen</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderFrequencyText" xml:space="preserve">
+    <value>Nach wie vielen Tagen soll die Erinnerung wiederholt werden?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderRepetitionText" xml:space="preserve">
+    <value>Wie oft soll die Erinnerung wiederholt werden?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetDailyTimeText" xml:space="preserve">
+    <value>Bitte Uhrzeit für Erinnerung festlegen</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetStartDateText" xml:space="preserve">
+    <value>Bitte Startdatum festlegen</value>
+  </data>
 </root>
