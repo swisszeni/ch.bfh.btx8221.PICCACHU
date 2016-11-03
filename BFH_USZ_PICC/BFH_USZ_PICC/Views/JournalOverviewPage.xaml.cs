@@ -7,6 +7,7 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 using static BFH_USZ_PICC.Utilitys.AllJournalEntriesConverter;
 
 
+
 // Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace BFH_USZ_PICC.Views
@@ -16,8 +17,7 @@ namespace BFH_USZ_PICC.Views
     /// </summary>
     public sealed partial class JournalOverviewPage : BaseContentPage
     {
-        List<KnowledgeEntryTypeGroup> allEntries = new List<KnowledgeEntryTypeGroup>();
-
+        List<EntryAndImage> journalEntrySelection = new List<EntryAndImage>();
         public JournalOverviewPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
@@ -39,7 +39,6 @@ namespace BFH_USZ_PICC.Views
             //Part to initialize the selection for a new JournalEntry
             AllJournalEntriesConverter convertJournalEntries = new AllJournalEntriesConverter();
 
-            List<object> journalEntrySelection = new List<object>();
             journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.BandagesChangingEntry));
             journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.BloodWithdrawalEntry));
             journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.CatheterFlushEntry));
@@ -48,34 +47,32 @@ namespace BFH_USZ_PICC.Views
             journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.PICCAppliedDrugEntry));
             journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.StatlockEntry));
 
-            ChoseAJournalEntry.ItemsSource = journalEntrySelection;
+            // ChoseAJournalEntry.ItemsSource = journalEntrySelection;
         }
 
-        void NewEntryButtonClicked(object sender, EventArgs e)
+        async void NewEntryButtonClicked(object sender, EventArgs e)
         {
-            setListViewChoseAJournalEntryVisible(true);
-        }
-        
-        void NewEntryCancelButtonClicked(object sender, EventArgs e)
-        {
-            setListViewChoseAJournalEntryVisible(false);
+            // setListViewChoseAJournalEntryVisible(true);
+          
+            var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet("Was wollen Sie hinzufügen?", "Abbrechen", null, 
+                journalEntrySelection[0].Entry, journalEntrySelection[1].Entry, journalEntrySelection[2].Entry, journalEntrySelection[3].Entry, journalEntrySelection[4].Entry,
+                journalEntrySelection[5].Entry, journalEntrySelection[6].Entry);
+
+            if(selectedEntry!= null && selectedEntry != "Abbrechen")
+            {
+                await DisplayAlert("Information", "Nun würde ein neuer " + selectedEntry + " Eintrag eröffnet", "Ok");
+            }
+             
         }
 
-        private void setListViewChoseAJournalEntryVisible(bool trueOrFalse) {
-            ChoseAJournalEntry.IsVisible = trueOrFalse;
-        }
-
-        //public override bool OnBackButtonPressed()
+       
+        //void NewEntryCancelButtonClicked(object sender, EventArgs e)
         //{
-        //    if (ChoseAJournalEntryListView.IsVisible)
-        //    {
-        //        SetListViewChoseAJournalEntryVisible(false);
-        //    }
-        //    else {
-        //        base.OnBackButtonPressed();
-        //    }          
+        //    setListViewChoseAJournalEntryVisible(false);
+        //}
 
-        //    return true;
+        //private void setListViewChoseAJournalEntryVisible(bool trueOrFalse) {
+        //    ChoseAJournalEntry.IsVisible = trueOrFalse;
         //}
     }
 }

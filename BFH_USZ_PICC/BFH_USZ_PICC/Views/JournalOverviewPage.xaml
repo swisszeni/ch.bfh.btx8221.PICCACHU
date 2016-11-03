@@ -39,7 +39,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <ListView x:Name="ChoseAJournalEntry" IsVisible="False"  Grid.Row="0" Grid.RowSpan="2" BackgroundColor="White">
+    <!--<ListView x:Name="ChoseAJournalEntry" IsVisible="False"  Grid.Row="0" Grid.RowSpan="2" BackgroundColor="White">
       <ListView.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 20"
@@ -66,6 +66,6 @@
       <ListView.Footer>
         <Button x:Name="NewEntryCancelButton" Text="Abbrechen" Clicked="NewEntryCancelButtonClicked"/>
       </ListView.Footer>
-    </ListView>
+    </ListView>-->
   </Grid>
 </d:BaseContentPage>
