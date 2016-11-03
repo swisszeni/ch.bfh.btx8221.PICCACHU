@@ -21,7 +21,6 @@ namespace BFH_USZ_PICC.Views
         public JournalOverviewPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            Title = "Journal";
 
             //Get all the knowledge entries and add them to  the ListView
             List<JournalEntry> test = new List<JournalEntry>();

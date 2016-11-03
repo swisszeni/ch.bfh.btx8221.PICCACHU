@@ -17,8 +17,7 @@ namespace BFH_USZ_PICC.Views
         public GlossaryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            Title = "Glossar";
-
+         
             //Binds all glossary entries to the binding context 
             BindingContext = new GlossaryViewModel();
             
