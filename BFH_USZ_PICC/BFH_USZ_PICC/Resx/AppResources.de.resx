@@ -180,4 +180,7 @@
   <data name="SettingsPageMaintenanceReminderSetStartDateText" xml:space="preserve">
     <value>Bitte Startdatum festlegen</value>
   </data>
+  <data name="UserMasterDataPageTitleText" xml:space="preserve">
+    <value>Persönliche Stammdaten</value>
+  </data>
 </root>

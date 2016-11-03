@@ -230,6 +230,10 @@
           <source>Please set start date</source>
           <target state="translated">Bitte Startdatum festlegen</target>
         </trans-unit>
+        <trans-unit id="UserMasterDataPageTitleText" translate="yes" xml:space="preserve">
+          <source>Personal master data</source>
+          <target state="translated">Persönliche Stammdaten</target>
+        </trans-unit>
       </group>
     </body>
   </file>

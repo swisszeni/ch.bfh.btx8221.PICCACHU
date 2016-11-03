@@ -43,6 +43,11 @@ namespace BFH_USZ_PICC.Views
 
         }
 
+        void PersonalMasterDataClicked(object o, EventArgs e)
+        {
+            Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage)));
+        }
+
         async void WeeklyMaintenanceReminderToggled(object o, EventArgs e)
         {
             if (WeeklyMaintenanceReminder.IsToggled)

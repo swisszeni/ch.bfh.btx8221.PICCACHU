@@ -564,5 +564,14 @@ namespace BFH_USZ_PICC.Resx {
                 return ResourceManager.GetString("SettingsPageTitleText", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Personal master data ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageTitleText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageTitleText", resourceCulture);
+            }
+        }
     }
 }

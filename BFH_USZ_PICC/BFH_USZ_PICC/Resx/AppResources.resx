@@ -285,4 +285,7 @@
   <data name="SettingsPageTitleText" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="UserMasterDataPageTitleText" xml:space="preserve">
+    <value>Personal master data</value>
+  </data>
 </root>

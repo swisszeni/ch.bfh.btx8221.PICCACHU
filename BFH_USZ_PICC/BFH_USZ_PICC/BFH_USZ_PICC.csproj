@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
     <Compile Include="Interfaces\IBarcodeScanner.cs" />
     <Compile Include="Interfaces\ILocalize.cs" />
+    <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\MicroClaveChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\BandagesChangingEntry.cs" />
@@ -118,6 +119,9 @@
     </Compile>
     <Compile Include="Views\JournalOverviewPage.xaml.cs">
       <DependentUpon>JournalOverviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserMasterDataPage.xaml.cs">
+      <DependentUpon>UserMasterDataPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PICCDetailPage.xaml.cs">
       <DependentUpon>PICCDetailPage.xaml</DependentUpon>
@@ -289,6 +293,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserMasterDataPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
