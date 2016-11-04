@@ -286,17 +286,57 @@
           <source>Master data</source>
           <target state="translated">Stammdaten</target>
         </trans-unit>
-        <trans-unit id="NoButton" translate="yes" xml:space="preserve">
+        <trans-unit id="CallUSZTelemedicineNotPossibleText" translate="yes" xml:space="preserve">
+          <source>Your device can not call the USZ telemedicine. Contact 044 666 66 66</source>
+          <target state="translated">Ihr Gerät kann die USZ Telemedizin nicht anrufen. Kontaktieren Sie 044 666 66 66</target>
+        </trans-unit>
+        <trans-unit id="CallUSZTelemedicineText" translate="yes" xml:space="preserve">
+          <source>Do you really want to call USZ telemedicine?</source>
+          <target state="translated">USZ Telemedizin wirklich anrufen?</target>
+        </trans-unit>
+        <trans-unit id="FailedText" translate="yes" xml:space="preserve">
+          <source>Failed</source>
+          <target state="translated">Fehlgeschlagen</target>
+        </trans-unit>
+        <trans-unit id="InformationText" translate="yes" xml:space="preserve">
+          <source>Information</source>
+          <target state="translated">Information</target>
+        </trans-unit>
+        <trans-unit id="NoButtonText" translate="yes" xml:space="preserve">
           <source>No</source>
           <target state="translated">Nein</target>
         </trans-unit>
-        <trans-unit id="OkButton" translate="yes" xml:space="preserve">
+        <trans-unit id="OkButtonText" translate="yes" xml:space="preserve">
           <source>OK</source>
           <target state="translated">OK</target>
         </trans-unit>
-        <trans-unit id="YesButton" translate="yes" xml:space="preserve">
+        <trans-unit id="YesButtonText" translate="yes" xml:space="preserve">
           <source>Yes</source>
           <target state="translated">Ja</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageDelteAllPersonalDataText" translate="yes" xml:space="preserve">
+          <source>Do you really want to delete all personal data?</source>
+          <target state="translated">Wollen Sie wirklich alle persönlichen Angaben löschen?</target>
+        </trans-unit>
+        <trans-unit id="WarningText" translate="yes" xml:space="preserve">
+          <source>Warning</source>
+          <target state="translated">Warnung</target>
+        </trans-unit>
+        <trans-unit id="AddPICCPagePICCNotFoundInformationText" translate="yes" xml:space="preserve">
+          <source>PICC model could not be found</source>
+          <target state="translated">PICC Modell konnte nicht gefunden werden</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageDelteScheduledRemindersText" translate="yes" xml:space="preserve">
+          <source>Do you want to delete all scheduled maintenance reminders?</source>
+          <target state="translated">Wollen Sie alle geplanten Wartungserinnerungen löschen?</target>
+        </trans-unit>
+        <trans-unit id="SettingsPageMaintenanceReminderInformationText" translate="yes" xml:space="preserve">
+          <source>Your PICC should be maintained</source>
+          <target state="translated">Ihr PICC Katheter sollte gewartet werden</target>
+        </trans-unit>
+        <trans-unit id="SettingsPagePersonalDataButtonText" translate="yes" xml:space="preserve">
+          <source>Personal data</source>
+          <target state="translated">Persönliche Daten</target>
         </trans-unit>
       </group>
     </body>

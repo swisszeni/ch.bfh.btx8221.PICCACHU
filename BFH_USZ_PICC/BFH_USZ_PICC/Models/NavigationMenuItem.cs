@@ -13,8 +13,7 @@ namespace BFH_USZ_PICC.Models
         Knowledge, 
         Disorder,
         Journal, 
-        Settings,
-        UserMasterData
+        Settings
     }
     public class NavigationMenuItem
     {

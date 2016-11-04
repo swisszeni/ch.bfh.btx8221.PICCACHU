@@ -222,4 +222,31 @@
   <data name="MasterDataText" xml:space="preserve">
     <value>Stammdaten</value>
   </data>
+  <data name="CallUSZTelemedicineNotPossibleText" xml:space="preserve">
+    <value>Ihr Gerät kann die USZ Telemedizin nicht anrufen. Kontaktieren Sie 044 666 66 66</value>
+  </data>
+  <data name="CallUSZTelemedicineText" xml:space="preserve">
+    <value>USZ Telemedizin wirklich anrufen?</value>
+  </data>
+  <data name="FailedText" xml:space="preserve">
+    <value>Fehlgeschlagen</value>
+  </data>
+  <data name="InformationText" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="NoButtonText" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="OkButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="YesButtonText" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="UserMasterDataPageDelteAllPersonalDataText" xml:space="preserve">
+    <value>Wollen Sie wirklich alle persönlichen Angaben löschen?</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
 </root>

@@ -21,6 +21,6 @@
       <Picker x:Name="Repetition"/>
       <Button x:Name="AddNotificationButton" Text="{i18n:Translate SettingsPageAddReminderButtonText}" Clicked="AddNotificationButtonClicked" />
     </StackLayout>
-    <Button x:Name="PersonalMasterData" Text="Persönliche Daten" Clicked="PersonalMasterDataClicked" />
+        <Button x:Name="PersonalMasterData" Text="{i18n:Translate SettingsPagePersonalDataButtonText}"  Clicked="PersonalMasterDataClicked" />
   </StackLayout>
 </d:BaseContentPage>

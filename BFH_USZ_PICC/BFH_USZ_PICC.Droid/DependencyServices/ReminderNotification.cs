@@ -45,7 +45,7 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
 
         void IReminderNotification.RemoveAllNotifications()
         {
-            if (pendingIntents != null || alarmManager.NextAlarmClock != null)
+            if (pendingIntents != null)
             {
                 foreach (var intent in pendingIntents)
                 {

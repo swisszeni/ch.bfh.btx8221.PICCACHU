@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,13 +27,13 @@ namespace BFH_USZ_PICC.Views
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("Fehlgeschlagen", "Ihr Gerät kann die USZ Telemedizin nicht anrufen.\nKontaktieren sie 044 666 66 66", "Ok");
+                Application.Current.MainPage.DisplayAlert(AppResources.InformationText, AppResources.CallUSZTelemedicineNotPossibleText, AppResources.OkButtonText);
             }
         }
 
         async void CallUSZTelemedizin()
         {
-            bool call = await Application.Current.MainPage.DisplayAlert("Warnung", "USZ Telemedizin wirklich anrufen?", "Ja", "Nein");
+            bool call = await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CallUSZTelemedicineText, AppResources.YesButtonText, AppResources.NoButtonText);
             if (call)
             {
                 var dialer = DependencyService.Get<ICaller>();

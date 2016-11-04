@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -156,7 +157,7 @@ namespace BFH_USZ_PICC.Views
                 }
             }
 
-            bool registerManually = await DisplayAlert("Information", "PICC Modell konnte nicht gefunden werden", "PICC manuell erfassen", "OK");
+            bool registerManually = await DisplayAlert(AppResources.InformationText , AppResources.AddPICCPagePICCNotFoundInformationText, AppResources.AddPICCPageAddPiccManualButtonText, AppResources.OkButtonText);
             if (registerManually)
             {
                 // User wants to create model manually, create a new model with the searchterm preset as text

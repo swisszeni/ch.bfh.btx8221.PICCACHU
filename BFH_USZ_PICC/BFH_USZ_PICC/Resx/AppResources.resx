@@ -123,6 +123,9 @@
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Please enter a PICC</value>
   </data>
+  <data name="AddPICCPagePICCNotFoundInformationText" xml:space="preserve">
+    <value>PICC model could not be found</value>
+  </data>
   <data name="AddPICCPageScanButtonText" xml:space="preserve">
     <value>Scan barcode</value>
   </data>
@@ -131,6 +134,12 @@
   </data>
   <data name="BasePageTitleText" xml:space="preserve">
     <value>Page</value>
+  </data>
+  <data name="CallUSZTelemedicineNotPossibleText" xml:space="preserve">
+    <value>Your device can not call the USZ telemedicine. Contact 044 666 66 66</value>
+  </data>
+  <data name="CallUSZTelemedicineText" xml:space="preserve">
+    <value>Do you really want to call USZ telemedicine?</value>
   </data>
   <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
     <value>Call USZ telemedicine</value>
@@ -168,8 +177,14 @@
   <data name="EmergencyFlyoutTitleText" xml:space="preserve">
     <value>Approach in case of malfunction</value>
   </data>
+  <data name="FailedText" xml:space="preserve">
+    <value>Failed</value>
+  </data>
   <data name="GlossaryPageTitleText" xml:space="preserve">
     <value>Glossary</value>
+  </data>
+  <data name="InformationText" xml:space="preserve">
+    <value>Information</value>
   </data>
   <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
     <value>New entry</value>
@@ -204,10 +219,10 @@
   <data name="MyPICCPageTitleText" xml:space="preserve">
     <value>My PICC</value>
   </data>
-  <data name="NoButton" xml:space="preserve">
+  <data name="NoButtonText" xml:space="preserve">
     <value>No</value>
   </data>
-  <data name="OkButton" xml:space="preserve">
+  <data name="OkButtonText" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="PICCAssistanceDescriptionText" xml:space="preserve">
@@ -279,8 +294,14 @@
   <data name="SettingsPageAppVersionText" xml:space="preserve">
     <value>App version</value>
   </data>
+  <data name="SettingsPageDelteScheduledRemindersText" xml:space="preserve">
+    <value>Do you want to delete all scheduled maintenance reminders?</value>
+  </data>
   <data name="SettingsPageMaintenanceReminderFrequencyText" xml:space="preserve">
     <value>After how many days will the memory be repeated?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderInformationText" xml:space="preserve">
+    <value>Your PICC should be maintained</value>
   </data>
   <data name="SettingsPageMaintenanceReminderRepetitionText" xml:space="preserve">
     <value>How often should the memory be repeated?</value>
@@ -294,6 +315,9 @@
   <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
     <value>Maintenance reminder</value>
   </data>
+  <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
   <data name="SettingsPageTitleText" xml:space="preserve">
     <value>Settings</value>
   </data>
@@ -302,6 +326,9 @@
   </data>
   <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
     <value>Delte all master data</value>
+  </data>
+  <data name="UserMasterDataPageDelteAllPersonalDataText" xml:space="preserve">
+    <value>Do you really want to delete all personal data?</value>
   </data>
   <data name="UserMasterDataPageEmailLabelText" xml:space="preserve">
     <value>e-Mail:</value>
@@ -333,7 +360,10 @@
   <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
     <value>ZIP:</value>
   </data>
-  <data name="YesButton" xml:space="preserve">
+  <data name="WarningText" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="YesButtonText" xml:space="preserve">
     <value>Yes</value>
   </data>
 </root>

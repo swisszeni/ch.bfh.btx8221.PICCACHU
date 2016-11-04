@@ -9,24 +9,25 @@ namespace BFH_USZ_PICC.Views
 
     public sealed partial class UserMasterDataPage : BaseContentPage
     {
-        public UserMasterDataPage(ContentPage contained) : base(contained)
+        public enum UserMasterDataPageDisplayMode
+        {
+            View,
+            Edit
+        }
+
+        private UserMasterDataPageDisplayMode _displayMode;
+
+        public UserMasterDataPage(ContentPage contained, UserMasterDataPageDisplayMode displayMode = UserMasterDataPageDisplayMode.View) : base(contained)
         {
             InitializeComponent();
+
+            _displayMode = displayMode;
 
             SalutationPicker.Items.Insert(0, " ");
             SalutationPicker.Items.Insert(1, "Herr");
             SalutationPicker.Items.Insert(2, "Frau");
 
-
-            if (UserMasterData.MasterData != null)
-            {
-                enableUserInput(false);
-
-            }
-            else
-            {
-                enableUserInput(true);
-            }
+            EnableUserInput(_displayMode == UserMasterDataPageDisplayMode.Edit);
 
             BindingContext = UserMasterData.MasterData;
 
@@ -34,17 +35,17 @@ namespace BFH_USZ_PICC.Views
 
         void EditButtonClicked(object o, EventArgs e)
         {
-            enableUserInput(true);
+            EnableUserInput(true);
             
         }
 
         async void DeleteAllMasterDataButtonClicked(object o, EventArgs e)
         {
-            var deleteInput = await DisplayAlert("Warnung", "Wollen Sie wirklich alle persönlichen Angaben löschen?", "Ja", "Nein");
+            var deleteInput = await DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText);
             if (deleteInput)
             {
                 BindingContext = null;
-                enableUserInput(false);
+                EnableUserInput(false);
                 checkIfBirthdateSet();
             }
 
@@ -66,7 +67,7 @@ namespace BFH_USZ_PICC.Views
 
             //BindingContext = userMasterData;
 
-            enableUserInput(false);
+            EnableUserInput(false);
             checkIfBirthdateSet();
 
 
@@ -74,12 +75,12 @@ namespace BFH_USZ_PICC.Views
 
         void CancelButtonClicked(object o, EventArgs e)
         {
-            enableUserInput(false);
-            //FIXME: Add proper cancel behaviour (currentlly, press the cancel button does not return to the previous state.
+            EnableUserInput(false);
+            //FIXME: Add proper cancel behaviour (currently, press the cancel button does not return to the previous state.
 
         }
 
-        private void enableUserInput(bool yesOrNo)
+        private void EnableUserInput(bool yesOrNo)
         {
             SalutationPicker.IsEnabled = yesOrNo;
             Surname.IsEnabled = yesOrNo;

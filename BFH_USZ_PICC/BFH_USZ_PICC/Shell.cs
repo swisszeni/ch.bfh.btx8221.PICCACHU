@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static BFH_USZ_PICC.Views.UserMasterDataPage;
 
 namespace BFH_USZ_PICC
 {
@@ -39,7 +40,6 @@ namespace BFH_USZ_PICC
             Page newPage;
             if (!Pages.ContainsKey(id))
             {
-
                 switch (id)
                 {
                     case MenuItemKey.PICC:
@@ -59,9 +59,6 @@ namespace BFH_USZ_PICC
                         break;
                     case MenuItemKey.Settings:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(SettingsPage))));
-                        break;
-                    case MenuItemKey.UserMasterData:
-                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(UserMasterDataPage))));
                         break;
 
                 }
@@ -86,6 +83,20 @@ namespace BFH_USZ_PICC
                 IsPresented = false;
         }
 
+        public async Task DeepNavigateAsync(MenuItemKey basePageId, Type deepPageType, List<object> deepPageArgs = null)
+        {
+            await NavigateAsync(basePageId);
+            USZ_PICC_NavigationPage basePage = (USZ_PICC_NavigationPage)Pages[basePageId];
+            await basePage.PopToRootAsync();
+            var baseContentPage = basePage.CurrentPage;
+            await baseContentPage.Navigation.PushAsync(new BasePage(deepPageType, deepPageArgs));
+        }
+
+        private void AddPageToNavigationStructure(MenuItemKey page)
+        {
+
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -101,14 +112,15 @@ namespace BFH_USZ_PICC
                 var masterData = await AskUserToAddMasterData();
                 if (masterData)
                 {
-                    NavigateAsync(MenuItemKey.UserMasterData);
+                    //NavigateAsync(MenuItemKey.UserMasterData);
+                    await DeepNavigateAsync(MenuItemKey.Settings, typeof(UserMasterDataPage), new List<object> { UserMasterDataPageDisplayMode.Edit });
                 }
             }
         }
 
         private async Task<bool> AskUserToAddMasterData()
         {
-            return await DisplayAlert(AppResources.MasterDataText, AppResources.MasterDataBackUpQuestionText, AppResources.YesButton, AppResources.NoButton);
+            return await DisplayAlert(AppResources.MasterDataText, AppResources.MasterDataBackUpQuestionText, AppResources.YesButtonText, AppResources.NoButtonText);
         }
 
     }

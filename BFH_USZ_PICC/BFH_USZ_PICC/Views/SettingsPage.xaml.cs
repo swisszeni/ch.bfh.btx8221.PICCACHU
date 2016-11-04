@@ -1,19 +1,24 @@
 ﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Resx;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using static BFH_USZ_PICC.Views.UserMasterDataPage;
 
 namespace BFH_USZ_PICC.Views
 {
 
     public sealed partial class SettingsPage : BaseContentPage
     {
-        IReminderNotification notifier = DependencyService.Get<IReminderNotification>();
-        private List<string> plannedNotifications = new List<string>();
+        IReminderNotification notifier; 
+        private List<string> plannedNotifications;
 
         public SettingsPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
+
+            notifier = DependencyService.Get<IReminderNotification>();
+            plannedNotifications = new List<string>();
 
             int temp = 0;
             while (temp < 20)
@@ -31,7 +36,7 @@ namespace BFH_USZ_PICC.Views
         void AddNotificationButtonClicked(object o, EventArgs e)
         {
             EditWeeklyReminder.IsEnabled = false;
-            enableInputForNotifications(false);
+            EnableInputForNotifications(false);
 
             DateTimeOffset reminderStartDate = ReminderStartDate.Date;
             DateTimeOffset maintenanceReminderStartDateTime = reminderStartDate.Add(ReminderDailyTime.Time);
@@ -39,13 +44,13 @@ namespace BFH_USZ_PICC.Views
             int maintenanceReminderRepetition = Repetition.SelectedIndex;
             int dailyInterval = Frequency.SelectedIndex + 1;
 
-            notifier.AddNotification(maintenanceReminderStartDateTime, dailyInterval, maintenanceReminderRepetition, "Information", "Ihr PICC Katheter sollte gewartet werden.");
+            notifier.AddNotification(maintenanceReminderStartDateTime, dailyInterval, maintenanceReminderRepetition, AppResources.InformationText, AppResources.SettingsPageMaintenanceReminderInformationText);
 
         }
 
         void PersonalMasterDataClicked(object o, EventArgs e)
         {
-            Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage)));
+            Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { UserMasterDataPageDisplayMode.View }));
         }
 
         async void WeeklyMaintenanceReminderToggled(object o, EventArgs e)
@@ -57,11 +62,11 @@ namespace BFH_USZ_PICC.Views
             }
             else
             {
-                bool deleteReminders = await DisplayAlert("Information", "Wollen Sie alle geplanten Wartungserinnerungen löschen?", "Ja", "Nein");
+                bool deleteReminders = await DisplayAlert(AppResources.WarningText , AppResources.SettingsPageDelteScheduledRemindersText, AppResources.YesButtonText, AppResources.NoButtonText);
                 if (deleteReminders)
                 {
                     EditWeeklyReminder.IsVisible = false;
-                    enableInputForNotifications(true);
+                    EnableInputForNotifications(true);
                     notifier.RemoveAllNotifications();                    
                 }
                 else
@@ -71,7 +76,7 @@ namespace BFH_USZ_PICC.Views
             }
         }
 
-        private void enableInputForNotifications(bool yesOrNo)
+        private void EnableInputForNotifications(bool yesOrNo)
         {
             AddNotificationButton.IsEnabled = yesOrNo;
             ReminderStartDate.IsEnabled = yesOrNo;
