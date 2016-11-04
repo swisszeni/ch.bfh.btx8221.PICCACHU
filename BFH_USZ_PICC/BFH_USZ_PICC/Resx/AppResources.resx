@@ -316,7 +316,7 @@
     <value>Maintenance reminder</value>
   </data>
   <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
-    <value>Personal data</value>
+    <value>My personal data</value>
   </data>
   <data name="SettingsPageTitleText" xml:space="preserve">
     <value>Settings</value>
@@ -325,7 +325,7 @@
     <value>Birthdate:</value>
   </data>
   <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
-    <value>Delte all master data</value>
+    <value>Delte my data</value>
   </data>
   <data name="UserMasterDataPageDelteAllPersonalDataText" xml:space="preserve">
     <value>Do you really want to delete all personal data?</value>
@@ -355,7 +355,7 @@
     <value>Surname:</value>
   </data>
   <data name="UserMasterDataPageTitleText" xml:space="preserve">
-    <value>Personal master data</value>
+    <value>My personal data</value>
   </data>
   <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
     <value>ZIP:</value>

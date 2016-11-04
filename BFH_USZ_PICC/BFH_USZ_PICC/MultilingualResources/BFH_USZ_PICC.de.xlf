@@ -231,8 +231,8 @@
           <target state="translated">Bitte Startdatum festlegen</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageTitleText" translate="yes" xml:space="preserve">
-          <source>Personal master data</source>
-          <target state="translated">Persönliche Stammdaten</target>
+          <source>My personal data</source>
+          <target state="translated">Meine Daten</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageBirthdateLabelText" translate="yes" xml:space="preserve">
           <source>Birthdate:</source>
@@ -275,7 +275,7 @@
           <target state="translated">PLZ:</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDeleteAllMasterDataButton" translate="yes" xml:space="preserve">
-          <source>Delte all master data</source>
+          <source>Delte my data</source>
           <target state="translated">Alle Angaben löschen</target>
         </trans-unit>
         <trans-unit id="MasterDataBackUpQuestionText" translate="yes" xml:space="preserve">
@@ -335,7 +335,7 @@
           <target state="translated">Ihr PICC Katheter sollte gewartet werden</target>
         </trans-unit>
         <trans-unit id="SettingsPagePersonalDataButtonText" translate="yes" xml:space="preserve">
-          <source>Personal data</source>
+          <source>My personal data</source>
           <target state="translated">Persönliche Daten</target>
         </trans-unit>
       </group>

@@ -181,7 +181,7 @@
     <value>Bitte Startdatum festlegen</value>
   </data>
   <data name="UserMasterDataPageTitleText" xml:space="preserve">
-    <value>Persönliche Stammdaten</value>
+    <value>Meine Daten</value>
   </data>
   <data name="UserMasterDataPageBirthdateLabelText" xml:space="preserve">
     <value>Geburtsdatum:</value>
@@ -248,5 +248,17 @@
   </data>
   <data name="WarningText" xml:space="preserve">
     <value>Warnung</value>
+  </data>
+  <data name="AddPICCPagePICCNotFoundInformationText" xml:space="preserve">
+    <value>PICC Modell konnte nicht gefunden werden</value>
+  </data>
+  <data name="SettingsPageDelteScheduledRemindersText" xml:space="preserve">
+    <value>Wollen Sie alle geplanten Wartungserinnerungen löschen?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderInformationText" xml:space="preserve">
+    <value>Ihr PICC Katheter sollte gewartet werden</value>
+  </data>
+  <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
+    <value>Persönliche Daten</value>
   </data>
 </root>

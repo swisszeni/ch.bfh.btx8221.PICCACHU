@@ -656,7 +656,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal data.
+        ///   Looks up a localized string similar to My personal data.
         /// </summary>
         public static string SettingsPagePersonalDataButtonText {
             get {
@@ -683,7 +683,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delte all master data.
+        ///   Looks up a localized string similar to Delte my data.
         /// </summary>
         public static string UserMasterDataPageDeleteAllMasterDataButton {
             get {
@@ -773,7 +773,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal master data.
+        ///   Looks up a localized string similar to My personal data.
         /// </summary>
         public static string UserMasterDataPageTitleText {
             get {

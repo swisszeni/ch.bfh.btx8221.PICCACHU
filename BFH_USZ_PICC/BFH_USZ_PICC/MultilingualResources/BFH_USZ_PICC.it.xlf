@@ -231,8 +231,8 @@
           <target state="new">Please set start date</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageTitleText" translate="yes" xml:space="preserve">
-          <source>Personal master data</source>
-          <target state="new">Personal master data</target>
+          <source>My personal data</source>
+          <target state="new">My personal data</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageBirthdateLabelText" translate="yes" xml:space="preserve">
           <source>Birthdate:</source>
@@ -275,8 +275,8 @@
           <target state="new">ZIP:</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDeleteAllMasterDataButton" translate="yes" xml:space="preserve">
-          <source>Delte all master data</source>
-          <target state="new">Delte all master data</target>
+          <source>Delte my data</source>
+          <target state="new">Delte my data</target>
         </trans-unit>
         <trans-unit id="MasterDataBackUpQuestionText" translate="yes" xml:space="preserve">
           <source>Do you want to back up your personal data? You can adjust the information at any time in the settings. </source>
@@ -335,8 +335,8 @@
           <target state="new">Your PICC should be maintained</target>
         </trans-unit>
         <trans-unit id="SettingsPagePersonalDataButtonText" translate="yes" xml:space="preserve">
-          <source>Personal data</source>
-          <target state="new">Personal data</target>
+          <source>My personal data</source>
+          <target state="new">My personal data</target>
         </trans-unit>
       </group>
     </body>
