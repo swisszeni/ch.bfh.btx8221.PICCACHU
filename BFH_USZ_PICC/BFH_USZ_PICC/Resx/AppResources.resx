@@ -183,6 +183,12 @@
   <data name="KnowledgeEntriesTitleText" xml:space="preserve">
     <value>FAQ</value>
   </data>
+  <data name="MasterDataBackUpQuestionText" xml:space="preserve">
+    <value>Do you want to back up your personal data? You can adjust the information at any time in the settings. </value>
+  </data>
+  <data name="MasterDataText" xml:space="preserve">
+    <value>Master data</value>
+  </data>
   <data name="MyPICCPageAddNewPICCButtonText" xml:space="preserve">
     <value>Add a new PICC</value>
   </data>
@@ -197,6 +203,12 @@
   </data>
   <data name="MyPICCPageTitleText" xml:space="preserve">
     <value>My PICC</value>
+  </data>
+  <data name="NoButton" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OkButton" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="PICCAssistanceDescriptionText" xml:space="preserve">
     <value>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</value>
@@ -285,7 +297,43 @@
   <data name="SettingsPageTitleText" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="UserMasterDataPageBirthdateLabelText" xml:space="preserve">
+    <value>Birthdate:</value>
+  </data>
+  <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
+    <value>Delte all master data</value>
+  </data>
+  <data name="UserMasterDataPageEmailLabelText" xml:space="preserve">
+    <value>e-Mail:</value>
+  </data>
+  <data name="UserMasterDataPageMobileLabelText" xml:space="preserve">
+    <value>Cellphone:</value>
+  </data>
+  <data name="UserMasterDataPageNameLabelText" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="UserMasterDataPagePhoneLabelText" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="UserMasterDataPagePlaceLabelText" xml:space="preserve">
+    <value>Place:</value>
+  </data>
+  <data name="UserMasterDataPageSalutationLabelText" xml:space="preserve">
+    <value>Salutation:</value>
+  </data>
+  <data name="UserMasterDataPageStreetLabelText" xml:space="preserve">
+    <value>Street:</value>
+  </data>
+  <data name="UserMasterDataPageSurnameLabelText" xml:space="preserve">
+    <value>Surname:</value>
+  </data>
   <data name="UserMasterDataPageTitleText" xml:space="preserve">
     <value>Personal master data</value>
+  </data>
+  <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
+    <value>ZIP:</value>
+  </data>
+  <data name="YesButton" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

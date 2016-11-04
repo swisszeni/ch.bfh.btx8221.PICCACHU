@@ -29,31 +29,15 @@ namespace BFH_USZ_PICC
             //    }
             //};
 
-            //MainPage = new Shell();
-            if (Device.OS == TargetPlatform.Windows)
-            {
-                OnStart();
-            }
+            MainPage = new Shell();
+           
         }
 
-        protected override async void OnStart()
-        {
-            MainPage = new Shell();
-            // Handle when your app starts
+        protected override void OnStart()
+        {            
+            // Handle when your app startss
             SetLocale();
-
-            //FIXME Test for first start. bool should check if the user starts the app for the first time and ask him if he wants to add his master data
-            bool isFirstStart = true;
-            if (isFirstStart)
-            {
-                var masterData = await MainPage.DisplayAlert("Stammdaten", "Möchten Sie Ihre persönlichen Daten in der App hinterlegen? Sie können die Angaben jederzeit in den Einstellungen unter 'Persönliche Daten' anpassen", "Ja", "Nein");
-                if (masterData)
-                {
-                    Shell test = new Shell();
-                    MainPage = test;
-                    await test.NavigateAsync(MenuItemKey.UserMasterData);
-                }
-            }
+            //((Shell)MainPage).CheckForFirstStart();
         }
 
         protected override void OnSleep()

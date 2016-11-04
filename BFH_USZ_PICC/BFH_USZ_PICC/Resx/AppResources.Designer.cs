@@ -260,6 +260,24 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Do you want to back up your personal data? You can adjust the information at any time in the settings.  ähnelt.
+        /// </summary>
+        public static string MasterDataBackUpQuestionText {
+            get {
+                return ResourceManager.GetString("MasterDataBackUpQuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Master data ähnelt.
+        /// </summary>
+        public static string MasterDataText {
+            get {
+                return ResourceManager.GetString("MasterDataText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Add a new PICC ähnelt.
         /// </summary>
         public static string MyPICCPageAddNewPICCButtonText {
@@ -301,6 +319,24 @@ namespace BFH_USZ_PICC.Resx {
         public static string MyPICCPageTitleText {
             get {
                 return ResourceManager.GetString("MyPICCPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No ähnelt.
+        /// </summary>
+        public static string NoButton {
+            get {
+                return ResourceManager.GetString("NoButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die OK ähnelt.
+        /// </summary>
+        public static string OkButton {
+            get {
+                return ResourceManager.GetString("OkButton", resourceCulture);
             }
         }
         
@@ -566,11 +602,119 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Birthdate: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageBirthdateLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageBirthdateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Delte all master data ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageDeleteAllMasterDataButton {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageDeleteAllMasterDataButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die e-Mail: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageEmailLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageEmailLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cellphone: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageMobileLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageMobileLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Name: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageNameLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageNameLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Phone: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPagePhoneLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPagePhoneLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Place: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPagePlaceLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPagePlaceLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Salutation: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageSalutationLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageSalutationLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Street: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageStreetLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageStreetLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Surname: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageSurnameLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageSurnameLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Personal master data ähnelt.
         /// </summary>
         public static string UserMasterDataPageTitleText {
             get {
                 return ResourceManager.GetString("UserMasterDataPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die ZIP: ähnelt.
+        /// </summary>
+        public static string UserMasterDataPageZIPLabelText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageZIPLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yes ähnelt.
+        /// </summary>
+        public static string YesButton {
+            get {
+                return ResourceManager.GetString("YesButton", resourceCulture);
             }
         }
     }

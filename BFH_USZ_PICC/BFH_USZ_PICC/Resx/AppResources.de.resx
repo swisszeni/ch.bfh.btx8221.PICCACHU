@@ -183,4 +183,43 @@
   <data name="UserMasterDataPageTitleText" xml:space="preserve">
     <value>Persönliche Stammdaten</value>
   </data>
+  <data name="UserMasterDataPageBirthdateLabelText" xml:space="preserve">
+    <value>Geburtsdatum:</value>
+  </data>
+  <data name="UserMasterDataPageEmailLabelText" xml:space="preserve">
+    <value>e-Mail:</value>
+  </data>
+  <data name="UserMasterDataPageMobileLabelText" xml:space="preserve">
+    <value>Mobile:</value>
+  </data>
+  <data name="UserMasterDataPageNameLabelText" xml:space="preserve">
+    <value>Vorname:</value>
+  </data>
+  <data name="UserMasterDataPagePhoneLabelText" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="UserMasterDataPagePlaceLabelText" xml:space="preserve">
+    <value>Ort:</value>
+  </data>
+  <data name="UserMasterDataPageSalutationLabelText" xml:space="preserve">
+    <value>Anrede:</value>
+  </data>
+  <data name="UserMasterDataPageStreetLabelText" xml:space="preserve">
+    <value>Strasse:</value>
+  </data>
+  <data name="UserMasterDataPageSurnameLabelText" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
+    <value>PLZ:</value>
+  </data>
+  <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
+    <value>Alle Angaben löschen</value>
+  </data>
+  <data name="MasterDataBackUpQuestionText" xml:space="preserve">
+    <value>Möchten Sie Ihre persönlichen Daten in der App hinterlegen? Sie können die Angaben jederzeit in den Einstellungen unter 'Persönliche Daten' anpassen".</value>
+  </data>
+  <data name="MasterDataText" xml:space="preserve">
+    <value>Stammdaten</value>
+  </data>
 </root>

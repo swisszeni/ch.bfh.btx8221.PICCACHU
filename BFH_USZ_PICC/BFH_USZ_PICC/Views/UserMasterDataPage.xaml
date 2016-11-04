@@ -10,31 +10,31 @@
   <ScrollView>
     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" >
       <StackLayout x:Name="MasterDataStackLayout" Orientation="Vertical" VerticalOptions="FillAndExpand">
-        <Label Text="Anrede"/>
+        <Label Text="{i18n:Translate UserMasterDataPageSalutationLabelText}"/>
         <Picker x:Name="SalutationPicker" SelectedIndex="{Binding Salutation}"/>
-        <Label Text="Nachname"/>
+        <Label Text="{i18n:Translate UserMasterDataPageSurnameLabelText}"/>
         <Entry x:Name="Surname" Text="{Binding Surname}"/>
-        <Label Text="Vorname"/>
+        <Label Text="{i18n:Translate UserMasterDataPageNameLabelText}"/>
         <Entry x:Name="Name"  Text="{Binding Name}"/>
-        <Label Text="Strasse"/>
+        <Label Text="{i18n:Translate UserMasterDataPageStreetLabelText}"/>
         <Entry x:Name="Street"  Text="{Binding Street}"/>
-        <Label Text="PLZ"/>
+        <Label Text="{i18n:Translate UserMasterDataPageZIPLabelText}"/>
         <Entry x:Name="Zip"  Text="{Binding Zip}"/>
-        <Label Text="Ort"/>
+        <Label Text="{i18n:Translate UserMasterDataPagePlaceLabelText}"/>
         <Entry x:Name="Place"  Text="{Binding Place}"/>
-        <Label Text="Email"/>
+        <Label Text="{i18n:Translate UserMasterDataPageEmailLabelText}"/>
         <Entry x:Name="Email"  Text="{Binding Email}"/>
-        <Label Text="Telefon"/>
+        <Label Text="{i18n:Translate UserMasterDataPagePhoneLabelText}"/>
         <Entry x:Name="Phone"  Text="{Binding Phone}"/>
-        <Label Text="Mobile"/>
+        <Label Text="{i18n:Translate UserMasterDataPageMobileLabelText}"/>
         <Entry x:Name="Mobile" Text="{Binding Mobile}"/>
-        <Label Text="Geburtstatum"/>
+        <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"/>
         <DatePicker x:Name="BirthdatePicker" Date="{Binding Birthdate}">
           <DatePicker.Format>d</DatePicker.Format>
         </DatePicker>       
         <StackLayout x:Name="EditAndDeleteStackLayout" Orientation="Horizontal" VerticalOptions="Center">
           <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Clicked="EditButtonClicked"/>
-          <Button x:Name="DeleteButton" Text="Alle Angabgen löschen" Clicked="DeleteButtonClicked"/>
+          <Button x:Name="DeleteAllMasterDataButton" Text="{i18n:Translate UserMasterDataPageDeleteAllMasterDataButton}" Clicked="DeleteAllMasterDataButtonClicked"/>
         </StackLayout>
         <StackLayout x:Name="SaveAndCancelStackLayout" Orientation="Horizontal" VerticalOptions="Center">
           <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Clicked="SaveButtonClicked"/>

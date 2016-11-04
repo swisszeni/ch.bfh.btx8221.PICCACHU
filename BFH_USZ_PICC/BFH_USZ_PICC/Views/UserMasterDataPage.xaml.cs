@@ -38,7 +38,7 @@ namespace BFH_USZ_PICC.Views
             
         }
 
-        async void DeleteButtonClicked(object o, EventArgs e)
+        async void DeleteAllMasterDataButtonClicked(object o, EventArgs e)
         {
             var deleteInput = await DisplayAlert("Warnung", "Wollen Sie wirklich alle persönlichen Angaben löschen?", "Ja", "Nein");
             if (deleteInput)

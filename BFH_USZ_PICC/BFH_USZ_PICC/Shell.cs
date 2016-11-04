@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Controls;
 using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels;
 using BFH_USZ_PICC.Views;
 using System;
@@ -29,6 +30,8 @@ namespace BFH_USZ_PICC
             NavigateAsync(MenuItemKey.PICC);
 
             InvalidateMeasure();
+
+            //CheckForFirstStart();
         }
 
         public async Task NavigateAsync(MenuItemKey id)
@@ -81,6 +84,31 @@ namespace BFH_USZ_PICC
 
             if (Device.Idiom != TargetIdiom.Tablet)
                 IsPresented = false;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            CheckForFirstStart();
+        }
+
+        public async void CheckForFirstStart()
+        {
+            //Test for first start. bool should check if the user starts the app for the first time and ask him if he wants to add his personal master data
+            bool isFirstStart = true;
+            if (isFirstStart)
+            {
+                var masterData = await AskUserToAddMasterData();
+                if (masterData)
+                {
+                    NavigateAsync(MenuItemKey.UserMasterData);
+                }
+            }
+        }
+
+        private async Task<bool> AskUserToAddMasterData()
+        {
+            return await DisplayAlert(AppResources.MasterDataText, AppResources.MasterDataBackUpQuestionText, AppResources.YesButton, AppResources.NoButton);
         }
 
     }

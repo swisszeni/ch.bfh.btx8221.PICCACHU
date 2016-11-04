@@ -234,6 +234,70 @@
           <source>Personal master data</source>
           <target state="new">Personal master data</target>
         </trans-unit>
+        <trans-unit id="UserMasterDataPageBirthdateLabelText" translate="yes" xml:space="preserve">
+          <source>Birthdate:</source>
+          <target state="new">Birthdate:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageEmailLabelText" translate="yes" xml:space="preserve">
+          <source>e-Mail:</source>
+          <target state="new">e-Mail:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageMobileLabelText" translate="yes" xml:space="preserve">
+          <source>Cellphone:</source>
+          <target state="new">Cellphone:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageNameLabelText" translate="yes" xml:space="preserve">
+          <source>Name:</source>
+          <target state="new">Name:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPagePhoneLabelText" translate="yes" xml:space="preserve">
+          <source>Phone:</source>
+          <target state="new">Phone:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPagePlaceLabelText" translate="yes" xml:space="preserve">
+          <source>Place:</source>
+          <target state="new">Place:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageSalutationLabelText" translate="yes" xml:space="preserve">
+          <source>Salutation:</source>
+          <target state="new">Salutation:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageStreetLabelText" translate="yes" xml:space="preserve">
+          <source>Street:</source>
+          <target state="new">Street:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageSurnameLabelText" translate="yes" xml:space="preserve">
+          <source>Surname:</source>
+          <target state="new">Surname:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageZIPLabelText" translate="yes" xml:space="preserve">
+          <source>ZIP:</source>
+          <target state="new">ZIP:</target>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageDeleteAllMasterDataButton" translate="yes" xml:space="preserve">
+          <source>Delte all master data</source>
+          <target state="new">Delte all master data</target>
+        </trans-unit>
+        <trans-unit id="MasterDataBackUpQuestionText" translate="yes" xml:space="preserve">
+          <source>Do you want to back up your personal data? You can adjust the information at any time in the settings. </source>
+          <target state="new">Do you want to back up your personal data? You can adjust the information at any time in the settings. </target>
+        </trans-unit>
+        <trans-unit id="MasterDataText" translate="yes" xml:space="preserve">
+          <source>Master data</source>
+          <target state="new">Master data</target>
+        </trans-unit>
+        <trans-unit id="NoButton" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="new">No</target>
+        </trans-unit>
+        <trans-unit id="OkButton" translate="yes" xml:space="preserve">
+          <source>OK</source>
+          <target state="new">OK</target>
+        </trans-unit>
+        <trans-unit id="YesButton" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <target state="new">Yes</target>
+        </trans-unit>
       </group>
     </body>
   </file>
