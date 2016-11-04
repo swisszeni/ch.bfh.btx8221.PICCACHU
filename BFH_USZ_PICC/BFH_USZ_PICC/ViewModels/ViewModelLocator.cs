@@ -18,6 +18,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            SimpleIoc.Default.Register<AddPICCViewModel>();
             SimpleIoc.Default.Register<GlossaryViewModel>();
         }
 

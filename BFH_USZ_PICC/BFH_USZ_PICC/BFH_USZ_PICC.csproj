@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shell.cs" />
     <Compile Include="Utilitys\Converters.cs" />
+    <Compile Include="ViewModels\AddPICCViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
