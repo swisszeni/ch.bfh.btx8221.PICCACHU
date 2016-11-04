@@ -4,7 +4,11 @@
              x:Class="BFH_USZ_PICC.Views.GlossaryPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views" 
              BindingContext="{Binding [GlossaryViewModel], Source={StaticResource ViewModelLocator}}">  
-  <ListView x:Name="GlossaryList" ItemsSource="{Binding ListOfGlossaryEntries}" SelectedItem="{Binding SelectedEntry, Mode=TwoWay}" ItemSelected="SelectedEntry" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+  <ListView x:Name="GlossaryList" 
+            ItemsSource="{Binding GlossaryEntriesList}" 
+            SelectedItem="{Binding SelectedEntry, Mode=TwoWay}" 
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
+            AbsoluteLayout.LayoutFlags="All">
     <ListView.Margin>
       <OnPlatform x:TypeArguments="Thickness"
                       iOS="20, 40, 20, 20"

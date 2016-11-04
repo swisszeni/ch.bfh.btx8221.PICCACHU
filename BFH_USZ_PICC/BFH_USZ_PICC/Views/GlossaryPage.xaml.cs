@@ -14,16 +14,6 @@ namespace BFH_USZ_PICC.Views
         public GlossaryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            Title = "Glossar";
-
-            //Binds all glossary entries to the binding context
-            
-        }
-
-        //This method checks whitch glossary entry has been selected and displays the related information in a pop up.
-        void SelectedEntry(object sender, EventArgs e)
-        {
-            GlossaryList.SelectedItem = null;
         }
     }
 }
