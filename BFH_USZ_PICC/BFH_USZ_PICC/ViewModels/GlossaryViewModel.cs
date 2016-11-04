@@ -45,7 +45,7 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if(Set(() => SelectedEntry, ref _selectedEntry, value) & _selectedEntry != null)
                 {
-                    Task alertShowing = Application.Current.MainPage.DisplayAlert(value.word, value.explanation, "Ok");
+                    Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
                 }
             }
         }

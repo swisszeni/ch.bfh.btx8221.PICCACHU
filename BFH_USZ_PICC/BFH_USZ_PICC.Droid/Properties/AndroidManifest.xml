@@ -3,5 +3,7 @@
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<application android:label="USZ PICC" android:theme="@style/MyTheme" android:icon="@drawable/ic_launcher"></application>
+	<receiver android:name=".AlarmReceiver" android:enabled="true" android:exported="true" android:process=":remote" android:label="AlarmReceiver" />
 </manifest>

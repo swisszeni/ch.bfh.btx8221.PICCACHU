@@ -20,7 +20,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string></string>
+	<string>9.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>BFH_USZ_PICC</string>
 	<key>CFBundleIdentifier</key>
@@ -52,5 +52,17 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
 	<string></string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>de</string>
+		<string>it</string>
+		<string>fr</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

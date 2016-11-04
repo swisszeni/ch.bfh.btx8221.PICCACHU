@@ -3,16 +3,18 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.DisorderDetailPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views">
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate DisorderDetailPageTitleText}">
   <ScrollView>
     <StackLayout Padding="20" Opacity="1">
-      <Label Text="Symptom" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text="{i18n:Translate DisorderDetailPageSymptomLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Label Text="{Binding Symptom}"/>
-      <Label Text="Ursache" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text="{i18n:Translate DisorderDetailPageReasonLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Label Text="{Binding Reason}"/>
-      <Label Text="Massnahme" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text="{i18n:Translate DisorderDetailPageActionLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Label Text="{Binding Action}"/>
-      <Button Text="USZ Telemedizin kontaktieren" Clicked="ContactUSZTelemedizin"/>
+      <Button Text="{i18n:Translate CallUSZTelemedizinButtonText}" Clicked="ContactUSZTelemedizin"/>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

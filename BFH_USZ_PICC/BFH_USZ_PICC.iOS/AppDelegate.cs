@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UserNotifications;
 
 using Foundation;
 using UIKit;
-using HockeyApp;
+using HockeyApp.iOS;
 
 namespace BFH_USZ_PICC.iOS
 {
@@ -26,13 +27,30 @@ namespace BFH_USZ_PICC.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new BFH_USZ_PICC.Application());
 
-            //FIXME
+            // Request notification permissions from the user
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
+                // Handle approval
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(registerNotificationTypes);
+                
+            });
+
+            // Get current notification settings
+            UNUserNotificationCenter.Current.GetNotificationSettings((settings) => {
+                var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
+            });
+
             // Enable crashlog with HockeyApp
-            //var manager = BITHockeyManager.SharedHockeyManager;
-            //manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
-            //manager.StartManager();
-            //manager.Authenticator.AuthenticateInstallation();
+            var manager = BITHockeyManager.SharedHockeyManager;
+            manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
+            manager.StartManager();
+            manager.Authenticator.AuthenticateInstallation();
             return base.FinishedLaunching(app, options);
+        }
+
+        private void registerNotificationTypes()
+        {
+            var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
+            UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
         }
     }
 }

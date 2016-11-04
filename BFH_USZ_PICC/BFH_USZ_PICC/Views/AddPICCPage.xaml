@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                   x:Class="BFH_USZ_PICC.Views.AddPICCPage"
-                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-                   BindingContext="{Binding [AddPICCViewModel], Source={StaticResource ViewModelLocator}}">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.AddPICCPage"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate AddPICCPageTitleText}"
+             BindingContext="{Binding [AddPICCViewModel], Source={StaticResource ViewModelLocator}}">
   <ScrollView>
     <StackLayout Orientation="Vertical" Grid.Row="0">
       <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
-        <SearchBar x:Name="PICCEntry" Placeholder="Bitte PICC Name eingeben" SearchButtonPressed="PiccSearchButtonClicked"
+        <SearchBar x:Name="PICCEntry" Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}" SearchButtonPressed="PiccSearchButtonClicked"
                    TextChanged="SerachForAPiccModel" Unfocused="SearchBarUnfocused" Focused="SearchBarFocused"/>
         <ListView x:Name="AllModels" ItemSelected="SelectedPicc" IsVisible="False" ItemsSource="{Binding PiccModels, Mode=OneWay}">
           <ListView.ItemTemplate>
@@ -17,8 +19,8 @@
           </ListView.ItemTemplate>
         </ListView>
       </StackLayout>
-      <Button x:Name="ScanButton" Text="Barcode scannen" Clicked="ScanClick"></Button>
-      <Button x:Name="AddPiccManualButton" Text="PICC manuell erfassen" Clicked="AddPiccManualButtonClick"></Button>
+      <Button x:Name="ScanButton" Text="{i18n:Translate AddPICCPageScanButtonText}" Clicked="ScanClick"></Button>
+      <Button x:Name="AddPiccManualButton" Text="{i18n:Translate AddPICCPageAddPiccManualButtonText}" Clicked="AddPiccManualButtonClick"></Button>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

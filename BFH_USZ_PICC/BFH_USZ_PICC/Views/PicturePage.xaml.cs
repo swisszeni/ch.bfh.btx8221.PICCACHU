@@ -18,8 +18,7 @@ namespace BFH_USZ_PICC.Views
         public PicturePage(ContentPage contained, KnowledgeEntryImageElement source) : base(contained)
         {
             InitializeComponent();
-            Title = "Bild Detail";
-
+           
             // Cast the ImageElemnt first to a KnowledgeEntryElement and cast its source to an Image
             SelectedImage.Source = ((Image)((IKnowledgeEntryElement)source).element).Source;
 
@@ -38,10 +37,10 @@ namespace BFH_USZ_PICC.Views
             SelectedImage.GestureRecognizers.Add(tapGesture);
 
             // Checks if the ImageElement has a caption and add it to the label
-            if (source.caption != null)
+            if (source.Caption != null)
             {
                 SelectedImageCaption.IsVisible = true;
-                SelectedImageCaption.Text = source.caption;
+                SelectedImageCaption.Text = source.Caption;
             }
 
         }

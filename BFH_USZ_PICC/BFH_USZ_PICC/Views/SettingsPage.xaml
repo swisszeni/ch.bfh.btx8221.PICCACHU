@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.SettingsPage"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate SettingsPageTitleText}">
+    <StackLayout>
+        <Label Text="{i18n:Translate SettingsPageAppVersionText}"/>
+        <Label Text="PICCACHU Version 1.0"/>
+        <Label Text="{i18n:Translate SettingsPageMaintenanceReminderText}"/>
+        <Switch x:Name="WeeklyMaintenanceReminder" IsToggled="False" Toggled="WeeklyMaintenanceReminderToggled"/>
+        <StackLayout x:Name="EditWeeklyReminder" IsVisible="False">
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetStartDateText}"/>
+            <DatePicker x:Name="ReminderStartDate"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetDailyTimeText}"/>
+            <TimePicker x:Name="ReminderDailyTime"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderFrequencyText}"/>
+            <Picker x:Name="Frequency"/>
+            <Label Text="{i18n:Translate SettingsPageMaintenanceReminderRepetitionText}"/>
+            <Picker x:Name="Repetition"/>
+            <Button x:Name="AddNotificationButton" Text="{i18n:Translate SettingsPageAddReminderButtonText}" Clicked="AddNotificationButtonClicked" />
+        </StackLayout>
+    </StackLayout>
+</d:BaseContentPage>

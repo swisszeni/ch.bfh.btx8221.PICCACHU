@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
+    <value>Lösungsschritte</value>
+  </data>
+  <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
+    <value>Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</value>
+  </data>
+  <data name="EmergencyFlyoutTitleText" xml:space="preserve">
+    <value>Vorgehen bei Problemen</value>
+  </data>
+  <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
+    <value>Bitte PICC Name eingeben</value>
+  </data>
+  <data name="AddPICCPageScanButtonText" xml:space="preserve">
+    <value>Barcode scannen</value>
+  </data>
+  <data name="AddPICCPageAddPiccManualButtonText" xml:space="preserve">
+    <value>PICC manuell erfassen</value>
+  </data>
+  <data name="AddPICCPageTitleText" xml:space="preserve">
+    <value>PICC hinzufügen</value>
+  </data>
+  <data name="BasePageTitleText" xml:space="preserve">
+    <value>Seite</value>
+  </data>
+  <data name="DisorderDetailPageTitleText" xml:space="preserve">
+    <value>Störung</value>
+  </data>
+  <data name="DisorderDetailPageSymptomLabelText" xml:space="preserve">
+    <value>Symptom</value>
+  </data>
+  <data name="DisorderDetailPageActionLabelText" xml:space="preserve">
+    <value>Massnahme</value>
+  </data>
+  <data name="DisorderDetailPageReasonLabelText" xml:space="preserve">
+    <value>Ursache</value>
+  </data>
+  <data name="DisorderPageTitleText" xml:space="preserve">
+    <value>Störungen</value>
+  </data>
+  <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
+    <value>Vorgehen bei Problemen</value>
+  </data>
+  <data name="GlossaryPageTitleText" xml:space="preserve">
+    <value>Glossar</value>
+  </data>
+  <data name="KnowledgeEntriesTitleText" xml:space="preserve">
+    <value>Wissenswertes</value>
+  </data>
+  <data name="MyPICCPageTitleText" xml:space="preserve">
+    <value>Meine PICC</value>
+  </data>
+  <data name="MyPICCPageAddNewPICCButtonText" xml:space="preserve">
+    <value>Neuer PICC erfassen</value>
+  </data>
+  <data name="MyPICCPageCurrentPICCText" xml:space="preserve">
+    <value>Aktueller PICC</value>
+  </data>
+  <data name="MyPICCPageNoPiccEnteredText" xml:space="preserve">
+    <value>Sie scheinen momentan noch keinen PICC erfasst zu haben.</value>
+  </data>
+  <data name="MyPICCPagePreviousPICCText" xml:space="preserve">
+    <value>Frühere PICC</value>
+  </data>
+  <data name="PICCDetailPageTitleText" xml:space="preserve">
+    <value>PICC</value>
+  </data>
+  <data name="PICCDetailPagePICCModelNameText" xml:space="preserve">
+    <value>Modellbezeichnung:</value>
+  </data>
+  <data name="PICCDetailPagePICCFrenchSizeText" xml:space="preserve">
+    <value>Grösse in French:</value>
+  </data>
+  <data name="PICCDetailPagePICCInsertedDateText" xml:space="preserve">
+    <value>Einlagedatum:</value>
+  </data>
+  <data name="PICCDetailPagePICCInsertedPlaceText" xml:space="preserve">
+    <value>Einlageort:</value>
+  </data>
+  <data name="PICCDetailPageInsertCityPlaceholderText" xml:space="preserve">
+    <value>Bitte Institution eingeben</value>
+  </data>
+  <data name="PICCDetailPagePICCBodysideText" xml:space="preserve">
+    <value>Körperseite PICC:</value>
+  </data>
+  <data name="PICCDetailPagePICCPositionText" xml:space="preserve">
+    <value>Position PICC:</value>
+  </data>
+  <data name="PICCDetailPagePICCRemoveButtonText" xml:space="preserve">
+    <value>PICC inaktiv setzten</value>
+  </data>
+  <data name="PicturePageTitleText" xml:space="preserve">
+    <value>Bild Detail</value>
+  </data>
+  <data name="PICCDetailPageAddNewPICCTitle" xml:space="preserve">
+    <value>PICC erfassen</value>
+  </data>
+  <data name="PICCDetailPageEditPICCTitle" xml:space="preserve">
+    <value>PICC bearbeiten</value>
+  </data>
+  <data name="PICCDetailPagePickerNotDefinedText" xml:space="preserve">
+    <value>Nicht definiert</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionBelowElbowText" xml:space="preserve">
+    <value>Unterhalb Ellbogen</value>
+  </data>
+  <data name="PICCDetailPagePickerPositionAboveElbowText" xml:space="preserve">
+    <value>Oberhalb Ellbogen</value>
+  </data>
+  <data name="PICCDetailPagePickerSideLeftText" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="PICCDetailPagePickerSideRightText" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="PICCDetailPagePickerCountryAbroadText" xml:space="preserve">
+    <value>Ausland</value>
+  </data>
+  <data name="PICCDetailPagePickerCountrySwitzerlandText" xml:space="preserve">
+    <value>Schweiz</value>
+  </data>
+  <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
+    <value>Neuer Eintrag</value>
+  </data>
+  <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
+    <value>Was für ein Eintrag möchten Sie hinzufügen?</value>
+  </data>
+  <data name="JournalOverviewPageTitleText" xml:space="preserve">
+    <value>Journal</value>
+  </data>
+  <data name="SettingsPageAppVersionText" xml:space="preserve">
+    <value>App Version</value>
+  </data>
+  <data name="SettingsPageTitleText" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="EditButtonText" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="PICCAssistanceDescriptionText" xml:space="preserve">
+    <value>In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
+    <value>USZ Telemedizin anrufen</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
+    <value>Wartungserinnerung einrichten</value>
+  </data>
+  <data name="SettingsPageAddReminderButtonText" xml:space="preserve">
+    <value>Wartungserinnerungen hinzufügen</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderFrequencyText" xml:space="preserve">
+    <value>Nach wie vielen Tagen soll die Erinnerung wiederholt werden?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderRepetitionText" xml:space="preserve">
+    <value>Wie oft soll die Erinnerung wiederholt werden?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetDailyTimeText" xml:space="preserve">
+    <value>Bitte Uhrzeit für Erinnerung festlegen</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetStartDateText" xml:space="preserve">
+    <value>Bitte Startdatum festlegen</value>
+  </data>
+</root>

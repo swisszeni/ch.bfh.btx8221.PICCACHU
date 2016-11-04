@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BFH_USZ_PICC.Views.GlossaryPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views" 
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate GlossaryPageTitleText}"
              BindingContext="{Binding [GlossaryViewModel], Source={StaticResource ViewModelLocator}}">  
   <ListView x:Name="GlossaryList" 
             ItemsSource="{Binding GlossaryEntriesList}" 
@@ -17,7 +19,7 @@
     </ListView.Margin>
       <ListView.ItemTemplate>
         <DataTemplate>
-           <TextCell Text="{Binding word}" />
+           <TextCell Text="{Binding Word}" />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

@@ -46,10 +46,16 @@ namespace BFH_USZ_PICC
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(GlossaryPage))));
                         break;
                     case MenuItemKey.Knowledge:
-                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(KnowledgeEntrysPage))));
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(KnowledgeEntriesPage))));
                         break;
                     case MenuItemKey.Disorder:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(DisorderPage))));
+                        break;
+                    case MenuItemKey.Journal:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(JournalOverviewPage))));
+                        break;
+                    case MenuItemKey.Settings:
+                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(SettingsPage))));
                         break;
 
                 }

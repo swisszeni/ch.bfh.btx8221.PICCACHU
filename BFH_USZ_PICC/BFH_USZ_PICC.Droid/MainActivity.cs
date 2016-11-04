@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -9,7 +8,8 @@ using Android.OS;
 using Android.Graphics.Drawables;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
-using HockeyApp;
+using HockeyApp.Android;
+using HockeyApp.Android.Metrics;
 
 namespace BFH_USZ_PICC.Droid
 {
@@ -26,8 +26,8 @@ namespace BFH_USZ_PICC.Droid
             LoadApplication(new Application());
 
             // Enable crashlog with HockeyApp
-            //FIXME
-            //CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
+            CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
+            MetricsManager.Register(Application, "244728446c94483cb57c2620f12c9982");
 
             // check for updates of the app
             CheckForUpdates();
@@ -35,29 +35,33 @@ namespace BFH_USZ_PICC.Droid
 
         void CheckForUpdates()
         {
-            //FIXME
-
-            //UpdateManager.Register(this, "244728446c94483cb57c2620f12c9982");
+            UpdateManager.Register(this, "244728446c94483cb57c2620f12c9982");
         }
 
         void UnregisterManagers()
         {
-            //FIXME
-            //UpdateManager.Unregister();
+            UpdateManager.Unregister();
         }
 
         protected override void OnPause()
         {
             base.OnPause();
-
             UnregisterManagers();
         }
 
         protected override void OnDestroy()
-        {
-            base.OnDestroy();
+        {   
+            //FIXME Workaround to make sure the app does not crash after user has clicked on the notification
+            try
+            {
+                base.OnDestroy();
+                UnregisterManagers();
 
-            UnregisterManagers();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

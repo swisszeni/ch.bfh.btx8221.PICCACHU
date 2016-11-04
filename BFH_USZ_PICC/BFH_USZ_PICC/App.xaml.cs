@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,7 @@ namespace BFH_USZ_PICC
         protected override void OnStart()
         {
             // Handle when your app starts
+            SetLocale();
         }
 
         protected override void OnSleep()
@@ -42,6 +44,22 @@ namespace BFH_USZ_PICC
         protected override void OnResume()
         {
             // Handle when your app resumes
+            SetLocale();
+        }
+
+        /// <summary>
+        /// Sets the current locale defined in the OS. For iOS and Andoid only as UWP does this automatially
+        /// </summary>
+        protected void SetLocale()
+        {
+            if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
+            {
+                var ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
+                // set the RESX for resource localization
+                Resx.AppResources.Culture = ci;
+                // set the Thread for locale-aware methods
+                DependencyService.Get<ILocalize>().SetLocale(ci);
+            }
         }
     }
 }

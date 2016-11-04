@@ -1,5 +1,7 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.Views
@@ -15,6 +17,14 @@ namespace BFH_USZ_PICC.Views
             View
         }
 
+        List<string> PiccPositions = new List<string>() { "hallo", "test", "jodel"};
+
+        //public List<string> PiccPositions { get; set; } = new List<string>()
+        //{
+        // AppResources.PICCDetailPagePickerNotDefinedText;
+
+        //}
+
         private PICCDetailPageDisplayMode displayMode = PICCDetailPageDisplayMode.Create;
 
         /// <summary>
@@ -26,8 +36,10 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained) : base(contained)
         {
             InitializeLayout();
-            Title = "PICC";
+            Title = AppResources.PICCDetailPageTitleText;
         }
+
+
 
         /// <summary>
         /// Constructor with a PICCModel, call when a new PICC should be created for the PICCModell passed
@@ -39,9 +51,11 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained, PICCModel model) : base(contained)
         {
             InitializeLayout();
-            Title = "PICC erfassen";
+            Title = AppResources.PICCDetailPageAddNewPICCTitle;
             displayMode = PICCDetailPageDisplayMode.Create;
-        }
+            AddPickerItems();
+                      
+        }    
 
         /// <summary>
         /// Constructor with a existing PICC, call when a existing should be displayed/edited
@@ -53,7 +67,7 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained, PICC existingPICC) : base(contained)
         {
             InitializeLayout();
-            Title = "PICC bearbeiten";
+            Title = AppResources.PICCDetailPageEditPICCTitle;
             displayMode = PICCDetailPageDisplayMode.View;
         }
 
@@ -79,10 +93,10 @@ namespace BFH_USZ_PICC.Views
             PiccName.IsEnabled = enable;
             InsertedDate.IsEnabled = enable;
             InsertCity.IsEnabled = enable;
-            PiccSide.IsEnabled = enable;
-            PiccPosition.IsEnabled = enable;
+            PiccSidePicker.IsEnabled = enable;
+            PiccPositionPicker.IsEnabled = enable;
             PiccFrench.IsEnabled = enable;
-            Country.IsEnabled = enable;
+            CountryPicker.IsEnabled = enable;
             PiccRemoveButton.IsEnabled = enable;
 
             //Changes the visibility to either save/cancel buttons or edit/addAPicc buttons
@@ -134,6 +148,22 @@ namespace BFH_USZ_PICC.Views
         /// <param name="e"></param>
         void CountrySelected(object o, EventArgs e)
         {
+
+        }
+
+        void AddPickerItems()
+        {
+            PiccPositionPicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
+            PiccPositionPicker.Items.Add(AppResources.PICCDetailPagePickerPositionBelowElbowText);
+            PiccPositionPicker.Items.Add(AppResources.PICCDetailPagePickerPositionAboveElbowText);
+
+            PiccSidePicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
+            PiccSidePicker.Items.Add(AppResources.PICCDetailPagePickerSideLeftText);
+            PiccSidePicker.Items.Add(AppResources.PICCDetailPagePickerSideRightText);
+
+            CountryPicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
+            CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountrySwitzerlandText);
+            CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountryAbroadText);           
 
         }
     }

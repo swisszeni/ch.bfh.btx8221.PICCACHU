@@ -11,7 +11,9 @@ namespace BFH_USZ_PICC.Models
         PICC,
         Glossary,
         Knowledge, 
-        Disorder
+        Disorder,
+        Journal, 
+        Settings
     }
     public class NavigationMenuItem
     {
