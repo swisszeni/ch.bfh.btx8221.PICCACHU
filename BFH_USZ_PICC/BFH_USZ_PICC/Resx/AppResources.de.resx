@@ -261,4 +261,22 @@
   <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
     <value>Persönliche Daten</value>
   </data>
+  <data name="JournalOverviewPageBandagesChangingEntry" xml:space="preserve">
+    <value>Verbandswechsel</value>
+  </data>
+  <data name="JournalOverviewPageBloodWithdrawalEntry" xml:space="preserve">
+    <value>Blutentnahme</value>
+  </data>
+  <data name="JournalOverviewPageCatheterFlushEntry" xml:space="preserve">
+    <value>Spülen des Katheters</value>
+  </data>
+  <data name="JournalOverviewPageInfusionEntry" xml:space="preserve">
+    <value>Verabreichte Infusionen</value>
+  </data>
+  <data name="JournalOverviewPageMicroClaveChangingEntry" xml:space="preserve">
+    <value>Wechsel MicroClave</value>
+  </data>
+  <data name="JournalOverviewPageStatlockChangingEntry" xml:space="preserve">
+    <value>Wechsel StatLock</value>
+  </data>
 </root>

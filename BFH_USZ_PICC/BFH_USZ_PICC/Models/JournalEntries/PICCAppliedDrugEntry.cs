@@ -12,17 +12,15 @@ namespace BFH_USZ_PICC.Models
     class PICCAppliedDrugEntry : JournalEntry
     {
         public string Drug { get; set; }
-        public string Reason { get; set; }
-        
-        public PICCAppliedDrugEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug, string reason)
+              
+        public PICCAppliedDrugEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
             Institution = instiution;
             Person = person;
             Drug = drug;
-            Reason = reason;
-
+           
         }
 
     }

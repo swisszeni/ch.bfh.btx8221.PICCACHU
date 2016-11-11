@@ -116,6 +116,9 @@
     <Compile Include="Views\DisorderPage.xaml.cs">
       <DependentUpon>DisorderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\JournalEntryViews\AdministeredDrugEntryPage.xaml.cs">
+      <DependentUpon>AdministeredDrugEntryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\JournalOverviewPage.xaml.cs">
       <DependentUpon>JournalOverviewPage.xaml</DependentUpon>
     </Compile>
@@ -298,6 +301,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\UserMasterDataPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntryViews\AdministeredDrugEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

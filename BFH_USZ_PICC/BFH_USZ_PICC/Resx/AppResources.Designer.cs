@@ -269,6 +269,60 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administered drugs.
+        /// </summary>
+        public static string JournalOverviewPageAdministeredDrugEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageAdministeredDrugEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bandage changing.
+        /// </summary>
+        public static string JournalOverviewPageBandagesChangingEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageBandagesChangingEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blood withdrawal.
+        /// </summary>
+        public static string JournalOverviewPageBloodWithdrawalEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageBloodWithdrawalEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rinse the catheter.
+        /// </summary>
+        public static string JournalOverviewPageCatheterFlushEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageCatheterFlushEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administered infusions.
+        /// </summary>
+        public static string JournalOverviewPageInfusionEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageInfusionEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change MicroClave.
+        /// </summary>
+        public static string JournalOverviewPageMicroClaveChangingEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageMicroClaveChangingEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New entry.
         /// </summary>
         public static string JournalOverviewPageNewEntryButtonText {
@@ -283,6 +337,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string JournalOverviewPageSelectANewNewEntryText {
             get {
                 return ResourceManager.GetString("JournalOverviewPageSelectANewNewEntryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change StatLock.
+        /// </summary>
+        public static string JournalOverviewPageStatlockChangingEntry {
+            get {
+                return ResourceManager.GetString("JournalOverviewPageStatlockChangingEntry", resourceCulture);
             }
         }
         

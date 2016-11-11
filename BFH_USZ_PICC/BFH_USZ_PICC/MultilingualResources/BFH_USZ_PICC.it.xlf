@@ -338,6 +338,34 @@
           <source>My personal data</source>
           <target state="new">My personal data</target>
         </trans-unit>
+        <trans-unit id="JournalOverviewPageBandagesChangingEntry" translate="yes" xml:space="preserve">
+          <source>Bandage changing</source>
+          <target state="new">Bandage changing</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageBloodWithdrawalEntry" translate="yes" xml:space="preserve">
+          <source>Blood withdrawal</source>
+          <target state="new">Blood withdrawal</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageCatheterFlushEntry" translate="yes" xml:space="preserve">
+          <source>Rinse the catheter</source>
+          <target state="new">Rinse the catheter</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageInfusionEntry" translate="yes" xml:space="preserve">
+          <source>Administered infusions</source>
+          <target state="new">Administered infusions</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageMicroClaveChangingEntry" translate="yes" xml:space="preserve">
+          <source>Change MicroClave</source>
+          <target state="new">Change MicroClave</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageStatlockChangingEntry" translate="yes" xml:space="preserve">
+          <source>Change StatLock</source>
+          <target state="new">Change StatLock</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageAdministeredDrugEntry" translate="yes" xml:space="preserve">
+          <source>Administered drugs</source>
+          <target state="new">Administered drugs</target>
+        </trans-unit>
       </group>
     </body>
   </file>

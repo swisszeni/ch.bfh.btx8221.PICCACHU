@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BFH_USZ_PICC.Utilitys.AllJournalEntriesConverter;
 
 namespace BFH_USZ_PICC.Models
 {   
     /// <summary>
     /// Abstract class that provides all parameters that every subclass of the JournalEntry needs to implement.
     /// </summary>
-    abstract class JournalEntry
+    public abstract class JournalEntry
     {   
         public enum AllPossibleJournalEntries
         {
@@ -47,6 +48,8 @@ namespace BFH_USZ_PICC.Models
             Others
         }
 
+
+        public string Icon { get; } = "icon.png";
         /// <summary>
         /// Time when the JournalEntry has been created
         /// </summary>
@@ -58,6 +61,8 @@ namespace BFH_USZ_PICC.Models
         public HealthInstitution Institution { get; set; }
         public HealthPerson Person { get; set; }
 
-        public static AllPossibleJournalEntries allEntries { get; }
+        public static AllPossibleJournalEntries AllEntries { get; }
+
+        public static List<JournalEntry> AllEnteredJournalEntries = new List<JournalEntry>();
     }
 }

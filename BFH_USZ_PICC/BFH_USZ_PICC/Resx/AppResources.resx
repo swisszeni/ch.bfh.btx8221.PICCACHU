@@ -186,11 +186,32 @@
   <data name="InformationText" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="JournalOverviewPageAdministeredDrugEntry" xml:space="preserve">
+    <value>Administered drugs</value>
+  </data>
+  <data name="JournalOverviewPageBandagesChangingEntry" xml:space="preserve">
+    <value>Bandage changing</value>
+  </data>
+  <data name="JournalOverviewPageBloodWithdrawalEntry" xml:space="preserve">
+    <value>Blood withdrawal</value>
+  </data>
+  <data name="JournalOverviewPageCatheterFlushEntry" xml:space="preserve">
+    <value>Rinse the catheter</value>
+  </data>
+  <data name="JournalOverviewPageInfusionEntry" xml:space="preserve">
+    <value>Administered infusions</value>
+  </data>
+  <data name="JournalOverviewPageMicroClaveChangingEntry" xml:space="preserve">
+    <value>Change MicroClave</value>
+  </data>
   <data name="JournalOverviewPageNewEntryButtonText" xml:space="preserve">
     <value>New entry</value>
   </data>
   <data name="JournalOverviewPageSelectANewNewEntryText" xml:space="preserve">
     <value>What kind of entry would you like to add?</value>
+  </data>
+  <data name="JournalOverviewPageStatlockChangingEntry" xml:space="preserve">
+    <value>Change StatLock</value>
   </data>
   <data name="JournalOverviewPageTitleText" xml:space="preserve">
     <value>Journal</value>
