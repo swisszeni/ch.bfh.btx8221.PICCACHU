@@ -279,4 +279,25 @@
   <data name="JournalOverviewPageStatlockChangingEntry" xml:space="preserve">
     <value>Wechsel StatLock</value>
   </data>
+  <data name="JournalOverviewPageAdministeredDrugEntry" xml:space="preserve">
+    <value>Verabreichte Medikamente</value>
+  </data>
+  <data name="JournalEntryInstitutionHomeCareText" xml:space="preserve">
+    <value>Spitex</value>
+  </data>
+  <data name="JournalEntryInstitutionHospitalText" xml:space="preserve">
+    <value>Spital</value>
+  </data>
+  <data name="JournalEntryInstitutionNotSpecifiedText" xml:space="preserve">
+    <value>Keine Angabe</value>
+  </data>
+  <data name="JournalEntryInstitutionOthersText" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="JournalEntryInstitutionOutpatienClinicText" xml:space="preserve">
+    <value>Ambulatorium</value>
+  </data>
+  <data name="JournalEntryInstitutionRehabilitationText" xml:space="preserve">
+    <value>Rehabilitation</value>
+  </data>
 </root>

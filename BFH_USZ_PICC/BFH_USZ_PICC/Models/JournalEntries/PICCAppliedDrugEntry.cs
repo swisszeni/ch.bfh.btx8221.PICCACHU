@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Resx;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,8 @@ namespace BFH_USZ_PICC.Models
             Institution = instiution;
             Person = person;
             Drug = drug;
-           
+
+            Name = AppResources.JournalOverviewPageAdministeredDrugEntry; 
         }
 
     }

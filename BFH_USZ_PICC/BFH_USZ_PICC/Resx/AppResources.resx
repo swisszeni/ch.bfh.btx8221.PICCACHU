@@ -186,6 +186,24 @@
   <data name="InformationText" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="JournalEntryInstitutionHomeCareText" xml:space="preserve">
+    <value>Home care</value>
+  </data>
+  <data name="JournalEntryInstitutionHospitalText" xml:space="preserve">
+    <value>Hospital</value>
+  </data>
+  <data name="JournalEntryInstitutionNotSpecifiedText" xml:space="preserve">
+    <value>Not specified</value>
+  </data>
+  <data name="JournalEntryInstitutionOthersText" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="JournalEntryInstitutionOutpatienClinicText" xml:space="preserve">
+    <value>Outpatient clinic</value>
+  </data>
+  <data name="JournalEntryInstitutionRehabilitationText" xml:space="preserve">
+    <value>Rehabilitation</value>
+  </data>
   <data name="JournalOverviewPageAdministeredDrugEntry" xml:space="preserve">
     <value>Administered drugs</value>
   </data>

@@ -1,13 +1,8 @@
-﻿using BFH_USZ_PICC.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static BFH_USZ_PICC.Utilitys.AllJournalEntriesConverter;
 
 namespace BFH_USZ_PICC.Models
-{   
+{
     /// <summary>
     /// Abstract class that provides all parameters that every subclass of the JournalEntry needs to implement.
     /// </summary>
@@ -50,6 +45,8 @@ namespace BFH_USZ_PICC.Models
 
 
         public string Icon { get; } = "icon.png";
+
+        public string Name { get; set; }
         /// <summary>
         /// Time when the JournalEntry has been created
         /// </summary>

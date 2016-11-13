@@ -269,6 +269,60 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Home care.
+        /// </summary>
+        public static string JournalEntryInstitutionHomeCareText {
+            get {
+                return ResourceManager.GetString("JournalEntryInstitutionHomeCareText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hospital.
+        /// </summary>
+        public static string JournalEntryInstitutionHospitalText {
+            get {
+                return ResourceManager.GetString("JournalEntryInstitutionHospitalText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not specified.
+        /// </summary>
+        public static string JournalEntryInstitutionNotSpecifiedText {
+            get {
+                return ResourceManager.GetString("JournalEntryInstitutionNotSpecifiedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Others.
+        /// </summary>
+        public static string JournalEntryInstitutionOthersText {
+            get {
+                return ResourceManager.GetString("JournalEntryInstitutionOthersText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outpatient clinic.
+        /// </summary>
+        public static string JournalEntryInstitutionOutpatienClinicText {
+            get {
+                return ResourceManager.GetString("JournalEntryInstitutionOutpatienClinicText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rehabilitation.
+        /// </summary>
+        public static string JournalEntryInstitutionRehabilitationText {
+            get {
+                return ResourceManager.GetString("JournalEntryInstitutionRehabilitationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administered drugs.
         /// </summary>
         public static string JournalOverviewPageAdministeredDrugEntry {

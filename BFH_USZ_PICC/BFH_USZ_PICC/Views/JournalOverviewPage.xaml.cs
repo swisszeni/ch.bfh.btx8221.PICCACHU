@@ -1,12 +1,10 @@
 ﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.Utilitys;
+using BFH_USZ_PICC.ViewModels;
 using BFH_USZ_PICC.Views.JournalEntryViews;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using static BFH_USZ_PICC.Models.JournalEntry;
-using static BFH_USZ_PICC.Utilitys.AllJournalEntriesConverter;
 
 
 
@@ -18,12 +16,14 @@ namespace BFH_USZ_PICC.Views
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
     public sealed partial class JournalOverviewPage : BaseContentPage
-    {         
+    {
         //AllJournalEntriesConverter convertJournalEntries = new AllJournalEntriesConverter();
         public JournalOverviewPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            
+            //Binds all journal entries to the binding context 
+            BindingContext = new JournalOverviewViewModel();
+           
             //Get all the knowledge entries and add them to  the ListView
             //List<JournalEntry> test = new List<JournalEntry>();
 
@@ -48,8 +48,7 @@ namespace BFH_USZ_PICC.Views
 
             // ChoseAJournalEntry.ItemsSource = journalEntrySelection;
         }
-        
-    
+                  
         async void NewEntryButtonClicked(object sender, EventArgs e)
         {
             // setListViewChoseAJournalEntryVisible(true);
@@ -62,6 +61,12 @@ namespace BFH_USZ_PICC.Views
             {
                 if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
                 {
+
+                    if (await DisplayAlert("Information", "Wollen Sie die für dieesen Schritt eine Anleitung ansehen?", "Ja", "Nein"))
+                    {
+                        await Navigation.PushModalAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
+                        return;
+                    }
                     await Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
                     return;
                 }
@@ -69,8 +74,7 @@ namespace BFH_USZ_PICC.Views
             }
             await DisplayAlert("Information", "Nun würde ein neuer " + selectedEntry + " Eintrag eröffnet", "Ok");
         }
-
-
+        
         //void NewEntryCancelButtonClicked(object sender, EventArgs e)
         //{
         //    setListViewChoseAJournalEntryVisible(false);

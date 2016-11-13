@@ -98,6 +98,7 @@
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
+    <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
@@ -115,6 +116,9 @@
     </Compile>
     <Compile Include="Views\DisorderPage.xaml.cs">
       <DependentUpon>DisorderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceInstructionPage.xaml.cs">
+      <DependentUpon>MaintenanceInstructionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\JournalEntryViews\AdministeredDrugEntryPage.xaml.cs">
       <DependentUpon>AdministeredDrugEntryPage.xaml</DependentUpon>
@@ -223,6 +227,10 @@
       <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
@@ -307,6 +315,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\JournalEntryViews\AdministeredDrugEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MaintenanceInstructionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -18,8 +18,8 @@
               WinPhone="20, 20, 20, 0" />
       </Button.Margin>
     </Button>
-    <ListView x:Name="JournalList" ItemsSource="{Binding AllEnteredJournalEntries}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.RowSpan="1"  >
-      <ListView.Margin>
+    <ListView x:Name="JournalList" ItemsSource="{Binding ListOfJournalEntries}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.RowSpan="1"  >
+      <ListView.Margin> 
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 20"
               Android="20, 20, 20, 20"
@@ -32,8 +32,8 @@
               <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                   <Image Source="{Binding Icon}"/>
-                  <Label Text="Vorgang" VerticalTextAlignment="Start" FontSize="20"/>
-                  <Label Text="Datum" VerticalTextAlignment="Start"/>
+                  <Label Text="{Binding Name}" VerticalTextAlignment="Start" FontSize="20"/>
+                  <Label Text="{Binding ProcedureDateTime, StringFormat='{}{0:dd/MM/yy}'}" VerticalTextAlignment="Start"/>
                 </StackLayout>
               </StackLayout>
             </ViewCell.View>

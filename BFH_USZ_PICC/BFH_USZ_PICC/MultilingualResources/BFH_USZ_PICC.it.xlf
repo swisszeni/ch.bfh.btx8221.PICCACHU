@@ -366,6 +366,30 @@
           <source>Administered drugs</source>
           <target state="new">Administered drugs</target>
         </trans-unit>
+        <trans-unit id="JournalEntryInstitutionHomeCareText" translate="yes" xml:space="preserve">
+          <source>Home care</source>
+          <target state="new">Home care</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionHospitalText" translate="yes" xml:space="preserve">
+          <source>Hospital</source>
+          <target state="new">Hospital</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionNotSpecifiedText" translate="yes" xml:space="preserve">
+          <source>Not specified</source>
+          <target state="new">Not specified</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionOthersText" translate="yes" xml:space="preserve">
+          <source>Others</source>
+          <target state="new">Others</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionOutpatienClinicText" translate="yes" xml:space="preserve">
+          <source>Outpatient clinic</source>
+          <target state="new">Outpatient clinic</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionRehabilitationText" translate="yes" xml:space="preserve">
+          <source>Rehabilitation</source>
+          <target state="new">Rehabilitation</target>
+        </trans-unit>
       </group>
     </body>
   </file>
