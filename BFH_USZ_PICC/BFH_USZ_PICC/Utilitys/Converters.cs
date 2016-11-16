@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Resx;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -103,6 +104,40 @@ namespace BFH_USZ_PICC.Utilitys
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (HealthInstitution)value;
+        }
+    }
+
+    public class AllPossibleJournalEntriesToStringConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            AllPossibleJournalEntries entry = (AllPossibleJournalEntries)value;
+
+            switch (entry)
+            {
+                case AllPossibleJournalEntries.BandagesChangingEntry:
+                    return AppResources.JournalOverviewPageBandagesChangingEntry;
+                case AllPossibleJournalEntries.BloodWithdrawalEntry:
+                    return AppResources.JournalOverviewPageBloodWithdrawalEntry;
+                case AllPossibleJournalEntries.CatheterFlushEntry:
+                    return AppResources.JournalOverviewPageCatheterFlushEntry;
+                case AllPossibleJournalEntries.InfusionEntry:
+                    return AppResources.JournalOverviewPageInfusionEntry;
+                case AllPossibleJournalEntries.MicroClaveEntry:
+                    return AppResources.JournalOverviewPageMicroClaveChangingEntry;
+                case AllPossibleJournalEntries.PICCAppliedDrugEntry:
+                    return AppResources.JournalOverviewPageAdministeredDrugEntry;
+                case AllPossibleJournalEntries.StatlockEntry:
+                    return AppResources.JournalOverviewPageStatlockChangingEntry;
+                default:
+                    return " ";
+            }
+
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (AllPossibleJournalEntries)value;
         }
     }
 

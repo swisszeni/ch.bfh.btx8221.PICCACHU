@@ -22,67 +22,14 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
             //Binds all journal entries to the binding context 
-            BindingContext = new JournalOverviewViewModel();
-           
-            //Get all the knowledge entries and add them to  the ListView
-            //List<JournalEntry> test = new List<JournalEntry>();
-
-            //int temp = 0;
-            //while (temp < 25)
-            //{
-            //    test.Add(new BloodWithdrawalEntry(DateTime.Today, DateTime.Today, JournalEntry.HealthInstitution.HomeCare, JournalEntry.HealthPerson.FamilyDoctor, true, BloodFlow.Speedy));
-
-            //    temp++;
-            //}
-
-            //JournalList.ItemsSource = test;
-
-            ////Part to initialize the selection for a new JournalEntry        
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.BandagesChangingEntry));
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.BloodWithdrawalEntry));
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.CatheterFlushEntry));
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.InfusionEntry));
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.MicroClaveEntry));
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.PICCAppliedDrugEntry));
-            //journalEntrySelection.Add(convertJournalEntries.Convert(AllPossibleJournalEntries.StatlockEntry));
-
-            // ChoseAJournalEntry.ItemsSource = journalEntrySelection;
+            BindingContext = new JournalOverviewViewModel();         
+          
         }
-                  
-        async void NewEntryButtonClicked(object sender, EventArgs e)
+
+        void SelectedEntry(object sender, EventArgs e)
         {
-            // setListViewChoseAJournalEntryVisible(true);
-
-            var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet("Was wollen Sie hinzufügen?", "Abbrechen", null,
-                AppResources.JournalOverviewPageCatheterFlushEntry, AppResources.JournalOverviewPageInfusionEntry, AppResources.JournalOverviewPageAdministeredDrugEntry, AppResources.JournalOverviewPageBloodWithdrawalEntry,
-                AppResources.JournalOverviewPageBandagesChangingEntry, AppResources.JournalOverviewPageMicroClaveChangingEntry, AppResources.JournalOverviewPageMicroClaveChangingEntry);
-
-            if (selectedEntry != null && selectedEntry != "Abbrechen")
-            {
-                if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
-                {
-
-                    if (await DisplayAlert("Information", "Wollen Sie die für dieesen Schritt eine Anleitung ansehen?", "Ja", "Nein"))
-                    {
-                        await Navigation.PushModalAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
-                        return;
-                    }
-                    await Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
-                    return;
-                }
-
-            }
-            await DisplayAlert("Information", "Nun würde ein neuer " + selectedEntry + " Eintrag eröffnet", "Ok");
+            JournalList.SelectedItem = null;
         }
-        
-        //void NewEntryCancelButtonClicked(object sender, EventArgs e)
-        //{
-        //    setListViewChoseAJournalEntryVisible(false);
-        //}
-
-        //private void setListViewChoseAJournalEntryVisible(bool trueOrFalse) {
-        //    ChoseAJournalEntry.IsVisible = trueOrFalse;
-        //}
     }
 }
 

@@ -5,22 +5,23 @@
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-                   >
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
   <Grid>
-    
-    <cv:CarouselView x:Name="InstructionCarousel" Position="0">
-                 <!--   <cv:CarouselView.ItemTemplate>
+    <cv:CarouselView x:Name="InstructionCarousel">
+       <cv:CarouselView.ItemTemplate>
         <DataTemplate>
           <Grid>
              <Grid.RowDefinitions>
                           <RowDefinition Height="*"/>
                           <RowDefinition Height="Auto"/>                        
-            </Grid.RowDefinitions>        
-          <Image Source="{Binding ImageUrl}" Aspect="AspectFill" Grid.RowSpan="2"/>
+            </Grid.RowDefinitions>
+            <Image Source="Icon.png" Grid.RowSpan="2"/>
+             <StackLayout Grid.Row="1">
+              <Label Text="Test"/>                        
+            </StackLayout>
           </Grid>
         </DataTemplate>
-      </cv:CarouselView.ItemTemplate> -->
+      </cv:CarouselView.ItemTemplate>
     </cv:CarouselView>
   </Grid>
 </d:BaseContentPage>

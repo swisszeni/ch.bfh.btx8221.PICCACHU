@@ -27,10 +27,10 @@ namespace BFH_USZ_PICC.Views
             //MainenanceInstruction.Add(new InstructionElement("icon.png", "Seite 2"));
             //MainenanceInstruction.Add(2, new InstructionElement("icon.png", "Seite 3"));
 
-
             InstructionCarousel.ItemsSource = MainenanceInstruction;
-              
-       
+
+            
+
         }
     }
 }

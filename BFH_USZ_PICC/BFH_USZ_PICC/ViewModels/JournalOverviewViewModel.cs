@@ -1,10 +1,15 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.Views;
+using BFH_USZ_PICC.Views.JournalEntryViews;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels
@@ -14,10 +19,11 @@ namespace BFH_USZ_PICC.ViewModels
         ///// <summary>
         ///// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
         ///// </summary>
-        //public JournalOverviewViewModel()
-        //{
-        //    ListOfJournalEntries = JournalEntry.AllEnteredJournalEntries;
-        //}
+        public JournalOverviewViewModel()
+        {
+            ListOfJournalEntries = JournalEntry.AllEnteredJournalEntries;
+            EntryButtonCommand = new Command(NewEntryButtonClicked);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -36,7 +42,7 @@ namespace BFH_USZ_PICC.ViewModels
         /// <summary>
         /// Binds all the glossary entries to a the "GlossaryList" ListView
         /// </summary>
-        private List<JournalEntry>  _listOfJournalEntries = JournalEntry.AllEnteredJournalEntries;
+        private List<JournalEntry> _listOfJournalEntries;
         public List<JournalEntry> ListOfJournalEntries
         {
             get { return _listOfJournalEntries; }
@@ -50,27 +56,52 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
+        private JournalEntry _selectedEntry;
+        public JournalEntry SelectedEntry
+        {
+            get { return _selectedEntry; }
+            set
+            {
+                if (_selectedEntry != value)
+                {
+                    if (value != null)
+                    {
+                       Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), new List<object> { value })); 
+                    }
+                    _selectedEntry = value;
+                    OnPropertyChanged("SelectedEntry");
+                }
 
-        ///// <summary>
-        ///// Binds a glossary entry to the "SelectedItem" property of the "GlossaryList" ListView.
-        ///// If the user selects a glossary entry, a display alert will show him/her the explanation for the selected word.
-        ///// </summary>
-        //private GlossaryEntry _selectedEntry;
-        //public GlossaryEntry SelectedEntry
-        //{
-        //    get { return _selectedEntry; }
-        //    set
-        //    {
-        //        if (_selectedEntry != value)
-        //        {
-        //            if (value != null)
-        //            {
-        //                Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
-        //            }
-        //            _selectedEntry = value;
-        //            OnPropertyChanged("SelectedEntry");
-        //        }
-        //    }
+            }
+        }
+
+        // ICommand implementations
+        public ICommand EntryButtonCommand { protected set; get; }
+
+        async void NewEntryButtonClicked()
+        {
+            var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet("Was wollen Sie hinzufügen?", "Abbrechen", null,
+              AppResources.JournalOverviewPageCatheterFlushEntry, AppResources.JournalOverviewPageInfusionEntry, AppResources.JournalOverviewPageAdministeredDrugEntry, AppResources.JournalOverviewPageBloodWithdrawalEntry,
+              AppResources.JournalOverviewPageBandagesChangingEntry, AppResources.JournalOverviewPageMicroClaveChangingEntry, AppResources.JournalOverviewPageMicroClaveChangingEntry);
+
+            if (selectedEntry != null && selectedEntry != "Abbrechen")
+            {
+                if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
+                {
+
+                    if (await Application.Current.MainPage.DisplayAlert("Information", "Wollen Sie die für dieesen Schritt eine Anleitung ansehen?", "Ja", "Nein"))
+                    {
+                        await Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
+                        return;
+                    }
+                    await Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
+                    return;
+                }
+
+            }
+            await Application.Current.MainPage.DisplayAlert("Information", "Nun würde ein neuer " + selectedEntry + " Eintrag eröffnet", "Ok");
+        }
+
     }
 
 }

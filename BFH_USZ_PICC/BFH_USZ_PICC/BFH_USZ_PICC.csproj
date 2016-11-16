@@ -98,6 +98,7 @@
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntryViewModels\AdministeredDrugViewModel.cs" />
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryViewModel.cs" />

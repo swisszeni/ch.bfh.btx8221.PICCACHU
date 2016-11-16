@@ -287,24 +287,6 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not specified.
-        /// </summary>
-        public static string JournalEntryInstitutionNotSpecifiedText {
-            get {
-                return ResourceManager.GetString("JournalEntryInstitutionNotSpecifiedText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Others.
-        /// </summary>
-        public static string JournalEntryInstitutionOthersText {
-            get {
-                return ResourceManager.GetString("JournalEntryInstitutionOthersText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Outpatient clinic.
         /// </summary>
         public static string JournalEntryInstitutionOutpatienClinicText {
@@ -319,6 +301,96 @@ namespace BFH_USZ_PICC.Resx {
         public static string JournalEntryInstitutionRehabilitationText {
             get {
                 return ResourceManager.GetString("JournalEntryInstitutionRehabilitationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not specified.
+        /// </summary>
+        public static string JournalEntryNotSpecifiedText {
+            get {
+                return ResourceManager.GetString("JournalEntryNotSpecifiedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Others.
+        /// </summary>
+        public static string JournalEntryOthersText {
+            get {
+                return ResourceManager.GetString("JournalEntryOthersText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Affected person.
+        /// </summary>
+        public static string JournalEntryPersonAffectedPersonText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonAffectedPersonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Family doctor.
+        /// </summary>
+        public static string JournalEntryPersonFamilyDoctorText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonFamilyDoctorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Health expert staff.
+        /// </summary>
+        public static string JournalEntryPersonHealthExpertStaffText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonHealthExpertStaffText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medical technical assistant.
+        /// </summary>
+        public static string JournalEntryPersonMedicalTechnicalAssistantText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonMedicalTechnicalAssistantText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nursing staff.
+        /// </summary>
+        public static string JournalEntryPersonNursingStaffText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonNursingStaffText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relative.
+        /// </summary>
+        public static string JournalEntryPersonRelativeText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonRelativeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medical specialist.
+        /// </summary>
+        public static string JournalEntryPersonSpecialistText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonSpecialistText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XRay staff.
+        /// </summary>
+        public static string JournalEntryPersonXrayStaffText {
+            get {
+                return ResourceManager.GetString("JournalEntryPersonXrayStaffText", resourceCulture);
             }
         }
         

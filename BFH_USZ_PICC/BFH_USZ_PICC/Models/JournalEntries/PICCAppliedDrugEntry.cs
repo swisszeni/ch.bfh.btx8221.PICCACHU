@@ -10,7 +10,7 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with two parameters (Drug, Reason) to handle special events for applied drugs.
     /// </summary>
-    class PICCAppliedDrugEntry : JournalEntry
+    public class PICCAppliedDrugEntry : JournalEntry
     {
         public string Drug { get; set; }
               
@@ -22,7 +22,7 @@ namespace BFH_USZ_PICC.Models
             Person = person;
             Drug = drug;
 
-            Name = AppResources.JournalOverviewPageAdministeredDrugEntry; 
+            Entry = AllPossibleJournalEntries.PICCAppliedDrugEntry; 
         }
 
     }

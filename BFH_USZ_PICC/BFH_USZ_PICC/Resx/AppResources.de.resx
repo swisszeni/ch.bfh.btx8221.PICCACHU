@@ -288,16 +288,40 @@
   <data name="JournalEntryInstitutionHospitalText" xml:space="preserve">
     <value>Spital</value>
   </data>
-  <data name="JournalEntryInstitutionNotSpecifiedText" xml:space="preserve">
-    <value>Keine Angabe</value>
-  </data>
-  <data name="JournalEntryInstitutionOthersText" xml:space="preserve">
-    <value>Andere</value>
-  </data>
   <data name="JournalEntryInstitutionOutpatienClinicText" xml:space="preserve">
     <value>Ambulatorium</value>
   </data>
   <data name="JournalEntryInstitutionRehabilitationText" xml:space="preserve">
     <value>Rehabilitation</value>
+  </data>
+  <data name="JournalEntryNotSpecifiedText" xml:space="preserve">
+    <value>Keine Angabe</value>
+  </data>
+  <data name="JournalEntryOthersText" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="JournalEntryPersonAffectedPersonText" xml:space="preserve">
+    <value>Betroffene Person</value>
+  </data>
+  <data name="JournalEntryPersonFamilyDoctorText" xml:space="preserve">
+    <value>Hausarzt</value>
+  </data>
+  <data name="JournalEntryPersonHealthExpertStaffText" xml:space="preserve">
+    <value>Fachperson Gesundheit (FaGe)</value>
+  </data>
+  <data name="JournalEntryPersonMedicalTechnicalAssistantText" xml:space="preserve">
+    <value>Medizinisch Technische Assistenz (MTA)</value>
+  </data>
+  <data name="JournalEntryPersonNursingStaffText" xml:space="preserve">
+    <value>Pflegefachperson</value>
+  </data>
+  <data name="JournalEntryPersonRelativeText" xml:space="preserve">
+    <value>Angehörige</value>
+  </data>
+  <data name="JournalEntryPersonSpecialistText" xml:space="preserve">
+    <value>Facharzt</value>
+  </data>
+  <data name="JournalEntryPersonXrayStaffText" xml:space="preserve">
+    <value>Röntgenfachperson (MTRA)</value>
   </data>
 </root>

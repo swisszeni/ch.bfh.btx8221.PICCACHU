@@ -192,17 +192,41 @@
   <data name="JournalEntryInstitutionHospitalText" xml:space="preserve">
     <value>Hospital</value>
   </data>
-  <data name="JournalEntryInstitutionNotSpecifiedText" xml:space="preserve">
-    <value>Not specified</value>
-  </data>
-  <data name="JournalEntryInstitutionOthersText" xml:space="preserve">
-    <value>Others</value>
-  </data>
   <data name="JournalEntryInstitutionOutpatienClinicText" xml:space="preserve">
     <value>Outpatient clinic</value>
   </data>
   <data name="JournalEntryInstitutionRehabilitationText" xml:space="preserve">
     <value>Rehabilitation</value>
+  </data>
+  <data name="JournalEntryNotSpecifiedText" xml:space="preserve">
+    <value>Not specified</value>
+  </data>
+  <data name="JournalEntryOthersText" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="JournalEntryPersonAffectedPersonText" xml:space="preserve">
+    <value>Affected person</value>
+  </data>
+  <data name="JournalEntryPersonFamilyDoctorText" xml:space="preserve">
+    <value>Family doctor</value>
+  </data>
+  <data name="JournalEntryPersonHealthExpertStaffText" xml:space="preserve">
+    <value>Health expert staff</value>
+  </data>
+  <data name="JournalEntryPersonMedicalTechnicalAssistantText" xml:space="preserve">
+    <value>Medical technical assistant</value>
+  </data>
+  <data name="JournalEntryPersonNursingStaffText" xml:space="preserve">
+    <value>Nursing staff</value>
+  </data>
+  <data name="JournalEntryPersonRelativeText" xml:space="preserve">
+    <value>Relative</value>
+  </data>
+  <data name="JournalEntryPersonSpecialistText" xml:space="preserve">
+    <value>Medical specialist</value>
+  </data>
+  <data name="JournalEntryPersonXrayStaffText" xml:space="preserve">
+    <value>XRay staff</value>
   </data>
   <data name="JournalOverviewPageAdministeredDrugEntry" xml:space="preserve">
     <value>Administered drugs</value>

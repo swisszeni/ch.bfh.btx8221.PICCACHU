@@ -4,13 +4,19 @@
              x:Class="BFH_USZ_PICC.Views.JournalOverviewPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
              Title="{i18n:Translate JournalOverviewPageTitleText}">
   <Grid>
+    <Grid.Resources>
+      <ResourceDictionary>
+        <utilitys:AllPossibleJournalEntriesToStringConverter x:Key="AllPossibleJournalEntriesToStringConverter" />
+      </ResourceDictionary>
+    </Grid.Resources>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
-    <Button x:Name="NewEntryButton" Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}" Image="icon.png" FontSize="20" Grid.Row="0" Clicked="NewEntryButtonClicked">
+    <Button x:Name="NewEntryButton" Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}" Image="icon.png" FontSize="20" Grid.Row="0" Command="{Binding EntryButtonCommand}">
       <Button.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 0"
@@ -18,8 +24,8 @@
               WinPhone="20, 20, 20, 0" />
       </Button.Margin>
     </Button>
-    <ListView x:Name="JournalList" ItemsSource="{Binding ListOfJournalEntries}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.RowSpan="1"  >
-      <ListView.Margin> 
+    <ListView x:Name="JournalList" ItemsSource="{Binding ListOfJournalEntries, Mode = TwoWay}" ItemSelected="SelectedEntry" SelectedItem="{Binding SelectedEntry}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.RowSpan="1">
+      <ListView.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 20"
               Android="20, 20, 20, 20"
@@ -32,7 +38,7 @@
               <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                   <Image Source="{Binding Icon}"/>
-                  <Label Text="{Binding Name}" VerticalTextAlignment="Start" FontSize="20"/>
+                  <Label Text="{Binding Entry, Converter={StaticResource AllPossibleJournalEntriesToStringConverter}}" VerticalTextAlignment="Start" FontSize="20"/>
                   <Label Text="{Binding ProcedureDateTime, StringFormat='{}{0:dd/MM/yy}'}" VerticalTextAlignment="Start"/>
                 </StackLayout>
               </StackLayout>

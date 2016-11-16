@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Resx;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BFH_USZ_PICC.Models
 {
@@ -10,7 +12,7 @@ namespace BFH_USZ_PICC.Models
     {   
         public enum AllPossibleJournalEntries
         {
-            BandagesChangingEntry,
+            BandagesChangingEntry,           
             BloodWithdrawalEntry,
             CatheterFlushEntry,
             InfusionEntry,
@@ -55,10 +57,9 @@ namespace BFH_USZ_PICC.Models
         /// Time when the JournalEntry procedure takes place
         /// </summary>
         public DateTime ProcedureDateTime { get; set; }
+        public AllPossibleJournalEntries Entry { get; set; }
         public HealthInstitution Institution { get; set; }
         public HealthPerson Person { get; set; }
-
-        public static AllPossibleJournalEntries AllEntries { get; }
 
         public static List<JournalEntry> AllEnteredJournalEntries = new List<JournalEntry>();
     }
