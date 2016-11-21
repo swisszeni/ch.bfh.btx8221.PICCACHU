@@ -23,7 +23,7 @@ namespace BFH_USZ_PICC.Models
         public bool IsNaCiFlashDone { get; set; }
         public BloodFlow Flow { get; set; }        
 
-        public BloodWithdrawalEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlashDone, BloodFlow flow )
+        public BloodWithdrawalEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlashDone, BloodFlow flow )
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;

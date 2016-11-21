@@ -14,7 +14,7 @@ namespace BFH_USZ_PICC.Models
     {
         public string Drug { get; set; }
               
-        public PICCAppliedDrugEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
+        public PICCAppliedDrugEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;

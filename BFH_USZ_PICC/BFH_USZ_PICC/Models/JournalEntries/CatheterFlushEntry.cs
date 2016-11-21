@@ -31,7 +31,7 @@ namespace BFH_USZ_PICC.Models
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
-        public CatheterFlushEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, FlushReason reason, FlushResult result,
+        public CatheterFlushEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, FlushReason reason, FlushResult result,
             double quantityInMilliliter, bool isBloodReflowVisible)
         {
             CreationDateTime = creationalDateTime;

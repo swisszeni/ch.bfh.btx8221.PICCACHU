@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
 {
@@ -18,8 +20,11 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
         /// </summary>
         public AdministeredDrugViewModel(PICCAppliedDrugEntry entry)
         {
+           // AddHealthInstitutionsToPicker();
+
             SaveButtonCommand = new Command(SaveButtonClicked);
             CancelButtonCommand = new Command(CancelButtonClicked);
+            BackButtonCommand = new Command(BackButtonClicked);
 
             PICCAppliedDrugEntry piccAppliedDrugEntry = (PICCAppliedDrugEntry)entry;
             if (piccAppliedDrugEntry == null)
@@ -33,6 +38,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
                 IsEnabledOrVisible = false;
 
             }
+
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -77,6 +84,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
 
         public ICommand SaveButtonCommand { protected set; get; }
         public ICommand CancelButtonCommand { protected set; get; }
+        public ICommand BackButtonCommand { protected set; get; }
 
         async void SaveButtonClicked()
         {
@@ -99,5 +107,12 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
             }
 
         }
+
+        async void BackButtonClicked()
+        {
+                await Application.Current.MainPage.Navigation.PopModalAsync();
+           
+        }
+             
     }
 }

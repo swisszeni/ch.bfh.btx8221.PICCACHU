@@ -107,6 +107,45 @@ namespace BFH_USZ_PICC.Utilitys
         }
     }
 
+    public class HealthPersonToIndexConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            HealthPerson healthInstitution = (HealthPerson)value;
+            switch (healthInstitution)
+            {
+                case HealthPerson.None:
+                    return 0;
+                case HealthPerson.FamilyDoctor:
+                    return 1;
+                case HealthPerson.Specialist:
+                    return 2;
+                case HealthPerson.NursingStaff:
+                    return 3;
+                case HealthPerson.XRayStaff:
+                    return 4;
+                case HealthPerson.MedicalTechnicalAssistant:
+                    return 5;
+                case HealthPerson.HealthExpertStaff:
+                    return 6;
+                case HealthPerson.Relative:
+                    return 7;
+                case HealthPerson.AffectedPerson:
+                    return 8;
+                case HealthPerson.Others:
+                    return 9;
+     
+            }
+
+            return 0;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (HealthPerson)value;
+        }
+    }
+
     public class AllPossibleJournalEntriesToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -141,6 +180,17 @@ namespace BFH_USZ_PICC.Utilitys
         }
     }
 
+    public class NegateBooleanConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return !(bool)value;
+        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return !(bool)value;
+        }
+    }
     //public class AllJournalEntriesConverter
     //{
     //    public class EntryAndImage

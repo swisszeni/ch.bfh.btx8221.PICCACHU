@@ -19,6 +19,7 @@ namespace BFH_USZ_PICC.Views.JournalEntryViews
         public AdministeredDrugEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
+            AddHealthInstitutionsAndHealthPeopleToPicker();
             BindingContext = new AdministeredDrugViewModel(null);
             
         }
@@ -26,7 +27,30 @@ namespace BFH_USZ_PICC.Views.JournalEntryViews
         public AdministeredDrugEntryPage(ContentPage contained, PICCAppliedDrugEntry entry) : base(contained)
         {
             InitializeComponent();
+            AddHealthInstitutionsAndHealthPeopleToPicker();
             BindingContext = new AdministeredDrugViewModel(entry);
+
+        }
+
+        void AddHealthInstitutionsAndHealthPeopleToPicker()
+        {
+            HealthInstitutionPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionHospitalText);
+            HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionOutpatienClinicText);
+            HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionRehabilitationText);
+            HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionHomeCareText);
+            HealthInstitutionPicker.Items.Add(AppResources.JournalEntryOthersText);
+
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonFamilyDoctorText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonSpecialistText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonNursingStaffText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonXrayStaffText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonMedicalTechnicalAssistantText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonHealthExpertStaffText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonRelativeText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonAffectedPersonText);
+            HealthPersonPicker.Items.Add(AppResources.JournalEntryOthersText);
 
         }
 

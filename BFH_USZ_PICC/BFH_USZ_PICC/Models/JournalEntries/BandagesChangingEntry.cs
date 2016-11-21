@@ -51,7 +51,7 @@ namespace BFH_USZ_PICC.Models
         public PunctureSituation Puncture { get; set; }
         public ArmProcessSituation ArmProcess { get; set; }
         
-        public BandagesChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, ChangementReason reason, ChangementArea area,
+        public BandagesChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, ChangementReason reason, ChangementArea area,
             PunctureSituation puncture, ArmProcessSituation armProcess)
         {
             CreationDateTime = creationalDateTime;

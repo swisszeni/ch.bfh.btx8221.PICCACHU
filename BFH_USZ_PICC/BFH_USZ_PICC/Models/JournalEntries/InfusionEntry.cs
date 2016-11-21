@@ -33,7 +33,7 @@ namespace BFH_USZ_PICC.Models
         public InfusionType Type { get; set; }
         public Medication Application { get; set; }
         
-        public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, Medication application,
+        public InfusionEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, Medication application,
             double QuantityInMilliliter, bool IsBloodReflowVisible)
         {
             CreationDateTime = creationalDateTime;
