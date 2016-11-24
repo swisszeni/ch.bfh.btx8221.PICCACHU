@@ -100,9 +100,11 @@
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\AddPICCViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DisorderDetailViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
-    <Compile Include="ViewModels\KnowledgeEntryViewModel.cs" />
+    <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
+    <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
     <Compile Include="ViewModels\PICCDetailViewModel.cs" />
     <Compile Include="ViewModels\PICCModelViewModel.cs" />

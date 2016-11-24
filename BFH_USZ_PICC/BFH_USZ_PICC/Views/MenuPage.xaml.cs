@@ -37,7 +37,6 @@ namespace BFH_USZ_PICC.Views
                     new NavigationMenuItem { Title = AppResources.JournalOverviewPageTitleText, MenuItemKey = MenuItemKey.Journal, Icon = "icon.png" },
                     new NavigationMenuItem { Title = AppResources.GlossaryPageTitleText, MenuItemKey = MenuItemKey.Glossary, Icon = "icon.png" },
                     new NavigationMenuItem { Title = AppResources.SettingsPageTitleText, MenuItemKey = MenuItemKey.Settings, Icon = "icon.png" }
-
                 };
 
             ListViewMenu.SelectedItem = menuItems[0];

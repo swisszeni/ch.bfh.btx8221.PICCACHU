@@ -20,6 +20,9 @@ namespace BFH_USZ_PICC.ViewModels
 
             SimpleIoc.Default.Register<AddPICCViewModel>();
             SimpleIoc.Default.Register<GlossaryViewModel>();
+            SimpleIoc.Default.Register<DisorderViewModel>();
+            SimpleIoc.Default.Register<DisorderDetailViewModel>();
+            
         }
 
         public static ViewModelResolver Resolver

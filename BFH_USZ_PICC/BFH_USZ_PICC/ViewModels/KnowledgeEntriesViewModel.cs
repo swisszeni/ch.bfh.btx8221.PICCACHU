@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    class KnowledgeEntryViewModel
+    public class KnowledgeEntriesViewModel
     {
     }
 }
