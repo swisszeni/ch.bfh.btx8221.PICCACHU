@@ -7,10 +7,10 @@
                    Title="{i18n:Translate KnowledgeEntriesTitleText}"
                    BindingContext="{Binding [KnowledgeEntriesViewModel], Source={StaticResource ViewModelLocator}}">
     <ListView x:Name="KnowledgeList"
-              ItemSelected="OnSelect"
               HorizontalOptions="CenterAndExpand"
               GroupDisplayBinding="{Binding Title}"
               GroupShortNameBinding="{Binding ShortName}"
+              ItemsSource="{Binding KnowledgeEntriesList}"
               SelectedItem="{Binding SelectedKnowledgeEntry, Mode=TwoWay}"
               ItemSelected="SelectedKnowledgeEntry"
               IsGroupingEnabled="true">

@@ -21,9 +21,6 @@ namespace BFH_USZ_PICC.ViewModels
             DisorderEntriesList = DisorderEntries.getEntries();
         }
 
-        /// <summary>
-        /// Binds all the disorder entries to a the "Disorder" ListView
-        /// </summary>
         private List<DisorderEntry> _disorderEntriesList;
         public List<DisorderEntry> DisorderEntriesList
         {
@@ -34,10 +31,6 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        /// <summary>
-        /// Binds a disorder entry to the "SelectedSymptom" property of the "DisorderList" ListView.
-        /// If the user selects a disorder entry, a new page will show the reason and action for the symptom.
-        /// </summary>
         private DisorderEntry _selectedSymptom;
         public DisorderEntry SelectedSymptom
         {

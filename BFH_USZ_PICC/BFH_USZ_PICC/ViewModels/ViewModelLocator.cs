@@ -19,10 +19,14 @@ namespace BFH_USZ_PICC.ViewModels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<AddPICCViewModel>();
+            SimpleIoc.Default.Register<MyPICCViewModel>();
+            SimpleIoc.Default.Register<PICCDetailViewModel>();
+            SimpleIoc.Default.Register<KnowledgeEntriesViewModel>();
+            SimpleIoc.Default.Register<KnowledgeEntryDetailViewModel>();
             SimpleIoc.Default.Register<GlossaryViewModel>();
             SimpleIoc.Default.Register<DisorderViewModel>();
             SimpleIoc.Default.Register<DisorderDetailViewModel>();
-            
+
         }
 
         public static ViewModelResolver Resolver

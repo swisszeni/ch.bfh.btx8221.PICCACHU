@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using static BFH_USZ_PICC.Models.PICC;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    class PICCDetailViewModel : INotifyPropertyChanged
+    public class PICCDetailViewModel : ViewModelBase
     {
         private PICC picc;
 

@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
 namespace BFH_USZ_PICC.Views
 {
     /// <summary>
@@ -18,25 +15,12 @@ namespace BFH_USZ_PICC.Views
         public KnowledgeEntriesPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-           
-            //Get all the knowledge entries and add them to  the ListView
-            KnowledgeList.ItemsSource = KnowledgeEntries.getEntries();
-
         }
 
-        //Checks which ListView Element has been selected and moves forward to the KnowledgeEntryPage with the related information 
-        void OnSelect(object sender, EventArgs e)
+        //This method sets the selected knowledge entry to null (otherwise it would be marked as selected after closing the detail page).
+        void SelectedKnowledgeEntry(object sender, EventArgs e)
         {
-            //Checks if the KnowledgeEntries.SelectedItem value is null (value will be null after the following "if" statement).
-            if (KnowledgeList.SelectedItem != null)
-            {
-                //Casts the selected object to a Knowledge entry object and moves it forward to the glossary page.
-                KnowledgeEntry selectedEntry = (KnowledgeEntry)KnowledgeList.SelectedItem;
-
-                Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { selectedEntry }));
-                KnowledgeList.SelectedItem = null;
-            }
-
+            KnowledgeList.SelectedItem = null;
         }
     }
 }
