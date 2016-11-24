@@ -23,6 +23,6 @@
     <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding PiccAppliedDrugEntry.Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
     <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
     <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-    <Button x:Name="BackButton" Text="Zurück" Command="{Binding BackButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
+    <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
   </StackLayout>
 </d:BaseContentPage>

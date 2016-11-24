@@ -147,6 +147,9 @@
   <data name="CancelButtonText" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="DeleteButtonText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="DisorderDetailPageActionLabelText" xml:space="preserve">
     <value>Action</value>
   </data>

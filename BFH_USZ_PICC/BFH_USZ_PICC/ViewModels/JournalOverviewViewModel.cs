@@ -4,6 +4,7 @@ using BFH_USZ_PICC.Views;
 using BFH_USZ_PICC.Views.JournalEntryViews;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -42,8 +43,8 @@ namespace BFH_USZ_PICC.ViewModels
         /// <summary>
         /// Binds all the glossary entries to a the "GlossaryList" ListView
         /// </summary>
-        private List<JournalEntry> _listOfJournalEntries;
-        public List<JournalEntry> ListOfJournalEntries
+        private ObservableCollection<JournalEntry> _listOfJournalEntries;
+        public ObservableCollection<JournalEntry> ListOfJournalEntries
         {
             get { return _listOfJournalEntries; }
             set
@@ -66,7 +67,8 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     if (value != null)
                     {
-                       Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), new List<object> { value })); 
+                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage), new List<object> { value }));
+                        
                     }
                     _selectedEntry = value;
                     OnPropertyChanged("SelectedEntry");
@@ -94,7 +96,9 @@ namespace BFH_USZ_PICC.ViewModels
                         await Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
                         return;
                     }
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
+                    //await Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
+                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
+
                     return;
                 }
 

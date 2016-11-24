@@ -152,6 +152,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string DeleteButtonText {
+            get {
+                return ResourceManager.GetString("DeleteButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
         public static string DisorderDetailPageActionLabelText {

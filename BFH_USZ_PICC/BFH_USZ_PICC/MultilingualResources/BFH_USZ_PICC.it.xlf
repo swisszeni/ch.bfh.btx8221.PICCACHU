@@ -422,6 +422,10 @@
           <source>XRay staff</source>
           <target state="new">XRay staff</target>
         </trans-unit>
+        <trans-unit id="DeleteButtonText" translate="yes" xml:space="preserve">
+          <source>Delete</source>
+          <target state="new">Delete</target>
+        </trans-unit>
       </group>
     </body>
   </file>

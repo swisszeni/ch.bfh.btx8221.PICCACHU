@@ -324,4 +324,7 @@
   <data name="JournalEntryPersonXrayStaffText" xml:space="preserve">
     <value>Röntgenfachperson (MTRA)</value>
   </data>
+  <data name="DeleteButtonText" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
 </root>

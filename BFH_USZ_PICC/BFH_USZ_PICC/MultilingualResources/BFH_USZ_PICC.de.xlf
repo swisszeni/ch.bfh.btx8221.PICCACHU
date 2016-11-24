@@ -422,6 +422,10 @@
           <source>XRay staff</source>
           <target state="translated">Röntgenfachperson (MTRA)</target>
         </trans-unit>
+        <trans-unit id="DeleteButtonText" translate="yes" xml:space="preserve">
+          <source>Delete</source>
+          <target state="translated">Löschen</target>
+        </trans-unit>
       </group>
     </body>
   </file>

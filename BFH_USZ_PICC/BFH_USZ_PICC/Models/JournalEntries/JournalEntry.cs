@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Resx;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace BFH_USZ_PICC.Models
@@ -61,6 +62,6 @@ namespace BFH_USZ_PICC.Models
         public HealthInstitution Institution { get; set; }
         public HealthPerson Person { get; set; }
 
-        public static List<JournalEntry> AllEnteredJournalEntries = new List<JournalEntry>();
+        public static ObservableCollection<JournalEntry> AllEnteredJournalEntries = new ObservableCollection<JournalEntry>();
     }
 }

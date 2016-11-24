@@ -20,11 +20,11 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
         /// </summary>
         public AdministeredDrugViewModel(PICCAppliedDrugEntry entry)
         {
-           // AddHealthInstitutionsToPicker();
+            // AddHealthInstitutionsToPicker();
 
             SaveButtonCommand = new Command(SaveButtonClicked);
             CancelButtonCommand = new Command(CancelButtonClicked);
-            BackButtonCommand = new Command(BackButtonClicked);
+            DeleteButtonCommand = new Command(DeleteButtonClicked);
 
             PICCAppliedDrugEntry piccAppliedDrugEntry = (PICCAppliedDrugEntry)entry;
             if (piccAppliedDrugEntry == null)
@@ -84,7 +84,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
 
         public ICommand SaveButtonCommand { protected set; get; }
         public ICommand CancelButtonCommand { protected set; get; }
-        public ICommand BackButtonCommand { protected set; get; }
+        public ICommand DeleteButtonCommand { protected set; get; }
 
         async void SaveButtonClicked()
         {
@@ -92,8 +92,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
             PICCAppliedDrugEntry drugEntry = new PICCAppliedDrugEntry(DateTime.Now, _piccAppliedDrugEntry.ProcedureDateTime, _piccAppliedDrugEntry.Institution, _piccAppliedDrugEntry.Person, _piccAppliedDrugEntry.Drug);
             //Add the object to the collection of JournalEntries
             JournalEntry.AllEnteredJournalEntries.Add(drugEntry);
-            //close the modal page
-            await Application.Current.MainPage.Navigation.PopModalAsync();
+            //close the page
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
 
         }
 
@@ -102,17 +102,19 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
             //Check if the user really wants to leave the page
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein"))
             {
-
-                await Application.Current.MainPage.Navigation.PopModalAsync();
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
 
         }
 
-        async void BackButtonClicked()
+        async void DeleteButtonClicked()
         {
-                await Application.Current.MainPage.Navigation.PopModalAsync();
-           
+            if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
+            {   
+                JournalEntry.AllEnteredJournalEntries.Remove(_piccAppliedDrugEntry);
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            }
         }
-             
+
     }
 }
