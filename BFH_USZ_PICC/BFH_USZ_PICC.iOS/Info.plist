@@ -16,15 +16,13 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>9.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>BFH_USZ_PICC</string>
 	<key>CFBundleIdentifier</key>
-	<string>ch.nerdwear.BFH_USZ_PICC</string>
+	<string>ch.bfh.i4mi.picc</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
