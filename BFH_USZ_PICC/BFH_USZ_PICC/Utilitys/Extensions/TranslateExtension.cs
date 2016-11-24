@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 namespace BFH_USZ_PICC.Utilitys.Extensions
 {
     [ContentProperty("Text")]
-    public class TranslateExtension : IMarkupExtension
+    public class TranslateExtension : IMarkupExtension<string>
     {
         readonly CultureInfo ci;
         const string ResourceId = "BFH_USZ_PICC.Resx.AppResources";
@@ -24,7 +24,7 @@ namespace BFH_USZ_PICC.Utilitys.Extensions
 
         public string Text { get; set; }
 
-        public object ProvideValue(IServiceProvider serviceProvider)
+        string IMarkupExtension<string>.ProvideValue(IServiceProvider serviceProvider)
         {
             if (Text == null)
                 return "";
@@ -42,10 +42,15 @@ namespace BFH_USZ_PICC.Utilitys.Extensions
                     "Text");
 #else
                 // HACK: returns the key, which gets displayed to the user
-                translation = Text; 
+                translation = Text;
 #endif
             }
             return translation;
+        }
+
+        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+        {
+            return (this as IMarkupExtension<string>).ProvideValue(serviceProvider);
         }
     }
 }
