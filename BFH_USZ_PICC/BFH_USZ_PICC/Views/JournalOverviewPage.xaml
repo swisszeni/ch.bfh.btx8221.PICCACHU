@@ -39,7 +39,7 @@
                 <StackLayout Orientation="Horizontal">
                   <Image Source="{Binding Icon}"/>
                   <Label Text="{Binding Entry, Converter={StaticResource AllPossibleJournalEntriesToStringConverter}}" VerticalTextAlignment="Start" FontSize="20"/>
-                  <Label Text="{Binding ProcedureDateTime, StringFormat='{}{0:dd/MM/yy}'}" VerticalTextAlignment="Start"/>
+                  <Label Text="{Binding ProcedureDateTime, StringFormat='{}{0:dd/MM/yy}'}" VerticalTextAlignment="Start" HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
               </StackLayout>
             </ViewCell.View>

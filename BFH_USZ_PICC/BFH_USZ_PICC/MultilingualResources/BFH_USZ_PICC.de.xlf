@@ -426,6 +426,98 @@
           <source>Delete</source>
           <target state="translated">Löschen</target>
         </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPollutionText" translate="yes" xml:space="preserve">
+          <source>Pollution</source>
+          <target state="translated">Verschmutzung</target>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryRoutineText" translate="yes" xml:space="preserve">
+          <source>Routine</source>
+          <target state="translated">Routine</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryDamagedWingsText" translate="yes" xml:space="preserve">
+          <source>Damaged wings</source>
+          <target state="translated">Defekte Flügel</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPollutionText" translate="yes" xml:space="preserve">
+          <source>Pollution</source>
+          <target state="translated">Verschmutzung</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryRoutineText" translate="yes" xml:space="preserve">
+          <source>Routine</source>
+          <target state="translated">Routine</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntrySticksUnsatisfactorilyText" translate="yes" xml:space="preserve">
+          <source>Sticks unsatisfactorily</source>
+          <target state="translated">Klebt ungenügend</target>
+        </trans-unit>
+        <trans-unit id="BloodFlowFastAndEasyText" translate="yes" xml:space="preserve">
+          <source>Fast, easy</source>
+          <target state="translated">Zügig, problemlos</target>
+        </trans-unit>
+        <trans-unit id="BloodFlowHesitantText" translate="yes" xml:space="preserve">
+          <source>Hesitant</source>
+          <target state="translated">Zögerlich</target>
+        </trans-unit>
+        <trans-unit id="BloodFlowNoneText" translate="yes" xml:space="preserve">
+          <source>Not at all</source>
+          <target state="translated">Gar nicht</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonBandageDoesNotStickAnymoreText" translate="yes" xml:space="preserve">
+          <source>Bandage does not stick anymore</source>
+          <target state="translated">Verband klebte nicht mehr</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonBandageWetText" translate="yes" xml:space="preserve">
+          <source>Bandage is wet</source>
+          <target state="translated">Verband feucht</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonPainText" translate="yes" xml:space="preserve">
+          <source>Pain, irregularities</source>
+          <target state="translated">Schmerzen, Unregelmässigkeiten</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonPunctureNotCoveredText" translate="yes" xml:space="preserve">
+          <source>Puncture is not covered</source>
+          <target state="translated">Einstichstelle nicht vollständig abgedeckt</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonRoutineText" translate="yes" xml:space="preserve">
+          <source>Routinely</source>
+          <target state="translated">Routinemässig</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonSecondaryBleedingText" translate="yes" xml:space="preserve">
+          <source>Secondary bleeding</source>
+          <target state="translated">Nachblutung</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingAreaCompleteText" translate="yes" xml:space="preserve">
+          <source>Complete</source>
+          <target state="translated">Vollständig</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingAreaOnlyBandageText" translate="yes" xml:space="preserve">
+          <source>Only Bandage</source>
+          <target state="translated">Nur Verband</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingAreaOnlyStatlockText" translate="yes" xml:space="preserve">
+          <source>Only StatLock</source>
+          <target state="translated">Nur StatLock</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationLiquidDischargeText" translate="yes" xml:space="preserve">
+          <source>Liquid discharge</source>
+          <target state="translated">Flüssigkeitsaustritt</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationPainfulPunctureText" translate="yes" xml:space="preserve">
+          <source>Painful puncuture</source>
+          <target state="translated">Schmerzhaft</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationReddenedPunctureText" translate="yes" xml:space="preserve">
+          <source>Reddened puncture</source>
+          <target state="translated">Gerötet</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationSkinNotIrritantText" translate="yes" xml:space="preserve">
+          <source>Skin not irritant</source>
+          <target state="translated">Reizlos</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationSwollenPunctureText" translate="yes" xml:space="preserve">
+          <source>Swollen puncture</source>
+          <target state="translated">Geschwollen</target>
+        </trans-unit>
       </group>
     </body>
   </file>

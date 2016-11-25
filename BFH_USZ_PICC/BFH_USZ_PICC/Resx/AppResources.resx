@@ -132,8 +132,59 @@
   <data name="AddPICCPageTitleText" xml:space="preserve">
     <value>Add PICC</value>
   </data>
+  <data name="BandageChangingAreaCompleteText" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="BandageChangingAreaOnlyBandageText" xml:space="preserve">
+    <value>Only Bandage</value>
+  </data>
+  <data name="BandageChangingAreaOnlyStatlockText" xml:space="preserve">
+    <value>Only StatLock</value>
+  </data>
+  <data name="BandageChangingReasonBandageDoesNotStickAnymoreText" xml:space="preserve">
+    <value>Bandage does not stick anymore</value>
+  </data>
+  <data name="BandageChangingReasonBandageWetText" xml:space="preserve">
+    <value>Bandage is wet</value>
+  </data>
+  <data name="BandageChangingReasonPainText" xml:space="preserve">
+    <value>Pain, irregularities</value>
+  </data>
+  <data name="BandageChangingReasonPunctureNotCoveredText" xml:space="preserve">
+    <value>Puncture is not covered</value>
+  </data>
+  <data name="BandageChangingReasonRoutineText" xml:space="preserve">
+    <value>Routinely</value>
+  </data>
+  <data name="BandageChangingReasonSecondaryBleedingText" xml:space="preserve">
+    <value>Secondary bleeding</value>
+  </data>
+  <data name="BandagePunctureSituationLiquidDischargeText" xml:space="preserve">
+    <value>Liquid discharge</value>
+  </data>
+  <data name="BandagePunctureSituationPainfulPunctureText" xml:space="preserve">
+    <value>Painful puncuture</value>
+  </data>
+  <data name="BandagePunctureSituationReddenedPunctureText" xml:space="preserve">
+    <value>Reddened puncture</value>
+  </data>
+  <data name="BandagePunctureSituationSkinNotIrritantText" xml:space="preserve">
+    <value>Skin not irritant</value>
+  </data>
+  <data name="BandagePunctureSituationSwollenPunctureText" xml:space="preserve">
+    <value>Swollen puncture</value>
+  </data>
   <data name="BasePageTitleText" xml:space="preserve">
     <value>Page</value>
+  </data>
+  <data name="BloodFlowFastAndEasyText" xml:space="preserve">
+    <value>Fast, easy</value>
+  </data>
+  <data name="BloodFlowHesitantText" xml:space="preserve">
+    <value>Hesitant</value>
+  </data>
+  <data name="BloodFlowNoneText" xml:space="preserve">
+    <value>Not at all</value>
   </data>
   <data name="CallUSZTelemedicineNotPossibleText" xml:space="preserve">
     <value>Your device can not call the USZ telemedicine. Contact 044 666 66 66</value>
@@ -270,6 +321,12 @@
   <data name="MasterDataText" xml:space="preserve">
     <value>Master data</value>
   </data>
+  <data name="MicroClaveChangingEntryPollutionText" xml:space="preserve">
+    <value>Pollution</value>
+  </data>
+  <data name="MicroClaveChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
   <data name="MyPICCPageAddNewPICCButtonText" xml:space="preserve">
     <value>Add a new PICC</value>
   </data>
@@ -386,6 +443,18 @@
   </data>
   <data name="SettingsPageTitleText" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="StatlockChangingEntryDamagedWingsText" xml:space="preserve">
+    <value>Damaged wings</value>
+  </data>
+  <data name="StatlockChangingEntryPollutionText" xml:space="preserve">
+    <value>Pollution</value>
+  </data>
+  <data name="StatlockChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntrySticksUnsatisfactorilyText" xml:space="preserve">
+    <value>Sticks unsatisfactorily</value>
   </data>
   <data name="UserMasterDataPageBirthdateLabelText" xml:space="preserve">
     <value>Birthdate:</value>

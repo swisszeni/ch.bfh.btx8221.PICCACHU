@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.JournalEntries.BandageChangingEntryPage"
+             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate JournalOverviewPageBandagesChangingEntry}">
+  <Grid.Resources>
+    <ResourceDictionary>
+      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
+      <utilitys:HealthInstitutionToIndexConverter x:Key="HealthInstitutionToIndexConverter"/>
+      <utilitys:HealthPersonToIndexConverter x:Key="HealthPersonToIndexConverter"/>
+      <utilitys:BandageChangingReasonToIndexConverter x:Key="BandageChangingReasonToIndexConverter"/>
+      <utilitys:BandageChangingAreaToIndexConverter x:Key="BandageChangingAreaToIndexConverter"/>
+      <utilitys:BandagePunctureSituationToIndexConverter x:Key="BandagePunctureSituationToIndexConverter"/>
+    </ResourceDictionary>
+  </Grid.Resources>
+  <ScrollView>
+    <StackLayout Orientation="Vertical">
+      <Label Text ="Bitte geben Sie an, warum Ihr Verband gewechselt werden musste:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Picker x:Name="BandageChangingReasonPicker" SelectedIndex="{Binding BandageChangingEntry.Reason, Converter={StaticResource BandageChangingReasonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text ="Bitte geben Sie an, welche Teile des Verbandes gewechselt wurden:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Picker x:Name="BandageChangingAreaPicker" SelectedIndex="{Binding BandageChangingEntry.Area, Converter={StaticResource BandageChangingAreaToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text ="Wie verhält sich die Einstichstelle?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Picker x:Name="BandageChangingPuncturePicker" SelectedIndex="{Binding BandageChangingEntry.Puncture, Converter={StaticResource BandagePunctureSituationToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text ="An welchem Datum haben Sie den StatLock gewechselt?" VerticalTextAlignment="Center" FontSize="20"/>
+      <DatePicker x:Name="ProcedureDate" Date="{Binding BandageChangingEntry.ProcedureDateTime}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text="Welche Institution hat Ihnen beim Verbandswechsel geholfen?" FontSize="20"/>
+      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding BandageChangingEntry.Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text="Welche Person hat Ihnen hat Ihnen beim Verbandswechsel geholfen?" FontSize="20"/>
+      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding BandageChangingEntry.Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
+      <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
+      <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
+    </StackLayout>
+  </ScrollView>
+</d:BaseContentPage>

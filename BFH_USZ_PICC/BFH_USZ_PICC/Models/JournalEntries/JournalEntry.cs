@@ -18,13 +18,13 @@ namespace BFH_USZ_PICC.Models
             CatheterFlushEntry,
             InfusionEntry,
             MicroClaveEntry,
-            PICCAppliedDrugEntry,
+            AdministeredDrugEntry,
             StatlockEntry
         }
 
         public enum HealthInstitution
         {
-            None,
+            NoInformation,
             Hospital,
             Ambulatory,
             Rehabilitation,
@@ -34,7 +34,7 @@ namespace BFH_USZ_PICC.Models
 
         public enum HealthPerson
         {   
-            None,
+            NoInformation,
             FamilyDoctor,
             Specialist,
             NursingStaff,

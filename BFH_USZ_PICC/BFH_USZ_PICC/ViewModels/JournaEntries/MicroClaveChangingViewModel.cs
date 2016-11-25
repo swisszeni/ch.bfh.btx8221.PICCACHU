@@ -10,15 +10,15 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 
-namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
+namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class AdministeredDrugViewModel : INotifyPropertyChanged
+    class MicroClaveChangingViewModel : INotifyPropertyChanged
     {
 
         /// <summary>
         /// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
         /// </summary>
-        public AdministeredDrugViewModel(PICCAppliedDrugEntry entry)
+        public MicroClaveChangingViewModel(MicroClaveChangingEntry entry)
         {
             // AddHealthInstitutionsToPicker();
 
@@ -26,20 +26,17 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
             CancelButtonCommand = new Command(CancelButtonClicked);
             DeleteButtonCommand = new Command(DeleteButtonClicked);
 
-            PICCAppliedDrugEntry piccAppliedDrugEntry = (PICCAppliedDrugEntry)entry;
-            if (piccAppliedDrugEntry == null)
+            MicroClaveChangingEntry microClaveChangingEntry = (MicroClaveChangingEntry)entry;
+            if (microClaveChangingEntry == null)
             {
                 IsEnabledOrVisible = true;
-                _piccAppliedDrugEntry = new PICCAppliedDrugEntry(DateTime.Now, DateTime.Now, JournalEntry.HealthInstitution.None, JournalEntry.HealthPerson.None, " ");
+                _microClaveChangingEntry = new MicroClaveChangingEntry(DateTime.Now, DateTime.Now, JournalEntry.HealthInstitution.NoInformation, JournalEntry.HealthPerson.NoInformation, MicroClaveChangementReason.NoInformation);
             }
             else
             {
-                _piccAppliedDrugEntry = piccAppliedDrugEntry;
+                _microClaveChangingEntry = microClaveChangingEntry;
                 IsEnabledOrVisible = false;
-
             }
-
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -68,16 +65,16 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
         }
 
 
-        private PICCAppliedDrugEntry _piccAppliedDrugEntry;
-        public PICCAppliedDrugEntry PiccAppliedDrugEntry
+        private MicroClaveChangingEntry _microClaveChangingEntry;
+        public MicroClaveChangingEntry MicroClaveChangingEntry
         {
-            get { return _piccAppliedDrugEntry; }
+            get { return _microClaveChangingEntry; }
             set
             {
-                if (_piccAppliedDrugEntry != value)
+                if (_microClaveChangingEntry != value)
                 {
-                    _piccAppliedDrugEntry = value;
-                    OnPropertyChanged("PiccAppliedDrugEntry");
+                    _microClaveChangingEntry = value;
+                    OnPropertyChanged("MicroClaveChangingEntry");
                 }
             }
         }
@@ -89,9 +86,9 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
         async void SaveButtonClicked()
         {
             // create a new PICCAppliedDrugEntry with the user entered information
-            PICCAppliedDrugEntry drugEntry = new PICCAppliedDrugEntry(DateTime.Now, _piccAppliedDrugEntry.ProcedureDateTime, _piccAppliedDrugEntry.Institution, _piccAppliedDrugEntry.Person, _piccAppliedDrugEntry.Drug);
+            MicroClaveChangingEntry microClaveEntry = new MicroClaveChangingEntry(DateTime.Now, _microClaveChangingEntry.ProcedureDateTime, _microClaveChangingEntry.Institution, _microClaveChangingEntry.Person, _microClaveChangingEntry.Reason);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(drugEntry);
+            JournalEntry.AllEnteredJournalEntries.Add(microClaveEntry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
 
@@ -111,7 +108,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntryViews
         {
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
             {   
-                JournalEntry.AllEnteredJournalEntries.Remove(_piccAppliedDrugEntry);
+                JournalEntry.AllEnteredJournalEntries.Remove(_microClaveChangingEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }

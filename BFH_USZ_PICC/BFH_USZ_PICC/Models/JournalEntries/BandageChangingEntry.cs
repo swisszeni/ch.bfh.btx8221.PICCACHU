@@ -7,27 +7,29 @@ using System.Threading.Tasks;
 namespace BFH_USZ_PICC.Models
 {
 
-    public enum ChangementReason
-    {
+    public enum BandageChangingReason
+    {   
+        NoInformation,
         Routine,
         PunctureNotCovered,
         BandageWet,
         BandageDoesNotStickAnymore,
         SecondaryBleeding,
         Pain
-
     }
 
-    public enum ChangementArea
+    public enum BandageChangingArea
     {
+        NoInformation,
         Complete,
         OnlyBandage,
         OnlyStatlock
 
     }
 
-    public enum PunctureSituation
+    public enum BandagePunctureSituation
     {
+        NoInformation,
         SkinNotIrritant,
         ReddenedPuncture,
         SwollenPuncture,
@@ -35,8 +37,9 @@ namespace BFH_USZ_PICC.Models
         LiquidDischarge
     }
 
-    public enum ArmProcessSituation
+    public enum BandageArmProcessSituation
     {
+        NoInformation,
         Painful,
         Swollen,
         Reddended
@@ -44,15 +47,15 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with four parameters (ChangementReason, ChangementArea, PunctureSituation, ArmProcessSituation) to handle special events for the bandages changing procedure.
     /// </summary>
-    class BandagesChangingEntry : JournalEntry
+    public class BandageChangingEntry : JournalEntry
     {
-        public ChangementReason Reason { get; set; }
-        public ChangementArea Area { get; set; }
-        public PunctureSituation Puncture { get; set; }
-        public ArmProcessSituation ArmProcess { get; set; }
+        public BandageChangingReason Reason { get; set; }
+        public BandageChangingArea Area { get; set; }
+        public BandagePunctureSituation Puncture { get; set; }
+        public BandageArmProcessSituation ArmProcess { get; set; }
         
-        public BandagesChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, ChangementReason reason, ChangementArea area,
-            PunctureSituation puncture, ArmProcessSituation armProcess)
+        public BandageChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, BandageChangingReason reason, BandageChangingArea area,
+            BandagePunctureSituation puncture, BandageArmProcessSituation armProcess)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
@@ -62,6 +65,8 @@ namespace BFH_USZ_PICC.Models
             Area = area;
             Puncture = puncture;
             ArmProcess = armProcess;
+
+            Entry = AllPossibleJournalEntries.BandagesChangingEntry;
 
         }
 

@@ -10,11 +10,11 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with two parameters (Drug, Reason) to handle special events for applied drugs.
     /// </summary>
-    public class PICCAppliedDrugEntry : JournalEntry
+    public class AdministeredDrugEntry : JournalEntry
     {
         public string Drug { get; set; }
               
-        public PICCAppliedDrugEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
+        public AdministeredDrugEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
@@ -22,7 +22,7 @@ namespace BFH_USZ_PICC.Models
             Person = person;
             Drug = drug;
 
-            Entry = AllPossibleJournalEntries.PICCAppliedDrugEntry; 
+            Entry = AllPossibleJournalEntries.AdministeredDrugEntry; 
         }
 
     }

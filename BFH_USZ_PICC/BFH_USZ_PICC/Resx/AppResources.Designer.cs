@@ -107,11 +107,164 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complete.
+        /// </summary>
+        public static string BandageChangingAreaCompleteText {
+            get {
+                return ResourceManager.GetString("BandageChangingAreaCompleteText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only Bandage.
+        /// </summary>
+        public static string BandageChangingAreaOnlyBandageText {
+            get {
+                return ResourceManager.GetString("BandageChangingAreaOnlyBandageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only StatLock.
+        /// </summary>
+        public static string BandageChangingAreaOnlyStatlockText {
+            get {
+                return ResourceManager.GetString("BandageChangingAreaOnlyStatlockText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bandage does not stick anymore.
+        /// </summary>
+        public static string BandageChangingReasonBandageDoesNotStickAnymoreText {
+            get {
+                return ResourceManager.GetString("BandageChangingReasonBandageDoesNotStickAnymoreText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bandage is wet.
+        /// </summary>
+        public static string BandageChangingReasonBandageWetText {
+            get {
+                return ResourceManager.GetString("BandageChangingReasonBandageWetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pain, irregularities.
+        /// </summary>
+        public static string BandageChangingReasonPainText {
+            get {
+                return ResourceManager.GetString("BandageChangingReasonPainText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Puncture is not covered.
+        /// </summary>
+        public static string BandageChangingReasonPunctureNotCoveredText {
+            get {
+                return ResourceManager.GetString("BandageChangingReasonPunctureNotCoveredText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Routinely.
+        /// </summary>
+        public static string BandageChangingReasonRoutineText {
+            get {
+                return ResourceManager.GetString("BandageChangingReasonRoutineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secondary bleeding.
+        /// </summary>
+        public static string BandageChangingReasonSecondaryBleedingText {
+            get {
+                return ResourceManager.GetString("BandageChangingReasonSecondaryBleedingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liquid discharge.
+        /// </summary>
+        public static string BandagePunctureSituationLiquidDischargeText {
+            get {
+                return ResourceManager.GetString("BandagePunctureSituationLiquidDischargeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Painful puncuture.
+        /// </summary>
+        public static string BandagePunctureSituationPainfulPunctureText {
+            get {
+                return ResourceManager.GetString("BandagePunctureSituationPainfulPunctureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reddened puncture.
+        /// </summary>
+        public static string BandagePunctureSituationReddenedPunctureText {
+            get {
+                return ResourceManager.GetString("BandagePunctureSituationReddenedPunctureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skin not irritant.
+        /// </summary>
+        public static string BandagePunctureSituationSkinNotIrritantText {
+            get {
+                return ResourceManager.GetString("BandagePunctureSituationSkinNotIrritantText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swollen puncture.
+        /// </summary>
+        public static string BandagePunctureSituationSwollenPunctureText {
+            get {
+                return ResourceManager.GetString("BandagePunctureSituationSwollenPunctureText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Page.
         /// </summary>
         public static string BasePageTitleText {
             get {
                 return ResourceManager.GetString("BasePageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast, easy.
+        /// </summary>
+        public static string BloodFlowFastAndEasyText {
+            get {
+                return ResourceManager.GetString("BloodFlowFastAndEasyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hesitant.
+        /// </summary>
+        public static string BloodFlowHesitantText {
+            get {
+                return ResourceManager.GetString("BloodFlowHesitantText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not at all.
+        /// </summary>
+        public static string BloodFlowNoneText {
+            get {
+                return ResourceManager.GetString("BloodFlowNoneText", resourceCulture);
             }
         }
         
@@ -521,6 +674,24 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pollution.
+        /// </summary>
+        public static string MicroClaveChangingEntryPollutionText {
+            get {
+                return ResourceManager.GetString("MicroClaveChangingEntryPollutionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Routine.
+        /// </summary>
+        public static string MicroClaveChangingEntryRoutineText {
+            get {
+                return ResourceManager.GetString("MicroClaveChangingEntryRoutineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add a new PICC.
         /// </summary>
         public static string MyPICCPageAddNewPICCButtonText {
@@ -868,6 +1039,42 @@ namespace BFH_USZ_PICC.Resx {
         public static string SettingsPageTitleText {
             get {
                 return ResourceManager.GetString("SettingsPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Damaged wings.
+        /// </summary>
+        public static string StatlockChangingEntryDamagedWingsText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryDamagedWingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pollution.
+        /// </summary>
+        public static string StatlockChangingEntryPollutionText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryPollutionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Routine.
+        /// </summary>
+        public static string StatlockChangingEntryRoutineText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryRoutineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sticks unsatisfactorily.
+        /// </summary>
+        public static string StatlockChangingEntrySticksUnsatisfactorilyText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntrySticksUnsatisfactorilyText", resourceCulture);
             }
         }
         

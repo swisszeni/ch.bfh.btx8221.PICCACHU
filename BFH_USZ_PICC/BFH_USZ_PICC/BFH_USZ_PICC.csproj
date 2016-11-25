@@ -53,8 +53,8 @@
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\MicroClaveChangingEntry.cs" />
-    <Compile Include="Models\JournalEntries\BandagesChangingEntry.cs" />
-    <Compile Include="Models\JournalEntries\PICCAppliedDrugEntry.cs" />
+    <Compile Include="Models\JournalEntries\BandageChangingEntry.cs" />
+    <Compile Include="Models\JournalEntries\AdministeredDrugEntry.cs" />
     <Compile Include="Models\JournalEntries\InfusionEntry.cs" />
     <Compile Include="Models\JournalEntries\CatheterFlushEntry.cs" />
     <Compile Include="Models\JournalEntries\BloodWithdrawalEntry.cs" />
@@ -98,7 +98,11 @@
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
-    <Compile Include="ViewModels\JournaEntryViewModels\AdministeredDrugViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\BloodWithdrawalViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\BandageChangingViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\StatlockChangingViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\MicroClaveChangingViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\AdministeredDrugViewModel.cs" />
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryViewModel.cs" />
@@ -118,10 +122,22 @@
     <Compile Include="Views\DisorderPage.xaml.cs">
       <DependentUpon>DisorderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\JournalEntries\BloodWithdrawalEntryPage.xaml.cs">
+      <DependentUpon>BloodWithdrawalEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JournalEntries\BandageChangingEntryPage.xaml.cs">
+      <DependentUpon>BandageChangingEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JournalEntries\StatlockChangingEntryPage.xaml.cs">
+      <DependentUpon>StatlockChangingEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JournalEntries\MicroClaveChangingEntryPage.xaml.cs">
+      <DependentUpon>MicroClaveChangingEntryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MaintenanceInstructionPage.xaml.cs">
       <DependentUpon>MaintenanceInstructionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\JournalEntryViews\AdministeredDrugEntryPage.xaml.cs">
+    <Compile Include="Views\JournalEntries\AdministeredDrugEntryPage.xaml.cs">
       <DependentUpon>AdministeredDrugEntryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\JournalOverviewPage.xaml.cs">
@@ -315,13 +331,37 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\JournalEntryViews\AdministeredDrugEntryPage.xaml">
+    <EmbeddedResource Include="Views\JournalEntries\AdministeredDrugEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MaintenanceInstructionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntries\MicroClaveChangingEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntries\StatlockChangingEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntries\BloodWithdrawalEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntries\BandageChangingEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -24,7 +24,7 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with four parameters (FlushReason, FlushResult, QuantityInMilliliter, IsBloodReflowVisible) to handle special events for the blood catheter flush procedure
     /// </summary>
-    class CatheterFlushEntry : JournalEntry
+    public class CatheterFlushEntry : JournalEntry
     {
         public FlushReason Reason { get; set; }
         public FlushResult Result { get; set; }

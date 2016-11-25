@@ -3,13 +3,13 @@ using System;
 using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.ViewModels.JournalEntryViews;
+using BFH_USZ_PICC.ViewModels.JournalEntries;
 
 
 
 // Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
-namespace BFH_USZ_PICC.Views.JournalEntryViews
+namespace BFH_USZ_PICC.Views.JournalEntries
 {
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
@@ -24,7 +24,7 @@ namespace BFH_USZ_PICC.Views.JournalEntryViews
             
         }
 
-        public AdministeredDrugEntryPage(ContentPage contained, PICCAppliedDrugEntry entry) : base(contained)
+        public AdministeredDrugEntryPage(ContentPage contained, AdministeredDrugEntry entry) : base(contained)
         {
             InitializeComponent();
             AddHealthInstitutionsAndHealthPeopleToPicker();

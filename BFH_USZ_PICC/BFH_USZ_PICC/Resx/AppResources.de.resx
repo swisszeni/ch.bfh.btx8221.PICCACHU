@@ -327,4 +327,73 @@
   <data name="DeleteButtonText" xml:space="preserve">
     <value>Löschen</value>
   </data>
+  <data name="MicroClaveChangingEntryPollutionText" xml:space="preserve">
+    <value>Verschmutzung</value>
+  </data>
+  <data name="MicroClaveChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntryDamagedWingsText" xml:space="preserve">
+    <value>Defekte Flügel</value>
+  </data>
+  <data name="StatlockChangingEntryPollutionText" xml:space="preserve">
+    <value>Verschmutzung</value>
+  </data>
+  <data name="StatlockChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntrySticksUnsatisfactorilyText" xml:space="preserve">
+    <value>Klebt ungenügend</value>
+  </data>
+  <data name="BloodFlowFastAndEasyText" xml:space="preserve">
+    <value>Zügig, problemlos</value>
+  </data>
+  <data name="BloodFlowHesitantText" xml:space="preserve">
+    <value>Zögerlich</value>
+  </data>
+  <data name="BloodFlowNoneText" xml:space="preserve">
+    <value>Gar nicht</value>
+  </data>
+  <data name="BandageChangingReasonBandageDoesNotStickAnymoreText" xml:space="preserve">
+    <value>Verband klebte nicht mehr</value>
+  </data>
+  <data name="BandageChangingReasonBandageWetText" xml:space="preserve">
+    <value>Verband feucht</value>
+  </data>
+  <data name="BandageChangingReasonPainText" xml:space="preserve">
+    <value>Schmerzen, Unregelmässigkeiten</value>
+  </data>
+  <data name="BandageChangingReasonPunctureNotCoveredText" xml:space="preserve">
+    <value>Einstichstelle nicht vollständig abgedeckt</value>
+  </data>
+  <data name="BandageChangingReasonRoutineText" xml:space="preserve">
+    <value>Routinemässig</value>
+  </data>
+  <data name="BandageChangingReasonSecondaryBleedingText" xml:space="preserve">
+    <value>Nachblutung</value>
+  </data>
+  <data name="BandageChangingAreaCompleteText" xml:space="preserve">
+    <value>Vollständig</value>
+  </data>
+  <data name="BandageChangingAreaOnlyBandageText" xml:space="preserve">
+    <value>Nur Verband</value>
+  </data>
+  <data name="BandageChangingAreaOnlyStatlockText" xml:space="preserve">
+    <value>Nur StatLock</value>
+  </data>
+  <data name="BandagePunctureSituationLiquidDischargeText" xml:space="preserve">
+    <value>Flüssigkeitsaustritt</value>
+  </data>
+  <data name="BandagePunctureSituationPainfulPunctureText" xml:space="preserve">
+    <value>Schmerzhaft</value>
+  </data>
+  <data name="BandagePunctureSituationReddenedPunctureText" xml:space="preserve">
+    <value>Gerötet</value>
+  </data>
+  <data name="BandagePunctureSituationSkinNotIrritantText" xml:space="preserve">
+    <value>Reizlos</value>
+  </data>
+  <data name="BandagePunctureSituationSwollenPunctureText" xml:space="preserve">
+    <value>Geschwollen</value>
+  </data>
 </root>

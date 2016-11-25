@@ -1,9 +1,5 @@
-﻿using BFH_USZ_PICC.Models;
-using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.ViewModels;
-using BFH_USZ_PICC.Views.JournalEntryViews;
+﻿using BFH_USZ_PICC.ViewModels;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 

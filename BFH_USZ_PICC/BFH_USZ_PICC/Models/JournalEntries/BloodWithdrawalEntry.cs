@@ -10,7 +10,8 @@ namespace BFH_USZ_PICC.Models
     /// 
     /// </summary>
     public enum BloodFlow
-    {
+    {   
+        NoInformation,
         Speedy,
         Hesitant,
         None
@@ -18,7 +19,7 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with two parameters (IsNaCiFlashDone, Flow) to handle special events for the blood withrawal procedure
     /// </summary>
-    class BloodWithdrawalEntry : JournalEntry
+    public class BloodWithdrawalEntry : JournalEntry
     {       
         public bool IsNaCiFlashDone { get; set; }
         public BloodFlow Flow { get; set; }        
@@ -31,6 +32,8 @@ namespace BFH_USZ_PICC.Models
             Person = person;
             IsNaCiFlashDone = isNaCiFlashDone;
             Flow = Flow;
+
+            Entry = AllPossibleJournalEntries.BloodWithdrawalEntry;
 
         }
 

@@ -28,7 +28,7 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with two parameters (InfusionType, Medication) to handle special events for the infusion procedure
     /// </summary>
-    class InfusionEntry : JournalEntry
+    public class InfusionEntry : JournalEntry
     {
         public InfusionType Type { get; set; }
         public Medication Application { get; set; }
