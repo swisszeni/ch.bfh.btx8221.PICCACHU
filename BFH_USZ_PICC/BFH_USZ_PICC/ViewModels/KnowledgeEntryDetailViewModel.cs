@@ -18,6 +18,7 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (Set(ref _displayingEntry, value))
                 {
+                    // Update all bindings
                     RaisePropertyChanged("");
                 }
             }

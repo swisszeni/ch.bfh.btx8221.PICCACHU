@@ -12,24 +12,22 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class PICCDetailViewModel : ViewModelBase
     {
-        private PICC picc;
-
         public PICCDetailViewModel(PICC picc)
         {
-            this.picc = picc;
+            DisplayingEntry = picc;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Checks if a binded property has been changed and fires the event
-        /// </summary>
-        /// <param name="propertyname"></param>
-        protected internal void OnPropertyChanged(string propertyname)
+        private PICC _displayingEntry;
+        public PICC DisplayingEntry
         {
-            if (PropertyChanged != null)
+            get { return _displayingEntry; }
+            set
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
+                if(Set(ref _displayingEntry, value))
+                {
+                    // Update all bindings
+                    RaisePropertyChanged("");
+                }
             }
         }
 
@@ -38,13 +36,13 @@ namespace BFH_USZ_PICC.ViewModels
         /// </summary>
         public string PiccName
         {
-            get { return picc.PICCModel.PICCName; }
+            get { return DisplayingEntry.PICCModel.PICCName; }
             set
             {
-                if (picc.PICCModel.PICCName != value)
+                if (DisplayingEntry.PICCModel.PICCName != value)
                 {
-                    picc.PICCModel.PICCName = value;
-                    OnPropertyChanged("PiccName");
+                    DisplayingEntry.PICCModel.PICCName = value;
+                    RaisePropertyChanged("PiccName");
                 }
             }
         }
@@ -54,13 +52,13 @@ namespace BFH_USZ_PICC.ViewModels
         /// </summary>
         public string ImageSource
         {
-            get { return picc.PICCModel.PictureUri; }
+            get { return DisplayingEntry.PICCModel.PictureUri; }
             set
             {
-                if (picc.PICCModel.PictureUri != value)
+                if (DisplayingEntry.PICCModel.PictureUri != value)
                 {
-                    picc.PICCModel.PictureUri = value;
-                    OnPropertyChanged("ImageSource");
+                    DisplayingEntry.PICCModel.PictureUri = value;
+                    RaisePropertyChanged("ImageSource");
                 }
             }
         }
@@ -70,13 +68,13 @@ namespace BFH_USZ_PICC.ViewModels
         /// </summary>
         public double FrenchSize
         {
-            get { return picc.PICCModel.FrenchSize; }
+            get { return DisplayingEntry.PICCModel.FrenchSize; }
             set
             {
-                if (picc.PICCModel.FrenchSize != value)
+                if (DisplayingEntry.PICCModel.FrenchSize != value)
                 {
-                    picc.PICCModel.FrenchSize = value;
-                    OnPropertyChanged("FrenchSize");
+                    DisplayingEntry.PICCModel.FrenchSize = value;
+                    RaisePropertyChanged("FrenchSize");
                 }
             }
         }
@@ -86,13 +84,13 @@ namespace BFH_USZ_PICC.ViewModels
         /// </summary>
         public DateTime InsertDate
         {
-            get { return picc.InsertDate; }
+            get { return DisplayingEntry.InsertDate; }
             set
             {
-                if (picc.InsertDate != value)
+                if (DisplayingEntry.InsertDate != value)
                 {
-                    picc.InsertDate = value;
-                    OnPropertyChanged("InsertDate");
+                    DisplayingEntry.InsertDate = value;
+                    RaisePropertyChanged("InsertDate");
                 }
             }
         }
@@ -104,32 +102,32 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get
             {
-                if (picc.RemovalDate != null)
+                if (DisplayingEntry.RemovalDate != null)
                 {
-                    return picc.RemovalDate;
+                    return DisplayingEntry.RemovalDate;
                 }
 
                 return DateTime.Today;
             }
             set
             {
-                if (picc.RemovalDate != value)
+                if (DisplayingEntry.RemovalDate != value)
                 {
-                    picc.RemovalDate = value;
-                    OnPropertyChanged("RemovalDate");
+                    DisplayingEntry.RemovalDate = value;
+                    RaisePropertyChanged("RemovalDate");
                 }
             }
         }
 
         public bool IsRemovalDateSet
         {
-            get { return picc.IsNotActiveAnymore; }
+            get { return DisplayingEntry.IsNotActiveAnymore; }
             set
             {
-                if (picc.IsNotActiveAnymore != value)
+                if (DisplayingEntry.IsNotActiveAnymore != value)
                 {
-                    picc.IsNotActiveAnymore = value;
-                    OnPropertyChanged("IsRemovalDateSet");
+                    DisplayingEntry.IsNotActiveAnymore = value;
+                    RaisePropertyChanged("IsRemovalDateSet");
                 }
             }
         }
@@ -141,15 +139,15 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get
             {
-                return picc.InsertPosition;
+                return DisplayingEntry.InsertPosition;
             }
 
             set
             {
-                if (picc.InsertPosition != value)
+                if (DisplayingEntry.InsertPosition != value)
                 {
-                    picc.InsertPosition = value;
-                    OnPropertyChanged("PiccPosition");
+                    DisplayingEntry.InsertPosition = value;
+                    RaisePropertyChanged("PiccPosition");
                 }
             }
         }
@@ -161,15 +159,15 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get
             {
-                return picc.InsertSide;
+                return DisplayingEntry.InsertSide;
             }
 
             set
             {
-                if (picc.InsertSide != value)
+                if (DisplayingEntry.InsertSide != value)
                 {
-                    picc.InsertSide = value;
-                    OnPropertyChanged("PiccSide");
+                    DisplayingEntry.InsertSide = value;
+                    RaisePropertyChanged("PiccSide");
                 }
             }
         }
@@ -181,15 +179,15 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get
             {
-                return picc.InsertCountry;
+                return DisplayingEntry.InsertCountry;
             }
 
             set
             {
-                if (picc.InsertCountry != value)
+                if (DisplayingEntry.InsertCountry != value)
                 {
-                    picc.InsertCountry = value;
-                    OnPropertyChanged("InsertCountry");
+                    DisplayingEntry.InsertCountry = value;
+                    RaisePropertyChanged("InsertCountry");
                 }
             }
 
@@ -202,19 +200,19 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get
             {
-                if (picc.InsertCountry != PICCInsertCountry.Undefined)
+                if (DisplayingEntry.InsertCountry != PICCInsertCountry.Undefined)
                 {
-                    return picc.InsertCity;
+                    return DisplayingEntry.InsertCity;
                 }
                 return " ";
             }
 
             set
             {
-                if (picc.InsertCity != value && picc.InsertCountry != PICCInsertCountry.Undefined)
+                if (DisplayingEntry.InsertCity != value && DisplayingEntry.InsertCountry != PICCInsertCountry.Undefined)
                 {
-                    picc.InsertCity = value;
-                    OnPropertyChanged("City");
+                    DisplayingEntry.InsertCity = value;
+                    RaisePropertyChanged("City");
                 }
             }
         }
