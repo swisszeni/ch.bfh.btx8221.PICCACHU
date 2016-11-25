@@ -1,6 +1,6 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
-using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,30 +16,7 @@ namespace BFH_USZ_PICC.Views
         public DisorderDetailPage(ContentPage contained, DisorderEntry selectedEntry) : base(contained)
         {
             InitializeComponent();
-            BindingContext = selectedEntry;
-        }
-        
-        void ContactUSZTelemedizin(object sender, EventArgs e)
-        {
-            if (DependencyService.Get<ICaller>().CanMakePhonecall())
-            {
-                CallUSZTelemedizin();
-            }
-            else
-            {
-                Application.Current.MainPage.DisplayAlert(AppResources.InformationText, AppResources.CallUSZTelemedicineNotPossibleText, AppResources.OkButtonText);
-            }
-        }
-
-        async void CallUSZTelemedizin()
-        {
-            bool call = await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CallUSZTelemedicineText, AppResources.YesButtonText, AppResources.NoButtonText);
-            if (call)
-            {
-                var dialer = DependencyService.Get<ICaller>();
-                if (dialer != null)
-                    dialer.Dial("0764979662");
-            }
+            ((DisorderDetailViewModel)BindingContext).DisplayingEntry = selectedEntry;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,42 +10,25 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    class MyPICCViewModel : INotifyPropertyChanged
+    class MyPICCViewModel : ViewModelBase
     {
-
         public MyPICCViewModel(PICC picc)
         {
-            FormerPICC = new ObservableCollection<PICC>();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Checks if a binded property has been changed and fires the event
-        /// </summary>
-        /// <param name="propertyname"></param>
-        protected internal void OnPropertyChanged(string propertyname)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
-            }
+            PreviousPICC = new ObservableCollection<PICC>();
         }
 
         private PICC _currentPICC;
         public PICC CurrentPICC
         {
             get { return _currentPICC; }
-            set
-            {
-                if (_currentPICC != value)
-                {
-                    _currentPICC = value;
-                    OnPropertyChanged("CurrentPICC");
-                }
-            }
+            set { Set(ref _currentPICC, value); }
         }
 
-        public ObservableCollection<PICC> FormerPICC { get; private set; }
+        private ObservableCollection<PICC> _previousPICC;
+        public ObservableCollection<PICC> PreviousPICC
+        {
+            get { return _previousPICC; }
+            set { Set(ref _previousPICC, value); }
+        }
     }
 }

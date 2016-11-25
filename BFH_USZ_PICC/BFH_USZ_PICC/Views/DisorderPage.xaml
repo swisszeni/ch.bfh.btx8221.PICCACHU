@@ -1,36 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.DisorderPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate DisorderPageTitleText}">
-  <ListView x:Name="DisorderList" HasUnevenRows="True" ItemsSource="{Binding ListOfDisorderEntries}"
-          SelectedItem="{Binding SelectedSymptom, Mode=TwoWay}" ItemSelected="SelectedDisorder">
-    <ListView.Header>
-      <StackLayout>
-        <Label Text="{i18n:Translate DisorderPageIssueApproachTitleText}" FontSize = "20"/>
-        <Label Text="{i18n:Translate PICCAssistanceDescriptionText}"/>
-      </StackLayout>
-    </ListView.Header>
-    <ListView.Margin>
-      <OnPlatform x:TypeArguments="Thickness"
-                      iOS="20, 40, 20, 20"
-                      Android="20, 20, 20, 20"
-                      WinPhone="20, 20, 20, 20" />
-    </ListView.Margin>
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <ViewCell.View>
-            <StackLayout Padding="15">
-              <Label Text="{Binding Keyword}" TextColor="Blue" LineBreakMode="WordWrap"/>
-              <Label Text="{Binding Symptom}" LineBreakMode="WordWrap"/>
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.DisorderPage"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   Title="{i18n:Translate DisorderPageTitleText}"
+                   BindingContext="{Binding [DisorderViewModel], Source={StaticResource ViewModelLocator}}">
+    <ListView x:Name="DisorderList"
+              HasUnevenRows="True"
+              ItemsSource="{Binding DisorderEntriesList}"
+              SelectedItem="{Binding SelectedSymptom, Mode=TwoWay}"
+              ItemSelected="SelectedDisorder">
+        <ListView.Header>
+            <StackLayout>
+                <Label Text="{i18n:Translate DisorderPageIssueApproachTitleText}"
+                       FontSize="20" />
+                <Label Text="{i18n:Translate PICCAssistanceDescriptionText}" />
             </StackLayout>
-          </ViewCell.View>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+        </ListView.Header>
+        <ListView.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                        iOS="20, 40, 20, 20"
+                        Android="20, 20, 20, 20"
+                        WinPhone="20, 20, 20, 20" />
+        </ListView.Margin>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Padding="15">
+                            <Label Text="{Binding Keyword}"
+                                   TextColor="Blue"
+                                   LineBreakMode="WordWrap" />
+                            <Label Text="{Binding Symptom}"
+                                   LineBreakMode="WordWrap" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </d:BaseContentPage>
 

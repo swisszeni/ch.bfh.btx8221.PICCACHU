@@ -1,4 +1,6 @@
 ﻿using BFH_USZ_PICC.Models;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,44 +10,26 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    class GlossaryViewModel : INotifyPropertyChanged
+    class GlossaryViewModel : ViewModelBase
     {
         /// <summary>
         /// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
         /// </summary>
         public GlossaryViewModel()
         {
-            ListOfGlossaryEntries = GlossaryEntries.getEntries();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// Checks if a binded property has been changed and fires the event
-        /// </summary>
-        /// <param name="propertyname"></param>
-        protected internal void OnPropertyChanged(string propertyname)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
-            }
+            GlossaryEntriesList = GlossaryEntries.getEntries();
         }
 
         /// <summary>
         /// Binds all the glossary entries to a the "GlossaryList" ListView
         /// </summary>
-        private List<GlossaryEntry> _listOfGlossaryEntries;
-        public List<GlossaryEntry> ListOfGlossaryEntries
+        private List<GlossaryEntry> _glossaryEntriesList;
+        public List<GlossaryEntry> GlossaryEntriesList
         {
-            get { return _listOfGlossaryEntries; }
+            get { return _glossaryEntriesList; }
             set
             {
-                if (_listOfGlossaryEntries != value)
-                {
-                    _listOfGlossaryEntries = value;
-                    OnPropertyChanged("ListOfGlossaryEntries");
-                }
+                Set(() => GlossaryEntriesList, ref _glossaryEntriesList, value);
             }
         }
 
@@ -59,14 +43,9 @@ namespace BFH_USZ_PICC.ViewModels
             get { return _selectedEntry; }
             set
             {
-                if (_selectedEntry != value)
+                if(Set(() => SelectedEntry, ref _selectedEntry, value) & _selectedEntry != null)
                 {
-                    if (value != null)
-                    {
-                        Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
-                    }
-                    _selectedEntry = value;
-                    OnPropertyChanged("SelectedEntry");
+                    Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
                 }
             }
         }

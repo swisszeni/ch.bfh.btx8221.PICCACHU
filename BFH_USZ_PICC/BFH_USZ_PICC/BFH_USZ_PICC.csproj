@@ -41,7 +41,9 @@
     <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EmergencyFlyout.xaml.cs">
       <DependentUpon>EmergencyFlyout.xaml</DependentUpon>
     </Compile>
@@ -96,13 +98,17 @@
     <Compile Include="Utilitys\Converters.cs" />
     <Compile Include="Utilitys\Extensions\TranslateExtension.cs" />
     <Compile Include="Utilitys\Helpers.cs" />
+    <Compile Include="ViewModels\AddPICCViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DisorderDetailViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
-    <Compile Include="ViewModels\KnowledgeEntryViewModel.cs" />
+    <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
+    <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
     <Compile Include="ViewModels\PICCDetailViewModel.cs" />
     <Compile Include="ViewModels\PICCModelViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\BaseContentPage.cs" />
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
@@ -275,6 +281,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\DisorderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
