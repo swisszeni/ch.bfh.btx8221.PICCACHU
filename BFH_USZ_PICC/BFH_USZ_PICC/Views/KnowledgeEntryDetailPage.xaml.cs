@@ -101,7 +101,7 @@ namespace BFH_USZ_PICC.Views
 
 
         //This method sets the selected glossary entry to null (otherwise it would be marked).
-        void SelectedKnowledgeEntry(object sender, EventArgs e)
+        private void GlossaryEntrySelected(object sender, EventArgs e)
         {
             GlossaryList.SelectedItem = null;
         }

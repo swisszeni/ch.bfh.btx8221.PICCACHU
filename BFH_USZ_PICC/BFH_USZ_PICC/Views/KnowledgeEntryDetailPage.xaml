@@ -5,10 +5,10 @@
                    xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
                    xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
                    BindingContext="{Binding [KnowledgeEntryDetailViewModel], Source={StaticResource ViewModelLocator}}">
-    <!--ItemsSource="{Binding RelatedGlossaryEntries}"
-              SelectedItem="{Binding SelectedGlossaryEntry, Mode=TwoWay}"-->
     <ListView x:Name="GlossaryList"
-              ItemSelected="SelectedGlossaryEntry"
+              ItemsSource="{Binding RelatedGlossaryEntries}"
+              SelectedItem="{Binding SelectedGlossaryEntry, Mode=TwoWay}"
+              ItemSelected="GlossaryEntrySelected"
               IsPullToRefreshEnabled="false">
         <ListView.Margin>
             <OnPlatform x:TypeArguments="Thickness"
