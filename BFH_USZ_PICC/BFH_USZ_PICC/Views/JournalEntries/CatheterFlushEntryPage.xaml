@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.JournalEntries.CatheterFlushEntryPage"
+             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate JournalOverviewPageCatheterFlushEntry}">
+  <Grid.Resources>
+    <ResourceDictionary>
+      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
+      <utilitys:HealthInstitutionToIndexConverter x:Key="HealthInstitutionToIndexConverter"/>
+      <utilitys:HealthPersonToIndexConverter x:Key="HealthPersonToIndexConverter"/>
+      <utilitys:FlushReasonToIndexConverter x:Key="FlushReasonToIndexConverter"/>
+      <utilitys:FlushTypeToIndexConverter x:Key="FlushTypeToIndexConverter"/>
+      <utilitys:FlushResultToIndexConverter x:Key="FlushResultToIndexConverter"/>
+    </ResourceDictionary>
+  </Grid.Resources>
+  <ScrollView>
+    <StackLayout Orientation="Vertical">
+      <Label Text ="Bitte geben Sie an, warum Ihr Katheter gespült werden musste:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Picker x:Name="FlushReasonPicker" SelectedIndex="{Binding Reason, Converter={StaticResource FlushReasonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text ="Bitte geben Sie an, mit was Ihr Katheter gespült wurde:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Picker x:Name="FlushTypePicker" SelectedIndex="{Binding Type, Converter={StaticResource FlushTypeToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text ="Bitte geben Sie die Menge der verabreichten Lösung an (in mml):" VerticalTextAlignment="Center" FontSize="20"/>
+      <Entry x:Name="FlushQuantity" Text="{Binding QuantityInMilliliter}" Keyboard="Numeric" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text ="Wie ist die Durchgängingkeit des Katheters nach der Spülung?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Picker x:Name="FlushResultPicker" SelectedIndex="{Binding Result, Converter={StaticResource FlushResultToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <StackLayout Orientation="Horizontal" Padding="0, 0, 0, 20">
+        <Label Text ="Ist ein Blutrückfluss feststellbar?" VerticalTextAlignment="Center" FontSize="20"/>
+        <Switch x:Name="IsBloodReflowVisibleSwitch" IsToggled="{Binding IsBloodReflowVisible}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      </StackLayout>
+      <Label Text ="An welchem Datum haben Sie den Katheter gespült?" VerticalTextAlignment="Center" FontSize="20"/>
+      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text="Welche Institution hat Sie hierbei unterstützt?" FontSize="20"/>
+      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Label Text="Welche Person hat Sie hierbei unterstützt?" FontSize="20"/>
+      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
+      <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
+      <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
+    </StackLayout>
+  </ScrollView>
+</d:BaseContentPage>

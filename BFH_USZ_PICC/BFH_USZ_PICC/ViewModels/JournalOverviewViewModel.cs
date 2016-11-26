@@ -19,7 +19,6 @@ namespace BFH_USZ_PICC.ViewModels
         public JournalOverviewViewModel()
         {
             ListOfJournalEntries = JournalEntry.AllEnteredJournalEntries;
-            EntryButtonCommand = new Command(NewEntryButtonClicked);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -81,6 +80,12 @@ namespace BFH_USZ_PICC.ViewModels
                             case AllPossibleJournalEntries.BandagesChangingEntry:
                                 ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BandageChangingEntryPage), new List<object> { value }));
                                 return;
+                            case AllPossibleJournalEntries.InfusionEntry:
+                                ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(InfusionEntryPage), new List<object> { value }));
+                                return;
+                            case AllPossibleJournalEntries.CatheterFlushEntry:
+                                ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(CatheterFlushEntryPage), new List<object> { value }));
+                                return;
                         }
 
                         return;
@@ -93,9 +98,8 @@ namespace BFH_USZ_PICC.ViewModels
         }
 
         // ICommand implementations
-        public ICommand EntryButtonCommand { protected set; get; }
-
-        async void NewEntryButtonClicked()
+        private ICommand _entryButtonCommand;
+        public ICommand EntryButtonCommand => _entryButtonCommand ?? (_entryButtonCommand = new Command(async () =>
         {
             var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet("Was wollen Sie hinzufügen?", "Abbrechen", null,
               AppResources.JournalOverviewPageCatheterFlushEntry, AppResources.JournalOverviewPageInfusionEntry, AppResources.JournalOverviewPageAdministeredDrugEntry, AppResources.JournalOverviewPageBloodWithdrawalEntry,
@@ -106,11 +110,11 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
                 {
-                    if (await Application.Current.MainPage.DisplayAlert("Information", "Wollen Sie die für dieesen Schritt eine Anleitung ansehen?", "Ja", "Nein"))
-                    {
-                        await Application.Current.MainPage.Navigation.PushModalAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
-                        return;
-                    }
+                    //if (await Application.Current.MainPage.DisplayAlert("Information", "Wollen Sie die für dieesen Schritt eine Anleitung ansehen?", "Ja", "Nein"))
+                    //{
+                    //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
+                    //    return;
+                    //}
                     await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
                     return;
                 }
@@ -134,11 +138,17 @@ namespace BFH_USZ_PICC.ViewModels
                     await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BandageChangingEntryPage), null));
                     return;
                 }
-
+                else if (selectedEntry == AppResources.JournalOverviewPageInfusionEntry)
+                {
+                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(InfusionEntryPage), null));
+                    return;
+                }
+                else if (selectedEntry == AppResources.JournalOverviewPageCatheterFlushEntry)
+                {
+                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(CatheterFlushEntryPage), null));
+                    return;
+                }
             }
-            await Application.Current.MainPage.DisplayAlert("Information", "Nun würde ein neuer " + selectedEntry + " Eintrag eröffnet", "Ok");
-        }
-
+        }));
     }
-
 }

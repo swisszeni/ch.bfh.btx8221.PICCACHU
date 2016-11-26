@@ -518,6 +518,94 @@
           <source>Swollen puncture</source>
           <target state="new">Swollen puncture</target>
         </trans-unit>
+        <trans-unit id="BandageArmProcessSituationPainfulText" translate="yes" xml:space="preserve">
+          <source>Painful</source>
+          <target state="new">Painful</target>
+        </trans-unit>
+        <trans-unit id="BandageArmProcessSituationSwollenText" translate="yes" xml:space="preserve">
+          <source>Swollen</source>
+          <target state="new">Swollen</target>
+        </trans-unit>
+        <trans-unit id="BandageArmProcessSituationReddenedText" translate="yes" xml:space="preserve">
+          <source>Reddened</source>
+          <target state="new">Reddened</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonAntibioticText" translate="yes" xml:space="preserve">
+          <source>Antibiotic</source>
+          <target state="new">Antibiotic</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonBloodComponentText" translate="yes" xml:space="preserve">
+          <source>Blood components</source>
+          <target state="new">Blood components</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonChemotherapyText" translate="yes" xml:space="preserve">
+          <source>Chemotherapy</source>
+          <target state="new">Chemotherapy</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonExaminationSubstanceText" translate="yes" xml:space="preserve">
+          <source>Examination substance</source>
+          <target state="new">Examination substance</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonNutritionalSubstanceText" translate="yes" xml:space="preserve">
+          <source>Nutritional substance</source>
+          <target state="new">Nutritional substance</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonOthersText" translate="yes" xml:space="preserve">
+          <source>Other infusions</source>
+          <target state="new">Other infusions</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationFastText" translate="yes" xml:space="preserve">
+          <source>Fast</source>
+          <target state="new">Fast</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationHesitantText" translate="yes" xml:space="preserve">
+          <source>Hesitant</source>
+          <target state="new">Hesitant</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationWithoutProblemText" translate="yes" xml:space="preserve">
+          <source>Without problems</source>
+          <target state="new">Without problems</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonBlockedText" translate="yes" xml:space="preserve">
+          <source>Blocked</source>
+          <target state="new">Blocked</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonBloodSamplingText" translate="yes" xml:space="preserve">
+          <source>Blood sampling</source>
+          <target state="new">Blood sampling</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonPartiallyBlockedText" translate="yes" xml:space="preserve">
+          <source>Partially blocked</source>
+          <target state="new">Partially blocked</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonRoutineText" translate="yes" xml:space="preserve">
+          <source>Routine</source>
+          <target state="new">Routine</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushTypeHeparinText" translate="yes" xml:space="preserve">
+          <source>Heparin</source>
+          <target state="new">Heparin</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushTypeNaClText" translate="yes" xml:space="preserve">
+          <source>NaCl</source>
+          <target state="new">NaCl</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushTypeUrokinaseText" translate="yes" xml:space="preserve">
+          <source>Urokinase</source>
+          <target state="new">Urokinase</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushResultFlushNotPossibleText" translate="yes" xml:space="preserve">
+          <source>Flush not possible anymore</source>
+          <target state="new">Flush not possible anymore</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushResultFlushWithoutResistanceText" translate="yes" xml:space="preserve">
+          <source>Without resistance continuous</source>
+          <target state="new">Without resistance continuous</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushResultFlushWithResistanceText" translate="yes" xml:space="preserve">
+          <source>With resistance continuous</source>
+          <target state="new">With resistance continuous</target>
+        </trans-unit>
       </group>
     </body>
   </file>

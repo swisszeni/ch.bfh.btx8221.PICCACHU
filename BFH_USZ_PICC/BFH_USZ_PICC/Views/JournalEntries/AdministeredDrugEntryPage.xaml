@@ -16,17 +16,17 @@
   <ScrollView>
     <StackLayout x:Name="DrugEntryLayout" Orientation="Vertical">
       <Label Text ="Bitte geben Sie an, welches Medikament Ihnen verabreicht wurde:" VerticalTextAlignment="Center" FontSize="20"/>
-      <Entry x:Name="DrugEntry" Text="{Binding AdministeredDrugEntry.Drug}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Entry x:Name="DrugEntry" Text="{Binding Drug}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label Text ="An welchem Datum wurde Ihnen das Medikament verabreicht?" VerticalTextAlignment="Center" FontSize="20"/>
-      <DatePicker x:Name="ProcedureDate" Date="{Binding AdministeredDrugEntry.ProcedureDateTime}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label Text="Welche Institution hat Ihnen das Medikament verabreicht?" FontSize="20"/>
-      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding AdministeredDrugEntry.Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}">
+      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}">
         <!--<Picker.Items>
         <i18n:TranslateExtension Text="JournalEntryNotSpecifiedText"/>     
       </Picker.Items>-->
       </Picker>
       <Label Text="Welche Person hat Ihnen das Medikament verabreicht?" FontSize="20"/>
-      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding AdministeredDrugEntry.Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>

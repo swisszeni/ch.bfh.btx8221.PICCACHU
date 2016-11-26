@@ -20,7 +20,7 @@ namespace BFH_USZ_PICC.Models
     {
         public MicroClaveChangementReason Reason { get; set; }        
 
-        public MicroClaveChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, MicroClaveChangementReason reason)
+        public MicroClaveChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, MicroClaveChangementReason reason)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;

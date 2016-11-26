@@ -12,10 +12,11 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class StatlockChangingViewModel : INotifyPropertyChanged
+    class InfusionViewModel : INotifyPropertyChanged
     {
-        private StatlockChangingEntry _selectedEntry;
-        public StatlockChangingViewModel(StatlockChangingEntry entry)
+        private InfusionEntry _selectedEntry;
+        
+        public InfusionViewModel(InfusionEntry entry)
         {
             if (entry == null)
             {
@@ -27,9 +28,12 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 Person = entry.Person;
                 Institution = entry.Institution;
                 ProcedureDate = entry.ProcedureDateTime;
-                Reason = entry.Reason;
+                InfusionType = entry.Type;
+                AntibioticName = entry.TypeAntibioticName;
+                InfusionAdministration = entry.Administration;
 
                 _selectedEntry = entry;
+                
                 IsEnabledOrVisible = false;
             }
         }
@@ -89,17 +93,51 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 }
             }
         }
-
-        private StatLockChangementReason _reason;
-        public StatLockChangementReason Reason
+        
+        private InfusionType _infusionType;
+        public InfusionType InfusionType
         {
-            get { return _reason; }
+            get { return _infusionType; }
             set
             {
-                if (_reason != value)
+                if (_infusionType != value)
                 {
-                    _reason = value;
-                    OnPropertyChanged("Reason");
+                    _infusionType = value;
+                    
+                    if(value == InfusionType.Antibiotic)
+                    {
+                        IsTypeAntibiotic = true;
+                    }else { IsTypeAntibiotic = false; }
+
+                    OnPropertyChanged("InfusionType");
+                }
+            }
+        }
+
+        private string _antibioticName;
+        public string AntibioticName
+        {
+            get { return _antibioticName; }
+            set
+            {
+                if (_antibioticName != value)
+                {
+                    _antibioticName = value;
+                    OnPropertyChanged("AntibioticName");
+                }
+            }
+        }
+
+        private InfusionAdministration _infusionAdministration;
+        public InfusionAdministration InfusionAdministration
+        {
+            get { return _infusionAdministration; }
+            set
+            {
+                if (_infusionAdministration != value)
+                {
+                    _infusionAdministration = value;
+                    OnPropertyChanged("InfusionAdministration");
                 }
             }
         }
@@ -115,13 +153,28 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             }
         }
 
+        private bool _isTypeAntibiotic;
+        public bool IsTypeAntibiotic
+        {
+            get { return _isTypeAntibiotic; }
+            set
+            {
+                if (!value)
+                {
+                    AntibioticName = null;
+                }
+                _isTypeAntibiotic = value;
+                OnPropertyChanged("IsTypeAntibiotic");
+            }
+        }
 
         private ICommand _saveButtonCommand;
         public ICommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new Command(async () => {
             // create a new PICCAppliedDrugEntry with the user entered information
-            StatlockChangingEntry entry = new StatlockChangingEntry(DateTime.Now, ProcedureDate, Institution, Person, Reason);
+            InfusionEntry infusionEntry = new InfusionEntry(DateTime.Now, ProcedureDate, Institution, Person, InfusionType, 
+                InfusionAdministration, AntibioticName);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(entry);
+            JournalEntry.AllEnteredJournalEntries.Add(infusionEntry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
         }));
@@ -141,9 +194,9 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
             {
                 JournalEntry.AllEnteredJournalEntries.Remove(_selectedEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                await((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
-    }
 
+    }
 }

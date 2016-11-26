@@ -9,19 +9,21 @@
   <!--xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"-->
   <Grid>
     <cv:CarouselView x:Name="InstructionCarousel">
-       <cv:CarouselView.ItemTemplate>
+      <cv:CarouselView.ItemTemplate>
         <DataTemplate>
           <StackLayout>
-            <Label Text="TEST" />
-            <Label Text="{Binding Name}" />
+            <Image Source="icon.png" />
+            <Label Text="TEST" />            
           </StackLayout>
-          
+
           <!--<Grid>
              <Grid.RowDefinitions>
                           <RowDefinition Height="*"/>
                           <RowDefinition Height="Auto"/>                        
             </Grid.RowDefinitions>
-            --><!--<Image Source="Icon.png" Grid.RowSpan="2"/>--><!--
+            -->
+          <!--<Image Source="Icon.png" Grid.RowSpan="2"/>-->
+          <!--
              <StackLayout Grid.Row="1">
               <Label Text="Test"/>                        
             </StackLayout>

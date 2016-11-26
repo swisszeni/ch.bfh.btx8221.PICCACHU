@@ -14,28 +14,27 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     class BloodWithdrawalViewModel : INotifyPropertyChanged
     {
-
-        /// <summary>
-        /// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
-        /// </summary>
+        private BloodWithdrawalEntry _selectedEntry;
         public BloodWithdrawalViewModel(BloodWithdrawalEntry entry)
         {
-            // AddHealthInstitutionsToPicker();
 
-            SaveButtonCommand = new Command(SaveButtonClicked);
-            CancelButtonCommand = new Command(CancelButtonClicked);
-            //DeleteButtonCommand = new Command(DeleteButtonClicked);
-
-            BloodWithdrawalEntry bloodEntry = (BloodWithdrawalEntry)entry;
-            if (bloodEntry == null)
+            if (entry == null)
             {
                 IsEnabledOrVisible = true;
-                BloodWithdrawalEntry = new BloodWithdrawalEntry(DateTime.Now, DateTime.Now, JournalEntry.HealthInstitution.NoInformation, JournalEntry.HealthPerson.NoInformation, false, BloodFlow.NoInformation);
+                ProcedureDate = DateTime.Now;
+
             }
             else
             {
-                BloodWithdrawalEntry = bloodEntry;
+                Person = entry.Person;
+                Institution = entry.Institution;
+                ProcedureDate = entry.ProcedureDateTime;
+                IsNaClFlushDone = entry.IsNaCiFlushDone;
+                Flow = entry.Flow;
+               
+                _selectedEntry = entry;
                 IsEnabledOrVisible = false;
+
             }
         }
 
@@ -53,6 +52,62 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             }
         }
 
+        private HealthPerson _person;
+        public HealthPerson Person
+        {
+            get { return _person; }
+            set
+            {
+                if (_person != value)
+                {
+                    _person = value;
+                    OnPropertyChanged("Person");
+                }
+            }
+        }
+
+        private HealthInstitution _institution;
+        public HealthInstitution Institution
+        {
+            get { return _institution; }
+            set
+            {
+                if (_institution != value)
+                {
+                    _institution = value;
+                    OnPropertyChanged("Institution");
+                }
+            }
+        }
+
+        private DateTime _procedureDate;
+        public DateTime ProcedureDate
+        {
+            get { return _procedureDate; }
+            set
+            {
+                if (_procedureDate != value)
+                {
+                    _procedureDate = value;
+                    OnPropertyChanged("ProcedureDate");
+                }
+            }
+        }
+
+        private BloodFlow _flow;
+        public BloodFlow Flow
+        {
+            get { return _flow; }
+            set
+            {
+                if (_flow != value)
+                {
+                    _flow = value;
+                    OnPropertyChanged("Flow");
+                }
+            }
+        }
+
         private bool _isEnabledOrVisible;
         public bool IsEnabledOrVisible
         {
@@ -64,52 +119,43 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             }
         }
 
-
-        private BloodWithdrawalEntry _bloodWithdrawalEntry;
-        public BloodWithdrawalEntry BloodWithdrawalEntry
+        private bool _isNaClFlushDone;
+        public bool IsNaClFlushDone
         {
-            get { return _bloodWithdrawalEntry; }
+            get { return _isNaClFlushDone; }
             set
             {
-                if (_bloodWithdrawalEntry != value)
-                {
-                    _bloodWithdrawalEntry = value;
-                    OnPropertyChanged("BloodWithdrawalEntry");
-                }
+                _isNaClFlushDone = value;
+                OnPropertyChanged("IsNaClFlushDone");
             }
         }
-
-        public ICommand SaveButtonCommand { protected set; get; }
-        public ICommand CancelButtonCommand { protected set; get; }
         
-
-        async void SaveButtonClicked()
-        {
+        private ICommand _saveButtonCommand;
+        public ICommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new Command(async () => {
             // create a new PICCAppliedDrugEntry with the user entered information
-            BloodWithdrawalEntry bloodEntry = new BloodWithdrawalEntry(DateTime.Now, _bloodWithdrawalEntry.ProcedureDateTime, _bloodWithdrawalEntry.Institution, _bloodWithdrawalEntry.Person, _bloodWithdrawalEntry.IsNaCiFlashDone, _bloodWithdrawalEntry.Flow);
+            BloodWithdrawalEntry entry = new BloodWithdrawalEntry(DateTime.Now, ProcedureDate, Institution, Person, IsNaClFlushDone, Flow);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(bloodEntry);
+            JournalEntry.AllEnteredJournalEntries.Add(entry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+        }));
 
-        }
-
-        async void CancelButtonClicked()
+        private ICommand _cancelButtonCommand;
+        public ICommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new Command(async () =>
         {
             //Check if the user really wants to leave the page
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein"))
             {
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
-
-        }
+        }));
 
         private ICommand _deleteButtonCommand;
         public ICommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new Command(async () => {
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
             {
-                JournalEntry.AllEnteredJournalEntries.Remove(_bloodWithdrawalEntry);
-                await((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                JournalEntry.AllEnteredJournalEntries.Remove(_selectedEntry);
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
 

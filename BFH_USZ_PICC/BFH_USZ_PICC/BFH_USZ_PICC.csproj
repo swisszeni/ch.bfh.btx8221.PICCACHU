@@ -98,6 +98,8 @@
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\CatheterFlushViewModel.cs" />
+    <Compile Include="ViewModels\JournaEntries\InfusionViewModel.cs" />
     <Compile Include="ViewModels\JournaEntries\BloodWithdrawalViewModel.cs" />
     <Compile Include="ViewModels\JournaEntries\BandageChangingViewModel.cs" />
     <Compile Include="ViewModels\JournaEntries\StatlockChangingViewModel.cs" />
@@ -124,6 +126,12 @@
     </Compile>
     <Compile Include="Views\JournalEntries\BloodWithdrawalEntryPage.xaml.cs">
       <DependentUpon>BloodWithdrawalEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JournalEntries\CatheterFlushEntryPage.xaml.cs">
+      <DependentUpon>CatheterFlushEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JournalEntries\InfusionEntryPage.xaml.cs">
+      <DependentUpon>InfusionEntryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\JournalEntries\BandageChangingEntryPage.xaml.cs">
       <DependentUpon>BandageChangingEntryPage.xaml</DependentUpon>
@@ -355,13 +363,25 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\JournalEntries\BloodWithdrawalEntryPage.xaml">
+    <EmbeddedResource Include="Views\JournalEntries\InfusionEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\JournalEntries\BandageChangingEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntries\BloodWithdrawalEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\JournalEntries\CatheterFlushEntryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

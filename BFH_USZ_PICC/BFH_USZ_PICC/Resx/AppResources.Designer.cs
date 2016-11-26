@@ -107,6 +107,33 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Painful.
+        /// </summary>
+        public static string BandageArmProcessSituationPainfulText {
+            get {
+                return ResourceManager.GetString("BandageArmProcessSituationPainfulText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reddened.
+        /// </summary>
+        public static string BandageArmProcessSituationReddenedText {
+            get {
+                return ResourceManager.GetString("BandageArmProcessSituationReddenedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swollen.
+        /// </summary>
+        public static string BandageArmProcessSituationSwollenText {
+            get {
+                return ResourceManager.GetString("BandageArmProcessSituationSwollenText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Complete.
         /// </summary>
         public static string BandageChangingAreaCompleteText {
@@ -305,6 +332,96 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blocked.
+        /// </summary>
+        public static string CatheterFlushReasonBlockedText {
+            get {
+                return ResourceManager.GetString("CatheterFlushReasonBlockedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blood sampling.
+        /// </summary>
+        public static string CatheterFlushReasonBloodSamplingText {
+            get {
+                return ResourceManager.GetString("CatheterFlushReasonBloodSamplingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partially blocked.
+        /// </summary>
+        public static string CatheterFlushReasonPartiallyBlockedText {
+            get {
+                return ResourceManager.GetString("CatheterFlushReasonPartiallyBlockedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Routine.
+        /// </summary>
+        public static string CatheterFlushReasonRoutineText {
+            get {
+                return ResourceManager.GetString("CatheterFlushReasonRoutineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flush not possible anymore.
+        /// </summary>
+        public static string CatheterFlushResultFlushNotPossibleText {
+            get {
+                return ResourceManager.GetString("CatheterFlushResultFlushNotPossibleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Without resistance continuous.
+        /// </summary>
+        public static string CatheterFlushResultFlushWithoutResistanceText {
+            get {
+                return ResourceManager.GetString("CatheterFlushResultFlushWithoutResistanceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With resistance continuous.
+        /// </summary>
+        public static string CatheterFlushResultFlushWithResistanceText {
+            get {
+                return ResourceManager.GetString("CatheterFlushResultFlushWithResistanceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heparin.
+        /// </summary>
+        public static string CatheterFlushTypeHeparinText {
+            get {
+                return ResourceManager.GetString("CatheterFlushTypeHeparinText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NaCl.
+        /// </summary>
+        public static string CatheterFlushTypeNaClText {
+            get {
+                return ResourceManager.GetString("CatheterFlushTypeNaClText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Urokinase.
+        /// </summary>
+        public static string CatheterFlushTypeUrokinaseText {
+            get {
+                return ResourceManager.GetString("CatheterFlushTypeUrokinaseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DeleteButtonText {
@@ -427,6 +544,87 @@ namespace BFH_USZ_PICC.Resx {
         public static string InformationText {
             get {
                 return ResourceManager.GetString("InformationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fast.
+        /// </summary>
+        public static string InfusionAdministrationFastText {
+            get {
+                return ResourceManager.GetString("InfusionAdministrationFastText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hesitant.
+        /// </summary>
+        public static string InfusionAdministrationHesitantText {
+            get {
+                return ResourceManager.GetString("InfusionAdministrationHesitantText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Without problems.
+        /// </summary>
+        public static string InfusionAdministrationWithoutProblemText {
+            get {
+                return ResourceManager.GetString("InfusionAdministrationWithoutProblemText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Antibiotic.
+        /// </summary>
+        public static string InfusionReasonAntibioticText {
+            get {
+                return ResourceManager.GetString("InfusionReasonAntibioticText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blood components.
+        /// </summary>
+        public static string InfusionReasonBloodComponentText {
+            get {
+                return ResourceManager.GetString("InfusionReasonBloodComponentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chemotherapy.
+        /// </summary>
+        public static string InfusionReasonChemotherapyText {
+            get {
+                return ResourceManager.GetString("InfusionReasonChemotherapyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Examination substance.
+        /// </summary>
+        public static string InfusionReasonExaminationSubstanceText {
+            get {
+                return ResourceManager.GetString("InfusionReasonExaminationSubstanceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nutritional substance.
+        /// </summary>
+        public static string InfusionReasonNutritionalSubstanceText {
+            get {
+                return ResourceManager.GetString("InfusionReasonNutritionalSubstanceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other infusions.
+        /// </summary>
+        public static string InfusionReasonOthersText {
+            get {
+                return ResourceManager.GetString("InfusionReasonOthersText", resourceCulture);
             }
         }
         

@@ -53,11 +53,11 @@ namespace BFH_USZ_PICC.Models
         /// <summary>
         /// Time when the JournalEntry has been created
         /// </summary>
-        public DateTimeOffset CreationDateTime { get; set; }
+        public DateTime CreationDateTime { get; set; }
         /// <summary>
         /// Time when the JournalEntry procedure takes place
         /// </summary>
-        public DateTimeOffset ProcedureDateTime { get; set; }
+        public DateTime ProcedureDateTime { get; set; }
         public AllPossibleJournalEntries Entry { get; set; }
         public HealthInstitution Institution { get; set; }
         public HealthPerson Person { get; set; }

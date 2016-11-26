@@ -19,7 +19,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public AdministeredDrugEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new AdministeredDrugViewModel(null);
             
         }
@@ -27,12 +27,12 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public AdministeredDrugEntryPage(ContentPage contained, AdministeredDrugEntry entry) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new AdministeredDrugViewModel(entry);
 
         }
 
-        void AddHealthInstitutionsAndHealthPeopleToPicker()
+        void AddPickers()
         {
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionHospitalText);

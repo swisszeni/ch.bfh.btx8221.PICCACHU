@@ -19,7 +19,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public BloodWithdrawalEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new BloodWithdrawalViewModel(null);
             
         }
@@ -27,12 +27,12 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public BloodWithdrawalEntryPage(ContentPage contained, BloodWithdrawalEntry entry) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new BloodWithdrawalViewModel(entry);
 
         }
 
-        void AddHealthInstitutionsAndHealthPeopleToPicker()
+        void AddPickers()
         {
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionHospitalText);

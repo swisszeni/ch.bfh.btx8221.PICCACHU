@@ -14,21 +14,21 @@ namespace BFH_USZ_PICC.Views.JournalEntries
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class StatlockChangingEntryPage : BaseContentPage
+    public sealed partial class CatheterFlushEntryPage : BaseContentPage
     {
-        public StatlockChangingEntryPage(ContentPage contained) : base(contained)
+        public CatheterFlushEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new StatlockChangingViewModel(null);
-            
+            BindingContext = new CatheterFlushViewModel(null);
+
         }
 
-        public StatlockChangingEntryPage(ContentPage contained, StatlockChangingEntry entry) : base(contained)
+        public CatheterFlushEntryPage(ContentPage contained, CatheterFlushEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new StatlockChangingViewModel(entry);
+            BindingContext = new CatheterFlushViewModel(entry);
 
         }
 
@@ -52,12 +52,21 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonAffectedPersonText);
             HealthPersonPicker.Items.Add(AppResources.JournalEntryOthersText);
 
-            StatlockChangingReasonPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntryRoutineText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntrySticksUnsatisfactorilyText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntryPollutionText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntryDamagedWingsText);
+            FlushReasonPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            FlushReasonPicker.Items.Add(AppResources.CatheterFlushReasonRoutineText);
+            FlushReasonPicker.Items.Add(AppResources.CatheterFlushReasonBloodSamplingText);
+            FlushReasonPicker.Items.Add(AppResources.CatheterFlushReasonPartiallyBlockedText);
+            FlushReasonPicker.Items.Add(AppResources.CatheterFlushReasonBlockedText);
 
+            FlushTypePicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            FlushTypePicker.Items.Add(AppResources.CatheterFlushTypeNaClText);
+            FlushTypePicker.Items.Add(AppResources.CatheterFlushTypeHeparinText);
+            FlushTypePicker.Items.Add(AppResources.CatheterFlushTypeUrokinaseText);
+
+            FlushResultPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            FlushResultPicker.Items.Add(AppResources.CatheterFlushResultFlushWithoutResistanceText);
+            FlushResultPicker.Items.Add(AppResources.CatheterFlushResultFlushWithResistanceText);
+            FlushResultPicker.Items.Add(AppResources.CatheterFlushResultFlushNotPossibleText);
         }
 
     }

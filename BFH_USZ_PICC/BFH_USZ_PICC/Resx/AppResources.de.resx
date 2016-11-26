@@ -396,4 +396,70 @@
   <data name="BandagePunctureSituationSwollenPunctureText" xml:space="preserve">
     <value>Geschwollen</value>
   </data>
+  <data name="BandageArmProcessSituationPainfulText" xml:space="preserve">
+    <value>Schmerzhaft</value>
+  </data>
+  <data name="BandageArmProcessSituationSwollenText" xml:space="preserve">
+    <value>Geschwollen</value>
+  </data>
+  <data name="BandageArmProcessSituationReddenedText" xml:space="preserve">
+    <value>Gerötet</value>
+  </data>
+  <data name="InfusionReasonAntibioticText" xml:space="preserve">
+    <value>Antibiotika</value>
+  </data>
+  <data name="InfusionReasonBloodComponentText" xml:space="preserve">
+    <value>Blutkomponenten</value>
+  </data>
+  <data name="InfusionReasonChemotherapyText" xml:space="preserve">
+    <value>Chemotherapie</value>
+  </data>
+  <data name="InfusionReasonExaminationSubstanceText" xml:space="preserve">
+    <value>Untersuchungssubstanzen</value>
+  </data>
+  <data name="InfusionReasonNutritionalSubstanceText" xml:space="preserve">
+    <value>Ernährungssubstanzen</value>
+  </data>
+  <data name="InfusionReasonOthersText" xml:space="preserve">
+    <value>Andere Infusionen</value>
+  </data>
+  <data name="InfusionAdministrationFastText" xml:space="preserve">
+    <value>Schneller</value>
+  </data>
+  <data name="InfusionAdministrationHesitantText" xml:space="preserve">
+    <value>Zögerlichem</value>
+  </data>
+  <data name="InfusionAdministrationWithoutProblemText" xml:space="preserve">
+    <value>Problemlos</value>
+  </data>
+  <data name="CatheterFlushReasonBlockedText" xml:space="preserve">
+    <value>Verstopft</value>
+  </data>
+  <data name="CatheterFlushReasonBloodSamplingText" xml:space="preserve">
+    <value>Blutentnahme</value>
+  </data>
+  <data name="CatheterFlushReasonPartiallyBlockedText" xml:space="preserve">
+    <value>Teilweise verstopft</value>
+  </data>
+  <data name="CatheterFlushReasonRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="CatheterFlushTypeHeparinText" xml:space="preserve">
+    <value>Heparin</value>
+  </data>
+  <data name="CatheterFlushTypeNaClText" xml:space="preserve">
+    <value>NaCl</value>
+  </data>
+  <data name="CatheterFlushTypeUrokinaseText" xml:space="preserve">
+    <value>Urokinase</value>
+  </data>
+  <data name="CatheterFlushResultFlushNotPossibleText" xml:space="preserve">
+    <value>Spülen nicht möglich</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithoutResistanceText" xml:space="preserve">
+    <value>Problemlos durchgängig</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithResistanceText" xml:space="preserve">
+    <value>Weniger durchgängig</value>
+  </data>
 </root>

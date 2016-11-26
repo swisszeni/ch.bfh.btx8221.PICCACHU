@@ -132,6 +132,15 @@
   <data name="AddPICCPageTitleText" xml:space="preserve">
     <value>Add PICC</value>
   </data>
+  <data name="BandageArmProcessSituationPainfulText" xml:space="preserve">
+    <value>Painful</value>
+  </data>
+  <data name="BandageArmProcessSituationReddenedText" xml:space="preserve">
+    <value>Reddened</value>
+  </data>
+  <data name="BandageArmProcessSituationSwollenText" xml:space="preserve">
+    <value>Swollen</value>
+  </data>
   <data name="BandageChangingAreaCompleteText" xml:space="preserve">
     <value>Complete</value>
   </data>
@@ -198,6 +207,36 @@
   <data name="CancelButtonText" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="CatheterFlushReasonBlockedText" xml:space="preserve">
+    <value>Blocked</value>
+  </data>
+  <data name="CatheterFlushReasonBloodSamplingText" xml:space="preserve">
+    <value>Blood sampling</value>
+  </data>
+  <data name="CatheterFlushReasonPartiallyBlockedText" xml:space="preserve">
+    <value>Partially blocked</value>
+  </data>
+  <data name="CatheterFlushReasonRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="CatheterFlushResultFlushNotPossibleText" xml:space="preserve">
+    <value>Flush not possible anymore</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithoutResistanceText" xml:space="preserve">
+    <value>Without resistance continuous</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithResistanceText" xml:space="preserve">
+    <value>With resistance continuous</value>
+  </data>
+  <data name="CatheterFlushTypeHeparinText" xml:space="preserve">
+    <value>Heparin</value>
+  </data>
+  <data name="CatheterFlushTypeNaClText" xml:space="preserve">
+    <value>NaCl</value>
+  </data>
+  <data name="CatheterFlushTypeUrokinaseText" xml:space="preserve">
+    <value>Urokinase</value>
+  </data>
   <data name="DeleteButtonText" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -239,6 +278,33 @@
   </data>
   <data name="InformationText" xml:space="preserve">
     <value>Information</value>
+  </data>
+  <data name="InfusionAdministrationFastText" xml:space="preserve">
+    <value>Fast</value>
+  </data>
+  <data name="InfusionAdministrationHesitantText" xml:space="preserve">
+    <value>Hesitant</value>
+  </data>
+  <data name="InfusionAdministrationWithoutProblemText" xml:space="preserve">
+    <value>Without problems</value>
+  </data>
+  <data name="InfusionReasonAntibioticText" xml:space="preserve">
+    <value>Antibiotic</value>
+  </data>
+  <data name="InfusionReasonBloodComponentText" xml:space="preserve">
+    <value>Blood components</value>
+  </data>
+  <data name="InfusionReasonChemotherapyText" xml:space="preserve">
+    <value>Chemotherapy</value>
+  </data>
+  <data name="InfusionReasonExaminationSubstanceText" xml:space="preserve">
+    <value>Examination substance</value>
+  </data>
+  <data name="InfusionReasonNutritionalSubstanceText" xml:space="preserve">
+    <value>Nutritional substance</value>
+  </data>
+  <data name="InfusionReasonOthersText" xml:space="preserve">
+    <value>Other infusions</value>
   </data>
   <data name="JournalEntryInstitutionHomeCareText" xml:space="preserve">
     <value>Home care</value>

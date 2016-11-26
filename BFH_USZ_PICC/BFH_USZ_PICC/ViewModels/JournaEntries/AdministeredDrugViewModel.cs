@@ -14,27 +14,22 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     class AdministeredDrugViewModel : INotifyPropertyChanged
     {
-
-        /// <summary>
-        /// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
-        /// </summary>
+        private AdministeredDrugEntry _selectedEntry;
         public AdministeredDrugViewModel(AdministeredDrugEntry entry)
         {
-            // AddHealthInstitutionsToPicker();
-
-            SaveButtonCommand = new Command(SaveButtonClicked);
-            CancelButtonCommand = new Command(CancelButtonClicked);
-            DeleteButtonCommand = new Command(DeleteButtonClicked);
-
-            AdministeredDrugEntry piccAppliedDrugEntry = (AdministeredDrugEntry)entry;
-            if (piccAppliedDrugEntry == null)
+            if (entry == null)
             {
                 IsEnabledOrVisible = true;
-                _administeredDrugEntry = new AdministeredDrugEntry(DateTime.Now, DateTime.Now, JournalEntry.HealthInstitution.NoInformation, JournalEntry.HealthPerson.NoInformation, " ");
+                ProcedureDate = DateTime.Now;
             }
             else
             {
-                _administeredDrugEntry = piccAppliedDrugEntry;
+                Person = entry.Person;
+                Institution = entry.Institution;
+                ProcedureDate = entry.ProcedureDateTime;
+                Drug = entry.Drug;
+             
+                _selectedEntry = entry;
                 IsEnabledOrVisible = false;
             }
         }
@@ -53,6 +48,62 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             }
         }
 
+        private HealthPerson _person;
+        public HealthPerson Person
+        {
+            get { return _person; }
+            set
+            {
+                if (_person != value)
+                {
+                    _person = value;
+                    OnPropertyChanged("Person");
+                }
+            }
+        }
+
+        private HealthInstitution _institution;
+        public HealthInstitution Institution
+        {
+            get { return _institution; }
+            set
+            {
+                if (_institution != value)
+                {
+                    _institution = value;
+                    OnPropertyChanged("Institution");
+                }
+            }
+        }
+
+        private DateTime _procedureDate;
+        public DateTime ProcedureDate
+        {
+            get { return _procedureDate; }
+            set
+            {
+                if (_procedureDate != value)
+                {
+                    _procedureDate = value;
+                    OnPropertyChanged("ProcedureDate");
+                }
+            }
+        }
+
+        private string _drug;
+        public string Drug
+        {
+            get { return _drug; }
+            set
+            {
+                if (_drug != value)
+                {
+                    _drug = value;
+                    OnPropertyChanged("Drug");
+                }
+            }
+        }
+
         private bool _isEnabledOrVisible;
         public bool IsEnabledOrVisible
         {
@@ -63,55 +114,34 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 OnPropertyChanged("IsEnabledOrVisible");
             }
         }
-
-
-        private AdministeredDrugEntry _administeredDrugEntry;
-        public AdministeredDrugEntry AdministeredDrugEntry
-        {
-            get { return _administeredDrugEntry; }
-            set
-            {
-                if (_administeredDrugEntry != value)
-                {
-                    _administeredDrugEntry = value;
-                    OnPropertyChanged("AdministeredDrugEntry");
-                }
-            }
-        }
-
-        public ICommand SaveButtonCommand { protected set; get; }
-        public ICommand CancelButtonCommand { protected set; get; }
-        public ICommand DeleteButtonCommand { protected set; get; }
-
-        async void SaveButtonClicked()
-        {
+              
+        private ICommand _saveButtonCommand;
+        public ICommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new Command(async () => {
             // create a new PICCAppliedDrugEntry with the user entered information
-            AdministeredDrugEntry drugEntry = new AdministeredDrugEntry(DateTime.Now, _administeredDrugEntry.ProcedureDateTime, _administeredDrugEntry.Institution, _administeredDrugEntry.Person, _administeredDrugEntry.Drug);
+            AdministeredDrugEntry entry = new AdministeredDrugEntry(DateTime.Now, ProcedureDate, Institution, Person, Drug);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(drugEntry);
+            JournalEntry.AllEnteredJournalEntries.Add(entry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+        }));
 
-        }
-
-        async void CancelButtonClicked()
+        private ICommand _cancelButtonCommand;
+        public ICommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new Command(async () =>
         {
             //Check if the user really wants to leave the page
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein"))
             {
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
+        }));
 
-        }
-
-        async void DeleteButtonClicked()
-        {
+        private ICommand _deleteButtonCommand;
+        public ICommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new Command(async () => {
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
-            {   
-                JournalEntry.AllEnteredJournalEntries.Remove(_administeredDrugEntry);
+            {
+                JournalEntry.AllEnteredJournalEntries.Remove(_selectedEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
-        }
-
+        }));
     }
 }

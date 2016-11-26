@@ -19,7 +19,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public MicroClaveChangingEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new MicroClaveChangingViewModel(null);
             
         }
@@ -27,12 +27,12 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public MicroClaveChangingEntryPage(ContentPage contained, MicroClaveChangingEntry entry) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new MicroClaveChangingViewModel(entry);
 
         }
 
-        void AddHealthInstitutionsAndHealthPeopleToPicker()
+        void AddPickers()
         {
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionHospitalText);

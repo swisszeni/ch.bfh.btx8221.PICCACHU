@@ -19,7 +19,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public BandageChangingEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new BandageChangingViewModel(null);
             
         }
@@ -27,12 +27,12 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         public BandageChangingEntryPage(ContentPage contained, BandageChangingEntry entry) : base(contained)
         {
             InitializeComponent();
-            AddHealthInstitutionsAndHealthPeopleToPicker();
+            AddPickers();
             BindingContext = new BandageChangingViewModel(entry);
 
         }
 
-        void AddHealthInstitutionsAndHealthPeopleToPicker()
+        void AddPickers()
         {
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
             HealthInstitutionPicker.Items.Add(AppResources.JournalEntryInstitutionHospitalText);
@@ -72,6 +72,10 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             BandageChangingPuncturePicker.Items.Add(AppResources.BandagePunctureSituationPainfulPunctureText);
             BandageChangingPuncturePicker.Items.Add(AppResources.BandagePunctureSituationLiquidDischargeText);
 
+            BandageChangingArmProcessSituationPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            BandageChangingArmProcessSituationPicker.Items.Add(AppResources.BandageArmProcessSituationPainfulText);
+            BandageChangingArmProcessSituationPicker.Items.Add(AppResources.BandageArmProcessSituationSwollenText);
+            BandageChangingArmProcessSituationPicker.Items.Add(AppResources.BandageArmProcessSituationReddenedText);
         }
 
     }

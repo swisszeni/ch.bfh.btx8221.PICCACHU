@@ -14,21 +14,21 @@ namespace BFH_USZ_PICC.Views.JournalEntries
     /// <summary>
     /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
     /// </summary>
-    public sealed partial class StatlockChangingEntryPage : BaseContentPage
+    public sealed partial class InfusionEntryPage : BaseContentPage
     {
-        public StatlockChangingEntryPage(ContentPage contained) : base(contained)
+        public InfusionEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new StatlockChangingViewModel(null);
+            BindingContext = new InfusionViewModel(null);
             
         }
 
-        public StatlockChangingEntryPage(ContentPage contained, StatlockChangingEntry entry) : base(contained)
+        public InfusionEntryPage(ContentPage contained, InfusionEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new StatlockChangingViewModel(entry);
+            BindingContext = new InfusionViewModel(entry);
 
         }
 
@@ -52,11 +52,20 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonAffectedPersonText);
             HealthPersonPicker.Items.Add(AppResources.JournalEntryOthersText);
 
-            StatlockChangingReasonPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntryRoutineText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntrySticksUnsatisfactorilyText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntryPollutionText);
-            StatlockChangingReasonPicker.Items.Add(AppResources.StatlockChangingEntryDamagedWingsText);
+            InfusionReasonPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            InfusionReasonPicker.Items.Add(AppResources. InfusionReasonAntibioticText);
+            InfusionReasonPicker.Items.Add(AppResources.InfusionReasonNutritionalSubstanceText);
+            InfusionReasonPicker.Items.Add(AppResources.InfusionReasonBloodComponentText);
+            InfusionReasonPicker.Items.Add(AppResources.InfusionReasonExaminationSubstanceText);
+            InfusionReasonPicker.Items.Add(AppResources.InfusionReasonChemotherapyText);
+            InfusionReasonPicker.Items.Add(AppResources.InfusionReasonOthersText);
+
+            InfusionAdministrationPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
+            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationWithoutProblemText);
+            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationFastText);
+            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationHesitantText);
+
+
 
         }
 

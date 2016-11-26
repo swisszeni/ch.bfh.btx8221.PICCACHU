@@ -8,8 +8,9 @@ namespace BFH_USZ_PICC.Models
 {
     public enum InfusionType
     {
+        NoInformation,
         Antibiotic,
-        NutritionSubstance,
+        NutritionalSubstance,
         BloodComponent,
         ExaminationSubstance,
         Chemotherapy,
@@ -17,8 +18,9 @@ namespace BFH_USZ_PICC.Models
 
     }
 
-    public enum Medication
-    {
+    public enum InfusionAdministration
+    {   
+        NoInformation,
         WithoutProblem,
         Fast,
         Hesitant
@@ -31,17 +33,23 @@ namespace BFH_USZ_PICC.Models
     public class InfusionEntry : JournalEntry
     {
         public InfusionType Type { get; set; }
-        public Medication Application { get; set; }
+
+        //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
+        public string TypeAntibioticName { get; set; }
+        public InfusionAdministration Administration { get; set; }
         
-        public InfusionEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, Medication application,
-            double QuantityInMilliliter, bool IsBloodReflowVisible)
+        public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
+            InfusionAdministration administration, string antibioticName)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
             Institution = institution;
             Person = person;
             Type = type;
-            Application = application;
+            Administration = administration;
+            TypeAntibioticName = antibioticName;
+
+            Entry = AllPossibleJournalEntries.InfusionEntry;
 
         }
 

@@ -6,15 +6,27 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
 {
-    public enum FlushReason
-    {
+    public enum FlushType
+    {   
+        NoInformation,
         NaCi,
         Heparin,
         Urokinase
     }
 
+    public enum FlushReason
+    {
+        NoInformation,
+        Routine,
+        BloodSampling,
+        PartiallyBlocked,
+        Blocked
+    }
+
+
     public enum FlushResult
     {
+        NoInformation,
         FlushWithoutResistance,
         FlushWithResistance,
         FlushNotPossible
@@ -26,22 +38,26 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class CatheterFlushEntry : JournalEntry
     {
+        public FlushType Type { get; set; }
         public FlushReason Reason { get; set; }
         public FlushResult Result { get; set; }
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
-        public CatheterFlushEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, FlushReason reason, FlushResult result,
-            double quantityInMilliliter, bool isBloodReflowVisible)
+        public CatheterFlushEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, FlushType type, FlushResult result,
+            FlushReason reason, double quantityInMilliliter, bool isBloodReflowVisible)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
             Institution = institution;
             Person = person;
-            Reason = reason;
+            Type = type;
+            Reason =  reason;
             Result = result;
             QuantityInMilliliter = quantityInMilliliter;
             IsBloodReflowVisible = isBloodReflowVisible;
+
+            Entry = AllPossibleJournalEntries.CatheterFlushEntry;
         }
 
     }

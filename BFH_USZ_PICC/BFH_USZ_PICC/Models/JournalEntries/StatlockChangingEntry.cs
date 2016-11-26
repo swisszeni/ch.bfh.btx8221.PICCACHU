@@ -22,7 +22,7 @@ namespace BFH_USZ_PICC.Models
 
         public StatLockChangementReason Reason { get; set; }        
 
-        public StatlockChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, StatLockChangementReason reason)
+        public StatlockChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, StatLockChangementReason reason)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
