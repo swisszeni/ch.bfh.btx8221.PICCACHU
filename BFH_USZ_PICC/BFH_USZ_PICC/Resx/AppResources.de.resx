@@ -261,4 +261,205 @@
   <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
     <value>Persönliche Daten</value>
   </data>
+  <data name="JournalOverviewPageBandagesChangingEntry" xml:space="preserve">
+    <value>Verbandswechsel</value>
+  </data>
+  <data name="JournalOverviewPageBloodWithdrawalEntry" xml:space="preserve">
+    <value>Blutentnahme</value>
+  </data>
+  <data name="JournalOverviewPageCatheterFlushEntry" xml:space="preserve">
+    <value>Spülen des Katheters</value>
+  </data>
+  <data name="JournalOverviewPageInfusionEntry" xml:space="preserve">
+    <value>Verabreichte Infusionen</value>
+  </data>
+  <data name="JournalOverviewPageMicroClaveChangingEntry" xml:space="preserve">
+    <value>Wechsel MicroClave</value>
+  </data>
+  <data name="JournalOverviewPageStatlockChangingEntry" xml:space="preserve">
+    <value>Wechsel StatLock</value>
+  </data>
+  <data name="JournalOverviewPageAdministeredDrugEntry" xml:space="preserve">
+    <value>Verabreichte Medikamente</value>
+  </data>
+  <data name="JournalEntryInstitutionHomeCareText" xml:space="preserve">
+    <value>Spitex</value>
+  </data>
+  <data name="JournalEntryInstitutionHospitalText" xml:space="preserve">
+    <value>Spital</value>
+  </data>
+  <data name="JournalEntryInstitutionOutpatienClinicText" xml:space="preserve">
+    <value>Ambulatorium</value>
+  </data>
+  <data name="JournalEntryInstitutionRehabilitationText" xml:space="preserve">
+    <value>Rehabilitation</value>
+  </data>
+  <data name="JournalEntryNotSpecifiedText" xml:space="preserve">
+    <value>Keine Angabe</value>
+  </data>
+  <data name="JournalEntryOthersText" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="JournalEntryPersonAffectedPersonText" xml:space="preserve">
+    <value>Betroffene Person</value>
+  </data>
+  <data name="JournalEntryPersonFamilyDoctorText" xml:space="preserve">
+    <value>Hausarzt</value>
+  </data>
+  <data name="JournalEntryPersonHealthExpertStaffText" xml:space="preserve">
+    <value>Fachperson Gesundheit (FaGe)</value>
+  </data>
+  <data name="JournalEntryPersonMedicalTechnicalAssistantText" xml:space="preserve">
+    <value>Medizinisch Technische Assistenz (MTA)</value>
+  </data>
+  <data name="JournalEntryPersonNursingStaffText" xml:space="preserve">
+    <value>Pflegefachperson</value>
+  </data>
+  <data name="JournalEntryPersonRelativeText" xml:space="preserve">
+    <value>Angehörige</value>
+  </data>
+  <data name="JournalEntryPersonSpecialistText" xml:space="preserve">
+    <value>Facharzt</value>
+  </data>
+  <data name="JournalEntryPersonXrayStaffText" xml:space="preserve">
+    <value>Röntgenfachperson (MTRA)</value>
+  </data>
+  <data name="DeleteButtonText" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="MicroClaveChangingEntryPollutionText" xml:space="preserve">
+    <value>Verschmutzung</value>
+  </data>
+  <data name="MicroClaveChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntryDamagedWingsText" xml:space="preserve">
+    <value>Defekte Flügel</value>
+  </data>
+  <data name="StatlockChangingEntryPollutionText" xml:space="preserve">
+    <value>Verschmutzung</value>
+  </data>
+  <data name="StatlockChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntrySticksUnsatisfactorilyText" xml:space="preserve">
+    <value>Klebt ungenügend</value>
+  </data>
+  <data name="BloodFlowFastAndEasyText" xml:space="preserve">
+    <value>Zügig, problemlos</value>
+  </data>
+  <data name="BloodFlowHesitantText" xml:space="preserve">
+    <value>Zögerlich</value>
+  </data>
+  <data name="BloodFlowNoneText" xml:space="preserve">
+    <value>Gar nicht</value>
+  </data>
+  <data name="BandageChangingReasonBandageDoesNotStickAnymoreText" xml:space="preserve">
+    <value>Verband klebte nicht mehr</value>
+  </data>
+  <data name="BandageChangingReasonBandageWetText" xml:space="preserve">
+    <value>Verband feucht</value>
+  </data>
+  <data name="BandageChangingReasonPainText" xml:space="preserve">
+    <value>Schmerzen, Unregelmässigkeiten</value>
+  </data>
+  <data name="BandageChangingReasonPunctureNotCoveredText" xml:space="preserve">
+    <value>Einstichstelle nicht vollständig abgedeckt</value>
+  </data>
+  <data name="BandageChangingReasonRoutineText" xml:space="preserve">
+    <value>Routinemässig</value>
+  </data>
+  <data name="BandageChangingReasonSecondaryBleedingText" xml:space="preserve">
+    <value>Nachblutung</value>
+  </data>
+  <data name="BandageChangingAreaCompleteText" xml:space="preserve">
+    <value>Vollständig</value>
+  </data>
+  <data name="BandageChangingAreaOnlyBandageText" xml:space="preserve">
+    <value>Nur Verband</value>
+  </data>
+  <data name="BandageChangingAreaOnlyStatlockText" xml:space="preserve">
+    <value>Nur StatLock</value>
+  </data>
+  <data name="BandagePunctureSituationLiquidDischargeText" xml:space="preserve">
+    <value>Flüssigkeitsaustritt</value>
+  </data>
+  <data name="BandagePunctureSituationPainfulPunctureText" xml:space="preserve">
+    <value>Schmerzhaft</value>
+  </data>
+  <data name="BandagePunctureSituationReddenedPunctureText" xml:space="preserve">
+    <value>Gerötet</value>
+  </data>
+  <data name="BandagePunctureSituationSkinNotIrritantText" xml:space="preserve">
+    <value>Reizlos</value>
+  </data>
+  <data name="BandagePunctureSituationSwollenPunctureText" xml:space="preserve">
+    <value>Geschwollen</value>
+  </data>
+  <data name="BandageArmProcessSituationPainfulText" xml:space="preserve">
+    <value>Schmerzhaft</value>
+  </data>
+  <data name="BandageArmProcessSituationSwollenText" xml:space="preserve">
+    <value>Geschwollen</value>
+  </data>
+  <data name="BandageArmProcessSituationReddenedText" xml:space="preserve">
+    <value>Gerötet</value>
+  </data>
+  <data name="InfusionReasonAntibioticText" xml:space="preserve">
+    <value>Antibiotika</value>
+  </data>
+  <data name="InfusionReasonBloodComponentText" xml:space="preserve">
+    <value>Blutkomponenten</value>
+  </data>
+  <data name="InfusionReasonChemotherapyText" xml:space="preserve">
+    <value>Chemotherapie</value>
+  </data>
+  <data name="InfusionReasonExaminationSubstanceText" xml:space="preserve">
+    <value>Untersuchungssubstanzen</value>
+  </data>
+  <data name="InfusionReasonNutritionalSubstanceText" xml:space="preserve">
+    <value>Ernährungssubstanzen</value>
+  </data>
+  <data name="InfusionReasonOthersText" xml:space="preserve">
+    <value>Andere Infusionen</value>
+  </data>
+  <data name="InfusionAdministrationFastText" xml:space="preserve">
+    <value>Schneller</value>
+  </data>
+  <data name="InfusionAdministrationHesitantText" xml:space="preserve">
+    <value>Zögerlichem</value>
+  </data>
+  <data name="InfusionAdministrationWithoutProblemText" xml:space="preserve">
+    <value>Problemlos</value>
+  </data>
+  <data name="CatheterFlushReasonBlockedText" xml:space="preserve">
+    <value>Verstopft</value>
+  </data>
+  <data name="CatheterFlushReasonBloodSamplingText" xml:space="preserve">
+    <value>Blutentnahme</value>
+  </data>
+  <data name="CatheterFlushReasonPartiallyBlockedText" xml:space="preserve">
+    <value>Teilweise verstopft</value>
+  </data>
+  <data name="CatheterFlushReasonRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="CatheterFlushTypeHeparinText" xml:space="preserve">
+    <value>Heparin</value>
+  </data>
+  <data name="CatheterFlushTypeNaClText" xml:space="preserve">
+    <value>NaCl</value>
+  </data>
+  <data name="CatheterFlushTypeUrokinaseText" xml:space="preserve">
+    <value>Urokinase</value>
+  </data>
+  <data name="CatheterFlushResultFlushNotPossibleText" xml:space="preserve">
+    <value>Spülen nicht möglich</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithoutResistanceText" xml:space="preserve">
+    <value>Problemlos durchgängig</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithResistanceText" xml:space="preserve">
+    <value>Weniger durchgängig</value>
+  </data>
 </root>

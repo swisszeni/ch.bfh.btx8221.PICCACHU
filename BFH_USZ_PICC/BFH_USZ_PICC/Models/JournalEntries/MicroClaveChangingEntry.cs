@@ -8,6 +8,7 @@ namespace BFH_USZ_PICC.Models
 {
     public enum MicroClaveChangementReason
     {
+        NoInformation,
         Routine,
         Pollution
     }
@@ -15,7 +16,7 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with one parameters (MicroClaveChangementReason) to handle special events for the MicroClave changing procedure.
     /// </summary>
-    class MicroClaveChangingEntry : JournalEntry
+    public class MicroClaveChangingEntry : JournalEntry
     {
         public MicroClaveChangementReason Reason { get; set; }        
 
@@ -26,7 +27,8 @@ namespace BFH_USZ_PICC.Models
             Institution = institution;
             Person = person;
             Reason = reason;
-           
+
+            Entry = AllPossibleJournalEntries.MicroClaveEntry;
         }
 
     }

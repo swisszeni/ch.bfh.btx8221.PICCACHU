@@ -17,6 +17,8 @@ namespace BFH_USZ_PICC
     {
         Dictionary<MenuItemKey, NavigationPage> Pages { get; set; }
 
+        bool isFirstStart;
+
         public Shell()
         {
             Pages = new Dictionary<MenuItemKey, NavigationPage>();
@@ -31,7 +33,7 @@ namespace BFH_USZ_PICC
             NavigateAsync(MenuItemKey.PICC);
 
             InvalidateMeasure();
-
+            isFirstStart = true;
             //CheckForFirstStart();
         }
 
@@ -106,14 +108,16 @@ namespace BFH_USZ_PICC
         public async void CheckForFirstStart()
         {
             //Test for first start. bool should check if the user starts the app for the first time and ask him if he wants to add his personal master data
-            bool isFirstStart = true;
+            
             if (isFirstStart)
             {
+                isFirstStart = false;
                 var masterData = await AskUserToAddMasterData();
                 if (masterData)
                 {
                     //NavigateAsync(MenuItemKey.UserMasterData);
                     await DeepNavigateAsync(MenuItemKey.Settings, typeof(UserMasterDataPage), new List<object> { UserMasterDataPageDisplayMode.Edit });
+                    
                 }
             }
         }

@@ -8,8 +8,9 @@ namespace BFH_USZ_PICC.Models
 {
     public enum InfusionType
     {
+        NoInformation,
         Antibiotic,
-        NutritionSubstance,
+        NutritionalSubstance,
         BloodComponent,
         ExaminationSubstance,
         Chemotherapy,
@@ -17,8 +18,9 @@ namespace BFH_USZ_PICC.Models
 
     }
 
-    public enum Medication
-    {
+    public enum InfusionAdministration
+    {   
+        NoInformation,
         WithoutProblem,
         Fast,
         Hesitant
@@ -28,20 +30,26 @@ namespace BFH_USZ_PICC.Models
     /// <summary>
     /// Extends the JournalEntry class with two parameters (InfusionType, Medication) to handle special events for the infusion procedure
     /// </summary>
-    class InfusionEntry : JournalEntry
+    public class InfusionEntry : JournalEntry
     {
         public InfusionType Type { get; set; }
-        public Medication Application { get; set; }
+
+        //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
+        public string TypeAntibioticName { get; set; }
+        public InfusionAdministration Administration { get; set; }
         
-        public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, Medication application,
-            double QuantityInMilliliter, bool IsBloodReflowVisible)
+        public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
+            InfusionAdministration administration, string antibioticName)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
             Institution = institution;
             Person = person;
             Type = type;
-            Application = application;
+            Administration = administration;
+            TypeAntibioticName = antibioticName;
+
+            Entry = AllPossibleJournalEntries.InfusionEntry;
 
         }
 

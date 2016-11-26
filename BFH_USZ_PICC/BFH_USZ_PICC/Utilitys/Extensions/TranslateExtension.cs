@@ -50,6 +50,7 @@ namespace BFH_USZ_PICC.Utilitys.Extensions
 
         object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
         {
+            var test = serviceProvider;
             return (this as IMarkupExtension<string>).ProvideValue(serviceProvider);
         }
     }

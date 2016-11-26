@@ -338,6 +338,274 @@
           <source>My personal data</source>
           <target state="translated">Persönliche Daten</target>
         </trans-unit>
+        <trans-unit id="JournalOverviewPageBandagesChangingEntry" translate="yes" xml:space="preserve">
+          <source>Bandage changing</source>
+          <target state="translated">Verbandswechsel</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageBloodWithdrawalEntry" translate="yes" xml:space="preserve">
+          <source>Blood withdrawal</source>
+          <target state="translated">Blutentnahme</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageCatheterFlushEntry" translate="yes" xml:space="preserve">
+          <source>Rinse the catheter</source>
+          <target state="translated">Spülen des Katheters</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageInfusionEntry" translate="yes" xml:space="preserve">
+          <source>Administered infusions</source>
+          <target state="translated">Verabreichte Infusionen</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageMicroClaveChangingEntry" translate="yes" xml:space="preserve">
+          <source>Change MicroClave</source>
+          <target state="translated">Wechsel MicroClave</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageStatlockChangingEntry" translate="yes" xml:space="preserve">
+          <source>Change StatLock</source>
+          <target state="translated">Wechsel StatLock</target>
+        </trans-unit>
+        <trans-unit id="JournalOverviewPageAdministeredDrugEntry" translate="yes" xml:space="preserve">
+          <source>Administered drugs</source>
+          <target state="translated">Verabreichte Medikamente</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionHomeCareText" translate="yes" xml:space="preserve">
+          <source>Home care</source>
+          <target state="translated">Spitex</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionHospitalText" translate="yes" xml:space="preserve">
+          <source>Hospital</source>
+          <target state="translated">Spital</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionOutpatienClinicText" translate="yes" xml:space="preserve">
+          <source>Outpatient clinic</source>
+          <target state="translated">Ambulatorium</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryInstitutionRehabilitationText" translate="yes" xml:space="preserve">
+          <source>Rehabilitation</source>
+          <target state="translated">Rehabilitation</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryNotSpecifiedText" translate="yes" xml:space="preserve">
+          <source>Not specified</source>
+          <target state="translated">Keine Angabe</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryOthersText" translate="yes" xml:space="preserve">
+          <source>Others</source>
+          <target state="translated">Andere</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonAffectedPersonText" translate="yes" xml:space="preserve">
+          <source>Affected person</source>
+          <target state="translated">Betroffene Person</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonFamilyDoctorText" translate="yes" xml:space="preserve">
+          <source>Family doctor</source>
+          <target state="translated">Hausarzt</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonHealthExpertStaffText" translate="yes" xml:space="preserve">
+          <source>Health expert staff</source>
+          <target state="translated">Fachperson Gesundheit (FaGe)</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonMedicalTechnicalAssistantText" translate="yes" xml:space="preserve">
+          <source>Medical technical assistant</source>
+          <target state="translated">Medizinisch Technische Assistenz (MTA)</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonNursingStaffText" translate="yes" xml:space="preserve">
+          <source>Nursing staff</source>
+          <target state="translated">Pflegefachperson</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonRelativeText" translate="yes" xml:space="preserve">
+          <source>Relative</source>
+          <target state="translated">Angehörige</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonSpecialistText" translate="yes" xml:space="preserve">
+          <source>Medical specialist</source>
+          <target state="translated">Facharzt</target>
+        </trans-unit>
+        <trans-unit id="JournalEntryPersonXrayStaffText" translate="yes" xml:space="preserve">
+          <source>XRay staff</source>
+          <target state="translated">Röntgenfachperson (MTRA)</target>
+        </trans-unit>
+        <trans-unit id="DeleteButtonText" translate="yes" xml:space="preserve">
+          <source>Delete</source>
+          <target state="translated">Löschen</target>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPollutionText" translate="yes" xml:space="preserve">
+          <source>Pollution</source>
+          <target state="translated">Verschmutzung</target>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryRoutineText" translate="yes" xml:space="preserve">
+          <source>Routine</source>
+          <target state="translated">Routine</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryDamagedWingsText" translate="yes" xml:space="preserve">
+          <source>Damaged wings</source>
+          <target state="translated">Defekte Flügel</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPollutionText" translate="yes" xml:space="preserve">
+          <source>Pollution</source>
+          <target state="translated">Verschmutzung</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryRoutineText" translate="yes" xml:space="preserve">
+          <source>Routine</source>
+          <target state="translated">Routine</target>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntrySticksUnsatisfactorilyText" translate="yes" xml:space="preserve">
+          <source>Sticks unsatisfactorily</source>
+          <target state="translated">Klebt ungenügend</target>
+        </trans-unit>
+        <trans-unit id="BloodFlowFastAndEasyText" translate="yes" xml:space="preserve">
+          <source>Fast, easy</source>
+          <target state="translated">Zügig, problemlos</target>
+        </trans-unit>
+        <trans-unit id="BloodFlowHesitantText" translate="yes" xml:space="preserve">
+          <source>Hesitant</source>
+          <target state="translated">Zögerlich</target>
+        </trans-unit>
+        <trans-unit id="BloodFlowNoneText" translate="yes" xml:space="preserve">
+          <source>Not at all</source>
+          <target state="translated">Gar nicht</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonBandageDoesNotStickAnymoreText" translate="yes" xml:space="preserve">
+          <source>Bandage does not stick anymore</source>
+          <target state="translated">Verband klebte nicht mehr</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonBandageWetText" translate="yes" xml:space="preserve">
+          <source>Bandage is wet</source>
+          <target state="translated">Verband feucht</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonPainText" translate="yes" xml:space="preserve">
+          <source>Pain, irregularities</source>
+          <target state="translated">Schmerzen, Unregelmässigkeiten</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonPunctureNotCoveredText" translate="yes" xml:space="preserve">
+          <source>Puncture is not covered</source>
+          <target state="translated">Einstichstelle nicht vollständig abgedeckt</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonRoutineText" translate="yes" xml:space="preserve">
+          <source>Routinely</source>
+          <target state="translated">Routinemässig</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingReasonSecondaryBleedingText" translate="yes" xml:space="preserve">
+          <source>Secondary bleeding</source>
+          <target state="translated">Nachblutung</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingAreaCompleteText" translate="yes" xml:space="preserve">
+          <source>Complete</source>
+          <target state="translated">Vollständig</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingAreaOnlyBandageText" translate="yes" xml:space="preserve">
+          <source>Only Bandage</source>
+          <target state="translated">Nur Verband</target>
+        </trans-unit>
+        <trans-unit id="BandageChangingAreaOnlyStatlockText" translate="yes" xml:space="preserve">
+          <source>Only StatLock</source>
+          <target state="translated">Nur StatLock</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationLiquidDischargeText" translate="yes" xml:space="preserve">
+          <source>Liquid discharge</source>
+          <target state="translated">Flüssigkeitsaustritt</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationPainfulPunctureText" translate="yes" xml:space="preserve">
+          <source>Painful puncuture</source>
+          <target state="translated">Schmerzhaft</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationReddenedPunctureText" translate="yes" xml:space="preserve">
+          <source>Reddened puncture</source>
+          <target state="translated">Gerötet</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationSkinNotIrritantText" translate="yes" xml:space="preserve">
+          <source>Skin not irritant</source>
+          <target state="translated">Reizlos</target>
+        </trans-unit>
+        <trans-unit id="BandagePunctureSituationSwollenPunctureText" translate="yes" xml:space="preserve">
+          <source>Swollen puncture</source>
+          <target state="translated">Geschwollen</target>
+        </trans-unit>
+        <trans-unit id="BandageArmProcessSituationPainfulText" translate="yes" xml:space="preserve">
+          <source>Painful</source>
+          <target state="translated">Schmerzhaft</target>
+        </trans-unit>
+        <trans-unit id="BandageArmProcessSituationSwollenText" translate="yes" xml:space="preserve">
+          <source>Swollen</source>
+          <target state="translated">Geschwollen</target>
+        </trans-unit>
+        <trans-unit id="BandageArmProcessSituationReddenedText" translate="yes" xml:space="preserve">
+          <source>Reddened</source>
+          <target state="translated">Gerötet</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonAntibioticText" translate="yes" xml:space="preserve">
+          <source>Antibiotic</source>
+          <target state="translated">Antibiotika</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonBloodComponentText" translate="yes" xml:space="preserve">
+          <source>Blood components</source>
+          <target state="translated">Blutkomponenten</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonChemotherapyText" translate="yes" xml:space="preserve">
+          <source>Chemotherapy</source>
+          <target state="translated">Chemotherapie</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonExaminationSubstanceText" translate="yes" xml:space="preserve">
+          <source>Examination substance</source>
+          <target state="translated">Untersuchungssubstanzen</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonNutritionalSubstanceText" translate="yes" xml:space="preserve">
+          <source>Nutritional substance</source>
+          <target state="translated">Ernährungssubstanzen</target>
+        </trans-unit>
+        <trans-unit id="InfusionReasonOthersText" translate="yes" xml:space="preserve">
+          <source>Other infusions</source>
+          <target state="translated">Andere Infusionen</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationFastText" translate="yes" xml:space="preserve">
+          <source>Fast</source>
+          <target state="translated">Schneller</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationHesitantText" translate="yes" xml:space="preserve">
+          <source>Hesitant</source>
+          <target state="translated">Zögerlichem</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationWithoutProblemText" translate="yes" xml:space="preserve">
+          <source>Without problems</source>
+          <target state="translated">Problemlos</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonBlockedText" translate="yes" xml:space="preserve">
+          <source>Blocked</source>
+          <target state="translated">Verstopft</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonBloodSamplingText" translate="yes" xml:space="preserve">
+          <source>Blood sampling</source>
+          <target state="translated">Blutentnahme</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonPartiallyBlockedText" translate="yes" xml:space="preserve">
+          <source>Partially blocked</source>
+          <target state="translated">Teilweise verstopft</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushReasonRoutineText" translate="yes" xml:space="preserve">
+          <source>Routine</source>
+          <target state="translated">Routine</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushTypeHeparinText" translate="yes" xml:space="preserve">
+          <source>Heparin</source>
+          <target state="translated">Heparin</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushTypeNaClText" translate="yes" xml:space="preserve">
+          <source>NaCl</source>
+          <target state="translated">NaCl</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushTypeUrokinaseText" translate="yes" xml:space="preserve">
+          <source>Urokinase</source>
+          <target state="translated">Urokinase</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushResultFlushNotPossibleText" translate="yes" xml:space="preserve">
+          <source>Flush not possible anymore</source>
+          <target state="translated">Spülen nicht möglich</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushResultFlushWithoutResistanceText" translate="yes" xml:space="preserve">
+          <source>Without resistance continuous</source>
+          <target state="translated">Problemlos durchgängig</target>
+        </trans-unit>
+        <trans-unit id="CatheterFlushResultFlushWithResistanceText" translate="yes" xml:space="preserve">
+          <source>With resistance continuous</source>
+          <target state="translated">Weniger durchgängig</target>
+        </trans-unit>
       </group>
     </body>
   </file>

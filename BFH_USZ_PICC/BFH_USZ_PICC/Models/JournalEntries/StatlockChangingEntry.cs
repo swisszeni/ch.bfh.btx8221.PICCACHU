@@ -8,15 +8,16 @@ namespace BFH_USZ_PICC.Models
 {
     public enum StatLockChangementReason
     {
+        NoInformation,
         Routine,
         Pollution,
-        SticksNotGoodEnough,
+        SticksUnsatisfactorily,
         DamagedWing
     }
     /// <summary>
     /// Extends the JournalEntry class with one parameters (StatLockChangementReason) to handle special events for the StatLock changing procedure.
     /// </summary>
-    class StatlockChangingEntry : JournalEntry
+    public class StatlockChangingEntry : JournalEntry
     {      
 
         public StatLockChangementReason Reason { get; set; }        
@@ -28,7 +29,8 @@ namespace BFH_USZ_PICC.Models
             Institution = institution;
             Person = person;
             Reason = reason;
-           
+
+            Entry = AllPossibleJournalEntries.StatlockEntry;
         }
 
     }

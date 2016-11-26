@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.MaintenanceInstructionPage"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+
+  <!--xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"-->
+  <Grid>
+    <cv:CarouselView x:Name="InstructionCarousel">
+      <cv:CarouselView.ItemTemplate>
+        <DataTemplate>
+          <StackLayout>
+            <Image Source="icon.png" />
+            <Label Text="TEST" />            
+          </StackLayout>
+
+          <!--<Grid>
+             <Grid.RowDefinitions>
+                          <RowDefinition Height="*"/>
+                          <RowDefinition Height="Auto"/>                        
+            </Grid.RowDefinitions>
+            -->
+          <!--<Image Source="Icon.png" Grid.RowSpan="2"/>-->
+          <!--
+             <StackLayout Grid.Row="1">
+              <Label Text="Test"/>                        
+            </StackLayout>
+          </Grid>-->
+        </DataTemplate>
+      </cv:CarouselView.ItemTemplate>
+    </cv:CarouselView>
+  </Grid>
+</d:BaseContentPage>
