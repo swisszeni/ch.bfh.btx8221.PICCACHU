@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Utilitys;
+using Microsoft.HockeyApp;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,9 +33,15 @@ namespace BFH_USZ_PICC.UWP
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            // Enable crashlog with HockeyApp
-            //FIXME
-            //Microsoft.HockeyApp.HockeyClient.Current.Configure("f06f141af5b041b7a0f90c9abf32449b");
+            InitializeHockeyApp();
+        }
+
+        /// <summary>
+        /// Registering the platform specific parts of HockeyApp to track events and crashes.
+        /// </summary>
+        private void InitializeHockeyApp()
+        {
+            HockeyClient.Current.Configure(HockeyAppHelper.AppIds.HockeyAppId_UWP);
         }
 
         /// <summary>

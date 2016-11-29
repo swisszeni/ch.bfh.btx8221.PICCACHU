@@ -10,6 +10,9 @@ using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
 using HockeyApp.Android;
 using HockeyApp.Android.Metrics;
+using BFH_USZ_PICC.Utilitys;
+
+[assembly:MetaData("net.hockeyapp.android.appIdentifier", Value=HockeyAppHelper.AppIds.HockeyAppId_Droid)]
 
 namespace BFH_USZ_PICC.Droid
 {
@@ -22,20 +25,26 @@ namespace BFH_USZ_PICC.Droid
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
             FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
             base.OnCreate(bundle);
+            InitializeHockeyApp();
             Forms.Init(this, bundle);
             LoadApplication(new Application());
-
-            // Enable crashlog with HockeyApp
-            CrashManager.Register(this, "244728446c94483cb57c2620f12c9982");
-            MetricsManager.Register(Application, "244728446c94483cb57c2620f12c9982");
 
             // check for updates of the app
             CheckForUpdates();
         }
 
+        /// <summary>
+        /// Registering the platform specific parts of HockeyApp to track events and crashes.
+        /// </summary>
+        private void InitializeHockeyApp()
+        {
+            CrashManager.Register(this);
+            MetricsManager.Register(Application);
+        }
+
         void CheckForUpdates()
         {
-            UpdateManager.Register(this, "244728446c94483cb57c2620f12c9982");
+            UpdateManager.Register(this);
         }
 
         void UnregisterManagers()

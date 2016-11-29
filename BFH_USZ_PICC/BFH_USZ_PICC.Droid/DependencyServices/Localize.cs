@@ -42,7 +42,7 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
                 // fallback to first characters, in this case "en"
                 try
                 {
-                    var fallback = ToDotnetFallbackLanguage(new PlatformCulture(netLanguage));
+                    var fallback = ToDotnetFallbackLanguage(new PlatformCultureHelper(netLanguage));
                     ci = new System.Globalization.CultureInfo(fallback);
                 }
                 catch (CultureNotFoundException e2)
@@ -75,7 +75,7 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
             }
             return netLanguage;
         }
-        string ToDotnetFallbackLanguage(PlatformCulture platCulture)
+        string ToDotnetFallbackLanguage(PlatformCultureHelper platCulture)
         {
             var netLanguage = platCulture.LanguageCode; // use the first part of the identifier (two chars, usually);
             switch (platCulture.LanguageCode)
