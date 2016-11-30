@@ -52,6 +52,8 @@
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
     <Compile Include="Interfaces\ILocalize.cs" />
+    <Compile Include="Models\MaintenanceInstructions.cs" />
+    <Compile Include="Models\MaintenanceInstruction.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\MicroClaveChangingEntry.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
+    <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
     <Compile Include="ViewModels\PICCDetailViewModel.cs" />

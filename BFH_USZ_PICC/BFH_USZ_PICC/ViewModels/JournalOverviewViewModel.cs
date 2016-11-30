@@ -110,11 +110,6 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
                 {
-                    //if (await Application.Current.MainPage.DisplayAlert("Information", "Wollen Sie die für dieesen Schritt eine Anleitung ansehen?", "Ja", "Nein"))
-                    //{
-                    //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), null));
-                    //    return;
-                    //}
                     await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage), null));
                     return;
                 }

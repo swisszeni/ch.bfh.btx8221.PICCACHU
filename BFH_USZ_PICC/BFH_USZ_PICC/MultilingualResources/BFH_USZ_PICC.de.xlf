@@ -606,6 +606,10 @@
           <source>With resistance continuous</source>
           <target state="translated">Weniger durchgängig</target>
         </trans-unit>
+        <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
+          <source>Maintenance instruction</source>
+          <target state="translated">Wartungsanleitung</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             if (entry == null)
             {
+                CheckForMainentanceInstruction();
                 IsEnabledOrVisible = true;
                 ProcedureDate = DateTime.Now;
             }
@@ -145,5 +147,14 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
+
+        private async void CheckForMainentanceInstruction()
+        {
+            if (await Application.Current.MainPage.DisplayAlert("Information", "Wollen Sie die für diesen Schritt eine Wartungsanleitung ansehen?", "Ja", "Nein"))
+            {
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { MainentanceInstructions.getMicroClaveInstruction() }));
+
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.Views;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -19,6 +21,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             if (entry == null)
             {
+                CheckForMainentanceInstruction();
                 IsEnabledOrVisible = true;
                 ProcedureDate = DateTime.Now;
             }
@@ -117,7 +120,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 
 
         private ICommand _saveButtonCommand;
-        public ICommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new Command(async () => {
+        public ICommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new Command(async () =>
+        {
             // create a new PICCAppliedDrugEntry with the user entered information
             StatlockChangingEntry entry = new StatlockChangingEntry(DateTime.Now, ProcedureDate, Institution, Person, Reason);
             //Add the object to the collection of JournalEntries
@@ -137,13 +141,23 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         }));
 
         private ICommand _deleteButtonCommand;
-        public ICommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new Command(async () => {
+        public ICommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new Command(async () =>
+        {
             if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
             {
                 JournalEntry.AllEnteredJournalEntries.Remove(_selectedEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
+
+        private async void CheckForMainentanceInstruction()
+        {
+            if (await Application.Current.MainPage.DisplayAlert("Information", "Wollen Sie die für diesen Schritt eine Wartungsanleitung ansehen?", "Ja", "Nein"))
+            {
+                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { MainentanceInstructions.getStatLockInstruction() }));
+
+            }
+        }
     }
 
 }
