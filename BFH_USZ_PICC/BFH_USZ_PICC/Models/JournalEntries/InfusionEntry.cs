@@ -37,7 +37,21 @@ namespace BFH_USZ_PICC.Models
         //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
         public string TypeAntibioticName { get; set; }
         public InfusionAdministration Administration { get; set; }
-        
+
+        public InfusionEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            Type = InfusionType.NoInformation;
+            Administration = InfusionAdministration.NoInformation;
+            TypeAntibioticName = null;
+
+            Entry = AllPossibleJournalEntries.InfusionEntry;
+        }
+
+
         public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
             InfusionAdministration administration, string antibioticName)
         {

@@ -13,7 +13,17 @@ namespace BFH_USZ_PICC.Models
     public class AdministeredDrugEntry : JournalEntry
     {
         public string Drug { get; set; }
-              
+
+        public AdministeredDrugEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            Drug = null;
+
+            Entry = AllPossibleJournalEntries.AdministeredDrugEntry;
+        }
         public AdministeredDrugEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
         {
             CreationDateTime = creationalDateTime;
@@ -24,6 +34,5 @@ namespace BFH_USZ_PICC.Models
 
             Entry = AllPossibleJournalEntries.AdministeredDrugEntry; 
         }
-
     }
 }

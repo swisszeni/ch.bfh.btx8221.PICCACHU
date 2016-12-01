@@ -20,15 +20,16 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new BloodWithdrawalViewModel(null);
-            
+            ((BloodWithdrawalViewModel)BindingContext).DisplayingEntry = new BloodWithdrawalEntry();
+            ((BloodWithdrawalViewModel)BindingContext).IsEnabledOrVisible = true;
         }
 
         public BloodWithdrawalEntryPage(ContentPage contained, BloodWithdrawalEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new BloodWithdrawalViewModel(entry);
+            ((BloodWithdrawalViewModel)BindingContext).DisplayingEntry = entry;
+            ((BloodWithdrawalViewModel)BindingContext).IsEnabledOrVisible = false;
 
         }
 

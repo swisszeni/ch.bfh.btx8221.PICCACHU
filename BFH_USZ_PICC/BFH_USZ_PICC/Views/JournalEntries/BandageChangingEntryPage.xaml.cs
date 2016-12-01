@@ -11,25 +11,37 @@ using BFH_USZ_PICC.ViewModels.JournalEntries;
 
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
+    
     public sealed partial class BandageChangingEntryPage : BaseContentPage
     {
+        private bool _firstAppearing = true;
         public BandageChangingEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new BandageChangingViewModel(null);
-            
+            ((BandageChangingViewModel)BindingContext).DisplayingEntry = new BandageChangingEntry();
+            ((BandageChangingViewModel)BindingContext).IsEnabledOrVisible = true;
+
+
         }
 
         public BandageChangingEntryPage(ContentPage contained, BandageChangingEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new BandageChangingViewModel(entry);
+            ((BandageChangingViewModel)BindingContext).DisplayingEntry = entry;
+            ((BandageChangingViewModel)BindingContext).IsEnabledOrVisible = false;
 
+        }
+
+        public override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_firstAppearing)
+            {
+                ((BandageChangingViewModel)BindingContext).CheckForMainentanceInstruction.Execute(null);
+                _firstAppearing = false;
+            }
         }
 
         void AddPickers()

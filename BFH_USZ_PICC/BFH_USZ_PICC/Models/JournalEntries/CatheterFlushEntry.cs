@@ -44,6 +44,21 @@ namespace BFH_USZ_PICC.Models
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
+        public CatheterFlushEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            Type = FlushType.NoInformation;
+            Reason = FlushReason.NoInformation;
+            Result = FlushResult.NoInformation;
+            QuantityInMilliliter = 0;
+            IsBloodReflowVisible = false;
+
+            Entry = AllPossibleJournalEntries.CatheterFlushEntry;
+        }
+
         public CatheterFlushEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, FlushType type, FlushResult result,
             FlushReason reason, double quantityInMilliliter, bool isBloodReflowVisible)
         {

@@ -5,7 +5,8 @@
              xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate JournalOverviewPageAdministeredDrugEntry}">
+             Title="{i18n:Translate JournalOverviewPageAdministeredDrugEntry}"
+             BindingContext="{Binding [AdministeredDrugViewModel], Source={StaticResource ViewModelLocator}}">
   <Grid.Resources>
     <ResourceDictionary>
       <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
@@ -16,11 +17,11 @@
   <ScrollView>
     <StackLayout x:Name="DrugEntryLayout" Orientation="Vertical">
       <Label Text ="Bitte geben Sie an, welches Medikament Ihnen verabreicht wurde:" VerticalTextAlignment="Center" FontSize="20"/>
-      <Entry x:Name="DrugEntry" Text="{Binding Drug}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <Entry x:Name="DrugEntry" Text="{Binding Drug}" IsEnabled="{Binding IsEnabledOrVisible, Mode=TwoWay}"/>
       <Label Text ="An welchem Datum wurde Ihnen das Medikament verabreicht?" VerticalTextAlignment="Center" FontSize="20"/>
-      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible, Mode=TwoWay}"/>
       <Label Text="Welche Institution hat Ihnen das Medikament verabreicht?" FontSize="20"/>
-      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}">
+      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible, Mode=TwoWay}">
         <!--<Picker.Items>
         <i18n:TranslateExtension Text="JournalEntryNotSpecifiedText"/>     
       </Picker.Items>-->

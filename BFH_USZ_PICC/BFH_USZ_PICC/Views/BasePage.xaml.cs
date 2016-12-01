@@ -12,6 +12,7 @@ namespace BFH_USZ_PICC.Views
     /// </summary>
     public sealed partial class BasePage : ContentPage
     {
+        private BaseContentPage content;
         public BasePage(Type contentElementType, List<object> args = null)
         {
             InitializeComponent();
@@ -25,16 +26,22 @@ namespace BFH_USZ_PICC.Views
             // convert to array
             object[] argsArray = args.ToArray();
 
-            BaseContentPage contentElement = (BaseContentPage)Activator.CreateInstance(contentElementType, argsArray);
+            content = (BaseContentPage)Activator.CreateInstance(contentElementType, argsArray);
 
-            FlyoutPositioningLayout.Children.Insert(0, contentElement);
-            AbsoluteLayout.SetLayoutBounds(contentElement, new Rectangle(0, 0, 1, 1));
-            AbsoluteLayout.SetLayoutFlags(contentElement, AbsoluteLayoutFlags.All);
+            FlyoutPositioningLayout.Children.Insert(0, content);
+            AbsoluteLayout.SetLayoutBounds(content, new Rectangle(0, 0, 1, 1));
+            AbsoluteLayout.SetLayoutFlags(content, AbsoluteLayoutFlags.All);
 
-            Title = contentElement.Title;
+            Title = content.Title;
 
             ToolbarItem alert = new ToolbarItem("Alarm", "icon.png", () => { EmergencyOverLay.IsVisible = !EmergencyOverLay.IsVisible; });
             ToolbarItems.Add(alert);
         }
+
+        protected override void OnAppearing()
+        {
+            content.OnAppearing();
+        }
+
     }
 }
