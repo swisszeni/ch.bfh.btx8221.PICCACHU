@@ -42,11 +42,17 @@ namespace BFH_USZ_PICC.Droid
             MetricsManager.Register(Application);
         }
 
+        /// <summary>
+        /// Checks HockeyApp if updats fo the App are available
+        /// </summary>
         void CheckForUpdates()
         {
             UpdateManager.Register(this);
         }
 
+        /// <summary>
+        /// Handles unregistering of the managers when the App is suspended
+        /// </summary>
         void UnregisterManagers()
         {
             UpdateManager.Unregister();
