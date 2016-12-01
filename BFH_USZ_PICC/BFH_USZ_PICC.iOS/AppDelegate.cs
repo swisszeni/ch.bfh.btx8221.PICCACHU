@@ -6,6 +6,7 @@ using UserNotifications;
 using Foundation;
 using UIKit;
 using HockeyApp.iOS;
+using BFH_USZ_PICC.Utilitys;
 
 namespace BFH_USZ_PICC.iOS
 {
@@ -24,13 +25,14 @@ namespace BFH_USZ_PICC.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            InitializeHockeyApp();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new BFH_USZ_PICC.Application());
 
             // Request notification permissions from the user
             UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
                 // Handle approval
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(registerNotificationTypes);
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(RegisterNotificationTypes);
                 
             });
 
@@ -39,15 +41,21 @@ namespace BFH_USZ_PICC.iOS
                 var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
             });
 
-            // Enable crashlog with HockeyApp
-            var manager = BITHockeyManager.SharedHockeyManager;
-            manager.Configure("5f9acbf75fc1485dbc6fab3a278f5920");
-            manager.StartManager();
-            manager.Authenticator.AuthenticateInstallation();
             return base.FinishedLaunching(app, options);
         }
 
-        private void registerNotificationTypes()
+        /// <summary>
+        /// Registering the platform specific parts of HockeyApp to track events and crashes.
+        /// </summary>
+        private void InitializeHockeyApp()
+        {
+            var manager = BITHockeyManager.SharedHockeyManager;
+            manager.Configure(HockeyAppHelper.AppIds.HockeyAppId_iOS);
+            manager.StartManager();
+            manager.Authenticator.AuthenticateInstallation();
+        }
+
+        private void RegisterNotificationTypes()
         {
             var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
             UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);

@@ -6,11 +6,11 @@ using Windows.UI.Notifications;
 using System.Collections.Generic;
 using Windows.Data.Xml.Dom;
 
-[assembly: Dependency(typeof(ReminderNotification))]
+[assembly: Dependency(typeof(ReminderNotification_UWP))]
 
 namespace BFH_USZ_PICC.UWP.DependencyServices
 {
-    public class ReminderNotification : IReminderNotification
+    public class ReminderNotification_UWP : IReminderNotification
     {
         //Property to handle the planned notifications
         private ToastNotifier ToastNotifier = ToastNotificationManager.CreateToastNotifier();

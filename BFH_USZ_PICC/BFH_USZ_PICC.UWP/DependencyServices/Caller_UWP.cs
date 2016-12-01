@@ -5,11 +5,11 @@ using Windows.ApplicationModel.Calls;
 using Windows.Foundation.Metadata;
 using System;
 
-[assembly: Dependency(typeof(Caller))]
+[assembly:Dependency(typeof(Caller_UWP))]
 
 namespace BFH_USZ_PICC.UWP.DependencyServices
 {
-    public class Caller : ICaller
+    public class Caller_UWP : ICaller
     {
         public bool CanMakePhonecall()
         {
