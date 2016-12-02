@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -16,15 +17,7 @@ namespace BFH_USZ_PICC.Views
             Edit,
             View
         }
-
-        List<string> PiccPositions = new List<string>() { "hallo", "test", "jodel"};
-
-        //public List<string> PiccPositions { get; set; } = new List<string>()
-        //{
-        // AppResources.PICCDetailPagePickerNotDefinedText;
-
-        //}
-
+        
         private PICCDetailPageDisplayMode displayMode = PICCDetailPageDisplayMode.Create;
 
         /// <summary>
@@ -54,7 +47,8 @@ namespace BFH_USZ_PICC.Views
             Title = AppResources.PICCDetailPageAddNewPICCTitle;
             displayMode = PICCDetailPageDisplayMode.Create;
             AddPickerItems();
-                      
+          //  ((PICCDetailViewModel)BindingContext).DisplayingEntry  = new PICC(model, DateTime.Now, PICC.PICCInsertCountry.Undefined, null, PICC.PICCInsertSide.Undefined, PICC.PICCInsertPosition.Undefined);
+            
         }    
 
         /// <summary>
@@ -96,6 +90,7 @@ namespace BFH_USZ_PICC.Views
             PiccSidePicker.IsEnabled = enable;
             PiccPositionPicker.IsEnabled = enable;
             PiccFrench.IsEnabled = enable;
+            PiccLumen.IsEnabled = enable;
             CountryPicker.IsEnabled = enable;
             PiccRemoveButton.IsEnabled = enable;
 

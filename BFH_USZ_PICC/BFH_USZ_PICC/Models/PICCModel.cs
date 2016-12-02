@@ -14,9 +14,63 @@ namespace BFH_USZ_PICC.Models
             if (modelList == null)
             {
                 modelList = new List<PICCModel>();
-                modelList.Add(new PICCModel("Einlumiger Picc", 3.4, "EinlumigerPICC.PNG", ""));
-                modelList.Add(new PICCModel("Zweilumiger Picc", 3.9, "DoppellumigerPICC.PNG", "9783468201226"));
-                modelList.Add(new PICCModel("Dreilumiger Picc", 4.4, null, ""));
+                modelList.Add(new PICCModel("POWERPICC 4FR SL FT", 50, 1, 4, "18", "16615", "+H303617410805", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 4FR SL", 135, 1, 4, "18", "16615", "+H303617433507", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 4FR SL", 70, 1, 4, "18", "16615", "+H303617435509", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 5FR SL", 135, 1, 5, "18", "16615", "+H303617533508", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 5FR SL", 70, 1, 5, "18", "16615", "+H30361753550A", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 5FR DL FT", 50, 2, 5, "18 / 18", "16615", "+H303627510807", "DoppellumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 5FR DL", 135, 2, 5, "18 / 18", "16615", "+H303627533509", "DoppellumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 5FR DL", 70, 2, 5, "18 / 18", "16615", "+H30362753550B", "DoppellumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 6FR 3L", 50, 3, 6, "17 / 19 / 19", "16615", "+H303627611809", "DreilumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 6FR TL", 135, 3, 6, "17 / 19 / 19", "16615", "+H30363863350C", "DreilumigerPICC.PNG"));
+                modelList.Add(new PICCModel("PowerPICC Katheter 6F DL Intervent.Set m. 135cm GW", 135, 2, 6, "18 / 18", "16615", "+H30362763350A", "DoppellumigerPICC.PNG"));
+                modelList.Add(new PICCModel("PowerPICC Katheter 6F TL Intervent.Set m. 70cm GW", 70, 3, 6, "17 / 19 / 19", "16615", "+H30363863550E", "DreilumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 4FR 1L", 50, 1, 4, "18", "16615", "+H303617411806", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 6FR TL FT", 50, 3, 6, "17 / 19 / 19", "16615", "+H30363861080A", "DreilumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERGROSHONG 5F SL BASIC 45CM",     45,  1,   5,   "17", "16615", "+H30368185180F", "EinlumigerPICC.PNG"));
+
+
+//                POWERGROSHONG 5F SL BASIC 55CM      55  1   5   17  16615 * +H30369185180G *
+//                        POWERGROSHONG 5F SL FT 45CM     45  1   5   17  16615 * +H30368185080E *
+//                        POWERGROSHONG 5F SL FT 55CM     55  1   5   17  16615 * +H30369185080F *
+//                        4FR SL POWERPICC 3CG FULL TRAY      70  1   4   18
+//5FR SL POWERPICC 3CG FULL TRAY      70  1   5   18
+//4FR SL POWERPICC SOLO 3CG FULL      70  1   4   18
+//5FR SL POWERPICC SOLO 3CG FULL      70  1   5   18
+//5FR DL POWERPICC 3CG FULL TRAY      70  2   5   18 / 18
+//5FR DL POWERPICC SOLO 3CG FULL      70  2   5   18 / 18
+//6FR TL POWERPICC SOLO 3CG FULL      70  3   6   17 / 19 / 19
+//6FR TL POWERPICC SOLO 3CG FULL      70  3   6   17 / 19 / 19
+//POWERPICC SOLO 4FR SL   50  1   4   18  16615 * +H303619411808 *
+//POWERPICC SOLO 4FR SL   135 1   4   18  16615 * +H303619433509 *
+//POWERPICC SOLO 4FR SL   70  1   4   18  16615 * +H30361943550B *
+//POWERPICC SOLO 5FR SL   50  1   5   18  16615 * +H303619511809 *
+//POWERPICC SOLO 5FR SL   135 1   5   18  16615 * +H30361953350A *
+//POWERPICC SOLO 5FR SL   70  1   5   18  16615 * +H30361953550C *
+//POWERPICC SOLO 5FR DL   50  2   5   18 / 18   16615 * +H30362951180A *
+//  POWERPICC SOLO 5FR DL   135 2   5   18 / 18   16615 * +H30362953350B *
+//    POWERPICC SOLO 6FR TL   50  3   6   17 / 19 / 19    16615 * +H30363961180C *
+//        POWERPICC SOLO 6FR TL   135 3   6   17 / 19 / 19    16615 * +H30363963350D *
+//            POWERPICC SOLO 6FR TL   70  3   6   17 / 19 / 19    16615 * +H30363963550F *
+//                PowerPICC Solo2 4F SL Komplettset m. 50cm GW    50  1   4   18  16615 * +H303619410807 *
+//                PowerPICC Solo2 5F DL Komplettset m. 50cm GW    50  2   5   18 / 18   16615 * +H303629510809 *
+//                  PowerPICC Solo2 6F TL Komplettset m. 50cm GW    50  3   6   17 / 19 / 19    16615 * +H30363961080B *
+//                      POWERPICC SOLO 5FR DL   70  2   5   18 / 18   16615 * +H30362953550D *
+//                        Groshong ClearVue PICC 4F SL Basisset       1   4   18  16615 + H3037617405CE2 -
+//                        Groshong ClearVue PICC 4F SL Basisset RadStic MI        1   4   18  16615 * +H3037655405CE2_ *
+//                        Groshong PICC 3F SL Basisset Introcan MI        1   3   20  16615 * +H303771530506 *
+//                        Groshong PICC 3F SL Basisset RadStic MI     1   3   20  16615 * +H30377553050A *
+//                        Groshong NXT PICC 5F DL 45cm Basisset Excalibur MI      2   5   19 / 19   16615 * +H30378275050C *
+//                          Groshong NXT PICC 5F DL 45cm Basisset RadStic MI        2   5   19 / 19   16615 + H3037857505CE20
+//Groshong NXT PICC 5F DL 55cm Basisset Excalibur MI      2   5   19 / 19   16615 * +H30379275050D *
+//  Groshong NXT PICC 5F DL 55cm Basisset RadStic MI        2   5   19 / 19   16615 + H3037957505CE21
+//POWERPICC 5FR 1L    50  1   5   18  16615 * +H303617511807 *
+//POWERPICC 5FR 2L    50  2   5   18 / 18   16615 * +H303627511808 *
+//  POWERPICC 6FR 3L    50  3   6   17 / 19 / 19    16615 * +H303638610507 *
+
+
+
 
             }
 
@@ -24,16 +78,28 @@ namespace BFH_USZ_PICC.Models
         }
 
         public string PICCName { get; set; }
-        public double FrenchSize { get; set; }
+        public int Lumen { get; set; }
+        public double FrenchDiameter { get; set; }
         public string PictureUri { get; set; }
         public string Barcode { get; set; }
 
-        public PICCModel(string piccName, double frenchSize, string pictureUri, string barcode)
+        public double GuideWireLenght { get; set; }
+        public string Gauge { get; set; }
+
+        public string GNDMCode { get; set; }
+
+
+        public PICCModel(string piccName, double guideWireLenght, int lumen, double frenchDiameter, string gauge, string gndmCode, string barcode, string pictureUri)
         {
-            this.PICCName = piccName;
-            this.FrenchSize = frenchSize;
-            this.PictureUri = pictureUri;
-            this.Barcode = barcode;
+            PICCName = piccName;
+            GuideWireLenght = guideWireLenght;
+            Lumen = lumen;
+            FrenchDiameter = frenchDiameter;
+            Gauge = gauge;
+            GNDMCode = gndmCode;
+            Barcode = barcode;
+            PictureUri = pictureUri;
+
         }
     }
 }

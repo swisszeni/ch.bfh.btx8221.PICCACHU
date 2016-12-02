@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DoppellumigerPICC.PNG" />
+    <Content Include="DreilumigerPICC.PNG" />
     <Content Include="EinlumigerPICC.PNG" />
     <Content Include="icon.png" />
     <Content Include="PiccPlatzierung.PNG" />

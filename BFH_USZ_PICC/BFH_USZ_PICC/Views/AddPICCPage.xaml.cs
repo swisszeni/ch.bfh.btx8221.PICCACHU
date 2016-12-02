@@ -97,7 +97,7 @@ namespace BFH_USZ_PICC.Views
         /// <param name="e"></param>
         void AddPiccManualButtonClick(object o, EventArgs e)
         {
-            PICCModel model = new PICCModel(null, 0, null, null);
+            PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
             Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
         }
 
@@ -161,7 +161,7 @@ namespace BFH_USZ_PICC.Views
             if (registerManually)
             {
                 // User wants to create model manually, create a new model with the searchterm preset as text
-                PICCModel model = new PICCModel(PICCEntry.Text, 0, null, null);
+                PICCModel model = new PICCModel(PICCEntry.Text, 0, 0, 0, null, null, null, null);
                 await Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
             }
             else

@@ -12,10 +12,6 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class PICCDetailViewModel : ViewModelBase
     {
-        public PICCDetailViewModel(PICC picc)
-        {
-            DisplayingEntry = picc;
-        }
 
         private PICC _displayingEntry;
         public PICC DisplayingEntry
@@ -23,7 +19,7 @@ namespace BFH_USZ_PICC.ViewModels
             get { return _displayingEntry; }
             set
             {
-                if(Set(ref _displayingEntry, value))
+                if (Set(ref _displayingEntry, value))
                 {
                     // Update all bindings
                     RaisePropertyChanged("");
@@ -34,160 +30,142 @@ namespace BFH_USZ_PICC.ViewModels
         /// <summary>
         /// Returns the binded name or sets a new name to the related object
         /// </summary>
+        private string _piccName;
         public string PiccName
         {
-            get { return DisplayingEntry.PICCModel.PICCName; }
+            get { return _piccName; }
             set
             {
-                if (DisplayingEntry.PICCModel.PICCName != value)
-                {
-                    DisplayingEntry.PICCModel.PICCName = value;
-                    RaisePropertyChanged("PiccName");
-                }
+                Set(ref _piccName, value);
             }
+
         }
 
         /// <summary>
         /// Returns the image string for the current picc or sets a new image string to the related object
         /// </summary>
+        public string _imageSource;
         public string ImageSource
         {
-            get { return DisplayingEntry.PICCModel.PictureUri; }
+            get { return _imageSource; }
             set
             {
-                if (DisplayingEntry.PICCModel.PictureUri != value)
-                {
-                    DisplayingEntry.PICCModel.PictureUri = value;
-                    RaisePropertyChanged("ImageSource");
-                }
+                Set(ref _imageSource, value);
             }
+
         }
 
         /// <summary>
         /// Returns the binded size or sets a new size to the related object
         /// </summary>
-        public double FrenchSize
+        private double _frenchDiameter;
+        public double FrenchDiameter
         {
-            get { return DisplayingEntry.PICCModel.FrenchSize; }
+            get { return _frenchDiameter; }
             set
             {
-                if (DisplayingEntry.PICCModel.FrenchSize != value)
-                {
-                    DisplayingEntry.PICCModel.FrenchSize = value;
-                    RaisePropertyChanged("FrenchSize");
-                }
+                Set(ref _frenchDiameter, value);
+            }
+
+        }
+
+        private int _lumen;
+        public int Lumen
+        {
+            get { return _lumen; }
+            set
+            {
+                Set(ref _lumen, value);
             }
         }
 
         /// <summary>
         /// Returns the binded date or sets a new date to the related object
         /// </summary>
+
+        private DateTime _insertDate;
         public DateTime InsertDate
         {
-            get { return DisplayingEntry.InsertDate; }
+            get
+            { return _insertDate; }
+
             set
             {
-                if (DisplayingEntry.InsertDate != value)
-                {
-                    DisplayingEntry.InsertDate = value;
-                    RaisePropertyChanged("InsertDate");
-                }
+                Set(ref _insertDate, value);
             }
         }
 
         /// <summary>
         /// Returns the binded expiration date or sets a new date to the related object
         /// </summary>
-        public DateTime? RemovalDate
+
+        private DateTime _removalDate;
+        public DateTime RemovalDate
         {
             get
             {
-                if (DisplayingEntry.RemovalDate != null)
-                {
-                    return DisplayingEntry.RemovalDate;
-                }
-
-                return DateTime.Today;
+                return _removalDate;
             }
+
+
             set
             {
-                if (DisplayingEntry.RemovalDate != value)
-                {
-                    DisplayingEntry.RemovalDate = value;
-                    RaisePropertyChanged("RemovalDate");
-                }
+                Set(ref _removalDate, value);
             }
         }
 
+
+        private bool _isRemovalDateSet;
         public bool IsRemovalDateSet
         {
-            get { return DisplayingEntry.IsNotActiveAnymore; }
+            get { return _isRemovalDateSet; }
             set
             {
-                if (DisplayingEntry.IsNotActiveAnymore != value)
-                {
-                    DisplayingEntry.IsNotActiveAnymore = value;
-                    RaisePropertyChanged("IsRemovalDateSet");
-                }
+                Set(ref _isRemovalDateSet, value);
             }
         }
 
         /// <summary>
         /// Returns the binded picc position or sets a new picc position to the related object
         /// </summary>
+        private PICCInsertPosition _piccPosition;
         public PICCInsertPosition PiccPosition
         {
-            get
-            {
-                return DisplayingEntry.InsertPosition;
-            }
-
+            get { return _piccPosition; }
             set
             {
-                if (DisplayingEntry.InsertPosition != value)
-                {
-                    DisplayingEntry.InsertPosition = value;
-                    RaisePropertyChanged("PiccPosition");
-                }
+                Set(ref _piccPosition, value);
             }
         }
 
         /// <summary>
         /// Returns the binded picc side or sets a new picc side to the related object
         /// </summary>
+        private PICCInsertSide _piccSide;
         public PICCInsertSide PiccSide
         {
-            get
-            {
-                return DisplayingEntry.InsertSide;
-            }
-
+            get { return _piccSide; }
             set
             {
-                if (DisplayingEntry.InsertSide != value)
-                {
-                    DisplayingEntry.InsertSide = value;
-                    RaisePropertyChanged("PiccSide");
-                }
+                Set(ref _piccSide, value);
             }
         }
 
         /// <summary>
         /// Returns the binded country or sets a new country to the related object
         /// </summary>
+
+        private PICCInsertCountry _insertCountry;
         public PICCInsertCountry InsertCountry
         {
-            get
-            {
-                return DisplayingEntry.InsertCountry;
-            }
-
+            get { return _insertCountry; }
             set
             {
-                if (DisplayingEntry.InsertCountry != value)
+                Set(ref _insertCountry, value);
+
+                if (value == PICCInsertCountry.Undefined)
                 {
-                    DisplayingEntry.InsertCountry = value;
-                    RaisePropertyChanged("InsertCountry");
+                    City = null;
                 }
             }
 
@@ -196,24 +174,23 @@ namespace BFH_USZ_PICC.ViewModels
         /// <summary>
         /// Returns the binded city if "Ausland" or "Switzerland" is selected as country. Sets a new city to the related object.
         /// </summary>
+
+        private string _city;
         public string City
         {
             get
             {
                 if (DisplayingEntry.InsertCountry != PICCInsertCountry.Undefined)
                 {
-                    return DisplayingEntry.InsertCity;
+                    return _city;
                 }
-                return " ";
+                return null;
             }
 
             set
             {
-                if (DisplayingEntry.InsertCity != value && DisplayingEntry.InsertCountry != PICCInsertCountry.Undefined)
-                {
-                    DisplayingEntry.InsertCity = value;
-                    RaisePropertyChanged("City");
-                }
+
+                Set(ref _city, value);
             }
         }
     }
