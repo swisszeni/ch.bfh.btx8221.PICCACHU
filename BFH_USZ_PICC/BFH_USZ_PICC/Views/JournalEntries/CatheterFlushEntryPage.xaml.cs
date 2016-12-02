@@ -20,7 +20,8 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new CatheterFlushViewModel(null);
+            ((CatheterFlushViewModel)BindingContext).DisplayingEntry = new CatheterFlushEntry();
+            ((CatheterFlushViewModel)BindingContext).IsEnabledOrVisible = true;
 
         }
 
@@ -28,7 +29,8 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new CatheterFlushViewModel(entry);
+            ((CatheterFlushViewModel)BindingContext).DisplayingEntry = entry;
+            ((CatheterFlushViewModel)BindingContext).IsEnabledOrVisible = false;
 
         }
 

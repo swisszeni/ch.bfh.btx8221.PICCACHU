@@ -606,6 +606,10 @@
           <source>With resistance continuous</source>
           <target state="new">With resistance continuous</target>
         </trans-unit>
+        <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
+          <source>Maintenance instruction</source>
+          <target state="new">Maintenance instruction</target>
+        </trans-unit>
       </group>
     </body>
   </file>

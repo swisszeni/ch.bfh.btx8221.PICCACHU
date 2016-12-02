@@ -16,20 +16,32 @@ namespace BFH_USZ_PICC.Views.JournalEntries
     /// </summary>
     public sealed partial class MicroClaveChangingEntryPage : BaseContentPage
     {
+        private bool _firstAppearing = true;
         public MicroClaveChangingEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new MicroClaveChangingViewModel(null);
-            
-        }
+            ((MicroClaveChangingViewModel)BindingContext).DisplayingEntry = new MicroClaveChangingEntry();
+            ((MicroClaveChangingViewModel)BindingContext).IsEnabledOrVisible = true;
+
+        }               
 
         public MicroClaveChangingEntryPage(ContentPage contained, MicroClaveChangingEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new MicroClaveChangingViewModel(entry);
+            ((MicroClaveChangingViewModel)BindingContext).DisplayingEntry = entry;
+            ((MicroClaveChangingViewModel)BindingContext).IsEnabledOrVisible = false;
 
+        }
+        public override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_firstAppearing)
+            {
+                ((MicroClaveChangingViewModel)BindingContext).CheckForMainentanceInstruction.Execute(null);
+                _firstAppearing = false;
+            }
         }
 
         void AddPickers()

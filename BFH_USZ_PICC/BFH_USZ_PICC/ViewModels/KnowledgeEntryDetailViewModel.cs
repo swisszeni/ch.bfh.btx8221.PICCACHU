@@ -32,7 +32,7 @@ namespace BFH_USZ_PICC.ViewModels
             get { return _selectedGlossaryEntry; }
             set
             {
-                if (Set(ref _selectedGlossaryEntry, value) & _selectedGlossaryEntry != null)
+                if (Set(ref _selectedGlossaryEntry, value) & value != null)
                 {
                     Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
                 }

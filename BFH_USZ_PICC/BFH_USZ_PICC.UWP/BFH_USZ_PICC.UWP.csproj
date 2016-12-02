@@ -122,6 +122,16 @@
     <Content Include="DreilumigerPICC.PNG" />
     <Content Include="EinlumigerPICC.PNG" />
     <Content Include="icon.png" />
+    <Content Include="MicroClave1.jpg" />
+    <Content Include="MicroClave10.jpg" />
+    <Content Include="MicroClave2.jpg" />
+    <Content Include="MicroClave3.jpg" />
+    <Content Include="MicroClave4.jpg" />
+    <Content Include="MicroClave5.jpg" />
+    <Content Include="MicroClave6.jpg" />
+    <Content Include="MicroClave7.jpg" />
+    <Content Include="MicroClave8.jpg" />
+    <Content Include="MicroClave9.jpg" />
     <Content Include="PiccPlatzierung.PNG" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -132,6 +142,25 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="slideout.png" />
+    <Content Include="StatLock1.jpg" />
+    <Content Include="StatLock2.jpg" />
+    <Content Include="StatLock3.jpg" />
+    <Content Include="StatLock4.jpg" />
+    <Content Include="StatLock5.jpg" />
+    <Content Include="StatLock6.jpg" />
+    <Content Include="StatLock7.jpg" />
+    <Content Include="Verbandswechsel1.jpg" />
+    <Content Include="Verbandswechsel10.jpg" />
+    <Content Include="Verbandswechsel11.jpg" />
+    <Content Include="Verbandswechsel12.jpg" />
+    <Content Include="Verbandswechsel2.jpg" />
+    <Content Include="Verbandswechsel3.jpg" />
+    <Content Include="Verbandswechsel4.jpg" />
+    <Content Include="Verbandswechsel5.jpg" />
+    <Content Include="Verbandswechsel6.jpg" />
+    <Content Include="Verbandswechsel7.jpg" />
+    <Content Include="Verbandswechsel8.jpg" />
+    <Content Include="Verbandswechsel9.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

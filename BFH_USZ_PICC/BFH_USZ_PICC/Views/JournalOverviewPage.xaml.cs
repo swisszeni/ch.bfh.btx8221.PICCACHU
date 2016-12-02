@@ -17,9 +17,6 @@ namespace BFH_USZ_PICC.Views
         public JournalOverviewPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            //Binds all journal entries to the binding context 
-            BindingContext = new JournalOverviewViewModel();         
-          
         }
 
         void SelectedEntry(object sender, EventArgs e)

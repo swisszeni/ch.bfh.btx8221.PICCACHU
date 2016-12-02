@@ -4,30 +4,19 @@
              x:Class="BFH_USZ_PICC.Views.MaintenanceInstructionPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
-
-  <!--xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"-->
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             Title="{i18n:Translate MaintenanceInstructionTitleText}"
+             BindingContext="{Binding [MaintenanceInstructionViewModel], Source={StaticResource ViewModelLocator}}">
   <Grid>
-    <cv:CarouselView x:Name="InstructionCarousel">
+    <cv:CarouselView x:Name="InstructionCarousel" ItemsSource="{Binding MaintenanceInstruction}">
       <cv:CarouselView.ItemTemplate>
         <DataTemplate>
-          <StackLayout>
-            <Image Source="icon.png" />
-            <Label Text="TEST" />            
-          </StackLayout>
-
-          <!--<Grid>
-             <Grid.RowDefinitions>
-                          <RowDefinition Height="*"/>
-                          <RowDefinition Height="Auto"/>                        
-            </Grid.RowDefinitions>
-            -->
-          <!--<Image Source="Icon.png" Grid.RowSpan="2"/>-->
-          <!--
-             <StackLayout Grid.Row="1">
-              <Label Text="Test"/>                        
+          <ScrollView>
+            <StackLayout>
+              <Image Source="{Binding ImageUrl}" Margin ="10,10,10,10"/>
+              <Label Text="{Binding Explanation}" Margin ="10,10,10,10" FontSize="20" />
             </StackLayout>
-          </Grid>-->
+          </ScrollView>
         </DataTemplate>
       </cv:CarouselView.ItemTemplate>
     </cv:CarouselView>

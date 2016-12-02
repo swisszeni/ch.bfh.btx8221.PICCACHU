@@ -10,8 +10,8 @@ namespace BFH_USZ_PICC.Models
     {
         NoInformation,
         Routine,
-        Pollution,
         SticksUnsatisfactorily,
+        Pollution,
         DamagedWing
     }
     /// <summary>
@@ -20,7 +20,18 @@ namespace BFH_USZ_PICC.Models
     public class StatlockChangingEntry : JournalEntry
     {      
 
-        public StatLockChangementReason Reason { get; set; }        
+        public StatLockChangementReason Reason { get; set; }
+
+        public StatlockChangingEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            Reason = StatLockChangementReason.NoInformation;
+
+            Entry = AllPossibleJournalEntries.StatlockEntry;
+        }
 
         public StatlockChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, StatLockChangementReason reason)
         {

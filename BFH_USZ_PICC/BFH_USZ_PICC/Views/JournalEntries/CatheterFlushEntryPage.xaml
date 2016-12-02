@@ -5,7 +5,8 @@
              xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate JournalOverviewPageCatheterFlushEntry}">
+             Title="{i18n:Translate JournalOverviewPageCatheterFlushEntry}"
+             BindingContext="{Binding [CatheterFlushViewModel], Source={StaticResource ViewModelLocator}}">
   <Grid.Resources>
     <ResourceDictionary>
       <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
@@ -24,7 +25,7 @@
       <Picker x:Name="FlushTypePicker" SelectedIndex="{Binding Type, Converter={StaticResource FlushTypeToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label Text ="Bitte geben Sie die Menge der verabreichten Lösung an (in mml):" VerticalTextAlignment="Center" FontSize="20"/>
       <Entry x:Name="FlushQuantity" Text="{Binding QuantityInMilliliter}" Keyboard="Numeric" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="Wie ist die Durchgängingkeit des Katheters nach der Spülung?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text ="Wie ist die Durchgängigkeit des Katheters nach der Spülung?" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="FlushResultPicker" SelectedIndex="{Binding Result, Converter={StaticResource FlushResultToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <StackLayout Orientation="Horizontal" Padding="0, 0, 0, 20">
         <Label Text ="Ist ein Blutrückfluss feststellbar?" VerticalTextAlignment="Center" FontSize="20"/>
