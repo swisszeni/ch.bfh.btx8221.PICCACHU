@@ -15,30 +15,14 @@ namespace BFH_USZ_PICC
         public Application()
         {
             InitializeComponent();
-            // The root page of your application
-            //MainPage = new ContentPage
-            //{
-            //    Content = new StackLayout
-            //    {
-            //        VerticalOptions = LayoutOptions.Center,
-            //        Children = {
-            //            new Label {
-            //                XAlign = TextAlignment.Center,
-            //                Text = "Welcome to Xamarin Forms! Hallo Florian :)"
-            //            }
-            //        }
-            //    }
-            //};
 
             MainPage = new Shell();
-           
         }
 
         protected override void OnStart()
         {            
             // Handle when your app startss
             SetLocale();
-            //((Shell)MainPage).CheckForFirstStart();
         }
 
         protected override void OnSleep()

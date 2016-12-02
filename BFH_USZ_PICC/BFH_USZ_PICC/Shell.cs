@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Controls;
 using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.Services;
 using BFH_USZ_PICC.ViewModels;
 using BFH_USZ_PICC.Views;
 using System;
@@ -34,7 +35,6 @@ namespace BFH_USZ_PICC
 
             InvalidateMeasure();
             isFirstStart = true;
-            //CheckForFirstStart();
         }
 
         public async Task NavigateAsync(MenuItemKey id)
@@ -107,17 +107,14 @@ namespace BFH_USZ_PICC
 
         public async void CheckForFirstStart()
         {
-            //Test for first start. bool should check if the user starts the app for the first time and ask him if he wants to add his personal master data
-            
-            if (isFirstStart)
+            //Test for first start. bool should check if the user starts the app for the first time and ask him if he wants to add his personal data
+            if (SettingsService.FirstAppExecution)
             {
-                isFirstStart = false;
+                SettingsService.FirstAppExecution = false;
                 var masterData = await AskUserToAddMasterData();
                 if (masterData)
                 {
-                    //NavigateAsync(MenuItemKey.UserMasterData);
                     await DeepNavigateAsync(MenuItemKey.Settings, typeof(UserMasterDataPage), new List<object> { UserMasterDataPageDisplayMode.Edit });
-                    
                 }
             }
         }
