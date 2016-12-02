@@ -86,7 +86,7 @@
     <BuildIpa>True</BuildIpa>
     <CodesignKey>iPhone Developer: Florian Schnyder (6MQU9RCR8H)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>b48066d3-4672-4f7e-88d8-bb81ddc9d27a</CodesignProvision>
+    <CodesignProvision>9d361c58-5361-4bb8-b8f7-cf6d5325848d</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
