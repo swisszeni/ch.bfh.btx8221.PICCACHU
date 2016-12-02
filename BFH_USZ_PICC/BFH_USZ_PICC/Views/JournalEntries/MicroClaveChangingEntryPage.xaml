@@ -19,7 +19,7 @@
     <StackLayout Orientation="Vertical">
       <Label Text ="Bitte geben Sie an, warum Ihr MicroClave gewechselt werden musste:" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="MicroClaveChaningReasonPicker" SelectedIndex="{Binding Reason, Converter={StaticResource MicroClaveChangementReasonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="An welchem Datum wurde Ihnen das Medikament verabreicht?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text ="An welchem Datum wurde Ihr MicroClave gewechselt?" VerticalTextAlignment="Center" FontSize="20"/>
       <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label Text="Welche Institution hat Ihnen beim Wechsel des MicroClave geholfen?" FontSize="20"/>
       <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
