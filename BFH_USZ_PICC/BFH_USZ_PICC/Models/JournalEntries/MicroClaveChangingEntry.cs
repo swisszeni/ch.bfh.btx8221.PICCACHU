@@ -18,7 +18,18 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class MicroClaveChangingEntry : JournalEntry
     {
-        public MicroClaveChangementReason Reason { get; set; }        
+        public MicroClaveChangementReason Reason { get; set; }
+
+        public MicroClaveChangingEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            Reason = MicroClaveChangementReason.NoInformation;
+
+            Entry = AllPossibleJournalEntries.MicroClaveEntry;
+        }
 
         public MicroClaveChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, MicroClaveChangementReason reason)
         {

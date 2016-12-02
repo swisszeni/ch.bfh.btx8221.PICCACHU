@@ -4,8 +4,9 @@
              x:Class="BFH_USZ_PICC.Views.JournalOverviewPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-                   xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
-             Title="{i18n:Translate JournalOverviewPageTitleText}">
+             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             Title="{i18n:Translate JournalOverviewPageTitleText}"
+             BindingContext="{Binding [JournalOverviewViewModel], Source={StaticResource ViewModelLocator}}">
   <Grid>
     <Grid.Resources>
       <ResourceDictionary>
@@ -24,7 +25,7 @@
               WinPhone="20, 20, 20, 0" />
       </Button.Margin>
     </Button>
-    <ListView x:Name="JournalList" ItemsSource="{Binding ListOfJournalEntries}" ItemSelected="SelectedEntry" SelectedItem="{Binding SelectedEntry}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.RowSpan="1">
+    <ListView x:Name="JournalList" ItemsSource="{Binding JournalEntriesList}" ItemSelected="SelectedEntry" SelectedItem="{Binding SelectedEntry}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.RowSpan="1">
       <ListView.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 20"

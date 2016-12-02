@@ -16,20 +16,32 @@ namespace BFH_USZ_PICC.Views.JournalEntries
     /// </summary>
     public sealed partial class StatlockChangingEntryPage : BaseContentPage
     {
+        private bool _firstAppearing = true;
         public StatlockChangingEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new StatlockChangingViewModel(null);
-            
+            ((StatlockChangingViewModel)BindingContext).DisplayingEntry = new StatlockChangingEntry();
+            ((StatlockChangingViewModel)BindingContext).IsEnabledOrVisible = true;
         }
 
         public StatlockChangingEntryPage(ContentPage contained, StatlockChangingEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new StatlockChangingViewModel(entry);
+            ((StatlockChangingViewModel)BindingContext).DisplayingEntry = entry;
+            ((StatlockChangingViewModel)BindingContext).IsEnabledOrVisible = false;
 
+        }
+
+        public override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (_firstAppearing)
+            {
+                ((StatlockChangingViewModel)BindingContext).CheckForMainentanceInstruction.Execute(null);
+                _firstAppearing = false;
+            }
         }
 
         void AddPickers()

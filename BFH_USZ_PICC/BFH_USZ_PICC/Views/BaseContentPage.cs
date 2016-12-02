@@ -30,5 +30,7 @@ namespace BFH_USZ_PICC.Views
         {
             return ContainedPage.DisplayAlert(title, message, accept, cancel);
         }
+
+        public virtual void OnAppearing() { }
     }
 }

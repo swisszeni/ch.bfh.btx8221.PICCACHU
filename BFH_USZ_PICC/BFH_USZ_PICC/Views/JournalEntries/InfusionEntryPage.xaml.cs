@@ -20,16 +20,16 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new InfusionViewModel(null);
-            
+            ((InfusionViewModel)BindingContext).DisplayingEntry = new InfusionEntry();
+            ((InfusionViewModel)BindingContext).IsEnabledOrVisible = true;
         }
 
         public InfusionEntryPage(ContentPage contained, InfusionEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            BindingContext = new InfusionViewModel(entry);
-
+            ((InfusionViewModel)BindingContext).DisplayingEntry = entry;
+            ((InfusionViewModel)BindingContext).IsEnabledOrVisible = false;
         }
 
         void AddPickers()

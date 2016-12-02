@@ -53,7 +53,22 @@ namespace BFH_USZ_PICC.Models
         public BandageChangingArea Area { get; set; }
         public BandagePunctureSituation Puncture { get; set; }
         public BandageArmProcessSituation ArmProcess { get; set; }
-        
+
+
+        public BandageChangingEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            Reason = BandageChangingReason.NoInformation;
+            Area = BandageChangingArea.NoInformation;
+            Puncture = BandagePunctureSituation.NoInformation;
+            ArmProcess = BandageArmProcessSituation.NoInformation;
+
+            Entry = AllPossibleJournalEntries.BandagesChangingEntry;
+
+        }
         public BandageChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, BandageChangingReason reason, BandageChangingArea area,
             BandagePunctureSituation puncture, BandageArmProcessSituation armProcess)
         {

@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Ioc;
+﻿using BFH_USZ_PICC.ViewModels.JournalEntries;
+using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,15 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<GlossaryViewModel>();
             SimpleIoc.Default.Register<DisorderViewModel>();
             SimpleIoc.Default.Register<DisorderDetailViewModel>();
-
+            SimpleIoc.Default.Register<MaintenanceInstructionViewModel>();
+            SimpleIoc.Default.Register<JournalOverviewViewModel>();
+            SimpleIoc.Default.Register<AdministeredDrugViewModel>();
+            SimpleIoc.Default.Register<BandageChangingViewModel>();
+            SimpleIoc.Default.Register<BloodWithdrawalViewModel>();
+            SimpleIoc.Default.Register<CatheterFlushViewModel>();
+            SimpleIoc.Default.Register<InfusionViewModel>();
+            SimpleIoc.Default.Register<MicroClaveChangingViewModel>();
+            SimpleIoc.Default.Register<StatlockChangingViewModel>();
         }
 
         public static ViewModelResolver Resolver

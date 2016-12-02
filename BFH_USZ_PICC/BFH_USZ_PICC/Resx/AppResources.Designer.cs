@@ -854,6 +854,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Maintenance instruction.
+        /// </summary>
+        public static string MaintenanceInstructionTitleText {
+            get {
+                return ResourceManager.GetString("MaintenanceInstructionTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to back up your personal data? You can adjust the information at any time in the settings. .
         /// </summary>
         public static string MasterDataBackUpQuestionText {

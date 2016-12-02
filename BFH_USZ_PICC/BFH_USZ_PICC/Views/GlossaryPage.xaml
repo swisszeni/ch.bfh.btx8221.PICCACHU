@@ -8,7 +8,8 @@
              BindingContext="{Binding [GlossaryViewModel], Source={StaticResource ViewModelLocator}}">  
   <ListView x:Name="GlossaryList" 
             ItemsSource="{Binding GlossaryEntriesList}" 
-            SelectedItem="{Binding SelectedEntry, Mode=TwoWay}" 
+            SelectedItem="{Binding SelectedEntry, Mode=TwoWay}"
+            ItemSelected="GlossaryEntrySelected"
             AbsoluteLayout.LayoutBounds="0, 0, 1, 1" 
             AbsoluteLayout.LayoutFlags="All">
     <ListView.Margin>

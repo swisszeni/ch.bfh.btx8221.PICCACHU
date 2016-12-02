@@ -22,7 +22,20 @@ namespace BFH_USZ_PICC.Models
     public class BloodWithdrawalEntry : JournalEntry
     {       
         public bool IsNaCiFlushDone { get; set; }
-        public BloodFlow Flow { get; set; }        
+        public BloodFlow Flow { get; set; }
+
+        public BloodWithdrawalEntry()
+        {
+            CreationDateTime = DateTime.Now;
+            ProcedureDateTime = DateTime.Now;
+            Institution = HealthInstitution.NoInformation;
+            Person = HealthPerson.NoInformation;
+            IsNaCiFlushDone = false;
+            Flow = BloodFlow.NoInformation;
+
+            Entry = AllPossibleJournalEntries.BloodWithdrawalEntry;
+
+        }
 
         public BloodWithdrawalEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlushDone, BloodFlow flow )
         {
