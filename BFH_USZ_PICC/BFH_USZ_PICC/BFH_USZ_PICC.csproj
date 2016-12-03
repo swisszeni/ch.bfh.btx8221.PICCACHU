@@ -119,7 +119,6 @@
     <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
     <Compile Include="ViewModels\PICCDetailViewModel.cs" />
-    <Compile Include="ViewModels\PICCModelViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\BaseContentPage.cs" />
     <Compile Include="Views\BasePage.xaml.cs">

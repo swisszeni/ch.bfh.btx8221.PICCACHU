@@ -17,32 +17,5 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
         }
-
-
-        public async void SelectedFormerPICC(object o, EventArgs e)
-        {
-            // FIXME: total bullshit
-            if (FormerPICCList.SelectedItem != null)
-            {
-                PICC selectedPICC = (PICC)FormerPICCList.SelectedItem;
-                if (selectedPICC.RemovalDate != null)
-                {
-                    await DisplayAlert(selectedPICC.PICCModel.PICCName, "Legedatum: " + selectedPICC.InsertDate.ToString("d") + "\nEntfernungsdatum: " + ((DateTime)selectedPICC.RemovalDate).ToString("d"), "Abbrechen");
-
-                }
-                else
-                {
-                    await DisplayAlert(selectedPICC.PICCModel.PICCName, "Legedatum: " + selectedPICC.InsertDate.ToString("d") + "\nEntfernungsdatum: ", "Abbrechen");
-
-                }
-
-                FormerPICCList.SelectedItem = null;
-            }
-        }
-
-        async void AddPICCClick(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
-        }
     }
 }

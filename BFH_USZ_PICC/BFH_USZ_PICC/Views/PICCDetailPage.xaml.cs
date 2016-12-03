@@ -28,11 +28,9 @@ namespace BFH_USZ_PICC.Views
         /// <param name="contained">BasePage</param>
         public PICCDetailPage(ContentPage contained) : base(contained)
         {
-            InitializeLayout();
+            InitializeComponent();
             Title = AppResources.PICCDetailPageTitleText;
         }
-
-
 
         /// <summary>
         /// Constructor with a PICCModel, call when a new PICC should be created for the PICCModell passed
@@ -43,12 +41,12 @@ namespace BFH_USZ_PICC.Views
         /// <param name="model">PICCModel to create</param>
         public PICCDetailPage(ContentPage contained, PICCModel model) : base(contained)
         {
-            InitializeLayout();
+            InitializeComponent();
             Title = AppResources.PICCDetailPageAddNewPICCTitle;
             displayMode = PICCDetailPageDisplayMode.Create;
             AddPickerItems();
-          //  ((PICCDetailViewModel)BindingContext).DisplayingEntry  = new PICC(model, DateTime.Now, PICC.PICCInsertCountry.Undefined, null, PICC.PICCInsertSide.Undefined, PICC.PICCInsertPosition.Undefined);
-            
+            ((PICCDetailViewModel)BindingContext).DisplayingEntry  = new PICC(model, DateTime.Now, PICC.PICCInsertCountry.Undefined, null, PICC.PICCInsertSide.Undefined, PICC.PICCInsertPosition.Undefined);
+            ((PICCDetailViewModel)BindingContext).IsVisibleOrEnabled = true;
         }    
 
         /// <summary>
@@ -60,92 +58,11 @@ namespace BFH_USZ_PICC.Views
         /// <param name="existingPICC">Existing PICC</param>
         public PICCDetailPage(ContentPage contained, PICC existingPICC) : base(contained)
         {
-            InitializeLayout();
+            InitializeComponent();
             Title = AppResources.PICCDetailPageEditPICCTitle;
             displayMode = PICCDetailPageDisplayMode.View;
         }
-
-        private void InitializeLayout()
-        {
-            InitializeComponent();
-
-            if (displayMode == PICCDetailPageDisplayMode.Create)
-            {
-                PiccInformation.IsVisible = true;
-                EditButton.IsVisible = false;
-                PiccRemoveButton.IsVisible = false;
-                EnableControls(true);
-            }
-        }
-
-        /// <summary>
-        /// This method either enables or disables the input field for the picc information
-        /// </summary>
-        /// <param name="enable"></param>
-        private void EnableControls(bool enable)
-        {
-            PiccName.IsEnabled = enable;
-            InsertedDate.IsEnabled = enable;
-            InsertCity.IsEnabled = enable;
-            PiccSidePicker.IsEnabled = enable;
-            PiccPositionPicker.IsEnabled = enable;
-            PiccFrench.IsEnabled = enable;
-            PiccLumen.IsEnabled = enable;
-            CountryPicker.IsEnabled = enable;
-            PiccRemoveButton.IsEnabled = enable;
-
-            //Changes the visibility to either save/cancel buttons or edit/addAPicc buttons
-            SaveAndCancelButtons.IsVisible = enable;
-            EditAndAddButtons.IsVisible = (!enable);
-        }
-
-        async void CancelNewPiccEntry()
-        {
-            bool cancel = await DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein");
-
-            if (cancel)
-            {
-                await Navigation.PopModalAsync();
-            }
-        }
-
-        public void PiccRemoveButtonClicked(object o, EventArgs e)
-        {
-
-        }
-
-        void EditButtonClicked(object o, EventArgs e)
-        {
-            EnableControls(true);
-        }
-
-        async void SaveButtonClicked(object o, EventArgs e)
-        {
-
-        }
-
-        async void CancelButtonClicked(object o, EventArgs e)
-        {
-            bool cancel = await DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein");
-
-            if (cancel)
-            {
-
-            }
-
-        }
-
-        /// <summary>
-        /// This method checks if the user has selected Switzerland, Abroad or nothing on the inserted country picker. If the user
-        /// has no country selected, he is not able to enter a city.
-        /// </summary>
-        /// <param name="o"></param>
-        /// <param name="e"></param>
-        void CountrySelected(object o, EventArgs e)
-        {
-
-        }
-
+       
         void AddPickerItems()
         {
             PiccPositionPicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
@@ -158,7 +75,7 @@ namespace BFH_USZ_PICC.Views
 
             CountryPicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
             CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountrySwitzerlandText);
-            CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountryAbroadText);           
+            CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountryAbroadText);
 
         }
     }

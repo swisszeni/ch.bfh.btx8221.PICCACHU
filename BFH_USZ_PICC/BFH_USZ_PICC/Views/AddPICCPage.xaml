@@ -9,9 +9,9 @@
   <ScrollView>
     <StackLayout Orientation="Vertical" Grid.Row="0">
       <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
-        <SearchBar x:Name="PICCEntry" Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}" SearchButtonPressed="PiccSearchButtonClicked"
-                   TextChanged="SerachForAPiccModel" Unfocused="SearchBarUnfocused" Focused="SearchBarFocused"/>
-        <ListView x:Name="AllModels" ItemSelected="SelectedPicc" IsVisible="False" ItemsSource="{Binding PiccModels, Mode=OneWay}">
+        <SearchBar x:Name="PICCEntry" Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}" SearchCommand="{Binding PiccSearchButtonCommand}"
+                    Text="{Binding SearchedPICCText}" Unfocused="SearchBarUnfocused" Focused="SearchBarFocused"/>
+        <ListView x:Name="AllModels" SelectedItem="{Binding SelectedPicc}" ItemSelected="SelectedPicc" IsVisible="False" ItemsSource="{Binding PICCModels}">
           <ListView.ItemTemplate>
             <DataTemplate>
               <TextCell Text="{Binding PICCName}" />
@@ -19,8 +19,8 @@
           </ListView.ItemTemplate>
         </ListView>
       </StackLayout>
-      <Button x:Name="ScanButton" Text="{i18n:Translate AddPICCPageScanButtonText}" Clicked="ScanClick"></Button>
-      <Button x:Name="AddPiccManualButton" Text="{i18n:Translate AddPICCPageAddPiccManualButtonText}" Clicked="AddPiccManualButtonClick"></Button>
+      <Button x:Name="ScanButton" Text="{i18n:Translate AddPICCPageScanButtonText}" Command="{Binding ScanButtonCommand}"/>
+      <Button x:Name="AddPiccManualButton" Text="{i18n:Translate AddPICCPageAddPiccManualButtonText}" Command="{Binding AddPiccManualButtonCommand}"></Button>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

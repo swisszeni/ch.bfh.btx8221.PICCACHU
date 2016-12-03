@@ -4,19 +4,26 @@
              x:Class="BFH_USZ_PICC.Views.MyPICCPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate MyPICCPageTitleText}">
+              xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             Title="{i18n:Translate MyPICCPageTitleText}"
+             BindingContext="{Binding [MyPICCViewModel], Source={StaticResource ViewModelLocator}}">
   <Grid.Resources>
     <ResourceDictionary>
-
+      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
     </ResourceDictionary>
   </Grid.Resources>
   <ScrollView>
     <StackLayout Orientation="Vertical">
-      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray"/>
-      <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Clicked="AddPICCClick"/>
+      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding IsAPiccAdded}"/>
+      <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Command="{Binding AddPICCCommand}"/>
       <Label Text="{i18n:Translate MyPICCPageCurrentPICCText}" FontSize="20"/>
+      <Button IsVisible="{Binding IsAPiccAdded, Converter={StaticResource NegateBooleanConverter}}">
+        <DataTemplate>
+          <TextCell Text="{Binding CurrentPICC}"/>
+        </DataTemplate>        
+      </Button>
       <Label Text="{i18n:Translate MyPICCPagePreviousPICCText}" FontSize="20"/>
-      <ListView x:Name="FormerPICCList" ItemSelected="SelectedFormerPICC">
+      <ListView x:Name="FormerPICCList">
         <ListView.ItemTemplate>
           <DataTemplate>
             <TextCell Text="{Binding PICCModel.PICCName}" Detail="{Binding InsertDate}" />
