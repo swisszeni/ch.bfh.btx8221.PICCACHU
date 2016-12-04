@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.PICC;
 
 namespace BFH_USZ_PICC.ViewModels
@@ -206,6 +207,9 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
+        /// <summary>
+        /// Checks if parameters should be editable or not
+        /// </summary>
         private bool _isVisibleOrEnabled;
         public bool IsVisibleOrEnabled
         {
@@ -213,6 +217,15 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _isVisibleOrEnabled, value); }
         }
 
+        /// <summary>
+        /// Checks if user wants to add a new PICC or edit his current PICC
+        /// </summary>
+        private bool _isUserAddingANewPICC;
+        public bool IsUserAddingANewPICC
+        {
+            get { return _isUserAddingANewPICC; }
+            set { Set(ref _isUserAddingANewPICC, value); }
+        }
 
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
@@ -221,12 +234,20 @@ namespace BFH_USZ_PICC.ViewModels
         }));
 
         private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async() =>
+        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
+            if (IsUserAddingANewPICC && CurrentPICC != null)
+            {
+                CurrentPICC.RemovalDate = DateTime.Now;
+                CurrentPICC.IsNotActiveAnymore = true;
+                PreviousPICC.Add(CurrentPICC);
+            }
             PICCModel model = new PICCModel(PiccName, DisplayingEntry.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, DisplayingEntry.PICCModel.Gauge, DisplayingEntry.PICCModel.GNDMCode, DisplayingEntry.PICCModel.Barcode, DisplayingEntry.PICCModel.PictureUri);
             PICC.CurrentPICC = new PICC(model, InsertDate, InsertCountry, City, PiccSide, PiccPosition);
 
-            await((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+
+
         }));
 
         private RelayCommand _cancelButtonCommand;
@@ -234,9 +255,33 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein"))
             {
+                if (IsUserAddingANewPICC)
+                {
+                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+
+                }
+                else
+                {
+                    IsVisibleOrEnabled = false;
+                }
+            }
+        }));
+
+        private RelayCommand _piccRemoveButtonCommand;
+        public RelayCommand PiccRemoveButtonCommand => _piccRemoveButtonCommand ?? (_piccRemoveButtonCommand = new RelayCommand(async () =>
+        {
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert("Warnung!", "Wollen Sie diesen PICC Katheter wirklich inaktiv setzen?", "Ja", "Nein"))
+            {
+                CurrentPICC.RemovalDate = DateTime.Now;
+                CurrentPICC.IsNotActiveAnymore = true;
+                PreviousPICC.Add(CurrentPICC);
+
+                PICC.CurrentPICC = null;
+
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
-    }
 
+    }
 }
+

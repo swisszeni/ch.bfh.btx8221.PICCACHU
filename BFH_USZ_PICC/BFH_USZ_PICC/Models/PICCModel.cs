@@ -14,21 +14,21 @@ namespace BFH_USZ_PICC.Models
             if (modelList == null)
             {
                 modelList = new List<PICCModel>();
-                modelList.Add(new PICCModel("POWERPICC 4FR SL FT", 50, 1, 4, "18", "16615", "+H303617410805", "EinlumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 4FR SL", 135, 1, 4, "18", "16615", "+H303617433507", "EinlumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 4FR SL", 70, 1, 4, "18", "16615", "+H303617435509", "EinlumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 5FR SL", 135, 1, 5, "18", "16615", "+H303617533508", "EinlumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 5FR SL", 70, 1, 5, "18", "16615", "+H30361753550A", "EinlumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 5FR DL FT", 50, 2, 5, "18 / 18", "16615", "+H303627510807", "DoppellumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 5FR DL", 135, 2, 5, "18 / 18", "16615", "+H303627533509", "DoppellumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 5FR DL", 70, 2, 5, "18 / 18", "16615", "+H30362753550B", "DoppellumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 6FR 3L", 50, 3, 6, "17 / 19 / 19", "16615", "+H303627611809", "DreilumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 6FR TL", 135, 3, 6, "17 / 19 / 19", "16615", "+H30363863350C", "DreilumigerPICC.PNG"));
-                modelList.Add(new PICCModel("PowerPICC Katheter 6F DL Intervent.Set m. 135cm GW", 135, 2, 6, "18 / 18", "16615", "+H30362763350A", "DoppellumigerPICC.PNG"));
-                modelList.Add(new PICCModel("PowerPICC Katheter 6F TL Intervent.Set m. 70cm GW", 70, 3, 6, "17 / 19 / 19", "16615", "+H30363863550E", "DreilumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 4FR 1L", 50, 1, 4, "18", "16615", "+H303617411806", "EinlumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERPICC 6FR TL FT", 50, 3, 6, "17 / 19 / 19", "16615", "+H30363861080A", "DreilumigerPICC.PNG"));
-                modelList.Add(new PICCModel("POWERGROSHONG 5F SL BASIC 45CM",     45,  1,   5,   "17", "16615", "+H30368185180F", "EinlumigerPICC.PNG"));
+                modelList.Add(new PICCModel("POWERPICC 4FR SL FT", 50, 1, 4, "18", "16615", "+H303617410805", "EinlumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 4FR SL", 135, 1, 4, "18", "16615", "+H303617433507", "EinlumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 4FR SL", 70, 1, 4, "18", "16615", "+H303617435509", "EinlumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 5FR SL", 135, 1, 5, "18", "16615", "+H303617533508", "EinlumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 5FR SL", 70, 1, 5, "18", "16615", "+H30361753550A", "EinlumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 5FR DL FT", 50, 2, 5, "18 / 18", "16615", "+H303627510807", "DoppellumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 5FR DL", 135, 2, 5, "18 / 18", "16615", "+H303627533509", "DoppellumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 5FR DL", 70, 2, 5, "18 / 18", "16615", "+H30362753550B", "DoppellumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 6FR 3L", 50, 3, 6, "17 / 19 / 19", "16615", "+H303627611809", "DreilumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 6FR TL", 135, 3, 6, "17 / 19 / 19", "16615", "+H30363863350C", "DreilumigerPICC.png"));
+                modelList.Add(new PICCModel("PowerPICC Katheter 6F DL Intervent.Set m. 135cm GW", 135, 2, 6, "18 / 18", "16615", "+H30362763350A", "DoppellumigerPICC.png"));
+                modelList.Add(new PICCModel("PowerPICC Katheter 6F TL Intervent.Set m. 70cm GW", 70, 3, 6, "17 / 19 / 19", "16615", "+H30363863550E", "DreilumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 4FR 1L", 50, 1, 4, "18", "16615", "+H303617411806", "EinlumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERPICC 6FR TL FT", 50, 3, 6, "17 / 19 / 19", "16615", "+H30363861080A", "DreilumigerPICC.png"));
+                modelList.Add(new PICCModel("POWERGROSHONG 5F SL BASIC 45CM",     45,  1,   5,   "17", "16615", "+H30368185180F", "EinlumigerPICC.png"));
 
 
 //                POWERGROSHONG 5F SL BASIC 55CM      55  1   5   17  16615 * +H30369185180G *

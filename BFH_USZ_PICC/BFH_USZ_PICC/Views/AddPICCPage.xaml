@@ -12,11 +12,11 @@
         <SearchBar x:Name="PICCEntry" Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}" SearchCommand="{Binding PiccSearchButtonCommand}"
                     Text="{Binding SearchedPICCText}" Unfocused="SearchBarUnfocused" Focused="SearchBarFocused"/>
         <ListView x:Name="AllModels" SelectedItem="{Binding SelectedPicc}" ItemSelected="SelectedPicc" IsVisible="False" ItemsSource="{Binding PICCModels}">
-          <ListView.ItemTemplate>
-            <DataTemplate>
-              <TextCell Text="{Binding PICCName}" />
-            </DataTemplate>
-          </ListView.ItemTemplate>
+         <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding PICCName}" Detail="{Binding GuideWireLenght}"/>
+          </DataTemplate>
+        </ListView.ItemTemplate>
         </ListView>
       </StackLayout>
       <Button x:Name="ScanButton" Text="{i18n:Translate AddPICCPageScanButtonText}" Command="{Binding ScanButtonCommand}"/>

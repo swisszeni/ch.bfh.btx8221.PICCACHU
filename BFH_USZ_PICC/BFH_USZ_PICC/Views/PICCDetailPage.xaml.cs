@@ -47,6 +47,7 @@ namespace BFH_USZ_PICC.Views
             AddPickerItems();
             ((PICCDetailViewModel)BindingContext).DisplayingEntry  = new PICC(model, DateTime.Now, PICC.PICCInsertCountry.Undefined, null, PICC.PICCInsertSide.Undefined, PICC.PICCInsertPosition.Undefined);
             ((PICCDetailViewModel)BindingContext).IsVisibleOrEnabled = true;
+            ((PICCDetailViewModel)BindingContext).IsUserAddingANewPICC = true; 
         }    
 
         /// <summary>
@@ -61,6 +62,10 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
             Title = AppResources.PICCDetailPageEditPICCTitle;
             displayMode = PICCDetailPageDisplayMode.View;
+            AddPickerItems();
+            ((PICCDetailViewModel)BindingContext).DisplayingEntry = existingPICC;
+            ((PICCDetailViewModel)BindingContext).IsVisibleOrEnabled = false;
+            ((PICCDetailViewModel)BindingContext).IsUserAddingANewPICC = false;
         }
        
         void AddPickerItems()

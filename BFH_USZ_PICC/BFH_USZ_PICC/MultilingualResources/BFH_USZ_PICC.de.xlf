@@ -84,7 +84,7 @@
         </trans-unit>
         <trans-unit id="MyPICCPageNoPiccEnteredText" translate="yes" xml:space="preserve">
           <source>It seems that you have not yet entered a PICC.</source>
-          <target state="translated">Sie scheinen momentan noch keinen PICC erfasst zu haben.</target>
+          <target state="translated">Sie scheinen momentan keinen PICC erfasst zu haben.</target>
         </trans-unit>
         <trans-unit id="MyPICCPagePreviousPICCText" translate="yes" xml:space="preserve">
           <source>Previous PICC</source>

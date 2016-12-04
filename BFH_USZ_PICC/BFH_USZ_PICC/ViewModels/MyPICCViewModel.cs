@@ -14,27 +14,12 @@ namespace BFH_USZ_PICC.ViewModels
 {
     class MyPICCViewModel : ViewModelBase
     {
-        public MyPICCViewModel()
-        {
-            CurrentPICC = PICC.CurrentPICC;
-        }
-
-
         private PICC _currentPICC;
         public PICC CurrentPICC
         {
             get { return _currentPICC; }
-            set
-            {
-                if (Set(ref _currentPICC, value))
-                {
-                    if (value != null)
-                    {
-                        IsAPiccAdded = false;
-                    }
-                }
-                RaisePropertyChanged("CurrentPICC");
-            }
+            set { Set(ref _currentPICC, value); }
+
         }
 
         private ObservableCollection<PICC> _previousPICC = PICC.PreviousPICC;
@@ -45,17 +30,39 @@ namespace BFH_USZ_PICC.ViewModels
         }
 
             
-        private bool _isAPiccAdded = true;
+        private bool _isAPiccAdded;
         public bool IsAPiccAdded
         {
             get { return _isAPiccAdded; }
             set { Set(ref _isAPiccAdded, value); }
         }
 
-        private RelayCommand _AddPICCCommand;
-        public RelayCommand AddPICCCommand => _AddPICCCommand ?? (_AddPICCCommand = new RelayCommand(async () =>
+        private RelayCommand _addPICCCommand;
+        public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(async () =>
         {
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
+
+        }));
+
+        
+        private RelayCommand _currentPICCButtonCommand;
+        public RelayCommand CurrentPICCButtonCommand => _currentPICCButtonCommand ?? (_currentPICCButtonCommand = new RelayCommand(async() =>
+        {
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC }));
+
+        }));
+
+        private RelayCommand _reloadCurrentPiccBinding;
+        public RelayCommand ReloadCurrentPiccBinding => _reloadCurrentPiccBinding ?? (_reloadCurrentPiccBinding = new RelayCommand(() =>
+        {
+            CurrentPICC =  PICC.CurrentPICC;
+
+            if(CurrentPICC == null)
+            {
+                IsAPiccAdded = false;
+                return;
+            }
+            IsAPiccAdded = true; 
 
         }));
 

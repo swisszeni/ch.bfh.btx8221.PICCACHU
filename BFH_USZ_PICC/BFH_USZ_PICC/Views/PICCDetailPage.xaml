@@ -32,8 +32,9 @@
       <Picker x:Name="PiccSidePicker" SelectedIndex="{Binding PiccSide, Converter={StaticResource PICCInsertSideToIndexConverter}}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}"/>
       <Picker x:Name="PiccPositionPicker" SelectedIndex="{Binding PiccPosition, Converter={StaticResource PICCInsertPositionToIndexConverter}}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
-      <Button x:Name="PiccRemoveButton" Text="{i18n:Translate PICCDetailPagePICCRemoveButtonText}" IsVisible="{Binding IsVisibleOrEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
-      <DatePicker x:Name="RemovalDate" Date="{Binding RemovalDate}" IsEnabled="{Binding IsVisibleOrEnabled}" IsVisible="{Binding IsRemovalDateSet}"/>
+      <Button x:Name="PiccRemoveButton" Text="{i18n:Translate PICCDetailPagePICCRemoveButtonText}" Command="{Binding PiccRemoveButtonCommand}" 
+              IsVisible="{Binding IsVisibleOrEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
+      <DatePicker x:Name="RemovalDate" Date="{Binding RemovalDate}" IsEnabled="{Binding IsVisibleOrEnabled}" IsFocused="{Binding IsRemovalDatePickerFocused}" IsVisible="{Binding IsRemovalDateSet}"/>
       <StackLayout Orientation="Horizontal">
         <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Command="{Binding EditButtonCommand}" IsVisible="{Binding IsVisibleOrEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
         <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsVisibleOrEnabled}"/>

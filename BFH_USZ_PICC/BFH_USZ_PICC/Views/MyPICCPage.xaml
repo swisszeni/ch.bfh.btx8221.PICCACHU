@@ -14,19 +14,17 @@
   </Grid.Resources>
   <ScrollView>
     <StackLayout Orientation="Vertical">
-      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding IsAPiccAdded}"/>
+      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding IsAPiccAdded, Converter={StaticResource NegateBooleanConverter}}"/>
       <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Command="{Binding AddPICCCommand}"/>
       <Label Text="{i18n:Translate MyPICCPageCurrentPICCText}" FontSize="20"/>
-      <Button IsVisible="{Binding IsAPiccAdded, Converter={StaticResource NegateBooleanConverter}}">
-        <DataTemplate>
-          <TextCell Text="{Binding CurrentPICC}"/>
-        </DataTemplate>        
-      </Button>
+      <Button Text="{Binding CurrentPICC.PICCModel.PICCName}" Command="{Binding CurrentPICCButtonCommand}" IsVisible="{Binding IsAPiccAdded}"/>
       <Label Text="{i18n:Translate MyPICCPagePreviousPICCText}" FontSize="20"/>
-      <ListView x:Name="FormerPICCList">
+      <ListView x:Name="FormerPICCList" ItemsSource="{Binding PreviousPICC}" 
+            SelectedItem="{Binding SelectedEntry}"
+            ItemSelected="SelectedEntry">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <TextCell Text="{Binding PICCModel.PICCName}" Detail="{Binding InsertDate}" />
+            <TextCell Text="{Binding PICCModel.PICCName}" Detail="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}"/>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
