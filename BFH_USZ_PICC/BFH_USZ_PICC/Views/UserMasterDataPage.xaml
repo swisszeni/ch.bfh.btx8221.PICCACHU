@@ -9,6 +9,14 @@
              >
   <ScrollView>
     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" >
+      <StackLayout x:Name="EditAndDeleteStackLayout" Orientation="Horizontal" VerticalOptions="Center">
+        <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Clicked="EditButtonClicked"/>
+        <Button x:Name="DeleteAllMasterDataButton" Text="{i18n:Translate UserMasterDataPageDeleteAllMasterDataButton}" Clicked="DeleteAllMasterDataButtonClicked"/>
+      </StackLayout>
+      <StackLayout x:Name="SaveAndCancelStackLayout" Orientation="Horizontal" VerticalOptions="Center">
+        <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Clicked="SaveButtonClicked"/>
+        <Button x:Name="CancelButton" Text="{i18n:Translate CancelButtonText}" Clicked="CancelButtonClicked"/>
+      </StackLayout>
       <StackLayout x:Name="MasterDataStackLayout" Orientation="Vertical" VerticalOptions="FillAndExpand">
         <Label Text="{i18n:Translate UserMasterDataPageSalutationLabelText}"/>
         <Picker x:Name="SalutationPicker" SelectedIndex="{Binding Salutation}"/>
@@ -23,7 +31,7 @@
         <Label Text="{i18n:Translate UserMasterDataPagePlaceLabelText}"/>
         <Entry x:Name="Place"  Text="{Binding Place}"/>
         <Label Text="{i18n:Translate UserMasterDataPageEmailLabelText}"/>
-        <Entry x:Name="Email"  Text="{Binding Email}"/>
+        <Entry x:Name="Email"  Text="{Binding Email}" Keyboard="Email"/>
         <Label Text="{i18n:Translate UserMasterDataPagePhoneLabelText}"/>
         <Entry x:Name="Phone"  Text="{Binding Phone}"/>
         <Label Text="{i18n:Translate UserMasterDataPageMobileLabelText}"/>
@@ -31,15 +39,7 @@
         <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"/>
         <DatePicker x:Name="BirthdatePicker" Date="{Binding Birthdate}">
           <DatePicker.Format>d</DatePicker.Format>
-        </DatePicker>       
-        <StackLayout x:Name="EditAndDeleteStackLayout" Orientation="Horizontal" VerticalOptions="Center">
-          <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Clicked="EditButtonClicked"/>
-          <Button x:Name="DeleteAllMasterDataButton" Text="{i18n:Translate UserMasterDataPageDeleteAllMasterDataButton}" Clicked="DeleteAllMasterDataButtonClicked"/>
-        </StackLayout>
-        <StackLayout x:Name="SaveAndCancelStackLayout" Orientation="Horizontal" VerticalOptions="Center">
-          <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Clicked="SaveButtonClicked"/>
-          <Button x:Name="CancelButton" Text="{i18n:Translate CancelButtonText}" Clicked="CancelButtonClicked"/>
-        </StackLayout>      
+        </DatePicker>
       </StackLayout>
     </StackLayout>
   </ScrollView>

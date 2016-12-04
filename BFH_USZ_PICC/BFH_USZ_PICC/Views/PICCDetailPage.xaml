@@ -27,7 +27,7 @@
       <DatePicker x:Name="InsertedDate" Date="{Binding InsertDate}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCInsertedPlaceText}" HorizontalOptions="Fill" WidthRequest="80" />
       <Picker x:Name="CountryPicker" SelectedIndex="{Binding InsertCountry, Converter={StaticResource PICCInsertCountryToIndexConverter}}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
-      <Entry x:Name="InsertCity" Text="{Binding City}" Placeholder="{i18n:Translate PICCDetailPageInsertCityPlaceholderText}" IsVisible="{Binding IsCountrySet}"/>
+      <Entry x:Name="InsertCity" Text="{Binding City}" Placeholder="{i18n:Translate PICCDetailPageInsertCityPlaceholderText}" IsEnabled="{Binding IsVisibleOrEnabled}" IsVisible="{Binding IsCountrySet}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCBodysideText}"/>
       <Picker x:Name="PiccSidePicker" SelectedIndex="{Binding PiccSide, Converter={StaticResource PICCInsertSideToIndexConverter}}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}"/>

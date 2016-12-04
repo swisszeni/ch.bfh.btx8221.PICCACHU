@@ -62,10 +62,8 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (value != null)
                 {
-                    if (Set(ref _selectedPicc, value))
-                    {
-                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
-                    }
+                    Set(ref _selectedPicc, value);
+                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
                 }
             }
         }
