@@ -104,7 +104,6 @@
     <Compile Include="DependencyServices\ReminderNotification.cs" />
     <Compile Include="DependencyServices\Caller.cs" />
     <Compile Include="DependencyServices\Localize.cs" />
-    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
