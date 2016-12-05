@@ -5,9 +5,8 @@
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
              Title="{i18n:Translate AddPICCPageTitleText}"
-             BindingContext="{Binding [AddPICCViewModel], Source={StaticResource ViewModelLocator}}">
-  <ScrollView>
-    <StackLayout Orientation="Vertical" Grid.Row="0">
+             BindingContext="{Binding [AddPICCViewModel], Source={StaticResource ViewModelLocator}}"> 
+    <StackLayout Orientation="Vertical">
       <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
         <SearchBar x:Name="PICCEntry" Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}" SearchCommand="{Binding PiccSearchButtonCommand}"
                     Text="{Binding SearchedPICCText}" Unfocused="SearchBarUnfocused" Focused="SearchBarFocused"/>
@@ -21,6 +20,5 @@
       </StackLayout>
       <Button x:Name="ScanButton" Text="{i18n:Translate AddPICCPageScanButtonText}" Command="{Binding ScanButtonCommand}"/>
       <Button x:Name="AddPiccManualButton" Text="{i18n:Translate AddPICCPageAddPiccManualButtonText}" Command="{Binding AddPiccManualButtonCommand}"></Button>
-    </StackLayout>
-  </ScrollView>
+    </StackLayout>  
 </d:BaseContentPage>
