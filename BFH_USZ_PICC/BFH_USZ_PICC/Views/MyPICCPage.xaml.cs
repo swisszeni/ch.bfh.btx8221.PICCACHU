@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.ViewModels;
 using System;
 using Xamarin.Forms;
 
@@ -18,31 +19,17 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
         }
 
-
-        public async void SelectedFormerPICC(object o, EventArgs e)
+        public override void OnAppearing()
         {
-            // FIXME: total bullshit
-            if (FormerPICCList.SelectedItem != null)
-            {
-                PICC selectedPICC = (PICC)FormerPICCList.SelectedItem;
-                if (selectedPICC.RemovalDate != null)
-                {
-                    await DisplayAlert(selectedPICC.PICCModel.PICCName, "Legedatum: " + selectedPICC.InsertDate.ToString("d") + "\nEntfernungsdatum: " + ((DateTime)selectedPICC.RemovalDate).ToString("d"), "Abbrechen");
-
-                }
-                else
-                {
-                    await DisplayAlert(selectedPICC.PICCModel.PICCName, "Legedatum: " + selectedPICC.InsertDate.ToString("d") + "\nEntfernungsdatum: ", "Abbrechen");
-
-                }
-
-                FormerPICCList.SelectedItem = null;
-            }
+            base.OnAppearing();
+            ((MyPICCViewModel)BindingContext).ReloadCurrentPiccBinding.Execute(null);
         }
 
-        async void AddPICCClick(object sender, EventArgs e)
+        //This method sets the selected glossary entry to null (otherwise it would be marked).
+        private void SelectedEntry(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
+            FormerPICCList.SelectedItem = null;
         }
     }
 }
+

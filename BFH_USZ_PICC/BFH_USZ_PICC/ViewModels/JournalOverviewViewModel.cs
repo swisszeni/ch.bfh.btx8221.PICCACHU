@@ -27,7 +27,7 @@ namespace BFH_USZ_PICC.ViewModels
         public ObservableCollection<JournalEntry> JournalEntriesList
         {
             get { return _journalEntriesList; }
-            set          {                Set(ref _journalEntriesList, value);            }
+            set { Set(ref _journalEntriesList, value); }
         }
 
         private JournalEntry _selectedEntry;

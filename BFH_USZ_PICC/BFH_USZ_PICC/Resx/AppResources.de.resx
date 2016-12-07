@@ -70,7 +70,7 @@
     <value>Aktueller PICC</value>
   </data>
   <data name="MyPICCPageNoPiccEnteredText" xml:space="preserve">
-    <value>Sie scheinen momentan noch keinen PICC erfasst zu haben.</value>
+    <value>Sie scheinen momentan keinen PICC erfasst zu haben.</value>
   </data>
   <data name="MyPICCPagePreviousPICCText" xml:space="preserve">
     <value>Frühere PICC</value>

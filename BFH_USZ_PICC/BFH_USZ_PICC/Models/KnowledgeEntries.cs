@@ -30,7 +30,7 @@ namespace BFH_USZ_PICC.Models
                 // "Was ist ein PICC?" page information
                 List<IKnowledgeEntryElement> whatIsAPiccEntry = new List<IKnowledgeEntryElement>();
                 whatIsAPiccEntry.Add(new KnowledgeEntryTextElement("Ihr zentraler PICC Venenkatheter besteht aus weichem, flexiblem Material (Silikon oder Polyurethan). Der lange, schmale Katheter ist mit einem breiteren, verstärkten Ansatz aus Kunststoff, sowie je nach Ausführung mit einer Kunststoffklemme und mit «Flügeln» ausgestattet. Durch diese Flügel kann der Katheter besser auf der Haut ﬁxiert werden. Am äusseren Ende ist eine Schutzkappe angebracht. Diese verhindert, dass Blut zurück in den Katheter fliesst (siehe MicroClave).\n\nManchmal verschreibt der Arzt einen Katheter mit zwei separaten Kanälen (doppellumiger Katheter). Diese zwei Kanäle ermöglichen die Verabreichung unterschiedlicher Substanzen."));
-                whatIsAPiccEntry.Add(new KnowledgeEntryImageElement(new Image { Source = "DoppellumigerPICC.PNG" }, "Doppellumiger PICC: Kunststoffklemme zum Verschliessen des Katheters"));
+                whatIsAPiccEntry.Add(new KnowledgeEntryImageElement(new Image { Source = "DoppellumigerPICC.png" }, "Doppellumiger PICC: Kunststoffklemme zum Verschliessen des Katheters"));
 
                 List<GlossaryEntry> glossaryWordsForWhatIsAPiccEntry = new List<GlossaryEntry>();
                 glossaryWordsForWhatIsAPiccEntry.Add(new GlossaryEntry("Ansatz", "Ein Zwischenstück aus Kunststoff am Katheter. Am Ansatzende des Katheters wird die Schutzkappe (MicroClave) des nadellosen Injektionssystems aufgeschraubt."));
@@ -44,7 +44,7 @@ namespace BFH_USZ_PICC.Models
                 // "Wozu wird ein PICC verwendet?" page information
                 List<IKnowledgeEntryElement> whyUseAPiccEntry = new List<IKnowledgeEntryElement>();
                 whyUseAPiccEntry.Add(new KnowledgeEntryTextElement("Ein PICC ist für die Verabreichung von Flüssigkeiten, von Blutprodukten, Medikamenten und intravenösen Nährlösungen bestimmt. Er kann auch zur Abnahme von Blutproben verwendet werden. Ein PICC kann je nach Therapie mehrere Wochen oder Monate in einer Vene verbleiben.\n\nDer PICC ist insbesondere dann sinnvoll, wenn Ihnen im Rahmen einer Therapie zahlreiche Infusionen verabreicht werden müssen. Dank dem Venenzugang über den PICC müssen die Fachleute nicht für jede Infusion eine neue Einstichstelle schaffen. Der PICC verhindert somit, dass Ihre Venen an Hand und Arm durch diverse Einstiche belastet werden.\n\nDie Verabreichung Ihrer Therapie wird durch den PICC zuverlässiger, komfortabler und einfacher."));
-                whyUseAPiccEntry.Add(new KnowledgeEntryImageElement(new Image { Source = "EinlumigerPICC.PNG" }, "Einlumiger PICC: Weiches, flexibles Kathetermaterial"));
+                whyUseAPiccEntry.Add(new KnowledgeEntryImageElement(new Image { Source = "EinlumigerPICC.png" }, "Einlumiger PICC: Weiches, flexibles Kathetermaterial"));
 
                 List<GlossaryEntry> glossaryWordsForWhyUseAPiccEntry = new List<GlossaryEntry>();
                 glossaryWordsForWhyUseAPiccEntry.Add(new GlossaryEntry("Intravenöse Therapie (IV-Therapie)", "Ein Medikamenten oder eine Flüssigkeit wird durch eine Vene verabreicht."));
@@ -57,7 +57,7 @@ namespace BFH_USZ_PICC.Models
                 // "Wie wird ein PICC platziert?" page information
                 List<IKnowledgeEntryElement> howToPlaceAPicc = new List<IKnowledgeEntryElement>();
                 howToPlaceAPicc.Add(new KnowledgeEntryTextElement("Die Platzierung eines PICC erfolgt durch einen minimal invasiven Eingriff in der Radiologie. Zuerst machen die Fachleute die Haut mit einem Lokalanästhetikum unempﬁndlich. Dann führen sie den PICC in eine Vene in Ihrer Armbeuge oder am Oberarm ein. Die Spitze des Katheters ist in einem Bereich mit hoher Blutzirkulation in der Nähe des Herzens positioniert, um ein möglichst gutes Vermischen Ihrer intravenös verabreichten Medikamente zu ermöglichen. Unmittelbar nach der Platzierung des PICC spülen die Spezialisten den PICC mit Kochsalzlösung oder verdünntem Heparin, um zu verhindern, dass der Katheter verstopft. Anschliessend wird der Katheter mit der MicroClave Schutzkappe verschlossen."));
-                howToPlaceAPicc.Add(new KnowledgeEntryImageElement(new Image { Source = "PiccPlatzierung.PNG" }));
+                howToPlaceAPicc.Add(new KnowledgeEntryImageElement(new Image { Source = "PiccPlatzierung.png" }));
                 howToPlaceAPicc.Add(new KnowledgeEntryTextElement("Ob der PICC richtig platziert ist, überprüfen die Fachleute anhand einer Röntgenaufnahme oder mit einem anderen Abbildungsverfahren. Danach ﬁxieren sie den aus dem Körper herausführenden Abschnitt des Katheters mit einer eigens dafür entwickelten Haftplatte (StatLock) auf der Haut. Den Bereich um die Austrittsstelle des Katheters bedecken sie mit einem sterilen Verband. Lässt die Wirkung des Lokalanästhetikums nach dem Einlegen des Katheters nach, können während ein oder zwei Tagen leichte Schmerzen auftreten."));
 
                 List<GlossaryEntry> glossaryWordsForHowToPlaceAPiccEntry = new List<GlossaryEntry>();

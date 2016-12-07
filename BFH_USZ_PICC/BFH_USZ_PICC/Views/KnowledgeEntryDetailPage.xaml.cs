@@ -47,8 +47,8 @@ namespace BFH_USZ_PICC.Views
 
                     Image currentImage = (Image)entry.element;
                     currentImage.Aspect = Aspect.AspectFit;
-                    currentImage.HeightRequest = 300;
-                    currentImage.WidthRequest = 150;
+                    //currentImage.HeightRequest = 300;
+                    //currentImage.WidthRequest = 150;
 
                     addTabGestureRecognizerToImage(entry);
                     knowledgeEntryView.Children.Insert(index, currentImage);

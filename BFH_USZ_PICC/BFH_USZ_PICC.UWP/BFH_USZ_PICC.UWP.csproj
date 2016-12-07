@@ -118,8 +118,9 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DoppellumigerPICC.PNG" />
-    <Content Include="EinlumigerPICC.PNG" />
+    <Content Include="EinlumigerPICC.png" />
+    <Content Include="DreilumigerPICC.png" />
+    <Content Include="DoppellumigerPICC.png" />
     <Content Include="icon.png" />
     <Content Include="MicroClave1.jpg" />
     <Content Include="MicroClave10.jpg" />
@@ -131,7 +132,7 @@
     <Content Include="MicroClave7.jpg" />
     <Content Include="MicroClave8.jpg" />
     <Content Include="MicroClave9.jpg" />
-    <Content Include="PiccPlatzierung.PNG" />
+    <Content Include="PiccPlatzierung.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
