@@ -28,17 +28,17 @@
       <Label Text="{i18n:Translate UserMasterDataPageNameLabelText}"/>
       <Entry x:Name="Name"  Text="{Binding Name}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPageStreetLabelText}"/>
-      <Entry x:Name="Street"  Text="{Binding City}" IsEnabled="{Binding EnableUserInput}"/>
+      <Entry x:Name="Street"  Text="{Binding Street}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPageZIPLabelText}"/>
-      <Entry x:Name="Zip"  Text="{Binding ZIP}" IsEnabled="{Binding EnableUserInput}"/>
+      <Entry x:Name="Zip" Text="{Binding ZIP}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPagePlaceLabelText}"/>
-      <Entry x:Name="Place"  Text="{Binding Place}" IsEnabled="{Binding EnableUserInput}"/>
+      <Entry x:Name="Place" Text="{Binding City}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPageEmailLabelText}"/>
-      <Entry x:Name="Email"  Text="{Binding Email}" Keyboard="Email" IsEnabled="{Binding EnableUserInput}"/>
+      <Entry x:Name="Email" Text="{Binding Email}" Keyboard="Email" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPagePhoneLabelText}"/>
-      <Entry x:Name="Phone"  Text="{Binding Phone}" IsEnabled="{Binding EnableUserInput}"/>
+      <Entry x:Name="Phone" Keyboard="Telephone" Text="{Binding Phone}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPageMobileLabelText}"/>
-      <Entry x:Name="Mobile" Text="{Binding Mobile}" IsEnabled="{Binding EnableUserInput}"/>
+      <Entry x:Name="Mobile" Keyboard="Telephone" Text="{Binding Mobile}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"/>
       <DatePicker x:Name="BirthdatePicker" Date="{Binding Birthdate}" IsVisible="{Binding IsBirthdateSet}" IsEnabled="{Binding EnableUserInput}">
         <DatePicker.Format>d</DatePicker.Format>

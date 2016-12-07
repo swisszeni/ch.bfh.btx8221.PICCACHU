@@ -72,7 +72,7 @@ namespace BFH_USZ_PICC.ViewModels
         }
 
         private string _mobile = UserMasterData.MasterData.Mobile;
-        public string Moble
+        public string Mobile
         {
             get { return _mobile; }
             set { Set(ref _mobile, value); }
@@ -86,7 +86,7 @@ namespace BFH_USZ_PICC.ViewModels
                 if (_birthdate == null || _birthdate.Value.Date == DateTimeOffset.Now.Date)
                 {
                     IsBirthdateSet = false;
-                    return DateTime.Today;                    
+                    return DateTime.Today;
                 }
                 else
                 {
@@ -100,12 +100,12 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     IsBirthdateSet = false;
                     Set(ref _birthdate, null);
+                    return;
                 }
-                else
-                {
-                    IsBirthdateSet = true;
-                    Set(ref _birthdate, value);
-                }
+
+                IsBirthdateSet = true;
+                Set(ref _birthdate, value);
+
 
             }
         }
@@ -114,11 +114,14 @@ namespace BFH_USZ_PICC.ViewModels
         public bool EnableUserInput
         {
             get { return _enableUserInput; }
-            set { if (value)
+            set
+            {
+                if (value)
                 {
                     IsBirthdateSet = true;
                 }
-                Set(ref _enableUserInput, value); }
+                Set(ref _enableUserInput, value);
+            }
 
         }
 
