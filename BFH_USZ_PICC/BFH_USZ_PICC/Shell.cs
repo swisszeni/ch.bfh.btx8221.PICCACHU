@@ -114,7 +114,7 @@ namespace BFH_USZ_PICC
                 var masterData = await AskUserToAddMasterData();
                 if (masterData)
                 {
-                    await DeepNavigateAsync(MenuItemKey.Settings, typeof(UserMasterDataPage), new List<object> { UserMasterDataPageDisplayMode.Edit });
+                    await DeepNavigateAsync(MenuItemKey.Settings, typeof(UserMasterDataPage), new List<object> { true });
                 }
             }
         }

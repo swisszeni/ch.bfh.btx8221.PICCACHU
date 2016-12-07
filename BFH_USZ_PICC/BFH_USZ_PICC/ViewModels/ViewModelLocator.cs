@@ -36,6 +36,7 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<InfusionViewModel>();
             SimpleIoc.Default.Register<MicroClaveChangingViewModel>();
             SimpleIoc.Default.Register<StatlockChangingViewModel>();
+            SimpleIoc.Default.Register<MasterDataViewModel>();
         }
 
         public static ViewModelResolver Resolver

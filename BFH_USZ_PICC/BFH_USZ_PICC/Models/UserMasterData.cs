@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
-{
-    public enum Sex
+{ 
+    public enum Salutation
     {
         GenderFree,
         Male,
@@ -15,16 +15,16 @@ namespace BFH_USZ_PICC.Models
     //This class contains a glossary entry with the word that needs to be explained and the statement
     public class UserMasterData
     {
-        public Sex Salutation { get; set; }
+        public Salutation Salutation { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Street { get; set; }
         public string Zip { get; set; }
-        public string Place { get; set; }
+        public string City { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
-        public DateTimeOffset Birthdate { get; set; }
+        public DateTimeOffset? Birthdate { get; set; }
 
         private static UserMasterData masterData;
 
