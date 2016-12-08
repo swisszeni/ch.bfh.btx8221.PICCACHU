@@ -989,6 +989,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Guide wire length in cm:.
+        /// </summary>
+        public static string PICCDetailPageGuideWireLenghtText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageGuideWireLenghtText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter an institution.
         /// </summary>
         public static string PICCDetailPageInsertCityPlaceholderText {

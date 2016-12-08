@@ -627,5 +627,30 @@ namespace BFH_USZ_PICC.Utilitys
 
         #endregion
     }
+
+
+    public class GuideWireLenghtToTextConverter : IValueConverter
+    {
+        #region IValueConverter implementation
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            double lengt = (double)value;
+          
+            if (lengt > 1)
+            {
+                return AppResources.PICCDetailPageGuideWireLenghtText + " " + lengt;
+            }
+
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (double)value;
+        }
+
+        #endregion
+    }
 }
 

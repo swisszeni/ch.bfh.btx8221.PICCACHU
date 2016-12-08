@@ -24,7 +24,7 @@ namespace BFH_USZ_PICC.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
-        public DateTimeOffset? Birthdate { get; set; }
+        public DateTime? Birthdate { get; set; }
 
         private static UserMasterData masterData;
 
@@ -50,22 +50,5 @@ namespace BFH_USZ_PICC.Models
 
             }
         }
-        //}
-        //(Sex salutation, string surname, string name, string street, string zip, string place,
-        //       string email, string phone, string mobile, DateTimeOffset birthdate)
-        //{
-        //    MasterData.Salutation = salutation;
-        //    MasterData.Surname = surname;
-        //    MasterData.Name = name;
-        //    MasterData.Street = street;
-        //    MasterData.Zip = zip;
-        //    MasterData.Place = place;
-        //    MasterData.Email = email;
-        //    MasterData.Phone = phone;
-        //    MasterData.Mobile = mobile;
-        //    MasterData.Birthdate = birthdate;
-
-        //}
-
     }
 }

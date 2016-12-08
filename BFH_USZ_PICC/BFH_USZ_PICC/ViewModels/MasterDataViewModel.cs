@@ -14,76 +14,103 @@ namespace BFH_USZ_PICC.ViewModels
     public class MasterDataViewModel : ViewModelBase
     {
         private UserMasterData _masterData;
+        public UserMasterData MasterData
+        {
+            get { return _masterData; }
+            set
+            {
+                if (Set(ref _masterData, value))
+                {
+                    Salutation = value.Salutation;
+                    Name = value.Name;
+                    Surname = value.Surname;
+                    Street = value.Street;
+                    ZIP = value.Zip;
+                    City = value.City;
+                    Email = value.Email;
+                    Phone = value.Phone;
+                    Mobile = value.Mobile;
 
-        private Salutation _salutation = UserMasterData.MasterData.Salutation;
+                    if (value.Birthdate != null)
+                    {
+                        Birthdate = (DateTime)value.Birthdate;
+                    }
+                }
+
+                // Update bindings
+                RaisePropertyChanged("");
+            }
+        }
+
+        private Salutation _salutation;
         public Salutation Salutation
         {
             get { return _salutation; }
             set { Set(ref _salutation, value); }
         }
 
-        private string _surname = UserMasterData.MasterData.Surname;
+        private string _surname;
         public string Surname
         {
             get { return _surname; }
             set { Set(ref _surname, value); }
         }
 
-        private string _name = UserMasterData.MasterData.Name;
+        private string _name;
         public string Name
         {
             get { return _name; }
             set { Set(ref _name, value); }
         }
 
-        private string _street = UserMasterData.MasterData.Street;
+        private string _street;
         public string Street
         {
             get { return _street; }
             set { Set(ref _street, value); }
         }
 
-        private string _zip = UserMasterData.MasterData.Zip;
+        private string _zip;
         public string ZIP
         {
             get { return _zip; }
             set { Set(ref _zip, value); }
         }
 
-        private string _city = UserMasterData.MasterData.City;
+        private string _city;
         public string City
         {
             get { return _city; }
             set { Set(ref _city, value); }
         }
 
-        private string _email = UserMasterData.MasterData.Email;
+        private string _email;
         public string Email
         {
             get { return _email; }
             set { Set(ref _email, value); }
         }
 
-        private string _phone = UserMasterData.MasterData.Phone;
+        private string _phone;
         public string Phone
         {
             get { return _phone; }
             set { Set(ref _phone, value); }
         }
 
-        private string _mobile = UserMasterData.MasterData.Mobile;
+        private string _mobile;
         public string Mobile
         {
             get { return _mobile; }
             set { Set(ref _mobile, value); }
         }
 
-        private DateTimeOffset? _birthdate = UserMasterData.MasterData.Birthdate;
-        public DateTimeOffset? Birthdate
+        private DateTime? _birthdate;
+        public DateTime Birthdate
         {
             get
             {
-                if (_birthdate == null || _birthdate.Value.Date == DateTimeOffset.Now.Date)
+                if (_birthdate == null || _birthdate.Value.Year == DateTime.Now.Year)
                 {
                     IsBirthdateSet = false;
                     return DateTime.Today;
@@ -91,14 +118,18 @@ namespace BFH_USZ_PICC.ViewModels
                 else
                 {
                     IsBirthdateSet = true;
-                    return _birthdate;
+                    return (DateTime)_birthdate;
                 }
             }
             set
             {
-                if (value == null || value.Value.Date == DateTimeOffset.Now.Date)
-                {
-                    IsBirthdateSet = false;
+                if (value == null || value.Year == DateTime.Now.Year)
+                { 
+                    if(EnableUserInput == false)
+                    {
+                        IsBirthdateSet = false;
+                    }
+                    
                     Set(ref _birthdate, null);
                     return;
                 }
@@ -136,8 +167,8 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
         {
+            MasterData = UserMasterData.MasterData;
             EnableUserInput = true;
-            _masterData = UserMasterData.MasterData;
 
         }));
 
@@ -147,7 +178,7 @@ namespace BFH_USZ_PICC.ViewModels
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 EnableUserInput = false;
-                UserMasterData.MasterData = _masterData;
+                UserMasterData.MasterData = MasterData;
             }
 
         }));
@@ -165,10 +196,20 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                UserMasterData.MasterData = null;
-                RaisePropertyChanged("");
+                Salutation = Salutation.GenderFree;
+                Name = null;
+                Surname = null;
+                Street = null;
+                ZIP = null;
+                City = null;
+                Email = null;
+                Phone = null;
+                Mobile = null;
+                Birthdate = DateTime.Now;
+                
             }
-
+            RaisePropertyChanged("");
+            
         }));
 
     }

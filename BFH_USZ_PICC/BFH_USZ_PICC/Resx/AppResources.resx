@@ -570,4 +570,7 @@
   <data name="MaintenanceInstructionTitleText" xml:space="preserve">
     <value>Maintenance instruction</value>
   </data>
+  <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
+    <value>Guide wire length in cm:</value>
+  </data>
 </root>

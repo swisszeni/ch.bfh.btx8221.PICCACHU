@@ -610,6 +610,11 @@
           <source>Maintenance instruction</source>
           <target state="translated">Wartungsanleitung</target>
         </trans-unit>
+        <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
+          <source>Guide wire length in cm:</source>
+          <target state="translated">Führungsdrahtslänge in cm:
+</target>
+        </trans-unit>
       </group>
     </body>
   </file>
