@@ -245,7 +245,7 @@ namespace BFH_USZ_PICC.ViewModels
             PICCModel model = new PICCModel(PiccName, DisplayingEntry.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, DisplayingEntry.PICCModel.Gauge, DisplayingEntry.PICCModel.GNDMCode, DisplayingEntry.PICCModel.Barcode, DisplayingEntry.PICCModel.PictureUri);
             PICC.CurrentPICC = new PICC(model, InsertDate, InsertCountry, City, PiccSide, PiccPosition);
 
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
 
 
         }));

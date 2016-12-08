@@ -53,7 +53,7 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 var dialer = DependencyService.Get<ICaller>();
                 if (dialer != null)
-                    dialer.Dial("0764979662");
+                    dialer.Dial("0041442557240");
             }
         }
     }

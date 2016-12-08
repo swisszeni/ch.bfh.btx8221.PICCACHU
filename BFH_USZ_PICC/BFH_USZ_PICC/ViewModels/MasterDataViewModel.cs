@@ -110,7 +110,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get
             {
-                if (_birthdate == null || _birthdate.Value.Year == DateTime.Now.Year)
+                if (_birthdate == null || _birthdate.Value.Year >= DateTime.Now.Year)
                 {
                     IsBirthdateSet = false;
                     return DateTime.Today;
@@ -123,13 +123,13 @@ namespace BFH_USZ_PICC.ViewModels
             }
             set
             {
-                if (value == null || value.Year == DateTime.Now.Year)
-                { 
-                    if(EnableUserInput == false)
+                if (value == null || value.Year >= DateTime.Now.Year)
+                {
+                    if (EnableUserInput == false)
                     {
                         IsBirthdateSet = false;
                     }
-                    
+
                     Set(ref _birthdate, null);
                     return;
                 }
@@ -175,7 +175,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _cancelButtonCommand;
         public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
         {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, "Wollen Sie die Eingabe wirklich abbrechen?", AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 EnableUserInput = false;
                 UserMasterData.MasterData = MasterData;
@@ -184,10 +184,25 @@ namespace BFH_USZ_PICC.ViewModels
         }));
 
         private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(() =>
+        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
-            EnableUserInput = false;
-            RaisePropertyChanged("");
+            bool saveInput = true;
+
+            if (Birthdate.Year >= DateTime.Now.Year)
+            {   
+                // FIXME: Replace hardcoded text
+
+                if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, "Ihr Geburtstatum liegt ausserhalb des gültigen Datumsbereiches und wird gelöscht. Wollen Sie wirklich fortfahren?", AppResources.YesButtonText, AppResources.NoButtonText))
+                {
+                    saveInput = false;
+                    IsBirthdateSet = true;
+                };
+            }
+            if (saveInput) {
+                EnableUserInput = false;
+                RaisePropertyChanged("");
+            }
+            
 
         }));
 
@@ -206,10 +221,10 @@ namespace BFH_USZ_PICC.ViewModels
                 Phone = null;
                 Mobile = null;
                 Birthdate = DateTime.Now;
-                
+
             }
             RaisePropertyChanged("");
-            
+
         }));
 
     }

@@ -25,10 +25,10 @@ namespace BFH_USZ_PICC.Controls
             
         }
 
-        void DisorderButton_Clicked(object sender, EventArgs e)
-        {   
-            // TODO: Make sure that the DisorderPage can only be open once!
-            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderPage)));
+        async void DisorderButton_Clicked(object sender, EventArgs e)
+        {
+            await ((Shell)Application.Current.MainPage).NavigateAsync(MenuItemKey.Disorder);
+                
         }
 
             void CallUSZTelemedizinButton_Clicked(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace BFH_USZ_PICC.Controls
             {
                 var dialer = DependencyService.Get<ICaller>();
                 if (dialer != null)
-                    dialer.Dial("0764979662");
+                    dialer.Dial("0041442557240");
                 //Originalnummer PICC Telemedizin USZ: +41 44 255 72 40
             }
         }

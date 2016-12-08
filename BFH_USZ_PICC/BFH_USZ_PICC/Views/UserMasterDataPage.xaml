@@ -39,7 +39,7 @@
       <Entry x:Name="Phone" Keyboard="Telephone" Text="{Binding Phone}" IsEnabled="{Binding EnableUserInput}"/>
       <Label Text="{i18n:Translate UserMasterDataPageMobileLabelText}"/>
       <Entry x:Name="Mobile" Keyboard="Telephone" Text="{Binding Mobile}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"/>
+      <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}" IsVisible="{Binding IsBirthdateSet}"/>
       <DatePicker x:Name="BirthdatePicker" Date="{Binding Birthdate}" IsVisible="{Binding IsBirthdateSet}" IsEnabled="{Binding EnableUserInput}">
         <DatePicker.Format>d</DatePicker.Format>
       </DatePicker>

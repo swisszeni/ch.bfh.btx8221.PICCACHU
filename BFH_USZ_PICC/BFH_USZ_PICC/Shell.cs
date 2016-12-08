@@ -70,8 +70,8 @@ namespace BFH_USZ_PICC
             if (newPage == null)
                 return;
 
-            //pop to root for Windows Phone
-            if (Detail != null && Device.OS == TargetPlatform.WinPhone)
+            //pop to root
+            if (Detail != null)
             {
                 await Detail.Navigation.PopToRootAsync();
             }
