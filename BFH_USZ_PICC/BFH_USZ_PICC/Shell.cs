@@ -18,8 +18,6 @@ namespace BFH_USZ_PICC
     {
         Dictionary<MenuItemKey, NavigationPage> Pages { get; set; }
 
-        bool isFirstStart;
-
         public Shell()
         {
             Pages = new Dictionary<MenuItemKey, NavigationPage>();
@@ -34,7 +32,6 @@ namespace BFH_USZ_PICC
             NavigateAsync(MenuItemKey.PICC);
 
             InvalidateMeasure();
-            isFirstStart = true;
         }
 
         public async Task NavigateAsync(MenuItemKey id)
