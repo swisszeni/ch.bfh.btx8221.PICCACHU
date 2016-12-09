@@ -610,6 +610,16 @@
           <source>Maintenance instruction</source>
           <target state="translated">Wartungsanleitung</target>
         </trans-unit>
+        <trans-unit id="UserMasterDataPageMissText" translate="yes" xml:space="preserve">
+          <source>Miss</source>
+          <target state="translated">Frau</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Frau" als Anrede</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageMisterText" translate="yes" xml:space="preserve">
+          <source>Mister</source>
+          <target state="translated">Herr</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Herr" als Anrede</note>
+        </trans-unit>
       </group>
     </body>
   </file>

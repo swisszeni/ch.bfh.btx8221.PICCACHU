@@ -1322,6 +1322,24 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miss.
+        /// </summary>
+        public static string UserMasterDataPageMissText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageMissText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mister.
+        /// </summary>
+        public static string UserMasterDataPageMisterText {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageMisterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cellphone:.
         /// </summary>
         public static string UserMasterDataPageMobileLabelText {

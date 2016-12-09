@@ -119,12 +119,15 @@
   </resheader>
   <data name="AddPICCPageAddPiccManualButtonText" xml:space="preserve">
     <value>Enter PICC manually</value>
+    <comment>Knopf (Button) für manuelle Eingabe des PICC Modells</comment>
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Please enter a PICC</value>
+    <comment>Eingabeaufforderung für PICC Modell</comment>
   </data>
   <data name="AddPICCPagePICCNotFoundInformationText" xml:space="preserve">
     <value>PICC model could not be found</value>
+    <comment>Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</comment>
   </data>
   <data name="AddPICCPageScanButtonText" xml:space="preserve">
     <value>Scan barcode</value>
@@ -569,5 +572,13 @@
   </data>
   <data name="MaintenanceInstructionTitleText" xml:space="preserve">
     <value>Maintenance instruction</value>
+  </data>
+  <data name="UserMasterDataPageMissText" xml:space="preserve">
+    <value>Miss</value>
+    <comment>Übersetzung "Frau" als Anrede</comment>
+  </data>
+  <data name="UserMasterDataPageMisterText" xml:space="preserve">
+    <value>Mister</value>
+    <comment>Übersetzung "Herr" als Anrede</comment>
   </data>
 </root>

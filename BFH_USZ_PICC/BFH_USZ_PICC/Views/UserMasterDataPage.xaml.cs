@@ -23,9 +23,9 @@ namespace BFH_USZ_PICC.Views
 
             _displayMode = displayMode;
 
-            SalutationPicker.Items.Insert(0, " ");
-            SalutationPicker.Items.Insert(1, "Herr");
-            SalutationPicker.Items.Insert(2, "Frau");
+            SalutationPicker.Items.Insert(0, string.Empty);
+            SalutationPicker.Items.Insert(1, AppResources.UserMasterDataPageMisterText);
+            SalutationPicker.Items.Insert(2, AppResources.UserMasterDataPageMissText);
 
             EnableUserInput(_displayMode == UserMasterDataPageDisplayMode.Edit);
 
