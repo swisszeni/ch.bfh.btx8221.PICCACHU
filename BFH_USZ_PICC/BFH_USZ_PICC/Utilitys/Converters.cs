@@ -599,5 +599,58 @@ namespace BFH_USZ_PICC.Utilitys
 
         #endregion
     }
+
+    public class SalutationToIndexConverter : IValueConverter
+    {
+        #region IValueConverter implementation
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            Salutation sex = (Salutation)value;
+            switch (sex)
+            {
+                case Salutation.GenderFree:
+                    return 0;
+                case Salutation.Male:
+                    return 1;
+                case Salutation.Female:
+                    return 2;
+                
+            }
+            return 0;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (Salutation)value;
+        }
+
+        #endregion
+    }
+
+
+    public class GuideWireLenghtToTextConverter : IValueConverter
+    {
+        #region IValueConverter implementation
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            double lengt = (double)value;
+          
+            if (lengt > 1)
+            {
+                return AppResources.PICCDetailPageGuideWireLenghtText + " " + lengt;
+            }
+
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (double)value;
+        }
+
+        #endregion
+    }
 }
 

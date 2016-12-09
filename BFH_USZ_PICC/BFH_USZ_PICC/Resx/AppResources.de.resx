@@ -465,4 +465,8 @@
   <data name="MaintenanceInstructionTitleText" xml:space="preserve">
     <value>Wartungsanleitung</value>
   </data>
+  <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
+    <value>Führungsdrahtslänge in cm:
+</value>
+  </data>
 </root>

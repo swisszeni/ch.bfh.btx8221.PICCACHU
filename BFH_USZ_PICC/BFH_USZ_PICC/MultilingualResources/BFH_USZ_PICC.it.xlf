@@ -620,6 +620,10 @@
           <target state="new">Mister</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Herr" als Anrede</note>
         </trans-unit>
+        <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
+          <source>Guide wire length in cm:</source>
+          <target state="new">Guide wire length in cm:</target>
+        </trans-unit>
       </group>
     </body>
   </file>
