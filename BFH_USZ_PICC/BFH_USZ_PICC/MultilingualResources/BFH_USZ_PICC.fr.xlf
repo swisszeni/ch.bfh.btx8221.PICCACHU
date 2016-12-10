@@ -21,6 +21,7 @@
         <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
           <source>Please enter a PICC</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez entrer un PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Eingabeaufforderung für PICC Modell</note>
         </trans-unit>
         <trans-unit id="AddPICCPageScanButtonText" translate="yes" xml:space="preserve">
           <source>Scan barcode</source>
@@ -29,6 +30,7 @@
         <trans-unit id="AddPICCPageAddPiccManualButtonText" translate="yes" xml:space="preserve">
           <source>Enter PICC manually</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Entrez manuellement les PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) für manuelle Eingabe des PICC Modells</note>
         </trans-unit>
         <trans-unit id="AddPICCPageTitleText" translate="yes" xml:space="preserve">
           <source>Add PICC</source>
@@ -325,6 +327,7 @@
         <trans-unit id="AddPICCPagePICCNotFoundInformationText" translate="yes" xml:space="preserve">
           <source>PICC model could not be found</source>
           <target state="new">PICC model could not be found</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</note>
         </trans-unit>
         <trans-unit id="SettingsPageDelteScheduledRemindersText" translate="yes" xml:space="preserve">
           <source>Do you want to delete all scheduled maintenance reminders?</source>
@@ -623,6 +626,26 @@
         <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
           <source>Guide wire length in cm:</source>
           <target state="new">Guide wire length in cm:</target>
+        </trans-unit>
+        <trans-unit id="CancelButtonPressedConfirmationText" translate="yes" xml:space="preserve">
+          <source>Do you want to cancel your input?</source>
+          <target state="new">Do you want to cancel your input?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn bei einem Eintragsvorgang "Abbrechen" gedrückt wird (falls der User den Button versehentlich gedrückt hat).</note>
+        </trans-unit>
+        <trans-unit id="MasterDataViewModelBirthdateNotValidText" translate="yes" xml:space="preserve">
+          <source>Your birthdate is not valid and will be deleted. Continue?</source>
+          <target state="new">Your birthdate is not valid and will be deleted. Continue?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User ein nicht mögliches Gebursdatum (Jahr = aktuelles Jahr oder in der Zukunft) abspeichern will. Das Datum wird gelöscht, wenn der User "Fortfahren" mit "Ja" beantwortet.</note>
+        </trans-unit>
+        <trans-unit id="JournalEntriesDelteEntryConfirmationText" translate="yes" xml:space="preserve">
+          <source>Do you want to delte this entry?</source>
+          <target state="new">Do you want to delte this entry?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User einen Journaleintrag löschen möche. </note>
+        </trans-unit>
+        <trans-unit id="JournalEntriesAskForMainentanceInstructionText" translate="yes" xml:space="preserve">
+          <source>Do you want to see a maintenance instruction for this step?</source>
+          <target state="new">Do you want to see a maintenance instruction for this step?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</note>
         </trans-unit>
       </group>
     </body>

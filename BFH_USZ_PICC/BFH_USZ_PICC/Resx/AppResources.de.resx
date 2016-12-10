@@ -23,12 +23,14 @@
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Bitte PICC Name eingeben</value>
+    <comment>Eingabeaufforderung für PICC Modell</comment>
   </data>
   <data name="AddPICCPageScanButtonText" xml:space="preserve">
     <value>Barcode scannen</value>
   </data>
   <data name="AddPICCPageAddPiccManualButtonText" xml:space="preserve">
     <value>PICC manuell erfassen</value>
+    <comment>Knopf (Button) für manuelle Eingabe des PICC Modells</comment>
   </data>
   <data name="AddPICCPageTitleText" xml:space="preserve">
     <value>PICC hinzufügen</value>
@@ -251,6 +253,7 @@
   </data>
   <data name="AddPICCPagePICCNotFoundInformationText" xml:space="preserve">
     <value>PICC Modell konnte nicht gefunden werden</value>
+    <comment>Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</comment>
   </data>
   <data name="SettingsPageDelteScheduledRemindersText" xml:space="preserve">
     <value>Wollen Sie alle geplanten Wartungserinnerungen löschen?</value>
@@ -465,8 +468,24 @@
   <data name="MaintenanceInstructionTitleText" xml:space="preserve">
     <value>Wartungsanleitung</value>
   </data>
+  <data name="UserMasterDataPageMissText" xml:space="preserve">
+    <value>Frau</value>
+    <comment>Übersetzung "Frau" als Anrede</comment>
+  </data>
+  <data name="UserMasterDataPageMisterText" xml:space="preserve">
+    <value>Herr</value>
+    <comment>Übersetzung "Herr" als Anrede</comment>
+  </data>
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
     <value>Führungsdrahtslänge in cm:
 </value>
+  </data>
+  <data name="CancelButtonPressedConfirmationText" xml:space="preserve">
+    <value>Wollen Sie die Eingabe wirklich abbrechen?</value>
+    <comment>Warnung, wenn bei einem Eintragsvorgang "Abbrechen" gedrückt wird (falls der User den Button versehentlich gedrückt hat).</comment>
+  </data>
+  <data name="MasterDataViewModelBirthdateNotValidText" xml:space="preserve">
+    <value>Ihr Geburtstatum liegt ausserhalb des gültigen Datumsbereiches und wird gelöscht. Wollen Sie wirklich fortfahren?</value>
+    <comment>Warnung, wenn der User ein nicht mögliches Gebursdatum (Jahr = aktuelles Jahr oder in der Zukunft) abspeichern will. Das Datum wird gelöscht, wenn der User "Fortfahren" mit "Ja" beantwortet.</comment>
   </data>
 </root>

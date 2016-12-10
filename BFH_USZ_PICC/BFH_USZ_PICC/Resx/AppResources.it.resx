@@ -23,12 +23,14 @@
   </data>
   <data name="AddPICCPagePICCEntryPlaceholderText" xml:space="preserve">
     <value>Si prega di inserire un PICC</value>
+    <comment>Eingabeaufforderung für PICC Modell</comment>
   </data>
   <data name="AddPICCPageScanButtonText" xml:space="preserve">
     <value>Scansione di codici a barre</value>
   </data>
   <data name="AddPICCPageAddPiccManualButtonText" xml:space="preserve">
     <value>Immettere manualmente PICC</value>
+    <comment>Knopf (Button) für manuelle Eingabe des PICC Modells</comment>
   </data>
   <data name="AddPICCPageTitleText" xml:space="preserve">
     <value>Aggiungi PICC</value>

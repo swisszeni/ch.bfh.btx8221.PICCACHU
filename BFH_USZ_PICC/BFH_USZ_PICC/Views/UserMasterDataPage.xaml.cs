@@ -22,10 +22,9 @@ namespace BFH_USZ_PICC.Views
 
         void AddPickers()
         {   
-            // FIXME: Replace hardcoded text
-            SalutationPicker.Items.Insert(0, " ");
-            SalutationPicker.Items.Insert(1, "Herr");
-            SalutationPicker.Items.Insert(2, "Frau");
+            SalutationPicker.Items.Insert(0, string.Empty);
+            SalutationPicker.Items.Insert(1, AppResources.UserMasterDataPageMisterText);
+            SalutationPicker.Items.Insert(2, AppResources.UserMasterDataPageMissText);
         }
     }
 }

@@ -323,6 +323,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to cancel your input?.
+        /// </summary>
+        public static string CancelButtonPressedConfirmationText {
+            get {
+                return ResourceManager.GetString("CancelButtonPressedConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string CancelButtonText {
@@ -629,6 +638,24 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to see a maintenance instruction for this step?.
+        /// </summary>
+        public static string JournalEntriesAskForMainentanceInstructionText {
+            get {
+                return ResourceManager.GetString("JournalEntriesAskForMainentanceInstructionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to delte this entry?.
+        /// </summary>
+        public static string JournalEntriesDelteEntryConfirmationText {
+            get {
+                return ResourceManager.GetString("JournalEntriesDelteEntryConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home care.
         /// </summary>
         public static string JournalEntryInstitutionHomeCareText {
@@ -877,6 +904,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string MasterDataText {
             get {
                 return ResourceManager.GetString("MasterDataText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your birthdate is not valid and will be deleted. Continue?.
+        /// </summary>
+        public static string MasterDataViewModelBirthdateNotValidText {
+            get {
+                return ResourceManager.GetString("MasterDataViewModelBirthdateNotValidText", resourceCulture);
             }
         }
         

@@ -584,4 +584,20 @@
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
     <value>Guide wire length in cm:</value>
   </data>
+  <data name="CancelButtonPressedConfirmationText" xml:space="preserve">
+    <value>Do you want to cancel your input?</value>
+    <comment>Warnung, wenn bei einem Eintragsvorgang "Abbrechen" gedrückt wird (falls der User den Button versehentlich gedrückt hat).</comment>
+  </data>
+  <data name="JournalEntriesDelteEntryConfirmationText" xml:space="preserve">
+    <value>Do you want to delte this entry?</value>
+    <comment>Warnung, wenn der User einen Journaleintrag löschen möche. </comment>
+  </data>
+  <data name="MasterDataViewModelBirthdateNotValidText" xml:space="preserve">
+    <value>Your birthdate is not valid and will be deleted. Continue?</value>
+    <comment>Warnung, wenn der User ein nicht mögliches Gebursdatum (Jahr = aktuelles Jahr oder in der Zukunft) abspeichern will. Das Datum wird gelöscht, wenn der User "Fortfahren" mit "Ja" beantwortet.</comment>
+  </data>
+  <data name="JournalEntriesAskForMainentanceInstructionText" xml:space="preserve">
+    <value>Do you want to see a maintenance instruction for this step?</value>
+    <comment>Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</comment>
+  </data>
 </root>

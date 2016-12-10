@@ -175,7 +175,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _cancelButtonCommand;
         public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
         {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, "Wollen Sie die Eingabe wirklich abbrechen?", AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 EnableUserInput = false;
                 UserMasterData.MasterData = MasterData;
@@ -192,7 +192,7 @@ namespace BFH_USZ_PICC.ViewModels
             {   
                 // FIXME: Replace hardcoded text
 
-                if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, "Ihr Geburtstatum liegt ausserhalb des gültigen Datumsbereiches und wird gelöscht. Wollen Sie wirklich fortfahren?", AppResources.YesButtonText, AppResources.NoButtonText))
+                if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.MasterDataViewModelBirthdateNotValidText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
                     saveInput = false;
                     IsBirthdateSet = true;

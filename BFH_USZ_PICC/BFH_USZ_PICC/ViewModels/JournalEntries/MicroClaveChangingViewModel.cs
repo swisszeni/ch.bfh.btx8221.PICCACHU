@@ -90,7 +90,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
         {
             //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein"))
+            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
@@ -99,7 +99,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         private RelayCommand _deleteButtonCommand;
         public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
         {
-            if (await Application.Current.MainPage.DisplayAlert("Warnung!", "Wollen Sie den Eintrag wirklich löschen?", "Ja", "Nein"))
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
@@ -112,7 +112,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             if (IsEnabledOrVisible)
 
             {
-                if (await ((Shell)Application.Current.MainPage).DisplayAlert("Information", "Wollen Sie die für diesen Schritt eine Wartungsanleitung ansehen?", "Ja", "Nein"))
+                if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.InformationText, AppResources.JournalEntriesAskForMainentanceInstructionText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
                     await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { MainentanceInstructions.getMicroClaveInstruction() }));
                 }
