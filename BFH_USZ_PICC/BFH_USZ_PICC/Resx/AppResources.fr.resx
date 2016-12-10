@@ -164,4 +164,499 @@
   <data name="CallUSZTelemedizinButtonText" xml:space="preserve">
     <value>Appel USZ télémédecine</value>
   </data>
+  <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
+    <value>Rappel d’entretien</value>
+  </data>
+  <data name="SettingsPageAddReminderButtonText" xml:space="preserve">
+    <value>Ajouter des rappels d’entretien</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderFrequencyText" xml:space="preserve">
+    <value>Après combien de jours sera répétée la mémoire ?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderRepetitionText" xml:space="preserve">
+    <value>Combien de fois la mémoire doit être répétée ?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetDailyTimeText" xml:space="preserve">
+    <value>S’il vous plaît définir durée de rappel</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderSetStartDateText" xml:space="preserve">
+    <value>S’il vous plaît définir date de début</value>
+  </data>
+  <data name="UserMasterDataPageTitleText" xml:space="preserve">
+    <value>Mes données personnelles</value>
+  </data>
+  <data name="UserMasterDataPageBirthdateLabelText" xml:space="preserve">
+    <value>Date de naissance :</value>
+  </data>
+  <data name="UserMasterDataPageEmailLabelText" xml:space="preserve">
+    <value>Courriel :</value>
+  </data>
+  <data name="UserMasterDataPageMobileLabelText" xml:space="preserve">
+    <value>Téléphone portable :</value>
+  </data>
+  <data name="UserMasterDataPageNameLabelText" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
+  <data name="UserMasterDataPagePhoneLabelText" xml:space="preserve">
+    <value>Tél. :</value>
+  </data>
+  <data name="UserMasterDataPagePlaceLabelText" xml:space="preserve">
+    <value>Lieu :</value>
+  </data>
+  <data name="UserMasterDataPageSalutationLabelText" xml:space="preserve">
+    <value>Formule d’appel :</value>
+  </data>
+  <data name="UserMasterDataPageStreetLabelText" xml:space="preserve">
+    <value>Adresse :</value>
+  </data>
+  <data name="UserMasterDataPageSurnameLabelText" xml:space="preserve">
+    <value>Nom de famille :</value>
+  </data>
+  <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
+    <value>CODE POSTAL :</value>
+  </data>
+  <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
+    <value>Delte mes données</value>
+  </data>
+  <data name="MasterDataBackUpQuestionText" xml:space="preserve">
+    <value>Vous voulez sauvegarder vos données personnelles ? Vous pouvez ajuster les informations à tout moment dans les paramètres. </value>
+  </data>
+  <data name="MasterDataText" xml:space="preserve">
+    <value>Données principales</value>
+  </data>
+  <data name="CallUSZTelemedicineNotPossibleText" xml:space="preserve">
+    <value>Votre appareil ne peut pas appeler la télémédecine USZ. Contact 044 666 66 66</value>
+  </data>
+  <data name="CallUSZTelemedicineText" xml:space="preserve">
+    <value>Voulez-vous vraiment appeler USZ télémédecine ?</value>
+  </data>
+  <data name="FailedText" xml:space="preserve">
+    <value>Échec</value>
+  </data>
+  <data name="InformationText" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="NoButtonText" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="OkButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="YesButtonText" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="UserMasterDataPageDelteAllPersonalDataText" xml:space="preserve">
+    <value>Vous voulez vous vraiment supprimer toutes les données personnelles ?</value>
+  </data>
+  <data name="WarningText" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="AddPICCPagePICCNotFoundInformationText" xml:space="preserve">
+    <value>Modèle PICC est introuvable</value>
+    <comment>Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</comment>
+  </data>
+  <data name="SettingsPageDelteScheduledRemindersText" xml:space="preserve">
+    <value>Voulez-vous vraiment supprimer tous les rappels d’entretien régulier ?</value>
+  </data>
+  <data name="SettingsPageMaintenanceReminderInformationText" xml:space="preserve">
+    <value>Il convient de maintenir votre PICC</value>
+  </data>
+  <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
+    <value>Mes données personnelles</value>
+  </data>
+  <data name="JournalOverviewPageBandagesChangingEntry" xml:space="preserve">
+    <value>Changement de pansement</value>
+  </data>
+  <data name="JournalOverviewPageBloodWithdrawalEntry" xml:space="preserve">
+    <value>Prélèvement de sang</value>
+  </data>
+  <data name="JournalOverviewPageCatheterFlushEntry" xml:space="preserve">
+    <value>Rincer le cathéter</value>
+  </data>
+  <data name="JournalOverviewPageInfusionEntry" xml:space="preserve">
+    <value>Perfusions administrées</value>
+  </data>
+  <data name="JournalOverviewPageMicroClaveChangingEntry" xml:space="preserve">
+    <value>Changement MicroClave</value>
+  </data>
+  <data name="JournalOverviewPageStatlockChangingEntry" xml:space="preserve">
+    <value>Changement StatLock</value>
+  </data>
+  <data name="JournalOverviewPageAdministeredDrugEntry" xml:space="preserve">
+    <value>Médicaments administrés</value>
+  </data>
+  <data name="JournalEntryInstitutionHomeCareText" xml:space="preserve">
+    <value>Soins à domicile</value>
+  </data>
+  <data name="JournalEntryInstitutionHospitalText" xml:space="preserve">
+    <value>Hôpital</value>
+  </data>
+  <data name="JournalEntryInstitutionOutpatienClinicText" xml:space="preserve">
+    <value>Clinique externe</value>
+  </data>
+  <data name="JournalEntryInstitutionRehabilitationText" xml:space="preserve">
+    <value>Remise en état</value>
+  </data>
+  <data name="JournalEntryNotSpecifiedText" xml:space="preserve">
+    <value>Non spécifié</value>
+  </data>
+  <data name="JournalEntryOthersText" xml:space="preserve">
+    <value>Autres</value>
+  </data>
+  <data name="JournalEntryPersonAffectedPersonText" xml:space="preserve">
+    <value>Personnes touchées</value>
+  </data>
+  <data name="JournalEntryPersonFamilyDoctorText" xml:space="preserve">
+    <value>Médecin de famille</value>
+  </data>
+  <data name="JournalEntryPersonHealthExpertStaffText" xml:space="preserve">
+    <value>Personnel spécialisé santé</value>
+  </data>
+  <data name="JournalEntryPersonMedicalTechnicalAssistantText" xml:space="preserve">
+    <value>Assistant technique médical</value>
+  </data>
+  <data name="JournalEntryPersonNursingStaffText" xml:space="preserve">
+    <value>Personnel infirmier</value>
+  </data>
+  <data name="JournalEntryPersonRelativeText" xml:space="preserve">
+    <value>Relatif</value>
+  </data>
+  <data name="JournalEntryPersonSpecialistText" xml:space="preserve">
+    <value>Médecin spécialiste</value>
+  </data>
+  <data name="JournalEntryPersonXrayStaffText" xml:space="preserve">
+    <value>Radiographie du thorax : personnel</value>
+  </data>
+  <data name="DeleteButtonText" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="MicroClaveChangingEntryPollutionText" xml:space="preserve">
+    <value>Pollution</value>
+  </data>
+  <data name="MicroClaveChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntryDamagedWingsText" xml:space="preserve">
+    <value>Ailes endommagées</value>
+  </data>
+  <data name="StatlockChangingEntryPollutionText" xml:space="preserve">
+    <value>Pollution</value>
+  </data>
+  <data name="StatlockChangingEntryRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="StatlockChangingEntrySticksUnsatisfactorilyText" xml:space="preserve">
+    <value>Bâtons de manière peu satisfaisante</value>
+  </data>
+  <data name="BloodFlowFastAndEasyText" xml:space="preserve">
+    <value>Rapide, facile</value>
+  </data>
+  <data name="BloodFlowHesitantText" xml:space="preserve">
+    <value>Hésitant</value>
+  </data>
+  <data name="BloodFlowNoneText" xml:space="preserve">
+    <value>Pas du tout</value>
+  </data>
+  <data name="BandageChangingReasonBandageDoesNotStickAnymoreText" xml:space="preserve">
+    <value>Bandage ne colle pas plus</value>
+  </data>
+  <data name="BandageChangingReasonBandageWetText" xml:space="preserve">
+    <value>Pansement est mouillé</value>
+  </data>
+  <data name="BandageChangingReasonPainText" xml:space="preserve">
+    <value>Douleur, irrégularités</value>
+  </data>
+  <data name="BandageChangingReasonPunctureNotCoveredText" xml:space="preserve">
+    <value>Piqûre n’est pas couvert</value>
+  </data>
+  <data name="BandageChangingReasonRoutineText" xml:space="preserve">
+    <value>Régulièrement</value>
+  </data>
+  <data name="BandageChangingReasonSecondaryBleedingText" xml:space="preserve">
+    <value>Un saignement secondaire</value>
+  </data>
+  <data name="BandageChangingAreaCompleteText" xml:space="preserve">
+    <value>Complète</value>
+  </data>
+  <data name="BandageChangingAreaOnlyBandageText" xml:space="preserve">
+    <value>Seulement le Bandage</value>
+  </data>
+  <data name="BandageChangingAreaOnlyStatlockText" xml:space="preserve">
+    <value>Seulement StatLock</value>
+  </data>
+  <data name="BandagePunctureSituationLiquidDischargeText" xml:space="preserve">
+    <value>Rejets liquides</value>
+  </data>
+  <data name="BandagePunctureSituationPainfulPunctureText" xml:space="preserve">
+    <value>Puncuture douloureuse</value>
+  </data>
+  <data name="BandagePunctureSituationReddenedPunctureText" xml:space="preserve">
+    <value>Ponction rougie</value>
+  </data>
+  <data name="BandagePunctureSituationSkinNotIrritantText" xml:space="preserve">
+    <value>Non irritant de la peau</value>
+  </data>
+  <data name="BandagePunctureSituationSwollenPunctureText" xml:space="preserve">
+    <value>Ponction gonflée</value>
+  </data>
+  <data name="BandageArmProcessSituationPainfulText" xml:space="preserve">
+    <value>Douloureux</value>
+  </data>
+  <data name="BandageArmProcessSituationSwollenText" xml:space="preserve">
+    <value>Enflés</value>
+  </data>
+  <data name="BandageArmProcessSituationReddenedText" xml:space="preserve">
+    <value>Rougie</value>
+  </data>
+  <data name="InfusionReasonAntibioticText" xml:space="preserve">
+    <value>Antibiotique</value>
+  </data>
+  <data name="InfusionReasonBloodComponentText" xml:space="preserve">
+    <value>Produits sanguins labiles</value>
+  </data>
+  <data name="InfusionReasonChemotherapyText" xml:space="preserve">
+    <value>Chimiothérapie</value>
+  </data>
+  <data name="InfusionReasonExaminationSubstanceText" xml:space="preserve">
+    <value>Substance de l’examen</value>
+  </data>
+  <data name="InfusionReasonNutritionalSubstanceText" xml:space="preserve">
+    <value>Substance nutritive</value>
+  </data>
+  <data name="InfusionReasonOthersText" xml:space="preserve">
+    <value>Autres infusions</value>
+  </data>
+  <data name="InfusionAdministrationWithoutProblemText" xml:space="preserve">
+    <value>Sans problèmes</value>
+  </data>
+  <data name="CatheterFlushReasonBlockedText" xml:space="preserve">
+    <value>Bloqué</value>
+  </data>
+  <data name="CatheterFlushReasonBloodSamplingText" xml:space="preserve">
+    <value>Prélèvements sanguins</value>
+  </data>
+  <data name="CatheterFlushReasonPartiallyBlockedText" xml:space="preserve">
+    <value>Partiellement bloqué</value>
+  </data>
+  <data name="CatheterFlushReasonRoutineText" xml:space="preserve">
+    <value>Routine</value>
+  </data>
+  <data name="CatheterFlushTypeHeparinText" xml:space="preserve">
+    <value>Héparine</value>
+  </data>
+  <data name="CatheterFlushTypeNaClText" xml:space="preserve">
+    <value>NaCl</value>
+  </data>
+  <data name="CatheterFlushTypeUrokinaseText" xml:space="preserve">
+    <value>Urokinase</value>
+  </data>
+  <data name="CatheterFlushResultFlushNotPossibleText" xml:space="preserve">
+    <value>Ne rincez pas possible plus</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithoutResistanceText" xml:space="preserve">
+    <value>Sans résistance continue</value>
+  </data>
+  <data name="CatheterFlushResultFlushWithResistanceText" xml:space="preserve">
+    <value>Avec une résistance continue</value>
+  </data>
+  <data name="MaintenanceInstructionTitleText" xml:space="preserve">
+    <value>Instructions d’entretien</value>
+  </data>
+  <data name="UserMasterDataPageMissText" xml:space="preserve">
+    <value>Mlle</value>
+    <comment>Übersetzung "Frau" als Anrede</comment>
+  </data>
+  <data name="UserMasterDataPageMisterText" xml:space="preserve">
+    <value>Mister</value>
+    <comment>Übersetzung "Herr" als Anrede</comment>
+  </data>
+  <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
+    <value>Guide fil longueur en cm :</value>
+  </data>
+  <data name="CancelButtonPressedConfirmationText" xml:space="preserve">
+    <value>Vous voulez annuler votre entrée ?</value>
+    <comment>Warnung, wenn bei einem Eintragsvorgang "Abbrechen" gedrückt wird (falls der User den Button versehentlich gedrückt hat).</comment>
+  </data>
+  <data name="MasterDataViewModelBirthdateNotValidText" xml:space="preserve">
+    <value>Votre date de naissance n’est pas valide et sera supprimé. Continuer ?</value>
+    <comment>Warnung, wenn der User ein nicht mögliches Gebursdatum (Jahr = aktuelles Jahr oder in der Zukunft) abspeichern will. Das Datum wird gelöscht, wenn der User "Fortfahren" mit "Ja" beantwortet.</comment>
+  </data>
+  <data name="JournalEntriesDelteEntryConfirmationText" xml:space="preserve">
+    <value>Vous voulez delte cette entrée ?</value>
+    <comment>Warnung, wenn der User einen Journaleintrag löschen möche. </comment>
+  </data>
+  <data name="JournalEntriesAskForMainentanceInstructionText" xml:space="preserve">
+    <value>Vous voulez voir une instruction de maintenance pour cette étape ?</value>
+    <comment>Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectDateLabelText" xml:space="preserve">
+    <value>À quelle date le médicament a été administré à vous ?</value>
+    <comment>User soll angeben, an welchem Datum ihm das Medikament verabreicht wurde</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectDrugLabelText" xml:space="preserve">
+    <value>Veuillez indiquer quel médicament vous avez reçu :</value>
+    <comment>User soll angeben, welches Medikament ihm verabreicht wurde</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution vous a donné le médicament ?</value>
+    <comment>User soll angeben, welche Institution ihm das Medikament verabreicht hat</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectPersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a donné le médicament ?</value>
+    <comment>User soll angeben, welche Person ihm das Medikament verabreicht hat</comment>
+  </data>
+  <data name="BandageChangingEntryPageBandageChangingReasonLabelText" xml:space="preserve">
+    <value>Veuillez indiquer pourquoi votre pansement doit être changé :</value>
+    <comment>User soll den Grund für den Verbandswechsel angeben</comment>
+  </data>
+  <data name="BandageChangingEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution a contribué à modifier vos bandages ?</value>
+    <comment>User soll angeben, welche Institution ihm beim Verbandswechsel unterstützt hat</comment>
+  </data>
+  <data name="BandageChangingEntryPagePartsOfChaningLabelText" xml:space="preserve">
+    <value>Veuillez indiquer quelles parties de bandage ont été modifiées :</value>
+    <comment>User soll angeben, welche Teile des Verbandes gewechselt werden mussten</comment>
+  </data>
+  <data name="BandageChangingEntryPagePersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a aidé à changer les pansements ?</value>
+    <comment>User soll angeben, welche Person ihm beim Verbandswechsel unterstützt hat</comment>
+  </data>
+  <data name="BandageChangingEntryPageArmSituationLabelText" xml:space="preserve">
+    <value>Quelle est la situation sur le bras ?</value>
+    <comment>User soll angeben, wie der Verlauf am Arm ist</comment>
+  </data>
+  <data name="BandageChangingEntryPageBandageChangingDateLabelText" xml:space="preserve">
+    <value>À quelle date avez-vous changé le pansement ?</value>
+    <comment>User soll angeben, an welchem Datum er den Verband gewechselt hat</comment>
+  </data>
+  <data name="BandageChangingEntryPagePunctureSituationLabelText" xml:space="preserve">
+    <value>Comment est le site de ponction ?</value>
+    <comment>User soll angeben, wie die Situation an der Einstichstelle ist</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageBloodWithdrawalDateLabelText" xml:space="preserve">
+    <value>À quelle date avez-vous le sang retrait arriver ?</value>
+    <comment>User soll angeben, an welchem Datum ihm Blut entnommen wurde</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageIndicateBloodFlowLabelText" xml:space="preserve">
+    <value>S’il vous plaît indiquer comment le flux sanguin était au moment de la collecte :</value>
+    <comment>User soll angeben, wie die der Blutfluss bei der Entnahme war</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution a vous appuyé sur le processus de retrait de sang ?</value>
+    <comment>User soll angeben, welche Institution ihn bei der Blutentnahme unterstützt hat</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText" xml:space="preserve">
+    <value>Vous rincer le cathéter avec NaCl ?</value>
+    <comment>User soll angeben, ob der Katheter nach de Blutentnahme mit NaCl Lösung gespült wurde</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPagePersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a appuyé sur le processus de retrait de sang ?</value>
+    <comment>User soll angeben, welche Person ihn bei der Blutentnahme unterstützt hat</comment>
+  </data>
+  <data name="CatheterFlushEntryPageBloodReflowLabelText" xml:space="preserve">
+    <value>Un reflux de sang n’est visible ?</value>
+    <comment>User soll angeben, ob nach dem Spülen ein Blutrückfluss sichtbar ist</comment>
+  </data>
+  <data name="CatheterFlushEntryPageDateLabelText" xml:space="preserve">
+    <value>À quelle date vous rincer le cathéter ?</value>
+    <comment>User soll angeben, an welchem Datum der Katheter gespült wurde</comment>
+  </data>
+  <data name="CatheterFlushEntryPageFlushReasonLabelText" xml:space="preserve">
+    <value>Veuillez indiquer pourquoi le cathéter devait être vidées :</value>
+    <comment>User soll angeben, warum der Katheter gespült werden musste</comment>
+  </data>
+  <data name="CatheterFlushEntryPageFlushSolutionAmountLabelText" xml:space="preserve">
+    <value>Veuillez spécifier la quantité de la solution administrée (en ml) :</value>
+    <comment>User soll die Menge der verabreichten Lösung (in ml) angeben</comment>
+  </data>
+  <data name="CatheterFlushEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution vous a-t-il appuyé sur le cathéter RAS processus ?</value>
+    <comment>User soll angeben, welche Institution ihn bei beim Spülvorgang unterstützt hat</comment>
+  </data>
+  <data name="CatheterFlushEntryPagePatencyAfterFlushLabelText" xml:space="preserve">
+    <value>Ce qui est la continuité du cathéter après l’irrigation ?</value>
+    <comment>User soll angeben, wie die Durchgängigkeit des Katheters nach der Spülung ist</comment>
+  </data>
+  <data name="CatheterFlushEntryPagePersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a-t-il appuyé sur le cathéter RAS processus ?</value>
+    <comment>User soll angeben, welche Person ihn bei beim Spülvorgang unterstützt hat</comment>
+  </data>
+  <data name="CatheterFlushEntryPageFlushTypeLabelText" xml:space="preserve">
+    <value>Veuillez indiquer quelle solution votre cathéter a été rincée avec :</value>
+    <comment>User soll angeben, mit welcher Lösung der Katheter gespült wurde</comment>
+  </data>
+  <data name="InfusionEntryPageAntibioticLabelText" xml:space="preserve">
+    <value>Veuillez indiquer quel antibiotique vous a été donné :</value>
+    <comment>User soll angeben, welches Antibiotika er erhalten hat</comment>
+  </data>
+  <data name="InfusionEntryPageDateLabelText" xml:space="preserve">
+    <value>À quelle date était la perfusion administrée pour vous ?</value>
+    <comment>User soll angeben, an welchem Datum ihm die Infusion verabreicht wurde</comment>
+  </data>
+  <data name="InfusionEntryPageInfusionFlowLabelText" xml:space="preserve">
+    <value>Veuillez indiquer comment le débit de la perfusion a été au cours de l’administration :</value>
+    <comment>User soll angeben, wie die Verabreichung der Infusion abgelaufen ist</comment>
+  </data>
+  <data name="InfusionEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution vous a-t-il appuyé ?</value>
+    <comment>User soll angeben, welche Institution ihn beim Verabreichen der Infusion untersützt hat</comment>
+  </data>
+  <data name="InfusionEntryPagePersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a-t-il appuyé ?</value>
+    <comment>User soll angeben, welche Person ihn beim Verabreichen der Infusion untersützt hat</comment>
+  </data>
+  <data name="InfusionEntryPageTypeLabelText" xml:space="preserve">
+    <value>Veuillez indiquer le type d’infusion que vous a été donné :</value>
+    <comment>User soll angeben, welche Art von Infusion er erhalten hat</comment>
+  </data>
+  <data name="InfusionAdministrationNotPossibleText" xml:space="preserve">
+    <value>N’est pas possible</value>
+  </data>
+  <data name="InfusionAdministrationWithResistance" xml:space="preserve">
+    <value>Avec résistance</value>
+  </data>
+  <data name="MicroClaveChangingEntryPageDateLabelText" xml:space="preserve">
+    <value>À quelle date votre MicroClave a été échangé ?</value>
+    <comment>User soll angeben, an welchem Datum der MicroClave ausgetauscht wurde</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution a-t-il appuyé lors du changement de la MicroClave ?</value>
+    <comment>User soll angeben, welche Institution ihn beim Wechsel des MicroClave unterstützt hat</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPagePersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a-t-il appuyé lors du changement de la MicroClave ?</value>
+    <comment>User soll angeben, welche Person ihn beim Wechsel des MicroClave unterstützt hat</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPageReasonLabelText" xml:space="preserve">
+    <value>Veuillez indiquer pourquoi votre MicroClave devait être échangés :</value>
+    <comment>User soll angeben, warum der MicroClave ausgetauscht werden musste</comment>
+  </data>
+  <data name="StatlockChangingEntryPageDateLabelText" xml:space="preserve">
+    <value>À quelle date votre StatLock a été échangé ?</value>
+    <comment>User soll angeben, an welchem Datum der StatLock ausgetauscht wurde</comment>
+  </data>
+  <data name="StatlockChangingEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Quelle institution a-t-il appuyé lors du changement de la StatLock ?</value>
+    <comment>User soll angeben, welche Institution ihn beim Wechsel des Statlock unterstützt hat</comment>
+  </data>
+  <data name="StatlockChangingEntryPagePersonLabelText" xml:space="preserve">
+    <value>Quelle personne vous a-t-il appuyé lors du changement de la StatLock ?</value>
+    <comment>User soll angeben, welche Person ihn beim Wechsel des StatLock unterstützt hat</comment>
+  </data>
+  <data name="StatlockChangingEntryPageReasonLabelText" xml:space="preserve">
+    <value>Veuillez indiquer pourquoi votre StatLock devait être échangés :</value>
+    <comment>User soll angeben, warum der StatLock ausgetauscht werden musste</comment>
+  </data>
+  <data name="JournalOverviewViewModelWhichJournalEntryText" xml:space="preserve">
+    <value>Quel type d’entrée voulez-vous ajouter ?</value>
+    <comment>Frage an User, für welches Thema er einen neuen Journaleintrag erfassen möchte</comment>
+  </data>
+  <data name="PICCDetailViewModelSetPICCInactiveText" xml:space="preserve">
+    <value>Voulez-vous vraiment mettre ce cathéter PICC inactif ?</value>
+    <comment>Warnung, wenn der User den aktuellen PICC inaktiv setzen will</comment>
+  </data>
+  <data name="KnowledgeEntryDetailPageMatchingGlossariesText" xml:space="preserve">
+    <value>Glossaires correspondants</value>
+    <comment>Text für passende Glossareinträge zu den "Wissenswertes" Einträgen</comment>
+  </data>
 </root>
