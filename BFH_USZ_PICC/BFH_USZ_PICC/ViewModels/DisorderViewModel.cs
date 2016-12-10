@@ -16,12 +16,7 @@ namespace BFH_USZ_PICC.ViewModels
         /// <summary>
         /// Adds a list with all "Disorder" objects to the "ListOfDisorderEntries" variable.
         /// </summary>
-        public DisorderViewModel()
-        {
-            DisorderEntriesList = DisorderEntries.getEntries();
-        }
-
-        private List<DisorderEntry> _disorderEntriesList;
+        private List<DisorderEntry> _disorderEntriesList =  DisorderEntries.getEntries();
         public List<DisorderEntry> DisorderEntriesList
         {
             get { return _disorderEntriesList; }

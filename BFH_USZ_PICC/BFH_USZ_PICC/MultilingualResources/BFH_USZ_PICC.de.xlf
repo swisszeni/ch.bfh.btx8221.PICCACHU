@@ -101,8 +101,8 @@
           <target state="translated">Modellbezeichnung:</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCFrenchSizeText" translate="yes" xml:space="preserve">
-          <source>Size in french:</source>
-          <target state="translated">Grösse in French:</target>
+          <source>Diameter in french:</source>
+          <target state="translated">Durchmesser in French:</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCInsertedDateText" translate="yes" xml:space="preserve">
           <source>Inserted on:</source>
@@ -557,14 +557,6 @@
           <source>Other infusions</source>
           <target state="translated">Andere Infusionen</target>
         </trans-unit>
-        <trans-unit id="InfusionAdministrationFastText" translate="yes" xml:space="preserve">
-          <source>Fast</source>
-          <target state="translated">Schneller</target>
-        </trans-unit>
-        <trans-unit id="InfusionAdministrationHesitantText" translate="yes" xml:space="preserve">
-          <source>Hesitant</source>
-          <target state="translated">Zögerlichem</target>
-        </trans-unit>
         <trans-unit id="InfusionAdministrationWithoutProblemText" translate="yes" xml:space="preserve">
           <source>Without problems</source>
           <target state="translated">Problemlos</target>
@@ -647,6 +639,219 @@
           <source>Do you want to see a maintenance instruction for this step?</source>
           <target state="translated">Wollen Sie die für diesen Schritt eine Wartungsanleitung ansehen?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date was the drug administered to you?</source>
+          <target state="translated">An welchem Datum wurde Ihnen das Medikament verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm das Medikament verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectDrugLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which drug you have received:</source>
+          <target state="translated">Bitte geben Sie an, welches Medikament Ihnen verabreicht wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welches Medikament ihm verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution has given you the drug?</source>
+          <target state="translated">Welche Institution hat Ihnen das Medikament verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihm das Medikament verabreicht hat</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectPersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person has given you the drug?</source>
+          <target state="translated">Welche Person hat Ihnen das Medikament verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihm das Medikament verabreicht hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageBandageChangingReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your bandage needs to be changed:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr Verband gewechselt werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll den Grund für den Verbandswechsel angeben</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution helped you to change your bandages?</source>
+          <target state="translated">Welche Institution hat Ihnen beim Verbandswechsel geholfen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihm beim Verbandswechsel unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePartsOfChaningLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which bandage parts have been changed:</source>
+          <target state="translated">Bitte geben Sie an, welche Teile des Verbandes gewechselt wurden:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Teile des Verbandes gewechselt werden mussten</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person helped you to change bandages?</source>
+          <target state="translated">Welche Person hat Ihnen beim Verbandswechsel geholfen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihm beim Verbandswechsel unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageArmSituationLabelText" translate="yes" xml:space="preserve">
+          <source>How is the situation on the arm?</source>
+          <target state="translated">Wie ist der Verlauf am Arm?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie der Verlauf am Arm ist</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageBandageChangingDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did you change the bandage?</source>
+          <target state="translated">An welchem Datum haben Sie den Verband gewechselt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum er den Verband gewechselt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePunctureSituationLabelText" translate="yes" xml:space="preserve">
+          <source>How is the puncture site?</source>
+          <target state="translated">Wie verhält sich die Einstichstelle?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Situation an der Einstichstelle ist</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageBloodWithdrawalDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did the blood withdrawal happen?</source>
+          <target state="translated">An welchem Datum wurde Ihnen Blut entnommen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm Blut entnommen wurde</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageIndicateBloodFlowLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate how the blood flow was at the time of collection:</source>
+          <target state="translated">Bitte geben Sie an, wie der Blutfluss bei der Entnahme war:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die der Blutfluss bei der Entnahme war</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution has supported you on the blood withrawal process?</source>
+          <target state="translated">Welche Institution hat Sie bei der Blutentnahme unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn bei der Blutentnahme unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText" translate="yes" xml:space="preserve">
+          <source>Did you flush the catheter with NaCl?</source>
+          <target state="translated">Ist anschliessendes Spülen mit NaCl erfolgt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, ob der Katheter nach de Blutentnahme mit NaCl Lösung gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person has supported you on the blood withrawal process?</source>
+          <target state="translated">Welche Person hat Sie bei der Blutentnahme unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn bei der Blutentnahme unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageBloodReflowLabelText" translate="yes" xml:space="preserve">
+          <source>Is a blood reflow visible?</source>
+          <target state="translated">Ist ein Blutrückfluss feststellbar?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, ob nach dem Spülen ein Blutrückfluss sichtbar ist</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did you flush the catheter?</source>
+          <target state="translated">An welchem Datum haben Sie den Katheter gespült?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der Katheter gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why the catheter needed to be flushed:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr Katheter gespült werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der Katheter gespült werden musste</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushSolutionAmountLabelText" translate="yes" xml:space="preserve">
+          <source>Please specify the amount of the solution administered (in ml):</source>
+          <target state="translated">Bitte geben Sie die Menge der verabreichten Lösung an (in ml):</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll die Menge der verabreichten Lösung (in ml) angeben</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support on the catheter flush process?</source>
+          <target state="translated">Welche Institution hat Sie beim Spülen des Katheters unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn bei beim Spülvorgang unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPagePatencyAfterFlushLabelText" translate="yes" xml:space="preserve">
+          <source>What is the continuity of the catheter after the irrigation?</source>
+          <target state="translated">Wie ist die Durchgängigkeit des Katheters nach der Spülung?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Durchgängigkeit des Katheters nach der Spülung ist</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support on the catheter flush process?</source>
+          <target state="translated">Welche Person hat Sie beim Spülen des Katheters unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn bei beim Spülvorgang unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushTypeLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which solution your catheter was flushed with:</source>
+          <target state="translated">Bitte geben Sie an, mit welcher Lösung Ihr Katheter gespült wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, mit welcher Lösung der Katheter gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageAntibioticLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which antibiotic you have been given:</source>
+          <target state="translated">Bitte geben Sie an, welches Antibiotika Ihnen verabreicht wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welches Antibiotika er erhalten hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date was the infusion administered to you?</source>
+          <target state="translated">An welchem Datum wurde Ihnen die Infusion verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm die Infusion verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageInfusionFlowLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate how the flow of the infusion was during administration:</source>
+          <target state="translated">Bitte geben Sie an, wie der Durchfluss der Infusion bei der Verabreichung war:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Verabreichung der Infusion abgelaufen ist</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support?</source>
+          <target state="translated">Welche Institution hat Sie hierbei unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Verabreichen der Infusion untersützt hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support?</source>
+          <target state="translated">Welche Person hat Sie hierbei unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Verabreichen der Infusion untersützt hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageTypeLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate the type of infusion you have been given:</source>
+          <target state="translated">Bitte geben Sie an, welche Art Infusion Ihnen verabreicht wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Art von Infusion er erhalten hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationNotPossibleText" translate="yes" xml:space="preserve">
+          <source>Not possible</source>
+          <target state="translated">Nicht möglich</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationWithResistance" translate="yes" xml:space="preserve">
+          <source>With resistance</source>
+          <target state="translated">Mit Widerstand</target>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date has your MicroClave been exchanged?</source>
+          <target state="translated">An welchem Datum wurde Ihr MicroClave ausgetauscht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der MicroClave ausgetauscht wurde</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support when changing the MicroClave?</source>
+          <target state="translated">Welche Institution hat Sie beim Wechsel des MicroClave unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Wechsel des MicroClave unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support when changing the MicroClave?</source>
+          <target state="translated">Welche Person hat Sie beim Wechsel des MicroClave unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Wechsel des MicroClave unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your MicroClave had to be exchanged:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr MicroClave ausgetauscht werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der MicroClave ausgetauscht werden musste</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date has your StatLock been exchanged?</source>
+          <target state="translated">An welchem Datum wurde Ihr StatLock ausgetauscht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der StatLock ausgetauscht wurde</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support when changing the StatLock?</source>
+          <target state="translated">Welche Institution hat Sie beim Wechsel des StatLocks unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Wechsel des Statlock unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support when changing the StatLock?</source>
+          <target state="translated">Welche Person hat Sie beim Wechsel des StatLocks unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Wechsel des StatLock unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your StatLock had to be exchanged:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr StatLock ausgetauscht werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der StatLock ausgetauscht werden musste</note>
+        </trans-unit>
+        <trans-unit id="JournalOverviewViewModelWhichJournalEntryText" translate="yes" xml:space="preserve">
+          <source>What kind of entry do you want to add?</source>
+          <target state="translated">Was für einen Eintrag wollen Sie hinzufügen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage an User, für welches Thema er einen neuen Journaleintrag erfassen möchte</note>
+        </trans-unit>
+        <trans-unit id="PICCDetailViewModelSetPICCInactiveText" translate="yes" xml:space="preserve">
+          <source>Do you really want to put this PICC catheter inactive?</source>
+          <target state="translated">Wollen Sie diesen PICC Katheter wirklich inaktiv setzen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User den aktuellen PICC inaktiv setzen will</note>
+        </trans-unit>
+        <trans-unit id="KnowledgeEntryDetailPageMatchingGlossariesText" translate="yes" xml:space="preserve">
+          <source>Matching glossaries</source>
+          <target state="translated">Passende Glossareinträge</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text für passende Glossareinträge zu den "Wissenswertes" Einträgen</note>
         </trans-unit>
       </group>
     </body>

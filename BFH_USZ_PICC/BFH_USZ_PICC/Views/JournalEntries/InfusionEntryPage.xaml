@@ -18,17 +18,17 @@
   </Grid.Resources>
   <ScrollView>
     <StackLayout Orientation="Vertical">
-      <Label Text ="Bitte geben Sie an, welche Art Infusion Ihnen verabreicht wurde:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text ="{i18n:Translate InfusionEntryPageTypeLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="InfusionReasonPicker" SelectedIndex="{Binding InfusionType, Converter={StaticResource InfusionTypeToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="Bitte geben Sie an, welches Antibiotika Ihnen verabreicht wurde:" VerticalTextAlignment="Center" FontSize="20" IsVisible="{Binding IsTypeAntibiotic}"/>
+      <Label Text ="{i18n:Translate InfusionEntryPageAntibioticLabelText}" VerticalTextAlignment="Center" FontSize="20" IsVisible="{Binding IsTypeAntibiotic}"/>
       <Entry x:Name="AntibioticEntry" Text="{Binding AntibioticName}" IsVisible="{Binding IsTypeAntibiotic}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="Bitte geben Sie an, wie die Verabreichung der Infusion abgelaufen ist:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text ="{i18n:Translate InfusionEntryPageInfusionFlowLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="InfusionAdministrationPicker" SelectedIndex="{Binding InfusionAdministration, Converter={StaticResource InfusionAdministrationToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="An welchem Datum wurde Ihnen die Infusion verabreicht?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text ="{i18n:Translate InfusionEntryPageDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text="Welche Institution hat Sie hierbei unterstützt?" FontSize="20"/>
+      <Label Text ="{i18n:Translate InfusionEntryPageInstitutionLabelText}" FontSize="20"/>
       <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text="Welche Person hat Sie hierbei unterstützt?" FontSize="20"/>
+      <Label Text ="{i18n:Translate InfusionEntryPagePersonLabelText}" FontSize="20"/>
       <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>

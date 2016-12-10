@@ -74,11 +74,11 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _entryButtonCommand;
         public RelayCommand EntryButtonCommand => _entryButtonCommand ?? (_entryButtonCommand = new RelayCommand(async () =>
         {
-            var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet("Was wollen Sie hinzufügen?", "Abbrechen", null,
+            var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet(AppResources.JournalOverviewViewModelWhichJournalEntryText, AppResources.CancelButtonText, null,
               AppResources.JournalOverviewPageCatheterFlushEntry, AppResources.JournalOverviewPageInfusionEntry, AppResources.JournalOverviewPageAdministeredDrugEntry, AppResources.JournalOverviewPageBloodWithdrawalEntry,
               AppResources.JournalOverviewPageBandagesChangingEntry, AppResources.JournalOverviewPageMicroClaveChangingEntry, AppResources.JournalOverviewPageStatlockChangingEntry);
 
-            if (selectedEntry != null && selectedEntry != "Abbrechen")
+            if (selectedEntry != null && selectedEntry != AppResources.CancelButtonText)
 
             {
                 if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)

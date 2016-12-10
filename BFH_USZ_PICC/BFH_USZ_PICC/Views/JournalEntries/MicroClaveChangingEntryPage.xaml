@@ -17,13 +17,13 @@
   </Grid.Resources>
   <ScrollView>
     <StackLayout Orientation="Vertical">
-      <Label Text ="Bitte geben Sie an, warum Ihr MicroClave gewechselt werden musste:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text =" {i18n:Translate MicroClaveChangingEntryPageReasonLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="MicroClaveChaningReasonPicker" SelectedIndex="{Binding Reason, Converter={StaticResource MicroClaveChangementReasonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="An welchem Datum wurde Ihr MicroClave gewechselt?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text =" {i18n:Translate MicroClaveChangingEntryPageDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text="Welche Institution hat Ihnen beim Wechsel des MicroClave geholfen?" FontSize="20"/>
+      <Label Text =" {i18n:Translate MicroClaveChangingEntryPageInstitutionLabelText}" FontSize="20"/>
       <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text="Welche Person hat Ihnen beim Wechsel des MicroClave geholfen?" FontSize="20"/>
+      <Label Text =" {i18n:Translate MicroClaveChangingEntryPagePersonLabelText}" FontSize="20"/>
       <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>

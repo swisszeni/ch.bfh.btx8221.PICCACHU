@@ -282,11 +282,11 @@
   <data name="InformationText" xml:space="preserve">
     <value>Information</value>
   </data>
-  <data name="InfusionAdministrationFastText" xml:space="preserve">
-    <value>Fast</value>
+  <data name="InfusionAdministrationNotPossibleText" xml:space="preserve">
+    <value>Not possible</value>
   </data>
-  <data name="InfusionAdministrationHesitantText" xml:space="preserve">
-    <value>Hesitant</value>
+  <data name="InfusionAdministrationWithResistance" xml:space="preserve">
+    <value>With resistance</value>
   </data>
   <data name="InfusionAdministrationWithoutProblemText" xml:space="preserve">
     <value>Without problems</value>
@@ -433,7 +433,7 @@
     <value>PICC body side:</value>
   </data>
   <data name="PICCDetailPagePICCFrenchSizeText" xml:space="preserve">
-    <value>Size in french:</value>
+    <value>Diameter in french:</value>
   </data>
   <data name="PICCDetailPagePICCInsertedDateText" xml:space="preserve">
     <value>Inserted on:</value>
@@ -599,5 +599,169 @@
   <data name="JournalEntriesAskForMainentanceInstructionText" xml:space="preserve">
     <value>Do you want to see a maintenance instruction for this step?</value>
     <comment>Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectDateLabelText" xml:space="preserve">
+    <value>At what date was the drug administered to you?</value>
+    <comment>User soll angeben, an welchem Datum ihm das Medikament verabreicht wurde</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectDrugLabelText" xml:space="preserve">
+    <value>Please indicate which drug you have received:</value>
+    <comment>User soll angeben, welches Medikament ihm verabreicht wurde</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectInstitutionLabelText" xml:space="preserve">
+    <value>Which institution has given you the drug?</value>
+    <comment>User soll angeben, welche Institution ihm das Medikament verabreicht hat</comment>
+  </data>
+  <data name="AdministeredDrugEntryPageSelectPersonLabelText" xml:space="preserve">
+    <value>What person has given you the drug?</value>
+    <comment>User soll angeben, welche Person ihm das Medikament verabreicht hat</comment>
+  </data>
+  <data name="BandageChangingEntryPageArmSituationLabelText" xml:space="preserve">
+    <value>How is the situation on the arm?</value>
+    <comment>User soll angeben, wie der Verlauf am Arm ist</comment>
+  </data>
+  <data name="BandageChangingEntryPageBandageChangingDateLabelText" xml:space="preserve">
+    <value>At what date did you change the bandage?</value>
+    <comment>User soll angeben, an welchem Datum er den Verband gewechselt hat</comment>
+  </data>
+  <data name="BandageChangingEntryPageBandageChangingReasonLabelText" xml:space="preserve">
+    <value>Please indicate why your bandage needs to be changed:</value>
+    <comment>User soll den Grund für den Verbandswechsel angeben</comment>
+  </data>
+  <data name="BandageChangingEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Which institution helped you to change your bandages?</value>
+    <comment>User soll angeben, welche Institution ihm beim Verbandswechsel unterstützt hat</comment>
+  </data>
+  <data name="BandageChangingEntryPagePartsOfChaningLabelText" xml:space="preserve">
+    <value>Please indicate which bandage parts have been changed:</value>
+    <comment>User soll angeben, welche Teile des Verbandes gewechselt werden mussten</comment>
+  </data>
+  <data name="BandageChangingEntryPagePersonLabelText" xml:space="preserve">
+    <value>What person helped you to change bandages?</value>
+    <comment>User soll angeben, welche Person ihm beim Verbandswechsel unterstützt hat</comment>
+  </data>
+  <data name="BandageChangingEntryPagePunctureSituationLabelText" xml:space="preserve">
+    <value>How is the puncture site?</value>
+    <comment>User soll angeben, wie die Situation an der Einstichstelle ist</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageBloodWithdrawalDateLabelText" xml:space="preserve">
+    <value>At what date did the blood withdrawal happen?</value>
+    <comment>User soll angeben, an welchem Datum ihm Blut entnommen wurde</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageIndicateBloodFlowLabelText" xml:space="preserve">
+    <value>Please indicate how the blood flow was at the time of collection:</value>
+    <comment>User soll angeben, wie die der Blutfluss bei der Entnahme war</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Which institution has supported you on the blood withrawal process?</value>
+    <comment>User soll angeben, welche Institution ihn bei der Blutentnahme unterstützt hat</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText" xml:space="preserve">
+    <value>Did you flush the catheter with NaCl?</value>
+    <comment>User soll angeben, ob der Katheter nach de Blutentnahme mit NaCl Lösung gespült wurde</comment>
+  </data>
+  <data name="BloodWithdrawalEntryPagePersonLabelText" xml:space="preserve">
+    <value>What person has supported you on the blood withrawal process?</value>
+    <comment>User soll angeben, welche Person ihn bei der Blutentnahme unterstützt hat</comment>
+  </data>
+  <data name="CatheterFlushEntryPageBloodReflowLabelText" xml:space="preserve">
+    <value>Is a blood reflow visible?</value>
+    <comment>User soll angeben, ob nach dem Spülen ein Blutrückfluss sichtbar ist</comment>
+  </data>
+  <data name="CatheterFlushEntryPageDateLabelText" xml:space="preserve">
+    <value>At what date did you flush the catheter?</value>
+    <comment>User soll angeben, an welchem Datum der Katheter gespült wurde</comment>
+  </data>
+  <data name="CatheterFlushEntryPageFlushReasonLabelText" xml:space="preserve">
+    <value>Please indicate why the catheter needed to be flushed:</value>
+    <comment>User soll angeben, warum der Katheter gespült werden musste</comment>
+  </data>
+  <data name="CatheterFlushEntryPageFlushSolutionAmountLabelText" xml:space="preserve">
+    <value>Please specify the amount of the solution administered (in ml):</value>
+    <comment>User soll die Menge der verabreichten Lösung (in ml) angeben</comment>
+  </data>
+  <data name="CatheterFlushEntryPageFlushTypeLabelText" xml:space="preserve">
+    <value>Please indicate which solution your catheter was flushed with:</value>
+    <comment>User soll angeben, mit welcher Lösung der Katheter gespült wurde</comment>
+  </data>
+  <data name="CatheterFlushEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Which institution did you support on the catheter flush process?</value>
+    <comment>User soll angeben, welche Institution ihn bei beim Spülvorgang unterstützt hat</comment>
+  </data>
+  <data name="CatheterFlushEntryPagePatencyAfterFlushLabelText" xml:space="preserve">
+    <value>What is the continuity of the catheter after the irrigation?</value>
+    <comment>User soll angeben, wie die Durchgängigkeit des Katheters nach der Spülung ist</comment>
+  </data>
+  <data name="CatheterFlushEntryPagePersonLabelText" xml:space="preserve">
+    <value>What person did you support on the catheter flush process?</value>
+    <comment>User soll angeben, welche Person ihn bei beim Spülvorgang unterstützt hat</comment>
+  </data>
+  <data name="InfusionEntryPageAntibioticLabelText" xml:space="preserve">
+    <value>Please indicate which antibiotic you have been given:</value>
+    <comment>User soll angeben, welches Antibiotika er erhalten hat</comment>
+  </data>
+  <data name="InfusionEntryPageDateLabelText" xml:space="preserve">
+    <value>At what date was the infusion administered to you?</value>
+    <comment>User soll angeben, an welchem Datum ihm die Infusion verabreicht wurde</comment>
+  </data>
+  <data name="InfusionEntryPageInfusionFlowLabelText" xml:space="preserve">
+    <value>Please indicate how the flow of the infusion was during administration:</value>
+    <comment>User soll angeben, wie die Verabreichung der Infusion abgelaufen ist</comment>
+  </data>
+  <data name="InfusionEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Which institution did you support?</value>
+    <comment>User soll angeben, welche Institution ihn beim Verabreichen der Infusion untersützt hat</comment>
+  </data>
+  <data name="InfusionEntryPagePersonLabelText" xml:space="preserve">
+    <value>What person did you support?</value>
+    <comment>User soll angeben, welche Person ihn beim Verabreichen der Infusion untersützt hat</comment>
+  </data>
+  <data name="InfusionEntryPageTypeLabelText" xml:space="preserve">
+    <value>Please indicate the type of infusion you have been given:</value>
+    <comment>User soll angeben, welche Art von Infusion er erhalten hat</comment>
+  </data>
+  <data name="JournalOverviewViewModelWhichJournalEntryText" xml:space="preserve">
+    <value>What kind of entry do you want to add?</value>
+    <comment>Frage an User, für welches Thema er einen neuen Journaleintrag erfassen möchte</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPageDateLabelText" xml:space="preserve">
+    <value>At what date has your MicroClave been exchanged?</value>
+    <comment>User soll angeben, an welchem Datum der MicroClave ausgetauscht wurde</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Which institution did you support when changing the MicroClave?</value>
+    <comment>User soll angeben, welche Institution ihn beim Wechsel des MicroClave unterstützt hat</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPagePersonLabelText" xml:space="preserve">
+    <value>What person did you support when changing the MicroClave?</value>
+    <comment>User soll angeben, welche Person ihn beim Wechsel des MicroClave unterstützt hat</comment>
+  </data>
+  <data name="MicroClaveChangingEntryPageReasonLabelText" xml:space="preserve">
+    <value>Please indicate why your MicroClave had to be exchanged:</value>
+    <comment>User soll angeben, warum der MicroClave ausgetauscht werden musste</comment>
+  </data>
+  <data name="PICCDetailViewModelSetPICCInactiveText" xml:space="preserve">
+    <value>Do you really want to put this PICC catheter inactive?</value>
+    <comment>Warnung, wenn der User den aktuellen PICC inaktiv setzen will</comment>
+  </data>
+  <data name="StatlockChangingEntryPageDateLabelText" xml:space="preserve">
+    <value>At what date has your StatLock been exchanged?</value>
+    <comment>User soll angeben, an welchem Datum der StatLock ausgetauscht wurde</comment>
+  </data>
+  <data name="StatlockChangingEntryPageInstitutionLabelText" xml:space="preserve">
+    <value>Which institution did you support when changing the StatLock?</value>
+    <comment>User soll angeben, welche Institution ihn beim Wechsel des Statlock unterstützt hat</comment>
+  </data>
+  <data name="StatlockChangingEntryPagePersonLabelText" xml:space="preserve">
+    <value>What person did you support when changing the StatLock?</value>
+    <comment>User soll angeben, welche Person ihn beim Wechsel des StatLock unterstützt hat</comment>
+  </data>
+  <data name="StatlockChangingEntryPageReasonLabelText" xml:space="preserve">
+    <value>Please indicate why your StatLock had to be exchanged:</value>
+    <comment>User soll angeben, warum der StatLock ausgetauscht werden musste</comment>
+  </data>
+  <data name="KnowledgeEntryDetailPageMatchingGlossariesText" xml:space="preserve">
+    <value>Matching glossaries</value>
+    <comment>Text für passende Glossareinträge zu den "Wissenswertes" Einträgen</comment>
   </data>
 </root>

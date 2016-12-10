@@ -107,6 +107,42 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to At what date was the drug administered to you?.
+        /// </summary>
+        public static string AdministeredDrugEntryPageSelectDateLabelText {
+            get {
+                return ResourceManager.GetString("AdministeredDrugEntryPageSelectDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate which drug you have received:.
+        /// </summary>
+        public static string AdministeredDrugEntryPageSelectDrugLabelText {
+            get {
+                return ResourceManager.GetString("AdministeredDrugEntryPageSelectDrugLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution has given you the drug?.
+        /// </summary>
+        public static string AdministeredDrugEntryPageSelectInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("AdministeredDrugEntryPageSelectInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person has given you the drug?.
+        /// </summary>
+        public static string AdministeredDrugEntryPageSelectPersonLabelText {
+            get {
+                return ResourceManager.GetString("AdministeredDrugEntryPageSelectPersonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Painful.
         /// </summary>
         public static string BandageArmProcessSituationPainfulText {
@@ -157,6 +193,69 @@ namespace BFH_USZ_PICC.Resx {
         public static string BandageChangingAreaOnlyStatlockText {
             get {
                 return ResourceManager.GetString("BandageChangingAreaOnlyStatlockText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How is the situation on the arm?.
+        /// </summary>
+        public static string BandageChangingEntryPageArmSituationLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPageArmSituationLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At what date did you change the bandage?.
+        /// </summary>
+        public static string BandageChangingEntryPageBandageChangingDateLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPageBandageChangingDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate why your bandage needs to be changed:.
+        /// </summary>
+        public static string BandageChangingEntryPageBandageChangingReasonLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPageBandageChangingReasonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution helped you to change your bandages?.
+        /// </summary>
+        public static string BandageChangingEntryPageInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPageInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate which bandage parts have been changed:.
+        /// </summary>
+        public static string BandageChangingEntryPagePartsOfChaningLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPagePartsOfChaningLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person helped you to change bandages?.
+        /// </summary>
+        public static string BandageChangingEntryPagePersonLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPagePersonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How is the puncture site?.
+        /// </summary>
+        public static string BandageChangingEntryPagePunctureSituationLabelText {
+            get {
+                return ResourceManager.GetString("BandageChangingEntryPagePunctureSituationLabelText", resourceCulture);
             }
         }
         
@@ -296,6 +395,51 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to At what date did the blood withdrawal happen?.
+        /// </summary>
+        public static string BloodWithdrawalEntryPageBloodWithdrawalDateLabelText {
+            get {
+                return ResourceManager.GetString("BloodWithdrawalEntryPageBloodWithdrawalDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate how the blood flow was at the time of collection:.
+        /// </summary>
+        public static string BloodWithdrawalEntryPageIndicateBloodFlowLabelText {
+            get {
+                return ResourceManager.GetString("BloodWithdrawalEntryPageIndicateBloodFlowLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution has supported you on the blood withrawal process?.
+        /// </summary>
+        public static string BloodWithdrawalEntryPageInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("BloodWithdrawalEntryPageInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Did you flush the catheter with NaCl?.
+        /// </summary>
+        public static string BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText {
+            get {
+                return ResourceManager.GetString("BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person has supported you on the blood withrawal process?.
+        /// </summary>
+        public static string BloodWithdrawalEntryPagePersonLabelText {
+            get {
+                return ResourceManager.GetString("BloodWithdrawalEntryPagePersonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your device can not call the USZ telemedicine. Contact 044 666 66 66.
         /// </summary>
         public static string CallUSZTelemedicineNotPossibleText {
@@ -337,6 +481,78 @@ namespace BFH_USZ_PICC.Resx {
         public static string CancelButtonText {
             get {
                 return ResourceManager.GetString("CancelButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is a blood reflow visible?.
+        /// </summary>
+        public static string CatheterFlushEntryPageBloodReflowLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPageBloodReflowLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At what date did you flush the catheter?.
+        /// </summary>
+        public static string CatheterFlushEntryPageDateLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPageDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate why the catheter needed to be flushed:.
+        /// </summary>
+        public static string CatheterFlushEntryPageFlushReasonLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPageFlushReasonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify the amount of the solution administered (in ml):.
+        /// </summary>
+        public static string CatheterFlushEntryPageFlushSolutionAmountLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPageFlushSolutionAmountLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate which solution your catheter was flushed with:.
+        /// </summary>
+        public static string CatheterFlushEntryPageFlushTypeLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPageFlushTypeLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution did you support on the catheter flush process?.
+        /// </summary>
+        public static string CatheterFlushEntryPageInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPageInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What is the continuity of the catheter after the irrigation?.
+        /// </summary>
+        public static string CatheterFlushEntryPagePatencyAfterFlushLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPagePatencyAfterFlushLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person did you support on the catheter flush process?.
+        /// </summary>
+        public static string CatheterFlushEntryPagePersonLabelText {
+            get {
+                return ResourceManager.GetString("CatheterFlushEntryPagePersonLabelText", resourceCulture);
             }
         }
         
@@ -557,20 +773,11 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fast.
+        ///   Looks up a localized string similar to Not possible.
         /// </summary>
-        public static string InfusionAdministrationFastText {
+        public static string InfusionAdministrationNotPossibleText {
             get {
-                return ResourceManager.GetString("InfusionAdministrationFastText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hesitant.
-        /// </summary>
-        public static string InfusionAdministrationHesitantText {
-            get {
-                return ResourceManager.GetString("InfusionAdministrationHesitantText", resourceCulture);
+                return ResourceManager.GetString("InfusionAdministrationNotPossibleText", resourceCulture);
             }
         }
         
@@ -580,6 +787,69 @@ namespace BFH_USZ_PICC.Resx {
         public static string InfusionAdministrationWithoutProblemText {
             get {
                 return ResourceManager.GetString("InfusionAdministrationWithoutProblemText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With resistance.
+        /// </summary>
+        public static string InfusionAdministrationWithResistance {
+            get {
+                return ResourceManager.GetString("InfusionAdministrationWithResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate which antibiotic you have been given:.
+        /// </summary>
+        public static string InfusionEntryPageAntibioticLabelText {
+            get {
+                return ResourceManager.GetString("InfusionEntryPageAntibioticLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At what date was the infusion administered to you?.
+        /// </summary>
+        public static string InfusionEntryPageDateLabelText {
+            get {
+                return ResourceManager.GetString("InfusionEntryPageDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate how the flow of the infusion was during administration:.
+        /// </summary>
+        public static string InfusionEntryPageInfusionFlowLabelText {
+            get {
+                return ResourceManager.GetString("InfusionEntryPageInfusionFlowLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution did you support?.
+        /// </summary>
+        public static string InfusionEntryPageInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("InfusionEntryPageInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person did you support?.
+        /// </summary>
+        public static string InfusionEntryPagePersonLabelText {
+            get {
+                return ResourceManager.GetString("InfusionEntryPagePersonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate the type of infusion you have been given:.
+        /// </summary>
+        public static string InfusionEntryPageTypeLabelText {
+            get {
+                return ResourceManager.GetString("InfusionEntryPageTypeLabelText", resourceCulture);
             }
         }
         
@@ -872,11 +1142,29 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to What kind of entry do you want to add?.
+        /// </summary>
+        public static string JournalOverviewViewModelWhichJournalEntryText {
+            get {
+                return ResourceManager.GetString("JournalOverviewViewModelWhichJournalEntryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
         public static string KnowledgeEntriesTitleText {
             get {
                 return ResourceManager.GetString("KnowledgeEntriesTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matching glossaries.
+        /// </summary>
+        public static string KnowledgeEntryDetailPageMatchingGlossariesText {
+            get {
+                return ResourceManager.GetString("KnowledgeEntryDetailPageMatchingGlossariesText", resourceCulture);
             }
         }
         
@@ -913,6 +1201,42 @@ namespace BFH_USZ_PICC.Resx {
         public static string MasterDataViewModelBirthdateNotValidText {
             get {
                 return ResourceManager.GetString("MasterDataViewModelBirthdateNotValidText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At what date has your MicroClave been exchanged?.
+        /// </summary>
+        public static string MicroClaveChangingEntryPageDateLabelText {
+            get {
+                return ResourceManager.GetString("MicroClaveChangingEntryPageDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution did you support when changing the MicroClave?.
+        /// </summary>
+        public static string MicroClaveChangingEntryPageInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("MicroClaveChangingEntryPageInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person did you support when changing the MicroClave?.
+        /// </summary>
+        public static string MicroClaveChangingEntryPagePersonLabelText {
+            get {
+                return ResourceManager.GetString("MicroClaveChangingEntryPagePersonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate why your MicroClave had to be exchanged:.
+        /// </summary>
+        public static string MicroClaveChangingEntryPageReasonLabelText {
+            get {
+                return ResourceManager.GetString("MicroClaveChangingEntryPageReasonLabelText", resourceCulture);
             }
         }
         
@@ -1052,7 +1376,7 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Size in french:.
+        ///   Looks up a localized string similar to Diameter in french:.
         /// </summary>
         public static string PICCDetailPagePICCFrenchSizeText {
             get {
@@ -1174,6 +1498,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string PICCDetailPageTitleText {
             get {
                 return ResourceManager.GetString("PICCDetailPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to put this PICC catheter inactive?.
+        /// </summary>
+        public static string PICCDetailViewModelSetPICCInactiveText {
+            get {
+                return ResourceManager.GetString("PICCDetailViewModelSetPICCInactiveText", resourceCulture);
             }
         }
         
@@ -1300,6 +1633,42 @@ namespace BFH_USZ_PICC.Resx {
         public static string StatlockChangingEntryDamagedWingsText {
             get {
                 return ResourceManager.GetString("StatlockChangingEntryDamagedWingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At what date has your StatLock been exchanged?.
+        /// </summary>
+        public static string StatlockChangingEntryPageDateLabelText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryPageDateLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which institution did you support when changing the StatLock?.
+        /// </summary>
+        public static string StatlockChangingEntryPageInstitutionLabelText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryPageInstitutionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What person did you support when changing the StatLock?.
+        /// </summary>
+        public static string StatlockChangingEntryPagePersonLabelText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryPagePersonLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please indicate why your StatLock had to be exchanged:.
+        /// </summary>
+        public static string StatlockChangingEntryPageReasonLabelText {
+            get {
+                return ResourceManager.GetString("StatlockChangingEntryPageReasonLabelText", resourceCulture);
             }
         }
         

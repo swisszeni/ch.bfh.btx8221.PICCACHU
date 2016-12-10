@@ -101,8 +101,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Nom du modèle :</target>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCFrenchSizeText" translate="yes" xml:space="preserve">
-          <source>Size in french:</source>
+          <source>Diameter in french:</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Taille en français :</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCInsertedDateText" translate="yes" xml:space="preserve">
           <source>Inserted on:</source>
@@ -210,442 +211,647 @@
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderText" translate="yes" xml:space="preserve">
           <source>Maintenance reminder</source>
-          <target state="new">Maintenance reminder</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rappel d’entretien</target>
         </trans-unit>
         <trans-unit id="SettingsPageAddReminderButtonText" translate="yes" xml:space="preserve">
           <source>Add maintenance reminders</source>
-          <target state="new">Add maintenance reminders</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter des rappels d’entretien</target>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderFrequencyText" translate="yes" xml:space="preserve">
           <source>After how many days will the memory be repeated?</source>
-          <target state="new">After how many days will the memory be repeated?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Après combien de jours sera répétée la mémoire ?</target>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderRepetitionText" translate="yes" xml:space="preserve">
           <source>How often should the memory be repeated?</source>
-          <target state="new">How often should the memory be repeated?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Combien de fois la mémoire doit être répétée ?</target>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderSetDailyTimeText" translate="yes" xml:space="preserve">
           <source>Please set time for reminder</source>
-          <target state="new">Please set time for reminder</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S’il vous plaît définir durée de rappel</target>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderSetStartDateText" translate="yes" xml:space="preserve">
           <source>Please set start date</source>
-          <target state="new">Please set start date</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S’il vous plaît définir date de début</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageTitleText" translate="yes" xml:space="preserve">
           <source>My personal data</source>
-          <target state="new">My personal data</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mes données personnelles</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageBirthdateLabelText" translate="yes" xml:space="preserve">
           <source>Birthdate:</source>
-          <target state="new">Birthdate:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Date de naissance :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageEmailLabelText" translate="yes" xml:space="preserve">
           <source>e-Mail:</source>
-          <target state="new">e-Mail:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Courriel :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageMobileLabelText" translate="yes" xml:space="preserve">
           <source>Cellphone:</source>
-          <target state="new">Cellphone:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Téléphone portable :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageNameLabelText" translate="yes" xml:space="preserve">
           <source>Name:</source>
-          <target state="new">Name:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nom :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPagePhoneLabelText" translate="yes" xml:space="preserve">
           <source>Phone:</source>
-          <target state="new">Phone:</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tél. :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPagePlaceLabelText" translate="yes" xml:space="preserve">
           <source>Place:</source>
-          <target state="new">Place:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lieu :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageSalutationLabelText" translate="yes" xml:space="preserve">
           <source>Salutation:</source>
-          <target state="new">Salutation:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Formule d’appel :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageStreetLabelText" translate="yes" xml:space="preserve">
           <source>Street:</source>
-          <target state="new">Street:</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Adresse :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageSurnameLabelText" translate="yes" xml:space="preserve">
           <source>Surname:</source>
-          <target state="new">Surname:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nom de famille :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageZIPLabelText" translate="yes" xml:space="preserve">
           <source>ZIP:</source>
-          <target state="new">ZIP:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CODE POSTAL :</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDeleteAllMasterDataButton" translate="yes" xml:space="preserve">
           <source>Delte my data</source>
-          <target state="new">Delte my data</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Delte mes données</target>
         </trans-unit>
         <trans-unit id="MasterDataBackUpQuestionText" translate="yes" xml:space="preserve">
           <source>Do you want to back up your personal data? You can adjust the information at any time in the settings. </source>
-          <target state="new">Do you want to back up your personal data? You can adjust the information at any time in the settings. </target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous voulez sauvegarder vos données personnelles ? Vous pouvez ajuster les informations à tout moment dans les paramètres. </target>
         </trans-unit>
         <trans-unit id="MasterDataText" translate="yes" xml:space="preserve">
           <source>Master data</source>
-          <target state="new">Master data</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Données principales</target>
         </trans-unit>
         <trans-unit id="CallUSZTelemedicineNotPossibleText" translate="yes" xml:space="preserve">
           <source>Your device can not call the USZ telemedicine. Contact 044 666 66 66</source>
-          <target state="new">Your device can not call the USZ telemedicine. Contact 044 666 66 66</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Votre appareil ne peut pas appeler la télémédecine USZ. Contact 044 666 66 66</target>
         </trans-unit>
         <trans-unit id="CallUSZTelemedicineText" translate="yes" xml:space="preserve">
           <source>Do you really want to call USZ telemedicine?</source>
-          <target state="new">Do you really want to call USZ telemedicine?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voulez-vous vraiment appeler USZ télémédecine ?</target>
         </trans-unit>
         <trans-unit id="FailedText" translate="yes" xml:space="preserve">
           <source>Failed</source>
-          <target state="new">Failed</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Échec</target>
         </trans-unit>
         <trans-unit id="InformationText" translate="yes" xml:space="preserve">
           <source>Information</source>
-          <target state="new">Information</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Informations</target>
         </trans-unit>
         <trans-unit id="NoButtonText" translate="yes" xml:space="preserve">
           <source>No</source>
-          <target state="new">No</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Non</target>
         </trans-unit>
         <trans-unit id="OkButtonText" translate="yes" xml:space="preserve">
           <source>OK</source>
-          <target state="new">OK</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
         </trans-unit>
         <trans-unit id="YesButtonText" translate="yes" xml:space="preserve">
           <source>Yes</source>
-          <target state="new">Yes</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Oui</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDelteAllPersonalDataText" translate="yes" xml:space="preserve">
           <source>Do you really want to delete all personal data?</source>
-          <target state="new">Do you really want to delete all personal data?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous voulez vous vraiment supprimer toutes les données personnelles ?</target>
         </trans-unit>
         <trans-unit id="WarningText" translate="yes" xml:space="preserve">
           <source>Warning</source>
-          <target state="new">Warning</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Avertissement</target>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCNotFoundInformationText" translate="yes" xml:space="preserve">
           <source>PICC model could not be found</source>
-          <target state="new">PICC model could not be found</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Modèle PICC est introuvable</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</note>
         </trans-unit>
         <trans-unit id="SettingsPageDelteScheduledRemindersText" translate="yes" xml:space="preserve">
           <source>Do you want to delete all scheduled maintenance reminders?</source>
-          <target state="new">Do you want to delete all scheduled maintenance reminders?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voulez-vous vraiment supprimer tous les rappels d’entretien régulier ?</target>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderInformationText" translate="yes" xml:space="preserve">
           <source>Your PICC should be maintained</source>
-          <target state="new">Your PICC should be maintained</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il convient de maintenir votre PICC</target>
         </trans-unit>
         <trans-unit id="SettingsPagePersonalDataButtonText" translate="yes" xml:space="preserve">
           <source>My personal data</source>
-          <target state="new">My personal data</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mes données personnelles</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageBandagesChangingEntry" translate="yes" xml:space="preserve">
           <source>Bandage changing</source>
-          <target state="new">Bandage changing</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changement de pansement</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageBloodWithdrawalEntry" translate="yes" xml:space="preserve">
           <source>Blood withdrawal</source>
-          <target state="new">Blood withdrawal</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Prélèvement de sang</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageCatheterFlushEntry" translate="yes" xml:space="preserve">
           <source>Rinse the catheter</source>
-          <target state="new">Rinse the catheter</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rincer le cathéter</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageInfusionEntry" translate="yes" xml:space="preserve">
           <source>Administered infusions</source>
-          <target state="new">Administered infusions</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Perfusions administrées</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageMicroClaveChangingEntry" translate="yes" xml:space="preserve">
           <source>Change MicroClave</source>
-          <target state="new">Change MicroClave</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changement MicroClave</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageStatlockChangingEntry" translate="yes" xml:space="preserve">
           <source>Change StatLock</source>
-          <target state="new">Change StatLock</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changement StatLock</target>
         </trans-unit>
         <trans-unit id="JournalOverviewPageAdministeredDrugEntry" translate="yes" xml:space="preserve">
           <source>Administered drugs</source>
-          <target state="new">Administered drugs</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Médicaments administrés</target>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionHomeCareText" translate="yes" xml:space="preserve">
           <source>Home care</source>
-          <target state="new">Home care</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Soins à domicile</target>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionHospitalText" translate="yes" xml:space="preserve">
           <source>Hospital</source>
-          <target state="new">Hospital</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hôpital</target>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionOutpatienClinicText" translate="yes" xml:space="preserve">
           <source>Outpatient clinic</source>
-          <target state="new">Outpatient clinic</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Clinique externe</target>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionRehabilitationText" translate="yes" xml:space="preserve">
           <source>Rehabilitation</source>
-          <target state="new">Rehabilitation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Remise en état</target>
         </trans-unit>
         <trans-unit id="JournalEntryNotSpecifiedText" translate="yes" xml:space="preserve">
           <source>Not specified</source>
-          <target state="new">Not specified</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Non spécifié</target>
         </trans-unit>
         <trans-unit id="JournalEntryOthersText" translate="yes" xml:space="preserve">
           <source>Others</source>
-          <target state="new">Others</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Autres</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonAffectedPersonText" translate="yes" xml:space="preserve">
           <source>Affected person</source>
-          <target state="new">Affected person</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Personnes touchées</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonFamilyDoctorText" translate="yes" xml:space="preserve">
           <source>Family doctor</source>
-          <target state="new">Family doctor</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Médecin de famille</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonHealthExpertStaffText" translate="yes" xml:space="preserve">
           <source>Health expert staff</source>
-          <target state="new">Health expert staff</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Personnel spécialisé santé</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonMedicalTechnicalAssistantText" translate="yes" xml:space="preserve">
           <source>Medical technical assistant</source>
-          <target state="new">Medical technical assistant</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assistant technique médical</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonNursingStaffText" translate="yes" xml:space="preserve">
           <source>Nursing staff</source>
-          <target state="new">Nursing staff</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Personnel infirmier</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonRelativeText" translate="yes" xml:space="preserve">
           <source>Relative</source>
-          <target state="new">Relative</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Relatif</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonSpecialistText" translate="yes" xml:space="preserve">
           <source>Medical specialist</source>
-          <target state="new">Medical specialist</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Médecin spécialiste</target>
         </trans-unit>
         <trans-unit id="JournalEntryPersonXrayStaffText" translate="yes" xml:space="preserve">
           <source>XRay staff</source>
-          <target state="new">XRay staff</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Radiographie du thorax : personnel</target>
         </trans-unit>
         <trans-unit id="DeleteButtonText" translate="yes" xml:space="preserve">
           <source>Delete</source>
-          <target state="new">Delete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Supprimer</target>
         </trans-unit>
         <trans-unit id="MicroClaveChangingEntryPollutionText" translate="yes" xml:space="preserve">
           <source>Pollution</source>
-          <target state="new">Pollution</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pollution</target>
         </trans-unit>
         <trans-unit id="MicroClaveChangingEntryRoutineText" translate="yes" xml:space="preserve">
           <source>Routine</source>
-          <target state="new">Routine</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Routine</target>
         </trans-unit>
         <trans-unit id="StatlockChangingEntryDamagedWingsText" translate="yes" xml:space="preserve">
           <source>Damaged wings</source>
-          <target state="new">Damaged wings</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ailes endommagées</target>
         </trans-unit>
         <trans-unit id="StatlockChangingEntryPollutionText" translate="yes" xml:space="preserve">
           <source>Pollution</source>
-          <target state="new">Pollution</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pollution</target>
         </trans-unit>
         <trans-unit id="StatlockChangingEntryRoutineText" translate="yes" xml:space="preserve">
           <source>Routine</source>
-          <target state="new">Routine</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Routine</target>
         </trans-unit>
         <trans-unit id="StatlockChangingEntrySticksUnsatisfactorilyText" translate="yes" xml:space="preserve">
           <source>Sticks unsatisfactorily</source>
-          <target state="new">Sticks unsatisfactorily</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bâtons de manière peu satisfaisante</target>
         </trans-unit>
         <trans-unit id="BloodFlowFastAndEasyText" translate="yes" xml:space="preserve">
           <source>Fast, easy</source>
-          <target state="new">Fast, easy</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapide, facile</target>
         </trans-unit>
         <trans-unit id="BloodFlowHesitantText" translate="yes" xml:space="preserve">
           <source>Hesitant</source>
-          <target state="new">Hesitant</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hésitant</target>
         </trans-unit>
         <trans-unit id="BloodFlowNoneText" translate="yes" xml:space="preserve">
           <source>Not at all</source>
-          <target state="new">Not at all</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pas du tout</target>
         </trans-unit>
         <trans-unit id="BandageChangingReasonBandageDoesNotStickAnymoreText" translate="yes" xml:space="preserve">
           <source>Bandage does not stick anymore</source>
-          <target state="new">Bandage does not stick anymore</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bandage ne colle pas plus</target>
         </trans-unit>
         <trans-unit id="BandageChangingReasonBandageWetText" translate="yes" xml:space="preserve">
           <source>Bandage is wet</source>
-          <target state="new">Bandage is wet</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pansement est mouillé</target>
         </trans-unit>
         <trans-unit id="BandageChangingReasonPainText" translate="yes" xml:space="preserve">
           <source>Pain, irregularities</source>
-          <target state="new">Pain, irregularities</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Douleur, irrégularités</target>
         </trans-unit>
         <trans-unit id="BandageChangingReasonPunctureNotCoveredText" translate="yes" xml:space="preserve">
           <source>Puncture is not covered</source>
-          <target state="new">Puncture is not covered</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Piqûre n’est pas couvert</target>
         </trans-unit>
         <trans-unit id="BandageChangingReasonRoutineText" translate="yes" xml:space="preserve">
           <source>Routinely</source>
-          <target state="new">Routinely</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Régulièrement</target>
         </trans-unit>
         <trans-unit id="BandageChangingReasonSecondaryBleedingText" translate="yes" xml:space="preserve">
           <source>Secondary bleeding</source>
-          <target state="new">Secondary bleeding</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Un saignement secondaire</target>
         </trans-unit>
         <trans-unit id="BandageChangingAreaCompleteText" translate="yes" xml:space="preserve">
           <source>Complete</source>
-          <target state="new">Complete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Complète</target>
         </trans-unit>
         <trans-unit id="BandageChangingAreaOnlyBandageText" translate="yes" xml:space="preserve">
           <source>Only Bandage</source>
-          <target state="new">Only Bandage</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Seulement le Bandage</target>
         </trans-unit>
         <trans-unit id="BandageChangingAreaOnlyStatlockText" translate="yes" xml:space="preserve">
           <source>Only StatLock</source>
-          <target state="new">Only StatLock</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Seulement StatLock</target>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationLiquidDischargeText" translate="yes" xml:space="preserve">
           <source>Liquid discharge</source>
-          <target state="new">Liquid discharge</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rejets liquides</target>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationPainfulPunctureText" translate="yes" xml:space="preserve">
           <source>Painful puncuture</source>
-          <target state="new">Painful puncuture</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Puncuture douloureuse</target>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationReddenedPunctureText" translate="yes" xml:space="preserve">
           <source>Reddened puncture</source>
-          <target state="new">Reddened puncture</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ponction rougie</target>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationSkinNotIrritantText" translate="yes" xml:space="preserve">
           <source>Skin not irritant</source>
-          <target state="new">Skin not irritant</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Non irritant de la peau</target>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationSwollenPunctureText" translate="yes" xml:space="preserve">
           <source>Swollen puncture</source>
-          <target state="new">Swollen puncture</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ponction gonflée</target>
         </trans-unit>
         <trans-unit id="BandageArmProcessSituationPainfulText" translate="yes" xml:space="preserve">
           <source>Painful</source>
-          <target state="new">Painful</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Douloureux</target>
         </trans-unit>
         <trans-unit id="BandageArmProcessSituationSwollenText" translate="yes" xml:space="preserve">
           <source>Swollen</source>
-          <target state="new">Swollen</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Enflés</target>
         </trans-unit>
         <trans-unit id="BandageArmProcessSituationReddenedText" translate="yes" xml:space="preserve">
           <source>Reddened</source>
-          <target state="new">Reddened</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rougie</target>
         </trans-unit>
         <trans-unit id="InfusionReasonAntibioticText" translate="yes" xml:space="preserve">
           <source>Antibiotic</source>
-          <target state="new">Antibiotic</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Antibiotique</target>
         </trans-unit>
         <trans-unit id="InfusionReasonBloodComponentText" translate="yes" xml:space="preserve">
           <source>Blood components</source>
-          <target state="new">Blood components</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Produits sanguins labiles</target>
         </trans-unit>
         <trans-unit id="InfusionReasonChemotherapyText" translate="yes" xml:space="preserve">
           <source>Chemotherapy</source>
-          <target state="new">Chemotherapy</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chimiothérapie</target>
         </trans-unit>
         <trans-unit id="InfusionReasonExaminationSubstanceText" translate="yes" xml:space="preserve">
           <source>Examination substance</source>
-          <target state="new">Examination substance</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Substance de l’examen</target>
         </trans-unit>
         <trans-unit id="InfusionReasonNutritionalSubstanceText" translate="yes" xml:space="preserve">
           <source>Nutritional substance</source>
-          <target state="new">Nutritional substance</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Substance nutritive</target>
         </trans-unit>
         <trans-unit id="InfusionReasonOthersText" translate="yes" xml:space="preserve">
           <source>Other infusions</source>
-          <target state="new">Other infusions</target>
-        </trans-unit>
-        <trans-unit id="InfusionAdministrationFastText" translate="yes" xml:space="preserve">
-          <source>Fast</source>
-          <target state="new">Fast</target>
-        </trans-unit>
-        <trans-unit id="InfusionAdministrationHesitantText" translate="yes" xml:space="preserve">
-          <source>Hesitant</source>
-          <target state="new">Hesitant</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Autres infusions</target>
         </trans-unit>
         <trans-unit id="InfusionAdministrationWithoutProblemText" translate="yes" xml:space="preserve">
           <source>Without problems</source>
-          <target state="new">Without problems</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sans problèmes</target>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonBlockedText" translate="yes" xml:space="preserve">
           <source>Blocked</source>
-          <target state="new">Blocked</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bloqué</target>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonBloodSamplingText" translate="yes" xml:space="preserve">
           <source>Blood sampling</source>
-          <target state="new">Blood sampling</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Prélèvements sanguins</target>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonPartiallyBlockedText" translate="yes" xml:space="preserve">
           <source>Partially blocked</source>
-          <target state="new">Partially blocked</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Partiellement bloqué</target>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonRoutineText" translate="yes" xml:space="preserve">
           <source>Routine</source>
-          <target state="new">Routine</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Routine</target>
         </trans-unit>
         <trans-unit id="CatheterFlushTypeHeparinText" translate="yes" xml:space="preserve">
           <source>Heparin</source>
-          <target state="new">Heparin</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Héparine</target>
         </trans-unit>
         <trans-unit id="CatheterFlushTypeNaClText" translate="yes" xml:space="preserve">
           <source>NaCl</source>
-          <target state="new">NaCl</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">NaCl</target>
         </trans-unit>
         <trans-unit id="CatheterFlushTypeUrokinaseText" translate="yes" xml:space="preserve">
           <source>Urokinase</source>
-          <target state="new">Urokinase</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Urokinase</target>
         </trans-unit>
         <trans-unit id="CatheterFlushResultFlushNotPossibleText" translate="yes" xml:space="preserve">
           <source>Flush not possible anymore</source>
-          <target state="new">Flush not possible anymore</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ne rincez pas possible plus</target>
         </trans-unit>
         <trans-unit id="CatheterFlushResultFlushWithoutResistanceText" translate="yes" xml:space="preserve">
           <source>Without resistance continuous</source>
-          <target state="new">Without resistance continuous</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sans résistance continue</target>
         </trans-unit>
         <trans-unit id="CatheterFlushResultFlushWithResistanceText" translate="yes" xml:space="preserve">
           <source>With resistance continuous</source>
-          <target state="new">With resistance continuous</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avec une résistance continue</target>
         </trans-unit>
         <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
           <source>Maintenance instruction</source>
-          <target state="new">Maintenance instruction</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Instructions d’entretien</target>
         </trans-unit>
         <trans-unit id="UserMasterDataPageMissText" translate="yes" xml:space="preserve">
           <source>Miss</source>
-          <target state="new">Miss</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Mlle</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Frau" als Anrede</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageMisterText" translate="yes" xml:space="preserve">
           <source>Mister</source>
-          <target state="new">Mister</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mister</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Herr" als Anrede</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
           <source>Guide wire length in cm:</source>
-          <target state="new">Guide wire length in cm:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Guide fil longueur en cm :</target>
         </trans-unit>
         <trans-unit id="CancelButtonPressedConfirmationText" translate="yes" xml:space="preserve">
           <source>Do you want to cancel your input?</source>
-          <target state="new">Do you want to cancel your input?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous voulez annuler votre entrée ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn bei einem Eintragsvorgang "Abbrechen" gedrückt wird (falls der User den Button versehentlich gedrückt hat).</note>
         </trans-unit>
         <trans-unit id="MasterDataViewModelBirthdateNotValidText" translate="yes" xml:space="preserve">
           <source>Your birthdate is not valid and will be deleted. Continue?</source>
-          <target state="new">Your birthdate is not valid and will be deleted. Continue?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Votre date de naissance n’est pas valide et sera supprimé. Continuer ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User ein nicht mögliches Gebursdatum (Jahr = aktuelles Jahr oder in der Zukunft) abspeichern will. Das Datum wird gelöscht, wenn der User "Fortfahren" mit "Ja" beantwortet.</note>
         </trans-unit>
         <trans-unit id="JournalEntriesDelteEntryConfirmationText" translate="yes" xml:space="preserve">
           <source>Do you want to delte this entry?</source>
-          <target state="new">Do you want to delte this entry?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous voulez delte cette entrée ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User einen Journaleintrag löschen möche. </note>
         </trans-unit>
         <trans-unit id="JournalEntriesAskForMainentanceInstructionText" translate="yes" xml:space="preserve">
           <source>Do you want to see a maintenance instruction for this step?</source>
-          <target state="new">Do you want to see a maintenance instruction for this step?</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous voulez voir une instruction de maintenance pour cette étape ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date was the drug administered to you?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date le médicament a été administré à vous ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm das Medikament verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectDrugLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which drug you have received:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer quel médicament vous avez reçu :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welches Medikament ihm verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution has given you the drug?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution vous a donné le médicament ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihm das Medikament verabreicht hat</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectPersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person has given you the drug?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a donné le médicament ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihm das Medikament verabreicht hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageBandageChangingReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your bandage needs to be changed:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer pourquoi votre pansement doit être changé :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll den Grund für den Verbandswechsel angeben</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution helped you to change your bandages?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution a contribué à modifier vos bandages ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihm beim Verbandswechsel unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePartsOfChaningLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which bandage parts have been changed:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer quelles parties de bandage ont été modifiées :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Teile des Verbandes gewechselt werden mussten</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person helped you to change bandages?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a aidé à changer les pansements ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihm beim Verbandswechsel unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageArmSituationLabelText" translate="yes" xml:space="preserve">
+          <source>How is the situation on the arm?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle est la situation sur le bras ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie der Verlauf am Arm ist</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageBandageChangingDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did you change the bandage?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date avez-vous changé le pansement ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum er den Verband gewechselt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePunctureSituationLabelText" translate="yes" xml:space="preserve">
+          <source>How is the puncture site?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Comment est le site de ponction ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Situation an der Einstichstelle ist</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageBloodWithdrawalDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did the blood withdrawal happen?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date avez-vous le sang retrait arriver ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm Blut entnommen wurde</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageIndicateBloodFlowLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate how the blood flow was at the time of collection:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S’il vous plaît indiquer comment le flux sanguin était au moment de la collecte :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die der Blutfluss bei der Entnahme war</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution has supported you on the blood withrawal process?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution a vous appuyé sur le processus de retrait de sang ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn bei der Blutentnahme unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText" translate="yes" xml:space="preserve">
+          <source>Did you flush the catheter with NaCl?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous rincer le cathéter avec NaCl ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, ob der Katheter nach de Blutentnahme mit NaCl Lösung gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person has supported you on the blood withrawal process?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a appuyé sur le processus de retrait de sang ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn bei der Blutentnahme unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageBloodReflowLabelText" translate="yes" xml:space="preserve">
+          <source>Is a blood reflow visible?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Un reflux de sang n’est visible ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, ob nach dem Spülen ein Blutrückfluss sichtbar ist</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did you flush the catheter?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date vous rincer le cathéter ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der Katheter gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why the catheter needed to be flushed:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer pourquoi le cathéter devait être vidées :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der Katheter gespült werden musste</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushSolutionAmountLabelText" translate="yes" xml:space="preserve">
+          <source>Please specify the amount of the solution administered (in ml):</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez spécifier la quantité de la solution administrée (en ml) :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll die Menge der verabreichten Lösung (in ml) angeben</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support on the catheter flush process?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution vous a-t-il appuyé sur le cathéter RAS processus ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn bei beim Spülvorgang unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPagePatencyAfterFlushLabelText" translate="yes" xml:space="preserve">
+          <source>What is the continuity of the catheter after the irrigation?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce qui est la continuité du cathéter après l’irrigation ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Durchgängigkeit des Katheters nach der Spülung ist</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support on the catheter flush process?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a-t-il appuyé sur le cathéter RAS processus ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn bei beim Spülvorgang unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushTypeLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which solution your catheter was flushed with:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer quelle solution votre cathéter a été rincée avec :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, mit welcher Lösung der Katheter gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageAntibioticLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which antibiotic you have been given:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer quel antibiotique vous a été donné :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welches Antibiotika er erhalten hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date was the infusion administered to you?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date était la perfusion administrée pour vous ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm die Infusion verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageInfusionFlowLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate how the flow of the infusion was during administration:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer comment le débit de la perfusion a été au cours de l’administration :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Verabreichung der Infusion abgelaufen ist</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution vous a-t-il appuyé ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Verabreichen der Infusion untersützt hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a-t-il appuyé ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Verabreichen der Infusion untersützt hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageTypeLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate the type of infusion you have been given:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer le type d’infusion que vous a été donné :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Art von Infusion er erhalten hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationNotPossibleText" translate="yes" xml:space="preserve">
+          <source>Not possible</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N’est pas possible</target>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationWithResistance" translate="yes" xml:space="preserve">
+          <source>With resistance</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avec résistance</target>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date has your MicroClave been exchanged?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date votre MicroClave a été échangé ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der MicroClave ausgetauscht wurde</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support when changing the MicroClave?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution a-t-il appuyé lors du changement de la MicroClave ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Wechsel des MicroClave unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support when changing the MicroClave?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a-t-il appuyé lors du changement de la MicroClave ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Wechsel des MicroClave unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your MicroClave had to be exchanged:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer pourquoi votre MicroClave devait être échangés :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der MicroClave ausgetauscht werden musste</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date has your StatLock been exchanged?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À quelle date votre StatLock a été échangé ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der StatLock ausgetauscht wurde</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support when changing the StatLock?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle institution a-t-il appuyé lors du changement de la StatLock ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Wechsel des Statlock unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support when changing the StatLock?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelle personne vous a-t-il appuyé lors du changement de la StatLock ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Wechsel des StatLock unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your StatLock had to be exchanged:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez indiquer pourquoi votre StatLock devait être échangés :</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der StatLock ausgetauscht werden musste</note>
+        </trans-unit>
+        <trans-unit id="JournalOverviewViewModelWhichJournalEntryText" translate="yes" xml:space="preserve">
+          <source>What kind of entry do you want to add?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quel type d’entrée voulez-vous ajouter ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage an User, für welches Thema er einen neuen Journaleintrag erfassen möchte</note>
+        </trans-unit>
+        <trans-unit id="PICCDetailViewModelSetPICCInactiveText" translate="yes" xml:space="preserve">
+          <source>Do you really want to put this PICC catheter inactive?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voulez-vous vraiment mettre ce cathéter PICC inactif ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User den aktuellen PICC inaktiv setzen will</note>
+        </trans-unit>
+        <trans-unit id="KnowledgeEntryDetailPageMatchingGlossariesText" translate="yes" xml:space="preserve">
+          <source>Matching glossaries</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Glossaires correspondants</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text für passende Glossareinträge zu den "Wissenswertes" Einträgen</note>
         </trans-unit>
       </group>
     </body>

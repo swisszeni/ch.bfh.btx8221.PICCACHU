@@ -493,9 +493,9 @@ namespace BFH_USZ_PICC.Utilitys
                     return 0;
                 case InfusionAdministration.WithoutProblem:
                     return 1;
-                case InfusionAdministration.Fast:
+                case InfusionAdministration.WithResistance:
                     return 2;
-                case InfusionAdministration.Hesitant:
+                case InfusionAdministration.NotPossible:
                     return 3;
             }
 
