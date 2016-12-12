@@ -84,7 +84,7 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignKey>iPhone Developer: Florian Schnyder (6MQU9RCR8H)</CodesignKey>
+    <CodesignKey>iPhone Developer: Raphael Zenhäusern (LZ6VUGY897)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>9d361c58-5361-4bb8-b8f7-cf6d5325848d</CodesignProvision>
   </PropertyGroup>

@@ -30,16 +30,7 @@ namespace BFH_USZ_PICC.iOS
             LoadApplication(new BFH_USZ_PICC.Application());
 
             // Request notification permissions from the user
-            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => {
-                // Handle approval
-                Xamarin.Forms.Device.BeginInvokeOnMainThread(RegisterNotificationTypes);
-                
-            });
-
-            // Get current notification settings
-            UNUserNotificationCenter.Current.GetNotificationSettings((settings) => {
-                var alertsAllowed = (settings.AlertSetting == UNNotificationSetting.Enabled);
-            });
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(RegisterNotificationTypes);
 
             return base.FinishedLaunching(app, options);
         }
@@ -57,8 +48,20 @@ namespace BFH_USZ_PICC.iOS
 
         private void RegisterNotificationTypes()
         {
-            var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
-            UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            // Use different approach for iOS 10 and newer... because Apple
+            if(UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                // New 
+                UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound, (approved, err) => {
+                    // Handle approval
+                    // What to do now?
+                });
+            } else
+            {
+                // Oldschool
+                var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
+                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
+            }
         }
     }
 }
