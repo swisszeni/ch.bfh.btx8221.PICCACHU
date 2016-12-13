@@ -17,17 +17,17 @@
   </Grid.Resources>
   <ScrollView>
     <StackLayout Orientation="Vertical">
-      <Label Text ="Bitte geben Sie an, wie der Blutfluss bei der Entnahme war:" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text = "{i18n:Translate BloodWithdrawalEntryPageIndicateBloodFlowLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="BloodFlowPicker" SelectedIndex="{Binding Flow, Converter={StaticResource BloodFlowToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <StackLayout Orientation="Horizontal" Padding="0, 0, 0, 20">
-        <Label Text ="Ist anschliessendes Spülen mit NaCl erfolgt?" VerticalTextAlignment="Center" FontSize="20"/>
+        <Label Text ="{i18n:Translate BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
         <Switch x:Name="IsNaCiFlashDoneSwitch" IsToggled="{Binding IsNaClFlushDone}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       </StackLayout>
-      <Label Text ="An welchem Datum wurde Ihnen Blut entnommen?" VerticalTextAlignment="Center" FontSize="20"/>
+      <Label Text ="{i18n:Translate BloodWithdrawalEntryPageBloodWithdrawalDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text="Welche Institution hat Sie bei der Blutentnahme unterstützt?" FontSize="20"/>
+      <Label Text="{i18n:Translate BloodWithdrawalEntryPageInstitutionLabelText}" FontSize="20"/>
       <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text="Welche Person hat Sie bei der Blutentnahme unterstützt?" FontSize="20"/>
+      <Label Text="{i18n:Translate BloodWithdrawalEntryPagePersonLabelText}" FontSize="20"/>
       <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
       <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>

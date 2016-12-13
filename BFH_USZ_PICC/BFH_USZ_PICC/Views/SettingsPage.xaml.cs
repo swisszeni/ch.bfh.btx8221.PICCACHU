@@ -50,7 +50,7 @@ namespace BFH_USZ_PICC.Views
 
         void PersonalMasterDataClicked(object o, EventArgs e)
         {
-            Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { UserMasterDataPageDisplayMode.View }));
+            Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
         }
 
         async void WeeklyMaintenanceReminderToggled(object o, EventArgs e)

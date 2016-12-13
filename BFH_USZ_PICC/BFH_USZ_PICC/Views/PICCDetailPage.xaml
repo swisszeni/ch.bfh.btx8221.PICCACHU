@@ -21,7 +21,7 @@
       <Image x:Name="PiccImage" Source="{Binding ImageSource}" Aspect="AspectFit" HeightRequest="200" WidthRequest="100" IsVisible="{Binding IsImageSet}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCFrenchSizeText}"/>
       <Entry x:Name="PiccFrench" Text="{Binding FrenchDiameter}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
-      <Label Text="Anzahl Lumen"/>
+      <Label Text="{i18n:Translate PICCDetailPageLumensLabelText}"/>
       <Entry x:Name="PiccLumen" Text="{Binding Lumen}" IsEnabled="{Binding IsVisibleOrEnabled}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCInsertedDateText}" HorizontalOptions="Fill" WidthRequest="80" />
       <DatePicker x:Name="InsertedDate" Date="{Binding InsertDate}" IsEnabled="{Binding IsVisibleOrEnabled}"/>

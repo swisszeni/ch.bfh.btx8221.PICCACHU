@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -72,7 +73,7 @@ namespace BFH_USZ_PICC.Views
 
             knowledgeEntryView.Children.Insert(index, (new Label
             {
-                Text = "\n\n\nPassende Glossareinträge",
+                Text = "\n\n\n" + AppResources.KnowledgeEntryDetailPageMatchingGlossariesText,
                 HorizontalTextAlignment = TextAlignment.Start
             }));
 
