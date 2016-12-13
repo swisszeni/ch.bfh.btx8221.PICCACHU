@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -245,7 +246,7 @@ namespace BFH_USZ_PICC.ViewModels
             PICCModel model = new PICCModel(PiccName, DisplayingEntry.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, DisplayingEntry.PICCModel.Gauge, DisplayingEntry.PICCModel.GNDMCode, DisplayingEntry.PICCModel.Barcode, DisplayingEntry.PICCModel.PictureUri);
             PICC.CurrentPICC = new PICC(model, InsertDate, InsertCountry, City, PiccSide, PiccPosition);
 
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
 
 
         }));
@@ -253,7 +254,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _cancelButtonCommand;
         public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert("Warnung!", "Wollen Sie die Eingabe wirklich abbrechen?", "Ja", "Nein"))
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 if (IsUserAddingANewPICC)
                 {
@@ -270,7 +271,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _piccRemoveButtonCommand;
         public RelayCommand PiccRemoveButtonCommand => _piccRemoveButtonCommand ?? (_piccRemoveButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert("Warnung!", "Wollen Sie diesen PICC Katheter wirklich inaktiv setzen?", "Ja", "Nein"))
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.PICCDetailViewModelSetPICCInactiveText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 CurrentPICC.RemovalDate = DateTime.Now;
                 CurrentPICC.IsNotActiveAnymore = true;

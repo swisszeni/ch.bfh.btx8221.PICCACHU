@@ -116,6 +116,7 @@
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
+    <Compile Include="ViewModels\MasterDataViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
@@ -210,7 +211,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resx\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\GlossaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

@@ -10,6 +10,7 @@
   <Grid.Resources>
     <ResourceDictionary>
       <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
+      <utilitys:GuideWireLenghtToTextConverter x:Key="GuideWireLenghtToTextConverter"/>
     </ResourceDictionary>
   </Grid.Resources>
   <ScrollView>
@@ -17,9 +18,9 @@
       <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding IsAPiccAdded, Converter={StaticResource NegateBooleanConverter}}"/>
       <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Command="{Binding AddPICCCommand}"/>
       <Label Text="{i18n:Translate MyPICCPageCurrentPICCText}" FontSize="20"/>
-      <Button Text="{Binding CurrentPICC.PICCModel.PICCName}" Command="{Binding CurrentPICCButtonCommand}" IsVisible="{Binding IsAPiccAdded}"/>
+      <Button Command="{Binding CurrentPICCButtonCommand}" Text="{Binding CurrentPICC.PICCModel.PICCName}" IsVisible="{Binding IsAPiccAdded}"/>
       <Label Text="{i18n:Translate MyPICCPagePreviousPICCText}" FontSize="20"/>
-      <ListView x:Name="FormerPICCList" ItemsSource="{Binding PreviousPICC}" 
+      <ListView x:Name="FormerPICCList" ItemsSource="{Binding PreviousPICC}"
             SelectedItem="{Binding SelectedEntry}"
             ItemSelected="SelectedEntry">
         <ListView.ItemTemplate>

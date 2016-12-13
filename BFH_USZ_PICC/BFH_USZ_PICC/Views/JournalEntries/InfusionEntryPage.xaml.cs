@@ -62,11 +62,8 @@ namespace BFH_USZ_PICC.Views.JournalEntries
 
             InfusionAdministrationPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
             InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationWithoutProblemText);
-            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationFastText);
-            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationHesitantText);
-
-
-
+            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationWithResistance);
+            InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationNotPossibleText);
         }
 
     }

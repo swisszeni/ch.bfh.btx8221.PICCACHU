@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (Set(ref _selectedGlossaryEntry, value) & value != null)
                 {
-                    Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
+                    Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, AppResources.OkButtonText);
                 }
             }
         }

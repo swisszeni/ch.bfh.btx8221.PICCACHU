@@ -9,606 +9,1003 @@
         <trans-unit id="EmergencyFlyoutAssistanceButtonText" translate="yes" xml:space="preserve">
           <source>Solutions</source>
           <target state="translated">Lösungsschritte</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Lösungschritte</note>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
           <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
           <target state="translated">Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Bei Fragen rund um den PICC Katheter steht Ihnen die telemedizinische Abteilung des UniversitätsSpital Zürich jederzeit zur Verfügung.</note>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTitleText" translate="yes" xml:space="preserve">
           <source>Approach in case of malfunction</source>
           <target state="translated">Vorgehen bei Problemen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Vorgehen bei Problemen (Beim Emergency Flyout)</note>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCEntryPlaceholderText" translate="yes" xml:space="preserve">
           <source>Please enter a PICC</source>
           <target state="translated">Bitte PICC Name eingeben</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Eingabeaufforderung für PICC Modell</note>
         </trans-unit>
         <trans-unit id="AddPICCPageScanButtonText" translate="yes" xml:space="preserve">
           <source>Scan barcode</source>
           <target state="translated">Barcode scannen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) für das Scannen des Barcodes</note>
         </trans-unit>
         <trans-unit id="AddPICCPageAddPiccManualButtonText" translate="yes" xml:space="preserve">
           <source>Enter PICC manually</source>
           <target state="translated">PICC manuell erfassen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) für manuelle Eingabe des PICC Modells</note>
         </trans-unit>
         <trans-unit id="AddPICCPageTitleText" translate="yes" xml:space="preserve">
           <source>Add PICC</source>
           <target state="translated">PICC hinzufügen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel Text für die Seite "PICC hinzufügen"</note>
         </trans-unit>
         <trans-unit id="BasePageTitleText" translate="yes" xml:space="preserve">
           <source>Page</source>
           <target state="translated">Seite</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Seite</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorder</source>
           <target state="translated">Störung</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Störung</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageSymptomLabelText" translate="yes" xml:space="preserve">
           <source>Symptom</source>
           <target state="translated">Symptom</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Symptom</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageActionLabelText" translate="yes" xml:space="preserve">
           <source>Action</source>
           <target state="translated">Massnahme</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Massnahme (wenn User ein gewisses Symptom aufweist)</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageReasonLabelText" translate="yes" xml:space="preserve">
           <source>Reason</source>
           <target state="translated">Ursache</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ursache (für ein Symptom)</note>
         </trans-unit>
         <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorders</source>
           <target state="translated">Störungen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Störungen</note>
         </trans-unit>
         <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
           <source>Issue procedure steps</source>
           <target state="translated">Vorgehen bei Problemen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Vorgehen bei Problemen</note>
         </trans-unit>
         <trans-unit id="GlossaryPageTitleText" translate="yes" xml:space="preserve">
           <source>Glossary</source>
           <target state="translated">Glossar</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titeltext für Glossarseite: Glossar </note>
         </trans-unit>
         <trans-unit id="KnowledgeEntriesTitleText" translate="yes" xml:space="preserve">
           <source>FAQ</source>
           <target state="translated">Wissenswertes</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Wissenswertes (Überschrift für die Themen "Was ist ein PICC, Körperpflege usw.)</note>
         </trans-unit>
         <trans-unit id="MyPICCPageTitleText" translate="yes" xml:space="preserve">
           <source>My PICC</source>
-          <target state="translated">Meine PICC</target>
+          <target state="translated">Mein PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titeltext für "Mein PICC"</note>
         </trans-unit>
         <trans-unit id="MyPICCPageAddNewPICCButtonText" translate="yes" xml:space="preserve">
           <source>Add a new PICC</source>
           <target state="translated">Neuer PICC erfassen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) für das Hinzufügen eines neuen PICC (Neuer PICC erfassen)</note>
         </trans-unit>
         <trans-unit id="MyPICCPageCurrentPICCText" translate="yes" xml:space="preserve">
           <source>Current PICC</source>
           <target state="translated">Aktueller PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Aktueller PICC</note>
         </trans-unit>
         <trans-unit id="MyPICCPageNoPiccEnteredText" translate="yes" xml:space="preserve">
           <source>It seems that you have not yet entered a PICC.</source>
           <target state="translated">Sie scheinen momentan keinen PICC erfasst zu haben.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Meldung, wenn der User kein aktuelles PICC Modell erfasst hat (Sie scheinen momentan keinen PICC erfasst zu haben.)</note>
         </trans-unit>
         <trans-unit id="MyPICCPagePreviousPICCText" translate="yes" xml:space="preserve">
           <source>Previous PICC</source>
           <target state="translated">Frühere PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frühere PICC</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageTitleText" translate="yes" xml:space="preserve">
           <source>PICC</source>
           <target state="translated">PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">PICC</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCModelNameText" translate="yes" xml:space="preserve">
           <source>Model name:</source>
           <target state="translated">Modellbezeichnung:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Modellbezeichnung des PICC (z.B. PowerPICC 4FR)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCFrenchSizeText" translate="yes" xml:space="preserve">
-          <source>Size in french:</source>
-          <target state="translated">Grösse in French:</target>
+          <source>Diameter in french:</source>
+          <target state="translated">Durchmesser in French:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Durchmesser in French</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCInsertedDateText" translate="yes" xml:space="preserve">
           <source>Inserted on:</source>
           <target state="translated">Einlagedatum:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Einlagedatum (wann wurde der PICC verlegt?)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCInsertedPlaceText" translate="yes" xml:space="preserve">
           <source>Location:</source>
           <target state="translated">Einlageort:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Einlageort</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageInsertCityPlaceholderText" translate="yes" xml:space="preserve">
           <source>Please enter an institution</source>
           <target state="translated">Bitte Institution eingeben</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Platzhaltertext, welcher dem User zeigen soll, dass er in diesem Feld das Spital/Institution eingeben kann, welche den PICC verlegt hat (Bitte Institution angeben)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCBodysideText" translate="yes" xml:space="preserve">
           <source>PICC body side:</source>
           <target state="translated">Körperseite PICC:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Körperseite des PICC (kann links oder rechts sein)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCPositionText" translate="yes" xml:space="preserve">
           <source>PICC position:</source>
           <target state="translated">Position PICC:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Position des PICC (Kann ober- oder unterhalb des Ellbogens sein)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCRemoveButtonText" translate="yes" xml:space="preserve">
           <source>Set PICC inactive</source>
           <target state="translated">PICC inaktiv setzten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) um den PICC inaktiv zu setzen (z.B., wenn der Patient keinen PICCmehr braucht): PICC inaktiv setzen</note>
         </trans-unit>
         <trans-unit id="PicturePageTitleText" translate="yes" xml:space="preserve">
           <source>Picture detail</source>
           <target state="translated">Bild Detail</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titelseite für das vergrösserte Bild (Bild Detail)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageAddNewPICCTitle" translate="yes" xml:space="preserve">
           <source>Add PICC</source>
           <target state="translated">PICC erfassen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel Text für die Seite "PICC hinzufügen"</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageEditPICCTitle" translate="yes" xml:space="preserve">
           <source>Edit PICC</source>
           <target state="translated">PICC bearbeiten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel Text für die Seite "PICC bearbeiten"</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerNotDefinedText" translate="yes" xml:space="preserve">
           <source>Not defined</source>
           <target state="translated">Nicht definiert</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Nicht definiert</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerPositionBelowElbowText" translate="yes" xml:space="preserve">
           <source>Below elbow</source>
           <target state="translated">Unterhalb Ellbogen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Unterhalb Ellbogen</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerPositionAboveElbowText" translate="yes" xml:space="preserve">
           <source>Above elbow</source>
           <target state="translated">Oberhalb Ellbogen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Oberhalb Ellbogen</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerSideLeftText" translate="yes" xml:space="preserve">
           <source>Left</source>
           <target state="translated">Links</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Links</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerSideRightText" translate="yes" xml:space="preserve">
           <source>Right</source>
           <target state="translated">Rechts</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rechts</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerCountryAbroadText" translate="yes" xml:space="preserve">
           <source>Abroad</source>
           <target state="translated">Ausland</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ausland</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerCountrySwitzerlandText" translate="yes" xml:space="preserve">
           <source>Switzerland</source>
           <target state="translated">Schweiz</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Schweiz</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageNewEntryButtonText" translate="yes" xml:space="preserve">
           <source>New entry</source>
           <target state="translated">Neuer Eintrag</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) für einen neuen Journaleintrag (neuer Eintrag)</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageSelectANewNewEntryText" translate="yes" xml:space="preserve">
           <source>What kind of entry would you like to add?</source>
           <target state="translated">Was für ein Eintrag möchten Sie hinzufügen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage an den User, was für einen Journaleintrag er hinzufügen möchte (Was für einen Eintrag wollen Sie hinzufügen?)</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
           <source>Journal</source>
           <target state="translated">Journal</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Journal</note>
         </trans-unit>
         <trans-unit id="SettingsPageAppVersionText" translate="yes" xml:space="preserve">
           <source>App version</source>
           <target state="translated">App Version</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">App Version</note>
         </trans-unit>
         <trans-unit id="SettingsPageTitleText" translate="yes" xml:space="preserve">
           <source>Settings</source>
           <target state="translated">Einstellungen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Einstellungen</note>
         </trans-unit>
         <trans-unit id="CancelButtonText" translate="yes" xml:space="preserve">
           <source>Cancel</source>
           <target state="translated">Abbrechen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Abbrechen</note>
         </trans-unit>
         <trans-unit id="EditButtonText" translate="yes" xml:space="preserve">
           <source>Edit</source>
           <target state="translated">Bearbeiten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Bearbeiten</note>
         </trans-unit>
         <trans-unit id="PICCAssistanceDescriptionText" translate="yes" xml:space="preserve">
           <source>There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems.</source>
           <target state="translated">In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibung, das mit dem Katheter keine Komplikationen zu erwarten sind (In der Regel sind keine Komplikationen mit Ihrem PICC zu erwarten. Zur Sicherheit möchten wir Sie jedoch auf mögliche Anzeichen von Problemen hinweisen.)</note>
         </trans-unit>
         <trans-unit id="SaveButtonText" translate="yes" xml:space="preserve">
           <source>Save</source>
           <target state="translated">Speichern</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Speichern</note>
         </trans-unit>
         <trans-unit id="CallUSZTelemedizinButtonText" translate="yes" xml:space="preserve">
           <source>Call USZ telemedicine</source>
           <target state="translated">USZ Telemedizin anrufen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button) für das Anrufen der USZ Telemedizin</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderText" translate="yes" xml:space="preserve">
           <source>Maintenance reminder</source>
           <target state="translated">Wartungserinnerung einrichten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Wartungserinnerung</note>
         </trans-unit>
         <trans-unit id="SettingsPageAddReminderButtonText" translate="yes" xml:space="preserve">
           <source>Add maintenance reminders</source>
           <target state="translated">Wartungserinnerungen hinzufügen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Wartungserinnerung hinzufügen</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderFrequencyText" translate="yes" xml:space="preserve">
           <source>After how many days will the memory be repeated?</source>
           <target state="translated">Nach wie vielen Tagen soll die Erinnerung wiederholt werden?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Nach wie vielen Tagen soll die Erinnerung wiederholt werden?</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderRepetitionText" translate="yes" xml:space="preserve">
           <source>How often should the memory be repeated?</source>
           <target state="translated">Wie oft soll die Erinnerung wiederholt werden?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Wie oft soll die Erinnerung wiederholt werden?</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderSetDailyTimeText" translate="yes" xml:space="preserve">
           <source>Please set time for reminder</source>
           <target state="translated">Bitte Uhrzeit für Erinnerung festlegen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Bitte Uhrzeit für die Erinnerung festlegen</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderSetStartDateText" translate="yes" xml:space="preserve">
           <source>Please set start date</source>
           <target state="translated">Bitte Startdatum festlegen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Bitte Startdatum festlegen</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageTitleText" translate="yes" xml:space="preserve">
           <source>My personal data</source>
           <target state="translated">Meine Daten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel für die Seite "Meine Daten"</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageBirthdateLabelText" translate="yes" xml:space="preserve">
           <source>Birthdate:</source>
           <target state="translated">Geburtsdatum:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Geburtsdatum</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageEmailLabelText" translate="yes" xml:space="preserve">
           <source>e-Mail:</source>
           <target state="translated">e-Mail:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Email</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageMobileLabelText" translate="yes" xml:space="preserve">
           <source>Cellphone:</source>
           <target state="translated">Mobile:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Mobile (Mobilenummer)</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageNameLabelText" translate="yes" xml:space="preserve">
           <source>Name:</source>
           <target state="translated">Vorname:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Vorname</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPagePhoneLabelText" translate="yes" xml:space="preserve">
           <source>Phone:</source>
           <target state="translated">Telefon:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Telefon</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPagePlaceLabelText" translate="yes" xml:space="preserve">
           <source>Place:</source>
           <target state="translated">Ort:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ort (Wohnort) </note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageSalutationLabelText" translate="yes" xml:space="preserve">
           <source>Salutation:</source>
           <target state="translated">Anrede:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Anrede</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageStreetLabelText" translate="yes" xml:space="preserve">
           <source>Street:</source>
           <target state="translated">Strasse:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Strasse</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageSurnameLabelText" translate="yes" xml:space="preserve">
           <source>Surname:</source>
           <target state="translated">Name:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Name (Familienname)</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageZIPLabelText" translate="yes" xml:space="preserve">
           <source>ZIP:</source>
           <target state="translated">PLZ:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Postleitzahl</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDeleteAllMasterDataButton" translate="yes" xml:space="preserve">
           <source>Delte my data</source>
           <target state="translated">Alle Angaben löschen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button), um alle persönlichen Angaben (Name, Geb. Datum usw) auf einmal zu löschen (Alle Angaben löschen)</note>
         </trans-unit>
         <trans-unit id="MasterDataBackUpQuestionText" translate="yes" xml:space="preserve">
           <source>Do you want to back up your personal data? You can adjust the information at any time in the settings. </source>
-          <target state="translated">Möchten Sie Ihre persönlichen Daten in der App hinterlegen? Sie können die Angaben jederzeit in den Einstellungen unter 'Persönliche Daten' anpassen".</target>
+          <target state="translated">Möchten Sie Ihre persönlichen Daten in der App hinterlegen? Sie können die Angaben jederzeit in den Einstellungen unter 'Persönliche Daten' anpassen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Popup beim ersten Start der App. Fragt den User, ob er seine persönlichen Daten in der App hinterlegen möchte (Möchten Sie Ihre persönlichen Daten in der App hinterlegen? Sie können die Angaben jederzeit in den Einstellungen unter 'Persönliche Daten' anpassen)</note>
         </trans-unit>
         <trans-unit id="MasterDataText" translate="yes" xml:space="preserve">
           <source>Master data</source>
           <target state="translated">Stammdaten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Stammdaten</note>
         </trans-unit>
         <trans-unit id="CallUSZTelemedicineNotPossibleText" translate="yes" xml:space="preserve">
           <source>Your device can not call the USZ telemedicine. Contact 044 666 66 66</source>
           <target state="translated">Ihr Gerät kann die USZ Telemedizin nicht anrufen. Kontaktieren Sie 044 666 66 66</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Meldung, wenn das Gerät die USZ Telemedizin nicht kontaktieren kann (Ihr Gerät kann die USZ Telemedizin nicht anrufen. Kontaktieren Sie 044 666 66 66)</note>
         </trans-unit>
         <trans-unit id="CallUSZTelemedicineText" translate="yes" xml:space="preserve">
           <source>Do you really want to call USZ telemedicine?</source>
           <target state="translated">USZ Telemedizin wirklich anrufen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage, ob der User wirklich die USZ Telemedizin anrufen möchte</note>
         </trans-unit>
         <trans-unit id="FailedText" translate="yes" xml:space="preserve">
           <source>Failed</source>
           <target state="translated">Fehlgeschlagen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Fehlgeschlagen</note>
         </trans-unit>
         <trans-unit id="InformationText" translate="yes" xml:space="preserve">
           <source>Information</source>
           <target state="translated">Information</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Information</note>
         </trans-unit>
         <trans-unit id="NoButtonText" translate="yes" xml:space="preserve">
           <source>No</source>
           <target state="translated">Nein</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Nein</note>
         </trans-unit>
         <trans-unit id="OkButtonText" translate="yes" xml:space="preserve">
           <source>OK</source>
           <target state="translated">OK</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ok</note>
         </trans-unit>
         <trans-unit id="YesButtonText" translate="yes" xml:space="preserve">
           <source>Yes</source>
           <target state="translated">Ja</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ja</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDelteAllPersonalDataText" translate="yes" xml:space="preserve">
           <source>Do you really want to delete all personal data?</source>
           <target state="translated">Wollen Sie wirklich alle persönlichen Angaben löschen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage, bevor alle persönlichen Angaben (Name, Geb. Datum usw) definitiv gelöscht werden</note>
         </trans-unit>
         <trans-unit id="WarningText" translate="yes" xml:space="preserve">
           <source>Warning</source>
           <target state="translated">Warnung</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warung</note>
         </trans-unit>
         <trans-unit id="AddPICCPagePICCNotFoundInformationText" translate="yes" xml:space="preserve">
           <source>PICC model could not be found</source>
           <target state="translated">PICC Modell konnte nicht gefunden werden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</note>
         </trans-unit>
         <trans-unit id="SettingsPageDelteScheduledRemindersText" translate="yes" xml:space="preserve">
           <source>Do you want to delete all scheduled maintenance reminders?</source>
           <target state="translated">Wollen Sie alle geplanten Wartungserinnerungen löschen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage, bevor alle in der Zukunft geplanten Wartungserinnerungen gelöscht werden (Wollen Sie alle geplanten Wartungserinnerungen löschen?)</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderInformationText" translate="yes" xml:space="preserve">
           <source>Your PICC should be maintained</source>
           <target state="translated">Ihr PICC Katheter sollte gewartet werden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ihr PICC sollte gewartet werden</note>
         </trans-unit>
         <trans-unit id="SettingsPagePersonalDataButtonText" translate="yes" xml:space="preserve">
           <source>My personal data</source>
           <target state="translated">Persönliche Daten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Knopf (Button), um zu den persönlichen Daten zu gelangen (persönliche Daten)</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageBandagesChangingEntry" translate="yes" xml:space="preserve">
           <source>Bandage changing</source>
           <target state="translated">Verbandswechsel</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verbandwechsel</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageBloodWithdrawalEntry" translate="yes" xml:space="preserve">
           <source>Blood withdrawal</source>
           <target state="translated">Blutentnahme</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Blutentnahme</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageCatheterFlushEntry" translate="yes" xml:space="preserve">
           <source>Rinse the catheter</source>
           <target state="translated">Spülen des Katheters</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Spülen des Katheters</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageInfusionEntry" translate="yes" xml:space="preserve">
           <source>Administered infusions</source>
           <target state="translated">Verabreichte Infusionen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verabreichte Infusionen</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageMicroClaveChangingEntry" translate="yes" xml:space="preserve">
           <source>Change MicroClave</source>
           <target state="translated">Wechsel MicroClave</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Wechsel MicroClave</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageStatlockChangingEntry" translate="yes" xml:space="preserve">
           <source>Change StatLock</source>
           <target state="translated">Wechsel StatLock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Wechsel Statlock</note>
         </trans-unit>
         <trans-unit id="JournalOverviewPageAdministeredDrugEntry" translate="yes" xml:space="preserve">
           <source>Administered drugs</source>
           <target state="translated">Verabreichte Medikamente</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verabreichte Medikamente</note>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionHomeCareText" translate="yes" xml:space="preserve">
           <source>Home care</source>
           <target state="translated">Spitex</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Spitex</note>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionHospitalText" translate="yes" xml:space="preserve">
           <source>Hospital</source>
           <target state="translated">Spital</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Spital</note>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionOutpatienClinicText" translate="yes" xml:space="preserve">
           <source>Outpatient clinic</source>
           <target state="translated">Ambulatorium</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ambulatorium</note>
         </trans-unit>
         <trans-unit id="JournalEntryInstitutionRehabilitationText" translate="yes" xml:space="preserve">
           <source>Rehabilitation</source>
           <target state="translated">Rehabilitation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rehabilitation</note>
         </trans-unit>
         <trans-unit id="JournalEntryNotSpecifiedText" translate="yes" xml:space="preserve">
           <source>Not specified</source>
           <target state="translated">Keine Angabe</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Keine Angabe</note>
         </trans-unit>
         <trans-unit id="JournalEntryOthersText" translate="yes" xml:space="preserve">
           <source>Others</source>
           <target state="translated">Andere</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Andere</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonAffectedPersonText" translate="yes" xml:space="preserve">
           <source>Affected person</source>
           <target state="translated">Betroffene Person</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Betroffene Person</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonFamilyDoctorText" translate="yes" xml:space="preserve">
           <source>Family doctor</source>
           <target state="translated">Hausarzt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Hausarzt</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonHealthExpertStaffText" translate="yes" xml:space="preserve">
           <source>Health expert staff</source>
           <target state="translated">Fachperson Gesundheit (FaGe)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Fachperson Gesundheit (FaGe)</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonMedicalTechnicalAssistantText" translate="yes" xml:space="preserve">
           <source>Medical technical assistant</source>
           <target state="translated">Medizinisch Technische Assistenz (MTA)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Medizinisch Technische Assistenz</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonNursingStaffText" translate="yes" xml:space="preserve">
           <source>Nursing staff</source>
           <target state="translated">Pflegefachperson</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Pflegefachperson</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonRelativeText" translate="yes" xml:space="preserve">
           <source>Relative</source>
           <target state="translated">Angehörige</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Angehörige</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonSpecialistText" translate="yes" xml:space="preserve">
           <source>Medical specialist</source>
           <target state="translated">Facharzt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Pflegefachperson</note>
         </trans-unit>
         <trans-unit id="JournalEntryPersonXrayStaffText" translate="yes" xml:space="preserve">
           <source>XRay staff</source>
           <target state="translated">Röntgenfachperson (MTRA)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Röntgenfachperson (MTRA)</note>
         </trans-unit>
         <trans-unit id="DeleteButtonText" translate="yes" xml:space="preserve">
           <source>Delete</source>
           <target state="translated">Löschen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Löschen</note>
         </trans-unit>
         <trans-unit id="MicroClaveChangingEntryPollutionText" translate="yes" xml:space="preserve">
           <source>Pollution</source>
           <target state="translated">Verschmutzung</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verschmutzung</note>
         </trans-unit>
         <trans-unit id="MicroClaveChangingEntryRoutineText" translate="yes" xml:space="preserve">
           <source>Routine</source>
           <target state="translated">Routine</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Routine</note>
         </trans-unit>
         <trans-unit id="StatlockChangingEntryDamagedWingsText" translate="yes" xml:space="preserve">
           <source>Damaged wings</source>
           <target state="translated">Defekte Flügel</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Defekte Flügel (beim Statlock)</note>
         </trans-unit>
         <trans-unit id="StatlockChangingEntryPollutionText" translate="yes" xml:space="preserve">
           <source>Pollution</source>
           <target state="translated">Verschmutzung</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verschmutzung</note>
         </trans-unit>
         <trans-unit id="StatlockChangingEntryRoutineText" translate="yes" xml:space="preserve">
           <source>Routine</source>
           <target state="translated">Routine</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Routine</note>
         </trans-unit>
         <trans-unit id="StatlockChangingEntrySticksUnsatisfactorilyText" translate="yes" xml:space="preserve">
           <source>Sticks unsatisfactorily</source>
           <target state="translated">Klebt ungenügend</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Klebt ungenügend</note>
         </trans-unit>
         <trans-unit id="BloodFlowFastAndEasyText" translate="yes" xml:space="preserve">
           <source>Fast, easy</source>
           <target state="translated">Zügig, problemlos</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">zügig, problemlos</note>
         </trans-unit>
         <trans-unit id="BloodFlowHesitantText" translate="yes" xml:space="preserve">
           <source>Hesitant</source>
           <target state="translated">Zögerlich</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">zögerlich</note>
         </trans-unit>
         <trans-unit id="BloodFlowNoneText" translate="yes" xml:space="preserve">
           <source>Not at all</source>
           <target state="translated">Gar nicht</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">gar nicht</note>
         </trans-unit>
         <trans-unit id="BandageChangingReasonBandageDoesNotStickAnymoreText" translate="yes" xml:space="preserve">
           <source>Bandage does not stick anymore</source>
           <target state="translated">Verband klebte nicht mehr</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verband klebt nicht mehr</note>
         </trans-unit>
         <trans-unit id="BandageChangingReasonBandageWetText" translate="yes" xml:space="preserve">
           <source>Bandage is wet</source>
           <target state="translated">Verband feucht</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verband feucht</note>
         </trans-unit>
         <trans-unit id="BandageChangingReasonPainText" translate="yes" xml:space="preserve">
           <source>Pain, irregularities</source>
           <target state="translated">Schmerzen, Unregelmässigkeiten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Schmerzen / Unregelmässigkeiten</note>
         </trans-unit>
         <trans-unit id="BandageChangingReasonPunctureNotCoveredText" translate="yes" xml:space="preserve">
           <source>Puncture is not covered</source>
           <target state="translated">Einstichstelle nicht vollständig abgedeckt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Einstichstelle nicht vollständig abgedeckt</note>
         </trans-unit>
         <trans-unit id="BandageChangingReasonRoutineText" translate="yes" xml:space="preserve">
           <source>Routinely</source>
           <target state="translated">Routinemässig</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Routinemässig</note>
         </trans-unit>
         <trans-unit id="BandageChangingReasonSecondaryBleedingText" translate="yes" xml:space="preserve">
           <source>Secondary bleeding</source>
           <target state="translated">Nachblutung</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Nachblutung</note>
         </trans-unit>
         <trans-unit id="BandageChangingAreaCompleteText" translate="yes" xml:space="preserve">
           <source>Complete</source>
           <target state="translated">Vollständig</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Vollständig</note>
         </trans-unit>
         <trans-unit id="BandageChangingAreaOnlyBandageText" translate="yes" xml:space="preserve">
           <source>Only Bandage</source>
           <target state="translated">Nur Verband</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Nur Verband</note>
         </trans-unit>
         <trans-unit id="BandageChangingAreaOnlyStatlockText" translate="yes" xml:space="preserve">
           <source>Only StatLock</source>
           <target state="translated">Nur StatLock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Nur Statlock</note>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationLiquidDischargeText" translate="yes" xml:space="preserve">
           <source>Liquid discharge</source>
           <target state="translated">Flüssigkeitsaustritt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Flüssigkeitsaustritt</note>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationPainfulPunctureText" translate="yes" xml:space="preserve">
           <source>Painful puncuture</source>
           <target state="translated">Schmerzhaft</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Schmerzhaft</note>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationReddenedPunctureText" translate="yes" xml:space="preserve">
           <source>Reddened puncture</source>
           <target state="translated">Gerötet</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Gerötet</note>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationSkinNotIrritantText" translate="yes" xml:space="preserve">
           <source>Skin not irritant</source>
           <target state="translated">Reizlos</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">reizlos</note>
         </trans-unit>
         <trans-unit id="BandagePunctureSituationSwollenPunctureText" translate="yes" xml:space="preserve">
           <source>Swollen puncture</source>
           <target state="translated">Geschwollen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">geschwollen</note>
         </trans-unit>
         <trans-unit id="BandageArmProcessSituationPainfulText" translate="yes" xml:space="preserve">
           <source>Painful</source>
           <target state="translated">Schmerzhaft</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Schmerzhaft</note>
         </trans-unit>
         <trans-unit id="BandageArmProcessSituationSwollenText" translate="yes" xml:space="preserve">
           <source>Swollen</source>
           <target state="translated">Geschwollen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Geschwollen</note>
         </trans-unit>
         <trans-unit id="BandageArmProcessSituationReddenedText" translate="yes" xml:space="preserve">
           <source>Reddened</source>
           <target state="translated">Gerötet</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Gerötet</note>
         </trans-unit>
         <trans-unit id="InfusionReasonAntibioticText" translate="yes" xml:space="preserve">
           <source>Antibiotic</source>
           <target state="translated">Antibiotika</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Antibiotika</note>
         </trans-unit>
         <trans-unit id="InfusionReasonBloodComponentText" translate="yes" xml:space="preserve">
           <source>Blood components</source>
           <target state="translated">Blutkomponenten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Blutkomponenten</note>
         </trans-unit>
         <trans-unit id="InfusionReasonChemotherapyText" translate="yes" xml:space="preserve">
           <source>Chemotherapy</source>
           <target state="translated">Chemotherapie</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Chemotherapie</note>
         </trans-unit>
         <trans-unit id="InfusionReasonExaminationSubstanceText" translate="yes" xml:space="preserve">
           <source>Examination substance</source>
           <target state="translated">Untersuchungssubstanzen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Untersuchungssubstanz</note>
         </trans-unit>
         <trans-unit id="InfusionReasonNutritionalSubstanceText" translate="yes" xml:space="preserve">
           <source>Nutritional substance</source>
           <target state="translated">Ernährungssubstanzen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ernährungssubstanz</note>
         </trans-unit>
         <trans-unit id="InfusionReasonOthersText" translate="yes" xml:space="preserve">
           <source>Other infusions</source>
           <target state="translated">Andere Infusionen</target>
-        </trans-unit>
-        <trans-unit id="InfusionAdministrationFastText" translate="yes" xml:space="preserve">
-          <source>Fast</source>
-          <target state="translated">Schneller</target>
-        </trans-unit>
-        <trans-unit id="InfusionAdministrationHesitantText" translate="yes" xml:space="preserve">
-          <source>Hesitant</source>
-          <target state="translated">Zögerlichem</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Andere (Infusionen)</note>
         </trans-unit>
         <trans-unit id="InfusionAdministrationWithoutProblemText" translate="yes" xml:space="preserve">
           <source>Without problems</source>
           <target state="translated">Problemlos</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">zügig, problemlos</note>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonBlockedText" translate="yes" xml:space="preserve">
           <source>Blocked</source>
           <target state="translated">Verstopft</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Verstopft</note>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonBloodSamplingText" translate="yes" xml:space="preserve">
           <source>Blood sampling</source>
           <target state="translated">Blutentnahme</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Blutentnahme</note>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonPartiallyBlockedText" translate="yes" xml:space="preserve">
           <source>Partially blocked</source>
           <target state="translated">Teilweise verstopft</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Teilweise verstopft</note>
         </trans-unit>
         <trans-unit id="CatheterFlushReasonRoutineText" translate="yes" xml:space="preserve">
           <source>Routine</source>
           <target state="translated">Routine</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Routine</note>
         </trans-unit>
         <trans-unit id="CatheterFlushTypeHeparinText" translate="yes" xml:space="preserve">
           <source>Heparin</source>
           <target state="translated">Heparin</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Heparin</note>
         </trans-unit>
         <trans-unit id="CatheterFlushTypeNaClText" translate="yes" xml:space="preserve">
           <source>NaCl</source>
           <target state="translated">NaCl</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">NaCl</note>
         </trans-unit>
         <trans-unit id="CatheterFlushTypeUrokinaseText" translate="yes" xml:space="preserve">
           <source>Urokinase</source>
           <target state="translated">Urokinase</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Urokinase</note>
         </trans-unit>
         <trans-unit id="CatheterFlushResultFlushNotPossibleText" translate="yes" xml:space="preserve">
           <source>Flush not possible anymore</source>
           <target state="translated">Spülen nicht möglich</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Spülen nicht möglich</note>
         </trans-unit>
         <trans-unit id="CatheterFlushResultFlushWithoutResistanceText" translate="yes" xml:space="preserve">
           <source>Without resistance continuous</source>
           <target state="translated">Problemlos durchgängig</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Problemlos durchgängig</note>
         </trans-unit>
         <trans-unit id="CatheterFlushResultFlushWithResistanceText" translate="yes" xml:space="preserve">
           <source>With resistance continuous</source>
           <target state="translated">Weniger durchgängig</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Weniger durchgängig</note>
         </trans-unit>
         <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
           <source>Maintenance instruction</source>
           <target state="translated">Wartungsanleitung</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel für Wartungsanleitung (Wartungsanleitung)</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageMissText" translate="yes" xml:space="preserve">
+          <source>Miss</source>
+          <target state="translated">Frau</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Frau" als Anrede</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageMisterText" translate="yes" xml:space="preserve">
+          <source>Mister</source>
+          <target state="translated">Herr</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Herr" als Anrede</note>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
+          <source>Guide wire length in cm:</source>
+          <target state="translated">Führungsdrahtslänge in cm:
+</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Führungsdrahtslänge in cm</note>
+        </trans-unit>
+        <trans-unit id="CancelButtonPressedConfirmationText" translate="yes" xml:space="preserve">
+          <source>Do you want to cancel your input?</source>
+          <target state="translated">Wollen Sie die Eingabe wirklich abbrechen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn bei einem Eintragsvorgang "Abbrechen" gedrückt wird (falls der User den Button versehentlich gedrückt hat).</note>
+        </trans-unit>
+        <trans-unit id="MasterDataViewModelBirthdateNotValidText" translate="yes" xml:space="preserve">
+          <source>Your birthdate is not valid and will be deleted. Continue?</source>
+          <target state="translated">Ihr Geburtstatum liegt ausserhalb des gültigen Datumsbereiches und wird gelöscht. Wollen Sie wirklich fortfahren?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User ein nicht mögliches Gebursdatum (Jahr = aktuelles Jahr oder in der Zukunft) abspeichern will. Das Datum wird gelöscht, wenn der User "Fortfahren" mit "Ja" beantwortet.</note>
+        </trans-unit>
+        <trans-unit id="JournalEntriesDelteEntryConfirmationText" translate="yes" xml:space="preserve">
+          <source>Do you want to delte this entry?</source>
+          <target state="translated">Wollen Sie diesen Eintrag wirklich löschen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User einen Journaleintrag löschen möche. </note>
+        </trans-unit>
+        <trans-unit id="JournalEntriesAskForMainentanceInstructionText" translate="yes" xml:space="preserve">
+          <source>Do you want to see a maintenance instruction for this step?</source>
+          <target state="translated">Wollen Sie die für diesen Schritt eine Wartungsanleitung ansehen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage, ob der User beim Erfassen eines Journaleintrages eine Wartungsanleitung ansehen möchte</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date was the drug administered to you?</source>
+          <target state="translated">An welchem Datum wurde Ihnen das Medikament verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm das Medikament verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectDrugLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which drug you have received:</source>
+          <target state="translated">Bitte geben Sie an, welches Medikament Ihnen verabreicht wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welches Medikament ihm verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution has given you the drug?</source>
+          <target state="translated">Welche Institution hat Ihnen das Medikament verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihm das Medikament verabreicht hat</note>
+        </trans-unit>
+        <trans-unit id="AdministeredDrugEntryPageSelectPersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person has given you the drug?</source>
+          <target state="translated">Welche Person hat Ihnen das Medikament verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihm das Medikament verabreicht hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageBandageChangingReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your bandage needs to be changed:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr Verband gewechselt werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll den Grund für den Verbandswechsel angeben</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution helped you to change your bandages?</source>
+          <target state="translated">Welche Institution hat Ihnen beim Verbandswechsel geholfen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihm beim Verbandswechsel unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePartsOfChaningLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which bandage parts have been changed:</source>
+          <target state="translated">Bitte geben Sie an, welche Teile des Verbandes gewechselt wurden:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Teile des Verbandes gewechselt werden mussten</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person helped you to change bandages?</source>
+          <target state="translated">Welche Person hat Ihnen beim Verbandswechsel geholfen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihm beim Verbandswechsel unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageArmSituationLabelText" translate="yes" xml:space="preserve">
+          <source>How is the situation on the arm?</source>
+          <target state="translated">Wie ist der Verlauf am Arm?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie der Verlauf am Arm ist</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPageBandageChangingDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did you change the bandage?</source>
+          <target state="translated">An welchem Datum haben Sie den Verband gewechselt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum er den Verband gewechselt hat</note>
+        </trans-unit>
+        <trans-unit id="BandageChangingEntryPagePunctureSituationLabelText" translate="yes" xml:space="preserve">
+          <source>How is the puncture site?</source>
+          <target state="translated">Wie verhält sich die Einstichstelle?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Situation an der Einstichstelle ist</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageBloodWithdrawalDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did the blood withdrawal happen?</source>
+          <target state="translated">An welchem Datum wurde Ihnen Blut entnommen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm Blut entnommen wurde</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageIndicateBloodFlowLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate how the blood flow was at the time of collection:</source>
+          <target state="translated">Bitte geben Sie an, wie der Blutfluss bei der Entnahme war:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die der Blutfluss bei der Entnahme war</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution has supported you on the blood withrawal process?</source>
+          <target state="translated">Welche Institution hat Sie bei der Blutentnahme unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn bei der Blutentnahme unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText" translate="yes" xml:space="preserve">
+          <source>Did you flush the catheter with NaCl?</source>
+          <target state="translated">Ist anschliessendes Spülen mit NaCl erfolgt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, ob der Katheter nach de Blutentnahme mit NaCl Lösung gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="BloodWithdrawalEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person has supported you on the blood withrawal process?</source>
+          <target state="translated">Welche Person hat Sie bei der Blutentnahme unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn bei der Blutentnahme unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageBloodReflowLabelText" translate="yes" xml:space="preserve">
+          <source>Is a blood reflow visible?</source>
+          <target state="translated">Ist ein Blutrückfluss feststellbar?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, ob nach dem Spülen ein Blutrückfluss sichtbar ist</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date did you flush the catheter?</source>
+          <target state="translated">An welchem Datum haben Sie den Katheter gespült?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der Katheter gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why the catheter needed to be flushed:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr Katheter gespült werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der Katheter gespült werden musste</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushSolutionAmountLabelText" translate="yes" xml:space="preserve">
+          <source>Please specify the amount of the solution administered (in ml):</source>
+          <target state="translated">Bitte geben Sie die Menge der verabreichten Lösung an (in ml):</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll die Menge der verabreichten Lösung (in ml) angeben</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support on the catheter flush process?</source>
+          <target state="translated">Welche Institution hat Sie beim Spülen des Katheters unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn bei beim Spülvorgang unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPagePatencyAfterFlushLabelText" translate="yes" xml:space="preserve">
+          <source>What is the continuity of the catheter after the irrigation?</source>
+          <target state="translated">Wie ist die Durchgängigkeit des Katheters nach der Spülung?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Durchgängigkeit des Katheters nach der Spülung ist</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support on the catheter flush process?</source>
+          <target state="translated">Welche Person hat Sie beim Spülen des Katheters unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn bei beim Spülvorgang unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="CatheterFlushEntryPageFlushTypeLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which solution your catheter was flushed with:</source>
+          <target state="translated">Bitte geben Sie an, mit welcher Lösung Ihr Katheter gespült wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, mit welcher Lösung der Katheter gespült wurde</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageAntibioticLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate which antibiotic you have been given:</source>
+          <target state="translated">Bitte geben Sie an, welches Antibiotika Ihnen verabreicht wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welches Antibiotika er erhalten hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date was the infusion administered to you?</source>
+          <target state="translated">An welchem Datum wurde Ihnen die Infusion verabreicht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum ihm die Infusion verabreicht wurde</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageInfusionFlowLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate how the flow of the infusion was during administration:</source>
+          <target state="translated">Bitte geben Sie an, wie der Durchfluss der Infusion bei der Verabreichung war:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, wie die Verabreichung der Infusion abgelaufen ist</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support?</source>
+          <target state="translated">Welche Institution hat Sie hierbei unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Verabreichen der Infusion untersützt hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support?</source>
+          <target state="translated">Welche Person hat Sie hierbei unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Verabreichen der Infusion untersützt hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionEntryPageTypeLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate the type of infusion you have been given:</source>
+          <target state="translated">Bitte geben Sie an, welche Art Infusion Ihnen verabreicht wurde:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Art von Infusion er erhalten hat</note>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationNotPossibleText" translate="yes" xml:space="preserve">
+          <source>Not possible</source>
+          <target state="translated">Nicht möglich</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">gar nicht</note>
+        </trans-unit>
+        <trans-unit id="InfusionAdministrationWithResistance" translate="yes" xml:space="preserve">
+          <source>With resistance</source>
+          <target state="translated">Mit Widerstand</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">zögerlich</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date has your MicroClave been exchanged?</source>
+          <target state="translated">An welchem Datum wurde Ihr MicroClave ausgetauscht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der MicroClave ausgetauscht wurde</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support when changing the MicroClave?</source>
+          <target state="translated">Welche Institution hat Sie beim Wechsel des MicroClave unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Wechsel des MicroClave unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support when changing the MicroClave?</source>
+          <target state="translated">Welche Person hat Sie beim Wechsel des MicroClave unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Wechsel des MicroClave unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="MicroClaveChangingEntryPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your MicroClave had to be exchanged:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr MicroClave ausgetauscht werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der MicroClave ausgetauscht werden musste</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageDateLabelText" translate="yes" xml:space="preserve">
+          <source>At what date has your StatLock been exchanged?</source>
+          <target state="translated">An welchem Datum wurde Ihr StatLock ausgetauscht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, an welchem Datum der StatLock ausgetauscht wurde</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageInstitutionLabelText" translate="yes" xml:space="preserve">
+          <source>Which institution did you support when changing the StatLock?</source>
+          <target state="translated">Welche Institution hat Sie beim Wechsel des StatLocks unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Institution ihn beim Wechsel des Statlock unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPagePersonLabelText" translate="yes" xml:space="preserve">
+          <source>What person did you support when changing the StatLock?</source>
+          <target state="translated">Welche Person hat Sie beim Wechsel des StatLocks unterstützt?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, welche Person ihn beim Wechsel des StatLock unterstützt hat</note>
+        </trans-unit>
+        <trans-unit id="StatlockChangingEntryPageReasonLabelText" translate="yes" xml:space="preserve">
+          <source>Please indicate why your StatLock had to be exchanged:</source>
+          <target state="translated">Bitte geben Sie an, warum Ihr StatLock ausgetauscht werden musste:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">User soll angeben, warum der StatLock ausgetauscht werden musste</note>
+        </trans-unit>
+        <trans-unit id="JournalOverviewViewModelWhichJournalEntryText" translate="yes" xml:space="preserve">
+          <source>What kind of entry do you want to add?</source>
+          <target state="translated">Was für einen Eintrag wollen Sie hinzufügen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frage an User, für welches Thema er einen neuen Journaleintrag erfassen möchte</note>
+        </trans-unit>
+        <trans-unit id="PICCDetailViewModelSetPICCInactiveText" translate="yes" xml:space="preserve">
+          <source>Do you really want to put this PICC catheter inactive?</source>
+          <target state="translated">Wollen Sie diesen PICC Katheter wirklich inaktiv setzen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warnung, wenn der User den aktuellen PICC inaktiv setzen will</note>
+        </trans-unit>
+        <trans-unit id="KnowledgeEntryDetailPageMatchingGlossariesText" translate="yes" xml:space="preserve">
+          <source>Matching glossaries</source>
+          <target state="translated">Passende Glossareinträge</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text für passende Glossareinträge zu den "Wissenswertes" Einträgen</note>
+        </trans-unit>
+        <trans-unit id="PICCDetailPageLumensLabelText" translate="yes" xml:space="preserve">
+          <source>Number of lumens:</source>
+          <target state="translated">Anzahl Lumen:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Anzahl Lumen</note>
         </trans-unit>
       </group>
     </body>

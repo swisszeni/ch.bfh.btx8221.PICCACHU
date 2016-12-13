@@ -11,12 +11,7 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class KnowledgeEntriesViewModel : ViewModelBase
     {
-        public KnowledgeEntriesViewModel()
-        {
-            KnowledgeEntriesList = KnowledgeEntries.getEntries();
-        }
-
-        private List<KnowledgeEntryTypeGroup> _knowledgeEntriesList;
+        private List<KnowledgeEntryTypeGroup> _knowledgeEntriesList = KnowledgeEntries.getEntries();
         public List<KnowledgeEntryTypeGroup> KnowledgeEntriesList
         {
             get { return _knowledgeEntriesList; }

@@ -22,9 +22,8 @@ namespace BFH_USZ_PICC.Models
     {   
         NoInformation,
         WithoutProblem,
-        Fast,
-        Hesitant
-
+        WithResistance,
+        NotPossible
     }
 
     /// <summary>
