@@ -16,7 +16,7 @@ using BFH_USZ_PICC.Utilitys;
 
 namespace BFH_USZ_PICC.Droid
 {
-    [Activity(Label = "USZ PICC", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait) ]
+    [Activity(Label = "@string/app_name", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait) ]
     public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
     {
 
