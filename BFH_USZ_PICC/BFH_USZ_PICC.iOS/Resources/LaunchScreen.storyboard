@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X5k-f2-b5h">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -16,15 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="Icon-60.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LaunchscreenContent.png" translatesAutoresizingMaskIntoConstraints="NO" id="23" misplaced="YES">
+                                <rect key="frame" x="134" y="137" width="344" height="358"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                         <constraints>
-                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
-                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                            <constraint id="50" firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY"/>
+                            <constraint id="51" firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX"/>
+                            <constraint id="52" firstItem="23" firstAttribute="top" secondItem="Y8P-hJ-Z43" secondAttribute="bottom" constant="50"/>
+                            <constraint id="54" firstItem="23" firstAttribute="leading" secondItem="yd7-JS-zBw" secondAttribute="leading" constant="50"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -34,6 +36,56 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60.png" width="180" height="180"/>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default-Portrait.png" width="768" height="1004"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="DoppellumigerPICC.png" width="1014" height="578"/>
+        <image name="DreilumigerPICC.png" width="1137" height="960"/>
+        <image name="EinlumigerPICC.png" width="1061" height="457"/>
+        <image name="Icon-120.png" width="120" height="120"/>
+        <image name="Icon-152.png" width="152" height="152"/>
+        <image name="Icon-16.png" width="16" height="16"/>
+        <image name="Icon-24.png" width="24" height="24"/>
+        <image name="Icon-32.png" width="32" height="32"/>
+        <image name="Icon-40.png" width="40" height="40"/>
+        <image name="Icon-72.png" width="72" height="72"/>
+        <image name="Icon-76.png" width="76" height="76"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-Small-50.png" width="50" height="50"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="MicroClave1.jpg" width="1417" height="945"/>
+        <image name="MicroClave10.jpg" width="1417" height="945"/>
+        <image name="MicroClave2.jpg" width="2126" height="1417"/>
+        <image name="MicroClave3.jpg" width="1417" height="945"/>
+        <image name="MicroClave4.jpg" width="1417" height="945"/>
+        <image name="MicroClave5.jpg" width="1417" height="945"/>
+        <image name="MicroClave6.jpg" width="1417" height="945"/>
+        <image name="MicroClave7.jpg" width="1417" height="945"/>
+        <image name="MicroClave8.jpg" width="1417" height="945"/>
+        <image name="MicroClave9.jpg" width="1417" height="945"/>
+        <image name="PiccPlatzierung.png" width="1001" height="643"/>
+        <image name="slideout.png" width="14" height="15"/>
+        <image name="StatLock1.jpg" width="1417" height="945"/>
+        <image name="StatLock2.jpg" width="1417" height="945"/>
+        <image name="StatLock3.jpg" width="1417" height="945"/>
+        <image name="StatLock4.jpg" width="1417" height="945"/>
+        <image name="StatLock5.jpg" width="1417" height="945"/>
+        <image name="StatLock6.jpg" width="1417" height="945"/>
+        <image name="StatLock7.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel1.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel10.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel11.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel12.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel2.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel3.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel4.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel5.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel6.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel7.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel8.jpg" width="1417" height="945"/>
+        <image name="Verbandswechsel9.jpg" width="1417" height="945"/>
+        <image name="LaunchscreenContent.png" width="1057" height="925"/>
     </resources>
 </document>

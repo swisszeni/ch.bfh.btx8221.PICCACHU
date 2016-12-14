@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.bfh.i4mi.picc" android:installLocation="auto" android:versionName="1.0.1" android:versionCode="1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.bfh.i4mi.picc" android:installLocation="auto" android:versionName="1.0.3" android:versionCode="4">
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
-	<application android:label="USZ PICC" android:theme="@style/MyTheme" android:icon="@drawable/ic_launcher"></application>
+	<application android:label="PICCACHU" android:theme="@style/MyTheme" android:icon="@mipmap/ic_launcher"></application>
 	<receiver android:name=".AlarmReceiver" android:enabled="true" android:exported="true" android:process=":remote" android:label="AlarmReceiver" />
 </manifest>
