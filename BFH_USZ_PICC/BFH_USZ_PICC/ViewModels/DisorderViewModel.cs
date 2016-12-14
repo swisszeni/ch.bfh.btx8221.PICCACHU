@@ -32,7 +32,10 @@ namespace BFH_USZ_PICC.ViewModels
             get { return _selectedSymptom; }
             set
             {
-                if (Set(() => SelectedSymptom, ref _selectedSymptom, value) & _selectedSymptom != null)
+                Set(() => SelectedSymptom, ref _selectedSymptom, value);
+
+                //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
+                if (_selectedSymptom != null)
                 {
                     ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
                 }

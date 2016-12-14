@@ -26,8 +26,11 @@ namespace BFH_USZ_PICC.ViewModels
         {
             get { return _selectedKnowledgeEntry; }
             set
-            {
-                if (Set(ref _selectedKnowledgeEntry, value) & _selectedKnowledgeEntry != null)
+            {   
+                Set(ref _selectedKnowledgeEntry, value);
+
+                //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
+                if (_selectedKnowledgeEntry != null)
                 {
                     ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { value }));
                 }

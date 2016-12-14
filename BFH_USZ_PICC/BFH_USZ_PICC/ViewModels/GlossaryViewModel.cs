@@ -13,17 +13,9 @@ namespace BFH_USZ_PICC.ViewModels
     class GlossaryViewModel : ViewModelBase
     {
         /// <summary>
-        /// Adds a list with all "GlossaryEntry" objects to the "ListOfGlossaryEntries" variable.
-        /// </summary>
-        public GlossaryViewModel()
-        {
-            GlossaryEntriesList = GlossaryEntries.getEntries();
-        }
-
-        /// <summary>
         /// Binds all the glossary entries to a the "GlossaryList" ListView
         /// </summary>
-        private List<GlossaryEntry> _glossaryEntriesList;
+        private List<GlossaryEntry> _glossaryEntriesList = GlossaryEntries.getEntries();
         public List<GlossaryEntry> GlossaryEntriesList
         {
             get { return _glossaryEntriesList; }
@@ -43,7 +35,10 @@ namespace BFH_USZ_PICC.ViewModels
             get { return _selectedEntry; }
             set
             {
-                if(Set(() => SelectedEntry, ref _selectedEntry, value) & _selectedEntry != null)
+                Set(() => SelectedEntry, ref _selectedEntry, value);
+
+                //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
+                if (_selectedEntry != null)
                 {
                     Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, "Ok");
                 }
