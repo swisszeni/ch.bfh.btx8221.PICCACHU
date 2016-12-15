@@ -24,6 +24,7 @@ namespace BFH_USZ_PICC.Droid
 
             var intent = new Intent(this, typeof(MainActivity));
             StartActivity(intent);
+            Finish();
         }
     }
 }
