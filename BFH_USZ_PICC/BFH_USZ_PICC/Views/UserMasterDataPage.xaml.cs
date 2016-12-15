@@ -16,15 +16,15 @@ namespace BFH_USZ_PICC.Views
             AddPickers();
 
             ((MasterDataViewModel)BindingContext).MasterData = UserMasterData.MasterData;
-            ((MasterDataViewModel)BindingContext).EnableUserInput = isEnabled;           
+            ((MasterDataViewModel)BindingContext).IsUserInputEnabled = isEnabled;           
 
         }
 
         void AddPickers()
         {   
-            SalutationPicker.Items.Insert(0, string.Empty);
-            SalutationPicker.Items.Insert(1, AppResources.UserMasterDataPageMisterText);
-            SalutationPicker.Items.Insert(2, AppResources.UserMasterDataPageMissText);
+            GenderPicker.Items.Insert(0, string.Empty);
+            GenderPicker.Items.Insert(1, AppResources.UserMasterDataPageMisterText);
+            GenderPicker.Items.Insert(2, AppResources.UserMasterDataPageMissText);
         }
     }
 }

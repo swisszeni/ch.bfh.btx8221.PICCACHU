@@ -13,6 +13,11 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class MasterDataViewModel : ViewModelBase
     {
+        public MasterDataViewModel()
+        {
+
+        }
+
         private UserMasterData _masterData;
         public UserMasterData MasterData
         {
@@ -21,7 +26,7 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (Set(ref _masterData, value))
                 {
-                    Salutation = value.Salutation;
+                    Gender = value.Gender;
                     Name = value.Name;
                     Surname = value.Surname;
                     Street = value.Street;
@@ -33,7 +38,7 @@ namespace BFH_USZ_PICC.ViewModels
 
                     if (value.Birthdate != null)
                     {
-                        Birthdate = (DateTime)value.Birthdate;
+                        Birthdate = (DateTimeOffset)value.Birthdate;
                     }
                 }
 
@@ -42,11 +47,11 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        private Salutation _salutation;
-        public Salutation Salutation
+        private Gender _gender;
+        public Gender Gender
         {
-            get { return _salutation; }
-            set { Set(ref _salutation, value); }
+            get { return _gender; }
+            set { Set(ref _gender, value); }
         }
 
         private string _surname;
@@ -105,70 +110,54 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _mobile, value); }
         }
 
-        private DateTime? _birthdate;
-        public DateTime Birthdate
+        private DateTimeOffset _birthdate;
+        public DateTimeOffset Birthdate
         {
-            get
-            {
-                if (_birthdate == null || _birthdate.Value.Year >= DateTime.Now.Year)
-                {
-                    IsBirthdateSet = false;
-                    return DateTime.Today;
-                }
-                else
-                {
-                    IsBirthdateSet = true;
-                    return (DateTime)_birthdate;
-                }
-            }
+            get { return (!IsBirthdateSet || _birthdate.Year >= DateTimeOffset.Now.Year) ? DateTimeOffset.Now : _birthdate; }
             set
             {
-                if (value == null || value.Year >= DateTime.Now.Year)
+                if (value.Year >= DateTimeOffset.Now.Year)
                 {
-                    if (EnableUserInput == false)
-                    {
-                        IsBirthdateSet = false;
-                    }
-
-                    Set(ref _birthdate, null);
+                    IsBirthdateSet = false;
+                    Set(ref _birthdate, value);
                     return;
                 }
 
                 IsBirthdateSet = true;
                 Set(ref _birthdate, value);
-
-
             }
         }
 
-        private bool _enableUserInput;
-        public bool EnableUserInput
+        public bool IsBirthdateDisplayed
         {
-            get { return _enableUserInput; }
-            set
-            {
-                if (value)
-                {
-                    IsBirthdateSet = true;
-                }
-                Set(ref _enableUserInput, value);
-            }
+            get { return IsBirthdateSet || IsUserInputEnabled; }
+        }
 
+        private bool _isUserInputEnabled;
+        public bool IsUserInputEnabled
+        {
+            get { return _isUserInputEnabled; }
+            set {
+                Set(ref _isUserInputEnabled, value);
+                RaisePropertyChanged(() => IsBirthdateDisplayed);
+            }
         }
 
         private bool _isBirthdateSet;
         public bool IsBirthdateSet
         {
             get { return _isBirthdateSet; }
-            set { Set(ref _isBirthdateSet, value); }
-
+            set {
+                Set(ref _isBirthdateSet, value);
+                RaisePropertyChanged(() => IsBirthdateDisplayed);
+            }
         }
 
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
         {
             MasterData = UserMasterData.MasterData;
-            EnableUserInput = true;
+            IsUserInputEnabled = true;
 
         }));
 
@@ -177,7 +166,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                EnableUserInput = false;
+                IsUserInputEnabled = false;
                 UserMasterData.MasterData = MasterData;
             }
 
@@ -190,8 +179,6 @@ namespace BFH_USZ_PICC.ViewModels
 
             if (Birthdate.Year >= DateTime.Now.Year)
             {   
-                // FIXME: Replace hardcoded text
-
                 if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.MasterDataViewModelBirthdateNotValidText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
                     saveInput = false;
@@ -199,7 +186,7 @@ namespace BFH_USZ_PICC.ViewModels
                 };
             }
             if (saveInput) {
-                EnableUserInput = false;
+                IsUserInputEnabled = false;
                 RaisePropertyChanged("");
             }
             
@@ -211,7 +198,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                Salutation = Salutation.GenderFree;
+                Gender = Gender.GenderFree;
                 Name = null;
                 Surname = null;
                 Street = null;

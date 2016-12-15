@@ -1,48 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.UserMasterDataPage"
-             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate UserMasterDataPageTitleText}"
-             BindingContext="{Binding [MasterDataViewModel], Source={StaticResource ViewModelLocator}}">
-  <Grid.Resources>
-    <ResourceDictionary>
-      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
-      <utilitys:SalutationToIndexConverter x:Key="SalutationToIndexConverter"/>
-    </ResourceDictionary>
-  </Grid.Resources>
-  <ScrollView>
-    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" >
-      <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-        <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Command="{Binding EditButtonCommand}" IsVisible="{Binding EnableUserInput, Converter={StaticResource NegateBooleanConverter}}"/>
-        <Button x:Name="DeleteAllMasterDataButton" Text="{i18n:Translate UserMasterDataPageDeleteAllMasterDataButton}" Command="{Binding UserMasterDataPageDeleteAllMasterDataButtonCommand}" IsVisible="{Binding EnableUserInput, Converter={StaticResource NegateBooleanConverter}}"/>
-        <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding EnableUserInput}"/>
-        <Button x:Name="CancelButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding EnableUserInput}"/>
-      </StackLayout>
-      <Label Text="{i18n:Translate UserMasterDataPageSalutationLabelText}"/>
-      <Picker x:Name="SalutationPicker" IsEnabled="{Binding EnableUserInput}" SelectedIndex="{Binding Salutation, Converter={StaticResource SalutationToIndexConverter}}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageSurnameLabelText}"/>
-      <Entry x:Name="Surname" Text="{Binding Surname}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageNameLabelText}"/>
-      <Entry x:Name="Name"  Text="{Binding Name}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageStreetLabelText}"/>
-      <Entry x:Name="Street"  Text="{Binding Street}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageZIPLabelText}"/>
-      <Entry x:Name="Zip" Text="{Binding ZIP}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPagePlaceLabelText}"/>
-      <Entry x:Name="Place" Text="{Binding City}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageEmailLabelText}"/>
-      <Entry x:Name="Email" Text="{Binding Email}" Keyboard="Email" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPagePhoneLabelText}"/>
-      <Entry x:Name="Phone" Keyboard="Telephone" Text="{Binding Phone}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageMobileLabelText}"/>
-      <Entry x:Name="Mobile" Keyboard="Telephone" Text="{Binding Mobile}" IsEnabled="{Binding EnableUserInput}"/>
-      <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}" IsVisible="{Binding IsBirthdateSet}"/>
-      <DatePicker x:Name="BirthdatePicker" Date="{Binding Birthdate}" IsVisible="{Binding IsBirthdateSet}" IsEnabled="{Binding EnableUserInput}">
-        <DatePicker.Format>d</DatePicker.Format>
-      </DatePicker>
-    </StackLayout>
-  </ScrollView>
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.UserMasterDataPage"
+                   xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   Title="{i18n:Translate UserMasterDataPageTitleText}"
+                   BindingContext="{Binding [MasterDataViewModel], Source={StaticResource ViewModelLocator}}">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
+            <utilitys:GenderToIndexConverter x:Key="GenderToIndexConverter" />
+        </ResourceDictionary>
+    </Grid.Resources>
+    <ScrollView>
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Center">
+                <Button x:Name="EditButton"
+                        Text="{i18n:Translate EditButtonText}"
+                        Command="{Binding EditButtonCommand}"
+                        IsVisible="{Binding EnableUserInput, Converter={StaticResource NegateBooleanConverter}}" />
+                <Button x:Name="DeleteAllMasterDataButton"
+                        Text="{i18n:Translate UserMasterDataPageDeleteAllMasterDataButton}"
+                        Command="{Binding UserMasterDataPageDeleteAllMasterDataButtonCommand}"
+                        IsVisible="{Binding EnableUserInput, Converter={StaticResource NegateBooleanConverter}}" />
+                <Button x:Name="SaveButton"
+                        Text="{i18n:Translate SaveButtonText}"
+                        Command="{Binding SaveButtonCommand}"
+                        IsVisible="{Binding EnableUserInput}" />
+                <Button x:Name="CancelButton"
+                        Text="{i18n:Translate CancelButtonText}"
+                        Command="{Binding CancelButtonCommand}"
+                        IsVisible="{Binding EnableUserInput}" />
+            </StackLayout>
+            <Label Text="{i18n:Translate UserMasterDataPageGenderLabelText}" />
+            <Picker x:Name="GenderPicker"
+                    IsEnabled="{Binding EnableUserInput}"
+                    SelectedIndex="{Binding Gender, Converter={StaticResource GenderToIndexConverter}}" />
+            <Label Text="{i18n:Translate UserMasterDataPageSurnameLabelText}" />
+            <Entry x:Name="Surname"
+                   Text="{Binding Surname}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPageNameLabelText}" />
+            <Entry x:Name="Name"
+                   Text="{Binding Name}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPageStreetLabelText}" />
+            <Entry x:Name="Street"
+                   Text="{Binding Street}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPageZIPLabelText}" />
+            <Entry x:Name="Zip"
+                   Text="{Binding ZIP}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPagePlaceLabelText}" />
+            <Entry x:Name="Place"
+                   Text="{Binding City}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPageEmailLabelText}" />
+            <Entry x:Name="Email"
+                   Text="{Binding Email}"
+                   Keyboard="Email"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPagePhoneLabelText}" />
+            <Entry x:Name="Phone"
+                   Keyboard="Telephone"
+                   Text="{Binding Phone}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPageMobileLabelText}" />
+            <Entry x:Name="Mobile"
+                   Keyboard="Telephone"
+                   Text="{Binding Mobile}"
+                   IsEnabled="{Binding EnableUserInput}" />
+            <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"
+                   IsVisible="{Binding IsBirthdateDisplayed}" />
+            <DatePicker x:Name="BirthdatePicker"
+                        Date="{Binding Birthdate}"
+                        IsVisible="{Binding IsBirthdateDisplayed}"
+                        IsEnabled="{Binding EnableUserInput}">
+                <DatePicker.Format>d</DatePicker.Format>
+            </DatePicker>
+        </StackLayout>
+    </ScrollView>
 </d:BaseContentPage>
