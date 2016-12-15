@@ -17,7 +17,7 @@
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
-    <Button x:Name="NewEntryButton" Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}" Image="icon.png" FontSize="20" Grid.Row="0" Command="{Binding EntryButtonCommand}">
+    <Button x:Name="NewEntryButton" Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}" Image="placeholder.png" FontSize="20" Grid.Row="0" Command="{Binding EntryButtonCommand}">
       <Button.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 0"
