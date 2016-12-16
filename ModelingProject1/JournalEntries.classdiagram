@@ -1,0 +1,1138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="80a5f856-18d5-49e1-8d9a-9b3ffaf77bbc" name="JournalEntries" linkedPackageId="de3192f0-b73d-41c9-b166-55990c199ece" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="4cf64e6e-4952-403e-a8a7-807e23170935" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="e0470f4e-e129-42e2-853f-386853113ab3" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d01ebfb8-8de1-43b9-af7f-15501c6d8bb1">
+          <propertyInstance Id="c0742da6-db02-4555-a44e-1f0911bc88d8" name="BaseName">
+            <elementDefinition Id="950bd4af-d06d-49a7-b6b8-457d4f20ab9c" />
+          </propertyInstance>
+          <elementDefinition Id="7601b63d-c3e4-446a-a01d-f8e15b72a1e0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="cf86b27d-dcd4-4057-8577-7576b7499dbb">
+          <propertyInstance Id="b6bf617c-3899-42c9-a1b3-036e9da4b724" name="ClrAttributes">
+            <elementDefinition Id="6780343c-b239-4841-b4bc-41449b5e75cf" />
+          </propertyInstance>
+          <elementDefinition Id="cec3196c-7b56-4265-a164-b1240928bd44" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="69faa275-3bc4-4502-b9de-0fa7cd86320e">
+          <propertyInstance Id="be0cd323-5b8b-43d8-b06e-2f6a263326f3" name="Usings">
+            <elementDefinition Id="5ceba6a0-e0a6-417d-a24e-3e768205fc72" />
+          </propertyInstance>
+          <elementDefinition Id="03296982-4eba-4570-abe4-9322f793a5dc" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="5c23e673-85d8-4261-b224-c55b3d5df2dd" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="46906589-04dd-4b9d-9655-b571babd0ca7" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="f4d902cb-aa13-4fd1-b4fd-ee393db25e1b">
+          <propertyInstance Id="9d45bbe7-cb60-40dc-bc68-61dbb92e9077" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="41510a0a-7325-4882-880a-c94bfb858c62" />
+          </propertyInstance>
+          <elementDefinition Id="f8c2ead4-c525-480a-8750-7bca9a060aad" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d7833dd3-51cc-4301-b8f0-3540a0ad8d63">
+          <propertyInstance Id="89937459-0540-43d5-8e87-e9a93fdcfea6" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f7e4f476-0496-46fc-9604-355d08864f9c" />
+          </propertyInstance>
+          <elementDefinition Id="4a0ac09c-eb8b-4e79-af4b-cf4ec2be13c7" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="bd49e7d1-3f43-4c28-a544-87285d2a9231">
+          <propertyInstance Id="801feacf-6725-47b3-ab84-9c2c69fadcc1" name="ProjectPath" value="ClassTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj|EnumTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj|InterfaceTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj|StructTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj">
+            <elementDefinition Id="3ccc009e-16bc-4258-801f-c7b1c08c9e55" />
+          </propertyInstance>
+          <elementDefinition Id="3778f15d-e0a0-445f-92e5-7ee5fe6c7a6b" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="01913951-7692-401c-a538-e3d455ebdd9d">
+          <propertyInstance Id="68aa5dbc-eaef-4842-9e59-8c7517503c63" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="5a1c06f9-b738-42c2-b7f5-c5f215c7a566" />
+          </propertyInstance>
+          <elementDefinition Id="aeaf676c-e687-49c1-a4c3-de454542952b" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="cf26d61b-7d6a-44db-a974-313734b48855">
+          <propertyInstance Id="5fc5dc6a-1e1f-4ba8-a660-0826c3e874b0" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="cfba3fdd-495c-42e5-9ec0-aabb14f7de8f" />
+          </propertyInstance>
+          <elementDefinition Id="30b2af99-211c-4dac-947f-351d0ee086be" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8e7260e1-cc7e-442c-9794-09621c1b527d">
+          <propertyInstance Id="fed1ab9b-b906-4b33-bdca-c9e4992192d0" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="2c789492-4141-4227-bbaf-451ad08affec" />
+          </propertyInstance>
+          <elementDefinition Id="0522b9d1-fcb8-4a2c-80f8-a5446f460c75" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e1a1fe79-4681-42b9-aa6f-8cd5c73db623">
+          <propertyInstance Id="8a861029-a2be-475a-a2b1-7c9739d6216a" name="Parameters">
+            <elementDefinition Id="527dc7e0-2dc9-4eb0-b29b-5925b01065c4" />
+          </propertyInstance>
+          <elementDefinition Id="da8deef3-9d75-4249-8c3b-7c974911a8f3" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="fa7c8050-8254-401b-b42c-3202d099e2a4" name="JournalEntry" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b4f1ea1b-8322-4456-9bb5-29aacbfdabf6" />
+        <targetEnds>
+          <association Id="141a71a7-cf80-476f-ba33-54c4bc2996d6" isDerived="false" sourceEndRoleName="JournalEntry" targetEndRoleName="HealthInstitution" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="761769c4-899a-4639-8fbc-6cbb196a856e" LastKnownName="HealthInstitution" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0683a78b-dca3-4c6a-b44f-8a6854e5e3da" name="JournalEntry" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="0e7be880-935b-43ee-8de6-d027c8e46941" name="Lower" value="*">
+                      <elementDefinition Id="ea8e7b58-7395-4d2b-8a1c-2a9e54577267" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="8218c2e1-77cc-48ba-8798-ac4dad933afc" name="Upper" value="*">
+                      <elementDefinition Id="5ccf2b0e-9152-4136-80bd-ae02718f410b" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="97bc494b-16ee-4543-9de8-336c7133271c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="827d8765-21bf-4ff1-b2fd-fa14a12c155a" name="HealthInstitution" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="19b554c8-f62b-483a-954d-2aaed2c58d47" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9b726af2-18d2-4d80-9c78-a5552f7de6c7" />
+          </association>
+          <association Id="b7f9caa0-54f9-44b2-b698-093ba637a104" isDerived="false" sourceEndRoleName="JournalEntry" targetEndRoleName="HealthPerson" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="b66949a2-faa4-4c65-8a47-31d3af185653" LastKnownName="HealthPerson" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bf882c00-f8f5-4284-811c-144c48849620" name="JournalEntry" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="13024c10-ae69-445c-a5ea-bb845dd5c9fd" name="Lower" value="*">
+                      <elementDefinition Id="0f6bdd7a-9118-4b86-9b59-84420e83034c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="5afc1422-e7ab-4af1-8ce3-cb51a95630cf" name="Upper" value="*">
+                      <elementDefinition Id="8dbca4cb-93b7-437e-b887-fd7c258d35a1" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c6978dc7-49e2-4838-91a1-770a29f6afc2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="04ae49f9-279e-4766-ad9c-752ade9308a3" name="HealthPerson" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e91dcdd6-3061-4479-93be-21e2606039ef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="503d7e2e-69bc-4926-bce9-36dac2d37e08" />
+          </association>
+        </targetEnds>
+        <ownedAttributes>
+          <property Id="9e0d29dd-0bee-4f0a-856e-ab0e0a06d71a" name="Institution" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4bd48bd6-fcfd-43f2-bbd8-ccb856999a89" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="96e75b57-8909-4cd9-804d-287672865f6d" LastKnownName="HealthInstitution" />
+            </type_NamedElement>
+          </property>
+          <property Id="2b9f5bde-e4b1-4327-959e-1b1f69719f96" name="Person" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ca3775d5-0bb2-4940-8949-4cda1e1d07c1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="17751624-60d0-4c3e-a8b8-675c8ff6c224" LastKnownName="HealthPerson" />
+            </type_NamedElement>
+          </property>
+          <property Id="62c20bc9-5211-48ba-b529-58338d1faa80" name="CreationalDateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="096cddbe-eedc-4953-9796-0d86c5c2f4ca" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="459f4503-8606-4236-9f35-80ec48f8c0a2" LastKnownName="DateTimeOffset" />
+            </type_NamedElement>
+          </property>
+          <property Id="bb911655-15a5-41d1-a655-e6788c3dd727" name="ProcedureDateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6e8b678a-469e-41a5-a478-33e5a37fce27" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="459f4503-8606-4236-9f35-80ec48f8c0a2" LastKnownName="DateTimeOffset" />
+            </type_NamedElement>
+          </property>
+          <property Id="eacfc1bd-3d7b-45a6-929a-48c88ad2a262" name="EntryName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="45d9bbf9-bd7e-4065-a86c-60115281bf85" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fedf89f0-0e64-4a19-9623-be15742b0722" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="661ab6a2-76de-4641-8232-2f982f0bb4b4" name="IconURI" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d49d68e1-a34e-437f-99c1-af33c28f5be7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fedf89f0-0e64-4a19-9623-be15742b0722" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fc5a2978-317d-44a7-85f0-c9a8e6c7c694" name="BandageChaningEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6c82bc11-9f1e-4ec7-aca1-7024c674fd78" />
+        <suppliersInternal>
+          <dependency Id="b52c7571-0a32-438f-b419-2428974778ec">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="8133cac8-57b2-4ed6-a108-4792401398c5" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="d3eb2459-f34c-453f-9da4-7ca2bc1d685f" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="3411b9f3-7dc4-4d36-b5cf-60c96b9e3511" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="cfaf5128-34d4-4d1d-840a-e9ec1cbfd127" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="bfa24447-9257-456a-874b-115f74713b45" LastKnownName="BandageChangingReason" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1b14952d-d713-4032-8eed-acce7d0ea17a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="5db7005b-843f-4b5e-bf30-35b653c20610" name="Lower" value="*">
+                      <elementDefinition Id="3180a429-4b05-4db1-a9fd-dd93d9dea979" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="fa9b5d79-a3db-455d-95a8-427c80f67e73" name="Upper" value="*">
+                      <elementDefinition Id="b4242a28-03ae-4e46-a16e-f8f256716201" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="48a85238-7342-4a72-88b6-5794e93520a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4dbf1721-9bb1-46f7-8343-447d40aba50b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3e6328f8-89e0-4f64-bc51-5fc1843ffb2c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0e80a656-ccbe-4a8b-bc9a-6379474c848c" />
+          </association>
+          <association Id="63af097b-86d3-4078-97b3-30e8cb0fd8e6" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="9cb222fc-6bde-4d83-8e95-7918e9c01733" LastKnownName="BandageChangingArea" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5c397fd-851a-48e7-bdf0-ff3c06d87e15" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="e55737d8-d728-4cfc-b154-e1701dd41a40" name="Lower" value="*">
+                      <elementDefinition Id="b847a119-ccf1-48bf-a4d1-fc300d996f34" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="25855f7d-8b7f-46b6-acc8-c919ca59fae3" name="Upper" value="*">
+                      <elementDefinition Id="a8a20365-d346-4839-ae6f-363f6bd70dde" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="05e2ae5c-f2b7-4b61-9b90-77cce537e839" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="696f23cd-9d68-4c78-9ea6-adb77feb82ed" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="930e6115-ebdc-4e85-b0f5-2a6a8ba5b019" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4b1fb40d-d736-454c-b9ea-dfd7c1b6c901" />
+          </association>
+          <association Id="a1aa044d-3cd5-46f5-a8b8-7df4c665f20a" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="1040117d-78a8-4c77-9280-a8c2a25f9ec5" LastKnownName="BandagePunctureSituation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4ef500c9-5025-4034-98fb-1610514cde7b" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="b4940c5e-2d3c-49ed-bb09-228b23261b14" name="Lower" value="*">
+                      <elementDefinition Id="45b0f281-7b42-4b19-b4d3-cd973cb7e9d9" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="22459d71-7c9a-4464-a606-8a489450eb6a" name="Upper" value="*">
+                      <elementDefinition Id="36f72a72-d1ee-4c26-8958-2d44b73f5000" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="231a659e-b650-4d14-a4e3-0afab6243002" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6a5f0b07-ecf5-4e5c-9531-fad95a04f8a8" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8f34a3ca-cc7b-4f10-8884-cc43e22c8853" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ad31de6b-8515-413b-94e7-b37ed3fa5bb3" />
+          </association>
+          <association Id="b4050b84-add8-4262-9db9-edb5c7211fcb" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="3305e6ee-842d-4a5b-9782-5b82187a9db0" LastKnownName="BandageArmProcessSituation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5eb67bfb-f500-4a9c-b4e8-222d65738f30" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="e88e3e18-d218-456c-ba14-957d51524f3e" name="Lower" value="*">
+                      <elementDefinition Id="eaa82430-481f-4b49-8580-1957e2d504ba" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="15674f01-eca5-4bd7-901a-726a094611bc" name="Upper" value="*">
+                      <elementDefinition Id="0231a478-fdaf-4e9a-8c77-43a40b35db15" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d1b42394-73cb-4d61-872c-51a03aca3d95" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2954b6bb-119b-49d1-a3b6-485c14a66304" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="09baba10-0d8e-4bd7-a290-6368b638f044" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8c7c0b2e-3432-438f-bba0-63483c5a918c" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="35914434-21eb-4ef7-b8d9-25e10df0d36f" name="Area" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dd878ea6-7d8f-4b38-b0d0-3c8118123ec9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5d64944c-5973-40b6-9e53-292a61ea7586" LastKnownName="BandageChangingArea" />
+            </type_NamedElement>
+          </property>
+          <property Id="e421a86f-9098-4ee3-9590-739b5b4fcdd5" name="Reason" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="54810db4-b6f4-44e4-80af-c39489ae1646" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d969746d-4144-48ea-adfa-a8b1e917f391" LastKnownName="BandageChangingReason" />
+            </type_NamedElement>
+          </property>
+          <property Id="21cae83d-f27b-47c3-bee6-f28f58542936" name="Situation" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="12866155-ca0c-43bd-8a61-109872d6d4d1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="228d9c55-7095-4450-9431-a716c33e4dd4" LastKnownName="BandagePunctureSituation" />
+            </type_NamedElement>
+          </property>
+          <property Id="09f00b62-e3c3-46bb-a3a3-10dd588a7d7d" name="ArmProcess" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0e869db2-1b39-4b70-9174-3d1f88086166" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5b40bbd3-04b5-49ba-91d9-c4a8a3948cc9" LastKnownName="BandageArmProcessSituation" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="790670c6-7daa-47cc-b7e2-1ad7551171c0" name="AdministeredDrugEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d1c67951-e9e0-4b73-8d6c-35e3030b411f" />
+        <suppliersInternal>
+          <dependency Id="8c755520-587c-486b-9629-cf2f18f2c493">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="9a1ac736-ae68-4ba7-95e0-1b84b93614b2" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="10a419f3-b3ee-43c0-b39a-179411632a71" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="d9a67332-8078-43f9-88f9-6171c21b4c6c" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="dc0fe184-2408-4c44-8899-62dc38079995" name="Drug" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="239b6cbf-2000-409a-a4dd-eb9d541ed644" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fedf89f0-0e64-4a19-9623-be15742b0722" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d6944a9b-efef-45d8-a2fd-79db3886b56b" name="BloodWithdrawalEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c78dcd0a-3529-462e-a497-1b9f1c445f6e" />
+        <suppliersInternal>
+          <dependency Id="1c116c77-4d98-4460-9265-33f05603ccf6">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="b052d792-ff4f-4f3b-9a2e-a19c2a11310a" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="f8377abb-5199-4d41-9583-69fbaeab1069" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="3bcdf8fb-4a91-4339-a2fa-6f2848db9553" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="17c7938c-72ce-4da7-a35a-0d048c51244d" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="97c19eb9-fc7a-4bbc-97eb-171fd10f06e8" LastKnownName="BloodFlow" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4adc713e-e522-4b90-b5c3-e4088c8e8894" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="cc8fb0e9-306f-47f7-a1f5-d25f1e0cc0e4" name="Lower" value="*">
+                      <elementDefinition Id="fb3adc69-6e11-490c-8ed4-5b88184c3691" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="36369937-375b-4ec0-9b7e-a5df59f19456" name="Upper" value="*">
+                      <elementDefinition Id="d2c4be6c-1408-4223-8dea-09eab1cc68af" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="52382587-753d-4746-bcfd-dfacf4e382f8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f35859d-3359-41d0-8da0-217b86b4c919" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f8e03908-0ebf-49fe-a29e-f55329af3f14" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3e21408c-8361-4f40-b993-31f47477775f" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="3c020e96-aed5-4567-8899-514f58e9ff94" name="IsNaCiFlushDone" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7baf4183-bec7-4bf0-b7d8-8996a0055f01" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d50ca45b-59f2-429d-9f6c-c80a83fc6310" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="26039e6c-8c7f-4956-a1bf-d4fe071a80ca" name="Flow" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="45542ecf-1ab7-473c-bb43-237ffc22600a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1d69659a-adbc-4c7a-8bf6-51dec9e3b4e0" LastKnownName="BloodFlow" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e0ea93a5-1ccc-42a1-b193-5f8c2a5f0a4b" name="CatheterFlushEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5e7dd110-1814-40bf-b40b-7283e6471332" />
+        <suppliersInternal>
+          <dependency Id="242af6e8-3fb4-4d73-aca7-75e018ff8f2b">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="9bf5e617-4b20-42b3-b0a7-5958c2c1056f" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="3881d831-2106-4772-bfa6-e7b9f97cd13a" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="0e539f39-5ef2-478e-9b8a-60b32b6f5e71" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="351cb5ce-a99a-499b-9c7c-4d7c53ea6545" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="2a00b3a5-f6c3-4423-80ab-2cd9c540c918" LastKnownName="FlushReason" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="126bae65-14bb-4168-9db7-540e4cb8c42d" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5a704def-7f0b-409a-a8ca-36e77f181ded" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="06d8445f-8359-4559-8f4a-fac56bf781d6" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a48c9027-66d6-4f99-99c9-c8c599249b2c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c77476b3-9540-4e17-b8e0-829aa2600aa7" />
+          </association>
+          <association Id="c108e31a-770b-406a-afcb-07cdc2807bf7" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="804d0eaf-b8cb-4ef6-871b-f6d99c5c4f99" LastKnownName="FlushType" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dbb4f7cf-f576-4398-9544-f589cb30481f" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="974178df-5d5d-45ee-b86b-867a742330a0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="54e191b1-03ec-47ef-9d08-ffac1c8d5950" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7217247a-1d74-4acf-aad7-0c1ddb270129" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="43f5127d-35a7-4ad0-b718-e80496fba2fa" />
+          </association>
+          <association Id="b8f1d212-1cbb-4517-8c6f-1692c1a2dcc1" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="6e4e40b1-0428-4d47-a14f-355580aa4a5a" LastKnownName="FlushResult" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b38c2892-3a05-41f1-9b29-e435228961fd" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d6943d56-af99-4d60-aa7c-45f80253b8ff" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="000d8dd3-4c00-422b-b8c1-8fd5f36e48ac" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f0d186d2-c7a9-4704-9fb3-e907b601fc40" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="71bff01b-299e-4ebf-9923-07d5da7d16d6" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="17eba29d-1d16-49ea-a47a-87f1fbed841e" name="QuantityInMilliliter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="db5a08f9-faea-4167-8ced-616db0cb1fc8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0883c05e-416f-4c66-9daf-48d6b27e0192" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="ef05288c-5975-4dba-9bb9-4760eec40359" name="IsBloodReflowVisible" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="50233343-4a99-4340-8857-cf1bb03bb731" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d50ca45b-59f2-429d-9f6c-c80a83fc6310" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="7d39c77e-36d9-432d-a5df-804832c585a2" name="Result" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9d94fde6-bc46-4799-bde6-e5b629b5f24c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="327e4d94-3aed-49b4-ba46-fffa84def120" LastKnownName="FlushResult" />
+            </type_NamedElement>
+          </property>
+          <property Id="28bddfb5-748d-4560-8e2c-b69e454b0278" name="Reason" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="18a11290-1198-46da-9439-8c40771ab84d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="38774e87-a13e-4af3-87c6-d82abc607ef3" LastKnownName="FlushReason" />
+            </type_NamedElement>
+          </property>
+          <property Id="6ad0ee2d-76b0-4077-aa8c-4e19faed83c7" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fd1eebd4-d5c2-4bc1-9ee8-3de77ddee431" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8eaa8d93-6755-4567-8b15-0060b7244d9f" LastKnownName="FlushType" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7f64667f-d1bf-4fa6-b90c-604873cac185" name="InfusionEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="467f7c52-e2ac-4462-aaba-d42e4e921eac" />
+        <suppliersInternal>
+          <dependency Id="ea341fba-476f-4a25-ad41-71fbad40642d">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="c31f1289-51a7-44ca-951d-eb391f91782f" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="d4083fd4-94e7-4155-9469-5d89ce688a08" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="07dfe4cb-0302-4881-8dc4-84a732c49c1a" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="5b29439a-ebd4-490a-947a-0efc406e6c41" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="04c2e256-03c9-41e4-9c2e-b3135c6fe978" LastKnownName="InfusionType" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8b2644d5-238b-49ca-9028-02cfc2cfbc69" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="d7117e30-e920-4b30-8f86-33c9a51157af" name="Lower" value="*">
+                      <elementDefinition Id="aa5fc7e7-7649-4284-8927-6decfdd3dcd5" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0dcfb0c8-be62-463a-b626-0cfe5a375f7c" name="Upper" value="*">
+                      <elementDefinition Id="4d73570b-03fe-4a57-acce-0058cbc36058" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="e7ea99e4-3439-4f95-a0ec-16f5ae488d34" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="903fbc53-e1cf-49ee-8e04-50e09db3379c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2b7d9254-b1c1-4fac-9fec-f00a4bbee50f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="95f165d2-e3be-43ae-acd4-0f591d9fe043" />
+          </association>
+          <association Id="c05f9a33-693c-4155-888b-8b6dec2b4a1f" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="9db9878d-d133-4586-9b41-0ce96031f79d" LastKnownName="InfusionAdministration" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="98514113-4bd9-4b9b-8432-382973a394de" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="b73eb780-b798-4053-97b4-d17983aca71b" name="Lower" value="*">
+                      <elementDefinition Id="03458704-8b5e-4067-98a9-894fd0616831" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="191ffba4-c240-4d89-875f-1294adcd8ee9" name="Upper" value="*">
+                      <elementDefinition Id="1e09cc97-dc81-40ef-b758-7deb4db00c06" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="23ff09f3-ef09-4ac6-bf65-d100124ddecf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6dc87be8-4a0b-4367-9b28-f192c8a42a92" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5b7b0bbd-0a0c-42d4-b59d-4a138eaf36e6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d179d7a1-c632-4b2c-a3e3-7a506e1c8ee3" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="3789dc3c-0001-46e7-a0a1-f11c5a8bedb0" name="Administration" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d583e367-6a4c-40d3-b107-e523c499aede" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f4ea5a76-a434-408a-a181-18ecdd1eccb6" LastKnownName="InfusionAdministration" />
+            </type_NamedElement>
+          </property>
+          <property Id="570abba7-0f46-4918-9760-d40fd5fa02b2" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="095f0da5-dee2-4172-953b-d6283dd96789" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="49e50e51-f1ab-4360-82d2-528172809ca6" LastKnownName="InfusionType" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d61b6146-1068-48d9-b6ad-d1b1d407aa97" name="MicroClaveChangingEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6ca02890-0061-4eb5-87ab-939a686aada7" />
+        <suppliersInternal>
+          <dependency Id="5df7296d-2664-4f65-8b14-a1e812810420">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="287f5553-e5c0-447c-b1a3-f3c0ae2047e8" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="198497b0-03a1-4b4c-946d-bec291f35804" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="ed6b92d8-c080-42b7-921d-5d0ef3ed8800" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="e0184a59-8bee-4a99-98ba-7de3f607b14e" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="9afb5f85-14dd-4219-a4d5-fef279f30d95" LastKnownName="MicroClaveChangementReason" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="34c09d1f-871a-408c-a3aa-f9390713643e" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="140cfb0a-f58a-4aac-928e-8af69cd36559" name="Lower" value="*">
+                      <elementDefinition Id="5d6b6a9f-39ee-4110-8c6d-29c86cbd6cca" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="8c653a4c-e9e7-4d92-b1f2-40fe31b4dcde" name="Upper" value="*">
+                      <elementDefinition Id="47ed351b-d565-48cf-8c00-388b4b03eb22" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="cae4b9d1-ce6b-4f1e-b3a1-f4cdcc3d0e81" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0d01d1ab-3c60-421d-a3f6-7f654ce69418" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a99046c-c035-4783-b80e-ed33a0349649" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7c4d0f46-ac8f-47a1-857e-15cd473ddfde" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="42fce61c-6040-47ad-839d-8a7e1636deb8" name="Reason" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3c4b2799-58b0-4363-9d52-762513e509f5" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a65e277a-8789-474a-bb57-a0b98b1cc1db" LastKnownName="MicroClaveChangementReason" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="02128f51-4341-43fc-a24e-29801e01b8b5" name="StatlockChangingEntry" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6d4dd23c-88f3-4f8c-a69f-40ec189ca6db" />
+        <suppliersInternal>
+          <dependency Id="08bb6e2c-4ba7-4587-918d-4809d5594b2f">
+            <interfaceMoniker Id="fa7c8050-8254-401b-b42c-3202d099e2a4" LastKnownName="JournalEntry" />
+            <elementDefinition Id="7eb8b1ad-a62f-495e-bc79-6b40ecf17e19" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="85ca0ae9-3cb9-4c4b-9a55-af91eb053ce1" isSubstitutable="false">
+            <classMoniker Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" LastKnownName="RealmObject" />
+            <elementDefinition Id="6c7196fd-3d33-433b-87a3-119a05108f76" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="0186f65f-ead4-4b9f-a299-e16249b6414b" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="5f3fdda5-d21d-4487-9378-d80db17ab42b" LastKnownName="StatLockChangementReason" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b1b7f66f-6f8e-4b53-9c30-969c9528bb45" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="74340117-091b-407b-9302-001257779178" name="Lower" value="*">
+                      <elementDefinition Id="7a60b430-b156-404e-8ccf-a54d43d78e98" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="73361f0f-3cf7-4a31-8516-5c46ae92b076" name="Upper" value="*">
+                      <elementDefinition Id="cee7093f-3231-4227-9ce0-81003feadbcf" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="1a65d5f2-74c9-4ad5-81db-cf08ca1dfbf7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eed7b279-af2d-4ecc-873e-fa81b1101721" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="eed17ee5-e448-4608-ad50-093bc283d279" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c433da9f-bcde-4ee4-92e2-23f951f10b24" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="3475f7e5-2ebb-42ee-a936-cf2f997e60a6" name="Reason" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="527b2d32-0445-42e0-b244-4e8e4c3ff15b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9b9b4f23-149c-4e41-a05b-677aad1ea0b5" LastKnownName="StatLockChangementReason" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="b66949a2-faa4-4c65-8a47-31d3af185653" name="HealthPerson" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="59753040-19d5-4b7a-8527-32ffd0f239ba" />
+        <ownedLiterals>
+          <enumerationLiteral Id="801f1b78-6729-474f-b821-24e197005608" name="NoInformation">
+            <elementDefinition Id="711fe5aa-a6bd-4a8c-9cae-fc17d9f68c43" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="86b42588-94ba-47c4-b7b5-34338a79fc26" name="FamilyDoctor">
+            <elementDefinition Id="eda5e3d2-d649-404a-aebc-48cbabcfa7f3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="9f29961e-8613-46e4-a3b1-36736e357f3e" name="Specialist">
+            <elementDefinition Id="79972b4c-40ed-4961-a2d2-9e36824c6334" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="a777af63-6f4f-42e6-8d2c-af6551f4d47d" name="NursingStaff">
+            <elementDefinition Id="b520a9c1-7a8f-48cb-b697-109fa7f87cd4" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="11887365-14ac-4238-9b0b-1b0bd30c1c1e" name="XRayStaff">
+            <elementDefinition Id="fbff99dc-4ca0-4336-a3b1-3f1f53781000" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="d92853ba-4bd7-47f5-947d-32346db958b9" name="MedicalTechnicalAssistant">
+            <elementDefinition Id="a64b1c6d-b138-44cd-bb22-14b4b7f9d9a8" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="18668513-5ad0-40d4-9de8-d11b95e9523e" name="HealthExpertStaff">
+            <elementDefinition Id="22f984cc-3726-4626-b27c-e94539a15047" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="f13d4ae0-75cd-4f57-b5eb-282b5b941a28" name="Relative">
+            <elementDefinition Id="0bf03542-3134-4d31-ac16-198d204b4faa" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="5833c0f4-5470-4448-b99b-a82650d82230" name="AffectedPerson">
+            <elementDefinition Id="6c5f005f-a779-4f8e-b3aa-afda59b0b774" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="f667ffb1-d771-439b-b0ee-87bb824d811f" name="Others">
+            <elementDefinition Id="501fcb80-b64c-4625-b965-bda64a7d6125" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="761769c4-899a-4639-8fbc-6cbb196a856e" name="HealthInstitution" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b4934f55-1d30-4860-8f7b-207cebcba3db" />
+        <ownedLiterals>
+          <enumerationLiteral Id="8853a91d-f94a-44c8-a6b0-caeed36dc418" name="NoInformation">
+            <elementDefinition Id="73db7570-9896-42f9-9578-d21033d3460d" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="22690525-235d-4f7c-a10b-057f046eb52c" name="HomeCare">
+            <elementDefinition Id="80ba6905-03b5-4128-8778-2d16e43c0f8a" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="537a2a6a-f123-4bda-a540-3e6f8af289f7" name="Ambulatory">
+            <elementDefinition Id="fcf982aa-63c0-4962-ab55-92be66423499" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="366d4d8a-ef44-4e76-8398-020d51a76792" name="Hospital">
+            <elementDefinition Id="30b7f929-af7e-4d58-99c3-151e7a3242c3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="b108d862-4759-42e2-a62f-2c8059f2b064" name="Others">
+            <elementDefinition Id="e064b442-56a9-4200-a53d-863e28ceae6c" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="cd07af6e-aca4-44c0-bf4a-7ff577b44ed0" name="Rehabilitation">
+            <elementDefinition Id="edce24da-0859-425c-8aab-32aaa84fa41e" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="96e75b57-8909-4cd9-804d-287672865f6d" name="HealthInstitution" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::HealthInstitution">
+        <elementDefinition Id="b4934f55-1d30-4860-8f7b-207cebcba3db" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="17751624-60d0-4c3e-a8b8-675c8ff6c224" name="HealthPerson" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::HealthPerson">
+        <elementDefinition Id="59753040-19d5-4b7a-8527-32ffd0f239ba" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="459f4503-8606-4236-9f35-80ec48f8c0a2" name="DateTimeOffset" isAbstract="false" isLeaf="false" cachedFullName="DateTimeOffset">
+        <elementDefinition Id="1941bbd5-e256-49d3-b66c-087143eddff5" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fedf89f0-0e64-4a19-9623-be15742b0722" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="c9728256-8ee9-41ff-9f3a-13331d6fa196" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="bfa24447-9257-456a-874b-115f74713b45" name="BandageChangingReason" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4aea7e86-f92e-4e78-b352-6551f3f68637" />
+        <ownedLiterals>
+          <enumerationLiteral Id="e30dbd65-d689-4d07-8d3d-5b5bb4f96078" name="NoInformation">
+            <elementDefinition Id="3f1544e4-25b1-4e7d-b8df-a7a4325f99a3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="979243a8-b432-4c75-8b53-6223249fa7b9" name="Routine">
+            <elementDefinition Id="9d48a4c7-fea5-43ec-ad97-2aa17a668240" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="b936025c-ca47-4de7-9506-d20da3fcddd3" name="PunctureNotCovered">
+            <elementDefinition Id="dd4e222d-b3c2-4832-b016-a43d7c1095d3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="df4a339b-8546-4620-91f3-2fb6b15cfa71" name="BandageWet">
+            <elementDefinition Id="78012b12-4863-4289-8965-420b5ee2c1f9" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="8aac31f1-9f9c-435e-aee4-a7eb1ea1e19e" name="BandageDesNotStickAnymore">
+            <elementDefinition Id="39a71dcd-7019-44c6-85f3-02bd685d38b1" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="06db720c-a017-4336-b4a4-ec860d558c22" name="SecondaryBleeding">
+            <elementDefinition Id="2f82511c-16b4-4409-9139-839fac2fa621" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="f3af7fbd-bcca-4af0-8314-c578b1a85595" name="Pain">
+            <elementDefinition Id="2492cf40-6eb1-4955-8094-48a0a465d755" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="9cb222fc-6bde-4d83-8e95-7918e9c01733" name="BandageChangingArea" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5e7db5f9-4774-4b77-9e1d-d2592c8033d8" />
+        <ownedLiterals>
+          <enumerationLiteral Id="f2d1df87-a7c8-47f9-9c2e-4a61e207c0b8" name="NoInformation">
+            <elementDefinition Id="7ffc675d-743d-462f-b746-ba2049448dc6" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="3ded7547-406d-44fd-952c-cdfc616d305d" name="Complete">
+            <elementDefinition Id="790b52ce-9740-4277-a746-24322c9f1e62" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="d99eed5c-00c8-47e4-a6c4-13a249407d73" name="OnlyBandage">
+            <elementDefinition Id="c7d71bc6-5553-40f3-b22a-dc5bcec37bc3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="7115b1aa-6827-440d-a7b5-0a829ec2f49f" name="OnlyStatlock">
+            <elementDefinition Id="be20e155-58b1-4903-90b1-976f9834a9ab" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="1040117d-78a8-4c77-9280-a8c2a25f9ec5" name="BandagePunctureSituation" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="261b5dd4-2396-411f-9a00-3ee9edd27247" />
+        <ownedLiterals>
+          <enumerationLiteral Id="6bc3cff9-10aa-46fc-ab77-9dbd70837b21" name="NoInformation">
+            <elementDefinition Id="a82c0523-1be0-4b1c-8ab4-2173756e3b0e" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="54a0e196-06d9-451a-a548-61168effa6ac" name="SkinNotIrritant">
+            <elementDefinition Id="d7bbec5a-7090-4916-a8df-9da3041275b1" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="d5f65316-827d-4a51-806c-d35723b52997" name="ReddenedPuncture">
+            <elementDefinition Id="1f266174-11e0-4d1a-9412-e49ed6e20496" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="c434dccc-21ce-49c7-970b-be1bab8bf49d" name="SwollenPuncture">
+            <elementDefinition Id="68035845-8226-4d14-b397-856a685b5524" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="994dfa0e-96ad-49d8-8b7f-ad08df610a6f" name="PainfulPuncture">
+            <elementDefinition Id="304c7447-9e3b-46bf-b89c-f7a13fea4357" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="f1b1b861-a333-4ec1-ad3d-2e955797158d" name="LiquidDischarge">
+            <elementDefinition Id="ecf14330-b070-4be8-ac61-6ca65d3f0b59" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="3305e6ee-842d-4a5b-9782-5b82187a9db0" name="BandageArmProcessSituation" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="229f200b-f79b-4b0c-a3fd-ae8a3d0cd0a0" />
+        <ownedLiterals>
+          <enumerationLiteral Id="c87401be-8824-4a87-b3c6-5f20bc840cf8" name="NoInformation">
+            <elementDefinition Id="7ac0359a-29dd-4a8a-82e7-8f44a62ac0e6" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="7245141a-2772-42b5-9e59-b0cc24db9a8d" name="Painful">
+            <elementDefinition Id="f1d8cf68-520d-4ff7-8264-2e13da25ad89" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="0d300580-0a34-4324-8658-94abd37ce707" name="Swollen">
+            <elementDefinition Id="a4745180-a0fa-4277-867f-c4019c151a38" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="fff5d685-63ea-49f3-9ef2-4a86f2b9f774" name="Reddended">
+            <elementDefinition Id="332453ba-0699-4e0c-8a35-9a0fe7a745f2" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="97c19eb9-fc7a-4bbc-97eb-171fd10f06e8" name="BloodFlow" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a97d9878-ded1-4dd2-9525-ec18924dd7b2" />
+        <ownedLiterals>
+          <enumerationLiteral Id="30c712be-7760-4a4f-8f5c-cc1d4755b4ee" name="NoInformation">
+            <elementDefinition Id="86b0bdd9-2f19-4d77-bcf9-4aeb6cbd45e6" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="a9a91169-a481-47a7-93c5-968d7d36ea4a" name="Speedy">
+            <elementDefinition Id="73750f65-b5a7-4f4f-b95e-26bde4307d4d" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="1f2044a6-c04f-4bfd-b2f5-edebcc630a0b" name="Hesitant">
+            <elementDefinition Id="e3317776-0119-4e78-9835-e09fa8ce4536" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="cfe68e76-b81c-4915-8616-52c65c089881" name="None">
+            <elementDefinition Id="637c3f56-5b10-40aa-9baa-bc71ae5e2ea8" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="d50ca45b-59f2-429d-9f6c-c80a83fc6310" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="a7a75f97-8646-4561-bb33-cffb81baca61" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="9afb5f85-14dd-4219-a4d5-fef279f30d95" name="MicroClaveChangementReason" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9def52a6-4fe7-41b6-9dee-a5970c896c15" />
+        <ownedLiterals>
+          <enumerationLiteral Id="ebbd09bb-34a2-4f6a-aed6-ad2c0025b9cf" name="NoInformation">
+            <elementDefinition Id="b0c69f95-89f7-473b-b172-5366a2335d8e" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="0226dd35-c97f-45ab-9af8-c6283f2758ce" name="Routine">
+            <elementDefinition Id="10a8f21e-153f-4cac-a972-5d687ad3ca86" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="655148aa-7f7c-47e7-b72e-26ab46be608d" name="Pollution">
+            <elementDefinition Id="ec8ef0a1-327b-43c9-b054-5ebc07c6f6e2" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="5f3fdda5-d21d-4487-9378-d80db17ab42b" name="StatLockChangementReason" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33995b29-1637-4f53-8cad-fec31ee43db6" />
+        <ownedLiterals>
+          <enumerationLiteral Id="1f8c5063-3ee6-4959-aea1-b62ea93800ed" name="NoInformation">
+            <elementDefinition Id="16c6790c-1d77-4067-a638-4f6b9c93082a" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="21e92270-fc16-4697-8df0-9ba368a70400" name="Routine">
+            <elementDefinition Id="bf10a435-b523-40c1-84d1-e5e2fffee18d" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="ee4048b4-8803-4a12-aa4d-c8cd609296bd" name="Pollution">
+            <elementDefinition Id="36e86e26-b721-444d-add7-bb37eb828f47" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="9cc20f3d-4141-4035-947f-7e739428ca82" name="SticksUnsatisfactorily">
+            <elementDefinition Id="db5ead17-134d-474b-877e-a28734c031ed" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e183a712-1367-4c64-9f85-eb9136c80e7b" name="DamagedWing">
+            <elementDefinition Id="c852c63f-e9ea-43a9-8d15-342acec6b066" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="04c2e256-03c9-41e4-9c2e-b3135c6fe978" name="InfusionType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce781cef-f44e-4527-bc07-7f2f54f1d3ee" />
+        <ownedLiterals>
+          <enumerationLiteral Id="ef1fb0a0-f135-4f76-bab8-e07ed8f802fb" name="NoInformation">
+            <elementDefinition Id="2f8e936d-d7a0-4a37-b5eb-2ac25e5c5021" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="865bebef-e2ec-4cc0-8e77-54f77a9e751c" name="Antibiotic">
+            <elementDefinition Id="3e66fd06-a5cb-451b-91fd-0db4ecb3592f" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="6e9e02d1-87cc-41d0-bbb7-8f8ffe6c77e7" name="NutritionalSubstance">
+            <elementDefinition Id="9792c51b-b2c2-4231-a0b4-f2051532a1e9" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="2408621d-d97b-4300-8314-7bc5d02a4492" name="BloodComponent">
+            <elementDefinition Id="dbbf2aa6-9871-460a-81b6-71944a390330" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="5a709b3b-78f8-4477-8e3d-cb00f16dce8c" name="ExaminationSubstance">
+            <elementDefinition Id="a4cd4cff-6b32-4a8f-b3d7-c8813a84127f" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="ca2490c7-a0a2-4c21-981c-901f742ee2f2" name="Chemotherapy">
+            <elementDefinition Id="a2f8b436-f09d-4b33-ba8e-54430cfed756" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="f574e07b-37dd-4dd4-aa04-f9b64c8ff864" name="Other">
+            <elementDefinition Id="94673b2b-eee2-4466-95d8-3793649eef16" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="9db9878d-d133-4586-9b41-0ce96031f79d" name="InfusionAdministration" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0bc81565-275d-4545-87d7-d6102d13eee4" />
+        <ownedLiterals>
+          <enumerationLiteral Id="084f140c-09f1-4c38-825a-27d4808114f3" name="NoInformation">
+            <elementDefinition Id="9c329dc2-aa49-4c84-acd8-24689c154b9a" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e55458c4-9457-49e0-b0c2-ce9fcf2e699c" name="WithoutProblem">
+            <elementDefinition Id="fe4123dd-e086-4d6a-bc0c-f89c20a62daa" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="fb6b71b8-6381-49e8-a479-e3e14baffcf5" name="WithResistance">
+            <elementDefinition Id="97285b94-b470-43a0-bbfa-fec94bf21d0e" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="9deb6755-66f1-465f-9d3a-148086b73377" name="NotPossible">
+            <elementDefinition Id="910cec9c-e4a5-4a78-b9b0-a333071fd8c0" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="804d0eaf-b8cb-4ef6-871b-f6d99c5c4f99" name="FlushType" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9034ad60-fcdf-4e04-b1bc-924235d7411a" />
+        <ownedLiterals>
+          <enumerationLiteral Id="5380b2a6-7044-4fd2-9ae1-74f6d0c2c29c" name="NoInformation">
+            <elementDefinition Id="b09b729a-5c09-4a2d-a2da-4cf22c8f287c" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="4d80ee7e-2a26-4fab-9543-ba74cbd82356" name="NaCi">
+            <elementDefinition Id="8e4068a7-9857-4460-ab7b-5e3f3f1633fd" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e52c728b-f25e-4fe5-8506-cfb28cd67b4a" name="Heparin">
+            <elementDefinition Id="e58c3af6-b909-4ca5-80b1-56ce95bb97a9" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e14714f1-8c0d-4169-8304-fea1ecdf2209" name="Urokinase">
+            <elementDefinition Id="363f0f04-9397-475b-977f-408176d33254" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="2a00b3a5-f6c3-4423-80ab-2cd9c540c918" name="FlushReason" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0960c76d-771b-4737-a994-94dfca970346" />
+        <ownedLiterals>
+          <enumerationLiteral Id="1b577531-7dcc-4ce2-b76e-47a335c3beb2" name="NoInformation">
+            <elementDefinition Id="97a346e3-52b3-412b-a65c-f1a7772efe9b" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="c7d4e7bb-9486-4112-9363-fac1372b31ba" name="Routine">
+            <elementDefinition Id="850644df-074e-40df-b0e6-265a2baf3e9d" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="c16574c3-638a-488d-8457-5bb58dcab168" name="BloodSampling">
+            <elementDefinition Id="b75da30e-3e4c-4316-90c3-1d656138b474" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="fec48a20-9c63-4c06-b15c-2319068e86bd" name="PartiallyBlocked">
+            <elementDefinition Id="25174d1e-aabb-438b-b9c2-f344c9c13fde" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="e7ed45fc-e79e-4df3-82b8-44c984a84d28" name="Blocked">
+            <elementDefinition Id="e6eced0b-cb39-4df8-927f-5c8e392c231a" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="6e4e40b1-0428-4d47-a14f-355580aa4a5a" name="FlushResult" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e3b2c6c0-af02-4abf-a9e6-afe209b044c1" />
+        <ownedLiterals>
+          <enumerationLiteral Id="bb2bea5e-7864-45a3-8be1-c8ed6497f496" name="NoInformation">
+            <elementDefinition Id="7f6f3afc-e164-4445-81de-4145cdeb71ce" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="290d93a2-c20e-4cf0-ae35-9541faca363c" name="FlushWithoutResistance">
+            <elementDefinition Id="6d36c988-e0cf-4e5f-b49d-d51f9702ae94" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="1adecf45-4a7f-4b87-9cb8-cd518b9bbab6" name="FlushWithResistance">
+            <elementDefinition Id="1731c873-887d-42e8-9fb1-225731d14be3" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="2ed1285d-c98a-4598-a2bf-126659977596" name="FlushNotPossible">
+            <elementDefinition Id="2e134011-2528-491d-ad2a-9246c06bfb19" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="0883c05e-416f-4c66-9daf-48d6b27e0192" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="76b89d7e-4e39-489b-a812-5f2f41f3fb78" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="edb4bd67-3b2f-4ee6-922d-9e2def4aec36" name="RealmObject" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="68a5bd85-5ae5-4c8a-b9e2-e5d68d68915b" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f4ea5a76-a434-408a-a181-18ecdd1eccb6" name="InfusionAdministration" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::InfusionAdministration">
+        <elementDefinition Id="0bc81565-275d-4545-87d7-d6102d13eee4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="49e50e51-f1ab-4360-82d2-528172809ca6" name="InfusionType" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::InfusionType">
+        <elementDefinition Id="ce781cef-f44e-4527-bc07-7f2f54f1d3ee" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="327e4d94-3aed-49b4-ba46-fffa84def120" name="FlushResult" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::FlushResult">
+        <elementDefinition Id="e3b2c6c0-af02-4abf-a9e6-afe209b044c1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="38774e87-a13e-4af3-87c6-d82abc607ef3" name="FlushReason" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::FlushReason">
+        <elementDefinition Id="0960c76d-771b-4737-a994-94dfca970346" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8eaa8d93-6755-4567-8b15-0060b7244d9f" name="FlushType" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::FlushType">
+        <elementDefinition Id="9034ad60-fcdf-4e04-b1bc-924235d7411a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a65e277a-8789-474a-bb57-a0b98b1cc1db" name="MicroClaveChangementReason" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::MicroClaveChangementReason">
+        <elementDefinition Id="9def52a6-4fe7-41b6-9dee-a5970c896c15" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1d69659a-adbc-4c7a-8bf6-51dec9e3b4e0" name="BloodFlow" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::BloodFlow">
+        <elementDefinition Id="a97d9878-ded1-4dd2-9525-ec18924dd7b2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5d64944c-5973-40b6-9e53-292a61ea7586" name="BandageChangingArea" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::BandageChangingArea">
+        <elementDefinition Id="5e7db5f9-4774-4b77-9e1d-d2592c8033d8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d969746d-4144-48ea-adfa-a8b1e917f391" name="BandageChangingReason" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::BandageChangingReason">
+        <elementDefinition Id="4aea7e86-f92e-4e78-b352-6551f3f68637" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="228d9c55-7095-4450-9431-a716c33e4dd4" name="BandagePunctureSituation" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::BandagePunctureSituation">
+        <elementDefinition Id="261b5dd4-2396-411f-9a00-3ee9edd27247" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5b40bbd3-04b5-49ba-91d9-c4a8a3948cc9" name="BandageArmProcessSituation" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::BandageArmProcessSituation">
+        <elementDefinition Id="229f200b-f79b-4b0c-a3fd-ae8a3d0cd0a0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9b9b4f23-149c-4e41-a05b-677aad1ea0b5" name="StatLockChangementReason" isAbstract="false" isLeaf="false" cachedFullName="ModelingProject1::StatLockChangementReason">
+        <elementDefinition Id="33995b29-1637-4f53-8cad-fec31ee43db6" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="de3192f0-b73d-41c9-b166-55990c199ece" name="ModelingProject1">
+    <elementDefinition Id="193044c7-f827-4a12-8072-08d8d7de16ba" />
+    <profileInstances>
+      <packageHasProfileInstances Id="35c69c6f-2f00-428a-aa30-97ba90aafb00">
+        <profileInstance Id="e46865b3-a58f-4b2d-a3e5-78771a570017" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="87323516-94f3-434a-ad1c-bc14d4629bb6">
+        <profileInstance Id="ac02a887-1fe4-4d76-8b22-9d267f26204e" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="bb982b11-e329-4195-bea4-7d089494bc2b">
+        <profileInstance Id="c787d51f-ea1f-4cab-bac9-442e6296c695" name="CSharpProfile">
+          <elementDefinition Id="186d7bcb-7756-4885-9f6b-94a049498404" />
+        </profileInstance>
+        <elementDefinition Id="fc2bae4b-a8a6-4327-8364-63f87bbf873d" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3200a7ac-3df4-479c-a5bd-d185c6566937">
+        <profileInstance Id="e4672ae9-160c-427b-b79f-04aaeac3969f" name="TextTemplateBindings">
+          <elementDefinition Id="1e6a3491-2cef-421b-81c8-fd33e7e0ad28" />
+        </profileInstance>
+        <elementDefinition Id="2ebad6b0-b03b-47b0-83f7-2799c5be4c84" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
