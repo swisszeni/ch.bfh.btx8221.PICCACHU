@@ -77,11 +77,11 @@
       <Interface Id="fa7c8050-8254-401b-b42c-3202d099e2a4" name="JournalEntry" isAbstract="false" isLeaf="false">
         <elementDefinition Id="b4f1ea1b-8322-4456-9bb5-29aacbfdabf6" />
         <targetEnds>
-          <association Id="141a71a7-cf80-476f-ba33-54c4bc2996d6" isDerived="false" sourceEndRoleName="JournalEntry" targetEndRoleName="HealthInstitution" isLeaf="false" isAbstract="false">
+          <association Id="141a71a7-cf80-476f-ba33-54c4bc2996d6" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
             <enumerationMoniker Id="761769c4-899a-4639-8fbc-6cbb196a856e" LastKnownName="HealthInstitution" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="0683a78b-dca3-4c6a-b44f-8a6854e5e3da" name="JournalEntry" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="0683a78b-dca3-4c6a-b44f-8a6854e5e3da" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
                     <literalString Id="0e7be880-935b-43ee-8de6-d027c8e46941" name="Lower" value="*">
                       <elementDefinition Id="ea8e7b58-7395-4d2b-8a1c-2a9e54577267" />
@@ -96,18 +96,18 @@
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="827d8765-21bf-4ff1-b2fd-fa14a12c155a" name="HealthInstitution" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="827d8765-21bf-4ff1-b2fd-fa14a12c155a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="19b554c8-f62b-483a-954d-2aaed2c58d47" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="9b726af2-18d2-4d80-9c78-a5552f7de6c7" />
           </association>
-          <association Id="b7f9caa0-54f9-44b2-b698-093ba637a104" isDerived="false" sourceEndRoleName="JournalEntry" targetEndRoleName="HealthPerson" isLeaf="false" isAbstract="false">
+          <association Id="b7f9caa0-54f9-44b2-b698-093ba637a104" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
             <enumerationMoniker Id="b66949a2-faa4-4c65-8a47-31d3af185653" LastKnownName="HealthPerson" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="bf882c00-f8f5-4284-811c-144c48849620" name="JournalEntry" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="bf882c00-f8f5-4284-811c-144c48849620" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
                   <lowerValueInternal>
                     <literalString Id="13024c10-ae69-445c-a5ea-bb845dd5c9fd" name="Lower" value="*">
                       <elementDefinition Id="0f6bdd7a-9118-4b86-9b59-84420e83034c" />
@@ -122,7 +122,7 @@
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="04ae49f9-279e-4766-ad9c-752ade9308a3" name="HealthPerson" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="04ae49f9-279e-4766-ad9c-752ade9308a3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="e91dcdd6-3061-4479-93be-21e2606039ef" />
                 </memberEnd>
               </associationHasOwnedEnds>

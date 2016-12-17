@@ -1630,8 +1630,8 @@
           <association
             Id="9b726af2-18d2-4d80-9c78-a5552f7de6c7"
             isDerived="false"
-            sourceEndRoleName="JournalEntry"
-            targetEndRoleName="HealthInstitution"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <enumerationMoniker
@@ -1642,7 +1642,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="97bc494b-16ee-4543-9de8-336c7133271c"
-                  name="JournalEntry"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1668,7 +1667,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="19b554c8-f62b-483a-954d-2aaed2c58d47"
-                  name="HealthInstitution"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1682,8 +1680,8 @@
           <association
             Id="503d7e2e-69bc-4926-bce9-36dac2d37e08"
             isDerived="false"
-            sourceEndRoleName="JournalEntry"
-            targetEndRoleName="HealthPerson"
+            sourceEndRoleName=""
+            targetEndRoleName=""
             isLeaf="false"
             isAbstract="false">
             <enumerationMoniker
@@ -1694,7 +1692,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="c6978dc7-49e2-4838-91a1-770a29f6afc2"
-                  name="JournalEntry"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1720,7 +1717,6 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="e91dcdd6-3061-4479-93be-21e2606039ef"
-                  name="HealthPerson"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
