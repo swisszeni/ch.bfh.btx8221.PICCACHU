@@ -16,7 +16,7 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
 
             int temp = 1;
-            Repetition.Items.Insert(0, "Unbgerenzt");
+            Repetition.Items.Insert(0, AppResources.SettingsPageRepetitionPickerUnlimitedRepetitionText);
             while (temp < 50)
             {
                 Repetition.Items.Insert(temp, temp.ToString());
@@ -24,10 +24,22 @@ namespace BFH_USZ_PICC.Views
                 Frequency.Items.Insert(temp - 1, temp.ToString());
                 temp++;
             }
+            //Set the start parameters for the pickers
             Repetition.SelectedIndex = 0;
             Frequency.SelectedIndex = 6;
 
         }
-        
+
+        public override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (!((SettingsViewModel)BindingContext).IsReminderSet) {
+
+                ((SettingsViewModel)BindingContext).ReminderStartDate = DateTimeOffset.Now.Date;
+                ((SettingsViewModel)BindingContext).ReminderDayTime = DateTimeOffset.Now.TimeOfDay;
+            }
+        }
+
     }
 }

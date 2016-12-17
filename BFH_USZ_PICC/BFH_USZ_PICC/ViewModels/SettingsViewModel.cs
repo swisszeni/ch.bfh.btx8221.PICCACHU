@@ -18,7 +18,7 @@ namespace BFH_USZ_PICC.ViewModels
     {
         private IReminderNotification _notifier = DependencyService.Get<IReminderNotification>();
        
-        private DateTimeOffset _reminderStartDate = DateTimeOffset.Now;
+        private DateTimeOffset _reminderStartDate;
         public DateTimeOffset ReminderStartDate
         {
             get { return _reminderStartDate; }
@@ -66,8 +66,6 @@ namespace BFH_USZ_PICC.ViewModels
 
         }
 
-
-
         private RelayCommand _addNotificationsCommand;
         public RelayCommand AddNotificationsCommand => _addNotificationsCommand ?? (_addNotificationsCommand = new RelayCommand(() =>
         {
@@ -77,22 +75,16 @@ namespace BFH_USZ_PICC.ViewModels
             DateTimeOffset maintenanceReminderStartDateTime = reminderStartDate.Add(ReminderDayTime);
             maintenanceReminderStartDateTime.ToUniversalTime();
 
-            _notifier.AddNotification(maintenanceReminderStartDateTime, ReminderFrequency + 1, ReminderRepetition, AppResources.InformationText, AppResources.SettingsPageMaintenanceReminderInformationText);
+            if(ReminderRepetition != 0)
+            {
+                _notifier.AddNotification(maintenanceReminderStartDateTime, ReminderFrequency + 1, ReminderRepetition, AppResources.InformationText, AppResources.SettingsPageMaintenanceReminderInformationText, false);
 
-            //var notification = new LocalNotification
-            //{
-            //    Text = "Hello from Plugin",
-            //    Title = "Notification Plugin",
-            //    Id = 1,
-            //    NotifyTime = DateTime.Now
-            //};
+            }
+            else
+            {
+                _notifier.AddNotification(maintenanceReminderStartDateTime, ReminderFrequency + 1, ReminderRepetition, AppResources.InformationText, AppResources.SettingsPageMaintenanceReminderInformationText, true);
 
-            //var notifier = CrossLocalNotifications.CreateLocalNotifier();
-            //notifier.Notify(notification);
-
-
-
-
+            }
         }));
 
 
@@ -111,7 +103,7 @@ namespace BFH_USZ_PICC.ViewModels
                 if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.SettingsPageDelteScheduledRemindersText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
                     IsReminderEditable = true;
-                    //notifier.RemoveAllNotifications();
+                    _notifier.RemoveAllNotifications();
                 }
                 else
                 {
@@ -122,7 +114,5 @@ namespace BFH_USZ_PICC.ViewModels
             }
 
         }));
-
-
     }
 }

@@ -82,11 +82,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.de.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resx\AppResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resx\AppResources.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +91,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resx\AppResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Shell.cs" />
