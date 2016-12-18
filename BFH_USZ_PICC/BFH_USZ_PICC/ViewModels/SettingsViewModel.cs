@@ -53,7 +53,11 @@ namespace BFH_USZ_PICC.ViewModels
             set
             {
                 Set(ref _isReminderSet, value);
-                CheckReminderToggleCommand.Execute(null);
+                if (!value)
+                {
+                    CheckReminderToggleCommand();
+                }
+               
             }
 
         }
@@ -95,10 +99,9 @@ namespace BFH_USZ_PICC.ViewModels
 
         }));
 
-        private RelayCommand _checkReminderToggleCommand;
-        public RelayCommand CheckReminderToggleCommand => _checkReminderToggleCommand ?? (_checkReminderToggleCommand = new RelayCommand(async () =>
+        private async void CheckReminderToggleCommand()
         {
-            if (!IsReminderEditable && !IsReminderSet)
+            if (!IsReminderEditable)
             {
                 if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.SettingsPageDelteScheduledRemindersText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
@@ -110,9 +113,7 @@ namespace BFH_USZ_PICC.ViewModels
                     IsReminderSet = true;
                 }
 
-
             }
-
-        }));
+        }
     }
 }

@@ -24,11 +24,11 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
 
             XmlDocument toastXml = createToastXML(title, body);
 
-            // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, the 500 notifications will be generated.
+            // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, 200 notifications will be generated.
             if (isUnlimited)
             {
-                int REPETITIONFOR500Times = 500;
-                addNotificationsToScheduler(maintenanceReminderStartDateTime, REPETITIONFOR500Times, dailyInterval, toastXml);
+                int REPETITIONFOR200Times = 200;
+                addNotificationsToScheduler(maintenanceReminderStartDateTime, REPETITIONFOR200Times, dailyInterval, toastXml);
 
             }
             else
