@@ -9,7 +9,7 @@ namespace BFH_USZ_PICC.Models
 { 
     public enum Gender
     {
-        GenderFree,
+        Unspecified,
         Male,
         Female
     }

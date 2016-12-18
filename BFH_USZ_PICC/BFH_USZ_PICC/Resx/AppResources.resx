@@ -721,13 +721,13 @@
     <value>Maintenance instruction</value>
     <comment>Titel für Wartungsanleitung (Wartungsanleitung)</comment>
   </data>
-  <data name="UserMasterDataPageFemaleText" xml:space="preserve">
+  <data name="UserMasterDataPageFemale" xml:space="preserve">
     <value>Female</value>
     <comment>Übersetzung "weiblich" als Geschlecht</comment>
   </data>
-  <data name="UserMasterDataPageMaleText" xml:space="preserve">
+  <data name="UserMasterDataPageMale" xml:space="preserve">
     <value>Male</value>
-    <comment>Übersetzung "männlich" als Anrede</comment>
+    <comment>Übersetzung "männlich" als Geschlecht</comment>
   </data>
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
     <value>Guide wire length in cm:</value>

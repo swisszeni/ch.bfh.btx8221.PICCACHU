@@ -13,14 +13,15 @@ namespace BFH_USZ_PICC.Views
     /// </summary>
     public sealed partial class BasePage : ContentPage, INavigable
     {
-        private BaseContentPage content;
-        private List<object> navigationArguments;
+        private BaseContentPage _content;
+        private List<object> _navigationArguments;
+
         public BasePage(Type contentElementType, List<object> args = null)
         {
             InitializeComponent();
 
             // save original args in var
-            navigationArguments = args;
+            _navigationArguments = args;
 
             // create copy of args List to modify
             args = args == null ? new List<object>() : new List<object>(args);
@@ -31,13 +32,13 @@ namespace BFH_USZ_PICC.Views
             // convert to array
             object[] argsArray = args.ToArray();
 
-            content = (BaseContentPage)Activator.CreateInstance(contentElementType, argsArray);
+            _content = (BaseContentPage)Activator.CreateInstance(contentElementType, argsArray);
 
-            FlyoutPositioningLayout.Children.Insert(0, content);
-            AbsoluteLayout.SetLayoutBounds(content, new Rectangle(0, 0, 1, 1));
-            AbsoluteLayout.SetLayoutFlags(content, AbsoluteLayoutFlags.All);
+            FlyoutPositioningLayout.Children.Insert(0, _content);
+            AbsoluteLayout.SetLayoutBounds(_content, new Rectangle(0, 0, 1, 1));
+            AbsoluteLayout.SetLayoutFlags(_content, AbsoluteLayoutFlags.All);
 
-            Title = content.Title;
+            Title = _content.Title;
 
             ToolbarItem alert = new ToolbarItem("Alarm", "icon.png", () => { EmergencyOverLay.IsVisible = !EmergencyOverLay.IsVisible; });
             ToolbarItems.Add(alert);
@@ -48,18 +49,18 @@ namespace BFH_USZ_PICC.Views
         protected override void OnAppearing()
         {
             base.OnDisappearing();
-            content.OnAppearing();
+            _content.OnAppearing();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            content.OnDisappearing();
+            _content.OnDisappearing();
         }
 
         protected override bool OnBackButtonPressed()
         {
-            if(content.OnBackButtonPressed())
+            if(_content.OnBackButtonPressed())
             {
                 return true;
             } else
@@ -71,9 +72,9 @@ namespace BFH_USZ_PICC.Views
 
         public Task OnNavigatedFromAsync()
         {
-            if (content.BindingContext is INavigable)
+            if (_content.BindingContext is INavigable)
             {
-                return ((INavigable)content.BindingContext).OnNavigatedFromAsync();
+                return ((INavigable)_content.BindingContext).OnNavigatedFromAsync();
             } else
             {
                 return null;
@@ -82,10 +83,10 @@ namespace BFH_USZ_PICC.Views
 
         public Task OnNavigatedToAsync(object parameter, NavigationMode mode)
         {
-            if (content.BindingContext is INavigable)
+            if (_content.BindingContext is INavigable)
             {
-                object navArgs = mode == NavigationMode.Forward ? navigationArguments : parameter;
-                return ((INavigable)content.BindingContext).OnNavigatedToAsync(navArgs, mode);
+                object navArgs = mode == NavigationMode.Forward ? _navigationArguments : parameter;
+                return ((INavigable)_content.BindingContext).OnNavigatedToAsync(navArgs, mode);
             }
             else
             {

@@ -609,7 +609,7 @@ namespace BFH_USZ_PICC.Utilitys
             Gender sex = (Gender)value;
             switch (sex)
             {
-                case Gender.GenderFree:
+                case Gender.Unspecified:
                     return 0;
                 case Gender.Male:
                     return 1;

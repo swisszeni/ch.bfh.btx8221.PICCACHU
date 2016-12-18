@@ -997,15 +997,15 @@
           <target state="translated">Geschlecht:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Geschlecht, mit Doppelpunkt am Ende</note>
         </trans-unit>
-        <trans-unit id="UserMasterDataPageFemaleText" translate="yes" xml:space="preserve">
+        <trans-unit id="UserMasterDataPageFemale" translate="yes" xml:space="preserve">
           <source>Female</source>
-          <target state="translated">weiblich</target>
+          <target state="new">Female</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "weiblich" als Geschlecht</note>
         </trans-unit>
-        <trans-unit id="UserMasterDataPageMaleText" translate="yes" xml:space="preserve">
+        <trans-unit id="UserMasterDataPageMale" translate="yes" xml:space="preserve">
           <source>Male</source>
-          <target state="translated">männlich</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "männlich" als Anrede</note>
+          <target state="new">Male</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "männlich" als Geschlecht</note>
         </trans-unit>
       </group>
     </body>

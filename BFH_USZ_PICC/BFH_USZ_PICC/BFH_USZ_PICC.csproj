@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
+    <Compile Include="Interfaces\ILocalDataService.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
     <Compile Include="Interfaces\IReminderNotification.cs" />
     <Compile Include="Interfaces\ICaller.cs" />
@@ -98,6 +99,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.it.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\LocalDataServiceSQLite.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Shell.cs" />
     <Compile Include="Utilitys\Converters.cs" />

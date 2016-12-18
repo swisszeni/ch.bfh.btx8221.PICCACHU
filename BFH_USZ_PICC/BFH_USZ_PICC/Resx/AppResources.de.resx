@@ -805,12 +805,4 @@
     <value>Geschlecht:</value>
     <comment>Geschlecht, mit Doppelpunkt am Ende</comment>
   </data>
-  <data name="UserMasterDataPageFemaleText" xml:space="preserve">
-    <value>weiblich</value>
-    <comment>Übersetzung "weiblich" als Geschlecht</comment>
-  </data>
-  <data name="UserMasterDataPageMaleText" xml:space="preserve">
-    <value>männlich</value>
-    <comment>Übersetzung "männlich" als Anrede</comment>
-  </data>
 </root>

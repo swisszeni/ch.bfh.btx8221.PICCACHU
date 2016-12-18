@@ -8,45 +8,160 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BFH_USZ_PICC.Interfaces;
+using Realms;
+using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.ViewModels
 {
     public class MasterDataViewModel : ViewModelBase
     {
+        private Realm _realm;
+        private UserMasterData _displayingmasterData;
+
         public MasterDataViewModel()
         {
-            // Get the MasterData. There should be only one instance of it. If the App is started for the first time, there is none.
-
-        }
-
-        private UserMasterData _masterData;
-        public UserMasterData MasterData
-        {
-            get { return _masterData; }
-            set
+            if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
             {
-                if (Set(ref _masterData, value))
-                {
-                    Gender = value.Gender;
-                    Name = value.Name;
-                    Surname = value.Surname;
-                    Street = value.Street;
-                    ZIP = value.Zip;
-                    City = value.City;
-                    Email = value.Email;
-                    Phone = value.Phone;
-                    Mobile = value.Mobile;
-
-                    if (value.Birthdate != null)
-                    {
-                        Birthdate = (DateTimeOffset)value.Birthdate;
-                    }
-                }
-
-                // Update bindings
-                RaisePropertyChanged("");
+                GetOrCreateMasterData_Realm();
+            } else
+            {
+                GetOrCreateMasterData_SQLite();
             }
         }
+
+        private void GetOrCreateMasterData_Realm()
+        {
+            _realm = Realm.GetInstance();
+
+            // Get the MasterData. There should be only one instance of it. If the App is started for the first time, there is none.
+            var masterDataEntries = _realm.All<UserMasterData>();
+            if (masterDataEntries.Count() > 0)
+            {
+                _displayingmasterData = masterDataEntries.First();
+            }
+            else
+            {
+                // There is no existing MasterData, create one!
+                _displayingmasterData = new UserMasterData();
+                _realm.Write(() =>
+                {
+                    _realm.Add(_displayingmasterData);
+                });
+            }
+        }
+
+        private void GetOrCreateMasterData_SQLite()
+        {
+            _displayingmasterData = new UserMasterData();
+        }
+
+        private void DeleteMasterData_Realm()
+        {
+            _realm.Write(() =>
+            {
+                _realm.RemoveAll<UserMasterData>();
+            });
+        }
+
+        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        {
+            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            {
+                // Passes if should go in edit mode or not
+                if((bool)((List<object>)parameter).First())
+                {
+                    StartEditing();
+                }
+            }
+
+            LoadFromModel();
+
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
+        }
+
+        public override Task OnNavigatedFromAsync()
+        {
+            EndEditing();
+
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
+        }
+
+        private void StartEditing()
+        {
+            IsUserInputEnabled = true;
+        }
+
+        private void EndEditing()
+        {
+            IsUserInputEnabled = false;
+        }
+
+        private void LoadFromModel()
+        {
+            Gender = _displayingmasterData.Gender;
+            Name = _displayingmasterData.Name;
+            Surname = _displayingmasterData.Surname;
+            Street = _displayingmasterData.Street;
+            ZIP = _displayingmasterData.Zip;
+            City = _displayingmasterData.City;
+            Email = _displayingmasterData.Email;
+            Phone = _displayingmasterData.Phone;
+            Mobile = _displayingmasterData.Mobile;
+
+            if(_displayingmasterData.Birthdate == null)
+            {
+                Birthdate = DateTimeOffset.Now;
+                IsBirthdateSet = false;
+            } else
+            {
+                Birthdate = (DateTimeOffset)_displayingmasterData.Birthdate;
+                IsBirthdateSet = true;
+            }
+
+            RaisePropertyChanged("");
+        }
+
+        private void SaveToModel()
+        {
+            using(var trans = _realm.BeginWrite())
+            {
+                _displayingmasterData.Gender = Gender;
+                _displayingmasterData.Name = Name;
+                _displayingmasterData.Surname = Surname;
+                _displayingmasterData.Street = Street;
+                _displayingmasterData.Zip = ZIP;
+                _displayingmasterData.City = City;
+                _displayingmasterData.Email = Email;
+                _displayingmasterData.Phone = Phone;
+                _displayingmasterData.Mobile = Mobile;
+
+                if (IsBirthdateSet)
+                {
+                    _displayingmasterData.Birthdate = Birthdate;
+                }
+                else
+                {
+                    _displayingmasterData.Birthdate = null;
+                }
+
+                trans.Commit();
+            }
+        }
+
+        private bool _isUserInputEnabled;
+        public bool IsUserInputEnabled
+        {
+            get { return _isUserInputEnabled; }
+            set
+            {
+                Set(ref _isUserInputEnabled, value);
+                RaisePropertyChanged(() => IsBirthdateDisplayed);
+            }
+        }
+
 
         private Gender _gender;
         public Gender Gender
@@ -119,7 +234,6 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (value.Year >= DateTimeOffset.Now.Year)
                 {
-                    IsBirthdateSet = false;
                     Set(ref _birthdate, value);
                     return;
                 }
@@ -134,16 +248,6 @@ namespace BFH_USZ_PICC.ViewModels
             get { return IsBirthdateSet || IsUserInputEnabled; }
         }
 
-        private bool _isUserInputEnabled;
-        public bool IsUserInputEnabled
-        {
-            get { return _isUserInputEnabled; }
-            set {
-                Set(ref _isUserInputEnabled, value);
-                RaisePropertyChanged(() => IsBirthdateDisplayed);
-            }
-        }
-
         private bool _isBirthdateSet;
         public bool IsBirthdateSet
         {
@@ -154,52 +258,47 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        private RelayCommand _editButtonCommand;
-        public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
+        private RelayCommand _startEditCommand;
+        public RelayCommand StartEditCommand => _startEditCommand ?? (_startEditCommand = new RelayCommand(() =>
         {
-            // MasterData = UserMasterData.MasterData;
-            IsUserInputEnabled = true;
-
+            StartEditing();
         }));
 
-        private RelayCommand _cancelButtonCommand;
-        public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
+        private RelayCommand _cancelEditCommand;
+        public RelayCommand CancelEditCommand => _cancelEditCommand ?? (_cancelEditCommand = new RelayCommand(async () =>
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                IsUserInputEnabled = false;
-                // UserMasterData.MasterData = MasterData;
+                LoadFromModel();
+                EndEditing();
             }
-
         }));
 
-        private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
+        private RelayCommand _saveEditCommand;
+        public RelayCommand SaveEditCommand => _saveEditCommand ?? (_saveEditCommand = new RelayCommand(async () =>
         {
             bool saveInput = true;
 
-            if (Birthdate.Year >= DateTime.Now.Year)
+            if (Birthdate.Year >= DateTimeOffset.Now.Year && IsBirthdateSet)
             {   
                 if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.MasterDataViewModelBirthdateNotValidText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
                     saveInput = false;
-                    IsBirthdateSet = true;
+                    IsBirthdateSet = false;
                 };
             }
             if (saveInput) {
-                IsUserInputEnabled = false;
-                RaisePropertyChanged("");
+                EndEditing();
+                SaveToModel();
             }
-            
-
         }));
 
-        private RelayCommand _userMasterDataPageDeleteAllMasterDataButtonCommand;
-        public RelayCommand UserMasterDataPageDeleteAllMasterDataButtonCommand => _userMasterDataPageDeleteAllMasterDataButtonCommand ?? (_userMasterDataPageDeleteAllMasterDataButtonCommand = new RelayCommand(async () =>
+        private RelayCommand _resetMasterDataCommand;
+        public RelayCommand ResetMasterDataCommand => _resetMasterDataCommand ?? (_resetMasterDataCommand = new RelayCommand(async () =>
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                Gender = Gender.GenderFree;
+                Gender = Gender.Unspecified;
                 Name = null;
                 Surname = null;
                 Street = null;
@@ -208,12 +307,10 @@ namespace BFH_USZ_PICC.ViewModels
                 Email = null;
                 Phone = null;
                 Mobile = null;
-                Birthdate = DateTime.Now;
-
+                Birthdate = DateTimeOffset.Now;
+                IsBirthdateSet = false;
+                SaveToModel();
             }
-            RaisePropertyChanged("");
-
         }));
-
     }
 }
