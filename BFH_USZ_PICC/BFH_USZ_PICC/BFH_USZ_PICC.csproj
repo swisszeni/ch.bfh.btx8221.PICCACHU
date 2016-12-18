@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
+    <Compile Include="Interfaces\INavigable.cs" />
     <Compile Include="Interfaces\IReminderNotification.cs" />
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
     <Compile Include="ViewModels\MyPICCViewModel.cs" />
     <Compile Include="ViewModels\PICCDetailViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\BaseContentPage.cs" />
     <Compile Include="Views\BasePage.xaml.cs">

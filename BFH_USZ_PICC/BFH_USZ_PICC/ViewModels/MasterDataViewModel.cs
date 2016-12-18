@@ -15,6 +15,7 @@ namespace BFH_USZ_PICC.ViewModels
     {
         public MasterDataViewModel()
         {
+            // Get the MasterData. There should be only one instance of it. If the App is started for the first time, there is none.
 
         }
 
@@ -156,7 +157,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
         {
-            MasterData = UserMasterData.MasterData;
+            // MasterData = UserMasterData.MasterData;
             IsUserInputEnabled = true;
 
         }));
@@ -167,7 +168,7 @@ namespace BFH_USZ_PICC.ViewModels
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 IsUserInputEnabled = false;
-                UserMasterData.MasterData = MasterData;
+                // UserMasterData.MasterData = MasterData;
             }
 
         }));

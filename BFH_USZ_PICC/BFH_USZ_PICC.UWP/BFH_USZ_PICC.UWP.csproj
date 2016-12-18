@@ -121,6 +121,7 @@
     <Content Include="EinlumigerPICC.png" />
     <Content Include="DreilumigerPICC.png" />
     <Content Include="DoppellumigerPICC.png" />
+    <Content Include="FodyWeavers.xml" />
     <Content Include="icon.png" />
     <Content Include="MicroClave1.jpg" />
     <Content Include="MicroClave10.jpg" />

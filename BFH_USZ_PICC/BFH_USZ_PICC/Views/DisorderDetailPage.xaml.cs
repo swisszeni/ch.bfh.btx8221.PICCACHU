@@ -16,7 +16,6 @@ namespace BFH_USZ_PICC.Views
         public DisorderDetailPage(ContentPage contained, DisorderEntry selectedEntry) : base(contained)
         {
             InitializeComponent();
-            ((DisorderDetailViewModel)BindingContext).DisplayingEntry = selectedEntry;
         }
     }
 }
