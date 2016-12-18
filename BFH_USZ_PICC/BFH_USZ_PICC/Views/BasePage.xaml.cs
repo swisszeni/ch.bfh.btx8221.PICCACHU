@@ -54,6 +54,8 @@ namespace BFH_USZ_PICC.Views
 
         protected override void OnDisappearing()
         {
+            // Always remove the flyout
+            EmergencyOverLay.IsVisible = false;
             base.OnDisappearing();
             _content.OnDisappearing();
         }
