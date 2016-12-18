@@ -41,13 +41,14 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
                     countReminderRepetitions++;
                 }
 
+
             }
 
             //if no limit is set, add a repeating alarm
             else
             {
                 PendingIntent intent = createPendingIntent(title, body, countReminderRepetitions);
-                alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, (dailyMiliseconds * dailyInterval), intent);
+                alarmManager.SetRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, (dailyMiliseconds * dailyInterval), intent);
                 pendingIntents.Add(intent);
             }
 
