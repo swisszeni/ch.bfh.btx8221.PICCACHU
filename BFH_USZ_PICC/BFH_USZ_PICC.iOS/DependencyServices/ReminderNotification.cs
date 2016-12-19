@@ -24,7 +24,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             
             double reminderIntervalInSeconds = DAILYSECONDS * intervalInDays;
 
-            // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, the 500 notifications will be generated.
+            // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, 200 notifications will be generated.
             if (isUnlimited)
             {
                 int repetitionFor200Times = 200;
