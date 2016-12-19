@@ -27,8 +27,8 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, the 500 notifications will be generated.
             if (isUnlimited)
             {
-                int REPETITIONFOR200Times = 200;
-                addNotificationsToScheduler(startDateTime, REPETITIONFOR200Times, reminderIntervalInSeconds, noti);
+                int repetitionFor200Times = 200;
+                addNotificationsToScheduler(startDateTime, repetitionFor200Times, reminderIntervalInSeconds, noti);
 
             }
             else

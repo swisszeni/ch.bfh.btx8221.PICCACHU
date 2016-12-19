@@ -27,8 +27,8 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
             // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, 200 notifications will be generated.
             if (isUnlimited)
             {
-                int REPETITIONFOR200Times = 200;
-                addNotificationsToScheduler(maintenanceReminderStartDateTime, REPETITIONFOR200Times, dailyInterval, toastXml);
+                int repetitionFor200Times = 200;
+                addNotificationsToScheduler(maintenanceReminderStartDateTime, repetitionFor200Times, dailyInterval, toastXml);
 
             }
             else
