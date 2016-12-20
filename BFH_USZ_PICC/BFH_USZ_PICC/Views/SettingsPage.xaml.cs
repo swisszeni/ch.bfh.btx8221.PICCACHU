@@ -1,11 +1,8 @@
-﻿using BFH_USZ_PICC.Interfaces;
-using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
-using static BFH_USZ_PICC.Views.UserMasterDataPage;
 
 namespace BFH_USZ_PICC.Views
 {
@@ -16,6 +13,7 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
 
+            // FIXME: move to ViewModel
             //Loads the current reminder settings to the page
             ((SettingsViewModel)BindingContext).Reminder = MaintenanceReminder.Reminder;
 
@@ -36,6 +34,7 @@ namespace BFH_USZ_PICC.Views
         {
             base.OnAppearing();
             
+            // FIXME: move to ViewModel
             //If no reminder is set, add the current date and the current time to the pickers, in order to simplify the input for the user           
             if (!((SettingsViewModel)BindingContext).IsReminderSet)
             {

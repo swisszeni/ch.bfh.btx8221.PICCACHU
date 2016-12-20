@@ -22,24 +22,12 @@ namespace BFH_USZ_PICC.Models
 
         public static MaintenanceReminder Reminder
         {
+            get { return _maintenanceReminder == null ? new MaintenanceReminder() : _maintenanceReminder; }
+        }
 
-            get
-            {
-                if (_maintenanceReminder == null)
-                {
-                    _maintenanceReminder = new MaintenanceReminder();
-                }
-                return _maintenanceReminder;
-            }
-
-            set
-            {
-                if (_maintenanceReminder != null)
-                {
-                    _maintenanceReminder = null;
-                }
-
-            }
+        public static void DeleteMaintainanceReminder()
+        {
+            _maintenanceReminder = null;
         }
     }
 }

@@ -1,10 +1,4 @@
 ﻿using BFH_USZ_PICC.Interfaces;
-using BFH_USZ_PICC.Models;
-using BFH_USZ_PICC.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Xamarin.Forms;
 
@@ -21,7 +15,7 @@ namespace BFH_USZ_PICC
 
         protected override void OnStart()
         {            
-            // Handle when your app startss
+            // Handle when your app starts
             SetLocale();
         }
 

@@ -122,7 +122,7 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.SettingsPageDelteScheduledRemindersText, AppResources.YesButtonText, AppResources.NoButtonText))
                     {
-                        MaintenanceReminder.Reminder = null;
+                        MaintenanceReminder.DeleteMaintainanceReminder();
 
                         IsReminderEditable = true;
                         _notifier.RemoveAllNotifications();
