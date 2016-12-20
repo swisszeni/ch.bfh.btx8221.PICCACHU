@@ -113,6 +113,8 @@
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <None Include="devcert.p12" />
+    <None Include="provisioning.mobileprovision" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BFH_USZ_PICC\BFH_USZ_PICC.csproj">
