@@ -85,9 +85,8 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignKey>iPhone Developer: Florian Schnyder (6MQU9RCR8H)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>867b871d-10b5-457f-8676-0798a0cda26f</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -113,6 +112,8 @@
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <None Include="devcert.p12" />
+    <None Include="provisioning.mobileprovision" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BFH_USZ_PICC\BFH_USZ_PICC.csproj">
