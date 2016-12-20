@@ -80,11 +80,7 @@ Global
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|ARM.Build.0 = Debug|Any CPU
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|ARM.Deploy.0 = Debug|Any CPU
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|iPhone.Deploy.0 = Debug|Any CPU
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|x64.Build.0 = Debug|Any CPU
 		{26A7DE27-FA53-43E4-8FDE-1306C48D023E}.Debug|x64.Deploy.0 = Debug|Any CPU
@@ -127,6 +123,7 @@ Global
 		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Debug|iPhone.Build.0 = Debug|iPhone
 		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
 		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Debug|x64.ActiveCfg = Debug|iPhone
 		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Debug|x86.ActiveCfg = Debug|iPhone
 		{40BDFC24-1F26-464F-BE1A-3CAE946C0F62}.Release|Any CPU.ActiveCfg = Release|iPhone
@@ -267,9 +264,7 @@ Global
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|ARM.Build.0 = Debug|Any CPU
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|x64.Build.0 = Debug|Any CPU
 		{8517B20C-9BD8-48E6-84E2-32813372750A}.Debug|x86.ActiveCfg = Debug|Any CPU
