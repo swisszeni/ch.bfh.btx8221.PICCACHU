@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\ILocalize.cs" />
     <Compile Include="Models\MaintenanceInstructions.cs" />
     <Compile Include="Models\MaintenanceInstruction.cs" />
+    <Compile Include="Models\MaintenanceReminder.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\MicroClaveChangingEntry.cs" />

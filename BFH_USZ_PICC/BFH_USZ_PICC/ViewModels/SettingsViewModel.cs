@@ -17,7 +17,28 @@ namespace BFH_USZ_PICC.ViewModels
     public class SettingsViewModel : ViewModelBase
     {
         private IReminderNotification _notifier = DependencyService.Get<IReminderNotification>();
-       
+
+        private MaintenanceReminder _reminder;
+        public MaintenanceReminder Reminder
+        {
+            get { return _reminder; }
+            set
+            {
+                if (Set(ref _reminder, value))
+                {
+                    ReminderStartDate = value.ReminderStartDate;
+                    ReminderDayTime = value.ReminderDayTime;
+                    ReminderFrequency = value.ReminderFrequency;
+                    ReminderRepetition = value.ReminderRepetition;
+                    IsReminderSet = value.IsReminderSet;
+                    IsReminderEditable = !value.IsReminderSet;
+                }
+                // Update bindings
+                RaisePropertyChanged("");
+            }
+        }
+
+
         private DateTimeOffset _reminderStartDate;
         public DateTimeOffset ReminderStartDate
         {
@@ -53,11 +74,7 @@ namespace BFH_USZ_PICC.ViewModels
             set
             {
                 Set(ref _isReminderSet, value);
-                if (!value)
-                {
-                    CheckReminderToggleCommand();
-                }
-               
+                CheckReminderToggle();
             }
 
         }
@@ -98,21 +115,23 @@ namespace BFH_USZ_PICC.ViewModels
             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
 
         }));
-
-        private async void CheckReminderToggleCommand()
+        private async void CheckReminderToggle()
         {
-            if (!IsReminderEditable)
             {
-                if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.SettingsPageDelteScheduledRemindersText, AppResources.YesButtonText, AppResources.NoButtonText))
+                if (!IsReminderEditable && !IsReminderSet)
                 {
-                    IsReminderEditable = true;
-                    _notifier.RemoveAllNotifications();
-                }
-                else
-                {
-                    IsReminderSet = true;
-                }
+                    if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.SettingsPageDelteScheduledRemindersText, AppResources.YesButtonText, AppResources.NoButtonText))
+                    {
+                        MaintenanceReminder.Reminder = null;
 
+                        IsReminderEditable = true;
+                        _notifier.RemoveAllNotifications();
+                    }
+                    else
+                    {
+                        IsReminderSet = true;
+                    }
+                }
             }
         }
     }
