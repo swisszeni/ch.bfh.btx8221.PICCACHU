@@ -21,6 +21,11 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             return Path.Combine(libFolder, filename);
         }
 
+        public bool LocalUserdataDatabaseFileExists(string filename)
+        {
+            return System.IO.File.Exists(GetLocalUserdataDatabaseFilePath(filename));
+        }
+
         public string GetLocalAppdataDatabaseFilePath(string filename)
         {
             string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
