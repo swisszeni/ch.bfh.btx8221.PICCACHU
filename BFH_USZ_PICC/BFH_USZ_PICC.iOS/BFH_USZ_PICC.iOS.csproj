@@ -101,9 +101,10 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DependencyServices\ReminderNotification.cs" />
-    <Compile Include="DependencyServices\Caller.cs" />
-    <Compile Include="DependencyServices\Localize.cs" />
+    <Compile Include="DependencyServices\FileHelper_iOS.cs" />
+    <Compile Include="DependencyServices\ReminderNotification_iOS.cs" />
+    <Compile Include="DependencyServices\Caller_iOS.cs" />
+    <Compile Include="DependencyServices\Localize_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />

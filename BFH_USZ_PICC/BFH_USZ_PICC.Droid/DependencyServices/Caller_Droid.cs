@@ -15,11 +15,11 @@ using Xamarin.Forms;
 using Uri = Android.Net.Uri;
 using Android.Telephony;
 
-[assembly: Dependency(typeof(Caller))]
+[assembly: Dependency(typeof(Caller_Droid))]
 
 namespace BFH_USZ_PICC.Droid.DependencyServices
 {
-    public class Caller : ICaller
+    public class Caller_Droid : ICaller
     {
         public bool Dial(string number)
         {

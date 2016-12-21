@@ -102,6 +102,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DependencyServices\FileHelper_UWP.cs" />
     <Compile Include="DependencyServices\HockeyEventService_UWP.cs" />
     <Compile Include="DependencyServices\ReminderNotification_UWP.cs" />
     <Compile Include="DependencyServices\Caller_UWP.cs" />

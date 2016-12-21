@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Interfaces
 {
-    public interface ILocalDataService
+    public interface ILocalAppDataService
     {
+        // GlossaryEntry
+
+        // KnowledgeEntry
+
+        // DisorderEntry
+
+        // MaintainanceInstruction
     }
 }

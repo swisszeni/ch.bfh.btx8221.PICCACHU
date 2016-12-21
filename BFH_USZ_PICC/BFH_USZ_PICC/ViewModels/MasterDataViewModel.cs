@@ -11,58 +11,72 @@ using System.Threading.Tasks;
 using BFH_USZ_PICC.Interfaces;
 using Realms;
 using Xamarin.Forms;
+using Microsoft.Practices.ServiceLocation;
 
 namespace BFH_USZ_PICC.ViewModels
 {
     public class MasterDataViewModel : ViewModelBase
     {
-        private Realm _realm;
+        private ILocalUserDataService _dataService;
         private UserMasterData _displayingmasterData;
 
         public MasterDataViewModel()
         {
-            if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
-            {
-                GetOrCreateMasterData_Realm();
-            } else
-            {
-                GetOrCreateMasterData_SQLite();
-            }
+            // Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+
+            PopulateMasterDataAsync();
         }
 
-        private void GetOrCreateMasterData_Realm()
+        private async void PopulateMasterDataAsync()
         {
-            _realm = Realm.GetInstance();
+            var masterDataEntries = await _dataService.GetMasterDataAsync();
 
-            // Get the MasterData. There should be only one instance of it. If the App is started for the first time, there is none.
-            var masterDataEntries = _realm.All<UserMasterData>();
-            if (masterDataEntries.Count() > 0)
+            if (masterDataEntries.Count > 0)
             {
                 _displayingmasterData = masterDataEntries.First();
-            }
-            else
+            } else
             {
                 // There is no existing MasterData, create one!
                 _displayingmasterData = new UserMasterData();
-                _realm.Write(() =>
-                {
-                    _realm.Add(_displayingmasterData);
-                });
             }
+
+            LoadFromModel();
         }
 
-        private void GetOrCreateMasterData_SQLite()
-        {
-            _displayingmasterData = new UserMasterData();
-        }
+        //private void GetOrCreateMasterData_Realm()
+        //{
+        //    _realm = Realm.GetInstance();
 
-        private void DeleteMasterData_Realm()
-        {
-            _realm.Write(() =>
-            {
-                _realm.RemoveAll<UserMasterData>();
-            });
-        }
+        //    // Get the MasterData. There should be only one instance of it. If the App is started for the first time, there is none.
+        //    var masterDataEntries = _realm.All<UserMasterData>();
+        //    if (masterDataEntries.Count() > 0)
+        //    {
+        //        _displayingmasterData = masterDataEntries.First();
+        //    }
+        //    else
+        //    {
+        //        // There is no existing MasterData, create one!
+        //        _displayingmasterData = new UserMasterData();
+        //        _realm.Write(() =>
+        //        {
+        //            _realm.Add(_displayingmasterData);
+        //        });
+        //    }
+        //}
+
+        //private void GetOrCreateMasterData_SQLite()
+        //{
+        //    _displayingmasterData = new UserMasterData();
+        //}
+
+        //private void DeleteMasterData_Realm()
+        //{
+        //    _realm.Write(() =>
+        //    {
+        //        _realm.RemoveAll<UserMasterData>();
+        //    });
+        //}
 
         public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
         {
@@ -101,17 +115,17 @@ namespace BFH_USZ_PICC.ViewModels
 
         private void LoadFromModel()
         {
-            Gender = _displayingmasterData.Gender;
-            Name = _displayingmasterData.Name;
-            Surname = _displayingmasterData.Surname;
-            Street = _displayingmasterData.Street;
-            ZIP = _displayingmasterData.Zip;
-            City = _displayingmasterData.City;
-            Email = _displayingmasterData.Email;
-            Phone = _displayingmasterData.Phone;
-            Mobile = _displayingmasterData.Mobile;
+            Gender = _displayingmasterData == null ? 0 : _displayingmasterData.Gender;
+            Name = _displayingmasterData?.Name;
+            Surname = _displayingmasterData?.Surname;
+            Street = _displayingmasterData?.Street;
+            ZIP = _displayingmasterData?.Zip;
+            City = _displayingmasterData?.City;
+            Email = _displayingmasterData?.Email;
+            Phone = _displayingmasterData?.Phone;
+            Mobile = _displayingmasterData?.Mobile;
 
-            if(_displayingmasterData.Birthdate == null)
+            if(_displayingmasterData?.Birthdate == null)
             {
                 Birthdate = DateTimeOffset.Now;
                 IsBirthdateSet = false;
@@ -121,34 +135,33 @@ namespace BFH_USZ_PICC.ViewModels
                 IsBirthdateSet = true;
             }
 
+            // Actually, this shoudln't be needed... but because of some weird timing, it is.
             RaisePropertyChanged("");
         }
 
         private void SaveToModel()
         {
-            using(var trans = _realm.BeginWrite())
+            _displayingmasterData.Gender = Gender;
+            _displayingmasterData.Name = Name;
+            _displayingmasterData.Surname = Surname;
+            _displayingmasterData.Street = Street;
+            _displayingmasterData.Zip = ZIP;
+            _displayingmasterData.City = City;
+            _displayingmasterData.Email = Email;
+            _displayingmasterData.Phone = Phone;
+            _displayingmasterData.Mobile = Mobile;
+
+            if (IsBirthdateSet)
             {
-                _displayingmasterData.Gender = Gender;
-                _displayingmasterData.Name = Name;
-                _displayingmasterData.Surname = Surname;
-                _displayingmasterData.Street = Street;
-                _displayingmasterData.Zip = ZIP;
-                _displayingmasterData.City = City;
-                _displayingmasterData.Email = Email;
-                _displayingmasterData.Phone = Phone;
-                _displayingmasterData.Mobile = Mobile;
-
-                if (IsBirthdateSet)
-                {
-                    _displayingmasterData.Birthdate = Birthdate;
-                }
-                else
-                {
-                    _displayingmasterData.Birthdate = null;
-                }
-
-                trans.Commit();
+                _displayingmasterData.Birthdate = Birthdate;
             }
+            else
+            {
+                _displayingmasterData.Birthdate = null;
+            }
+
+            // Save to DB
+            _dataService.SaveMasterDataAsync(_displayingmasterData);
         }
 
         private bool _isUserInputEnabled;
@@ -298,18 +311,9 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.UserMasterDataPageDelteAllPersonalDataText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                Gender = Gender.Unspecified;
-                Name = null;
-                Surname = null;
-                Street = null;
-                ZIP = null;
-                City = null;
-                Email = null;
-                Phone = null;
-                Mobile = null;
-                Birthdate = DateTimeOffset.Now;
-                IsBirthdateSet = false;
-                SaveToModel();
+                await _dataService.DeleteAllMasterDataAsync();
+                _displayingmasterData = new UserMasterData();
+                LoadFromModel();
             }
         }));
     }

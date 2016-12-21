@@ -202,9 +202,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlarmReceiver.cs" />
-    <Compile Include="DependencyServices\ReminderNotification.cs" />
-    <Compile Include="DependencyServices\Caller.cs" />
-    <Compile Include="DependencyServices\Localize.cs" />
+    <Compile Include="DependencyServices\FileHelper_Droid.cs" />
+    <Compile Include="DependencyServices\ReminderNotification_Droid.cs" />
+    <Compile Include="DependencyServices\Caller_Droid.cs" />
+    <Compile Include="DependencyServices\Localize_Droid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

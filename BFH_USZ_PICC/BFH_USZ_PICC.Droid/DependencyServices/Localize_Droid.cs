@@ -14,11 +14,11 @@ using System.Threading;
 using BFH_USZ_PICC.Utilitys;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(BFH_USZ_PICC.Droid.DependencyServices.Localize))]
+[assembly: Dependency(typeof(BFH_USZ_PICC.Droid.DependencyServices.Localize_Droid))]
 
 namespace BFH_USZ_PICC.Droid.DependencyServices
 {
-    public class Localize : Interfaces.ILocalize
+    public class Localize_Droid : Interfaces.ILocalize
     {
         public void SetLocale(CultureInfo ci)
         {
