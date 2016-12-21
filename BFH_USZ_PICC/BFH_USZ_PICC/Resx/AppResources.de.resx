@@ -813,4 +813,8 @@
     <value>Anzahl Lumen:</value>
     <comment>Anzahl Lumen</comment>
   </data>
+  <data name="SettingsPageRepetitionPickerUnlimitedRepetitionText" xml:space="preserve">
+    <value>Unbegrenzt</value>
+    <comment>Bietet dem User an, die Wartungserinnerung für eine unbegrenzte Zeit einzurichten</comment>
+  </data>
 </root>

@@ -4,23 +4,26 @@
              x:Class="BFH_USZ_PICC.Views.SettingsPage"
              xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             BindingContext="{Binding [SettingsViewModel], Source={StaticResource ViewModelLocator}}"
              Title="{i18n:Translate SettingsPageTitleText}">
   <StackLayout>
     <Label Text="{i18n:Translate SettingsPageAppVersionText}"/>
     <Label Text="PICCACHU Version 1.0"/>
-    <Label Text="{i18n:Translate SettingsPageMaintenanceReminderText}"/>
-    <Switch x:Name="WeeklyMaintenanceReminder" IsToggled="False" Toggled="WeeklyMaintenanceReminderToggled"/>
-    <StackLayout x:Name="EditWeeklyReminder" IsVisible="False">
+    <StackLayout Orientation="Horizontal">
+      <Label Text="{i18n:Translate SettingsPageMaintenanceReminderText}"/>
+      <Switch IsToggled="{Binding IsReminderSet, Mode=TwoWay}" HorizontalOptions = "CenterAndExpand"/>
+    </StackLayout>    
+    <StackLayout x:Name="EditWeeklyReminder" IsVisible="{Binding IsReminderSet}">
       <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetStartDateText}"/>
-      <DatePicker x:Name="ReminderStartDate"/>
+      <DatePicker Date="{Binding ReminderStartDate}" IsEnabled="{Binding IsReminderEditable}"/>
       <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetDailyTimeText}"/>
-      <TimePicker x:Name="ReminderDailyTime"/>
+      <TimePicker Time="{Binding ReminderDayTime}" IsEnabled="{Binding IsReminderEditable}"/>
       <Label Text="{i18n:Translate SettingsPageMaintenanceReminderFrequencyText}"/>
-      <Picker x:Name="Frequency"/>
+      <Picker x:Name="Frequency" SelectedIndex="{Binding ReminderFrequency}" IsEnabled="{Binding IsReminderEditable}"/>
       <Label Text="{i18n:Translate SettingsPageMaintenanceReminderRepetitionText}"/>
-      <Picker x:Name="Repetition"/>
-      <Button x:Name="AddNotificationButton" Text="{i18n:Translate SettingsPageAddReminderButtonText}" Clicked="AddNotificationButtonClicked" />
+      <Picker x:Name="Repetition" SelectedIndex="{Binding ReminderRepetition}" IsEnabled="{Binding IsReminderEditable}"/>
+      <Button Text="{i18n:Translate SettingsPageAddReminderButtonText}" Command="{Binding AddNotificationsCommand}" IsEnabled="{Binding IsReminderEditable}"/>
     </StackLayout>
-        <Button x:Name="PersonalMasterData" Text="{i18n:Translate SettingsPagePersonalDataButtonText}"  Clicked="PersonalMasterDataClicked" />
+        <Button x:Name="PersonalMasterData" Text="{i18n:Translate SettingsPagePersonalDataButtonText}" Command="{Binding MoveToMasterDataPageCommand}" />
   </StackLayout>
 </d:BaseContentPage>

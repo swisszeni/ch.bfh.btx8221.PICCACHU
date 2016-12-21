@@ -13,31 +13,34 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
         string Body;
         readonly double DAILYSECONDS = 84400;
 
-        public void AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int intervalInDays, int maintenanceReminderRepetition, string title, string body)
+        public void AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int intervalInDays, int maintenanceReminderRepetition, string title, string body, bool isUnlimited)
         {   
             UILocalNotification noti = new UILocalNotification();                      
             noti.AlertTitle = title;
             noti.AlertBody = body;
-                                              
-            NSDate startDate = DateTimeToNSDate(maintenanceReminderStartDateTime);
+            noti.AlertLaunchImage = "Icon.png";
+
+            NSDate startDateTime = DateTimeToNSDate(maintenanceReminderStartDateTime);
             
             double reminderIntervalInSeconds = DAILYSECONDS * intervalInDays;
 
-            int countReminderRepetitions = 0;
-            while (countReminderRepetitions <= maintenanceReminderRepetition)
+            // Checks if the user wants a to set a repetition limit or if he wants an unlimited reminder. In this case, 200 notifications will be generated.
+            if (isUnlimited)
             {
-                // noti.FireDate = startDate.AddSeconds(reminderIntervalInSeconds * countReminderRepetitions);
-                noti.FireDate = startDate.AddSeconds(countReminderRepetitions * 20);
-                UIApplication.SharedApplication.ScheduleLocalNotification(noti);
+                int repetitionFor200Times = 200;
+                addNotificationsToScheduler(startDateTime, repetitionFor200Times, reminderIntervalInSeconds, noti);
 
-                countReminderRepetitions++;
+            }
+            else
+            {
+                addNotificationsToScheduler(startDateTime, maintenanceReminderRepetition, reminderIntervalInSeconds, noti);
             }
 
             //Saves the reminder body in order to detect future scheduled notifications for deleting
             Body = body;
 
         }
-
+                
         public void RemoveAllNotifications()
         {
             UILocalNotification[] futureNotifications = UIApplication.SharedApplication.ScheduledLocalNotifications;
@@ -48,8 +51,20 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
                 {
                     UIApplication.SharedApplication.CancelLocalNotification(noti);
                 }               
-            }           
+            }          
 
+        }
+
+        private void addNotificationsToScheduler(NSDate startDateTime, int maintenanceReminderRepetition, double reminderIntervalInSeconds, UILocalNotification noti) {
+            int countReminderRepetitions = 0;
+
+            while (countReminderRepetitions < maintenanceReminderRepetition)
+            {
+                noti.FireDate = startDateTime.AddSeconds(countReminderRepetitions * reminderIntervalInSeconds);
+                UIApplication.SharedApplication.ScheduleLocalNotification(noti);
+
+                countReminderRepetitions++;
+            }
         }
 
         private NSDate DateTimeToNSDate(DateTimeOffset date)
@@ -59,7 +74,6 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             return NSDate.FromTimeIntervalSinceReferenceDate(
                 (date - reference).TotalSeconds);
         }
-
     }
 }
 
