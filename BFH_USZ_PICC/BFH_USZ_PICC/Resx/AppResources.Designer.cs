@@ -1367,6 +1367,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of lumens:.
+        /// </summary>
+        public static string PICCDetailPageLumensLabelText {
+            get {
+                return ResourceManager.GetString("PICCDetailPageLumensLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PICC body side:.
         /// </summary>
         public static string PICCDetailPagePICCBodysideText {
@@ -1619,6 +1628,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlimited.
+        /// </summary>
+        public static string SettingsPageRepetitionPickerUnlimitedRepetitionText {
+            get {
+                return ResourceManager.GetString("SettingsPageRepetitionPickerUnlimitedRepetitionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string SettingsPageTitleText {
@@ -1696,15 +1714,6 @@ namespace BFH_USZ_PICC.Resx {
         public static string StatlockChangingEntrySticksUnsatisfactorilyText {
             get {
                 return ResourceManager.GetString("StatlockChangingEntrySticksUnsatisfactorilyText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number of lumens.
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

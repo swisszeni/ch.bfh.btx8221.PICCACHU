@@ -47,7 +47,7 @@ namespace BFH_USZ_PICC.Models
         }
 
 
-        public string Icon { get; } = "icon.png";
+        public string Icon { get; } = "placeholder.png";
 
         public string Name { get; set; }
         /// <summary>

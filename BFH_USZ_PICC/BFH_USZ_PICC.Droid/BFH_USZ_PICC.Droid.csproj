@@ -213,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="keystore.jks" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

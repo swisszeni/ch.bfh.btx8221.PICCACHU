@@ -16,31 +16,42 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
         AlarmManager alarmManager = (AlarmManager)Forms.Context.GetSystemService(Context.AlarmService);
         List<PendingIntent> pendingIntents;
 
-        void IReminderNotification.AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int dailyInterval, int maintenanceReminderRepetition, string title, string body)
+        void IReminderNotification.AddNotification(DateTimeOffset maintenanceReminderStartDateTime, int dailyInterval, int maintenanceReminderRepetition,
+            string title, string body, bool isUnlimited)
         {
             pendingIntents = new List<PendingIntent>();
 
             // time when the first notification should appear from now on (if time is in the past, the notification will be fired immediately). 
             TimeSpan reminderTime = maintenanceReminderStartDateTime - DateTimeOffset.Now;
-            
+
             int dailyMiliseconds = 86400000;
             long intervalInMiliseconds = dailyMiliseconds * dailyInterval;
 
             long currentReminderTime = SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds;
-             
             int countReminderRepetitions = 0;
-            while (countReminderRepetitions <= maintenanceReminderRepetition)
+
+            //If a limit is set, add the planned amount of reminders to the scheduler
+            if (!isUnlimited)
+            {
+                while (countReminderRepetitions <= maintenanceReminderRepetition)
+                {
+                    PendingIntent intent = createPendingIntent(title, body, countReminderRepetitions);
+                    alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds + (countReminderRepetitions * intervalInMiliseconds), intent);
+                    pendingIntents.Add(intent);
+                    countReminderRepetitions++;
+                }
+
+
+            }
+
+            //if no limit is set, add a repeating alarm
+            else
             {
                 PendingIntent intent = createPendingIntent(title, body, countReminderRepetitions);
-              
-                //FIXME Android schedules the repeating forever (not just accoridng to maintenanceReminderRepetition, because a loop with alarmManager.SetRepeating creates only one repeating (and not serveral repeatings as expected).
-                //alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, (dailyMiliseconds * dailyInterval), intent);
-                alarmManager.Set(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds + (countReminderRepetitions * intervalInMiliseconds), intent);
-                
-                pendingIntents.Add(intent); 
-                              
-                countReminderRepetitions++;
-            }                          
+                alarmManager.SetRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + (long)reminderTime.TotalMilliseconds, (dailyMiliseconds * dailyInterval), intent);
+                pendingIntents.Add(intent);
+            }
+
         }
 
         void IReminderNotification.RemoveAllNotifications()

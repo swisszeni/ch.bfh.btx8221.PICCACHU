@@ -254,27 +254,31 @@
   </data>
   <data name="UserMasterDataPageNameLabelText" xml:space="preserve">
     <value>Vorname:</value>
-    <comment>Vorname, mit Doppelpunkt am Ende</comment>
+    <comment>Vorname</comment>
   </data>
   <data name="UserMasterDataPagePhoneLabelText" xml:space="preserve">
     <value>Telefon:</value>
-    <comment>Telefon, mit Doppelpunkt am Ende</comment>
+    <comment>Telefon</comment>
   </data>
   <data name="UserMasterDataPagePlaceLabelText" xml:space="preserve">
     <value>Ort:</value>
-    <comment>Ort (Wohnort), mit Doppelpunkt am Ende</comment>
+    <comment>Ort (Wohnort) </comment>
+  </data>
+  <data name="UserMasterDataPageSalutationLabelText" xml:space="preserve">
+    <value>Anrede:</value>
+    <comment>Anrede</comment>
   </data>
   <data name="UserMasterDataPageStreetLabelText" xml:space="preserve">
     <value>Strasse:</value>
-    <comment>Strasse, mit Doppelpunkt am Ende</comment>
+    <comment>Strasse</comment>
   </data>
   <data name="UserMasterDataPageSurnameLabelText" xml:space="preserve">
     <value>Name:</value>
-    <comment>Name (Familienname), mit Doppelpunkt am Ende</comment>
+    <comment>Name (Familienname)</comment>
   </data>
   <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
     <value>PLZ:</value>
-    <comment>Postleitzahl, mit Doppelpunkt am Ende</comment>
+    <comment>Postleitzahl</comment>
   </data>
   <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
     <value>Alle Angaben löschen</value>
@@ -604,6 +608,14 @@
     <value>Wartungsanleitung</value>
     <comment>Titel für Wartungsanleitung (Wartungsanleitung)</comment>
   </data>
+  <data name="UserMasterDataPageMissText" xml:space="preserve">
+    <value>Frau</value>
+    <comment>Übersetzung "Frau" als Anrede</comment>
+  </data>
+  <data name="UserMasterDataPageMisterText" xml:space="preserve">
+    <value>Herr</value>
+    <comment>Übersetzung "Herr" als Anrede</comment>
+  </data>
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
     <value>Führungsdrahtslänge in cm:
 </value>
@@ -801,8 +813,8 @@
     <value>Anzahl Lumen:</value>
     <comment>Anzahl Lumen</comment>
   </data>
-  <data name="UserMasterDataPageGenderLabelText" xml:space="preserve">
-    <value>Geschlecht:</value>
-    <comment>Geschlecht, mit Doppelpunkt am Ende</comment>
+  <data name="SettingsPageRepetitionPickerUnlimitedRepetitionText" xml:space="preserve">
+    <value>Unbegrenzt</value>
+    <comment>Bietet dem User an, die Wartungserinnerung für eine unbegrenzte Zeit einzurichten</comment>
   </data>
 </root>
