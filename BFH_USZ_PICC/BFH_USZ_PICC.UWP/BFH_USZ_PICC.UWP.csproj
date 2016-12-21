@@ -102,6 +102,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DependencyServices\FileHelper_UWP.cs" />
     <Compile Include="DependencyServices\HockeyEventService_UWP.cs" />
     <Compile Include="DependencyServices\ReminderNotification_UWP.cs" />
     <Compile Include="DependencyServices\Caller_UWP.cs" />
@@ -121,6 +122,7 @@
     <Content Include="EinlumigerPICC.png" />
     <Content Include="DreilumigerPICC.png" />
     <Content Include="DoppellumigerPICC.png" />
+    <Content Include="FodyWeavers.xml" />
     <Content Include="icon.png" />
     <Content Include="MicroClave1.jpg" />
     <Content Include="MicroClave10.jpg" />

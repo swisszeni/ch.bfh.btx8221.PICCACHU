@@ -1,7 +1,6 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
@@ -54,6 +53,16 @@ namespace BFH_USZ_PICC.ViewModels
                 if (dialer != null)
                     dialer.Dial("0041442557240");
             }
+        }
+
+        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        {
+            if(parameter is List<object> && ((List<object>)parameter).Count > 0)
+            {
+                DisplayingEntry = (DisorderEntry)((List<object>)parameter).First();
+            }
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
         }
     }
 }

@@ -7,11 +7,11 @@ using BFH_USZ_PICC.Droid.DependencyServices;
 using Xamarin.Forms;
 using System.Collections.Generic;
 
-[assembly: Dependency(typeof(ReminderNotification))]
+[assembly: Dependency(typeof(ReminderNotification_Droid))]
 
 namespace BFH_USZ_PICC.Droid.DependencyServices
 {
-    public class ReminderNotification : IReminderNotification
+    public class ReminderNotification_Droid : IReminderNotification
     {
         AlarmManager alarmManager = (AlarmManager)Forms.Context.GetSystemService(Context.AlarmService);
         List<PendingIntent> pendingIntents;

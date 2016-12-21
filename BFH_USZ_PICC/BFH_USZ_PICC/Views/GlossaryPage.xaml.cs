@@ -13,7 +13,7 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
         }
 
-        //This method sets the selected glossary entry to null (otherwise it would be marked).
+        // This method sets the selected glossary entry to null (otherwise it would be marked).
         private void GlossaryEntrySelected(object sender, EventArgs e)
         {
             GlossaryList.SelectedItem = null;

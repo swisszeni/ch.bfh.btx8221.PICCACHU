@@ -22,7 +22,14 @@ namespace BFH_USZ_PICC.Controls
         public EmergencyFlyout()
         {
             InitializeComponent();
-            
+
+            // add a tapgesture recognizer to the background
+            TapGestureRecognizer tapGesture = new TapGestureRecognizer();
+            tapGesture.Tapped += (s, e) =>
+            {
+                this.IsVisible = false;
+            };
+            BackgroundGrid.GestureRecognizers.Add(tapGesture);
         }
 
         async void DisorderButton_Clicked(object sender, EventArgs e)
@@ -31,7 +38,7 @@ namespace BFH_USZ_PICC.Controls
                 
         }
 
-            void CallUSZTelemedizinButton_Clicked(object sender, EventArgs e)
+        void CallUSZTelemedizinButton_Clicked(object sender, EventArgs e)
         {
             if (DependencyService.Get<ICaller>().CanMakePhonecall())
             {
@@ -50,8 +57,10 @@ namespace BFH_USZ_PICC.Controls
             {
                 var dialer = DependencyService.Get<ICaller>();
                 if (dialer != null)
+                {
+                    // Originalnummer PICC Telemedizin USZ: +41 44 255 72 40
                     dialer.Dial("0041442557240");
-                //Originalnummer PICC Telemedizin USZ: +41 44 255 72 40
+                }
             }
         }
     }

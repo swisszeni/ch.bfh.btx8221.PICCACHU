@@ -600,20 +600,20 @@ namespace BFH_USZ_PICC.Utilitys
         #endregion
     }
 
-    public class SalutationToIndexConverter : IValueConverter
+    public class GenderToIndexConverter : IValueConverter
     {
         #region IValueConverter implementation
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Salutation sex = (Salutation)value;
+            Gender sex = (Gender)value;
             switch (sex)
             {
-                case Salutation.GenderFree:
+                case Gender.Unspecified:
                     return 0;
-                case Salutation.Male:
+                case Gender.Male:
                     return 1;
-                case Salutation.Female:
+                case Gender.Female:
                     return 2;
                 
             }
@@ -622,7 +622,7 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (Salutation)value;
+            return (Gender)value;
         }
 
         #endregion

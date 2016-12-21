@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(BFH_USZ_PICC.iOS.DependencyServices.Localize))]
+[assembly: Dependency(typeof(BFH_USZ_PICC.iOS.DependencyServices.Localize_iOS))]
 
 namespace BFH_USZ_PICC.iOS.DependencyServices
 {
-    public class Localize : Interfaces.ILocalize
+    public class Localize_iOS : Interfaces.ILocalize
     {
         public void SetLocale(CultureInfo ci)
         {

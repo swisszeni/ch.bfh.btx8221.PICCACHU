@@ -61,7 +61,6 @@ namespace BFH_USZ_PICC
                     case MenuItemKey.Settings:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(SettingsPage))));
                         break;
-
                 }
             }
 

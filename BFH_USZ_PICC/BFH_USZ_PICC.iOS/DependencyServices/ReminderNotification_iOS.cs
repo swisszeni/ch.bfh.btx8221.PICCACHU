@@ -4,11 +4,11 @@ using UIKit;
 using Foundation;
 using System.Collections.Generic;
 
-[assembly: Dependency(typeof(BFH_USZ_PICC.iOS.DependencyServices.ReminderNotification))]
+[assembly: Dependency(typeof(BFH_USZ_PICC.iOS.DependencyServices.ReminderNotification_iOS))]
 
 namespace BFH_USZ_PICC.iOS.DependencyServices
 {
-    public class ReminderNotification : Interfaces.IReminderNotification
+    public class ReminderNotification_iOS : Interfaces.IReminderNotification
     {
         string Body;
         readonly double DAILYSECONDS = 84400;

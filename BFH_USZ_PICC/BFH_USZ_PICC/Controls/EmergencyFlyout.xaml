@@ -35,7 +35,7 @@
         </Label>
         <Button x:Uid="CallUSZTelemedizinButton" Text="{i18n:Translate CallUSZTelemedizinButtonText}" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="CallUSZTelemedizinButton_Clicked"/>
     </StackLayout>
-    <Grid Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
+    <Grid x:Name="BackgroundGrid" Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
 </Grid>
 
 

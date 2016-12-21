@@ -5,10 +5,6 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels.JournalEntries;
 
-
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
     

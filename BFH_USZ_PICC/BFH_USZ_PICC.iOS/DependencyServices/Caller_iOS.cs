@@ -8,11 +8,11 @@ using UIKit;
 using Xamarin.Forms;
 
 
-[assembly: Dependency(typeof(Caller))]
+[assembly: Dependency(typeof(Caller_iOS))]
 
 namespace BFH_USZ_PICC.iOS.DependencyServices
 {
-    public class Caller : Interfaces.ICaller
+    public class Caller_iOS : Interfaces.ICaller
     {
         public bool CanMakePhonecall()
         {

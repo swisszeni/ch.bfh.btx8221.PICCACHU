@@ -1,4 +1,7 @@
-﻿using BFH_USZ_PICC.ViewModels.JournalEntries;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Services;
+using BFH_USZ_PICC.Services.Design;
+using BFH_USZ_PICC.ViewModels.JournalEntries;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using System;
@@ -8,6 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.ViewModels
 {
@@ -19,6 +23,25 @@ namespace BFH_USZ_PICC.ViewModels
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            // Register the Dataservices
+            if(ViewModelBase.IsInDesignModeStatic)
+            {
+                // Register designtime service. Not really needed now, since xamarin designer is only just released as preview. But could proove useful later
+                SimpleIoc.Default.Register<ILocalUserDataService, LocalUserDataServiceDesign>();
+            } else
+            {
+                // We're live, register either Realm (iOS, Droid) or SQLite (UWP) as Datastore
+                if (Device.OS == TargetPlatform.iOS || Device.OS == TargetPlatform.Android)
+                {
+                    SimpleIoc.Default.Register<ILocalUserDataService, LocalUserDataServiceRealm>();
+                }
+                else
+                {
+                    SimpleIoc.Default.Register<ILocalUserDataService, LocalUserDataServiceSQLite>();
+                }
+            }
+
+            // Register the ViewModels
             SimpleIoc.Default.Register<AddPICCViewModel>();
             SimpleIoc.Default.Register<MyPICCViewModel>();
             SimpleIoc.Default.Register<PICCDetailViewModel>();

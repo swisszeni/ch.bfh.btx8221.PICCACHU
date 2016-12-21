@@ -31,6 +31,23 @@ namespace BFH_USZ_PICC.Views
             return ContainedPage.DisplayAlert(title, message, accept, cancel);
         }
 
-        public virtual void OnAppearing() { }
+        #region Navigation Events
+
+        public virtual void OnAppearing()
+        {
+
+        }
+
+        public virtual void OnDisappearing()
+        {
+
+        }
+
+        public virtual bool OnBackButtonPressed()
+        {
+            return false;
+        }
+
+        #endregion
     }
 }
