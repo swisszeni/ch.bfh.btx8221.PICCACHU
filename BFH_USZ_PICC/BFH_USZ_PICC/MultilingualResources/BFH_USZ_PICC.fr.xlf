@@ -1007,6 +1007,11 @@
           <target state="new">Number of lumens:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Anzahl Lumen</note>
         </trans-unit>
+        <trans-unit id="SettingsPageRepetitionPickerUnlimitedRepetitionText" translate="yes" xml:space="preserve">
+          <source>Unlimited</source>
+          <target state="new">Unlimited</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Bietet dem User an, die Wartungserinnerung für eine unbegrenzte Zeit einzurichten</note>
+        </trans-unit>
       </group>
     </body>
   </file>

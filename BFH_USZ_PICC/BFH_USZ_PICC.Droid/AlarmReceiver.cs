@@ -32,8 +32,10 @@ namespace BFH_USZ_PICC.Droid
                 new Notification.Builder(context)
                     .SetContentTitle(title)
                     .SetContentText(message)
-                    .SetSmallIcon(Resource.Drawable.icon)
-                    .SetDefaults(NotificationDefaults.All);
+                    .SetSmallIcon(Resource.Drawable.ic_launcher)
+                    .SetDefaults(NotificationDefaults.All)
+                    .SetAutoCancel(true);
+                     
 
             builder.SetContentIntent(pending);
 

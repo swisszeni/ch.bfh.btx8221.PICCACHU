@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\ILocalize.cs" />
     <Compile Include="Models\MaintenanceInstructions.cs" />
     <Compile Include="Models\MaintenanceInstruction.cs" />
+    <Compile Include="Models\MaintenanceReminder.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\MicroClaveChangingEntry.cs" />
@@ -82,11 +83,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.de.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resx\AppResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resx\AppResources.fr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +92,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.it.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resx\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Shell.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\MasterDataViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
@@ -191,7 +193,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -412,11 +413,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
   <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
-  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
