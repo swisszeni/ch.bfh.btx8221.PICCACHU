@@ -254,31 +254,27 @@
   </data>
   <data name="UserMasterDataPageNameLabelText" xml:space="preserve">
     <value>Vorname:</value>
-    <comment>Vorname</comment>
+    <comment>Vorname, mit Doppelpunkt am Ende</comment>
   </data>
   <data name="UserMasterDataPagePhoneLabelText" xml:space="preserve">
     <value>Telefon:</value>
-    <comment>Telefon</comment>
+    <comment>Telefon, mit Doppelpunkt am Ende</comment>
   </data>
   <data name="UserMasterDataPagePlaceLabelText" xml:space="preserve">
     <value>Ort:</value>
-    <comment>Ort (Wohnort) </comment>
-  </data>
-  <data name="UserMasterDataPageSalutationLabelText" xml:space="preserve">
-    <value>Anrede:</value>
-    <comment>Anrede</comment>
+    <comment>Ort (Wohnort), mit Doppelpunkt am Ende</comment>
   </data>
   <data name="UserMasterDataPageStreetLabelText" xml:space="preserve">
     <value>Strasse:</value>
-    <comment>Strasse</comment>
+    <comment>Strasse, mit Doppelpunkt am Ende</comment>
   </data>
   <data name="UserMasterDataPageSurnameLabelText" xml:space="preserve">
     <value>Name:</value>
-    <comment>Name (Familienname)</comment>
+    <comment>Name (Familienname), mit Doppelpunkt am Ende</comment>
   </data>
   <data name="UserMasterDataPageZIPLabelText" xml:space="preserve">
     <value>PLZ:</value>
-    <comment>Postleitzahl</comment>
+    <comment>Postleitzahl, mit Doppelpunkt am Ende</comment>
   </data>
   <data name="UserMasterDataPageDeleteAllMasterDataButton" xml:space="preserve">
     <value>Alle Angaben löschen</value>
@@ -607,14 +603,6 @@
   <data name="MaintenanceInstructionTitleText" xml:space="preserve">
     <value>Wartungsanleitung</value>
     <comment>Titel für Wartungsanleitung (Wartungsanleitung)</comment>
-  </data>
-  <data name="UserMasterDataPageMissText" xml:space="preserve">
-    <value>Frau</value>
-    <comment>Übersetzung "Frau" als Anrede</comment>
-  </data>
-  <data name="UserMasterDataPageMisterText" xml:space="preserve">
-    <value>Herr</value>
-    <comment>Übersetzung "Herr" als Anrede</comment>
   </data>
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
     <value>Führungsdrahtslänge in cm:

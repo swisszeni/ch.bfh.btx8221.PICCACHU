@@ -309,37 +309,32 @@
         <trans-unit id="UserMasterDataPageNameLabelText" translate="yes" xml:space="preserve">
           <source>Name:</source>
           <target state="translated">Vorname:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Vorname</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Vorname, mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPagePhoneLabelText" translate="yes" xml:space="preserve">
           <source>Phone:</source>
           <target state="translated">Telefon:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Telefon</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Telefon, mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPagePlaceLabelText" translate="yes" xml:space="preserve">
           <source>Place:</source>
           <target state="translated">Ort:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Ort (Wohnort) </note>
-        </trans-unit>
-        <trans-unit id="UserMasterDataPageSalutationLabelText" translate="yes" xml:space="preserve">
-          <source>Salutation:</source>
-          <target state="translated">Anrede:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Anrede</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Ort (Wohnort), mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageStreetLabelText" translate="yes" xml:space="preserve">
           <source>Street:</source>
           <target state="translated">Strasse:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Strasse</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Strasse, mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageSurnameLabelText" translate="yes" xml:space="preserve">
           <source>Surname:</source>
           <target state="translated">Name:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Name (Familienname)</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Name (Familienname), mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageZIPLabelText" translate="yes" xml:space="preserve">
           <source>ZIP:</source>
           <target state="translated">PLZ:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Postleitzahl</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Postleitzahl, mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageDeleteAllMasterDataButton" translate="yes" xml:space="preserve">
           <source>Delte my data</source>
@@ -751,16 +746,6 @@
           <target state="translated">Wartungsanleitung</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Titel für Wartungsanleitung (Wartungsanleitung)</note>
         </trans-unit>
-        <trans-unit id="UserMasterDataPageMissText" translate="yes" xml:space="preserve">
-          <source>Miss</source>
-          <target state="translated">Frau</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Frau" als Anrede</note>
-        </trans-unit>
-        <trans-unit id="UserMasterDataPageMisterText" translate="yes" xml:space="preserve">
-          <source>Mister</source>
-          <target state="translated">Herr</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "Herr" als Anrede</note>
-        </trans-unit>
         <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
           <source>Guide wire length in cm:</source>
           <target state="translated">Führungsdrahtslänge in cm:
@@ -1011,6 +996,21 @@
           <source>Unlimited</source>
           <target state="translated">Unbegrenzt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Bietet dem User an, die Wartungserinnerung für eine unbegrenzte Zeit einzurichten</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageGenderLabelText" translate="yes" xml:space="preserve">
+          <source>Gender:</source>
+          <target state="new">Gender:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Geschlecht, mit Doppelpunkt am Ende</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageFemale" translate="yes" xml:space="preserve">
+          <source>Female</source>
+          <target state="new">Female</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "weiblich" als Geschlecht</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageMale" translate="yes" xml:space="preserve">
+          <source>Male</source>
+          <target state="new">Male</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "männlich" als Geschlecht</note>
         </trans-unit>
       </group>
     </body>
