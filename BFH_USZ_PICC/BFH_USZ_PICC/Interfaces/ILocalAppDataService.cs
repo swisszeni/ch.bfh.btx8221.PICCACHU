@@ -8,6 +8,8 @@ namespace BFH_USZ_PICC.Interfaces
 {
     public interface ILocalAppDataService
     {
+        Task ResetLocalAppDataAsync();
+
         // GlossaryEntry
 
         // KnowledgeEntry

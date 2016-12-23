@@ -2,6 +2,7 @@
 using System.IO;
 using Windows.Storage;
 using Xamarin.Forms;
+using System;
 
 [assembly: Dependency(typeof(BFH_USZ_PICC.UWP.DependencyServices.FileHelper_UWP))]
 namespace BFH_USZ_PICC.UWP.DependencyServices
@@ -18,9 +19,36 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
             return System.IO.File.Exists(GetLocalUserdataDatabaseFilePath(filename));
         }
 
+        public bool DeleteLocalUserdataDatabaseFile(string filename)
+        {
+            try
+            {
+                System.IO.File.Delete(GetLocalUserdataDatabaseFilePath(filename));
+            } catch
+            {
+                return false;
+            }
+            
+            return true;
+        }
+
         public string GetLocalAppdataDatabaseFilePath(string filename)
         {
             return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
+        }
+
+        public bool DeleteLocalAppdataDatabaseFile(string filename)
+        {
+            try
+            {
+                System.IO.File.Delete(GetLocalAppdataDatabaseFilePath(filename));
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
