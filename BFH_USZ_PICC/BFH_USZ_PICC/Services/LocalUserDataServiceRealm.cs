@@ -16,7 +16,34 @@ namespace BFH_USZ_PICC.Services
 
         public LocalUserDataServiceRealm()
         {
-            _database = Realm.GetInstance(DependencyService.Get<IFileHelper>().GetLocalUserdataDatabaseFilePath("Userdata.realm"));
+            string databaseName = "Userdata.realm";
+
+            // Setting up the Configuration of our realm instance
+            var config = new RealmConfiguration(DependencyService.Get<IFileHelper>().GetLocalUserdataDatabaseFilePath(databaseName));
+            config.SchemaVersion = 1;
+            // If we have a database, get the current key. Otherwise generate a new one
+            if(DependencyService.Get<IFileHelper>().LocalUserdataDatabaseFileExists(databaseName))
+            {
+                // Get the existing key
+            } else
+            {
+                // Generate new key. Normally instantiating a new Random inside a method is a horrible idea. 
+                // But since we don't need any random numbers elsewhere in the App, this is sufficient
+                Random rnd = new Random();
+                byte[] key = new byte[64];
+                rnd.NextBytes(key);
+
+                // Convert the key to a Base64 encoded string to store it
+                string keyString = Convert.ToBase64String(key);
+                // Store the key in the secure storage of the OS
+                // http://shribits.blogspot.ch/2015/10/using-xamarinforms-store-value-in.html
+                XLabs.
+                CrossSecureStorage.Current.SetValue("UserdataKey", keyString);
+
+                config.EncryptionKey = key;
+            }
+
+            _database = Realm.GetInstance(config);
         }
 
         #region MasterData

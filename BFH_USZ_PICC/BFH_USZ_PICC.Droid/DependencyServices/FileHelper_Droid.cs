@@ -24,6 +24,11 @@ namespace BFH_USZ_PICC.Droid.DependencyServices
             return System.IO.Path.Combine(path, filename);
         }
 
+        public bool LocalUserdataDatabaseFileExists(string filename)
+        {
+            return System.IO.File.Exists(GetLocalUserdataDatabaseFilePath(filename));
+        }
+
         public string GetLocalAppdataDatabaseFilePath(string filename)
         {
             string path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);

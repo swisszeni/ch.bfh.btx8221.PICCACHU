@@ -13,6 +13,11 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
             return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
         }
 
+        public bool LocalUserdataDatabaseFileExists(string filename)
+        {
+            return System.IO.File.Exists(GetLocalUserdataDatabaseFilePath(filename));
+        }
+
         public string GetLocalAppdataDatabaseFilePath(string filename)
         {
             return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);

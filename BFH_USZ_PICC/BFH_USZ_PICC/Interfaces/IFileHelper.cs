@@ -9,6 +9,7 @@ namespace BFH_USZ_PICC.Interfaces
     public interface IFileHelper
     {
         string GetLocalUserdataDatabaseFilePath(string filename);
+        bool LocalUserdataDatabaseFileExists(string filename);
         string GetLocalAppdataDatabaseFilePath(string filename);
     }
 }
