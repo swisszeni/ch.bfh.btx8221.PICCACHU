@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Models;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Plugin.TextToSpeech;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,11 +13,11 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class MaintenanceInstructionViewModel : ViewModelBase
     {
-        private List<MaintenanceInstruction> _maintenanceInstruction;
-        public List<MaintenanceInstruction> MaintenanceInstruction
+        private List<MaintenanceInstruction> _maintenanceInstructionSteps;
+        public List<MaintenanceInstruction> MaintenanceInstructionSteps
         {
-            get { return _maintenanceInstruction; }
-            set { Set(ref _maintenanceInstruction, value); }
+            get { return _maintenanceInstructionSteps; }
+            set { Set(ref _maintenanceInstructionSteps, value); }
         }
 
         private int _carouselPosition;
@@ -38,8 +39,10 @@ namespace BFH_USZ_PICC.ViewModels
         }
 
         private RelayCommand _toggleTextToVoiceCommand;
-        public RelayCommand ToggleTextToVoiceCommand => _toggleTextToVoiceCommand ?? (_toggleTextToVoiceCommand = new RelayCommand(async () =>
+        public RelayCommand ToggleTextToVoiceCommand => _toggleTextToVoiceCommand ?? (_toggleTextToVoiceCommand = new RelayCommand(() =>
         {
+            
+            CrossTextToSpeech.Current.Speak(MaintenanceInstructionSteps.ElementAt(CarouselPosition).Explanation);
             //Check if the user really wants to leave the page
             //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             //{

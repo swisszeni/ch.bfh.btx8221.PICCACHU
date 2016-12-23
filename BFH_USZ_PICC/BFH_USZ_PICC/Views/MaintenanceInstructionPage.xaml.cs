@@ -15,7 +15,7 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
             // FIXME move to ViewModel and change navigation parameter
-            ((MaintenanceInstructionViewModel)BindingContext).MaintenanceInstruction = instruction; 
+            ((MaintenanceInstructionViewModel)BindingContext).MaintenanceInstructionSteps = instruction; 
            
         }
     }

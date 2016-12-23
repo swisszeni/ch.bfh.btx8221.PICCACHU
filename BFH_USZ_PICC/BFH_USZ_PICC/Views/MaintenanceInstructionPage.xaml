@@ -35,7 +35,7 @@
             </StackLayout>
         </Grid>
         <cv:CarouselView x:Name="InstructionCarousel" Grid.Row="1"
-                         ItemsSource="{Binding MaintenanceInstruction}"
+                         ItemsSource="{Binding MaintenanceInstructionSteps}"
                          Position="{Binding CarouselPosition, Mode=TwoWay}">
             <cv:CarouselView.ItemTemplate>
                 <DataTemplate>
