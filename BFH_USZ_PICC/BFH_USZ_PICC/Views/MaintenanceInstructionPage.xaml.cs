@@ -14,7 +14,8 @@ namespace BFH_USZ_PICC.Views
         public MaintenanceInstructionPage(ContentPage contained, List<MaintenanceInstruction> instruction) : base(contained)
         {
             InitializeComponent();
-            ((MaintenanceInstructionViewModel)BindingContext).MaintenanceInstruction = new ObservableCollection<MaintenanceInstruction>(instruction); 
+            // FIXME move to ViewModel and change navigation parameter
+            ((MaintenanceInstructionViewModel)BindingContext).MaintenanceInstruction = instruction; 
            
         }
     }

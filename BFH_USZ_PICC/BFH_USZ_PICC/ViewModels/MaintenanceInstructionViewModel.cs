@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Models;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,19 +12,69 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class MaintenanceInstructionViewModel : ViewModelBase
     {
-        private ObservableCollection<MaintenanceInstruction> _maintenanceInstruction;
-        public ObservableCollection<MaintenanceInstruction> MaintenanceInstruction
+        private List<MaintenanceInstruction> _maintenanceInstruction;
+        public List<MaintenanceInstruction> MaintenanceInstruction
         {
             get { return _maintenanceInstruction; }
+            set { Set(ref _maintenanceInstruction, value); }
+        }
+
+        private int _carouselPosition;
+        public int CarouselPosition
+        {
+            get { return _carouselPosition; }
             set
             {
-                if (Set(ref _maintenanceInstruction, value))
+                if (Set(ref _carouselPosition, value))
                 {
-                    // Update all bindings
-                    RaisePropertyChanged("");
+                    RaisePropertyChanged(() => CarouselPositionText);
                 }
             }
         }
 
+        public string CarouselPositionText
+        {
+            get { return $"{CarouselPosition+1}"; }
+        }
+
+        private RelayCommand _toggleTextToVoiceCommand;
+        public RelayCommand ToggleTextToVoiceCommand => _toggleTextToVoiceCommand ?? (_toggleTextToVoiceCommand = new RelayCommand(async () =>
+        {
+            //Check if the user really wants to leave the page
+            //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            //{
+            //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            //}
+        }));
+
+        private RelayCommand _toggleVoiceControlCommand;
+        public RelayCommand ToggleVoiceControlCommand => _toggleVoiceControlCommand ?? (_toggleVoiceControlCommand = new RelayCommand(async () =>
+        {
+            //Check if the user really wants to leave the page
+            //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            //{
+            //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            //}
+        }));
+
+        private RelayCommand _goToPreviousStepCommand;
+        public RelayCommand GoToPreviousStepCommand => _goToPreviousStepCommand ?? (_goToPreviousStepCommand = new RelayCommand(async () =>
+        {
+            //Check if the user really wants to leave the page
+            //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            //{
+            //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            //}
+        }, () => { return CarouselPosition > 0; }));
+
+        private RelayCommand _goToNextStepCommand;
+        public RelayCommand GoToNextStepCommand => _goToNextStepCommand ?? (_goToNextStepCommand = new RelayCommand(async () =>
+        {
+            //Check if the user really wants to leave the page
+            //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            //{
+            //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            //}
+        }, () => { return CarouselPosition < 0; }));
     }
 }
