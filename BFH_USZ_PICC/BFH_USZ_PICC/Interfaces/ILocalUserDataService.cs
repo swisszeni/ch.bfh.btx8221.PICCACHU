@@ -9,6 +9,8 @@ namespace BFH_USZ_PICC.Interfaces
 {
     public interface ILocalUserDataService
     {
+        Task ResetLocalUserDataAsync();
+
         // MasterData
         Task<List<UserMasterData>> GetMasterDataAsync();
         Task<int> SaveMasterDataAsync(UserMasterData masterData);

@@ -13,16 +13,34 @@ namespace BFH_USZ_PICC.Services
     public class LocalUserDataServiceSQLite : ILocalUserDataService
     {
         private SQLiteAsyncConnection _database;
+        private string _databaseName = "Userdata.db3";
+        private string _databaseKeyName = "UserdataDBKey";
 
         public LocalUserDataServiceSQLite()
         {
-            _database = new SQLiteAsyncConnection(DependencyService.Get<IFileHelper>().GetLocalUserdataDatabaseFilePath("Userdata.db3"));
+            CreateOrConnectDatabase();
+        }
+
+        private void CreateOrConnectDatabase()
+        {
+            _database = new SQLiteAsyncConnection(DependencyService.Get<IFileHelper>().GetLocalUserdataDatabaseFilePath(_databaseName));
             CreateTablesIfNotExist();
         }
 
         private void CreateTablesIfNotExist()
         {
             _database.CreateTableAsync<UserMasterData>().Wait();
+        }
+        
+        public Task ResetLocalUserDataAsync()
+        {
+            // Delete the existing Database
+            DependencyService.Get<IFileHelper>().DeleteLocalUserdataDatabaseFile(_databaseName);
+
+            // Create a new Database
+            CreateOrConnectDatabase();
+
+            return Task.FromResult(true);
         }
 
         #region MasterData

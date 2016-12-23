@@ -10,6 +10,8 @@ namespace BFH_USZ_PICC.Interfaces
     {
         string GetLocalUserdataDatabaseFilePath(string filename);
         bool LocalUserdataDatabaseFileExists(string filename);
+        bool DeleteLocalUserdataDatabaseFile(string filename);
         string GetLocalAppdataDatabaseFilePath(string filename);
+        bool DeleteLocalAppdataDatabaseFile(string filename);
     }
 }

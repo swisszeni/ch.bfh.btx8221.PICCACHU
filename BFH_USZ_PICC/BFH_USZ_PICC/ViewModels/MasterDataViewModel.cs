@@ -44,40 +44,6 @@ namespace BFH_USZ_PICC.ViewModels
             LoadFromModel();
         }
 
-        //private void GetOrCreateMasterData_Realm()
-        //{
-        //    _realm = Realm.GetInstance();
-
-        //    // Get the MasterData. There should be only one instance of it. If the App is started for the first time, there is none.
-        //    var masterDataEntries = _realm.All<UserMasterData>();
-        //    if (masterDataEntries.Count() > 0)
-        //    {
-        //        _displayingmasterData = masterDataEntries.First();
-        //    }
-        //    else
-        //    {
-        //        // There is no existing MasterData, create one!
-        //        _displayingmasterData = new UserMasterData();
-        //        _realm.Write(() =>
-        //        {
-        //            _realm.Add(_displayingmasterData);
-        //        });
-        //    }
-        //}
-
-        //private void GetOrCreateMasterData_SQLite()
-        //{
-        //    _displayingmasterData = new UserMasterData();
-        //}
-
-        //private void DeleteMasterData_Realm()
-        //{
-        //    _realm.Write(() =>
-        //    {
-        //        _realm.RemoveAll<UserMasterData>();
-        //    });
-        //}
-
         public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
         {
             if (parameter is List<object> && ((List<object>)parameter).Count > 0)
@@ -282,8 +248,8 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                LoadFromModel();
                 EndEditing();
+                LoadFromModel();
             }
         }));
 
