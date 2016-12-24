@@ -6,6 +6,7 @@
     "Realm": "0.81.0",
     "sqlite-net-pcl": "1.2.1",
     "Xam.Plugins.Settings": "2.5.1",
+    "Xam.Plugins.TextToSpeech": "2.0.0",
     "Xamarin.Forms": "2.3.3.175",
     "Xamarin.Forms.CarouselView": "2.3.0-pre2",
     "XLabs.Forms": "2.0.5782",

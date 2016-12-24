@@ -25,7 +25,8 @@ namespace BFH_USZ_PICC.Models
             {
                 KnowledgeEntryTypeGroup generalGroup = new KnowledgeEntryTypeGroup("Allgemein", "Allgemein");
                 KnowledgeEntryTypeGroup homeGroup = new KnowledgeEntryTypeGroup("Zuhause", "Zuhause");
-                knowledgeEntryList = new List<KnowledgeEntryTypeGroup> { generalGroup, homeGroup };
+                KnowledgeEntryTypeGroup maintenanceInstructionsGroup = new KnowledgeEntryTypeGroup("Wartungsanleitungen", "Wartungsanleitungen");
+                knowledgeEntryList = new List<KnowledgeEntryTypeGroup> { generalGroup, homeGroup, maintenanceInstructionsGroup };
 
                 // "Was ist ein PICC?" page information
                 List<IKnowledgeEntryElement> whatIsAPiccEntry = new List<IKnowledgeEntryElement>();
@@ -114,6 +115,8 @@ namespace BFH_USZ_PICC.Models
                 
                 KnowledgeEntry preventiveMeasures = new KnowledgeEntry("Vorsichtsmassnahmen", preventiveMeasuresEntry, glossaryWordsForPreventiveMeasuresEntry);
                 homeGroup.Add(preventiveMeasures);
+
+
             }
             return knowledgeEntryList;
         }

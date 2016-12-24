@@ -50,6 +50,7 @@
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
     <Compile Include="Interfaces\IFileHelper.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
+    <Compile Include="Interfaces\IKnowledgeBaseEntry.cs" />
     <Compile Include="Interfaces\ILocalAppDataService.cs" />
     <Compile Include="Interfaces\ILocalUserDataService.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
@@ -57,8 +58,9 @@
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
     <Compile Include="Interfaces\ILocalize.cs" />
-    <Compile Include="Models\MaintenanceInstructions.cs" />
     <Compile Include="Models\MaintenanceInstruction.cs" />
+    <Compile Include="Models\MaintenanceInstructions.cs" />
+    <Compile Include="Models\MaintenanceInstructionStep.cs" />
     <Compile Include="Models\MaintenanceReminder.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
@@ -310,6 +312,14 @@
     </Reference>
     <Reference Include="Plugin.Settings.Abstractions, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\portable-net45+wp80+win8+wpa81\Plugin.Settings.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.TextToSpeech.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech.Abstractions, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.TextToSpeech.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Realm, Version=0.81.0.0, Culture=neutral, processorArchitecture=MSIL">

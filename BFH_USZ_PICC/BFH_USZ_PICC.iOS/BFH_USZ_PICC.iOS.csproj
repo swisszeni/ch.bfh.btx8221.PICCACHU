@@ -26,7 +26,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>True</MtouchDebug>
-    <CodesignKey>iPhone Developer: Florian Schnyder (6MQU9RCR8H)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchSdkVersion>10.1</MtouchSdkVersion>
     <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
@@ -62,7 +62,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Florian Schnyder (6MQU9RCR8H)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignProvision>867b871d-10b5-457f-8676-0798a0cda26f</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -115,7 +115,9 @@
       <SubType>Designer</SubType>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="devcert.p12" />
     <None Include="provisioning.mobileprovision" />
   </ItemGroup>
@@ -181,6 +183,14 @@
     </Reference>
     <Reference Include="Plugin.Settings.Abstractions, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\Xamarin.iOS10\Plugin.TextToSpeech.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.TextToSpeech.Abstractions, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.2.0.0\lib\Xamarin.iOS10\Plugin.TextToSpeech.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Realm, Version=0.81.0.0, Culture=neutral, processorArchitecture=MSIL">

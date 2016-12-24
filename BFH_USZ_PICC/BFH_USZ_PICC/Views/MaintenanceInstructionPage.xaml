@@ -1,24 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.MaintenanceInstructionPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             Title="{i18n:Translate MaintenanceInstructionTitleText}"
-             BindingContext="{Binding [MaintenanceInstructionViewModel], Source={StaticResource ViewModelLocator}}">
-  <Grid>
-    <cv:CarouselView x:Name="InstructionCarousel" ItemsSource="{Binding MaintenanceInstruction}">
-      <cv:CarouselView.ItemTemplate>
-        <DataTemplate>
-          <ScrollView>
-            <StackLayout>
-              <Image Source="{Binding ImageUrl}" Margin ="10,10,10,10"/>
-              <Label Text="{Binding Explanation}" Margin ="10,10,10,10" FontSize="20" />
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.MaintenanceInstructionPage"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+                   Title="{i18n:Translate MaintenanceInstructionTitleText}"
+                   BindingContext="{Binding [MaintenanceInstructionViewModel], Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Padding="10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1"
+                   Text="{Binding CarouselPositionText}"
+                   VerticalOptions="Center" />
+            <StackLayout Grid.Column="2"
+                         Orientation="Horizontal"
+                         HorizontalOptions="End">
+                <Button Text="V"
+                        BackgroundColor="Gray"
+                        Command="{Binding ToggleTextToVoiceCommand}" />
+                <Button Text="D"
+                        Margin="10,0"
+                        BackgroundColor="Gray"
+                        Command="{Binding ToggleVoiceControlCommand}" />
             </StackLayout>
-          </ScrollView>
-        </DataTemplate>
-      </cv:CarouselView.ItemTemplate>
-    </cv:CarouselView>
-  </Grid>
+        </Grid>
+        <cv:CarouselView x:Name="InstructionCarousel" Grid.Row="1"
+                         ItemsSource="{Binding MaintenanceInstruction.InstructionSteps}"
+                         Position="{Binding CarouselPosition, Mode=TwoWay}">
+            <cv:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ScrollView>
+                        <StackLayout>
+                            <Image Source="{Binding ImageUrl}"
+                                   Margin="10,10,10,10" />
+                            <Label Text="{Binding Explanation}"
+                                   Margin="10,10,10,10"
+                                   FontSize="20" />
+                        </StackLayout>
+                    </ScrollView>
+                </DataTemplate>
+            </cv:CarouselView.ItemTemplate>
+        </cv:CarouselView>
+        <Grid Grid.Row="2"
+              Padding="10,0"
+              BackgroundColor="#0057A2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    Text="{i18n:Translate MaintenaceInstructionPagePreviousButtonText}"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold"
+                    Command="{Binding GoToPreviousStepCommand}" />
+            <Button Grid.Column="2"
+                    Text="{i18n:Translate MaintenaceInstructionPageNextButtonText}"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold"
+                    Command="{Binding GoToNextStepCommand}"/>
+        </Grid>
+    </Grid>
 </d:BaseContentPage>

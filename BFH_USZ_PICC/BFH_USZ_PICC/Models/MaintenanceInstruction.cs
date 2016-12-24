@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
 {
-   
-    public class MaintenanceInstruction
+    public class MaintenanceInstruction : IKnowledgeBaseEntry
     {
-        public string ImageUrl { get; set; }
-        public string Explanation { get; set; }
-
-        
-        public MaintenanceInstruction(string imageUrl, string explanation)
+        public MaintenanceInstruction(string title, List<MaintenanceInstructionStep> instructionSteps)
         {
-            ImageUrl = imageUrl;
-            Explanation = explanation;
+            Title = title;
+            InstructionSteps = instructionSteps;
         }
+
+        public string Title { get; }
+
+        public List<MaintenanceInstructionStep> InstructionSteps { get; }
     }
 }

@@ -11,11 +11,9 @@ namespace BFH_USZ_PICC.Views
 {
     public sealed partial class MaintenanceInstructionPage : BaseContentPage
     {
-        public MaintenanceInstructionPage(ContentPage contained, List<MaintenanceInstruction> instruction) : base(contained)
+        public MaintenanceInstructionPage(ContentPage contained, MaintenanceInstruction instruction) : base(contained)
         {
             InitializeComponent();
-            ((MaintenanceInstructionViewModel)BindingContext).MaintenanceInstruction = new ObservableCollection<MaintenanceInstruction>(instruction); 
-           
         }
     }
 }

@@ -146,6 +146,8 @@ namespace BFH_USZ_PICC.Droid
 			global::HockeyApp.Resource.Style.HockeyApp_ButtonStyle = global::BFH_USZ_PICC.Droid.Resource.Style.HockeyApp_ButtonStyle;
 			global::HockeyApp.Resource.Style.HockeyApp_EditTextStyle = global::BFH_USZ_PICC.Droid.Resource.Style.HockeyApp_EditTextStyle;
 			global::HockeyApp.Resource.Style.HockeyApp_SingleLineInputStyle = global::BFH_USZ_PICC.Droid.Resource.Style.HockeyApp_SingleLineInputStyle;
+			global::Plugin.TextToSpeech.Resource.String.ApplicationName = global::BFH_USZ_PICC.Droid.Resource.String.ApplicationName;
+			global::Plugin.TextToSpeech.Resource.String.Hello = global::BFH_USZ_PICC.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::BFH_USZ_PICC.Droid.Resource.Attribute.actionBarSize;
 			global::XLabs.Forms.Resource.Animation.abc_fade_in = global::BFH_USZ_PICC.Droid.Resource.Animation.abc_fade_in;
 			global::XLabs.Forms.Resource.Animation.abc_fade_out = global::BFH_USZ_PICC.Droid.Resource.Animation.abc_fade_out;
