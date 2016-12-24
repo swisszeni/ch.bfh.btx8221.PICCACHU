@@ -35,7 +35,7 @@
             </StackLayout>
         </Grid>
         <cv:CarouselView x:Name="InstructionCarousel" Grid.Row="1"
-                         ItemsSource="{Binding MaintenanceInstructionSteps}"
+                         ItemsSource="{Binding MaintenanceInstruction.InstructionSteps}"
                          Position="{Binding CarouselPosition, Mode=TwoWay}">
             <cv:CarouselView.ItemTemplate>
                 <DataTemplate>
@@ -60,13 +60,13 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0"
-                    Text="Back"
+                    Text="{i18n:Translate MaintenaceInstructionPagePreviousButtonText}"
                     TextColor="White"
                     BackgroundColor="Transparent"
                     FontAttributes="Bold"
                     Command="{Binding GoToPreviousStepCommand}" />
             <Button Grid.Column="2"
-                    Text="Next"
+                    Text="{i18n:Translate MaintenaceInstructionPageNextButtonText}"
                     TextColor="White"
                     BackgroundColor="Transparent"
                     FontAttributes="Bold"

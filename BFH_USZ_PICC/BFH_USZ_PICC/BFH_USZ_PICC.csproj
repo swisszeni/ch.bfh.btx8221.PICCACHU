@@ -50,6 +50,7 @@
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
     <Compile Include="Interfaces\IFileHelper.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
+    <Compile Include="Interfaces\IKnowledgeBaseEntry.cs" />
     <Compile Include="Interfaces\ILocalAppDataService.cs" />
     <Compile Include="Interfaces\ILocalUserDataService.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
@@ -57,8 +58,9 @@
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
     <Compile Include="Interfaces\ILocalize.cs" />
-    <Compile Include="Models\MaintenanceInstructions.cs" />
     <Compile Include="Models\MaintenanceInstruction.cs" />
+    <Compile Include="Models\MaintenanceInstructions.cs" />
+    <Compile Include="Models\MaintenanceInstructionStep.cs" />
     <Compile Include="Models\MaintenanceReminder.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />

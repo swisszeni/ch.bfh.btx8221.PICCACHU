@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
 {
-    public class KnowledgeEntry
+    public class KnowledgeEntry : IKnowledgeBaseEntry
     {
         public string Title { get; }
         public List<IKnowledgeEntryElement> KnowledgeElements { get; }
