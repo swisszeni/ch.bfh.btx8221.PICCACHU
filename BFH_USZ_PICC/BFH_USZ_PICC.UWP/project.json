@@ -9,6 +9,8 @@
     "Xam.Plugins.TextToSpeech": "2.0.0",
     "Xamarin.Forms": "2.3.3.175",
     "Xamarin.Forms.CarouselView": "2.3.0-pre2",
+    "XLabs.Forms": "2.0.5782",
+    "XLabs.Platform": "2.0.5782",
     "ZXing.Net.Mobile": "2.1.47",
     "ZXing.Net.Mobile.Forms": "2.1.47"
   },

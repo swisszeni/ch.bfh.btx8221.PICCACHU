@@ -7,16 +7,73 @@ using System.Threading.Tasks;
 using BFH_USZ_PICC.Models;
 using Realms;
 using Xamarin.Forms;
+using XLabs.Platform.Services;
+using Microsoft.Practices.ServiceLocation;
 
 namespace BFH_USZ_PICC.Services
 {
     public class LocalUserDataServiceRealm : ILocalUserDataService
     {
         private Realm _database;
+        private string _databaseName = "Userdata.realm";
+        private string _databaseKeyName = "ch.bfh.i4m1.picc.UserdataDBKey";
 
         public LocalUserDataServiceRealm()
         {
-            _database = Realm.GetInstance(DependencyService.Get<IFileHelper>().GetLocalUserdataDatabaseFilePath("Userdata.realm"));
+            CreateOrConnectDatabase();
+        }
+
+        private void CreateOrConnectDatabase()
+        {
+            // Setting up the Configuration of our realm instance
+            var config = new RealmConfiguration(DependencyService.Get<IFileHelper>().GetLocalUserdataDatabaseFilePath(_databaseName));
+            config.SchemaVersion = 1;
+            // If we have a database, get the current key. Otherwise generate a new one
+            if (DependencyService.Get<IFileHelper>().LocalUserdataDatabaseFileExists(_databaseName))
+            {
+                // Get the existing key
+                ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
+                config.EncryptionKey = keyStore.Retrieve(_databaseKeyName);
+            }
+            else
+            {
+                // Create a new key
+                config.EncryptionKey = CreateAndStoreDatabaseKey();
+                
+            }
+
+            _database = Realm.GetInstance(config);
+        }
+
+        private byte[] CreateAndStoreDatabaseKey()
+        {
+            // Generate new key. Normally instantiating a new Random inside a method is a horrible idea. 
+            // But since we don't need any random numbers elsewhere in the App, this is sufficient
+            Random rnd = new Random();
+            byte[] key = new byte[64];
+            rnd.NextBytes(key);
+
+            // Store the key in the secure storage of the OS
+            ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
+            if(keyStore.Contains(_databaseKeyName))
+            {
+                keyStore.Delete(_databaseKeyName);
+            }
+
+            keyStore.Store(_databaseKeyName, key);
+
+            return key;
+        }
+
+        public Task ResetLocalUserDataAsync()
+        {
+            // Delete the existing Database
+            DependencyService.Get<IFileHelper>().DeleteLocalUserdataDatabaseFile(_databaseName);
+
+            // Create a new Database
+            CreateOrConnectDatabase();
+
+            return Task.FromResult(true);
         }
 
         #region MasterData

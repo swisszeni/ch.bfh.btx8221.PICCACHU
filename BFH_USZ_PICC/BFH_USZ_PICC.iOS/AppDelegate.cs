@@ -7,6 +7,8 @@ using Foundation;
 using UIKit;
 using HockeyApp.iOS;
 using BFH_USZ_PICC.Utilitys;
+using GalaSoft.MvvmLight.Ioc;
+using XLabs.Platform.Services;
 
 namespace BFH_USZ_PICC.iOS
 {
@@ -31,6 +33,9 @@ namespace BFH_USZ_PICC.iOS
 
             // Request notification permissions from the user
             Xamarin.Forms.Device.BeginInvokeOnMainThread(RegisterNotificationTypes);
+
+            // Register the platofrm specific service
+            RegisterIOC();
 
             return base.FinishedLaunching(app, options);
         }
@@ -62,6 +67,11 @@ namespace BFH_USZ_PICC.iOS
                 var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
                 UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
             }
+        }
+
+        private void RegisterIOC()
+        {
+            SimpleIoc.Default.Register<ISecureStorage, SecureStorage>();
         }
     }
 }

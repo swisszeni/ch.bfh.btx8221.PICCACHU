@@ -21,6 +21,25 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             return Path.Combine(libFolder, filename);
         }
 
+        public bool LocalUserdataDatabaseFileExists(string filename)
+        {
+            return System.IO.File.Exists(GetLocalUserdataDatabaseFilePath(filename));
+        }
+
+        public bool DeleteLocalUserdataDatabaseFile(string filename)
+        {
+            try
+            {
+                System.IO.File.Delete(GetLocalUserdataDatabaseFilePath(filename));
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public string GetLocalAppdataDatabaseFilePath(string filename)
         {
             string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -32,6 +51,20 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             }
 
             return Path.Combine(libFolder, filename);
+        }
+
+        public bool DeleteLocalAppdataDatabaseFile(string filename)
+        {
+            try
+            {
+                System.IO.File.Delete(GetLocalAppdataDatabaseFilePath(filename));
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

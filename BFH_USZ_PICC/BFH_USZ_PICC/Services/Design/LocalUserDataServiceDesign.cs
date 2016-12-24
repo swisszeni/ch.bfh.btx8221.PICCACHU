@@ -10,6 +10,11 @@ namespace BFH_USZ_PICC.Services.Design
 {
     public class LocalUserDataServiceDesign : ILocalUserDataService
     {
+        public Task ResetLocalUserDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         #region MasterData
 
         public Task<int> SaveMasterDataAsync(UserMasterData masterData)
