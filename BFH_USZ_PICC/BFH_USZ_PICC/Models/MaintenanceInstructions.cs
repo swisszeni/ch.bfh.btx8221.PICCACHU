@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Resx;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace BFH_USZ_PICC.Models
                 instructions.Add(new MaintenanceInstructionStep("Verbandswechsel11.jpg", "Wichtig: \nFeuchtigkeit vor dem Anbringen des Verbandes bzw. des StatLocks gut trockenen lassen!"));
                 instructions.Add(new MaintenanceInstructionStep("Verbandswechsel12.jpg", "Kann man mit dem Verband duschen und baden? Der Folienverband ist luftdurchlässig aber wasserdicht. Duschen ist problemlos möglich, auf Baden oder einen Schwimmbadbesuch ist in dieser Zeit zu verzichten, da das Infektionsrisiko zu hoch ist."));
 
-                _bandageChangingInstruction = new MaintenanceInstruction("Verbandswechsel", instructions);
+                _bandageChangingInstruction = new MaintenanceInstruction(AppResources.JournalOverviewPageBandagesChangingEntry, instructions);
             }
             return _bandageChangingInstruction;
 
@@ -53,7 +54,7 @@ namespace BFH_USZ_PICC.Models
                 instructions.Add(new MaintenanceInstructionStep("StatLock6.jpg", "Nun die Schutzfolie entfernen."));
                 instructions.Add(new MaintenanceInstructionStep("StatLock7.jpg", "Erst jetzt den StatLock auf das vorbereitete Hautfeld so aufkleben, dass möglichst keine Zugbelastung auf dem Katheter entsteht!"));
 
-                _statLockInstrution = new MaintenanceInstruction("Wechsel StatLock", instructions);
+                _statLockInstrution = new MaintenanceInstruction(AppResources.JournalOverviewPageStatlockChangingEntry, instructions);
             }
             return _statLockInstrution;
 
@@ -76,7 +77,7 @@ namespace BFH_USZ_PICC.Models
                 instructions.Add(new MaintenanceInstructionStep("MicroClave9.jpg", "Wie wechselt man den MicroClave? \nZum Wechseln des MicroClave wird zuerst die Klemme am Katheter geschlossen. Anschliessend wird der alte MicroClave abgeschraubt und entfernt. Nun wird der neue MicroClave steril aufgeschraubt."));
                 instructions.Add(new MaintenanceInstructionStep("MicroClave10.jpg", "Wichtig: \nAuch nach dem Anbringen des neuen MicroClave muss das System einmal gespült werden, um den positiven Druck aufzubauen. Dies erfolgt mit 20ml steriler Kochsalzlösung(NaCl 0.9 %) mit der Stopp - Push - Technik (Spülen – Stoppen – Spülen – Stoppen). Die Katheterklemme danach unbedingt offen lassen."));
 
-                _microClaveInstruction = new MaintenanceInstruction("Wechsel MicroClave", instructions);
+                _microClaveInstruction = new MaintenanceInstruction(AppResources.JournalOverviewPageMicroClaveChangingEntry, instructions);
             }
             return _microClaveInstruction;
 

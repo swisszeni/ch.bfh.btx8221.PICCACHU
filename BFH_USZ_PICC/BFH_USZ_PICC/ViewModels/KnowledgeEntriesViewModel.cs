@@ -1,4 +1,5 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using System;
@@ -21,18 +22,29 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        private KnowledgeEntry _selectedKnowledgeEntry;
-        public KnowledgeEntry SelectedKnowledgeEntry
+        private IKnowledgeBaseEntry _selectedKnowledgeEntry;
+        public IKnowledgeBaseEntry SelectedKnowledgeEntry
         {
             get { return _selectedKnowledgeEntry; }
             set
-            {   
+            {
                 Set(ref _selectedKnowledgeEntry, value);
 
                 //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
-                if (_selectedKnowledgeEntry != null)
+                if (value != null)
                 {
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { value }));
+                    var type = value.GetType();
+                    // Checks if the selected values type is KnowledgeEntry. If yes, navigate forward to KnowledgeEntryDetailPage
+                    if (type.Equals(typeof(KnowledgeEntry)))
+                    {
+                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { value }));
+
+                    }// Checks if the selected values type is MaintenanceInstruction. If yes, navigate forward to the related MaintenanceInstruction
+                    else if (type.Equals(typeof(MaintenanceInstruction)))
+                    {
+                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { value }));
+
+                    }
                 }
             }
         }

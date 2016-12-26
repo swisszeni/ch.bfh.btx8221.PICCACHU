@@ -999,32 +999,32 @@
         </trans-unit>
         <trans-unit id="UserMasterDataPageGenderLabelText" translate="yes" xml:space="preserve">
           <source>Gender:</source>
-          <target state="new">Gender:</target>
+          <target state="translated">Geschlecht:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Geschlecht, mit Doppelpunkt am Ende</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageFemale" translate="yes" xml:space="preserve">
           <source>Female</source>
-          <target state="new">Female</target>
+          <target state="translated">Weiblich</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "weiblich" als Geschlecht</note>
         </trans-unit>
         <trans-unit id="UserMasterDataPageMale" translate="yes" xml:space="preserve">
           <source>Male</source>
-          <target state="new">Male</target>
+          <target state="translated">Männlich</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Übersetzung "männlich" als Geschlecht</note>
         </trans-unit>
         <trans-unit id="MaintenaceInstructionCurrentPageNumberText" translate="yes" xml:space="preserve">
           <source>{0} of {1}</source>
-          <target state="new">{0} of {1}</target>
+          <target state="translated">{0} von {1}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text um die Nummer des Schritts anzuzeigen (bspw. 3 von5). {0} und {1} sind Platzhalter.</note>
         </trans-unit>
         <trans-unit id="MaintenaceInstructionPageNextButtonText" translate="yes" xml:space="preserve">
           <source>Next</source>
-          <target state="new">Next</target>
+          <target state="translated">Weiter</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Button um den nächsten Schritt anzuzeigen</note>
         </trans-unit>
         <trans-unit id="MaintenaceInstructionPagePreviousButtonText" translate="yes" xml:space="preserve">
           <source>Back</source>
-          <target state="new">Back</target>
+          <target state="translated">Zurück</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Button um den vorherigen Schritt anzuzeigen</note>
         </trans-unit>
       </group>

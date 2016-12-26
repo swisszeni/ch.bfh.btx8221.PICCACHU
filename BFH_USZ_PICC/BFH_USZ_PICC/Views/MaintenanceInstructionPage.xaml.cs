@@ -14,6 +14,7 @@ namespace BFH_USZ_PICC.Views
         public MaintenanceInstructionPage(ContentPage contained, MaintenanceInstruction instruction) : base(contained)
         {
             InitializeComponent();
+            Title = instruction.Title;
         }
     }
 }

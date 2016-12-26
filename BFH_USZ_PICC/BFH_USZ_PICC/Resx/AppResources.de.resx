@@ -805,4 +805,28 @@
     <value>Unbegrenzt</value>
     <comment>Bietet dem User an, die Wartungserinnerung für eine unbegrenzte Zeit einzurichten</comment>
   </data>
+  <data name="UserMasterDataPageGenderLabelText" xml:space="preserve">
+    <value>Geschlecht:</value>
+    <comment>Geschlecht, mit Doppelpunkt am Ende</comment>
+  </data>
+  <data name="UserMasterDataPageFemale" xml:space="preserve">
+    <value>Weiblich</value>
+    <comment>Übersetzung "weiblich" als Geschlecht</comment>
+  </data>
+  <data name="UserMasterDataPageMale" xml:space="preserve">
+    <value>Männlich</value>
+    <comment>Übersetzung "männlich" als Geschlecht</comment>
+  </data>
+  <data name="MaintenaceInstructionCurrentPageNumberText" xml:space="preserve">
+    <value>{0} von {1}</value>
+    <comment>Text um die Nummer des Schritts anzuzeigen (bspw. 3 von5). {0} und {1} sind Platzhalter.</comment>
+  </data>
+  <data name="MaintenaceInstructionPageNextButtonText" xml:space="preserve">
+    <value>Weiter</value>
+    <comment>Button um den nächsten Schritt anzuzeigen</comment>
+  </data>
+  <data name="MaintenaceInstructionPagePreviousButtonText" xml:space="preserve">
+    <value>Zurück</value>
+    <comment>Button um den vorherigen Schritt anzuzeigen</comment>
+  </data>
 </root>

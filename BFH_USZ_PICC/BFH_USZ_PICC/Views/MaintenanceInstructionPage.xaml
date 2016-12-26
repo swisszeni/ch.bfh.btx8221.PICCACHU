@@ -5,7 +5,6 @@
                    xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
                    xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
                    xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-                   Title="{i18n:Translate MaintenanceInstructionTitleText}"
                    BindingContext="{Binding [MaintenanceInstructionViewModel], Source={StaticResource ViewModelLocator}}">
     <Grid>
         <Grid.RowDefinitions>
