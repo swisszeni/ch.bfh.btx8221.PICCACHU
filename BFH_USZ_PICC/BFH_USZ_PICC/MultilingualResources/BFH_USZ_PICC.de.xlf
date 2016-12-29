@@ -8,7 +8,8 @@
       <group id="BFH_USZ_PICC/RESX/APPRESOURCES.RESX" datatype="resx">
         <trans-unit id="EmergencyFlyoutAssistanceButtonText" translate="yes" xml:space="preserve">
           <source>Solutions</source>
-          <target state="translated">Lösungsschritte</target>
+          <target state="translated">Problembehebung</target>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Problembehebung" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Lösungschritte</note>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
@@ -48,7 +49,8 @@
         </trans-unit>
         <trans-unit id="DisorderDetailPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorder</source>
-          <target state="translated">Störung</target>
+          <target state="translated">Problem</target>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird für besseres Verständis neu mit "Problem" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Störung</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageSymptomLabelText" translate="yes" xml:space="preserve">
@@ -68,7 +70,8 @@
         </trans-unit>
         <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorders</source>
-          <target state="translated">Störungen</target>
+          <target state="translated">Probleme</target>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Probleme" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Störungen</note>
         </trans-unit>
         <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
@@ -218,7 +221,8 @@
         </trans-unit>
         <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
           <source>Journal</source>
-          <target state="translated">Journal</target>
+          <target state="translated">Meine Notizen</target>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu für bessers Verständnis mit "Meine Notizen" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Journal</note>
         </trans-unit>
         <trans-unit id="SettingsPageAppVersionText" translate="yes" xml:space="preserve">
@@ -258,12 +262,12 @@
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderText" translate="yes" xml:space="preserve">
           <source>Maintenance reminder</source>
-          <target state="translated">Wartungserinnerung einrichten</target>
+          <target state="translated">Pflegeerinnerung einrichten</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Wartungserinnerung</note>
         </trans-unit>
         <trans-unit id="SettingsPageAddReminderButtonText" translate="yes" xml:space="preserve">
           <source>Add maintenance reminders</source>
-          <target state="translated">Wartungserinnerungen hinzufügen</target>
+          <target state="translated">Pflegeerinnerung hinzufügen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Wartungserinnerung hinzufügen</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderFrequencyText" translate="yes" xml:space="preserve">
@@ -403,12 +407,12 @@
         </trans-unit>
         <trans-unit id="SettingsPageDelteScheduledRemindersText" translate="yes" xml:space="preserve">
           <source>Do you want to delete all scheduled maintenance reminders?</source>
-          <target state="translated">Wollen Sie alle geplanten Wartungserinnerungen löschen?</target>
+          <target state="translated">Wollen Sie alle geplanten Pflegeerinnerungen löschen?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Frage, bevor alle in der Zukunft geplanten Wartungserinnerungen gelöscht werden (Wollen Sie alle geplanten Wartungserinnerungen löschen?)</note>
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderInformationText" translate="yes" xml:space="preserve">
           <source>Your PICC should be maintained</source>
-          <target state="translated">Ihr PICC Katheter sollte gewartet werden</target>
+          <target state="translated">Ihr PICC Katheter sollte gepflegt werden</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Ihr PICC sollte gewartet werden</note>
         </trans-unit>
         <trans-unit id="SettingsPagePersonalDataButtonText" translate="yes" xml:space="preserve">
@@ -743,7 +747,8 @@
         </trans-unit>
         <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
           <source>Maintenance instruction</source>
-          <target state="translated">Wartungsanleitung</target>
+          <target state="translated">Pflegeerinnerung</target>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Pflegeerinnerung" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Titel für Wartungsanleitung (Wartungsanleitung)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">

@@ -13,7 +13,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="EmergencyFlyoutAssistanceButtonText" xml:space="preserve">
-    <value>Lösungsschritte</value>
+    <value>Problembehebung</value>
     <comment>Lösungschritte</comment>
   </data>
   <data name="EmergencyFlyoutTelemedizinDescriptionText" xml:space="preserve">
@@ -45,7 +45,7 @@
     <comment>Seite</comment>
   </data>
   <data name="DisorderDetailPageTitleText" xml:space="preserve">
-    <value>Störung</value>
+    <value>Problem</value>
     <comment>Störung</comment>
   </data>
   <data name="DisorderDetailPageSymptomLabelText" xml:space="preserve">
@@ -61,7 +61,7 @@
     <comment>Ursache (für ein Symptom)</comment>
   </data>
   <data name="DisorderPageTitleText" xml:space="preserve">
-    <value>Störungen</value>
+    <value>Probleme</value>
     <comment>Störungen</comment>
   </data>
   <data name="DisorderPageIssueApproachTitleText" xml:space="preserve">
@@ -181,7 +181,7 @@
     <comment>Frage an den User, was für einen Journaleintrag er hinzufügen möchte (Was für einen Eintrag wollen Sie hinzufügen?)</comment>
   </data>
   <data name="JournalOverviewPageTitleText" xml:space="preserve">
-    <value>Journal</value>
+    <value>Meine Notizen</value>
     <comment>Journal</comment>
   </data>
   <data name="SettingsPageAppVersionText" xml:space="preserve">
@@ -213,11 +213,11 @@
     <comment>Knopf (Button) für das Anrufen der USZ Telemedizin</comment>
   </data>
   <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
-    <value>Wartungserinnerung einrichten</value>
+    <value>Pflegeerinnerung einrichten</value>
     <comment>Wartungserinnerung</comment>
   </data>
   <data name="SettingsPageAddReminderButtonText" xml:space="preserve">
-    <value>Wartungserinnerungen hinzufügen</value>
+    <value>Pflegeerinnerung hinzufügen</value>
     <comment>Wartungserinnerung hinzufügen</comment>
   </data>
   <data name="SettingsPageMaintenanceReminderFrequencyText" xml:space="preserve">
@@ -329,11 +329,11 @@
     <comment>Meldung, wenn basierend auf der Suche kein PICC Modell gefunden werden konnte</comment>
   </data>
   <data name="SettingsPageDelteScheduledRemindersText" xml:space="preserve">
-    <value>Wollen Sie alle geplanten Wartungserinnerungen löschen?</value>
+    <value>Wollen Sie alle geplanten Pflegeerinnerungen löschen?</value>
     <comment>Frage, bevor alle in der Zukunft geplanten Wartungserinnerungen gelöscht werden (Wollen Sie alle geplanten Wartungserinnerungen löschen?)</comment>
   </data>
   <data name="SettingsPageMaintenanceReminderInformationText" xml:space="preserve">
-    <value>Ihr PICC Katheter sollte gewartet werden</value>
+    <value>Ihr PICC Katheter sollte gepflegt werden</value>
     <comment>Ihr PICC sollte gewartet werden</comment>
   </data>
   <data name="SettingsPagePersonalDataButtonText" xml:space="preserve">
@@ -601,7 +601,7 @@
     <comment>Weniger durchgängig</comment>
   </data>
   <data name="MaintenanceInstructionTitleText" xml:space="preserve">
-    <value>Wartungsanleitung</value>
+    <value>Pflegeerinnerung</value>
     <comment>Titel für Wartungsanleitung (Wartungsanleitung)</comment>
   </data>
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
