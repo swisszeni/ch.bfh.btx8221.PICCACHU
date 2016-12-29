@@ -18,7 +18,10 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (parameter is List<object> && ((List<object>)parameter).Count > 0)
             {
-                MaintenanceInstruction = (MaintenanceInstruction)((List<object>)parameter).First();
+                //Make sure that the new loaded instruction starts at the frist step
+                CarouselPosition = 0;
+                MaintenanceInstruction = (MaintenanceInstruction)((List<object>)parameter).First();                
+
             }
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
             return Task.FromResult(false);
@@ -28,12 +31,13 @@ namespace BFH_USZ_PICC.ViewModels
         public MaintenanceInstruction MaintenanceInstruction
         {
             get { return _maintenanceInstruction; }
-            set {
-                if(Set(ref _maintenanceInstruction, value))
-                {
+            set
+            {
+                if (Set(ref _maintenanceInstruction, value))
+                {                   
                     RaisePropertyChanged(() => CarouselPositionText);
                     GoToPreviousStepCommand.RaiseCanExecuteChanged();
-                    GoToNextStepCommand.RaiseCanExecuteChanged();
+                    GoToNextStepCommand.RaiseCanExecuteChanged();                   
                 }
             }
         }
@@ -64,7 +68,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _toggleTextToVoiceCommand;
         public RelayCommand ToggleTextToVoiceCommand => _toggleTextToVoiceCommand ?? (_toggleTextToVoiceCommand = new RelayCommand(() =>
         {
-            
+
             CrossTextToSpeech.Current.Speak(MaintenanceInstruction?.InstructionSteps.ElementAt(CarouselPosition).Explanation);
             //Check if the user really wants to leave the page
             //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
@@ -86,7 +90,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _goToPreviousStepCommand;
         public RelayCommand GoToPreviousStepCommand => _goToPreviousStepCommand ?? (_goToPreviousStepCommand = new RelayCommand(() =>
         {
-            if(CarouselPosition > 0)
+            if (CarouselPosition > 0)
             {
                 CarouselPosition--;
             }
@@ -95,7 +99,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _goToNextStepCommand;
         public RelayCommand GoToNextStepCommand => _goToNextStepCommand ?? (_goToNextStepCommand = new RelayCommand(() =>
         {
-            if (CarouselPosition < MaintenanceInstruction?.InstructionSteps.Count -1)
+            if (CarouselPosition < MaintenanceInstruction?.InstructionSteps.Count - 1)
             {
                 CarouselPosition++;
             }

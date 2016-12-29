@@ -1,4 +1,5 @@
 ﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,6 +116,11 @@ namespace BFH_USZ_PICC.Models
                 
                 KnowledgeEntry preventiveMeasures = new KnowledgeEntry("Vorsichtsmassnahmen", preventiveMeasuresEntry, glossaryWordsForPreventiveMeasuresEntry);
                 homeGroup.Add(preventiveMeasures);
+
+                //Add all maintenance instructions to the related group
+                maintenanceInstructionsGroup.Add(MainentanceInstructions.getBandageChangingInstruction());
+                maintenanceInstructionsGroup.Add(MainentanceInstructions.getMicroClaveInstruction());
+                maintenanceInstructionsGroup.Add(MainentanceInstructions.getStatLockInstruction());
 
 
             }
