@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using BFH_USZ_PICC.Models;
 using Realms;
 using Xamarin.Forms;
-using XLabs.Platform.Services;
 using Microsoft.Practices.ServiceLocation;
 
 namespace BFH_USZ_PICC.Services
