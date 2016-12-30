@@ -22,8 +22,8 @@ namespace BFH_USZ_PICC.Models
 
         public MicroClaveChangingEntry()
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
+            CreationDateTime = DateTimeOffset.Now;
+            ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
             Reason = MicroClaveChangementReason.NoInformation;
@@ -31,7 +31,7 @@ namespace BFH_USZ_PICC.Models
             Entry = AllPossibleJournalEntries.MicroClaveEntry;
         }
 
-        public MicroClaveChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, MicroClaveChangementReason reason)
+        public MicroClaveChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, MicroClaveChangementReason reason)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;

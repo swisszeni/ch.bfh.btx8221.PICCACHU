@@ -26,8 +26,8 @@ namespace BFH_USZ_PICC.Models
 
         public BloodWithdrawalEntry()
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
+            CreationDateTime = DateTimeOffset.Now;
+            ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
             IsNaCiFlushDone = false;
@@ -37,7 +37,7 @@ namespace BFH_USZ_PICC.Models
 
         }
 
-        public BloodWithdrawalEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlushDone, BloodFlow flow )
+        public BloodWithdrawalEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlushDone, BloodFlow flow )
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;

@@ -24,8 +24,8 @@ namespace BFH_USZ_PICC.Models
 
         public StatlockChangingEntry()
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
+            CreationDateTime = DateTimeOffset.Now;
+            ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
             Reason = StatLockChangementReason.NoInformation;
@@ -33,7 +33,7 @@ namespace BFH_USZ_PICC.Models
             Entry = AllPossibleJournalEntries.StatlockEntry;
         }
 
-        public StatlockChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, StatLockChangementReason reason)
+        public StatlockChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, StatLockChangementReason reason)
         {
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;

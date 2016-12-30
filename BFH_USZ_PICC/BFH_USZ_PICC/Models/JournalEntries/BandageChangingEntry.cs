@@ -57,8 +57,8 @@ namespace BFH_USZ_PICC.Models
 
         public BandageChangingEntry()
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
+            CreationDateTime = DateTimeOffset.Now;
+            ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
             Reason = BandageChangingReason.NoInformation;
@@ -69,7 +69,7 @@ namespace BFH_USZ_PICC.Models
             Entry = AllPossibleJournalEntries.BandagesChangingEntry;
 
         }
-        public BandageChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, BandageChangingReason reason, BandageChangingArea area,
+        public BandageChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, BandageChangingReason reason, BandageChangingArea area,
             BandagePunctureSituation puncture, BandageArmProcessSituation armProcess)
         {
             CreationDateTime = creationalDateTime;

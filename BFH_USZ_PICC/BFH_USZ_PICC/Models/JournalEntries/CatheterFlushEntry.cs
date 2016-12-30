@@ -46,8 +46,8 @@ namespace BFH_USZ_PICC.Models
 
         public CatheterFlushEntry()
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
+            CreationDateTime = DateTimeOffset.Now;
+            ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
             Type = FlushType.NoInformation;
@@ -59,7 +59,7 @@ namespace BFH_USZ_PICC.Models
             Entry = AllPossibleJournalEntries.CatheterFlushEntry;
         }
 
-        public CatheterFlushEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, FlushType type, FlushResult result,
+        public CatheterFlushEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, FlushType type, FlushResult result,
             FlushReason reason, double quantityInMilliliter, bool isBloodReflowVisible)
         {
             CreationDateTime = creationalDateTime;

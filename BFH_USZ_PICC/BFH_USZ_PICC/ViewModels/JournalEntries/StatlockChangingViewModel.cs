@@ -54,8 +54,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _institution, value); }
         }
 
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
+        private DateTimeOffset _procedureDate;
+        public DateTimeOffset ProcedureDate
         {
             get { return _procedureDate; }
             set { Set(ref _procedureDate, value); }

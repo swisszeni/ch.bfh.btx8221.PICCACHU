@@ -38,7 +38,7 @@ namespace BFH_USZ_PICC.Services
             {
                 // Create a new key
                 config.EncryptionKey = CreateAndStoreDatabaseKey();
-                
+
             }
 
             _database = Realm.GetInstance(config);
@@ -54,7 +54,7 @@ namespace BFH_USZ_PICC.Services
 
             // Store the key in the secure storage of the OS
             ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
-            if(keyStore.Contains(_databaseKeyName))
+            if (keyStore.Contains(_databaseKeyName))
             {
                 keyStore.Delete(_databaseKeyName);
             }
@@ -89,7 +89,8 @@ namespace BFH_USZ_PICC.Services
                     _database.Add(masterDataRO);
                     masterDataRO.LoadDataFromModelObject(masterData);
                 });
-            } else
+            }
+            else
             {
                 _database.Write(() =>
                 {
@@ -106,14 +107,14 @@ namespace BFH_USZ_PICC.Services
             {
                 _database.RemoveAll<UserMasterDataRO>();
             });
-                
+
             return Task.FromResult(0);
         }
 
         public Task<int> DeleteMasterDataAsync(UserMasterData masterData)
         {
             var existingRO = _database.Find<UserMasterDataRO>(masterData.ID);
-            if(existingRO != null)
+            if (existingRO != null)
             {
                 _database.Write(() =>
                 {
@@ -134,7 +135,62 @@ namespace BFH_USZ_PICC.Services
 
             return Task.FromResult(resultList);
         }
-
         #endregion
+
+        #region JournalEntry
+        public Task<List<JournalEntry>> GetJournalEntriesAsync()
+        {
+            List<JournalEntry> resultList = new List<JournalEntry>();
+
+            //TEST Part for AdministeredDrug
+            var realmResult = _database.All<AdministeredDrugEntryRO>();
+            foreach (var entry in realmResult)
+            { resultList.Add(new AdministeredDrugEntry((entry))); }
+
+
+
+            return Task.FromResult(resultList);
+        }
+
+        public Task<int> SaveJournalEntryAsync(JournalEntry entry)
+        {
+            _database.Write(() =>
+            {
+                var newEntryType = entry.Entry;
+                switch (newEntryType)
+                {
+                    case (AllPossibleJournalEntries.AdministeredDrugEntry):
+                        var drugEntryRO = new AdministeredDrugEntryRO();
+                        _database.Add(drugEntryRO);
+                        drugEntryRO.LoadDataFromModelObject((AdministeredDrugEntry)entry);
+                        return;
+                    default:
+                        return;
+                }
+            });
+
+            return Task.FromResult(1);
+        }
+
+        public Task<int> DeleteJournalEntryAsync(JournalEntry entry)
+        {
+            var newEntryType = entry.Entry;
+            switch (newEntryType)
+            {
+                case (AllPossibleJournalEntries.AdministeredDrugEntry):
+                    var existingEntryRO = _database.Find<AdministeredDrugEntryRO>(entry.ID);
+                    if (existingEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                default:
+                    return Task.FromResult(0);
+            }
+            #endregion
+        }
     }
 }

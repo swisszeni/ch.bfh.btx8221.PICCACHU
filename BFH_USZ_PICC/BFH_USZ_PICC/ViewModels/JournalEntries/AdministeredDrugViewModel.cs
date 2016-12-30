@@ -1,7 +1,9 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +17,25 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
 
-    public enum JournalEntryPageStatus
-    {
-        Create, 
-        Edit,
-        View
-    }
+    //public enum JournalEntryPageStatus
+    //{
+    //    Create, 
+    //    Edit,
+    //    View
+    //}
 
     class AdministeredDrugViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+
+        public AdministeredDrugViewModel()
+        {
+            //Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+
+           
+        }
+
         private AdministeredDrugEntry _displayingEntry;
         public AdministeredDrugEntry DisplayingEntry
         {
@@ -70,8 +82,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _institution, value); }
         }
 
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
+        private DateTimeOffset _procedureDate;
+        public DateTimeOffset ProcedureDate
         {
             get { return _procedureDate; }
             set { Set(ref _procedureDate, value); }
@@ -96,8 +108,11 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             // create a new PICCAppliedDrugEntry with the user entered information
             AdministeredDrugEntry entry = new AdministeredDrugEntry(DateTime.Now, ProcedureDate, Institution, Person, Drug);
-            //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(entry);
+            //Add the object to the collection of JournalEntries            
+            //JournalEntry.AllEnteredJournalEntries.Add(entry);
+            
+            //TEST
+            await _dataService.SaveJournalEntryAsync(entry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
         }));

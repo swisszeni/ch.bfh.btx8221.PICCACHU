@@ -18,5 +18,8 @@ namespace BFH_USZ_PICC.Interfaces
         Task<int> DeleteMasterDataAsync(UserMasterData masterData);
 
         // JournalEntry
+        Task<List<JournalEntry>> GetJournalEntriesAsync();
+        Task<int> SaveJournalEntryAsync(JournalEntry test);
+        Task<int> DeleteJournalEntryAsync(JournalEntry entry);
     }
 }

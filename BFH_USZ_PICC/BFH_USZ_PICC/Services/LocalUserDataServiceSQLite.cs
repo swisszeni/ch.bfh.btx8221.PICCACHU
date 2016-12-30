@@ -73,6 +73,46 @@ namespace BFH_USZ_PICC.Services
             return _database.Table<UserMasterData>().ToListAsync();
         }
 
+        Task ILocalUserDataService.ResetLocalUserDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<UserMasterData>> ILocalUserDataService.GetMasterDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<int> ILocalUserDataService.SaveMasterDataAsync(UserMasterData masterData)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<int> ILocalUserDataService.DeleteAllMasterDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<int> ILocalUserDataService.DeleteMasterDataAsync(UserMasterData masterData)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<JournalEntry>> ILocalUserDataService.GetJournalEntriesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<int> ILocalUserDataService.SaveJournalEntryAsync(JournalEntry test)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<int> ILocalUserDataService.DeleteJournalEntryAsync(JournalEntry entry)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

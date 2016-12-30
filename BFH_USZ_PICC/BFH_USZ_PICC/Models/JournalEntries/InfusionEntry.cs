@@ -39,8 +39,8 @@ namespace BFH_USZ_PICC.Models
 
         public InfusionEntry()
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
+            CreationDateTime = DateTimeOffset.Now;
+            ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
             Type = InfusionType.NoInformation;
@@ -51,7 +51,7 @@ namespace BFH_USZ_PICC.Models
         }
 
 
-        public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
+        public InfusionEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
             InfusionAdministration administration, string antibioticName)
         {
             CreationDateTime = creationalDateTime;

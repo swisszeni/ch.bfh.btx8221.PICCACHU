@@ -11,6 +11,12 @@ namespace BFH_USZ_PICC.Views
             InitializeComponent();
         }
 
+        public override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((JournalOverviewViewModel)BindingContext).PopulateJournalEntriesAsync();
+        }
+
         // This method sets the selected journal entry to null (otherwise it would be marked).
         void SelectedEntry(object sender, EventArgs e)
         {

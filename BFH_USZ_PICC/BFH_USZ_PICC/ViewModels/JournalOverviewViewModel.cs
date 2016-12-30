@@ -1,9 +1,11 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using BFH_USZ_PICC.Views.JournalEntries;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -15,9 +17,25 @@ namespace BFH_USZ_PICC.ViewModels
 {
     class JournalOverviewViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+
         public JournalOverviewViewModel()
         {
-            JournalEntriesList = JournalEntry.AllEnteredJournalEntries;
+            //JournalEntriesList = JournalEntry.AllEnteredJournalEntries;
+            // Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+
+            PopulateJournalEntriesAsync();
+
+
+        }
+
+        public async void PopulateJournalEntriesAsync()
+        {
+            var journalEntries = await _dataService.GetJournalEntriesAsync();
+
+            JournalEntriesList = new ObservableCollection<JournalEntry>(journalEntries);
+          
         }
 
         /// <summary>
