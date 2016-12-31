@@ -31,7 +31,7 @@ namespace BFH_USZ_PICC.Services
             if (DependencyService.Get<IFileHelper>().LocalUserdataDatabaseFileExists(_databaseName))
             {
                 // Get the existing key
-                ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
+                ISecureStorage keyStore = DependencyService.Get<ISecureStorage>();
                 config.EncryptionKey = keyStore.Retrieve(_databaseKeyName);
             }
             else
@@ -53,7 +53,7 @@ namespace BFH_USZ_PICC.Services
             rnd.NextBytes(key);
 
             // Store the key in the secure storage of the OS
-            ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
+            ISecureStorage keyStore = DependencyService.Get<ISecureStorage>();
             if (keyStore.Contains(_databaseKeyName))
             {
                 keyStore.Delete(_databaseKeyName);
