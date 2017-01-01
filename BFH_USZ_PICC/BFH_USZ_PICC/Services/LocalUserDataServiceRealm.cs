@@ -14,8 +14,8 @@ namespace BFH_USZ_PICC.Services
     public class LocalUserDataServiceRealm : ILocalUserDataService
     {
         private Realm _database;
-        private string _databaseName = "Userdata.realm";
-        private string _databaseKeyName = "ch.bfh.i4m1.picc.UserdataDBKey";
+        private static readonly string _databaseName = "Userdata.realm";
+        private static readonly string _databaseKeyName = "ch.bfh.i4m1.picc.UserdataDBKey";
 
         public LocalUserDataServiceRealm()
         {

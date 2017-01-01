@@ -32,6 +32,12 @@ namespace BFH_USZ_PICC.Interfaces
         void Delete(string key);
 
         /// <summary>
+        /// Deletes all saved data.
+        /// If there is a master key used for storage, it is deleted too
+        /// </summary>
+        void WipeStorage();
+
+        /// <summary>
         /// Checks if the storage contains a key.
         /// </summary>
         /// <param name="key">The key to search.</param>

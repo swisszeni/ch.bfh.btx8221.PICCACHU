@@ -60,6 +60,26 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
         }
 
         /// <summary>
+        /// Deletes all saved data.
+        /// If there is a master key used for storage, it is deleted too
+        /// </summary>
+        public void WipeStorage()
+        {
+            // Iterate over all possible kinds of record type to erase them
+            foreach (var recordKind in new[] {
+                SecKind.GenericPassword,
+                SecKind.Certificate,
+                SecKind.Identity,
+                SecKind.InternetPassword,
+                SecKind.Key
+            })
+            {
+                SecRecord query = new SecRecord(recordKind);
+                SecKeyChain.Remove(query);
+            }
+        }
+
+        /// <summary>
         /// Checks if the storage contains a key.
         /// </summary>
         /// <param name="key">The key to search.</param>
@@ -75,6 +95,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
         #endregion
 
         #region private static methods
+
         private static void CheckError(SecStatusCode resultCode, [System.Runtime.CompilerServices.CallerMemberName] string caller = null)
         {
             if (resultCode != SecStatusCode.Success)
@@ -105,6 +126,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
 
             return resultCode == SecStatusCode.Success ? existingRecord : null;
         }
+
         #endregion
     }
 }

@@ -156,6 +156,11 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
             }
         }
 
+        public void WipeStorage()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
