@@ -46,9 +46,6 @@ namespace BFH_USZ_PICC
                     case MenuItemKey.PICC:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(MyPICCPage))));
                         break;
-                    case MenuItemKey.Glossary:
-                        Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(GlossaryPage))));
-                        break;
                     case MenuItemKey.Knowledge:
                         Pages.Add(id, new USZ_PICC_NavigationPage(new BasePage(typeof(KnowledgeEntriesPage))));
                         break;

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using BFH_USZ_PICC.Models;
 using Realms;
 using Xamarin.Forms;
-using XLabs.Platform.Services;
 using Microsoft.Practices.ServiceLocation;
 
 namespace BFH_USZ_PICC.Services
@@ -32,8 +31,8 @@ namespace BFH_USZ_PICC.Services
             if (DependencyService.Get<IFileHelper>().LocalUserdataDatabaseFileExists(_databaseName))
             {
                 // Get the existing key
-                ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
-                config.EncryptionKey = keyStore.Retrieve(_databaseKeyName);
+                //ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
+                //config.EncryptionKey = keyStore.Retrieve(_databaseKeyName);
             }
             else
             {
@@ -54,13 +53,13 @@ namespace BFH_USZ_PICC.Services
             rnd.NextBytes(key);
 
             // Store the key in the secure storage of the OS
-            ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
-            if(keyStore.Contains(_databaseKeyName))
-            {
-                keyStore.Delete(_databaseKeyName);
-            }
+            //ISecureStorage keyStore = ServiceLocator.Current.GetInstance<ISecureStorage>();
+            //if(keyStore.Contains(_databaseKeyName))
+            //{
+            //    keyStore.Delete(_databaseKeyName);
+            //}
 
-            keyStore.Store(_databaseKeyName, key);
+            //keyStore.Store(_databaseKeyName, key);
 
             return key;
         }

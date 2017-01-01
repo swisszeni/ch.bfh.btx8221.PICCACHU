@@ -17,7 +17,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using XLabs.Platform.Services;
 
 namespace BFH_USZ_PICC.UWP
 {
@@ -36,8 +35,6 @@ namespace BFH_USZ_PICC.UWP
             this.Suspending += OnSuspending;
 
             InitializeHockeyApp();
-
-            RegisterIOC();
         }
 
         /// <summary>
@@ -46,11 +43,6 @@ namespace BFH_USZ_PICC.UWP
         private void InitializeHockeyApp()
         {
             HockeyClient.Current.Configure(HockeyAppHelper.AppIds.HockeyAppId_UWP);
-        }
-
-        private void RegisterIOC()
-        {
-            SimpleIoc.Default.Register<ISecureStorage, SecureStorage>();
         }
 
         /// <summary>

@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\ILocalAppDataService.cs" />
     <Compile Include="Interfaces\ILocalUserDataService.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
+    <Compile Include="Interfaces\INavigationService.cs" />
     <Compile Include="Interfaces\IReminderNotification.cs" />
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
@@ -110,6 +111,8 @@
     <Compile Include="Services\LocalAppDataServiceSQLite.cs" />
     <Compile Include="Services\LocalUserDataServiceRealm.cs" />
     <Compile Include="Services\LocalUserDataServiceSQLite.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\NavigationService_iOS.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Shell.cs" />
     <Compile Include="Utilitys\Converters.cs" />
@@ -129,6 +132,9 @@
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\OnBoardingViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\MasterDataViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />
@@ -150,6 +156,9 @@
     <Compile Include="Views\DisorderPage.xaml.cs">
       <DependentUpon>DisorderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\HamburgerMenuPage.xaml.cs">
+      <DependentUpon>HamburgerMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\JournalEntries\BloodWithdrawalEntryPage.xaml.cs">
       <DependentUpon>BloodWithdrawalEntryPage.xaml</DependentUpon>
     </Compile>
@@ -168,6 +177,12 @@
     <Compile Include="Views\JournalEntries\MicroClaveChangingEntryPage.xaml.cs">
       <DependentUpon>MicroClaveChangingEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage_iOS.xaml.cs">
+      <DependentUpon>MainPage_iOS.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MaintenanceInstructionPage.xaml.cs">
       <DependentUpon>MaintenanceInstructionPage.xaml</DependentUpon>
     </Compile>
@@ -176,6 +191,9 @@
     </Compile>
     <Compile Include="Views\JournalOverviewPage.xaml.cs">
       <DependentUpon>JournalOverviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OnBoarding\OnBoardingPage.xaml.cs">
+      <DependentUpon>OnBoardingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserMasterDataPage.xaml.cs">
       <DependentUpon>UserMasterDataPage.xaml</DependentUpon>
@@ -366,26 +384,6 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.175\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Forms, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Forms.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Forms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Ioc, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.IoC.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\XLabs.Ioc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Platform, Version=2.0.5782.12218, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Platform.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8\XLabs.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="XLabs.Serialization, Version=2.0.5782.15703, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\XLabs.Serialization.2.0.5782\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\XLabs.Serialization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="ZXing.Net.Mobile.Core, Version=2.1.47.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\ZXing.Net.Mobile.2.1.47\lib\portable-net45+netcore45+wpa81+wp8\ZXing.Net.Mobile.Core.dll</HintPath>
       <Private>True</Private>
@@ -512,6 +510,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainPage_iOS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\OnBoarding\OnBoardingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\HamburgerMenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

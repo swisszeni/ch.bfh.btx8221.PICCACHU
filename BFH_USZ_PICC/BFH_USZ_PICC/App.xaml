@@ -6,7 +6,8 @@
     x:Class="BFH_USZ_PICC.Application">
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="ViewModelLocator"/>
+            <x:Static Member="vm:ViewModelLocator.Instance"
+                      x:Key="ViewModelLocator" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

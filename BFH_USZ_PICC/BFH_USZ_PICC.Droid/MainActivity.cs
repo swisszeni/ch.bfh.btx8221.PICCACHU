@@ -12,7 +12,6 @@ using HockeyApp.Android;
 using HockeyApp.Android.Metrics;
 using BFH_USZ_PICC.Utilitys;
 using GalaSoft.MvvmLight.Ioc;
-using XLabs.Platform.Services;
 
 [assembly:MetaData("net.hockeyapp.android.appIdentifier", Value=HockeyAppHelper.AppIds.HockeyAppId_Droid)]
 
@@ -48,10 +47,10 @@ namespace BFH_USZ_PICC.Droid
 
         private void RegisterIOC()
         {
-            SimpleIoc.Default.Register<ISecureStorage>(() =>
-            {
-                return new KeyVaultStorage(_keyVaultPassword.ToCharArray());
-            });
+            //SimpleIoc.Default.Register<ISecureStorage>(() =>
+            //{
+            //    return new KeyVaultStorage(_keyVaultPassword.ToCharArray());
+            //});
         }
 
         /// <summary>

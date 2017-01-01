@@ -17,9 +17,16 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class ViewModelLocator : DynamicObject
     {
-        static ViewModelResolver _resolver;
+        private static ViewModelResolver _resolver;
 
-        public ViewModelLocator()
+        private static readonly ViewModelLocator _instance = new ViewModelLocator();
+
+        public static ViewModelLocator Instance
+        {
+            get { return _instance; }
+        }
+
+        private ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
@@ -41,7 +48,18 @@ namespace BFH_USZ_PICC.ViewModels
                 }
             }
 
+            // Register the Services
+            if(Device.OS == TargetPlatform.iOS)
+            {
+                SimpleIoc.Default.Register<INavigationService, NavigationService_iOS>();
+            } else
+            {
+                SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            }
+
             // Register the ViewModels
+            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<MenuViewModel>();
             SimpleIoc.Default.Register<AddPICCViewModel>();
             SimpleIoc.Default.Register<MyPICCViewModel>();
             SimpleIoc.Default.Register<PICCDetailViewModel>();
@@ -62,6 +80,11 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<MasterDataViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();            
         }
+
+        public static T Resolve<T>()
+        {
+            return ServiceLocator.Current.GetInstance<T>();
+        } 
 
         public static ViewModelResolver Resolver
         {
