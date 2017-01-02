@@ -1,8 +1,10 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +19,14 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     class MicroClaveChangingViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+
+        public MicroClaveChangingViewModel()
+        {
+            //Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+        }
+
         private MicroClaveChangingEntry _displayingEntry;
         public MicroClaveChangingEntry DisplayingEntry
         {
@@ -27,7 +37,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 {
                     Person = value.Person;
                     Institution = value.Institution;
-                    ProcedureDate = value.ProcedureDateTime;
+                    ProcedureDate = (value.ProcedureDateTime).Date;
                     Reason = value.Reason;
 
                     // Update bindings
@@ -53,8 +63,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _institution, value); }
         }
 
-        private DateTimeOffset _procedureDate;
-        public DateTimeOffset ProcedureDate
+        private DateTime _procedureDate;
+        public DateTime ProcedureDate
         {
             get { return _procedureDate; }
             set { Set(ref _procedureDate, value); }
@@ -79,9 +89,9 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
             // create a new PICCAppliedDrugEntry with the user entered information
-            MicroClaveChangingEntry entry = new MicroClaveChangingEntry(DateTime.Now, ProcedureDate, Institution, Person, Reason);
+            MicroClaveChangingEntry entry = new MicroClaveChangingEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Reason);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(entry);
+            await _dataService.SaveJournalEntryAsync(entry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
         }));
@@ -101,7 +111,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
+                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));

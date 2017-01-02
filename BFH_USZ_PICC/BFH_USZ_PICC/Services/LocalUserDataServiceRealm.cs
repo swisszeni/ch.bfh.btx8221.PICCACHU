@@ -142,11 +142,34 @@ namespace BFH_USZ_PICC.Services
         {
             List<JournalEntry> resultList = new List<JournalEntry>();
 
-            //TEST Part for AdministeredDrug
-            var realmResult = _database.All<AdministeredDrugEntryRO>();
-            foreach (var entry in realmResult)
+            // Collets all journal entries together
+            var drugResult = _database.All<AdministeredDrugEntryRO>();           
+            foreach (var entry in drugResult)
             { resultList.Add(new AdministeredDrugEntry((entry))); }
 
+            var statlockResult = _database.All<StatlockChangingEntryRO>();
+            foreach (var entry in statlockResult)
+            { resultList.Add(new StatlockChangingEntry((entry))); }
+
+            var bandageResult = _database.All<BandageChangingEntryRO>();
+            foreach (var entry in bandageResult)
+            { resultList.Add(new BandageChangingEntry((entry))); }
+
+            var bloodflowResult = _database.All<BloodWithdrawalEntryRO>();
+            foreach (var entry in bloodflowResult)
+            { resultList.Add(new BloodWithdrawalEntry((entry))); }
+
+            var flushResult = _database.All<CatheterFlushEntryRO>();
+            foreach (var entry in flushResult)
+            { resultList.Add(new CatheterFlushEntry((entry))); }
+
+            var infusionResult = _database.All<InfusionEntryRO>();
+            foreach (var entry in infusionResult)
+            { resultList.Add(new InfusionEntry((entry))); }
+
+            var claveResult = _database.All<MicroClaveChangingEntryRO>();
+            foreach (var entry in claveResult)
+            { resultList.Add(new MicroClaveChangingEntry((entry))); }
 
 
             return Task.FromResult(resultList);
@@ -157,12 +180,43 @@ namespace BFH_USZ_PICC.Services
             _database.Write(() =>
             {
                 var newEntryType = entry.Entry;
+
                 switch (newEntryType)
                 {
                     case (AllPossibleJournalEntries.AdministeredDrugEntry):
                         var drugEntryRO = new AdministeredDrugEntryRO();
-                        _database.Add(drugEntryRO);
                         drugEntryRO.LoadDataFromModelObject((AdministeredDrugEntry)entry);
+                        _database.Add(drugEntryRO);                       
+                        return;
+                    case (AllPossibleJournalEntries.StatlockEntry):
+                        var statlockEntryRO = new StatlockChangingEntryRO();
+                        statlockEntryRO.LoadDataFromModelObject((StatlockChangingEntry)entry);
+                        _database.Add(statlockEntryRO);
+                        return;
+                    case (AllPossibleJournalEntries.BandagesChangingEntry):
+                        var bandageEntryRO = new BandageChangingEntryRO();
+                        bandageEntryRO.LoadDataFromModelObject((BandageChangingEntry)entry);
+                        _database.Add(bandageEntryRO);
+                        return;
+                    case (AllPossibleJournalEntries.BloodWithdrawalEntry):
+                        var bloodEntryRO = new BloodWithdrawalEntryRO();
+                        bloodEntryRO.LoadDataFromModelObject((BloodWithdrawalEntry)entry);
+                        _database.Add(bloodEntryRO);
+                        return;
+                    case (AllPossibleJournalEntries.CatheterFlushEntry):
+                        var flushEntryRO = new CatheterFlushEntryRO();
+                        flushEntryRO.LoadDataFromModelObject((CatheterFlushEntry)entry);
+                        _database.Add(flushEntryRO);
+                        return;
+                    case (AllPossibleJournalEntries.InfusionEntry):
+                        var infusionEntryRO = new InfusionEntryRO();
+                        infusionEntryRO.LoadDataFromModelObject((InfusionEntry)entry);
+                        _database.Add(infusionEntryRO);
+                        return;
+                    case (AllPossibleJournalEntries.MicroClaveEntry):
+                        var claveEntryRO = new MicroClaveChangingEntryRO();
+                        claveEntryRO.LoadDataFromModelObject((MicroClaveChangingEntry)entry);
+                        _database.Add(claveEntryRO);
                         return;
                     default:
                         return;
@@ -178,12 +232,72 @@ namespace BFH_USZ_PICC.Services
             switch (newEntryType)
             {
                 case (AllPossibleJournalEntries.AdministeredDrugEntry):
-                    var existingEntryRO = _database.Find<AdministeredDrugEntryRO>(entry.ID);
-                    if (existingEntryRO != null)
+                    var existingDrugEntryRO = _database.Find<AdministeredDrugEntryRO>(entry.ID);
+                    if (existingDrugEntryRO != null)
                     {
                         _database.Write(() =>
                         {
-                            _database.Remove(existingEntryRO);
+                            _database.Remove(existingDrugEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                case (AllPossibleJournalEntries.StatlockEntry):
+                    var existingStatlockEntryRO = _database.Find<StatlockChangingEntryRO>(entry.ID);
+                    if (existingStatlockEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingStatlockEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                case (AllPossibleJournalEntries.BandagesChangingEntry):
+                    var existingBandageEntryRO = _database.Find<BandageChangingEntryRO>(entry.ID);
+                    if (existingBandageEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingBandageEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                case (AllPossibleJournalEntries.BloodWithdrawalEntry):
+                    var existingBloodEntryRO = _database.Find<BloodWithdrawalEntryRO>(entry.ID);
+                    if (existingBloodEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingBloodEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                case (AllPossibleJournalEntries.CatheterFlushEntry):
+                    var existingFlushEntryRO = _database.Find<CatheterFlushEntryRO>(entry.ID);
+                    if (existingFlushEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingFlushEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                case (AllPossibleJournalEntries.InfusionEntry):
+                    var existingInfusionEntryRO = _database.Find<InfusionEntryRO>(entry.ID);
+                    if (existingInfusionEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingInfusionEntryRO);
+                        });
+                    }
+                    return Task.FromResult(0);
+                case (AllPossibleJournalEntries.MicroClaveEntry):
+                    var existingClaveEntryRO = _database.Find<MicroClaveChangingEntryRO>(entry.ID);
+                    if (existingClaveEntryRO != null)
+                    {
+                        _database.Write(() =>
+                        {
+                            _database.Remove(existingClaveEntryRO);
                         });
                     }
                     return Task.FromResult(0);

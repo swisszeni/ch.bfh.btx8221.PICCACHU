@@ -47,7 +47,7 @@ namespace BFH_USZ_PICC.Models
     public abstract class JournalEntry
     {
         [SQLite.PrimaryKey]
-        public int ID { get; set; }
+        public string ID { get; set; }
         public string Icon { get; } = "placeholder.png";
         /// <summary>
         /// Time when the JournalEntry has been created

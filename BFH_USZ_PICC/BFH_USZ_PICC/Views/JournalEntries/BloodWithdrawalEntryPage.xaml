@@ -19,10 +19,8 @@
     <StackLayout Orientation="Vertical">
       <Label Text = "{i18n:Translate BloodWithdrawalEntryPageIndicateBloodFlowLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Picker x:Name="BloodFlowPicker" SelectedIndex="{Binding Flow, Converter={StaticResource BloodFlowToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <StackLayout Orientation="Horizontal" Padding="0, 0, 0, 20">
-        <Label Text ="{i18n:Translate BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-        <Switch x:Name="IsNaCiFlashDoneSwitch" IsToggled="{Binding IsNaClFlushDone}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      </StackLayout>
+      <Label Text ="{i18n:Translate BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
+      <Switch x:Name="IsNaCiFlashDoneSwitch" IsToggled="{Binding IsNaClFlushDone}" IsEnabled="{Binding IsEnabledOrVisible}" HorizontalOptions="Start"/>
       <Label Text ="{i18n:Translate BloodWithdrawalEntryPageBloodWithdrawalDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label Text="{i18n:Translate BloodWithdrawalEntryPageInstitutionLabelText}" FontSize="20"/>

@@ -31,9 +31,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         public AdministeredDrugViewModel()
         {
             //Getting the dataservice
-            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
-
-           
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();           
         }
 
         private AdministeredDrugEntry _displayingEntry;
@@ -46,7 +44,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 {
                     Person = value.Person;
                     Institution = value.Institution;
-                    ProcedureDate = value.ProcedureDateTime;
+                    ProcedureDate = (value.ProcedureDateTime).Date;
                     Drug = value.Drug;
 
                     // Update bindings
@@ -82,8 +80,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _institution, value); }
         }
 
-        private DateTimeOffset _procedureDate;
-        public DateTimeOffset ProcedureDate
+        private DateTime _procedureDate;
+        public DateTime ProcedureDate
         {
             get { return _procedureDate; }
             set { Set(ref _procedureDate, value); }
@@ -107,7 +105,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
             // create a new PICCAppliedDrugEntry with the user entered information
-            AdministeredDrugEntry entry = new AdministeredDrugEntry(DateTime.Now, ProcedureDate, Institution, Person, Drug);
+            AdministeredDrugEntry entry = new AdministeredDrugEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Drug);
             //Add the object to the collection of JournalEntries            
             //JournalEntry.AllEnteredJournalEntries.Add(entry);
             
@@ -132,7 +130,9 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
+                //JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
+                //TEST
+                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));

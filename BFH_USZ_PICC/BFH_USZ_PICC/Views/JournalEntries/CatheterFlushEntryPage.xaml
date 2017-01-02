@@ -26,11 +26,9 @@
       <Label Text ="{i18n:Translate CatheterFlushEntryPageFlushSolutionAmountLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <Entry x:Name="FlushQuantity" Text="{Binding QuantityInMilliliter}" Keyboard="Numeric" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label Text="{i18n:Translate CatheterFlushEntryPagePatencyAfterFlushLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <Picker x:Name="FlushResultPicker" SelectedIndex="{Binding Result, Converter={StaticResource FlushResultToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <StackLayout Orientation="Horizontal"  Padding="0, 0, 0, 20">
+      <Picker x:Name="FlushResultPicker" SelectedIndex="{Binding Result, Converter={StaticResource FlushResultToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>  
         <Label  Text="{i18n:Translate CatheterFlushEntryPageBloodReflowLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-        <Switch x:Name="IsBloodReflowVisibleSwitch" IsToggled="{Binding IsBloodReflowVisible}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      </StackLayout>
+        <Switch x:Name="IsBloodReflowVisibleSwitch" IsToggled="{Binding IsBloodReflowVisible}" IsEnabled="{Binding IsEnabledOrVisible}" HorizontalOptions="Start"/> 
       <Label Text="{i18n:Translate CatheterFlushEntryPageDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
       <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
       <Label  Text="{i18n:Translate CatheterFlushEntryPageInstitutionLabelText}" FontSize="20"/>

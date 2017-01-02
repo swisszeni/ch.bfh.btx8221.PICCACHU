@@ -1,7 +1,9 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,17 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     class CatheterFlushViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+
+        public CatheterFlushViewModel()
+        {
+            //Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+
+
+        }
+
+
         private CatheterFlushEntry _displayingEntry;
         public CatheterFlushEntry DisplayingEntry
         {
@@ -26,7 +39,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 {
                     Person = value.Person;
                     Institution = value.Institution;
-                    ProcedureDate = value.ProcedureDateTime;
+                    ProcedureDate = (value.ProcedureDateTime).Date;
                     Reason = value.Reason;
                     Type = value.Type;
                     Result = value.Result;
@@ -57,8 +70,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _institution, value); }
         }
 
-        private DateTimeOffset _procedureDate;
-        public DateTimeOffset ProcedureDate
+        private DateTime _procedureDate;
+        public DateTime ProcedureDate
         {
             get { return _procedureDate; }
             set { Set(ref _procedureDate, value); }
@@ -111,10 +124,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         private RelayCommand _saveButtonCommand;
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () => {
         // create a new PICCAppliedDrugEntry with the user entered information
-        CatheterFlushEntry entry = new CatheterFlushEntry(DateTime.Now, ProcedureDate, Institution, Person, Type, Result, Reason,
-            QuantityInMilliliter, IsBloodReflowVisible);               
+        CatheterFlushEntry entry = new CatheterFlushEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Type, Result, Reason,
+            QuantityInMilliliter, IsBloodReflowVisible);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(entry);
+            await _dataService.SaveJournalEntryAsync(entry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
         }));
@@ -133,8 +146,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () => {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
-                await((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
 

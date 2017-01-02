@@ -31,7 +31,7 @@ namespace BFH_USZ_PICC.Services
         {
             _database.CreateTableAsync<UserMasterData>().Wait();
         }
-        
+
         public Task ResetLocalUserDataAsync()
         {
             // Delete the existing Database
@@ -48,10 +48,11 @@ namespace BFH_USZ_PICC.Services
         public async Task<int> SaveMasterDataAsync(UserMasterData masterData)
         {
             masterData.ID = 1;
-            if(await _database.Table<UserMasterData>().CountAsync() > 0)
+            if (await _database.Table<UserMasterData>().CountAsync() > 0)
             {
                 return await _database.UpdateAsync(masterData);
-            } else
+            }
+            else
             {
                 return await _database.InsertAsync(masterData);
             }
@@ -73,43 +74,52 @@ namespace BFH_USZ_PICC.Services
             return _database.Table<UserMasterData>().ToListAsync();
         }
 
-        Task ILocalUserDataService.ResetLocalUserDataAsync()
+
+        #endregion
+
+        #region JournalEntries
+        public async Task<List<JournalEntry>> GetJournalEntriesAsync()
         {
+            //List<JournalEntry> resultList = new List<JournalEntry>();
+
+            //// Collect all journalEntries together
+            //var drugTable = _database.Table<AdministeredDrugEntry>().ToListAsync();
+            //foreach (var entry in drugTable.Result)
+            //{
+            //    resultList.Add(entry);
+            //}
+
+            //var statlockTable = _database.Table<StatlockChangingEntry>().ToListAsync();
+            //foreach (var entry in statlockTable.Result)
+            //{
+            //    resultList.Add((entry));
+            //}
+
+            //return resultList;
             throw new NotImplementedException();
         }
 
-        Task<List<UserMasterData>> ILocalUserDataService.GetMasterDataAsync()
+        public Task<int> SaveJournalEntryAsync(JournalEntry entry)
         {
+            //var newEntryType = entry.Entry;
+
+            //switch (newEntryType)
+            //{
+            //    case (AllPossibleJournalEntries.AdministeredDrugEntry):
+            //        var drugEntry = (AdministeredDrugEntry)entry;
+            //        return await _database.InsertAsync(drugEntry);
+            //    case (AllPossibleJournalEntries.StatlockEntry):
+            //        var statlockEntry = (StatlockChangingEntry)entry;
+            //        return await _database.InsertAsync(statlockEntry);
+            //    default:
+            //        return 1;
+            //}
             throw new NotImplementedException();
         }
 
-        Task<int> ILocalUserDataService.SaveMasterDataAsync(UserMasterData masterData)
+        public Task<int> DeleteJournalEntryAsync(JournalEntry entry)
         {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.DeleteAllMasterDataAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.DeleteMasterDataAsync(UserMasterData masterData)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<List<JournalEntry>> ILocalUserDataService.GetJournalEntriesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.SaveJournalEntryAsync(JournalEntry test)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.DeleteJournalEntryAsync(JournalEntry entry)
-        {
+            //return _database.DeleteAsync(entry);
             throw new NotImplementedException();
         }
 

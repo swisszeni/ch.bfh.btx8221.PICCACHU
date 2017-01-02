@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Resx;
 using Realms;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,21 +13,23 @@ namespace BFH_USZ_PICC.Models
     /// Extends the JournalEntry class with two parameters (Drug, Reason) to handle special events for applied drugs.
     /// </summary>
     public class AdministeredDrugEntry : JournalEntry
-    {
+    {        
         public string Drug { get; set; }
 
         public AdministeredDrugEntry()
-        {
+        {          
             CreationDateTime = DateTimeOffset.Now;
             ProcedureDateTime = DateTimeOffset.Now;
             Institution = HealthInstitution.NoInformation;
             Person = HealthPerson.NoInformation;
-            Drug = null;
-
+            Drug = null;            
+                                  
             Entry = AllPossibleJournalEntries.AdministeredDrugEntry;
         }
         public AdministeredDrugEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
         {
+            ID = Guid.NewGuid().ToString();
+
             CreationDateTime = creationalDateTime;
             ProcedureDateTime = procedureDateTime;
             Institution = instiution;
@@ -52,9 +55,9 @@ namespace BFH_USZ_PICC.Models
     public class AdministeredDrugEntryRO : RealmObject
     {
         [Realms.PrimaryKey]
-        public int ID { get; set; }
+        public string ID { get; set; }
         public string Icon { get; } = "placeholder.png";
-        /// <summary>
+         /// <summary>
         /// Time when the JournalEntry has been created
         /// </summary>
         public DateTimeOffset CreationDateTime { get; set; }
@@ -78,7 +81,5 @@ namespace BFH_USZ_PICC.Models
 
             Entry = (int)modelObject.Entry;
         }
-    }
-
- 
+    } 
 }

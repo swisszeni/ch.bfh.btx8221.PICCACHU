@@ -1,7 +1,9 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,14 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     class InfusionViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+
+        public InfusionViewModel()
+        {
+            //Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+        }
+
         private InfusionEntry _displayingEntry;
         public InfusionEntry DisplayingEntry
         {
@@ -26,7 +36,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 {
                     Person = value.Person;
                     Institution = value.Institution;
-                    ProcedureDate = value.ProcedureDateTime;
+                    ProcedureDate = (value.ProcedureDateTime).Date;
                     InfusionType = value.Type;
                     InfusionAdministration = value.Administration;
                     AntibioticName = value.TypeAntibioticName;
@@ -53,8 +63,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _institution, value); }
         }
 
-        private DateTimeOffset _procedureDate;
-        public DateTimeOffset ProcedureDate
+        private DateTime _procedureDate;
+        public DateTime ProcedureDate
         {
             get { return _procedureDate; }
             set { Set(ref _procedureDate, value); }
@@ -115,10 +125,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
             // create a new PICCAppliedDrugEntry with the user entered information
-            InfusionEntry infusionEntry = new InfusionEntry(DateTime.Now, ProcedureDate, Institution, Person, InfusionType,
+            InfusionEntry entry = new InfusionEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, InfusionType,
                 InfusionAdministration, AntibioticName);
             //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(infusionEntry);
+            await _dataService.SaveJournalEntryAsync(entry);
             //close the page
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
         }));
@@ -138,7 +148,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
+                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
