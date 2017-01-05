@@ -37,44 +37,26 @@ namespace BFH_USZ_PICC.Services.Design
             throw new NotImplementedException();
         }
 
-        Task ILocalUserDataService.ResetLocalUserDataAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<List<UserMasterData>> ILocalUserDataService.GetMasterDataAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.SaveMasterDataAsync(UserMasterData masterData)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.DeleteAllMasterDataAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<int> ILocalUserDataService.DeleteMasterDataAsync(UserMasterData masterData)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         #region JournalEntry
-        Task<List<JournalEntry>> ILocalUserDataService.GetJournalEntriesAsync()
+
+        public Task<List<JournalEntry>> GetJournalEntriesAsync()
         {
             throw new NotImplementedException();
         }
 
-        Task<int> ILocalUserDataService.SaveJournalEntryAsync(JournalEntry test)
+        public Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry
         {
             throw new NotImplementedException();
         }
 
-        Task<int> ILocalUserDataService.DeleteJournalEntryAsync(JournalEntry entry)
+        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry
         {
             throw new NotImplementedException();
         }

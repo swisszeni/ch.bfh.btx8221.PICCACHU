@@ -56,28 +56,28 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (Set(() => SelectedEntry, ref _selectedEntry, value) & _selectedEntry != null)
                 {
-                    AllPossibleJournalEntries selectedEntryType = value.Entry;
+                    JournalEntryType selectedEntryType = value.EntryType;
                     switch (selectedEntryType)
                     {
-                        case AllPossibleJournalEntries.AdministeredDrugEntry:
+                        case JournalEntryType.AdministeredDrugEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage), new List<object> { value }));
                             return;
-                        case AllPossibleJournalEntries.MicroClaveEntry:
+                        case JournalEntryType.MicroClaveEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MicroClaveChangingEntryPage), new List<object> { value }));
                             return;
-                        case AllPossibleJournalEntries.StatlockEntry:
+                        case JournalEntryType.StatlockEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(StatlockChangingEntryPage), new List<object> { value }));
                             return;
-                        case AllPossibleJournalEntries.BloodWithdrawalEntry:
+                        case JournalEntryType.BloodWithdrawalEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BloodWithdrawalEntryPage), new List<object> { value }));
                             return;
-                        case AllPossibleJournalEntries.BandagesChangingEntry:
+                        case JournalEntryType.BandagesChangingEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BandageChangingEntryPage), new List<object> { value }));
                             return;
-                        case AllPossibleJournalEntries.InfusionEntry:
+                        case JournalEntryType.InfusionEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(InfusionEntryPage), new List<object> { value }));
                             return;
-                        case AllPossibleJournalEntries.CatheterFlushEntry:
+                        case JournalEntryType.CatheterFlushEntry:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(CatheterFlushEntryPage), new List<object> { value }));
                             return;
                         default:

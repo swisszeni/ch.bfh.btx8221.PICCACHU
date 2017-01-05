@@ -19,7 +19,8 @@ namespace BFH_USZ_PICC.Interfaces
 
         // JournalEntry
         Task<List<JournalEntry>> GetJournalEntriesAsync();
-        Task<int> SaveJournalEntryAsync(JournalEntry newEntry);
-        Task<int> DeleteJournalEntryAsync(JournalEntry entry);
+        Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry;
+        Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry;
+        Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry;
     }
 }

@@ -35,11 +35,11 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             {
                 if (Set(ref _displayingEntry, value))
                 {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = (value.ProcedureDateTime).Date;
-                    Reason = value.Reason;
-                    Area = value.Area;
+                    Person = value.SupportingPerson;
+                    Institution = value.SupportingInstitution;
+                    ProcedureDate = (value.ExecutionDate).Date;
+                    Reason = value.ChangementReason;
+                    Area = value.ChangementArea;
                     ArmSituation = value.ArmProcess;
                     PunctureSituation = value.Puncture;
 
@@ -76,15 +76,15 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _procedureDate, value); }
         }
 
-        private BandageChangingReason _reason;
-        public BandageChangingReason Reason
+        private BandageChangementReason _reason;
+        public BandageChangementReason Reason
         {
             get { return _reason; }
             set { Set(ref _reason, value); }
         }
 
-        private BandageChangingArea _area;
-        public BandageChangingArea Area
+        private BandageChangementArea _area;
+        public BandageChangementArea Area
         {
             get { return _area; }
             set { Set(ref _area, value); }

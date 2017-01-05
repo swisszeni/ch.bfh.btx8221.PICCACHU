@@ -37,12 +37,12 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             {
                 if (Set(ref _displayingEntry, value))
                 {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = (value.ProcedureDateTime).Date;
-                    Reason = value.Reason;
-                    Type = value.Type;
-                    Result = value.Result;
+                    Person = value.SupportingPerson;
+                    Institution = value.SupportingInstitution;
+                    ProcedureDate = (value.ExecutionDate).Date;
+                    Reason = value.FlushReason;
+                    Type = value.FlushType;
+                    Result = value.FlushResult;
                     QuantityInMilliliter = value.QuantityInMilliliter;
                     IsBloodReflowVisible = value.IsBloodReflowVisible;  
                 }
@@ -124,8 +124,9 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         private RelayCommand _saveButtonCommand;
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () => {
         // create a new PICCAppliedDrugEntry with the user entered information
-        CatheterFlushEntry entry = new CatheterFlushEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Type, Result, Reason,
-            QuantityInMilliliter, IsBloodReflowVisible);
+
+        //CatheterFlushEntry entry = new CatheterFlushEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Type, Result, Reason,
+        //    QuantityInMilliliter, IsBloodReflowVisible);
             //Add the object to the collection of JournalEntries
             await _dataService.SaveJournalEntryAsync(entry);
             //close the page

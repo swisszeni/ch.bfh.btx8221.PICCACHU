@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
 {
-
-    public enum BandageChangingReason
+    public enum BandageChangementReason
     {   
         NoInformation,
         Routine,
@@ -19,13 +18,12 @@ namespace BFH_USZ_PICC.Models
         Pain
     }
 
-    public enum BandageChangingArea
+    public enum BandageChangementArea
     {
         NoInformation,
         Complete,
         OnlyBandage,
         OnlyStatlock
-
     }
 
     public enum BandagePunctureSituation
@@ -50,81 +48,47 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class BandageChangingEntry : JournalEntry
     {
-        public BandageChangingReason Reason { get; set; }
-        public BandageChangingArea Area { get; set; }
+        public override Type RealmObjectType
+        {
+            get { return typeof(BandageChangingEntryRO); }
+        }
+
+        public BandageChangementReason ChangementReason { get; set; }
+        public BandageChangementArea ChangementArea { get; set; }
         public BandagePunctureSituation Puncture { get; set; }
         public BandageArmProcessSituation ArmProcess { get; set; }
 
 
-        public BandageChangingEntry()
-        {
-            CreationDateTime = DateTimeOffset.Now;
-            ProcedureDateTime = DateTimeOffset.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Reason = BandageChangingReason.NoInformation;
-            Area = BandageChangingArea.NoInformation;
-            Puncture = BandagePunctureSituation.NoInformation;
-            ArmProcess = BandageArmProcessSituation.NoInformation;
-
-            Entry = AllPossibleJournalEntries.BandagesChangingEntry;
-
-        }
-        public BandageChangingEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, BandageChangingReason reason, BandageChangingArea area,
-            BandagePunctureSituation puncture, BandageArmProcessSituation armProcess)
-        {
-            ID = Guid.NewGuid().ToString();
-
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Reason = reason;
-            Area = area;
-            Puncture = puncture;
-            ArmProcess = armProcess;
-
-            Entry = AllPossibleJournalEntries.BandagesChangingEntry;
-
-        }
+        public BandageChangingEntry() { }
 
         public BandageChangingEntry(BandageChangingEntryRO realmObject)
         {
             ID = realmObject.ID;
-            CreationDateTime = realmObject.CreationDateTime;
-            ProcedureDateTime = realmObject.ProcedureDateTime;
-            Institution = (HealthInstitution)realmObject.Institution;
-            Person = (HealthPerson)realmObject.Person;
-            Reason = (BandageChangingReason)realmObject.Reason;
-            Area = (BandageChangingArea) realmObject.Area;
+            CreateDate = realmObject.CreateDate;
+            ExecutionDate = realmObject.ExecutionDate;
+            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
+            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
+            ChangementReason = (BandageChangementReason)realmObject.ChangementReason;
+            ChangementArea = (BandageChangementArea) realmObject.ChangementArea;
             Puncture = (BandagePunctureSituation) realmObject.Puncture;
             ArmProcess = (BandageArmProcessSituation) realmObject.ArmProcess;
-
-
-            Entry = (AllPossibleJournalEntries)realmObject.Entry;
-
         }
 
     }
 
     public class BandageChangingEntryRO : RealmObject
     {
+        // Base JournalEntry values
         [Realms.PrimaryKey]
         public string ID { get; set; }
-        public string Icon { get; } = "placeholder.png";
-        /// <summary>
-        /// Time when the JournalEntry has been created
-        /// </summary>
-        public DateTimeOffset CreationDateTime { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry procedure takes place
-        /// </summary>
-        public DateTimeOffset ProcedureDateTime { get; set; }
-        public int Entry { get; set; }
-        public int Institution { get; set; }
-        public int Person { get; set; }
-        public int Reason { get; set; }
-        public int Area { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int ChangementReason { get; set; }
+        public int ChangementArea { get; set; }
         public int Puncture { get; set; }
         public int ArmProcess { get; set; }
 
@@ -132,16 +96,14 @@ namespace BFH_USZ_PICC.Models
         public void LoadDataFromModelObject(BandageChangingEntry modelObject)
         {
             ID = modelObject.ID;
-            CreationDateTime = modelObject.CreationDateTime;
-            ProcedureDateTime = modelObject.ProcedureDateTime;
-            Institution = (int)modelObject.Institution;
-            Person = (int)modelObject.Person;
-            Reason = (int)modelObject.Reason;
-            Area = (int)modelObject.Area;
+            CreateDate = modelObject.CreateDate;
+            ExecutionDate = modelObject.ExecutionDate;
+            SupportingInstitution = (int)modelObject.SupportingInstitution;
+            SupportingPerson = (int)modelObject.SupportingPerson;
+            ChangementReason = (int)modelObject.ChangementReason;
+            ChangementArea = (int)modelObject.ChangementArea;
             Puncture = (int)modelObject.Puncture;
             ArmProcess = (int)modelObject.ArmProcess;
-
-            Entry = (int)modelObject.Entry;
         }
     }
 }

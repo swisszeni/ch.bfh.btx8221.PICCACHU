@@ -37,10 +37,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             {
                 if (Set(ref _displayingEntry, value))
                 {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = (value.ProcedureDateTime).Date;
-                    Reason = value.Reason;
+                    Person = value.SupportingPerson;
+                    Institution = value.SupportingInstitution;
+                    ProcedureDate = (value.ExecutionDate).Date;
+                    Reason = value.ChangementReason;
 
                     // Update bindings
                     //RaisePropertyChanged("");

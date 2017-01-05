@@ -31,7 +31,6 @@ namespace BFH_USZ_PICC.Models
         FlushWithoutResistance,
         FlushWithResistance,
         FlushNotPossible
-
     }
 
     /// <summary>
@@ -39,100 +38,64 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class CatheterFlushEntry : JournalEntry
     {
-        public FlushType Type { get; set; }
-        public FlushReason Reason { get; set; }
-        public FlushResult Result { get; set; }
+        public override Type RealmObjectType
+        {
+            get { return typeof(CatheterFlushEntry); }
+        }
+
+        public FlushType FlushType { get; set; }
+        public FlushReason FlushReason { get; set; }
+        public FlushResult FlushResult { get; set; }
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
-        public CatheterFlushEntry()
-        {
-            CreationDateTime = DateTimeOffset.Now;
-            ProcedureDateTime = DateTimeOffset.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Type = FlushType.NoInformation;
-            Reason = FlushReason.NoInformation;
-            Result = FlushResult.NoInformation;
-            QuantityInMilliliter = 0;
-            IsBloodReflowVisible = false;
-
-            Entry = AllPossibleJournalEntries.CatheterFlushEntry;
-        }
-
-        public CatheterFlushEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, FlushType type, FlushResult result,
-            FlushReason reason, double quantityInMilliliter, bool isBloodReflowVisible)
-        {
-            ID = Guid.NewGuid().ToString();
-
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Type = type;
-            Reason =  reason;
-            Result = result;
-            QuantityInMilliliter = quantityInMilliliter;
-            IsBloodReflowVisible = isBloodReflowVisible;
-
-            Entry = AllPossibleJournalEntries.CatheterFlushEntry;
-        }
+        public CatheterFlushEntry() { }
 
         public CatheterFlushEntry(CatheterFlushEntryRO realmObject)
         {
             ID = realmObject.ID;
-            CreationDateTime = realmObject.CreationDateTime;
-            ProcedureDateTime = realmObject.ProcedureDateTime;
-            Institution = (HealthInstitution)realmObject.Institution;
-            Person = (HealthPerson)realmObject.Person;
-            Type = (FlushType)realmObject.Type;
-            Reason = (FlushReason)realmObject.Reason;
-            Result = (FlushResult)realmObject.Result;
+            CreateDate = realmObject.CreateDate;
+            ExecutionDate = realmObject.ExecutionDate;
+            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
+            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
+            FlushType = (FlushType)realmObject.FlushType;
+            FlushReason = (FlushReason)realmObject.FlushReason;
+            FlushResult = (FlushResult)realmObject.FlushResult;
             QuantityInMilliliter = realmObject.QuantityInMilliliter;
             IsBloodReflowVisible = realmObject.IsBloodReflowVisible;
-
-            Entry = (AllPossibleJournalEntries)realmObject.Entry;
-
         }
 
     }
 
     public class CatheterFlushEntryRO : RealmObject
     {
+        // Base JournalEntry values
         [Realms.PrimaryKey]
         public string ID { get; set; }
-        public string Icon { get; } = "placeholder.png";
-        /// <summary>
-        /// Time when the JournalEntry has been created
-        /// </summary>
-        public DateTimeOffset CreationDateTime { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry procedure takes place
-        /// </summary>
-        public DateTimeOffset ProcedureDateTime { get; set; }
-        public int Entry { get; set; }
-        public int Institution { get; set; }
-        public int Person { get; set; }
-        public int Type { get; set; }
-        public int Reason { get; set; }
-        public int Result { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int FlushType { get; set; }
+        public int FlushReason { get; set; }
+        public int FlushResult { get; set; }
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
         public void LoadDataFromModelObject(CatheterFlushEntry modelObject)
         {
             ID = modelObject.ID;
-            CreationDateTime = modelObject.CreationDateTime;
-            ProcedureDateTime = modelObject.ProcedureDateTime;
-            Institution = (int)modelObject.Institution;
-            Person = (int)modelObject.Person;
-            Type = (int)modelObject.Type;
-            Reason = (int)modelObject.Reason;
-            Result = (int)modelObject.Result;
+            CreateDate = modelObject.CreateDate;
+            ExecutionDate = modelObject.ExecutionDate;
+            SupportingInstitution = (int)modelObject.SupportingInstitution;
+            SupportingPerson = (int)modelObject.SupportingPerson;
+            FlushType = (int)modelObject.FlushType;
+            FlushReason = (int)modelObject.FlushReason;
+            FlushResult = (int)modelObject.FlushResult;
             QuantityInMilliliter = modelObject.QuantityInMilliliter;
             IsBloodReflowVisible = modelObject.IsBloodReflowVisible;
-
-            Entry = (int)modelObject.Entry;
         }
     }
 }

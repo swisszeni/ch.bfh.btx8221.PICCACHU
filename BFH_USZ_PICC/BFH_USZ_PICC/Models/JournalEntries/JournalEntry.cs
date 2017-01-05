@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace BFH_USZ_PICC.Models
 {
-    public enum AllPossibleJournalEntries
+    public enum JournalEntryType
     {
         BandagesChangingEntry,
         BloodWithdrawalEntry,
@@ -46,22 +46,15 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public abstract class JournalEntry
     {
+        [SQLite.Ignore]
+        public virtual Type RealmObjectType { get; }
+
         [SQLite.PrimaryKey]
         public string ID { get; set; }
-        public string Icon { get; } = "placeholder.png";
-        /// <summary>
-        /// Time when the JournalEntry has been created
-        /// </summary>
-        public DateTimeOffset CreationDateTime { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry procedure takes place
-        /// </summary>
-        public DateTimeOffset ProcedureDateTime { get; set; }
-        public AllPossibleJournalEntries Entry { get; set; }
-        public HealthInstitution Institution { get; set; }
-        public HealthPerson Person { get; set; }
-
-        public static ObservableCollection<JournalEntry> AllEnteredJournalEntries = new ObservableCollection<JournalEntry>();
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public HealthInstitution SupportingInstitution { get; set; }
+        public HealthPerson SupportingPerson { get; set; }
     }    
 }
 

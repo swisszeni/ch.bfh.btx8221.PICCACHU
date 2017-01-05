@@ -42,9 +42,9 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             {
                 if (Set(ref _displayingEntry, value))
                 {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = (value.ProcedureDateTime).Date;
+                    Person = value.SupportingPerson;
+                    Institution = value.SupportingInstitution;
+                    ProcedureDate = (value.ExecutionDate).Date;
                     Drug = value.Drug;
 
                     // Update bindings
