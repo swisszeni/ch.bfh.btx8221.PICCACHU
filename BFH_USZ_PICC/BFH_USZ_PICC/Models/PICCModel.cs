@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace BFH_USZ_PICC.Models
     public class PICCModel
     {
         private static List<PICCModel> modelList;
-        public static List<PICCModel> AllModels()
-        {
+        public static List<PICCModel> AllAvailablePICCModels()
+        {   
             if (modelList == null)
             {
                 modelList = new List<PICCModel>();
@@ -70,15 +71,15 @@ namespace BFH_USZ_PICC.Models
             return modelList;
         }
 
+        [SQLite.PrimaryKey]   
+        public string ID { get; set; } 
+        public string Barcode { get; set; }
         public string PICCName { get; set; }
         public int Lumen { get; set; }
         public double FrenchDiameter { get; set; }
         public string PictureUri { get; set; }
-        public string Barcode { get; set; }
-
         public double GuideWireLenght { get; set; }
         public string Gauge { get; set; }
-
         public string GNDMCode { get; set; }
 
 
@@ -92,7 +93,47 @@ namespace BFH_USZ_PICC.Models
             GNDMCode = gndmCode;
             Barcode = barcode;
             PictureUri = pictureUri;
+        }
 
+        public PICCModel(PICCModelRO realmObject)
+        {
+            ID = realmObject.ID;
+            Barcode = realmObject.Barcode;
+            PICCName = realmObject.PICCName;
+            Lumen = realmObject.Lumen;
+            FrenchDiameter = realmObject.FrenchDiameter;
+            PictureUri = realmObject.PictureUri;
+            GuideWireLenght = realmObject.GuideWireLenght;
+            Gauge = realmObject.Gauge;
+            GNDMCode = realmObject.GNDMCode;
+        }
+    }
+
+    public class PICCModelRO : RealmObject
+    {
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public string Barcode { get; set; }
+        public string PICCName { get; set; }
+        public int Lumen { get; set; }
+        public double FrenchDiameter { get; set; }
+        public string PictureUri { get; set; }
+        public double GuideWireLenght { get; set; }
+        public string Gauge { get; set; }
+        public string GNDMCode { get; set; }
+
+
+        public void LoadDataFromModelObject(PICCModel modelObject)
+        {
+            ID = modelObject.ID;
+            Barcode = modelObject.Barcode;
+            PICCName = modelObject.PICCName;
+            Lumen = modelObject.Lumen;
+            FrenchDiameter = modelObject.FrenchDiameter;
+            PictureUri = modelObject.PictureUri;
+            GuideWireLenght = modelObject.GuideWireLenght;
+            Gauge = modelObject.Gauge;
+            GNDMCode = modelObject.GNDMCode;
         }
     }
 }

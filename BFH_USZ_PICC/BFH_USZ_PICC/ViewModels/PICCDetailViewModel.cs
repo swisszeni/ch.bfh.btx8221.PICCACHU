@@ -1,8 +1,10 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,32 +18,53 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class PICCDetailViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+        private PICC _displayingPICC;
 
-        private PICC _displayingEntry;
-        public PICC DisplayingEntry
+        public PICCDetailViewModel()
         {
-            get { return _displayingEntry; }
-            set
-            {
-                if (Set(ref _displayingEntry, value))
-                {
-                    PiccName = value.PICCModel.PICCName;
-                    FrenchDiameter = value.PICCModel.FrenchDiameter;
-                    Lumen = value.PICCModel.Lumen;
-                    ImageSource = value.PICCModel.PictureUri;
+            // Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
 
-                    City = value.InsertCity;
-                    InsertCountry = value.InsertCountry;
-                    InsertDate = value.InsertDate;
-                    IsRemovalDateSet = value.IsNotActiveAnymore;
-                    RemovalDate = value.RemovalDate;
-                    PiccSide = value.InsertSide;
-                    PiccPosition = value.InsertPosition;
-
-                }
-                RaisePropertyChanged("");
-            }
+            PopulatePICCAsync();
         }
+
+        private async void PopulatePICCAsync()
+        {
+            var currentPICC = await _dataService.GetCurrentPICCAsync();
+
+            if (currentPICC != null)
+            {
+                _displayingPICC = currentPICC;
+            }
+
+            LoadFromModel();
+        }
+
+        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        {
+            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            {
+                var param = ((List<object>)parameter).First();
+                if (param.GetType() == typeof(PICCModel))
+                {
+                    _displayingPICC = new PICC() { PICCModel = (PICCModel)param, InsertDate = DateTimeOffset.Now.Date.ToLocalTime() };
+                    IsUserInputEnabled = true;
+                }
+                else if (param.GetType() == typeof(PICC))
+                {
+                    _displayingPICC = (PICC)param;
+                    IsUserInputEnabled = false;
+                }
+            }           
+
+            LoadFromModel();
+
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
+        }
+
+
 
         /// <summary>
         // Returns the binded name or sets a new name to the related object
@@ -117,8 +140,8 @@ namespace BFH_USZ_PICC.ViewModels
         /// Returns the binded expiration date or sets a new date to the related object
         /// </summary>
 
-        private DateTime? _removalDate;
-        public DateTime? RemovalDate
+        private DateTimeOffset _removalDate;
+        public DateTimeOffset RemovalDate
         {
             get
             {
@@ -187,11 +210,11 @@ namespace BFH_USZ_PICC.ViewModels
         /// Returns the binded city if "Ausland" or "Switzerland" is selected as country. Sets a new city to the related object.
         /// </summary>
 
-        private string _city;
-        public string City
+        private string _insertCity;
+        public string InsertCity
         {
-            get { return _city; }
-            set { Set(ref _city, value); }
+            get { return _insertCity; }
+            set { Set(ref _insertCity, value); }
         }
 
         private bool _isCountrySet;
@@ -202,7 +225,7 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (!value)
                 {
-                    City = null;
+                    InsertCity = null;
                 }
                 Set(ref _isCountrySet, value);
             }
@@ -211,44 +234,29 @@ namespace BFH_USZ_PICC.ViewModels
         /// <summary>
         /// Checks if parameters should be editable or not
         /// </summary>
-        private bool _isVisibleOrEnabled;
-        public bool IsVisibleOrEnabled
+        private bool _isUserInputEnabled;
+        public bool IsUserInputEnabled
         {
-            get { return _isVisibleOrEnabled; }
-            set { Set(ref _isVisibleOrEnabled, value); }
+            get { return _isUserInputEnabled; }
+            set { Set(ref _isUserInputEnabled, value); }
         }
 
-        /// <summary>
-        /// Checks if user wants to add a new PICC or edit his current PICC
-        /// </summary>
-        private bool _isUserAddingANewPICC;
-        public bool IsUserAddingANewPICC
-        {
-            get { return _isUserAddingANewPICC; }
-            set { Set(ref _isUserAddingANewPICC, value); }
-        }
-
-        private RelayCommand _editButtonCommand;
+              private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
         {
-            IsVisibleOrEnabled = true;
+            IsUserInputEnabled = true;
         }));
 
         private RelayCommand _saveButtonCommand;
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
-            if (IsUserAddingANewPICC && CurrentPICC != null)
-            {
-                CurrentPICC.RemovalDate = DateTime.Now;
-                CurrentPICC.IsNotActiveAnymore = true;
-                PreviousPICC.Add(CurrentPICC);
-            }
-            PICCModel model = new PICCModel(PiccName, DisplayingEntry.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, DisplayingEntry.PICCModel.Gauge, DisplayingEntry.PICCModel.GNDMCode, DisplayingEntry.PICCModel.Barcode, DisplayingEntry.PICCModel.PictureUri);
-            PICC.CurrentPICC = new PICC(model, InsertDate, InsertCountry, City, PiccSide, PiccPosition);
+            //if (IsUserAddingANewPICC && _displayingPICC != null)
+            //{
+            //    CurrentPICC.RemovalDate = DateTime.Now;            
 
+            //}
+            SaveToModel();
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
-
-
         }));
 
         private RelayCommand _cancelButtonCommand;
@@ -256,15 +264,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                if (IsUserAddingANewPICC)
-                {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-
-                }
-                else
-                {
-                    IsVisibleOrEnabled = false;
-                }
+                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();                
             }
         }));
 
@@ -273,15 +273,56 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.PICCDetailViewModelSetPICCInactiveText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                CurrentPICC.RemovalDate = DateTime.Now;
-                CurrentPICC.IsNotActiveAnymore = true;
-                PreviousPICC.Add(CurrentPICC);
-
-                PICC.CurrentPICC = null;
-
+                _displayingPICC.RemovalDate = DateTime.Now.Date.ToLocalTime();
+                SaveToModel();
+            
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
+
+        private void SaveToModel()
+        {
+            PICCModel model = new PICCModel(PiccName, _displayingPICC.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, _displayingPICC.PICCModel.Gauge, _displayingPICC.PICCModel.GNDMCode, _displayingPICC.PICCModel.Barcode, _displayingPICC.PICCModel.PictureUri);
+            _displayingPICC.PICCModel = model;
+            _displayingPICC.InsertDate = InsertDate;
+            _displayingPICC.InsertCountry = InsertCountry;
+            _displayingPICC.InsertCity = InsertCity;
+            _displayingPICC.InsertSide = PiccSide;
+            _displayingPICC.InsertPosition = PiccPosition;
+
+            // Save to DB
+            _dataService.SaveCurrentPICCAsync(_displayingPICC);
+
+        }
+
+        private void LoadFromModel()
+        {
+            if(_displayingPICC != null)
+            {
+                PiccName = _displayingPICC.PICCModel.PICCName;
+                FrenchDiameter = _displayingPICC.PICCModel.FrenchDiameter;
+                Lumen = _displayingPICC.PICCModel.Lumen;
+                ImageSource = _displayingPICC.PICCModel.PictureUri;
+                InsertCity = _displayingPICC.InsertCity;
+                InsertCountry = _displayingPICC.InsertCountry;
+                InsertDate = (_displayingPICC.InsertDate).Date;
+                PiccSide = _displayingPICC.InsertSide;
+                PiccPosition = _displayingPICC.InsertPosition;
+
+                if (_displayingPICC?.RemovalDate == null)
+                {
+                    RemovalDate = DateTimeOffset.Now;
+                    IsRemovalDateSet = false;
+                }
+                else
+                {
+                    RemovalDate = (DateTimeOffset)_displayingPICC.RemovalDate;
+                    IsRemovalDateSet = true;
+                }
+            }
+
+            RaisePropertyChanged("");
+        }
 
     }
 }

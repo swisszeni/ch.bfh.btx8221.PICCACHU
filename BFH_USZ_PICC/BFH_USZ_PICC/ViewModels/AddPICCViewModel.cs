@@ -20,7 +20,7 @@ namespace BFH_USZ_PICC.ViewModels
         /// Get all possible PICC models. If the user searches a model, the getter compares the input string with all models
         /// and provides a selection of all models which contain the entered input.
         /// </summary>
-        private ObservableCollection<PICCModel> _piccModels = new ObservableCollection<PICCModel>(PICCModel.AllModels());
+        private ObservableCollection<PICCModel> _piccModels = new ObservableCollection<PICCModel>(PICCModel.AllAvailablePICCModels());
         public ObservableCollection<PICCModel> PICCModels
         {
             get

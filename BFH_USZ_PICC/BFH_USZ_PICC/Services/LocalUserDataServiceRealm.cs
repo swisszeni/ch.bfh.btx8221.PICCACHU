@@ -143,7 +143,7 @@ namespace BFH_USZ_PICC.Services
             List<JournalEntry> resultList = new List<JournalEntry>();
 
             // Collets all journal entries together
-            var drugResult = _database.All<AdministeredDrugEntryRO>();           
+            var drugResult = _database.All<AdministeredDrugEntryRO>();
             foreach (var entry in drugResult)
             { resultList.Add(new AdministeredDrugEntry((entry))); }
 
@@ -186,7 +186,7 @@ namespace BFH_USZ_PICC.Services
                     case (AllPossibleJournalEntries.AdministeredDrugEntry):
                         var drugEntryRO = new AdministeredDrugEntryRO();
                         drugEntryRO.LoadDataFromModelObject((AdministeredDrugEntry)entry);
-                        _database.Add(drugEntryRO);                       
+                        _database.Add(drugEntryRO);
                         return;
                     case (AllPossibleJournalEntries.StatlockEntry):
                         var statlockEntryRO = new StatlockChangingEntryRO();
@@ -304,7 +304,74 @@ namespace BFH_USZ_PICC.Services
                 default:
                     return Task.FromResult(0);
             }
-            #endregion
         }
+        #endregion
+
+        #region PICC
+
+        public Task<List<PICC>> GetFormerPICCsAsync()
+        {
+            List<PICC> formerPICCs = new List<PICC>();
+
+            // Collets the all former PICCs
+            var formerPICCsRO = _database.All<PICCRO>();
+            foreach (var picc in formerPICCsRO)
+            {
+                if (picc.RemovalDate != null)
+                {
+                    formerPICCs.Add(new PICC(picc));
+                }
+            }
+            return Task.FromResult(formerPICCs);
+        }
+
+        public Task<PICC> GetCurrentPICCAsync()
+        {
+            PICC currentPICC = new PICC();
+            // Collets the current PICC
+            var currentPICCRO = _database.All<PICCRO>().FirstOrDefault((x) => x.RemovalDate == null);
+
+            if (currentPICCRO != null)
+            {
+                return Task.FromResult(new PICC(currentPICCRO));
+            }
+            else { return Task.FromResult((PICC)null); }
+
+        }
+
+        public Task<int> SaveCurrentPICCAsync(PICC currentPICC)
+        {
+            //Check if a new PICC is set as current or if the current picc is only modified
+            var currentPICCRO = _database.All<PICCRO>().FirstOrDefault((x) => x.RemovalDate == null);
+            if (currentPICCRO == null || currentPICCRO.ID != currentPICC.ID)
+            {
+                _database.Write(() =>
+                {
+                    if (currentPICCRO != null)
+                    {
+                        currentPICCRO.RemovalDate = DateTimeOffset.Now.LocalDateTime;
+                    }
+
+                    var newCurrentPICCRO = new PICCRO();
+                    newCurrentPICCRO.LoadDataFromModelObject(currentPICC);
+                    newCurrentPICCRO.ID = Guid.NewGuid().ToString();
+                    newCurrentPICCRO.PICCModelRO.ID = Guid.NewGuid().ToString();
+                    _database.Add(newCurrentPICCRO);
+
+                });
+            }
+            else
+            {
+                _database.Write(() =>
+                {
+                    currentPICCRO.LoadDataFromModelObject(currentPICC);
+                });
+            }
+
+            return Task.FromResult(1);
+
+        }
+
+        #endregion
     }
 }
