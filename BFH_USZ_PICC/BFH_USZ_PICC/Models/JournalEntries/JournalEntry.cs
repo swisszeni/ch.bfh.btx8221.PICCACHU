@@ -1,9 +1,7 @@
-﻿using BFH_USZ_PICC.Resx;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Resx;
 using Realms;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace BFH_USZ_PICC.Models
 {

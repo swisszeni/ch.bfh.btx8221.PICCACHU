@@ -173,28 +173,44 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            JournalEntryType entry = (JournalEntryType)value;
-
-            switch (entry)
+            // Since C# 6 can't switch over types, we have to if-else this shit
+            if (value == null)
             {
-                case JournalEntryType.BandagesChangingEntry:
-                    return AppResources.JournalOverviewPageBandagesChangingEntry;
-                case JournalEntryType.BloodWithdrawalEntry:
-                    return AppResources.JournalOverviewPageBloodWithdrawalEntry;
-                case JournalEntryType.CatheterFlushEntry:
-                    return AppResources.JournalOverviewPageCatheterFlushEntry;
-                case JournalEntryType.InfusionEntry:
-                    return AppResources.JournalOverviewPageInfusionEntry;
-                case JournalEntryType.MicroClaveEntry:
-                    return AppResources.JournalOverviewPageMicroClaveChangingEntry;
-                case JournalEntryType.AdministeredDrugEntry:
-                    return AppResources.JournalOverviewPageAdministeredDrugEntry;
-                case JournalEntryType.StatlockEntry:
-                    return AppResources.JournalOverviewPageStatlockChangingEntry;
-                default:
-                    return " ";
+                return "";
             }
 
+            Type entryType = value.GetType();
+            string displayName = "";
+            if (entryType == typeof(AdministeredDrugEntry))
+            {
+                displayName = AppResources.JournalOverviewPageAdministeredDrugEntry;
+            }
+            else if (entryType == typeof(MicroClaveChangingEntry))
+            {
+                displayName = AppResources.JournalOverviewPageMicroClaveChangingEntry;
+            }
+            else if (entryType == typeof(StatlockChangingEntry))
+            {
+                displayName = AppResources.JournalOverviewPageStatlockChangingEntry;
+            }
+            else if (entryType == typeof(BloodWithdrawalEntry))
+            {
+                displayName = AppResources.JournalOverviewPageBloodWithdrawalEntry;
+            }
+            else if (entryType == typeof(BandageChangingEntry))
+            {
+                displayName = AppResources.JournalOverviewPageBandagesChangingEntry;
+            }
+            else if (entryType == typeof(InfusionEntry))
+            {
+                displayName = AppResources.JournalOverviewPageInfusionEntry;
+            }
+            else if (entryType == typeof(CatheterFlushEntry))
+            {
+                displayName = AppResources.JournalOverviewPageCatheterFlushEntry;
+            }
+
+            return displayName;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

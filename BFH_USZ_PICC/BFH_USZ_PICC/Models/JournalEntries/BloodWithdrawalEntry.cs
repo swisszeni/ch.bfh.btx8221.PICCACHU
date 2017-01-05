@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace BFH_USZ_PICC.Models
             get { return typeof(BloodWithdrawalEntryRO); }
         }
 
-        public bool IsNaCiFlushDone { get; set; }
+        public bool IsNaClFlushDone { get; set; }
         public BloodFlow Flow { get; set; }
 
         public BloodWithdrawalEntry() { }
@@ -39,12 +40,12 @@ namespace BFH_USZ_PICC.Models
             ExecutionDate = realmObject.ExecutionDate;
             SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
             SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
-            IsNaCiFlushDone = realmObject.IsNaCiFlushDone;
+            IsNaClFlushDone = realmObject.IsNaClFlushDone;
             Flow = (BloodFlow)realmObject.Flow;
         }
     }
 
-    public class BloodWithdrawalEntryRO : RealmObject
+    public class BloodWithdrawalEntryRO : RealmObject, ILoadableRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
@@ -55,19 +56,28 @@ namespace BFH_USZ_PICC.Models
         public int SupportingPerson { get; set; }
 
         // Typespecific values
-        public bool IsNaCiFlushDone { get; set; }
+        public bool IsNaClFlushDone { get; set; }
         public int Flow { get; set; }
 
 
-        public void LoadDataFromModelObject(BloodWithdrawalEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreateDate = modelObject.CreateDate;
-            ExecutionDate = modelObject.ExecutionDate;
-            SupportingInstitution = (int)modelObject.SupportingInstitution;
-            SupportingPerson = (int)modelObject.SupportingPerson;
-            IsNaCiFlushDone = modelObject.IsNaCiFlushDone;
-            Flow = (int)modelObject.Flow;
+            if(model.GetType() == typeof(BloodWithdrawalEntry))
+            {
+                var modelObject = (BloodWithdrawalEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                IsNaClFlushDone = modelObject.IsNaClFlushDone;
+                Flow = (int)modelObject.Flow;
+                
+            } else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }

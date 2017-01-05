@@ -104,6 +104,11 @@ namespace BFH_USZ_PICC.Services
             throw new NotImplementedException();
         }
 
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
         {
             //var newEntryType = entry.Entry;

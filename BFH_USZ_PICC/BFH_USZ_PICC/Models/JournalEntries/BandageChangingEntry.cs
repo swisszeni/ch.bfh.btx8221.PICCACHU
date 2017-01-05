@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,7 +77,7 @@ namespace BFH_USZ_PICC.Models
 
     }
 
-    public class BandageChangingEntryRO : RealmObject
+    public class BandageChangingEntryRO : RealmObject, ILoadableRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
@@ -93,17 +94,26 @@ namespace BFH_USZ_PICC.Models
         public int ArmProcess { get; set; }
 
 
-        public void LoadDataFromModelObject(BandageChangingEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreateDate = modelObject.CreateDate;
-            ExecutionDate = modelObject.ExecutionDate;
-            SupportingInstitution = (int)modelObject.SupportingInstitution;
-            SupportingPerson = (int)modelObject.SupportingPerson;
-            ChangementReason = (int)modelObject.ChangementReason;
-            ChangementArea = (int)modelObject.ChangementArea;
-            Puncture = (int)modelObject.Puncture;
-            ArmProcess = (int)modelObject.ArmProcess;
+            if (model.GetType() == typeof(BandageChangingEntry))
+            {
+                var modelObject = (BandageChangingEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                ChangementReason = (int)modelObject.ChangementReason;
+                ChangementArea = (int)modelObject.ChangementArea;
+                Puncture = (int)modelObject.Puncture;
+                ArmProcess = (int)modelObject.ArmProcess;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }

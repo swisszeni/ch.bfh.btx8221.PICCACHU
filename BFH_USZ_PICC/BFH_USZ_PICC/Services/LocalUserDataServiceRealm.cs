@@ -144,13 +144,13 @@ namespace BFH_USZ_PICC.Services
             List<JournalEntry> resultList = new List<JournalEntry>();
 
             // Collets all journal entries together
-            resultList.AddRange(_database.All<AdministeredDrugEntryRO>().Select((x) => new AdministeredDrugEntry(x)));
-            resultList.AddRange(_database.All<StatlockChangingEntryRO>().Select((x) => new StatlockChangingEntry(x)));
-            resultList.AddRange(_database.All<BandageChangingEntryRO>().Select((x) => new BandageChangingEntry(x)));
-            resultList.AddRange(_database.All<BloodWithdrawalEntryRO>().Select((x) => new BloodWithdrawalEntry(x)));
-            resultList.AddRange(_database.All<CatheterFlushEntryRO>().Select((x) => new CatheterFlushEntry(x)));
-            resultList.AddRange(_database.All<InfusionEntryRO>().Select((x) => new InfusionEntry(x)));
-            resultList.AddRange(_database.All<MicroClaveChangingEntryRO>().Select((x) => new MicroClaveChangingEntry(x)));
+            resultList.AddRange(_database.All<AdministeredDrugEntryRO>().ToList().Select((x) => new AdministeredDrugEntry(x)));
+            resultList.AddRange(_database.All<StatlockChangingEntryRO>().ToList().Select((x) => new StatlockChangingEntry(x)));
+            resultList.AddRange(_database.All<BandageChangingEntryRO>().ToList().Select((x) => new BandageChangingEntry(x)));
+            resultList.AddRange(_database.All<BloodWithdrawalEntryRO>().ToList().Select((x) => new BloodWithdrawalEntry(x)));
+            resultList.AddRange(_database.All<CatheterFlushEntryRO>().ToList().Select((x) => new CatheterFlushEntry(x)));
+            resultList.AddRange(_database.All<InfusionEntryRO>().ToList().Select((x) => new InfusionEntry(x)));
+            resultList.AddRange(_database.All<MicroClaveChangingEntryRO>().ToList().Select((x) => new MicroClaveChangingEntry(x)));
 
 
             return Task.FromResult(resultList);
@@ -162,16 +162,48 @@ namespace BFH_USZ_PICC.Services
             return Task.FromResult(_database.All(entryTypeExample.RealmObjectType.Name).Select((x) => (T)Activator.CreateInstance(typeof(T), new object[] { x })).ToList());
         }
 
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        {
+            var entryTypeExample = (JournalEntry)Activator.CreateInstance(typeof(T));
+            var entry = _database.Find(entryTypeExample.RealmObjectType.Name, ID);
+            if(entry != null)
+            {
+                return Task.FromResult((T)Activator.CreateInstance(typeof(T), new object[] { entry }));
+            }
+            
+            return Task.FromResult<T>(null);
+        }
+
         public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
         {
-            _database.Write(() =>
+            if (String.IsNullOrEmpty(entry.ID))
             {
-                // We just cast it to one of the RO types since we would one need the cast to RealmObject and once to the specific subclass
-                var realmObject = (AdministeredDrugEntryRO)Activator.CreateInstance(entry.RealmObjectType);
-                realmObject.LoadDataFromModelObject((AdministeredDrugEntry)(object)entry);
-                _database.Add(realmObject);
-            });
+                // create new entry
+                _database.Write(() =>
+                {
+                    var rObject = (ILoadableRealmObject)Activator.CreateInstance(entry.RealmObjectType);
+                    rObject.LoadDataFromModelObject((JournalEntry)(object)entry);
+                    // Generate the ID if necessary
+                    if (String.IsNullOrEmpty(rObject.ID))
+                    {
+                        rObject.ID = Guid.NewGuid().ToString();
+                    }
 
+                    _database.Add((RealmObject)rObject);
+                });
+            } else
+            {
+                // update existing entry
+                var existingRO = (ILoadableRealmObject)_database.Find(entry.RealmObjectType.Name, entry.ID);
+                if (existingRO != null)
+                {
+                    _database.Write(() =>
+                    {
+                        existingRO.LoadDataFromModelObject((JournalEntry)(object)entry);
+                    });
+                }
+            }
+            
             return Task.FromResult(1);
         }
 

@@ -17,144 +17,56 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class BandageChangingViewModel : ViewModelBase
+    public class BandageChangingViewModel : JournalEntryBaseViewModel<BandageChangingEntry>
     {
-        private ILocalUserDataService _dataService;
+        public BandageChangingViewModel() { }
 
-        public BandageChangingViewModel()
+        protected override void LoadFromModel()
         {
-            //Getting the dataservice
-            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+            ChangementReason = _displayingEntry?.ChangementReason == null ? 0 : _displayingEntry.ChangementReason;
+            ChangementArea = _displayingEntry?.ChangementArea == null ? 0 : _displayingEntry.ChangementArea;
+            Puncture = _displayingEntry?.Puncture == null ? 0 : _displayingEntry.Puncture;
+            ArmProcess = _displayingEntry?.ArmProcess == null ? 0 : _displayingEntry.ArmProcess;
+
+            base.LoadFromModel();
         }
 
-        private BandageChangingEntry _displayingEntry;
-        public BandageChangingEntry DisplayingEntry
+        protected override void SaveToModel()
         {
-            get { return _displayingEntry; }
-            set
-            {
-                if (Set(ref _displayingEntry, value))
-                {
-                    Person = value.SupportingPerson;
-                    Institution = value.SupportingInstitution;
-                    ProcedureDate = (value.ExecutionDate).Date;
-                    Reason = value.ChangementReason;
-                    Area = value.ChangementArea;
-                    ArmSituation = value.ArmProcess;
-                    PunctureSituation = value.Puncture;
+            _displayingEntry.ChangementReason = ChangementReason;
+            _displayingEntry.ChangementArea = ChangementArea;
+            _displayingEntry.Puncture = Puncture;
+            _displayingEntry.ArmProcess = ArmProcess;
 
-                }
-
-                // Update bindings
-                RaisePropertyChanged(() => Person);
-                RaisePropertyChanged(() => Institution);
-                RaisePropertyChanged(() => Reason);
-                RaisePropertyChanged(() => Area);
-                RaisePropertyChanged(() => ArmSituation);
-                RaisePropertyChanged(() => PunctureSituation);
-            }
+            base.SaveToModel();
         }
 
-        private HealthPerson _person;
-        public HealthPerson Person
+        private BandageChangementReason _changementReason;
+        public BandageChangementReason ChangementReason
         {
-            get { return _person; }
-            set { Set(ref _person, value); }
+            get { return _changementReason; }
+            set { Set(ref _changementReason, value); }
         }
 
-        private HealthInstitution _institution;
-        public HealthInstitution Institution
+        private BandageChangementArea _changementArea;
+        public BandageChangementArea ChangementArea
         {
-            get { return _institution; }
-            set { Set(ref _institution, value); }
+            get { return _changementArea; }
+            set { Set(ref _changementArea, value); }
         }
 
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
+        private BandagePunctureSituation _puncture;
+        public BandagePunctureSituation Puncture
         {
-            get { return _procedureDate; }
-            set { Set(ref _procedureDate, value); }
+            get { return _puncture; }
+            set { Set(ref _puncture, value); }
         }
 
-        private BandageChangementReason _reason;
-        public BandageChangementReason Reason
+        private BandageArmProcessSituation _armProcess;
+        public BandageArmProcessSituation ArmProcess
         {
-            get { return _reason; }
-            set { Set(ref _reason, value); }
+            get { return _armProcess; }
+            set { Set(ref _armProcess, value); }
         }
-
-        private BandageChangementArea _area;
-        public BandageChangementArea Area
-        {
-            get { return _area; }
-            set { Set(ref _area, value); }
-        }
-
-        private BandagePunctureSituation _punctureSituation;
-        public BandagePunctureSituation PunctureSituation
-        {
-            get { return _punctureSituation; }
-            set { Set(ref _punctureSituation, value); }
-        }
-
-        private BandageArmProcessSituation _armSituation;
-        public BandageArmProcessSituation ArmSituation
-        {
-            get { return _armSituation; }
-            set { Set(ref _armSituation, value); }
-        }
-
-        private bool _isEnabledOrVisible;
-        public bool IsEnabledOrVisible
-        {
-            get { return _isEnabledOrVisible; }
-            set { Set(ref _isEnabledOrVisible, value); }
-        }
-
-
-        private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
-        {
-            // create a new PICCAppliedDrugEntry with the user entered information
-            BandageChangingEntry entry = new BandageChangingEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Reason, Area, PunctureSituation, ArmSituation);
-            //Add the object to the collection of JournalEntries
-            await _dataService.SaveJournalEntryAsync(entry);
-            //close the page
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-        }));
-
-        private RelayCommand _cancelButtonCommand;
-        public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
-        {
-            //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
-        private RelayCommand _deleteButtonCommand;
-        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
-        {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
-        private RelayCommand _checkForMainentanceInstruction;
-        public RelayCommand CheckForMainentanceInstruction => _checkForMainentanceInstruction ?? (_checkForMainentanceInstruction = new RelayCommand(async () =>
-        {
-            if (IsEnabledOrVisible)
-            {
-                if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.InformationText, AppResources.JournalEntriesAskForMainentanceInstructionText, AppResources.YesButtonText, AppResources.NoButtonText))
-                {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { MainentanceInstructions.getBandageChangingInstruction() }));
-                }
-            }
-        }));
     }
-
 }
-

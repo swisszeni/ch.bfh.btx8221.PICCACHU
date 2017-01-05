@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\IFileHelper.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
     <Compile Include="Interfaces\IKnowledgeBaseEntry.cs" />
+    <Compile Include="Interfaces\ILoadableRealmObject.cs" />
     <Compile Include="Interfaces\ILocalAppDataService.cs" />
     <Compile Include="Interfaces\ILocalUserDataService.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="ViewModels\JournalEntries\InfusionViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\BloodWithdrawalViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\BandageChangingViewModel.cs" />
+    <Compile Include="ViewModels\JournalEntries\JournalEntryBaseViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\StatlockChangingViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\MicroClaveChangingViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\AdministeredDrugViewModel.cs" />

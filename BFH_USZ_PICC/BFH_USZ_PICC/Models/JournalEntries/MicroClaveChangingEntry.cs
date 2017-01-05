@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace BFH_USZ_PICC.Models
         }
     }
 
-    public class MicroClaveChangingEntryRO : RealmObject
+    public class MicroClaveChangingEntryRO : RealmObject, ILoadableRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
@@ -52,14 +53,23 @@ namespace BFH_USZ_PICC.Models
         // Typespecific values
         public int ChangementReason { get; set; }
 
-        public void LoadDataFromModelObject(MicroClaveChangingEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreateDate = modelObject.CreateDate;
-            ExecutionDate = modelObject.ExecutionDate;
-            SupportingInstitution = (int)modelObject.SupportingInstitution;
-            SupportingPerson = (int)modelObject.SupportingPerson;
-            ChangementReason = (int)modelObject.ChangementReason;
+            if (model.GetType() == typeof(MicroClaveChangingEntry))
+            {
+                var modelObject = (MicroClaveChangingEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                ChangementReason = (int)modelObject.ChangementReason;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }

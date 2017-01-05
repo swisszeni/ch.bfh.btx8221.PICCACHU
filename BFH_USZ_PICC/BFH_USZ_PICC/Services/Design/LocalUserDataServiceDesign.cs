@@ -61,6 +61,11 @@ namespace BFH_USZ_PICC.Services.Design
             throw new NotImplementedException();
         }
 
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

@@ -16,75 +16,22 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-
-    //public enum JournalEntryPageStatus
-    //{
-    //    Create, 
-    //    Edit,
-    //    View
-    //}
-
-    class AdministeredDrugViewModel : ViewModelBase
+    public class AdministeredDrugViewModel : JournalEntryBaseViewModel<AdministeredDrugEntry>
     {
-        private ILocalUserDataService _dataService;
+        public AdministeredDrugViewModel() { }
 
-        public AdministeredDrugViewModel()
+        protected override void LoadFromModel()
         {
-            //Getting the dataservice
-            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();           
+            Drug = _displayingEntry?.Drug;
+
+            base.LoadFromModel();
         }
 
-        private AdministeredDrugEntry _displayingEntry;
-        public AdministeredDrugEntry DisplayingEntry
+        protected override void SaveToModel()
         {
-            get { return _displayingEntry; }
-            set
-            {
-                if (Set(ref _displayingEntry, value))
-                {
-                    Person = value.SupportingPerson;
-                    Institution = value.SupportingInstitution;
-                    ProcedureDate = (value.ExecutionDate).Date;
-                    Drug = value.Drug;
+            _displayingEntry.Drug = Drug;
 
-                    // Update bindings
-                    //RaisePropertyChanged("");
-                }
-
-                RaisePropertyChanged(() => Person);
-                RaisePropertyChanged(() => Institution);
-            }
-        }
-
-        //FIXME: Implement proper View/Edit/Create pattern
-        //private JournalEntryPageStatus _status;
-        //public JournalEntryPageStatus Status
-        //{
-        //    get { return _status; }
-        //    set {
-        //        Set(ref _status, value);
-        //    }
-        //}
-
-        private HealthPerson _person;
-        public HealthPerson Person
-        {
-            get { return _person; }
-            set { Set(ref _person, value); }
-        }
-
-        private HealthInstitution _institution;
-        public HealthInstitution Institution
-        {
-            get { return _institution; }
-            set { Set(ref _institution, value); }
-        }
-
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
-        {
-            get { return _procedureDate; }
-            set { Set(ref _procedureDate, value); }
+            base.SaveToModel();
         }
 
         private string _drug;
@@ -93,48 +40,5 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             get { return _drug; }
             set { Set(ref _drug, value); }
         }
-
-        private bool _isEnabledOrVisible;
-        public bool IsEnabledOrVisible
-        {
-            get { return _isEnabledOrVisible; }
-            set { Set(ref _isEnabledOrVisible, value); }
-        }
-
-        private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
-        {
-            // create a new PICCAppliedDrugEntry with the user entered information
-            AdministeredDrugEntry entry = new AdministeredDrugEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Drug);
-            //Add the object to the collection of JournalEntries            
-            //JournalEntry.AllEnteredJournalEntries.Add(entry);
-            
-            //TEST
-            await _dataService.SaveJournalEntryAsync(entry);
-            //close the page
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-        }));
-
-        private RelayCommand _cancelButtonCommand;
-        public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
-        {
-            //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
-        private RelayCommand _deleteButtonCommand;
-        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
-        {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                //JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
-                //TEST
-                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
     }
 }

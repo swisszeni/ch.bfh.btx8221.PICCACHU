@@ -3,33 +3,21 @@ using System;
 using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.ViewModels.JournalEntries;
-
-
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class InfusionEntryPage : BaseContentPage
     {
         public InfusionEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((InfusionViewModel)BindingContext).DisplayingEntry = new InfusionEntry();
-            ((InfusionViewModel)BindingContext).IsEnabledOrVisible = true;
         }
 
         public InfusionEntryPage(ContentPage contained, InfusionEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((InfusionViewModel)BindingContext).DisplayingEntry = entry;
-            ((InfusionViewModel)BindingContext).IsEnabledOrVisible = false;
         }
 
         void AddPickers()
@@ -65,6 +53,5 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationWithResistance);
             InfusionAdministrationPicker.Items.Add(AppResources.InfusionAdministrationNotPossibleText);
         }
-
     }
 }

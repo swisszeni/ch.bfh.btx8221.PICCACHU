@@ -3,17 +3,9 @@ using System;
 using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.ViewModels.JournalEntries;
-
-
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class MicroClaveChangingEntryPage : BaseContentPage
     {
         private bool _firstAppearing = true;
@@ -21,27 +13,12 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         {
             InitializeComponent();
             AddPickers();
-            ((MicroClaveChangingViewModel)BindingContext).DisplayingEntry = new MicroClaveChangingEntry();
-            ((MicroClaveChangingViewModel)BindingContext).IsEnabledOrVisible = true;
-
-        }               
+        }
 
         public MicroClaveChangingEntryPage(ContentPage contained, MicroClaveChangingEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((MicroClaveChangingViewModel)BindingContext).DisplayingEntry = entry;
-            ((MicroClaveChangingViewModel)BindingContext).IsEnabledOrVisible = false;
-
-        }
-        public override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (_firstAppearing)
-            {
-                ((MicroClaveChangingViewModel)BindingContext).CheckForMainentanceInstruction.Execute(null);
-                _firstAppearing = false;
-            }
         }
 
         void AddPickers()
@@ -67,8 +44,6 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             MicroClaveChaningReasonPicker.Items.Add(AppResources.JournalEntryNotSpecifiedText);
             MicroClaveChaningReasonPicker.Items.Add(AppResources.MicroClaveChangingEntryRoutineText);
             MicroClaveChaningReasonPicker.Items.Add(AppResources.MicroClaveChangingEntryPollutionText);
-
         }
-
     }
 }

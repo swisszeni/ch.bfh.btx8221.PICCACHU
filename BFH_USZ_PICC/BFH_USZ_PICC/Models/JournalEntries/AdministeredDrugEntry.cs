@@ -1,4 +1,5 @@
-﻿using BFH_USZ_PICC.Resx;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Resx;
 using Realms;
 using SQLite;
 using System;
@@ -33,7 +34,7 @@ namespace BFH_USZ_PICC.Models
         }
     }
 
-    public class AdministeredDrugEntryRO : RealmObject
+    public class AdministeredDrugEntryRO : RealmObject, ILoadableRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
@@ -46,14 +47,23 @@ namespace BFH_USZ_PICC.Models
         // Typespecific values
         public string Drug { get; set; }
 
-        public void LoadDataFromModelObject(AdministeredDrugEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreateDate = modelObject.CreateDate;
-            ExecutionDate = modelObject.ExecutionDate;
-            SupportingInstitution = (int)modelObject.SupportingInstitution;
-            SupportingPerson = (int)modelObject.SupportingPerson;
-            Drug = modelObject.Drug;
+            if (model.GetType() == typeof(AdministeredDrugEntry))
+            {
+                var modelObject = (AdministeredDrugEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                Drug = modelObject.Drug;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     } 
 }

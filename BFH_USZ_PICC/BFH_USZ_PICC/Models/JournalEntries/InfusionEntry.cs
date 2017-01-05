@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,8 @@ namespace BFH_USZ_PICC.Models
 
         public InfusionType InfusionType { get; set; }
         //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
-        public string TypeAntibioticName { get; set; }
-        public InfusionAdministration Administration { get; set; }
+        public string AntibioticName { get; set; }
+        public InfusionAdministration InfusionAdministration { get; set; }
 
         public InfusionEntry() { }
 
@@ -52,13 +53,13 @@ namespace BFH_USZ_PICC.Models
             SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
             SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             InfusionType = (InfusionType)realmObject.InfusionType;
-            TypeAntibioticName = realmObject.TypeAntibioticName;
-            Administration = (InfusionAdministration)realmObject.Administration;
+            AntibioticName = realmObject.AntibioticName;
+            InfusionAdministration = (InfusionAdministration)realmObject.InfusionAdministration;
         }
 
     }
 
-    public class InfusionEntryRO : RealmObject
+    public class InfusionEntryRO : RealmObject, ILoadableRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
@@ -71,20 +72,29 @@ namespace BFH_USZ_PICC.Models
         // Typespecific values
         public int InfusionType { get; set; }
         // Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
-        public string TypeAntibioticName { get; set; }
-        public int Administration { get; set; }
+        public string AntibioticName { get; set; }
+        public int InfusionAdministration { get; set; }
 
 
-        public void LoadDataFromModelObject(InfusionEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreateDate = modelObject.CreateDate;
-            ExecutionDate = modelObject.ExecutionDate;
-            SupportingInstitution = (int)modelObject.SupportingInstitution;
-            SupportingPerson = (int)modelObject.SupportingPerson;
-            InfusionType = (int)modelObject.InfusionType;
-            TypeAntibioticName = modelObject.TypeAntibioticName;
-            Administration = (int)modelObject.Administration;
+            if (model.GetType() == typeof(InfusionEntry))
+            {
+                var modelObject = (InfusionEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                InfusionType = (int)modelObject.InfusionType;
+                AntibioticName = modelObject.AntibioticName;
+                InfusionAdministration = (int)modelObject.InfusionAdministration;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,7 +68,7 @@ namespace BFH_USZ_PICC.Models
 
     }
 
-    public class CatheterFlushEntryRO : RealmObject
+    public class CatheterFlushEntryRO : RealmObject, ILoadableRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
@@ -84,18 +85,27 @@ namespace BFH_USZ_PICC.Models
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
-        public void LoadDataFromModelObject(CatheterFlushEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreateDate = modelObject.CreateDate;
-            ExecutionDate = modelObject.ExecutionDate;
-            SupportingInstitution = (int)modelObject.SupportingInstitution;
-            SupportingPerson = (int)modelObject.SupportingPerson;
-            FlushType = (int)modelObject.FlushType;
-            FlushReason = (int)modelObject.FlushReason;
-            FlushResult = (int)modelObject.FlushResult;
-            QuantityInMilliliter = modelObject.QuantityInMilliliter;
-            IsBloodReflowVisible = modelObject.IsBloodReflowVisible;
+            if (model.GetType() == typeof(CatheterFlushEntry))
+            {
+                var modelObject = (CatheterFlushEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                FlushType = (int)modelObject.FlushType;
+                FlushReason = (int)modelObject.FlushReason;
+                FlushResult = (int)modelObject.FlushResult;
+                QuantityInMilliliter = modelObject.QuantityInMilliliter;
+                IsBloodReflowVisible = modelObject.IsBloodReflowVisible;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }
