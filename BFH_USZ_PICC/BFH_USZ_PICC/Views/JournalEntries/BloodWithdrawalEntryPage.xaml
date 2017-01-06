@@ -18,18 +18,37 @@
   <ScrollView>
     <StackLayout Orientation="Vertical">
       <Label Text = "{i18n:Translate BloodWithdrawalEntryPageIndicateBloodFlowLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <Picker x:Name="BloodFlowPicker" SelectedIndex="{Binding Flow, Converter={StaticResource BloodFlowToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+            <Picker x:Name="BloodFlowPicker"
+                    SelectedIndex="{Binding Flow, Converter={StaticResource BloodFlowToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}"/>
       <Label Text ="{i18n:Translate BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <Switch x:Name="IsNaCiFlashDoneSwitch" IsToggled="{Binding IsNaClFlushDone}" IsEnabled="{Binding IsEnabledOrVisible}" HorizontalOptions="Start"/>
+            <Switch x:Name="IsNaCiFlashDoneSwitch"
+                    IsToggled="{Binding IsNaClFlushDone}"
+                    IsEnabled="{Binding IsUserInputEnabled}" HorizontalOptions="Start"/>
       <Label Text ="{i18n:Translate BloodWithdrawalEntryPageBloodWithdrawalDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+            <DatePicker x:Name="ProcedureDate"
+                        Date="{Binding ProcedureDate}"
+                        IsEnabled="{Binding IsUserInputEnabled}"/>
       <Label Text="{i18n:Translate BloodWithdrawalEntryPageInstitutionLabelText}" FontSize="20"/>
-      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
+            <Picker x:Name="HealthInstitutionPicker"
+                    SelectedIndex="{Binding SupportingInstitution, Converter={StaticResource HealthInstitutionToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}"/>
       <Label Text="{i18n:Translate BloodWithdrawalEntryPagePersonLabelText}" FontSize="20"/>
-      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
+            <Picker x:Name="HealthPersonPicker"
+                    SelectedIndex="{Binding SupportingPerson, Converter={StaticResource HealthPersonToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}"/>
+            <Button x:Name="SaveDrugEntryButton"
+                    Text="{i18n:Translate SaveButtonText}"
+                    Command="{Binding SaveCommand}"
+                    IsVisible="{Binding IsUserInputEnabled}"/>
+            <Button x:Name="CancelDrugEntryButton"
+                    Text="{i18n:Translate CancelButtonText}"
+                    Command="{Binding CancelCommand}"
+                    IsVisible="{Binding IsUserInputEnabled}"/>
+            <Button x:Name="DeleteButton"
+                    Text="{i18n:Translate DeleteButtonText}"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

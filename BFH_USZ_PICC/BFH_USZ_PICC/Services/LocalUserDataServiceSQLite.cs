@@ -99,7 +99,17 @@ namespace BFH_USZ_PICC.Services
             throw new NotImplementedException();
         }
 
-        public Task<int> SaveJournalEntryAsync(JournalEntry entry)
+        public async Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
         {
             //var newEntryType = entry.Entry;
 
@@ -117,7 +127,7 @@ namespace BFH_USZ_PICC.Services
             throw new NotImplementedException();
         }
 
-        public Task<int> DeleteJournalEntryAsync(JournalEntry entry)
+        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry
         {
             //return _database.DeleteAsync(entry);
             throw new NotImplementedException();

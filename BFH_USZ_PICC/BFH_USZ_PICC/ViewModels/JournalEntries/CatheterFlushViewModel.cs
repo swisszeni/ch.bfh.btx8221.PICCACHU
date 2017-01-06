@@ -16,86 +16,51 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class CatheterFlushViewModel : ViewModelBase
+    class CatheterFlushViewModel : JournalEntryBaseViewModel<CatheterFlushEntry>
     {
-        private ILocalUserDataService _dataService;
+        public CatheterFlushViewModel() { }
 
-        public CatheterFlushViewModel()
+        protected override void LoadFromModel()
         {
-            //Getting the dataservice
-            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+            FlushType = _displayingEntry?.FlushType == null ? 0 : _displayingEntry.FlushType;
+            FlushReason = _displayingEntry?.FlushReason == null ? 0 : _displayingEntry.FlushReason;
+            FlushResult = _displayingEntry?.FlushResult == null ? 0 : _displayingEntry.FlushResult;
+            QuantityInMilliliter = _displayingEntry?.QuantityInMilliliter == null ? 0.0f : _displayingEntry.QuantityInMilliliter;
+            IsBloodReflowVisible = _displayingEntry?.IsBloodReflowVisible == null ? false : _displayingEntry.IsBloodReflowVisible;
 
-
+            base.LoadFromModel();
         }
 
-
-        private CatheterFlushEntry _displayingEntry;
-        public CatheterFlushEntry DisplayingEntry
+        protected override void SaveToModel()
         {
-            get { return _displayingEntry; }
-            set
-            {
-                if (Set(ref _displayingEntry, value))
-                {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = (value.ProcedureDateTime).Date;
-                    Reason = value.Reason;
-                    Type = value.Type;
-                    Result = value.Result;
-                    QuantityInMilliliter = value.QuantityInMilliliter;
-                    IsBloodReflowVisible = value.IsBloodReflowVisible;  
-                }
+            _displayingEntry.FlushType = FlushType;
+            _displayingEntry.FlushReason = FlushReason;
+            _displayingEntry.FlushResult = FlushResult;
+            _displayingEntry.QuantityInMilliliter = QuantityInMilliliter;
+            _displayingEntry.IsBloodReflowVisible = IsBloodReflowVisible;
 
-                RaisePropertyChanged(() => Person);
-                RaisePropertyChanged(() => Institution);
-                RaisePropertyChanged(() => Reason);
-                RaisePropertyChanged(() => Type);
-                RaisePropertyChanged(() => Result);
-
-            }
+            base.SaveToModel();
         }
 
-        private HealthPerson _person;
-        public HealthPerson Person
+        private FlushType _flushType;
+        public FlushType FlushType
         {
-            get { return _person; }
-            set { Set(ref _person, value); }
+            get { return _flushType; }
+            set { Set(ref _flushType, value); }
         }
 
-        private HealthInstitution _institution;
-        public HealthInstitution Institution
+        private FlushReason _flushReason;
+        public FlushReason FlushReason
         {
-            get { return _institution; }
-            set { Set(ref _institution, value); }
+            get { return _flushReason; }
+            set { Set(ref _flushReason, value); }
         }
 
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
+        private FlushResult _flushResult;
+        public FlushResult FlushResult
         {
-            get { return _procedureDate; }
-            set { Set(ref _procedureDate, value); }
-        }
-
-        private FlushReason _reason;
-        public FlushReason Reason
-        {
-            get { return _reason; }
-            set { Set(ref _reason, value); }
-        }
-
-        private FlushType _type;
-        public FlushType Type
-        {
-            get { return _type; }
-            set { Set(ref _type, value); }
-        }
-
-        private FlushResult _result;
-        public FlushResult Result
-        {
-            get { return _result; }
-            set { Set(ref _result, value); }
+            get { return _flushResult; }
+            set { Set(ref _flushResult, value); }
         }
 
         private double _quantityInMilliliter;
@@ -111,45 +76,5 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             get { return _isBloodReflowVisible; }
             set { Set(ref _isBloodReflowVisible, value); }
         }
-
-
-        private bool _isEnabledOrVisible;
-        public bool IsEnabledOrVisible
-        {
-            get { return _isEnabledOrVisible; }
-            set { Set(ref _isEnabledOrVisible, value); }
-        }
-
-
-        private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () => {
-        // create a new PICCAppliedDrugEntry with the user entered information
-        CatheterFlushEntry entry = new CatheterFlushEntry(DateTimeOffset.Now, (ProcedureDate.Date).ToLocalTime(), Institution, Person, Type, Result, Reason,
-            QuantityInMilliliter, IsBloodReflowVisible);
-            //Add the object to the collection of JournalEntries
-            await _dataService.SaveJournalEntryAsync(entry);
-            //close the page
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-        }));
-
-        private RelayCommand _cancelButtonCommand;
-        public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
-        {
-            //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
-        private RelayCommand _deleteButtonCommand;
-        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () => {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await _dataService.DeleteJournalEntryAsync(DisplayingEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
     }
 }

@@ -7,7 +7,6 @@ using BFH_USZ_PICC.ViewModels.JournalEntries;
 
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    
     public sealed partial class BandageChangingEntryPage : BaseContentPage
     {
         private bool _firstAppearing = true;
@@ -15,29 +14,12 @@ namespace BFH_USZ_PICC.Views.JournalEntries
         {
             InitializeComponent();
             AddPickers();
-            ((BandageChangingViewModel)BindingContext).DisplayingEntry = new BandageChangingEntry();
-            ((BandageChangingViewModel)BindingContext).IsEnabledOrVisible = true;
-
-
         }
 
         public BandageChangingEntryPage(ContentPage contained, BandageChangingEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((BandageChangingViewModel)BindingContext).DisplayingEntry = entry;
-            ((BandageChangingViewModel)BindingContext).IsEnabledOrVisible = false;
-
-        }
-
-        public override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (_firstAppearing)
-            {
-                ((BandageChangingViewModel)BindingContext).CheckForMainentanceInstruction.Execute(null);
-                _firstAppearing = false;
-            }
         }
 
         void AddPickers()
@@ -85,6 +67,5 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             BandageChangingArmProcessSituationPicker.Items.Add(AppResources.BandageArmProcessSituationSwollenText);
             BandageChangingArmProcessSituationPicker.Items.Add(AppResources.BandageArmProcessSituationReddenedText);
         }
-
     }
 }

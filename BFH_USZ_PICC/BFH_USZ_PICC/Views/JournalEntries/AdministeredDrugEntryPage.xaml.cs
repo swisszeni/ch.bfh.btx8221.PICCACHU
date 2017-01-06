@@ -5,32 +5,20 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels.JournalEntries;
 
-
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class AdministeredDrugEntryPage : BaseContentPage
     {
         public AdministeredDrugEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((AdministeredDrugViewModel)BindingContext).DisplayingEntry = new AdministeredDrugEntry();
-            ((AdministeredDrugViewModel)BindingContext).IsEnabledOrVisible = true;
-
         }
 
         public AdministeredDrugEntryPage(ContentPage contained, AdministeredDrugEntry entry) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((AdministeredDrugViewModel)BindingContext).DisplayingEntry = entry;
-            ((AdministeredDrugViewModel)BindingContext).IsEnabledOrVisible = false;
         }
 
         void AddPickers()
@@ -52,8 +40,6 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonRelativeText);
             HealthPersonPicker.Items.Add(AppResources.JournalEntryPersonAffectedPersonText);
             HealthPersonPicker.Items.Add(AppResources.JournalEntryOthersText);
-
         }
-
     }
 }

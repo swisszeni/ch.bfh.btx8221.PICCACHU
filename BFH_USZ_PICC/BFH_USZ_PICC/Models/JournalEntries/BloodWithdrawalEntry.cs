@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,84 +22,62 @@ namespace BFH_USZ_PICC.Models
     /// Extends the JournalEntry class with two parameters (IsNaCiFlashDone, Flow) to handle special events for the blood withrawal procedure
     /// </summary>
     public class BloodWithdrawalEntry : JournalEntry
-    {       
-        public bool IsNaCiFlushDone { get; set; }
+    {
+        public override Type RealmObjectType
+        {
+            get { return typeof(BloodWithdrawalEntryRO); }
+        }
+
+        public bool IsNaClFlushDone { get; set; }
         public BloodFlow Flow { get; set; }
 
-        public BloodWithdrawalEntry()
-        {
-            CreationDateTime = DateTimeOffset.Now;
-            ProcedureDateTime = DateTimeOffset.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            IsNaCiFlushDone = false;
-            Flow = BloodFlow.NoInformation;
-
-            Entry = AllPossibleJournalEntries.BloodWithdrawalEntry;
-
-        }
-
-        public BloodWithdrawalEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlushDone, BloodFlow flow )
-        {
-            ID = Guid.NewGuid().ToString();
-
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            IsNaCiFlushDone = isNaCiFlushDone;
-            Flow = flow;
-
-            Entry = AllPossibleJournalEntries.BloodWithdrawalEntry;
-
-        }
+        public BloodWithdrawalEntry() { }
 
         public BloodWithdrawalEntry(BloodWithdrawalEntryRO realmObject)
         {
             ID = realmObject.ID;
-            CreationDateTime = realmObject.CreationDateTime;
-            ProcedureDateTime = realmObject.ProcedureDateTime;
-            Institution = (HealthInstitution)realmObject.Institution;
-            Person = (HealthPerson)realmObject.Person;
-            IsNaCiFlushDone = realmObject.IsNaCiFlushDone;
+            CreateDate = realmObject.CreateDate;
+            ExecutionDate = realmObject.ExecutionDate;
+            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
+            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
+            IsNaClFlushDone = realmObject.IsNaClFlushDone;
             Flow = (BloodFlow)realmObject.Flow;
-
-            Entry = (AllPossibleJournalEntries)realmObject.Entry;
         }
-
     }
 
-    public class BloodWithdrawalEntryRO : RealmObject
+    public class BloodWithdrawalEntryRO : RealmObject, ILoadableRealmObject
     {
+        // Base JournalEntry values
         [Realms.PrimaryKey]
         public string ID { get; set; }
-        public string Icon { get; } = "placeholder.png";
-        /// <summary>
-        /// Time when the JournalEntry has been created
-        /// </summary>
-        public DateTimeOffset CreationDateTime { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry procedure takes place
-        /// </summary>
-        public DateTimeOffset ProcedureDateTime { get; set; }
-        public int Entry { get; set; }
-        public int Institution { get; set; }
-        public int Person { get; set; }
-        public bool IsNaCiFlushDone { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public bool IsNaClFlushDone { get; set; }
         public int Flow { get; set; }
 
 
-        public void LoadDataFromModelObject(BloodWithdrawalEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreationDateTime = modelObject.CreationDateTime;
-            ProcedureDateTime = modelObject.ProcedureDateTime;
-            Institution = (int)modelObject.Institution;
-            Person = (int)modelObject.Person;
-            IsNaCiFlushDone = modelObject.IsNaCiFlushDone;
-            Flow = (int)modelObject.Flow;
-
-            Entry = (int)modelObject.Entry;
+            if(model.GetType() == typeof(BloodWithdrawalEntry))
+            {
+                var modelObject = (BloodWithdrawalEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                IsNaClFlushDone = modelObject.IsNaClFlushDone;
+                Flow = (int)modelObject.Flow;
+                
+            } else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }

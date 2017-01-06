@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,94 +33,68 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class InfusionEntry : JournalEntry
     {
-        public InfusionType Type { get; set; }
+        public override Type RealmObjectType
+        {
+            get { return typeof(InfusionEntryRO); }
+        }
+
+        public InfusionType InfusionType { get; set; }
         //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
-        public string TypeAntibioticName { get; set; }
-        public InfusionAdministration Administration { get; set; }
+        public string AntibioticName { get; set; }
+        public InfusionAdministration InfusionAdministration { get; set; }
 
-        public InfusionEntry()
-        {
-            CreationDateTime = DateTimeOffset.Now;
-            ProcedureDateTime = DateTimeOffset.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Type = InfusionType.NoInformation;
-            Administration = InfusionAdministration.NoInformation;
-            TypeAntibioticName = null;
-
-            Entry = AllPossibleJournalEntries.InfusionEntry;
-        }
-
-
-        public InfusionEntry(DateTimeOffset creationalDateTime, DateTimeOffset procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
-            InfusionAdministration administration, string antibioticName)
-        {
-            ID = Guid.NewGuid().ToString();
-
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Type = type;
-            Administration = administration;
-            TypeAntibioticName = antibioticName;
-
-            Entry = AllPossibleJournalEntries.InfusionEntry;
-
-        }
+        public InfusionEntry() { }
 
         public InfusionEntry(InfusionEntryRO realmObject)
         {
             ID = realmObject.ID;
-            CreationDateTime = realmObject.CreationDateTime;
-            ProcedureDateTime = realmObject.ProcedureDateTime;
-            Institution = (HealthInstitution)realmObject.Institution;
-            Person = (HealthPerson)realmObject.Person;
-            Type = (InfusionType)realmObject.Type;
-            TypeAntibioticName = realmObject.TypeAntibioticName;
-            Administration = (InfusionAdministration)realmObject.Administration;
-
-
-            Entry = (AllPossibleJournalEntries)realmObject.Entry;
-
+            CreateDate = realmObject.CreateDate;
+            ExecutionDate = realmObject.ExecutionDate;
+            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
+            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
+            InfusionType = (InfusionType)realmObject.InfusionType;
+            AntibioticName = realmObject.AntibioticName;
+            InfusionAdministration = (InfusionAdministration)realmObject.InfusionAdministration;
         }
 
     }
 
-    public class InfusionEntryRO : RealmObject
+    public class InfusionEntryRO : RealmObject, ILoadableRealmObject
     {
+        // Base JournalEntry values
         [Realms.PrimaryKey]
         public string ID { get; set; }
-        public string Icon { get; } = "placeholder.png";
-        /// <summary>
-        /// Time when the JournalEntry has been created
-        /// </summary>
-        public DateTimeOffset CreationDateTime { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry procedure takes place
-        /// </summary>
-        public DateTimeOffset ProcedureDateTime { get; set; }
-        public int Entry { get; set; }
-        public int Institution { get; set; }
-        public int Person { get; set; }
-        public int Type { get; set; }
-        //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
-        public string TypeAntibioticName { get; set; }
-        public int Administration { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int InfusionType { get; set; }
+        // Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
+        public string AntibioticName { get; set; }
+        public int InfusionAdministration { get; set; }
 
 
-        public void LoadDataFromModelObject(InfusionEntry modelObject)
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            ID = modelObject.ID;
-            CreationDateTime = modelObject.CreationDateTime;
-            ProcedureDateTime = modelObject.ProcedureDateTime;
-            Institution = (int)modelObject.Institution;
-            Person = (int)modelObject.Person;
-            Type = (int)modelObject.Type;
-            TypeAntibioticName = modelObject.TypeAntibioticName;
-            Administration = (int)modelObject.Administration;
-
-            Entry = (int)modelObject.Entry;
+            if (model.GetType() == typeof(InfusionEntry))
+            {
+                var modelObject = (InfusionEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                InfusionType = (int)modelObject.InfusionType;
+                AntibioticName = modelObject.AntibioticName;
+                InfusionAdministration = (int)modelObject.InfusionAdministration;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }
