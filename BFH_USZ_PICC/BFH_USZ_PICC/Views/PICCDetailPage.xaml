@@ -27,7 +27,7 @@
       <DatePicker x:Name="InsertedDate" Date="{Binding InsertDate}" IsEnabled="{Binding IsUserInputEnabled}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCInsertedPlaceText}" HorizontalOptions="Fill" WidthRequest="80" />
       <Picker x:Name="CountryPicker" SelectedIndex="{Binding InsertCountry, Converter={StaticResource PICCInsertCountryToIndexConverter}}" IsEnabled="{Binding IsUserInputEnabled}"/>
-      <Entry x:Name="InsertCity" Text="{Binding City}" Placeholder="{i18n:Translate PICCDetailPageInsertCityPlaceholderText}" IsEnabled="{Binding IsUserInputEnabled}" IsVisible="{Binding IsCountrySet}"/>
+      <Entry x:Name="InsertCity" Text="{Binding InsertCity}" Placeholder="{i18n:Translate PICCDetailPageInsertCityPlaceholderText}" IsEnabled="{Binding IsUserInputEnabled}" IsVisible="{Binding IsCountrySet}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCBodysideText}"/>
       <Picker x:Name="PiccSidePicker" SelectedIndex="{Binding PiccSide, Converter={StaticResource PICCInsertSideToIndexConverter}}" IsEnabled="{Binding IsUserInputEnabled}"/>
       <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}"/>
@@ -35,8 +35,8 @@
       <Button x:Name="PiccRemoveButton" Text="{i18n:Translate PICCDetailPagePICCRemoveButtonText}" Command="{Binding PiccRemoveButtonCommand}" 
               IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
       <DatePicker x:Name="RemovalDate" Date="{Binding RemovalDate}" IsEnabled="{Binding IsUserInputEnabled}" IsFocused="{Binding IsRemovalDatePickerFocused}" IsVisible="{Binding IsRemovalDateSet}"/>
-      <StackLayout Orientation="Horizontal">
-        <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Command="{Binding EditButtonCommand}" IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
+      <Button x:Name="EditButton" Text="{i18n:Translate EditButtonText}" Command="{Binding EditButtonCommand}" IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"/>
+      <StackLayout Orientation="Horizontal">      
         <Button x:Name="SaveButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsUserInputEnabled}"/>
         <Button x:Name="CancelButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsUserInputEnabled}"/>
       </StackLayout>

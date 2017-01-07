@@ -262,18 +262,20 @@ namespace BFH_USZ_PICC.Services
             if (currentPICCRO == null || currentPICCRO.ID != currentPICC.ID)
             {
                 _database.Write(() =>
-                {
+                {   
+                    //If the user has not removed the previous PICC, a removal date will be set to it (otherwise we would have two current PICCs)
                     if (currentPICCRO != null)
                     {
-                        currentPICCRO.RemovalDate = DateTimeOffset.Now.LocalDateTime;
+                        currentPICCRO.RemovalDate = DateTimeOffset.Now.Date.ToLocalTime();
                     }
-
-                    var newCurrentPICCRO = new PICCRO();
+                    var newCurrentPICCRO = new PICCRO();           
                     newCurrentPICCRO.LoadDataFromModelObject(currentPICC);
+
+                    //Provide primary key to the new PICC and the new PICCModel objects
                     newCurrentPICCRO.ID = Guid.NewGuid().ToString();
                     newCurrentPICCRO.PICCModelRO.ID = Guid.NewGuid().ToString();
-                    _database.Add(newCurrentPICCRO);
 
+                    _database.Add(newCurrentPICCRO);
                 });
             }
             else
@@ -285,7 +287,6 @@ namespace BFH_USZ_PICC.Services
             }
 
             return Task.FromResult(1);
-
         }
 
         #endregion

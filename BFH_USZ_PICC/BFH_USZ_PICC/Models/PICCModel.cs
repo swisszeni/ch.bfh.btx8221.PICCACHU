@@ -82,7 +82,7 @@ namespace BFH_USZ_PICC.Models
         public string Gauge { get; set; }
         public string GNDMCode { get; set; }
 
-
+        public PICCModel() { }
         public PICCModel(string piccName, double guideWireLenght, int lumen, double frenchDiameter, string gauge, string gndmCode, string barcode, string pictureUri)
         {
             PICCName = piccName;

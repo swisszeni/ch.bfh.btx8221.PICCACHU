@@ -51,21 +51,13 @@ namespace BFH_USZ_PICC.Models
         public PICC(PICCRO realmObject)
         {
             ID = realmObject.ID;
-            PICCModel = new PICCModel(realmObject.PICCModelRO);
             InsertDate = realmObject.InsertDate;
             RemovalDate = realmObject.RemovalDate;
             InsertCountry = (PICCInsertCountry)realmObject.InsertCountry;
             InsertCity = realmObject.InsertCity;
             InsertSide = (PICCInsertSide)realmObject.InsertSide;
             InsertPosition = (PICCInsertPosition)realmObject.InsertPosition;
-
-            foreach (var existingPICCMOdel in PICCModel.AllAvailablePICCModels())
-            {
-                if (PICCModel.Barcode == existingPICCMOdel.Barcode)
-                {
-                    PICCModel = existingPICCMOdel;
-                }
-            }
+            PICCModel = new PICCModel(realmObject.PICCModelRO);           
         }
     }
 
@@ -90,9 +82,11 @@ namespace BFH_USZ_PICC.Models
             InsertCity = modelObject.InsertCity;
             InsertSide = (int)modelObject.InsertSide;
             InsertPosition = (int)modelObject.InsertPosition;
-            PICCModelRO = new PICCModelRO();
-            PICCModelRO.LoadDataFromModelObject(modelObject.PICCModel);
-
+            if(PICCModelRO == null)
+            {
+                PICCModelRO = new PICCModelRO();
+            }          
+            PICCModelRO.LoadDataFromModelObject(modelObject.PICCModel);            
         }
     }
 }

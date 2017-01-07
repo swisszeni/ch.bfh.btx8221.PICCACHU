@@ -56,7 +56,7 @@ namespace BFH_USZ_PICC.ViewModels
                     _displayingPICC = (PICC)param;
                     IsUserInputEnabled = false;
                 }
-            }           
+            }
 
             LoadFromModel();
 
@@ -241,7 +241,7 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _isUserInputEnabled, value); }
         }
 
-              private RelayCommand _editButtonCommand;
+        private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
         {
             IsUserInputEnabled = true;
@@ -250,11 +250,6 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _saveButtonCommand;
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
-            //if (IsUserAddingANewPICC && _displayingPICC != null)
-            //{
-            //    CurrentPICC.RemovalDate = DateTime.Now;            
-
-            //}
             SaveToModel();
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
         }));
@@ -264,7 +259,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();                
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
             }
         }));
 
@@ -273,18 +268,22 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.PICCDetailViewModelSetPICCInactiveText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                _displayingPICC.RemovalDate = DateTime.Now.Date.ToLocalTime();
+                // Currently there is no possibilty to show the user a popup where he/she can select a date. 
+                //For the moment, in case of removal, todays date will be saved on DB
+                _displayingPICC.RemovalDate = DateTimeOffset.Now.Date.ToLocalTime();
+
                 SaveToModel();
-            
+
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
 
         private void SaveToModel()
         {
-            PICCModel model = new PICCModel(PiccName, _displayingPICC.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, _displayingPICC.PICCModel.Gauge, _displayingPICC.PICCModel.GNDMCode, _displayingPICC.PICCModel.Barcode, _displayingPICC.PICCModel.PictureUri);
-            _displayingPICC.PICCModel = model;
-            _displayingPICC.InsertDate = InsertDate;
+            _displayingPICC.PICCModel.PICCName = PiccName;
+            _displayingPICC.PICCModel.Lumen = Lumen;
+            _displayingPICC.PICCModel.FrenchDiameter = FrenchDiameter;
+            _displayingPICC.InsertDate = InsertDate.Date.ToLocalTime();
             _displayingPICC.InsertCountry = InsertCountry;
             _displayingPICC.InsertCity = InsertCity;
             _displayingPICC.InsertSide = PiccSide;
@@ -320,10 +319,8 @@ namespace BFH_USZ_PICC.ViewModels
                     IsRemovalDateSet = true;
                 }
             }
-
             RaisePropertyChanged("");
         }
-
     }
 }
 
