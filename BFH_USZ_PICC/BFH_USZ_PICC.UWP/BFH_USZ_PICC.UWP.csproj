@@ -21,7 +21,7 @@
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>F676BE4712EC2BE5CC454A1108C1CAD6C2F0054C</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>CE6FF87A4BBA200CD6B7DCD7099913EE4F6D4D40</PackageCertificateThumbprint>
     <HockeyAppResourceId>f06f141af5b041b7a0f90c9abf32449b</HockeyAppResourceId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
@@ -96,6 +96,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="BFH_USZ_PICC.UWP_TemporaryKey.pfx" />
+    <None Include="PICCACHU.pfx" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -116,8 +117,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Testkey.snk" />
-    <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EinlumigerPICC.png" />
@@ -195,7 +194,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Testkey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>PICCACHU.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
