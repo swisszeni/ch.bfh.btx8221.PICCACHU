@@ -23,18 +23,13 @@ namespace BFH_USZ_PICC.Models
 
         public AdministeredDrugEntry() { }
 
-        public AdministeredDrugEntry(AdministeredDrugEntryRO realmObject)
+        public AdministeredDrugEntry(AdministeredDrugEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.ExecutionDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             Drug = realmObject.Drug;
         }
     }
 
-    public class AdministeredDrugEntryRO : RealmObject, ILoadableRealmObject
+    public class AdministeredDrugEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]

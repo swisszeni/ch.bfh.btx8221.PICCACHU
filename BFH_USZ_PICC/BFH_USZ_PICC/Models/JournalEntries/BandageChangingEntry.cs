@@ -62,22 +62,16 @@ namespace BFH_USZ_PICC.Models
 
         public BandageChangingEntry() { }
 
-        public BandageChangingEntry(BandageChangingEntryRO realmObject)
+        public BandageChangingEntry(BandageChangingEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.ExecutionDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             ChangementReason = (BandageChangementReason)realmObject.ChangementReason;
             ChangementArea = (BandageChangementArea) realmObject.ChangementArea;
             Puncture = (BandagePunctureSituation) realmObject.Puncture;
             ArmProcess = (BandageArmProcessSituation) realmObject.ArmProcess;
         }
-
     }
 
-    public class BandageChangingEntryRO : RealmObject, ILoadableRealmObject
+    public class BandageChangingEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]

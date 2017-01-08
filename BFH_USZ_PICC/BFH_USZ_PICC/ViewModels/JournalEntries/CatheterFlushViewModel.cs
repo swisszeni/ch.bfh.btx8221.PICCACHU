@@ -16,9 +16,11 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class CatheterFlushViewModel : JournalEntryBaseViewModel<CatheterFlushEntry>
+    public class CatheterFlushViewModel : JournalEntryBaseViewModel<CatheterFlushEntry>
     {
         public CatheterFlushViewModel() { }
+
+        #region private methods
 
         protected override void LoadFromModel()
         {
@@ -41,6 +43,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 
             base.SaveToModel();
         }
+
+        #endregion
+
+        #region public properties
 
         private FlushType _flushType;
         public FlushType FlushType
@@ -76,5 +82,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             get { return _isBloodReflowVisible; }
             set { Set(ref _isBloodReflowVisible, value); }
         }
+
+        #endregion
     }
 }

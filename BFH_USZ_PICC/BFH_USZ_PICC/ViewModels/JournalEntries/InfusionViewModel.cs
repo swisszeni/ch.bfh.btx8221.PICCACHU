@@ -16,9 +16,11 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class InfusionViewModel : JournalEntryBaseViewModel<InfusionEntry>
+    public class InfusionViewModel : JournalEntryBaseViewModel<InfusionEntry>
     {
         public InfusionViewModel() { }
+
+        #region private methods
 
         protected override void LoadFromModel()
         {
@@ -44,14 +46,20 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             base.SaveToModel();
         }
 
+        #endregion
+
+        #region public properties
+
         private InfusionType _infusionType;
         public InfusionType InfusionType
         {
             get { return _infusionType; }
             set
             {
-                IsTypeAntibiotic = value == InfusionType.Antibiotic;
-                Set(ref _infusionType, value);
+                if (Set(ref _infusionType, value))
+                {
+                    RaisePropertyChanged(() => IsTypeAntibiotic);
+                }
             }
         }
 
@@ -69,11 +77,11 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _infusionAdministration, value); }
         }
 
-        private bool _isTypeAntibiotic;
         public bool IsTypeAntibiotic
         {
-            get { return _isTypeAntibiotic; }
-            set { Set(ref _isTypeAntibiotic, value); }
+            get { return InfusionType == InfusionType.Antibiotic; }
         }
+
+        #endregion
     }
 }

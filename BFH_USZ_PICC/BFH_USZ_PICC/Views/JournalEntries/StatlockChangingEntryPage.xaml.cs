@@ -14,7 +14,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             AddPickers();
         }
 
-        public StatlockChangingEntryPage(ContentPage contained, StatlockChangingEntry entry) : base(contained)
+        public StatlockChangingEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

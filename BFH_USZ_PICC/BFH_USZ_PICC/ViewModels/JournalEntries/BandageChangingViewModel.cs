@@ -21,6 +21,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
     {
         public BandageChangingViewModel() { }
 
+        #region private methods
+
         protected override void LoadFromModel()
         {
             ChangementReason = _displayingEntry?.ChangementReason == null ? 0 : _displayingEntry.ChangementReason;
@@ -40,6 +42,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 
             base.SaveToModel();
         }
+
+        #endregion
+
+        #region public properties
 
         private BandageChangementReason _changementReason;
         public BandageChangementReason ChangementReason
@@ -68,5 +74,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             get { return _armProcess; }
             set { Set(ref _armProcess, value); }
         }
+
+        #endregion
     }
 }

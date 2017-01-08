@@ -45,13 +45,8 @@ namespace BFH_USZ_PICC.Models
 
         public InfusionEntry() { }
 
-        public InfusionEntry(InfusionEntryRO realmObject)
+        public InfusionEntry(InfusionEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.ExecutionDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             InfusionType = (InfusionType)realmObject.InfusionType;
             AntibioticName = realmObject.AntibioticName;
             InfusionAdministration = (InfusionAdministration)realmObject.InfusionAdministration;
@@ -59,7 +54,7 @@ namespace BFH_USZ_PICC.Models
 
     }
 
-    public class InfusionEntryRO : RealmObject, ILoadableRealmObject
+    public class InfusionEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]

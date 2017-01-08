@@ -41,7 +41,7 @@ namespace BFH_USZ_PICC.Models
     {
         public override Type RealmObjectType
         {
-            get { return typeof(CatheterFlushEntry); }
+            get { return typeof(CatheterFlushEntryRO); }
         }
 
         public FlushType FlushType { get; set; }
@@ -52,13 +52,8 @@ namespace BFH_USZ_PICC.Models
 
         public CatheterFlushEntry() { }
 
-        public CatheterFlushEntry(CatheterFlushEntryRO realmObject)
+        public CatheterFlushEntry(CatheterFlushEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.ExecutionDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             FlushType = (FlushType)realmObject.FlushType;
             FlushReason = (FlushReason)realmObject.FlushReason;
             FlushResult = (FlushResult)realmObject.FlushResult;
@@ -68,7 +63,7 @@ namespace BFH_USZ_PICC.Models
 
     }
 
-    public class CatheterFlushEntryRO : RealmObject, ILoadableRealmObject
+    public class CatheterFlushEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]

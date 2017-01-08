@@ -22,6 +22,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
     {
         public StatlockChangingViewModel() { }
 
+        #region private methods
+
         protected override void LoadFromModel()
         {
             ChangementReason = _displayingEntry?.ChangementReason == null ? 0 : _displayingEntry.ChangementReason;
@@ -36,6 +38,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             base.SaveToModel();
         }
 
+        #endregion
+
+        #region public properties
+
         private StatLockChangementReason _changementReason;
         public StatLockChangementReason ChangementReason
         {
@@ -43,5 +49,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _changementReason, value); }
 
         }
+
+        #endregion
     }
 }

@@ -29,18 +29,13 @@ namespace BFH_USZ_PICC.Models
 
         public MicroClaveChangingEntry() { }
 
-        public MicroClaveChangingEntry(MicroClaveChangingEntryRO realmObject)
+        public MicroClaveChangingEntry(MicroClaveChangingEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.ExecutionDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             ChangementReason = (MicroClaveChangementReason)realmObject.ChangementReason;
         }
     }
 
-    public class MicroClaveChangingEntryRO : RealmObject, ILoadableRealmObject
+    public class MicroClaveChangingEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]

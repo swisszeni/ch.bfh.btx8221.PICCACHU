@@ -14,7 +14,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             AddPickers();
         }
 
-        public InfusionEntryPage(ContentPage contained, InfusionEntry entry) : base(contained)
+        public InfusionEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

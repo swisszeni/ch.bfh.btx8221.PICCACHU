@@ -14,6 +14,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace BFH_USZ_PICC.ViewModels
 {
@@ -33,12 +34,14 @@ namespace BFH_USZ_PICC.ViewModels
 
         public async void TempLoad()
         {
-            JournalEntriesList = await _dataService.GetJournalEntriesAsync();
+            var entryList = await _dataService.GetJournalEntriesAsync();
+            JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
         }
 
         public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
         {
-            JournalEntriesList = await _dataService.GetJournalEntriesAsync();
+            var entryList = await _dataService.GetJournalEntriesAsync();
+            JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
 
             await base.OnNavigatedToAsync(parameter, mode);
         }

@@ -30,18 +30,13 @@ namespace BFH_USZ_PICC.Models
 
         public StatlockChangingEntry() { }
 
-        public StatlockChangingEntry(StatlockChangingEntryRO realmObject)
+        public StatlockChangingEntry(StatlockChangingEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.CreateDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             ChangementReason = (StatLockChangementReason) realmObject.ChangementReason;
         }
     }
 
-    public class StatlockChangingEntryRO : RealmObject, ILoadableRealmObject
+    public class StatlockChangingEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]

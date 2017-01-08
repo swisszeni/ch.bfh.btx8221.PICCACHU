@@ -21,6 +21,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
         }
 
+        #region navigation events
+
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode)
         {
             if (parameter is List<object> && ((List<object>)parameter).Count > 0)
@@ -36,6 +38,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             {
                 // No existing entry, we assume we want to create a new entry
                 _displayingEntry = (T)Activator.CreateInstance(typeof(T));
+                _displayingEntry.ExecutionDate = DateTime.Now;
 
                 StartEditing();
             }
@@ -51,6 +54,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             return Task.FromResult(false);
         }
 
+        #endregion
+
+        #region private methods
+
         private void StartEditing()
         {
             IsUserInputEnabled = true;
@@ -65,7 +72,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             SupportingPerson = _displayingEntry?.SupportingPerson == null ? 0 : _displayingEntry.SupportingPerson;
             SupportingInstitution = _displayingEntry?.SupportingInstitution == null ? 0 : _displayingEntry.SupportingInstitution;
-            ExecutionDate = _displayingEntry?.ExecutionDate == null ? DateTimeOffset.Now : _displayingEntry.ExecutionDate;
+            ExecutionDate = _displayingEntry?.ExecutionDate == null ? DateTime.Now : _displayingEntry.ExecutionDate.Date;
 
             // Actually, this shoudln't be needed... but because of some weird timing, it is.
             RaisePropertyChanged("");
@@ -75,12 +82,17 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             _displayingEntry.SupportingPerson = SupportingPerson;
             _displayingEntry.SupportingInstitution = SupportingInstitution;
-            _displayingEntry.ExecutionDate = ExecutionDate;
+            var execDate = ExecutionDate.Date;
+            _displayingEntry.ExecutionDate = DateTime.SpecifyKind(execDate, DateTimeKind.Utc); ;
             _displayingEntry.CreateDate = DateTimeOffset.Now;
 
             // Save to DB
             _dataService.SaveJournalEntryAsync<T>(_displayingEntry);
         }
+
+        #endregion
+
+        #region public properties
 
         private bool _isUserInputEnabled;
         public bool IsUserInputEnabled
@@ -103,18 +115,23 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _supportingInstitution, value); }
         }
 
-        private DateTimeOffset _executionDate;
-        public DateTimeOffset ExecutionDate
+        private DateTime _executionDate;
+        public DateTime ExecutionDate
         {
             get { return _executionDate; }
             set { Set(ref _executionDate, value); }
         }
+
+        #endregion
+
+        #region RelayCommands
 
         private RelayCommand _saveCommand;
         public RelayCommand SaveCommand => _saveCommand ?? (_saveCommand = new RelayCommand(() =>
         {
             EndEditing();
             SaveToModel();
+            ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
         }));
 
         private RelayCommand _cancelCommand;
@@ -136,5 +153,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
+
+        #endregion
     }
 }

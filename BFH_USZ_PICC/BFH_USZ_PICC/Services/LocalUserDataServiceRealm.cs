@@ -178,23 +178,21 @@ namespace BFH_USZ_PICC.Services
         {
             if (String.IsNullOrEmpty(entry.ID))
             {
+                // create the ID
+                entry.ID = Guid.NewGuid().ToString();
+
                 // create new entry
                 _database.Write(() =>
                 {
-                    var rObject = (ILoadableRealmObject)Activator.CreateInstance(entry.RealmObjectType);
+                    var rObject = (ILoadableJournalEntryRealmObject)Activator.CreateInstance(entry.RealmObjectType);
                     rObject.LoadDataFromModelObject((JournalEntry)(object)entry);
-                    // Generate the ID if necessary
-                    if (String.IsNullOrEmpty(rObject.ID))
-                    {
-                        rObject.ID = Guid.NewGuid().ToString();
-                    }
 
                     _database.Add((RealmObject)rObject);
                 });
             } else
             {
                 // update existing entry
-                var existingRO = (ILoadableRealmObject)_database.Find(entry.RealmObjectType.Name, entry.ID);
+                var existingRO = (ILoadableJournalEntryRealmObject)_database.Find(entry.RealmObjectType.Name, entry.ID);
                 if (existingRO != null)
                 {
                     _database.Write(() =>

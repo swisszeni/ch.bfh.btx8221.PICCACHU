@@ -16,7 +16,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             AddPickers();
         }
 
-        public BandageChangingEntryPage(ContentPage contained, BandageChangingEntry entry) : base(contained)
+        public BandageChangingEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

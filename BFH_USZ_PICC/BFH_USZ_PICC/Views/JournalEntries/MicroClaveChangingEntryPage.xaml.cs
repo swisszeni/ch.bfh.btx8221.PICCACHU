@@ -15,7 +15,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             AddPickers();
         }
 
-        public MicroClaveChangingEntryPage(ContentPage contained, MicroClaveChangingEntry entry) : base(contained)
+        public MicroClaveChangingEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

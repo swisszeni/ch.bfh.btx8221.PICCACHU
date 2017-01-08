@@ -20,6 +20,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
     {
         public AdministeredDrugViewModel() { }
 
+        #region private methods
+
         protected override void LoadFromModel()
         {
             Drug = _displayingEntry?.Drug;
@@ -34,11 +36,17 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             base.SaveToModel();
         }
 
+        #endregion
+
+        #region public properties
+
         private string _drug;
         public string Drug
         {
             get { return _drug; }
             set { Set(ref _drug, value); }
         }
+
+        #endregion
     }
 }

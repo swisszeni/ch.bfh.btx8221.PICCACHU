@@ -20,6 +20,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
     {
         public BloodWithdrawalViewModel() { }
 
+        #region private methods
+
         protected override void LoadFromModel()
         {
             Flow = _displayingEntry?.Flow == null ? 0 : _displayingEntry.Flow;
@@ -36,6 +38,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             base.SaveToModel();
         }
 
+        #endregion
+
+        #region public properties
+
         private BloodFlow _flow;
         public BloodFlow Flow
         {
@@ -49,5 +55,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             get { return _isNaClFlushDone; }
             set { Set(ref _isNaClFlushDone, value); }
         }
+
+        #endregion
     }
 }

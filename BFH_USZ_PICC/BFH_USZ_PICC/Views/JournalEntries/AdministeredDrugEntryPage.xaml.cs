@@ -15,7 +15,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             AddPickers();
         }
 
-        public AdministeredDrugEntryPage(ContentPage contained, AdministeredDrugEntry entry) : base(contained)
+        public AdministeredDrugEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

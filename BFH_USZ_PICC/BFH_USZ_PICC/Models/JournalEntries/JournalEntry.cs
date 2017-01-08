@@ -53,6 +53,17 @@ namespace BFH_USZ_PICC.Models
         public DateTimeOffset ExecutionDate { get; set; }
         public HealthInstitution SupportingInstitution { get; set; }
         public HealthPerson SupportingPerson { get; set; }
+
+        public JournalEntry() { }
+
+        public JournalEntry(ILoadableJournalEntryRealmObject realmObject)
+        {
+            ID = realmObject.ID;
+            CreateDate = realmObject.CreateDate;
+            ExecutionDate = realmObject.ExecutionDate;
+            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
+            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
+        }
     }    
 }
 

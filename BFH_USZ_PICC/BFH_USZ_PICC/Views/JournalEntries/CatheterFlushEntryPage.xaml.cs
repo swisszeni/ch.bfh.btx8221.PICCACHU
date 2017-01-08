@@ -13,7 +13,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             AddPickers();
         }
 
-        public CatheterFlushEntryPage(ContentPage contained, CatheterFlushEntry entry) : base(contained)
+        public CatheterFlushEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

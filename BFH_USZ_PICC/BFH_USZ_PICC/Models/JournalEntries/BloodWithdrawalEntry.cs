@@ -33,19 +33,14 @@ namespace BFH_USZ_PICC.Models
 
         public BloodWithdrawalEntry() { }
 
-        public BloodWithdrawalEntry(BloodWithdrawalEntryRO realmObject)
+        public BloodWithdrawalEntry(BloodWithdrawalEntryRO realmObject) : base(realmObject)
         {
-            ID = realmObject.ID;
-            CreateDate = realmObject.CreateDate;
-            ExecutionDate = realmObject.ExecutionDate;
-            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
-            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
             IsNaClFlushDone = realmObject.IsNaClFlushDone;
             Flow = (BloodFlow)realmObject.Flow;
         }
     }
 
-    public class BloodWithdrawalEntryRO : RealmObject, ILoadableRealmObject
+    public class BloodWithdrawalEntryRO : RealmObject, ILoadableJournalEntryRealmObject
     {
         // Base JournalEntry values
         [Realms.PrimaryKey]
