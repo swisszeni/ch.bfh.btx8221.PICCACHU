@@ -1,37 +1,22 @@
 ﻿using BFH_USZ_PICC.Models;
 using System;
 using Xamarin.Forms;
-using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.ViewModels.JournalEntries;
-
-
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class CatheterFlushEntryPage : BaseContentPage
     {
         public CatheterFlushEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((CatheterFlushViewModel)BindingContext).DisplayingEntry = new CatheterFlushEntry();
-            ((CatheterFlushViewModel)BindingContext).IsEnabledOrVisible = true;
-
         }
 
-        public CatheterFlushEntryPage(ContentPage contained, CatheterFlushEntry entry) : base(contained)
+        public CatheterFlushEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((CatheterFlushViewModel)BindingContext).DisplayingEntry = entry;
-            ((CatheterFlushViewModel)BindingContext).IsEnabledOrVisible = false;
-
         }
 
         void AddPickers()
@@ -70,6 +55,5 @@ namespace BFH_USZ_PICC.Views.JournalEntries
             FlushResultPicker.Items.Add(AppResources.CatheterFlushResultFlushWithResistanceText);
             FlushResultPicker.Items.Add(AppResources.CatheterFlushResultFlushNotPossibleText);
         }
-
     }
 }

@@ -1,38 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.JournalEntries.InfusionEntryPage"
-             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate JournalOverviewPageInfusionEntry}"
-             BindingContext="{Binding [InfusionViewModel], Source={StaticResource ViewModelLocator}}">
-  <Grid.Resources>
-    <ResourceDictionary>
-      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
-      <utilitys:HealthInstitutionToIndexConverter x:Key="HealthInstitutionToIndexConverter"/>
-      <utilitys:HealthPersonToIndexConverter x:Key="HealthPersonToIndexConverter"/>
-      <utilitys:InfusionTypeToIndexConverter x:Key="InfusionTypeToIndexConverter"/>
-      <utilitys:InfusionAdministrationToIndexConverter x:Key="InfusionAdministrationToIndexConverter"/>     
-    </ResourceDictionary>
-  </Grid.Resources>
-  <ScrollView>
-    <StackLayout Orientation="Vertical">
-      <Label Text ="{i18n:Translate InfusionEntryPageTypeLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <Picker x:Name="InfusionReasonPicker" SelectedIndex="{Binding InfusionType, Converter={StaticResource InfusionTypeToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="{i18n:Translate InfusionEntryPageAntibioticLabelText}" VerticalTextAlignment="Center" FontSize="20" IsVisible="{Binding IsTypeAntibiotic}"/>
-      <Entry x:Name="AntibioticEntry" Text="{Binding AntibioticName}" IsVisible="{Binding IsTypeAntibiotic}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="{i18n:Translate InfusionEntryPageInfusionFlowLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <Picker x:Name="InfusionAdministrationPicker" SelectedIndex="{Binding InfusionAdministration, Converter={StaticResource InfusionAdministrationToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="{i18n:Translate InfusionEntryPageDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="{i18n:Translate InfusionEntryPageInstitutionLabelText}" FontSize="20"/>
-      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Label Text ="{i18n:Translate InfusionEntryPagePersonLabelText}" FontSize="20"/>
-      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
-    </StackLayout>
-  </ScrollView>
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.JournalEntries.InfusionEntryPage"
+                   xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   Title="{i18n:Translate JournalOverviewPageInfusionEntry}"
+                   BindingContext="{Binding [InfusionViewModel], Source={StaticResource ViewModelLocator}}">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
+            <utilitys:HealthInstitutionToIndexConverter x:Key="HealthInstitutionToIndexConverter" />
+            <utilitys:HealthPersonToIndexConverter x:Key="HealthPersonToIndexConverter" />
+            <utilitys:InfusionTypeToIndexConverter x:Key="InfusionTypeToIndexConverter" />
+            <utilitys:InfusionAdministrationToIndexConverter x:Key="InfusionAdministrationToIndexConverter" />
+        </ResourceDictionary>
+    </Grid.Resources>
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{i18n:Translate InfusionEntryPageTypeLabelText}"
+                   VerticalTextAlignment="Center"
+                   FontSize="20" />
+            <Picker x:Name="InfusionReasonPicker"
+                    SelectedIndex="{Binding InfusionType, Converter={StaticResource InfusionTypeToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}" />
+            <Label Text="{i18n:Translate InfusionEntryPageAntibioticLabelText}"
+                   VerticalTextAlignment="Center"
+                   FontSize="20"
+                   IsVisible="{Binding IsTypeAntibiotic}" />
+            <Entry x:Name="AntibioticEntry"
+                   Text="{Binding AntibioticName}"
+                   IsVisible="{Binding IsTypeAntibiotic}"
+                   IsEnabled="{Binding IsUserInputEnabled}" />
+            <Label Text="{i18n:Translate InfusionEntryPageInfusionFlowLabelText}"
+                   VerticalTextAlignment="Center"
+                   FontSize="20" />
+            <Picker x:Name="InfusionAdministrationPicker"
+                    SelectedIndex="{Binding InfusionAdministration, Converter={StaticResource InfusionAdministrationToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}" />
+            <Label Text="{i18n:Translate InfusionEntryPageDateLabelText}"
+                   VerticalTextAlignment="Center"
+                   FontSize="20" />
+            <DatePicker x:Name="ProcedureDate"
+                        Date="{Binding ExecutionDate}"
+                        IsEnabled="{Binding IsUserInputEnabled}" />
+            <Label Text="{i18n:Translate InfusionEntryPageInstitutionLabelText}"
+                   FontSize="20" />
+            <Picker x:Name="HealthInstitutionPicker"
+                    SelectedIndex="{Binding SupportingInstitution, Converter={StaticResource HealthInstitutionToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}" />
+            <Label Text="{i18n:Translate InfusionEntryPagePersonLabelText}"
+                   FontSize="20" />
+            <Picker x:Name="HealthPersonPicker"
+                    SelectedIndex="{Binding SupportingPerson, Converter={StaticResource HealthPersonToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}" />
+            <Button x:Name="SaveDrugEntryButton"
+                    Text="{i18n:Translate SaveButtonText}"
+                    Command="{Binding SaveCommand}"
+                    IsVisible="{Binding IsUserInputEnabled}" />
+            <Button x:Name="CancelDrugEntryButton"
+                    Text="{i18n:Translate CancelButtonText}"
+                    Command="{Binding CancelCommand}"
+                    IsVisible="{Binding IsUserInputEnabled}" />
+            <Button x:Name="DeleteButton"
+                    Text="{i18n:Translate DeleteButtonText}"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}" />
+        </StackLayout>
+    </ScrollView>
 </d:BaseContentPage>

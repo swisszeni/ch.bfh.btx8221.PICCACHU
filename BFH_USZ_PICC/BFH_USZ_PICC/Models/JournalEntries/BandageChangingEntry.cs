@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
 {
-
-    public enum BandageChangingReason
+    public enum BandageChangementReason
     {   
         NoInformation,
         Routine,
@@ -18,13 +19,12 @@ namespace BFH_USZ_PICC.Models
         Pain
     }
 
-    public enum BandageChangingArea
+    public enum BandageChangementArea
     {
         NoInformation,
         Complete,
         OnlyBandage,
         OnlyStatlock
-
     }
 
     public enum BandagePunctureSituation
@@ -49,41 +49,65 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class BandageChangingEntry : JournalEntry
     {
-        public BandageChangingReason Reason { get; set; }
-        public BandageChangingArea Area { get; set; }
+        public override Type RealmObjectType
+        {
+            get { return typeof(BandageChangingEntryRO); }
+        }
+
+        public BandageChangementReason ChangementReason { get; set; }
+        public BandageChangementArea ChangementArea { get; set; }
         public BandagePunctureSituation Puncture { get; set; }
         public BandageArmProcessSituation ArmProcess { get; set; }
 
 
-        public BandageChangingEntry()
+        public BandageChangingEntry() { }
+
+        public BandageChangingEntry(BandageChangingEntryRO realmObject) : base(realmObject)
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Reason = BandageChangingReason.NoInformation;
-            Area = BandageChangingArea.NoInformation;
-            Puncture = BandagePunctureSituation.NoInformation;
-            ArmProcess = BandageArmProcessSituation.NoInformation;
-
-            Entry = AllPossibleJournalEntries.BandagesChangingEntry;
-
+            ChangementReason = (BandageChangementReason)realmObject.ChangementReason;
+            ChangementArea = (BandageChangementArea) realmObject.ChangementArea;
+            Puncture = (BandagePunctureSituation) realmObject.Puncture;
+            ArmProcess = (BandageArmProcessSituation) realmObject.ArmProcess;
         }
-        public BandageChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, BandageChangingReason reason, BandageChangingArea area,
-            BandagePunctureSituation puncture, BandageArmProcessSituation armProcess)
+    }
+
+    public class BandageChangingEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int ChangementReason { get; set; }
+        public int ChangementArea { get; set; }
+        public int Puncture { get; set; }
+        public int ArmProcess { get; set; }
+
+
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Reason = reason;
-            Area = area;
-            Puncture = puncture;
-            ArmProcess = armProcess;
-
-            Entry = AllPossibleJournalEntries.BandagesChangingEntry;
-
+            if (model.GetType() == typeof(BandageChangingEntry))
+            {
+                var modelObject = (BandageChangingEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                ChangementReason = (int)modelObject.ChangementReason;
+                ChangementArea = (int)modelObject.ChangementArea;
+                Puncture = (int)modelObject.Puncture;
+                ArmProcess = (int)modelObject.ArmProcess;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
-
     }
 }

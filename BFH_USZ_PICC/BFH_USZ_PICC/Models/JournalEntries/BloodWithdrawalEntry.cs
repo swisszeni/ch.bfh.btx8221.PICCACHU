@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,35 +22,57 @@ namespace BFH_USZ_PICC.Models
     /// Extends the JournalEntry class with two parameters (IsNaCiFlashDone, Flow) to handle special events for the blood withrawal procedure
     /// </summary>
     public class BloodWithdrawalEntry : JournalEntry
-    {       
-        public bool IsNaCiFlushDone { get; set; }
+    {
+        public override Type RealmObjectType
+        {
+            get { return typeof(BloodWithdrawalEntryRO); }
+        }
+
+        public bool IsNaClFlushDone { get; set; }
         public BloodFlow Flow { get; set; }
 
-        public BloodWithdrawalEntry()
+        public BloodWithdrawalEntry() { }
+
+        public BloodWithdrawalEntry(BloodWithdrawalEntryRO realmObject) : base(realmObject)
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            IsNaCiFlushDone = false;
-            Flow = BloodFlow.NoInformation;
-
-            Entry = AllPossibleJournalEntries.BloodWithdrawalEntry;
-
+            IsNaClFlushDone = realmObject.IsNaClFlushDone;
+            Flow = (BloodFlow)realmObject.Flow;
         }
+    }
 
-        public BloodWithdrawalEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, bool isNaCiFlushDone, BloodFlow flow )
+    public class BloodWithdrawalEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public bool IsNaClFlushDone { get; set; }
+        public int Flow { get; set; }
+
+
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            IsNaCiFlushDone = isNaCiFlushDone;
-            Flow = flow;
-
-            Entry = AllPossibleJournalEntries.BloodWithdrawalEntry;
-
+            if(model.GetType() == typeof(BloodWithdrawalEntry))
+            {
+                var modelObject = (BloodWithdrawalEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                IsNaClFlushDone = modelObject.IsNaClFlushDone;
+                Flow = (int)modelObject.Flow;
+                
+            } else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
-
     }
 }

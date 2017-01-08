@@ -3,11 +3,10 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using BFH_USZ_PICC.Interfaces;
-using BFH_USZ_PICC.Droid.DependencyServices;
 using Xamarin.Forms;
 using System.Collections.Generic;
 
-[assembly: Dependency(typeof(ReminderNotification_Droid))]
+[assembly: Dependency(typeof(BFH_USZ_PICC.Droid.DependencyServices.ReminderNotification_Droid))]
 
 namespace BFH_USZ_PICC.Droid.DependencyServices
 {

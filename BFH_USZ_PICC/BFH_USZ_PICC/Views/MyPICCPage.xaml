@@ -15,10 +15,10 @@
   </Grid.Resources>
   <ScrollView>
     <StackLayout Orientation="Vertical">
-      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding IsAPiccAdded, Converter={StaticResource NegateBooleanConverter}}"/>
+      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding HasCurrentPicc, Converter={StaticResource NegateBooleanConverter}}"/>
       <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Command="{Binding AddPICCCommand}"/>
       <Label Text="{i18n:Translate MyPICCPageCurrentPICCText}" FontSize="20"/>
-      <Button Command="{Binding CurrentPICCButtonCommand}" Text="{Binding CurrentPICC.PICCModel.PICCName}" IsVisible="{Binding IsAPiccAdded}"/>
+      <Button Command="{Binding CurrentPICCButtonCommand}" Text="{Binding CurrentPICC.PICCModel.PICCName}" IsVisible="{Binding HasCurrentPicc}"/>
       <Label Text="{i18n:Translate MyPICCPagePreviousPICCText}" FontSize="20"/>
       <ListView x:Name="FormerPICCList" ItemsSource="{Binding PreviousPICC}"
             SelectedItem="{Binding SelectedEntry}"
