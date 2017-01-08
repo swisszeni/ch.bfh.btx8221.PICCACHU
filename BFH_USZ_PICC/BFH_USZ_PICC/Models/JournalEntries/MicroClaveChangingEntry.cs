@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +11,8 @@ namespace BFH_USZ_PICC.Models
     public enum MicroClaveChangementReason
     {
         NoInformation,
-        Routine,
-        Pollution
+        Pollution,
+        Routine        
     }
 
     /// <summary>
@@ -18,29 +20,51 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class MicroClaveChangingEntry : JournalEntry
     {
-        public MicroClaveChangementReason Reason { get; set; }
-
-        public MicroClaveChangingEntry()
+        public override Type RealmObjectType
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Reason = MicroClaveChangementReason.NoInformation;
-
-            Entry = AllPossibleJournalEntries.MicroClaveEntry;
+            get { return typeof(MicroClaveChangingEntryRO); }
         }
 
-        public MicroClaveChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, MicroClaveChangementReason reason)
+        public MicroClaveChangementReason ChangementReason { get; set; }
+
+        public MicroClaveChangingEntry() { }
+
+        public MicroClaveChangingEntry(MicroClaveChangingEntryRO realmObject) : base(realmObject)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Reason = reason;
-
-            Entry = AllPossibleJournalEntries.MicroClaveEntry;
+            ChangementReason = (MicroClaveChangementReason)realmObject.ChangementReason;
         }
+    }
 
+    public class MicroClaveChangingEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int ChangementReason { get; set; }
+
+        public void LoadDataFromModelObject(JournalEntry model)
+        {
+            if (model.GetType() == typeof(MicroClaveChangingEntry))
+            {
+                var modelObject = (MicroClaveChangingEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                ChangementReason = (int)modelObject.ChangementReason;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
+        }
     }
 }

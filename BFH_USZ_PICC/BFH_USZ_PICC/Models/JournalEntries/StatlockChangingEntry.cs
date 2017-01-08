@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,34 +17,57 @@ namespace BFH_USZ_PICC.Models
         DamagedWing
     }
     /// <summary>
-    /// Extends the JournalEntry class with one parameters (StatLockChangementReason) to handle special events for the StatLock changing procedure.
+    /// Extends the JournalEntry class with one parameter (StatLockChangementReason) to handle special events for the StatLock changing procedure.
     /// </summary>
     public class StatlockChangingEntry : JournalEntry
-    {      
-
-        public StatLockChangementReason Reason { get; set; }
-
-        public StatlockChangingEntry()
+    {
+        public override Type RealmObjectType
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Reason = StatLockChangementReason.NoInformation;
-
-            Entry = AllPossibleJournalEntries.StatlockEntry;
+            get { return typeof(StatlockChangingEntryRO); }
         }
 
-        public StatlockChangingEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, StatLockChangementReason reason)
+        public StatLockChangementReason ChangementReason { get; set; }
+
+        public StatlockChangingEntry() { }
+
+        public StatlockChangingEntry(StatlockChangingEntryRO realmObject) : base(realmObject)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Reason = reason;
-
-            Entry = AllPossibleJournalEntries.StatlockEntry;
+            ChangementReason = (StatLockChangementReason) realmObject.ChangementReason;
         }
+    }
 
+    public class StatlockChangingEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int ChangementReason { get; set; }
+
+        public void LoadDataFromModelObject(JournalEntry model)
+        {
+            if (model.GetType() == typeof(StatlockChangingEntry))
+            {
+                var modelObject = (StatlockChangingEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                ChangementReason = (int)modelObject.ChangementReason;
+
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
+
+        }
     }
 }

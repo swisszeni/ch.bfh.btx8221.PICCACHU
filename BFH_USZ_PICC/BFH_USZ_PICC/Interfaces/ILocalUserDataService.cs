@@ -18,5 +18,16 @@ namespace BFH_USZ_PICC.Interfaces
         Task<int> DeleteMasterDataAsync(UserMasterData masterData);
 
         // JournalEntry
+        Task<List<JournalEntry>> GetJournalEntriesAsync();
+        Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry;
+        Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry;
+        Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry;
+        Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry;
+
+        // PICC
+        Task<List<PICC>> GetFormerPICCsAsync();
+        Task<PICC> GetCurrentPICCAsync();
+        Task<int> SaveCurrentPICCAsync(PICC currentPICC);
+
     }
 }

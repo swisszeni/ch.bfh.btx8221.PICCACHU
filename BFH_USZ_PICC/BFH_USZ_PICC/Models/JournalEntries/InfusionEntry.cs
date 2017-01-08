@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,40 +33,63 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class InfusionEntry : JournalEntry
     {
-        public InfusionType Type { get; set; }
+        public override Type RealmObjectType
+        {
+            get { return typeof(InfusionEntryRO); }
+        }
 
+        public InfusionType InfusionType { get; set; }
         //Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
-        public string TypeAntibioticName { get; set; }
-        public InfusionAdministration Administration { get; set; }
+        public string AntibioticName { get; set; }
+        public InfusionAdministration InfusionAdministration { get; set; }
 
-        public InfusionEntry()
+        public InfusionEntry() { }
+
+        public InfusionEntry(InfusionEntryRO realmObject) : base(realmObject)
         {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Type = InfusionType.NoInformation;
-            Administration = InfusionAdministration.NoInformation;
-            TypeAntibioticName = null;
-
-            Entry = AllPossibleJournalEntries.InfusionEntry;
+            InfusionType = (InfusionType)realmObject.InfusionType;
+            AntibioticName = realmObject.AntibioticName;
+            InfusionAdministration = (InfusionAdministration)realmObject.InfusionAdministration;
         }
 
+    }
 
-        public InfusionEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, InfusionType type, 
-            InfusionAdministration administration, string antibioticName)
+    public class InfusionEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int InfusionType { get; set; }
+        // Name of the antibiotic type if the the enum "InfusionType" is "Antibiotic" 
+        public string AntibioticName { get; set; }
+        public int InfusionAdministration { get; set; }
+
+
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Type = type;
-            Administration = administration;
-            TypeAntibioticName = antibioticName;
-
-            Entry = AllPossibleJournalEntries.InfusionEntry;
-
+            if (model.GetType() == typeof(InfusionEntry))
+            {
+                var modelObject = (InfusionEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                InfusionType = (int)modelObject.InfusionType;
+                AntibioticName = modelObject.AntibioticName;
+                InfusionAdministration = (int)modelObject.InfusionAdministration;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
-
     }
 }

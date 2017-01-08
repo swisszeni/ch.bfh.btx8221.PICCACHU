@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +32,6 @@ namespace BFH_USZ_PICC.Models
         FlushWithoutResistance,
         FlushWithResistance,
         FlushNotPossible
-
     }
 
     /// <summary>
@@ -38,42 +39,68 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class CatheterFlushEntry : JournalEntry
     {
-        public FlushType Type { get; set; }
-        public FlushReason Reason { get; set; }
-        public FlushResult Result { get; set; }
+        public override Type RealmObjectType
+        {
+            get { return typeof(CatheterFlushEntryRO); }
+        }
+
+        public FlushType FlushType { get; set; }
+        public FlushReason FlushReason { get; set; }
+        public FlushResult FlushResult { get; set; }
         public double QuantityInMilliliter { get; set; }
         public bool IsBloodReflowVisible { get; set; }
 
-        public CatheterFlushEntry()
-        {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Type = FlushType.NoInformation;
-            Reason = FlushReason.NoInformation;
-            Result = FlushResult.NoInformation;
-            QuantityInMilliliter = 0;
-            IsBloodReflowVisible = false;
+        public CatheterFlushEntry() { }
 
-            Entry = AllPossibleJournalEntries.CatheterFlushEntry;
+        public CatheterFlushEntry(CatheterFlushEntryRO realmObject) : base(realmObject)
+        {
+            FlushType = (FlushType)realmObject.FlushType;
+            FlushReason = (FlushReason)realmObject.FlushReason;
+            FlushResult = (FlushResult)realmObject.FlushResult;
+            QuantityInMilliliter = realmObject.QuantityInMilliliter;
+            IsBloodReflowVisible = realmObject.IsBloodReflowVisible;
         }
 
-        public CatheterFlushEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution institution, HealthPerson person, FlushType type, FlushResult result,
-            FlushReason reason, double quantityInMilliliter, bool isBloodReflowVisible)
+    }
+
+    public class CatheterFlushEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public int FlushType { get; set; }
+        public int FlushReason { get; set; }
+        public int FlushResult { get; set; }
+        public double QuantityInMilliliter { get; set; }
+        public bool IsBloodReflowVisible { get; set; }
+
+        public void LoadDataFromModelObject(JournalEntry model)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = institution;
-            Person = person;
-            Type = type;
-            Reason =  reason;
-            Result = result;
-            QuantityInMilliliter = quantityInMilliliter;
-            IsBloodReflowVisible = isBloodReflowVisible;
-
-            Entry = AllPossibleJournalEntries.CatheterFlushEntry;
+            if (model.GetType() == typeof(CatheterFlushEntry))
+            {
+                var modelObject = (CatheterFlushEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                FlushType = (int)modelObject.FlushType;
+                FlushReason = (int)modelObject.FlushReason;
+                FlushResult = (int)modelObject.FlushResult;
+                QuantityInMilliliter = modelObject.QuantityInMilliliter;
+                IsBloodReflowVisible = modelObject.IsBloodReflowVisible;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
-
     }
 }

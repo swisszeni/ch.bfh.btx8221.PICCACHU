@@ -1,36 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.JournalEntries.AdministeredDrugEntryPage"
-             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate JournalOverviewPageAdministeredDrugEntry}"
-             BindingContext="{Binding [AdministeredDrugViewModel], Source={StaticResource ViewModelLocator}}">
-  <Grid.Resources>
-    <ResourceDictionary>
-      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
-      <utilitys:HealthInstitutionToIndexConverter x:Key="HealthInstitutionToIndexConverter"/>
-      <utilitys:HealthPersonToIndexConverter x:Key="HealthPersonToIndexConverter"/>
-    </ResourceDictionary>
-  </Grid.Resources>
-  <ScrollView>
-    <StackLayout x:Name="DrugEntryLayout" Orientation="Vertical">
-      <Label Text ="{i18n:Translate AdministeredDrugEntryPageSelectDrugLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <Entry x:Name="DrugEntry" Text="{Binding Drug}" IsEnabled="{Binding IsEnabledOrVisible, Mode=TwoWay}"/>
-      <Label Text ="{i18n:Translate AdministeredDrugEntryPageSelectDateLabelText}" VerticalTextAlignment="Center" FontSize="20"/>
-      <DatePicker x:Name="ProcedureDate" Date="{Binding ProcedureDate}" IsEnabled="{Binding IsEnabledOrVisible, Mode=TwoWay}"/>
-      <Label Text="{i18n:Translate AdministeredDrugEntryPageSelectInstitutionLabelText}" FontSize="20"/>
-      <Picker x:Name="HealthInstitutionPicker" SelectedIndex="{Binding Institution, Converter={StaticResource HealthInstitutionToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible, Mode=TwoWay}">
-        <!--<Picker.Items>
-        <i18n:TranslateExtension Text="JournalEntryNotSpecifiedText"/>     
-      </Picker.Items>-->
-      </Picker>
-      <Label Text="{i18n:Translate AdministeredDrugEntryPageSelectPersonLabelText}" FontSize="20"/>
-      <Picker x:Name="HealthPersonPicker" SelectedIndex="{Binding Person, Converter={StaticResource HealthPersonToIndexConverter}}" IsEnabled="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="SaveDrugEntryButton" Text="{i18n:Translate SaveButtonText}" Command="{Binding SaveButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="CancelDrugEntryButton" Text="{i18n:Translate CancelButtonText}" Command="{Binding CancelButtonCommand}" IsVisible="{Binding IsEnabledOrVisible}"/>
-      <Button x:Name="DeleteButton" Text="{i18n:Translate DeleteButtonText}" Command="{Binding DeleteButtonCommand}" IsVisible="{Binding IsEnabledOrVisible, Converter={StaticResource NegateBooleanConverter}}"/>
-    </StackLayout>
-  </ScrollView>
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.JournalEntries.AdministeredDrugEntryPage"
+                   xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   Title="{i18n:Translate JournalOverviewPageAdministeredDrugEntry}"
+                   BindingContext="{Binding [AdministeredDrugViewModel], Source={StaticResource ViewModelLocator}}">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
+            <utilitys:HealthInstitutionToIndexConverter x:Key="HealthInstitutionToIndexConverter" />
+            <utilitys:HealthPersonToIndexConverter x:Key="HealthPersonToIndexConverter" />
+        </ResourceDictionary>
+    </Grid.Resources>
+    <ScrollView>
+        <StackLayout x:Name="DrugEntryLayout"
+                     Orientation="Vertical">
+            <Label Text="{i18n:Translate AdministeredDrugEntryPageSelectDrugLabelText}"
+                   VerticalTextAlignment="Center"
+                   FontSize="20" />
+            <Entry x:Name="DrugEntry"
+                   Text="{Binding Drug}"
+                   IsEnabled="{Binding IsUserInputEnabled, Mode=TwoWay}" />
+            <Label Text="{i18n:Translate AdministeredDrugEntryPageSelectDateLabelText}"
+                   VerticalTextAlignment="Center"
+                   FontSize="20" />
+            <DatePicker x:Name="ProcedureDate"
+                        Date="{Binding ExecutionDate}"
+                        IsEnabled="{Binding IsUserInputEnabled, Mode=TwoWay}" />
+            <Label Text="{i18n:Translate AdministeredDrugEntryPageSelectInstitutionLabelText}"
+                   FontSize="20" />
+            <Picker x:Name="HealthInstitutionPicker"
+                    SelectedIndex="{Binding SupportingInstitution, Converter={StaticResource HealthInstitutionToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled, Mode=TwoWay}" />
+            <Label Text="{i18n:Translate AdministeredDrugEntryPageSelectPersonLabelText}"
+                   FontSize="20" />
+            <Picker x:Name="HealthPersonPicker"
+                    SelectedIndex="{Binding SupportingPerson, Converter={StaticResource HealthPersonToIndexConverter}}"
+                    IsEnabled="{Binding IsUserInputEnabled}" />
+            <Button x:Name="SaveDrugEntryButton"
+                    Text="{i18n:Translate SaveButtonText}"
+                    Command="{Binding SaveCommand}"
+                    IsVisible="{Binding IsUserInputEnabled}" />
+            <Button x:Name="CancelDrugEntryButton"
+                    Text="{i18n:Translate CancelButtonText}"
+                    Command="{Binding CancelCommand}"
+                    IsVisible="{Binding IsUserInputEnabled}" />
+            <Button x:Name="DeleteButton"
+                    Text="{i18n:Translate DeleteButtonText}"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}" />
+        </StackLayout>
+    </ScrollView>
 </d:BaseContentPage>

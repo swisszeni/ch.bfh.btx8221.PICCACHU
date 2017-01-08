@@ -11,14 +11,14 @@ namespace BFH_USZ_PICC.Views
     public sealed partial class PICCDetailPage : BaseContentPage
     {
 
-        public enum PICCDetailPageDisplayMode
-        {
-            Create,
-            Edit,
-            View
-        }
+        //public enum PICCDetailPageDisplayMode
+        //{
+        //    Create,
+        //    Edit,
+        //    View
+        //}
         
-        private PICCDetailPageDisplayMode displayMode = PICCDetailPageDisplayMode.Create;
+        //private PICCDetailPageDisplayMode displayMode = PICCDetailPageDisplayMode.Create;
 
         /// <summary>
         /// Default constructor
@@ -42,12 +42,8 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained, PICCModel model) : base(contained)
         {
             InitializeComponent();
-            Title = AppResources.PICCDetailPageAddNewPICCTitle;
-            displayMode = PICCDetailPageDisplayMode.Create;
-            AddPickerItems();
-            ((PICCDetailViewModel)BindingContext).DisplayingEntry  = new PICC(model, DateTime.Now, PICC.PICCInsertCountry.Undefined, null, PICC.PICCInsertSide.Undefined, PICC.PICCInsertPosition.Undefined);
-            ((PICCDetailViewModel)BindingContext).IsVisibleOrEnabled = true;
-            ((PICCDetailViewModel)BindingContext).IsUserAddingANewPICC = true; 
+            Title = AppResources.PICCDetailPageAddNewPICCTitle;            
+            AddPickerItems();           
         }    
 
         /// <summary>
@@ -60,12 +56,9 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained, PICC existingPICC) : base(contained)
         {
             InitializeComponent();
-            Title = AppResources.PICCDetailPageEditPICCTitle;
-            displayMode = PICCDetailPageDisplayMode.View;
+            Title = AppResources.PICCDetailPageEditPICCTitle;            
             AddPickerItems();
-            ((PICCDetailViewModel)BindingContext).DisplayingEntry = existingPICC;
-            ((PICCDetailViewModel)BindingContext).IsVisibleOrEnabled = false;
-            ((PICCDetailViewModel)BindingContext).IsUserAddingANewPICC = false;
+            
         }
        
         void AddPickerItems()

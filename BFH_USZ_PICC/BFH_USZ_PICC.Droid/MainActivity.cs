@@ -11,8 +11,6 @@ using Xamarin.Forms;
 using HockeyApp.Android;
 using HockeyApp.Android.Metrics;
 using BFH_USZ_PICC.Utilitys;
-using GalaSoft.MvvmLight.Ioc;
-using XLabs.Platform.Services;
 
 [assembly:MetaData("net.hockeyapp.android.appIdentifier", Value=HockeyAppHelper.AppIds.HockeyAppId_Droid)]
 
@@ -32,7 +30,6 @@ namespace BFH_USZ_PICC.Droid
             Forms.Init(this, bundle);
             LoadApplication(new Application());
 
-            RegisterIOC();
             // check for updates of the app
             CheckForUpdates();
         }
@@ -44,14 +41,6 @@ namespace BFH_USZ_PICC.Droid
         {
             CrashManager.Register(this);
             MetricsManager.Register(Application);
-        }
-
-        private void RegisterIOC()
-        {
-            SimpleIoc.Default.Register<ISecureStorage>(() =>
-            {
-                return new KeyVaultStorage(_keyVaultPassword.ToCharArray());
-            });
         }
 
         /// <summary>
