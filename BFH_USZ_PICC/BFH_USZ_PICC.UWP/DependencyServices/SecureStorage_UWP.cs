@@ -15,7 +15,7 @@ using Xamarin.Forms;
 namespace BFH_USZ_PICC.UWP.DependencyServices
 {
     /// <summary>
-    /// Implements <see cref="ISecureStorage"/> for WP using <see cref="IsolatedStorageFile"/> and <see cref="ProtectedData"/>.
+    /// Implements <see cref="ISecureStorage"/> for UWP using <see cref="PasswordVault"/>
     /// </summary>
     public class SecureStorage_UWP : ISecureStorage
     {

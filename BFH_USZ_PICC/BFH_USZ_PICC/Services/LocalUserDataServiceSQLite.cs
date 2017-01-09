@@ -14,7 +14,6 @@ namespace BFH_USZ_PICC.Services
     {
         private SQLiteAsyncConnection _database;
         private string _databaseName = "Userdata.db3";
-        private string _databaseKeyName = "UserdataDBKey";
 
         public LocalUserDataServiceSQLite()
         {
@@ -30,6 +29,13 @@ namespace BFH_USZ_PICC.Services
         private void CreateTablesIfNotExist()
         {
             _database.CreateTableAsync<UserMasterData>().Wait();
+
+            // JournalEntries
+
+
+            // PICC
+            _database.CreateTableAsync<PICC>().Wait();
+            _database.CreateTableAsync<PICCModel>().Wait();
         }
 
         public Task ResetLocalUserDataAsync()
@@ -136,19 +142,57 @@ namespace BFH_USZ_PICC.Services
         #endregion
 
         #region PICCs
-        public Task<List<PICC>> GetFormerPICCsAsync()
+
+        public async Task<List<PICC>> GetFormerPICCsAsync()
         {
-            throw new NotImplementedException();
+            var formerPiccs = await _database.Table<PICC>().Where((x) => x.RemovalDate != null).ToListAsync();
+            foreach (var formerPicc in formerPiccs)
+            {
+                formerPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == formerPicc.PICCModelID).FirstOrDefaultAsync();
+            }
+
+            return formerPiccs;
         }
 
-        public Task<PICC> GetCurrentPICCAsync()
+        public async Task<PICC> GetCurrentPICCAsync()
         {
-            throw new NotImplementedException();
+            var currentPicc = await _database.Table<PICC>().Where((x) => x.RemovalDate == null).FirstOrDefaultAsync();
+            if(currentPicc != null)
+            {
+                currentPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == currentPicc.PICCModelID).FirstOrDefaultAsync();
+            }
+
+            return currentPicc;
         }
 
-        public Task<int> SaveCurrentPICCAsync(PICC currentPICC)
+        public async Task<int> SaveCurrentPICCAsync(PICC savingPicc)
         {
-            throw new NotImplementedException();
+            // Check if a new PICC is set as current or if the current picc is only modified
+            var currentPicc = await _database.Table<PICC>().Where((x) => x.RemovalDate == null).FirstOrDefaultAsync();
+            if (currentPicc == null || currentPicc.ID != savingPicc.ID)
+            {
+                // If the user has not removed the previous PICC, a removal date will be set to it (otherwise we would have two current PICCs)
+                if (currentPicc != null)
+                {
+                    currentPicc.RemovalDate = DateTimeOffset.Now.Date.ToLocalTime();
+                    await _database.UpdateAsync(currentPicc);
+                }
+
+                // Adding the PICCModel and the PICC
+                var piccModelGuid = Guid.NewGuid().ToString();
+                savingPicc.PICCModel.ID = piccModelGuid;
+                savingPicc.PICCModelID = piccModelGuid;
+                savingPicc.ID = Guid.NewGuid().ToString();
+                await _database.InsertAsync(savingPicc.PICCModel);
+                await _database.InsertAsync(savingPicc);
+            }
+            else
+            {
+                await _database.UpdateAsync(savingPicc.PICCModel);
+                await _database.UpdateAsync(savingPicc);
+            }
+
+            return 1;
         }
 
         #endregion
