@@ -152,17 +152,16 @@ namespace BFH_USZ_PICC.Services
             resultList.AddRange(_database.All<InfusionEntryRO>().ToList().Select((x) => new InfusionEntry(x)));
             resultList.AddRange(_database.All<MicroClaveChangingEntryRO>().ToList().Select((x) => new MicroClaveChangingEntry(x)));
 
-
             return Task.FromResult(resultList);
         }
 
-        public Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry
+        public Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry, new()
         {
-            var entryTypeExample = (AdministeredDrugEntry)Activator.CreateInstance(typeof(T));
+            var entryTypeExample = (JournalEntry)Activator.CreateInstance(typeof(T));
             return Task.FromResult(_database.All(entryTypeExample.RealmObjectType.Name).Select((x) => (T)Activator.CreateInstance(typeof(T), new object[] { x })).ToList());
         }
 
-        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry, new()
         {
             var entryTypeExample = (JournalEntry)Activator.CreateInstance(typeof(T));
             var entry = _database.Find(entryTypeExample.RealmObjectType.Name, ID);
@@ -174,7 +173,7 @@ namespace BFH_USZ_PICC.Services
             return Task.FromResult<T>(null);
         }
 
-        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
+        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry, new()
         {
             if (String.IsNullOrEmpty(entry.ID))
             {
@@ -205,7 +204,7 @@ namespace BFH_USZ_PICC.Services
             return Task.FromResult(1);
         }
 
-        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry
+        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry, new()
         {
             var existingEntryRO = _database.Find(entry.RealmObjectType.Name, entry.ID);
             if(existingEntryRO != null)
