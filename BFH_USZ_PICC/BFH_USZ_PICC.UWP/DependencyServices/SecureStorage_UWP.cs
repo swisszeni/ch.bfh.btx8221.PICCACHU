@@ -19,122 +19,9 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
     /// </summary>
     public class SecureStorage_UWP : ISecureStorage
     {
-        private static ApplicationData AppStorage { get { return ApplicationData.Current; } }
-
-        private static DataProtectionProvider _dataProtectionProvider = new DataProtectionProvider();
-
-        private readonly byte[] _optionalEntropy;
-
-        /// <summary>
-        /// Initializes a new instance of <see cref="SecureStorage"/>.
-        /// </summary>
-        /// <param name="optionalEntropy">Optional password for additional entropy to make encyption more complex.</param>
-        public SecureStorage_UWP(byte[] optionalEntropy)
-        {
-            this._optionalEntropy = optionalEntropy;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of <see cref="SecureStorage"/>.
-        /// </summary>
-        public SecureStorage_UWP() : this(null)
-        {
-
-        }
+        private static readonly string _resourceIdentifier = "ch.bfh.i4m1.picc";
 
         #region ISecureStorage Members
-
-        /// <summary>
-        /// Stores the specified key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="dataBytes">The data bytes.</param>
-        public async void Store(string key, byte[] dataBytes)
-        {
-            var mutex = new Mutex(false, key);
-
-            try
-            {
-                mutex.WaitOne();
-
-                //var result = await new Windows.Security.Cryptography.DataProtection.DataProtectionProvider().ProtectAsync()
-
-                var buffer = dataBytes.AsBuffer();
-
-                if (_optionalEntropy != null)
-                {
-                    buffer = await _dataProtectionProvider.ProtectAsync(buffer);
-                }
-
-                var file =
-                    await AppStorage.LocalFolder.CreateFileAsync(key, CreationCollisionOption.ReplaceExisting);
-
-                await FileIO.WriteBufferAsync(file, buffer);
-            }
-            finally
-            {
-                mutex.ReleaseMutex();
-            }
-        }
-
-        /// <summary>
-        /// Retrieves the specified key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <returns>System.Byte[].</returns>
-        /// <exception cref="System.Exception"></exception>
-        public byte[] Retrieve(string key)
-        {
-            var mutex = new Mutex(false, key);
-
-            try
-            {
-                mutex.WaitOne();
-
-                var file = AppStorage.LocalFolder.GetFileAsync(key);
-
-                var bufferTask = FileIO.ReadBufferAsync(file.GetResults());
-
-                var buffer = bufferTask.GetResults();
-
-                if (_optionalEntropy != null)
-                {
-                    buffer = _dataProtectionProvider.UnprotectAsync(buffer).GetResults();
-                }
-
-                return buffer.ToArray();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(string.Format("No entry found for key {0}.", key), ex);
-            }
-            finally
-            {
-                mutex.ReleaseMutex();
-            }
-        }
-
-        /// <summary>
-        /// Deletes the specified key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        public async void Delete(string key)
-        {
-            var mutex = new Mutex(false, key);
-
-            try
-            {
-                mutex.WaitOne();
-
-                var file = await AppStorage.LocalFolder.GetFileAsync(key);
-
-                await file.DeleteAsync();
-            }
-            finally
-            {
-                mutex.ReleaseMutex();
-            }
-        }
 
         /// <summary>
         /// Checks if the storage contains a key.
@@ -143,24 +30,73 @@ namespace BFH_USZ_PICC.UWP.DependencyServices
         /// <returns>True if the storage has the key, otherwise false.</returns>
         public bool Contains(string key)
         {
-            try
-            {
-                var file = AppStorage.LocalFolder.GetFileAsync(key);
-                file.GetResults();
+            var vault = new Windows.Security.Credentials.PasswordVault();
+            return vault.Retrieve(_resourceIdentifier, key) != null;
+        }
 
-                return true;
-            }
-            catch
+        /// <summary>
+        /// Deletes data.
+        /// </summary>
+        /// <param name="key">Key for the data to be deleted.</param>
+        public void Delete(string key)
+        {
+            var vault = new Windows.Security.Credentials.PasswordVault();
+            var credentials = vault.Retrieve(_resourceIdentifier, key);
+            if (credentials == null)
             {
-                return false;
+                // invalid key?
+                throw new ArgumentException();
+            }
+
+            vault.Remove(credentials);
+        }
+
+        /// <summary>
+        /// Deletes all saved data.
+        /// If there is a master key used for storage, it is deleted too
+        /// </summary>
+        public void WipeStorage()
+        {
+            var vault = new Windows.Security.Credentials.PasswordVault();
+            var allCredentials = vault.FindAllByResource(_resourceIdentifier);
+            foreach (var credential in allCredentials)
+            {
+                vault.Remove(credential);
             }
         }
 
-        public void WipeStorage()
+        /// <summary>
+        /// Retrieves stored data.
+        /// </summary>
+        /// <param name="key">Key for the data.</param>
+        /// <returns>Byte array of stored data.</returns>
+        public byte[] Retrieve(string key)
         {
-            throw new NotImplementedException();
+            var vault = new Windows.Security.Credentials.PasswordVault();
+            var credentials = vault.Retrieve(_resourceIdentifier, key);
+            if(credentials == null)
+            {
+                // invalid key?
+                throw new ArgumentException();
+            }
+
+            return Convert.FromBase64String(credentials.Password);
+        }
+
+        /// <summary>
+        /// Stores data.
+        /// </summary>
+        /// <param name="key">Key for the data.</param>
+        /// <param name="dataBytes">Data bytes to store.</param>
+        public void Store(string key, byte[] dataBytes)
+        {
+            var vault = new Windows.Security.Credentials.PasswordVault();
+            // Base64 encode the data bytes
+            var encodedValue = Convert.ToBase64String(dataBytes);
+            vault.Add(new Windows.Security.Credentials.PasswordCredential(_resourceIdentifier, key, encodedValue));
         }
 
         #endregion
+
     }
 }
