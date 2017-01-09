@@ -27,6 +27,7 @@ namespace BFH_USZ_PICC.Interfaces
         // PICC
         Task<List<PICC>> GetFormerPICCsAsync();
         Task<PICC> GetCurrentPICCAsync();
+        Task<PICC> GetPICCAsync(string ID);
         Task<int> SaveCurrentPICCAsync(PICC currentPICC);
 
     }

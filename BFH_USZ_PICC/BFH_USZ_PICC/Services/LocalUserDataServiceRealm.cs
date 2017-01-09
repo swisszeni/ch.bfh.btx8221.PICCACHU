@@ -252,6 +252,16 @@ namespace BFH_USZ_PICC.Services
 
         }
 
+        public Task<PICC> GetPICCAsync(string ID)
+        {
+            var foundPicc = _database.All<PICCRO>().FirstOrDefault((x) => x.ID == ID);
+            if(foundPicc != null)
+            {
+                return Task.FromResult(new PICC(foundPicc));
+            }
+            else { return Task.FromResult((PICC)null); }
+        }
+
         public Task<int> SaveCurrentPICCAsync(PICC currentPICC)
         {
             //Check if a new PICC is set as current or if the current picc is only modified

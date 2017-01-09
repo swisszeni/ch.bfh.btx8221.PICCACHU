@@ -22,8 +22,21 @@ namespace BFH_USZ_PICC.ViewModels
         {
             // Getting the dataservice
             _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
-            
         }
+
+        #region navigation events
+
+        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        {
+            PopulatePICCsAsync();
+
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
+        }
+
+        #endregion
+
+        #region private methods
 
         public async void PopulatePICCsAsync()
         {
@@ -32,14 +45,11 @@ namespace BFH_USZ_PICC.ViewModels
             PreviousPICC = await _dataService.GetFormerPICCsAsync();
         }
 
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
-        {
-             PopulatePICCsAsync();
+        #endregion
 
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
-        }
+        #region public properties
 
+        public bool HasCurrentPicc { get { return CurrentPICC != null; } }
         private PICC _currentPICC;
         public PICC CurrentPICC
         {
@@ -61,11 +71,25 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _previousPICC, value); }
         }
 
-        
-        public bool HasCurrentPicc
+        private PICC _selectedEntry;
+        public PICC SelectedEntry
         {
-            get { return CurrentPICC != null; }
+            get { return _selectedEntry; }
+            set
+            {
+                Set(() => SelectedEntry, ref _selectedEntry, value);
+
+                //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
+                if (_selectedEntry != null)
+                {
+                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { SelectedEntry.ID }));
+                }
+            }
         }
+
+        #endregion
+
+        #region RelayCommands
 
         private RelayCommand _addPICCCommand;
         public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(async () =>
@@ -78,9 +102,9 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _currentPICCButtonCommand;
         public RelayCommand CurrentPICCButtonCommand => _currentPICCButtonCommand ?? (_currentPICCButtonCommand = new RelayCommand(async () =>
         {
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC }));
-           
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC.ID }));
         }));
-        
+
+        #endregion
     }
 }

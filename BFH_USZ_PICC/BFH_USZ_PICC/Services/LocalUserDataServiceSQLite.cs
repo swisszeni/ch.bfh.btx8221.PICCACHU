@@ -163,6 +163,17 @@ namespace BFH_USZ_PICC.Services
             return currentPicc;
         }
 
+        public async Task<PICC> GetPICCAsync(string ID)
+        {
+            var foundPicc = await _database.Table<PICC>().Where((x) => x.ID == ID).FirstOrDefaultAsync();
+            if (foundPicc != null)
+            {
+                foundPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == foundPicc.PICCModelID).FirstOrDefaultAsync();
+            }
+
+            return foundPicc;
+        }
+
         public async Task<int> SaveCurrentPICCAsync(PICC savingPicc)
         {
             // Check if a new PICC is set as current or if the current picc is only modified

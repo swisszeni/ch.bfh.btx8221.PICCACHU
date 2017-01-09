@@ -67,13 +67,19 @@ namespace BFH_USZ_PICC.Services.Design
         }
         #endregion
 
-        #region JournalEntry
+        #region PICC
+
         public Task<List<PICC>> GetFormerPICCsAsync()
         {
             throw new NotImplementedException();
         }
 
         public Task<PICC> GetCurrentPICCAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PICC> GetPICCAsync(string ID)
         {
             throw new NotImplementedException();
         }
