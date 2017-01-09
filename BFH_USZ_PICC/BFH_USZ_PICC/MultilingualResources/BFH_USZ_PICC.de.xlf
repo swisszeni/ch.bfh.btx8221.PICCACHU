@@ -1032,6 +1032,18 @@
           <target state="translated">Zurück</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Button um den vorherigen Schritt anzuzeigen</note>
         </trans-unit>
+        <trans-unit id="MyPICCPageDetailButtonText" translate="yes" xml:space="preserve">
+          <source>Detail</source>
+          <target state="translated">Detail</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageGoToJournalEntriesButtonText" translate="yes" xml:space="preserve">
+          <source>Go to "journal entry" page</source>
+          <target state="translated">Zu "Meine Notizen" wechseln</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageDeletePICCWarningText" translate="yes" xml:space="preserve">
+          <source>Do you really want to delete this PICC form the database?</source>
+          <target state="translated">Wollen Sie diesen PICC wirklich von der Datenbank löschen?</target>
+        </trans-unit>
       </group>
     </body>
   </file>

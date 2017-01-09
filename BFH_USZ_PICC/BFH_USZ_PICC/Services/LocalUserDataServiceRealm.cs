@@ -287,6 +287,19 @@ namespace BFH_USZ_PICC.Services
             return Task.FromResult(1);
         }
 
+        public Task<int> DeltePICCAsync(PICC picc)
+        {
+            var existingRO = _database.Find<PICCRO>(picc.ID);
+            if (existingRO != null)
+            {
+                _database.Write(() =>
+                {
+                    _database.Remove(existingRO);
+                });
+            }
+            return Task.FromResult(0);
+        }
+
         #endregion
     }
 }

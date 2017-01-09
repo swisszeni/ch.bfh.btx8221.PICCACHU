@@ -1,5 +1,6 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
+using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -11,6 +12,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BFH_USZ_PICC.ViewModels
 {
@@ -22,19 +24,19 @@ namespace BFH_USZ_PICC.ViewModels
         {
             // Getting the dataservice
             _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
-            
+
         }
 
         public async void PopulatePICCsAsync()
         {
             CurrentPICC = await _dataService.GetCurrentPICCAsync();
-                                    
+
             PreviousPICC = await _dataService.GetFormerPICCsAsync();
         }
 
         public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
         {
-             PopulatePICCsAsync();
+            PopulatePICCsAsync();
 
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
             return Task.FromResult(false);
@@ -50,7 +52,7 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     RaisePropertyChanged(() => HasCurrentPicc);
                 }
-            }            
+            }
 
         }
 
@@ -61,12 +63,19 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _previousPICC, value); }
         }
 
-        
+        private int _selectedEntry;
+        public int SelectedEntry
+        {
+            get { return _selectedEntry; }
+            set { Set(ref _selectedEntry, value); }
+        }
+                
+
         public bool HasCurrentPicc
         {
             get { return CurrentPICC != null; }
         }
-
+        
         private RelayCommand _addPICCCommand;
         public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(async () =>
         {
@@ -79,8 +88,33 @@ namespace BFH_USZ_PICC.ViewModels
         public RelayCommand CurrentPICCButtonCommand => _currentPICCButtonCommand ?? (_currentPICCButtonCommand = new RelayCommand(async () =>
         {
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC }));
-           
+
         }));
+
         
+
+        private RelayCommand _moveToJournalEntryOverviewPageCommand;
+        public RelayCommand MoveToJournalEntryOverviewPageCommand => _moveToJournalEntryOverviewPageCommand ?? (_moveToJournalEntryOverviewPageCommand = new RelayCommand(async () =>
+        {
+            await ((Shell)Application.Current.MainPage).NavigateAsync(MenuItemKey.Journal);
+
+        }));
+
+
+        private RelayCommand<PICC> _deleteFormerPICCCommand;
+        public RelayCommand<PICC> DeleteFormerPICCCommand => _deleteFormerPICCCommand ?? (_deleteFormerPICCCommand = new RelayCommand<PICC>(MenuItemEvent));
+
+        public async void MenuItemEvent(PICC selectedPICC)
+        {
+            if (selectedPICC != null)
+            {
+                if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+                {
+                    await _dataService.DeltePICCAsync(selectedPICC);
+                    PopulatePICCsAsync();
+
+                }
+            }     
+        }
     }
 }

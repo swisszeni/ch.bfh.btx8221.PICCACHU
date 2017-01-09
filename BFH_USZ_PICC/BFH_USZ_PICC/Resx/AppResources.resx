@@ -933,4 +933,13 @@
     <value>Back</value>
     <comment>Button um den vorherigen Schritt anzuzeigen</comment>
   </data>
+  <data name="MyPICCPageDeletePICCWarningText" xml:space="preserve">
+    <value>Do you really want to delete this PICC form the database?</value>
+  </data>
+  <data name="MyPICCPageDetailButtonText" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="MyPICCPageGoToJournalEntriesButtonText" xml:space="preserve">
+    <value>Go to "journal entry" page</value>
+  </data>
 </root>

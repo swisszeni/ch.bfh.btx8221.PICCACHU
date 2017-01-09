@@ -1589,6 +1589,39 @@ namespace BFH_USZ_PICC.Resx
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete this PICC form the database?.
+        /// </summary>
+        public static string MyPICCPageDeletePICCWarningText
+        {
+            get
+            {
+                return ResourceManager.GetString("MyPICCPageDeletePICCWarningText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Detail.
+        /// </summary>
+        public static string MyPICCPageDetailButtonText
+        {
+            get
+            {
+                return ResourceManager.GetString("MyPICCPageDetailButtonText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Go to &quot;journal entry&quot; page.
+        /// </summary>
+        public static string MyPICCPageGoToJournalEntriesButtonText
+        {
+            get
+            {
+                return ResourceManager.GetString("MyPICCPageGoToJournalEntriesButtonText", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to It seems that you have not yet entered a PICC..
         /// </summary>
         public static string MyPICCPageNoPiccEnteredText

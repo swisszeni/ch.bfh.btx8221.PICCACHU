@@ -25,9 +25,10 @@ namespace BFH_USZ_PICC.Interfaces
         Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry;
 
         // PICC
+        Task<int> DeltePICCAsync(PICC picc);
         Task<List<PICC>> GetFormerPICCsAsync();
         Task<PICC> GetCurrentPICCAsync();
         Task<int> SaveCurrentPICCAsync(PICC currentPICC);
-
+        
     }
 }

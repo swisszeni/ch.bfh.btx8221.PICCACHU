@@ -151,6 +151,11 @@ namespace BFH_USZ_PICC.Services
             throw new NotImplementedException();
         }
 
+        public Task<int> DeltePICCAsync(PICC formerPICC)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

@@ -18,14 +18,39 @@
       <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding HasCurrentPicc, Converter={StaticResource NegateBooleanConverter}}"/>
       <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Command="{Binding AddPICCCommand}"/>
       <Label Text="{i18n:Translate MyPICCPageCurrentPICCText}" FontSize="20"/>
-      <Button Command="{Binding CurrentPICCButtonCommand}" Text="{Binding CurrentPICC.PICCModel.PICCName}" IsVisible="{Binding HasCurrentPicc}"/>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding HasCurrentPicc}">
+        <Label Text="{i18n:Translate PICCDetailPagePICCModelNameText}"/>
+        <Label  Text="{Binding CurrentPICC.PICCModel.PICCName}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding HasCurrentPicc}">
+        <Label Text="{i18n:Translate PICCDetailPagePICCFrenchSizeText}"/>
+        <Label  Text="{Binding CurrentPICC.PICCModel.FrenchDiameter}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding HasCurrentPicc}">
+        <Label Text="{i18n:Translate PICCDetailPageLumensLabelText}"/>
+        <Label  Text="{Binding CurrentPICC.PICCModel.Lumen}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding HasCurrentPicc}">
+        <Label Text="{i18n:Translate PICCDetailPagePICCInsertedDateText}"/>
+        <Label  Text="{Binding CurrentPICC.InsertDate, StringFormat='{}{0:dd/MM/yy}'}"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" IsVisible="{Binding HasCurrentPicc}">
+        <Button Command="{Binding CurrentPICCButtonCommand}" Text="{i18n:Translate MyPICCPageDetailButtonText}" HorizontalOptions="FillAndExpand"/>
+        <Button Command="{Binding MoveToJournalEntryOverviewPageCommand}" Text="{i18n:Translate MyPICCPageGoToJournalEntriesButtonText}" HorizontalOptions="FillAndExpand"/>
+      </StackLayout>
       <Label Text="{i18n:Translate MyPICCPagePreviousPICCText}" FontSize="20"/>
-      <ListView x:Name="FormerPICCList" ItemsSource="{Binding PreviousPICC}"
-            SelectedItem="{Binding SelectedEntry}"
+      <ListView x:Name="FormerPICCListView" ItemsSource="{Binding PreviousPICC}"
+            SelectedItem="{Binding SelectedEntry, Mode=TwoWay}"
             ItemSelected="SelectedEntry">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <TextCell Text="{Binding PICCModel.PICCName}" Detail="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}"/>
+            <TextCell x:Name="FormerPICCCell" Text="{Binding PICCModel.PICCName}" Detail="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}">
+              <TextCell.ContextActions>
+                <MenuItem  Text="{i18n:Translate DeleteButtonText}" IsDestructive="True" BindingContext="{Binding Source={x:Reference FormerPICCListView}, Path=BindingContext}"
+                            Command="{Binding DeleteFormerPICCCommand}" CommandParameter="{Binding Source={x:Reference FormerPICCCell}, Path=BindingContext}">
+                </MenuItem>
+              </TextCell.ContextActions>
+            </TextCell>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

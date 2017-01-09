@@ -829,4 +829,13 @@
     <value>Zurück</value>
     <comment>Button um den vorherigen Schritt anzuzeigen</comment>
   </data>
+  <data name="MyPICCPageDetailButtonText" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="MyPICCPageGoToJournalEntriesButtonText" xml:space="preserve">
+    <value>Zu "Meine Notizen" wechseln</value>
+  </data>
+  <data name="MyPICCPageDeletePICCWarningText" xml:space="preserve">
+    <value>Wollen Sie diesen PICC wirklich von der Datenbank löschen?</value>
+  </data>
 </root>

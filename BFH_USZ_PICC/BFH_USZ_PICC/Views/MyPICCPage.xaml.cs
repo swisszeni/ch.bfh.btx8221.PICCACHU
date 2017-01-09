@@ -16,7 +16,7 @@ namespace BFH_USZ_PICC.Views
         // This method sets the selected picc entry to null (otherwise it would be marked).
         private void SelectedEntry(object sender, EventArgs e)
         {
-            FormerPICCList.SelectedItem = null;
+            FormerPICCListView.SelectedItem = null;
         }
 
         public override void OnAppearing()
