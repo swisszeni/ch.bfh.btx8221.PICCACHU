@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ddcccd46-c269-4d15-9089-46ccf42b907b"
+    Name="27e732b2-195c-427d-94dd-03f8b9861ba6"
     Publisher="CN=Raphael"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ddcccd46-c269-4d15-9089-46ccf42b907b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="27e732b2-195c-427d-94dd-03f8b9861ba6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>BFH_USZ_PICC.Tests.UWP</DisplayName>
