@@ -11,15 +11,6 @@ namespace BFH_USZ_PICC.Views
     public sealed partial class PICCDetailPage : BaseContentPage
     {
 
-        //public enum PICCDetailPageDisplayMode
-        //{
-        //    Create,
-        //    Edit,
-        //    View
-        //}
-        
-        //private PICCDetailPageDisplayMode displayMode = PICCDetailPageDisplayMode.Create;
-
         /// <summary>
         /// Default constructor
         /// 
@@ -30,6 +21,7 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
             Title = AppResources.PICCDetailPageTitleText;
+            AddPickerItems();
         }
 
         /// <summary>
@@ -43,25 +35,24 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
             Title = AppResources.PICCDetailPageAddNewPICCTitle;            
-            AddPickerItems();           
+            AddPickerItems();
         }    
 
         /// <summary>
-        /// Constructor with a existing PICC, call when a existing should be displayed/edited
+        /// Constructor with an ID to an existing PICC, call when a existing should be displayed/edited
         /// 
         /// author: Raphael zenhäusern
         /// </summary>
         /// <param name="contained">BasePage</param>
         /// <param name="existingPICC">Existing PICC</param>
-        public PICCDetailPage(ContentPage contained, PICC existingPICC) : base(contained)
+        public PICCDetailPage(ContentPage contained, string existingPICCID) : base(contained)
         {
             InitializeComponent();
             Title = AppResources.PICCDetailPageEditPICCTitle;            
             AddPickerItems();
-            
         }
        
-        void AddPickerItems()
+        private void AddPickerItems()
         {
             PiccPositionPicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
             PiccPositionPicker.Items.Add(AppResources.PICCDetailPagePickerPositionBelowElbowText);
@@ -74,7 +65,6 @@ namespace BFH_USZ_PICC.Views
             CountryPicker.Items.Add(AppResources.PICCDetailPagePickerNotDefinedText);
             CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountrySwitzerlandText);
             CountryPicker.Items.Add(AppResources.PICCDetailPagePickerCountryAbroadText);
-
         }
     }
 }

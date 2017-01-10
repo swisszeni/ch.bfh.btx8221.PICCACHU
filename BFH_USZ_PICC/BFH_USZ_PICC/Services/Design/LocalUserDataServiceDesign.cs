@@ -46,34 +46,40 @@ namespace BFH_USZ_PICC.Services.Design
             throw new NotImplementedException();
         }
 
-        public Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry
+        public Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry, new()
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
+        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry, new()
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry
+        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry, new()
         {
             throw new NotImplementedException();
         }
 
-        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry, new()
         {
             throw new NotImplementedException();
         }
         #endregion
 
-        #region JournalEntry
+        #region PICC
+
         public Task<List<PICC>> GetFormerPICCsAsync()
         {
             throw new NotImplementedException();
         }
 
         public Task<PICC> GetCurrentPICCAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PICC> GetPICCAsync(string ID)
         {
             throw new NotImplementedException();
         }
