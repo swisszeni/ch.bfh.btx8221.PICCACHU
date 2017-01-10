@@ -942,4 +942,10 @@
   <data name="MyPICCPageGoToJournalEntriesButtonText" xml:space="preserve">
     <value>Go to "journal entry" page</value>
   </data>
+  <data name="PICCDetailPagePICCRemovalDateText" xml:space="preserve">
+    <value>Removal date:</value>
+  </data>
+  <data name="FormerPICCPageTitleText" xml:space="preserve">
+    <value>Previous PICC detail</value>
+  </data>
 </root>

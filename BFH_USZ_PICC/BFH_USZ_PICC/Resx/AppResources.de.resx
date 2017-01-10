@@ -838,4 +838,10 @@
   <data name="MyPICCPageDeletePICCWarningText" xml:space="preserve">
     <value>Wollen Sie diesen PICC wirklich von der Datenbank löschen?</value>
   </data>
+  <data name="PICCDetailPagePICCRemovalDateText" xml:space="preserve">
+    <value>PICC inaktiv gesetzt am:</value>
+  </data>
+  <data name="FormerPICCPageTitleText" xml:space="preserve">
+    <value>Früherer PICC Detail</value>
+  </data>
 </root>

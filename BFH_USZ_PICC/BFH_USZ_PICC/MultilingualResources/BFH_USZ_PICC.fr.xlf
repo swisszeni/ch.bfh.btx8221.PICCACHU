@@ -1039,6 +1039,14 @@
           <source>Do you really want to delete this PICC form the database?</source>
           <target state="new">Do you really want to delete this PICC form the database?</target>
         </trans-unit>
+        <trans-unit id="PICCDetailPagePICCRemovalDateText" translate="yes" xml:space="preserve">
+          <source>Removal date:</source>
+          <target state="new">Removal date:</target>
+        </trans-unit>
+        <trans-unit id="FormerPICCPageTitleText" translate="yes" xml:space="preserve">
+          <source>Previous PICC detail</source>
+          <target state="new">Previous PICC detail</target>
+        </trans-unit>
       </group>
     </body>
   </file>

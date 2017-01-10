@@ -918,6 +918,17 @@ namespace BFH_USZ_PICC.Resx
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to Previous PICC detail.
+        /// </summary>
+        public static string FormerPICCPageTitleText
+        {
+            get
+            {
+                return ResourceManager.GetString("FormerPICCPageTitleText", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Glossary.
         /// </summary>
         public static string GlossaryPageTitleText
@@ -1805,6 +1816,17 @@ namespace BFH_USZ_PICC.Resx
             get
             {
                 return ResourceManager.GetString("PICCDetailPagePICCPositionText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Removal date:.
+        /// </summary>
+        public static string PICCDetailPagePICCRemovalDateText
+        {
+            get
+            {
+                return ResourceManager.GetString("PICCDetailPagePICCRemovalDateText", resourceCulture);
             }
         }
 
