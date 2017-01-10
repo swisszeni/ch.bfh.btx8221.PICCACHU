@@ -204,9 +204,10 @@ namespace BFH_USZ_PICC.Services
             return 1;
         }
 
-        public Task<int> DeltePICCAsync(PICC formerPICC)
-        {
-            throw new NotImplementedException();
+        public Task<int> DeltePICCAsync(PICC picc)
+        {   
+                return _database.DeleteAsync(picc);
+
         }
 
         #endregion
