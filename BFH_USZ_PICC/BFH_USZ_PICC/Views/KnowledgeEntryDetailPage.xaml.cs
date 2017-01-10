@@ -90,7 +90,8 @@ namespace BFH_USZ_PICC.Views
             {
                 if (imageElem != null)
                 {
-                    Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { (KnowledgeEntryImageElement)imageElem }));
+                    // TODO: FIX
+                    // Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { (KnowledgeEntryImageElement)imageElem }));
                 }
 
             };

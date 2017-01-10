@@ -14,15 +14,16 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class MaintenanceInstructionViewModel : ViewModelBase
     {
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override Task OnNavigatedToAsync(NavigationMode mode)
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            {
-                //Make sure that the new loaded instruction starts at the frist step
-                CarouselPosition = 0;
-                MaintenanceInstruction = (MaintenanceInstruction)((List<object>)parameter).First();                
+            // TODO: FIX
+            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            //{
+            //    //Make sure that the new loaded instruction starts at the frist step
+            //    CarouselPosition = 0;
+            //    MaintenanceInstruction = (MaintenanceInstruction)((List<object>)parameter).First();                
 
-            }
+            //}
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
             return Task.FromResult(false);
         }

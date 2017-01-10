@@ -48,7 +48,8 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _currentPICCButtonCommand;
         public RelayCommand CurrentPICCButtonCommand => _currentPICCButtonCommand ?? (_currentPICCButtonCommand = new RelayCommand(async() =>
         {
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC }));
+            // TODO: FIX
+            // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC }));
 
         }));
 

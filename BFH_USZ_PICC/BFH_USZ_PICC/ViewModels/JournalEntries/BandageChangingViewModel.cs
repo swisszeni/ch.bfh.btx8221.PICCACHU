@@ -140,7 +140,8 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             {
                 if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.InformationText, AppResources.JournalEntriesAskForMainentanceInstructionText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { MainentanceInstructions.getBandageChangingInstruction() }));
+                    // TODO: FIX
+                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { MainentanceInstructions.getBandageChangingInstruction() }));
                 }
             }
         }));

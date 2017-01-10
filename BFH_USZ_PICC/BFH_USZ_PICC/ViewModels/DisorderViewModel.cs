@@ -37,7 +37,8 @@ namespace BFH_USZ_PICC.ViewModels
                 //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
                 if (_selectedSymptom != null)
                 {
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
+                    // TODO: FIX
+                    // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
                 }
             }
         }

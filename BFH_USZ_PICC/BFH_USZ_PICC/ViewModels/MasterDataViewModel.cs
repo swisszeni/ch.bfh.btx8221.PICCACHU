@@ -44,16 +44,17 @@ namespace BFH_USZ_PICC.ViewModels
             LoadFromModel();
         }
 
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override Task OnNavigatedToAsync(NavigationMode mode)
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            {
-                // Passes if should go in edit mode or not
-                if((bool)((List<object>)parameter).First())
-                {
-                    StartEditing();
-                }
-            }
+            // TODO: FIX
+            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            //{
+            //    // Passes if should go in edit mode or not
+            //    if((bool)((List<object>)parameter).First())
+            //    {
+            //        StartEditing();
+            //    }
+            //}
 
             LoadFromModel();
 

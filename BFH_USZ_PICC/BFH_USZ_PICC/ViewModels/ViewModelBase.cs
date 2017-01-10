@@ -29,7 +29,7 @@ namespace BFH_USZ_PICC.ViewModels
             return Task.FromResult(false);
         }
 
-        public virtual Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public virtual Task OnNavigatedToAsync(NavigationMode mode)
         {
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
             return Task.FromResult(false);

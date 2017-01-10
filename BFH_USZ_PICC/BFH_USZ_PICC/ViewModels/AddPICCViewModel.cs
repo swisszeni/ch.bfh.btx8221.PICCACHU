@@ -63,7 +63,8 @@ namespace BFH_USZ_PICC.ViewModels
                 if (value != null)
                 {
                     Set(ref _selectedPicc, value);
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
+                    // TODO: FIX
+                    // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
                 }
             }
         }
@@ -80,7 +81,8 @@ namespace BFH_USZ_PICC.ViewModels
         public RelayCommand AddPiccManualButtonCommand => _addPiccManualButtonCommand ?? (_addPiccManualButtonCommand = new RelayCommand(async () =>
         {
             PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
+            // TODO: FIX
+            // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
         }));
 
         private RelayCommand _scanButtonCommand;
@@ -121,7 +123,8 @@ namespace BFH_USZ_PICC.ViewModels
                 // if either the picc name or the barcode could be found in the database
                 if ((string.Compare(piccModel.PICCName, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0) || (string.Compare(piccModel.Barcode, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0))
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { piccModel }));
+                    // TODO: FIX
+                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { piccModel }));
                     return;
                 }
             }
@@ -131,7 +134,8 @@ namespace BFH_USZ_PICC.ViewModels
 
                 // User wants to create model manually, create a new model with the searchterm preset as text
                 PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
+                // TODO: FIX
+                // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
             }
         }
 

@@ -14,25 +14,12 @@ namespace BFH_USZ_PICC.Views
     public sealed partial class BasePage : ContentPage, INavigable
     {
         private BaseContentPage _content;
-        private List<object> _navigationArguments;
 
-        public BasePage(Type contentElementType, List<object> args = null)
+        public BasePage(Type contentElementType)
         {
             InitializeComponent();
 
-            // save original args in var
-            _navigationArguments = args;
-
-            // create copy of args List to modify
-            args = args == null ? new List<object>() : new List<object>(args);
-
-            // Always add this Page
-            args.Insert(0, this);
-
-            // convert to array
-            object[] argsArray = args.ToArray();
-
-            _content = (BaseContentPage)Activator.CreateInstance(contentElementType, argsArray);
+            _content = (BaseContentPage)Activator.CreateInstance(contentElementType, this);
 
             FlyoutPositioningLayout.Children.Insert(0, _content);
             AbsoluteLayout.SetLayoutBounds(_content, new Rectangle(0, 0, 1, 1));
@@ -83,12 +70,11 @@ namespace BFH_USZ_PICC.Views
             }
         }
 
-        public Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public Task OnNavigatedToAsync(NavigationMode mode)
         {
             if (_content.BindingContext is INavigable)
             {
-                object navArgs = mode == NavigationMode.Forward ? _navigationArguments : parameter;
-                return ((INavigable)_content.BindingContext).OnNavigatedToAsync(navArgs, mode);
+                return ((INavigable)_content.BindingContext).OnNavigatedToAsync(mode);
             }
             else
             {

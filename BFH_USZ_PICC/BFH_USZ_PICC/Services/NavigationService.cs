@@ -10,6 +10,7 @@ using BFH_USZ_PICC.Views;
 using BFH_USZ_PICC.ViewModels.JournalEntries;
 using BFH_USZ_PICC.Views.JournalEntries;
 using Xamarin.Forms;
+using BFH_USZ_PICC.Controls;
 
 namespace BFH_USZ_PICC.Services
 {
@@ -200,20 +201,51 @@ namespace BFH_USZ_PICC.Services
             return _menuKeymappings[key];
         }
 
-        protected virtual async Task InternalNavigateToMenuEntryAsync(MenuItemKey key, List<object> navParams)
+        protected virtual Task InternalNavigateToMenuEntryAsync(MenuItemKey key, List<object> navParams)
         {
+            // Check if main navigation Structure exists
+            var mainPage = Application.Current.MainPage as MainPage;
+            if (mainPage == null)
+            {
+                throw new Exception("Need MainPage to navigate.");
+            }
 
+            // We want to navigate to one of the main menu entries
+            // First check if we not already are on this menu entry
+            Type pageType = GetPageTypeForMenuKey(key);
+            if (pageType != (mainPage.Detail as NavigationPage)?.CurrentPage.GetType())
+            {
+                var page = new BasePage(pageType);
+                (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
+                mainPage.Detail = new USZ_PICC_NavigationPage(page);
+            }
+
+            return Task.FromResult(true);
         }
 
         protected virtual async Task InternalNavigateToAsync(Type viewModelType, List<object> navParams)
         {
             Type pageType = GetPageTypeForViewModel(viewModelType);
-            Page page = Activator.CreateInstance(pageType) as Page;
+            Page page = null;
 
             if (viewModelType == typeof(OnBoardingViewModel) || viewModelType == typeof(MainViewModel))
             {
                 // We want to navigate to one of the most basic views within the App, set it as main page
+                page = Activator.CreateInstance(pageType) as Page;
                 Application.Current.MainPage = page;
+            } else if (Application.Current.MainPage is MainPage)
+            {
+                // We don't want to navigate to one of the roots and the current root is the MainPage (Navigation Shell)
+                page = new BasePage(pageType);
+                var mainPage = Application.Current.MainPage as MainPage;
+                var navigationPage = mainPage.Detail as USZ_PICC_NavigationPage;
+
+                if (navigationPage != null)
+                {
+                    await navigationPage.PushAsync(page);
+                }
+
+                // mainPage.IsPresented = false;
             }
 
 
@@ -258,7 +290,7 @@ namespace BFH_USZ_PICC.Services
             //    }
             //}
 
-            await (page.BindingContext as ViewModelBase).InitializeAsync(navParams);
+            await (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
         }
 
         #endregion

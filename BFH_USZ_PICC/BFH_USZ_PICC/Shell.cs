@@ -86,7 +86,7 @@ namespace BFH_USZ_PICC
             USZ_PICC_NavigationPage basePage = (USZ_PICC_NavigationPage)Pages[basePageId];
             await basePage.PopToRootAsync();
             var baseContentPage = basePage.CurrentPage;
-            await baseContentPage.Navigation.PushAsync(new BasePage(deepPageType, deepPageArgs));
+            await baseContentPage.Navigation.PushAsync(new BasePage(deepPageType));
         }
 
         private void AddPageToNavigationStructure(MenuItemKey page)

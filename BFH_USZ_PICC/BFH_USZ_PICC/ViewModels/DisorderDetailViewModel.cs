@@ -55,12 +55,13 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override Task OnNavigatedToAsync(NavigationMode mode)
         {
-            if(parameter is List<object> && ((List<object>)parameter).Count > 0)
-            {
-                DisplayingEntry = (DisorderEntry)((List<object>)parameter).First();
-            }
+            // TODO: FIX
+            //if(parameter is List<object> && ((List<object>)parameter).Count > 0)
+            //{
+            //    DisplayingEntry = (DisorderEntry)((List<object>)parameter).First();
+            //}
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
             return Task.FromResult(false);
         }

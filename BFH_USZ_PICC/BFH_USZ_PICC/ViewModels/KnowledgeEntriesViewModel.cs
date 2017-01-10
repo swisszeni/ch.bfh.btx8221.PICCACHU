@@ -37,12 +37,14 @@ namespace BFH_USZ_PICC.ViewModels
                     // Checks if the selected values type is KnowledgeEntry. If yes, navigate forward to KnowledgeEntryDetailPage
                     if (type.Equals(typeof(KnowledgeEntry)))
                     {
-                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { value }));
+                        // TODO: FIX
+                        // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { value }));
 
                     }// Checks if the selected values type is MaintenanceInstruction. If yes, navigate forward to the related MaintenanceInstruction
                     else if (type.Equals(typeof(MaintenanceInstruction)))
                     {
-                        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { value }));
+                        // TODO: FIX
+                        // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { value }));
 
                     }
                 }

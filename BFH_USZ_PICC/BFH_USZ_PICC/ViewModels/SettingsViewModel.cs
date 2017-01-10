@@ -112,8 +112,8 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _moveToMasterDataPageCommand;
         public RelayCommand MoveToMasterDataPageCommand => _moveToMasterDataPageCommand ?? (_moveToMasterDataPageCommand = new RelayCommand(() =>
         {
-            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
-
+            // TODO: FIX
+            // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
         }));
         private async void CheckReminderToggle()
         {

@@ -13,6 +13,9 @@ namespace BFH_USZ_PICC.Views
         public MainPage()
         {
             InitializeComponent();
+            // Set Menu to always show on Desktop
+            MasterBehavior = (Device.Idiom != TargetIdiom.Phone) ? MasterBehavior.Split : MasterBehavior.Popover;
+            UpdateChildrenLayout();
         }
     }
 }
