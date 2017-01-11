@@ -1,67 +1,69 @@
-﻿using BFH_USZ_PICC.Resx;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Resx;
+using Realms;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace BFH_USZ_PICC.Models
 {
+    public enum JournalEntryType
+    {
+        BandagesChangingEntry,
+        BloodWithdrawalEntry,
+        CatheterFlushEntry,
+        InfusionEntry,
+        MicroClaveEntry,
+        AdministeredDrugEntry,
+        StatlockEntry
+    }
+
+    public enum HealthInstitution
+    {
+        NoInformation,
+        Hospital,
+        Ambulatory,
+        Rehabilitation,
+        HomeCare,
+        Others
+    }
+
+    public enum HealthPerson
+    {
+        NoInformation,
+        FamilyDoctor,
+        Specialist,
+        NursingStaff,
+        XRayStaff,
+        MedicalTechnicalAssistant,
+        HealthExpertStaff,
+        Relative,
+        AffectedPerson,
+        Others
+    }
     /// <summary>
     /// Abstract class that provides all parameters that every subclass of the JournalEntry needs to implement.
     /// </summary>
     public abstract class JournalEntry
-    {   
-        public enum AllPossibleJournalEntries
+    {
+        [SQLite.Ignore]
+        public virtual Type RealmObjectType { get; }
+
+        [SQLite.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public HealthInstitution SupportingInstitution { get; set; }
+        public HealthPerson SupportingPerson { get; set; }
+
+        public JournalEntry() { }
+
+        public JournalEntry(ILoadableJournalEntryRealmObject realmObject)
         {
-            BandagesChangingEntry,           
-            BloodWithdrawalEntry,
-            CatheterFlushEntry,
-            InfusionEntry,
-            MicroClaveEntry,
-            AdministeredDrugEntry,
-            StatlockEntry
+            ID = realmObject.ID;
+            CreateDate = realmObject.CreateDate;
+            ExecutionDate = realmObject.ExecutionDate;
+            SupportingInstitution = (HealthInstitution)realmObject.SupportingInstitution;
+            SupportingPerson = (HealthPerson)realmObject.SupportingPerson;
         }
-
-        public enum HealthInstitution
-        {
-            NoInformation,
-            Hospital,
-            Ambulatory,
-            Rehabilitation,
-            HomeCare,            
-            Others
-        }
-
-        public enum HealthPerson
-        {   
-            NoInformation,
-            FamilyDoctor,
-            Specialist,
-            NursingStaff,
-            XRayStaff,
-            MedicalTechnicalAssistant,
-            HealthExpertStaff,
-            Relative,
-            AffectedPerson,
-            Others
-        }
-
-
-        public string Icon { get; } = "placeholder.png";
-
-        public string Name { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry has been created
-        /// </summary>
-        public DateTime CreationDateTime { get; set; }
-        /// <summary>
-        /// Time when the JournalEntry procedure takes place
-        /// </summary>
-        public DateTime ProcedureDateTime { get; set; }
-        public AllPossibleJournalEntries Entry { get; set; }
-        public HealthInstitution Institution { get; set; }
-        public HealthPerson Person { get; set; }
-
-        public static ObservableCollection<JournalEntry> AllEnteredJournalEntries = new ObservableCollection<JournalEntry>();
-    }
+    }    
 }
+

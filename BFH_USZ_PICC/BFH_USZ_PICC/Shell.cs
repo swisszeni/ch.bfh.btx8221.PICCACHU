@@ -20,7 +20,13 @@ namespace BFH_USZ_PICC
 
         public Shell()
         {
-            this.MasterBehavior = MasterBehavior.Popover;
+            if (Device.Idiom != TargetIdiom.Phone)
+            {
+                this.MasterBehavior = MasterBehavior.Split;
+            } else
+            {
+                this.MasterBehavior = MasterBehavior.Popover;
+            }
 
             Pages = new Dictionary<MenuItemKey, NavigationPage>();
             Master = new MenuPage(this);

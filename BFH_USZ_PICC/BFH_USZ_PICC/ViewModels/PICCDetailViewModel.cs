@@ -1,8 +1,10 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,36 +18,122 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class PICCDetailViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+        private PICC _displayingPICC;
 
-        private PICC _displayingEntry;
-        public PICC DisplayingEntry
+        public PICCDetailViewModel()
         {
-            get { return _displayingEntry; }
-            set
-            {
-                if (Set(ref _displayingEntry, value))
-                {
-                    PiccName = value.PICCModel.PICCName;
-                    FrenchDiameter = value.PICCModel.FrenchDiameter;
-                    Lumen = value.PICCModel.Lumen;
-                    ImageSource = value.PICCModel.PictureUri;
-
-                    City = value.InsertCity;
-                    InsertCountry = value.InsertCountry;
-                    InsertDate = value.InsertDate;
-                    IsRemovalDateSet = value.IsNotActiveAnymore;
-                    RemovalDate = value.RemovalDate;
-                    PiccSide = value.InsertSide;
-                    PiccPosition = value.InsertPosition;
-
-                }
-                RaisePropertyChanged("");
-            }
+            // Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
         }
 
+        #region navigation events
+
+        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        {
+            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            {
+                var param = ((List<object>)parameter).First();
+                if (param.GetType() == typeof(PICCModel))
+                {
+                    _displayingPICC = new PICC() { PICCModel = (PICCModel)param, InsertDate = DateTimeOffset.Now.Date.ToLocalTime() };
+                    StartEditing();
+                }
+                else if (param.GetType() == typeof(string))
+                {
+                    _displayingPICC = await _dataService.GetPICCAsync((string)param);
+                }
+            }
+
+            LoadFromModel();
+        }
+
+        public override Task OnNavigatedFromAsync()
+        {
+            EndEditing();
+
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
+        }
+
+        #endregion
+
+        #region private methods
+
+        private void StartEditing()
+        {
+            IsUserInputEnabled = true;
+        }
+
+        private void EndEditing()
+        {
+            IsUserInputEnabled = false;
+        }
+
+        private void LoadFromModel()
+        {
+            if (_displayingPICC != null)
+            {
+                PiccName = _displayingPICC.PICCModel.PICCName;
+                FrenchDiameter = _displayingPICC.PICCModel.FrenchDiameter;
+                Lumen = _displayingPICC.PICCModel.Lumen;
+                ImageSource = _displayingPICC.PICCModel.PictureUri;
+                InsertCity = _displayingPICC.InsertCity;
+                InsertCountry = _displayingPICC.InsertCountry;
+                InsertDate = (_displayingPICC.InsertDate).Date;
+                PiccSide = _displayingPICC.InsertSide;
+                PiccPosition = _displayingPICC.InsertPosition;
+
+                if (_displayingPICC?.RemovalDate == null)
+                {
+                    RemovalDate = DateTime.Now;
+                    IsRemovalDateSet = false;
+                }
+                else
+                {
+                    RemovalDate = ((DateTimeOffset)_displayingPICC.RemovalDate).Date;
+                    IsRemovalDateSet = true;
+                }
+            }
+
+            // Actually, this shoudln't be needed... but because of some weird timing, it is.
+            RaisePropertyChanged("");
+        }
+
+        private async Task SaveToModel()
+        {
+            _displayingPICC.PICCModel.PICCName = PiccName;
+            _displayingPICC.PICCModel.Lumen = Lumen;
+            _displayingPICC.PICCModel.FrenchDiameter = FrenchDiameter;
+            _displayingPICC.InsertDate = InsertDate.Date.ToLocalTime();
+            _displayingPICC.InsertCountry = InsertCountry;
+            _displayingPICC.InsertCity = InsertCity;
+            _displayingPICC.InsertSide = PiccSide;
+            _displayingPICC.InsertPosition = PiccPosition;
+
+            // Save to DB
+            await _dataService.SaveCurrentPICCAsync(_displayingPICC);
+        }
+
+        #endregion
+
+        #region public properties
+
         /// <summary>
-        // Returns the binded name or sets a new name to the related object
+        /// Checks if parameters should be editable or not
         /// </summary>
+        private bool _isUserInputEnabled;
+        public bool IsUserInputEnabled
+        {
+            get { return _isUserInputEnabled; }
+            set { Set(ref _isUserInputEnabled, value); }
+        }
+
+        public string PageTitle
+        {
+            get { return "TEST"; }
+        }
+
         private string _piccName;
         public string PiccName
         {
@@ -54,37 +142,21 @@ namespace BFH_USZ_PICC.ViewModels
 
         }
 
-        /// <summary>
-        /// Returns the image string for the current picc or sets a new image string to the related object
-        /// </summary>
+        public bool IsImageSet { get { return ImageSource != null; } }
+
         public string _imageSource;
         public string ImageSource
         {
             get { return _imageSource; }
             set
             {
-                if (value == null)
+               if( Set(ref _imageSource, value))
                 {
-                    IsImageSet = false;
+                    RaisePropertyChanged(() => IsImageSet);
                 }
-                else { IsImageSet = true; }
-
-                Set(ref _imageSource, value);
-
             }
         }
 
-        public bool _isImageSet;
-        public bool IsImageSet
-        {
-            get { return _isImageSet; }
-            set { Set(ref _isImageSet, value); }
-
-        }
-
-        /// <summary>
-        /// Returns the binded size or sets a new size to the related object
-        /// </summary>
         private double _frenchDiameter;
         public double FrenchDiameter
         {
@@ -100,10 +172,6 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _lumen, value); }
         }
 
-        /// <summary>
-        /// Returns the binded date or sets a new date to the related object
-        /// </summary>
-
         private DateTime _insertDate;
         public DateTime InsertDate
         {
@@ -112,13 +180,9 @@ namespace BFH_USZ_PICC.ViewModels
 
             set { Set(ref _insertDate, value); }
         }
-
-        /// <summary>
-        /// Returns the binded expiration date or sets a new date to the related object
-        /// </summary>
-
-        private DateTime? _removalDate;
-        public DateTime? RemovalDate
+        
+        private DateTime _removalDate;
+        public DateTime RemovalDate
         {
             get
             {
@@ -132,7 +196,6 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _removalDate, value); }
         }
 
-
         private bool _isRemovalDateSet;
         public bool IsRemovalDateSet
         {
@@ -140,9 +203,6 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _isRemovalDateSet, value); }
         }
 
-        /// <summary>
-        /// Returns the binded picc position or sets a new picc position to the related object
-        /// </summary>
         private PICCInsertPosition _piccPosition;
         public PICCInsertPosition PiccPosition
         {
@@ -150,9 +210,6 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _piccPosition, value); }
         }
 
-        /// <summary>
-        /// Returns the binded picc side or sets a new picc side to the related object
-        /// </summary>
         private PICCInsertSide _piccSide;
         public PICCInsertSide PiccSide
         {
@@ -163,10 +220,7 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        /// <summary>
-        /// Returns the binded country or sets a new country to the related object
-        /// </summary>
-
+        public bool IsCountrySet { get { return InsertCountry != PICCInsertCountry.Undefined; } }
         private PICCInsertCountry _insertCountry;
         public PICCInsertCountry InsertCountry
         {
@@ -174,81 +228,45 @@ namespace BFH_USZ_PICC.ViewModels
             get { return _insertCountry; }
             set
             {
-                if (value == PICCInsertCountry.Undefined)
+                if (Set(ref _insertCountry, value))
                 {
-                    IsCountrySet = false;
+                    RaisePropertyChanged(() => IsCountrySet);
                 }
-                else { IsCountrySet = true; }
-                Set(ref _insertCountry, value);
             }
         }
 
-        /// <summary>
-        /// Returns the binded city if "Ausland" or "Switzerland" is selected as country. Sets a new city to the related object.
-        /// </summary>
-
-        private string _city;
-        public string City
+        private string _insertCity;
+        public string InsertCity
         {
-            get { return _city; }
-            set { Set(ref _city, value); }
+            get { return _insertCity; }
+            set { Set(ref _insertCity, value); }
         }
 
-        private bool _isCountrySet;
-        public bool IsCountrySet
-        {
-            get { return _isCountrySet; }
-            set
-            {
-                if (!value)
-                {
-                    City = null;
-                }
-                Set(ref _isCountrySet, value);
-            }
-        }
+        #endregion
 
-        /// <summary>
-        /// Checks if parameters should be editable or not
-        /// </summary>
-        private bool _isVisibleOrEnabled;
-        public bool IsVisibleOrEnabled
-        {
-            get { return _isVisibleOrEnabled; }
-            set { Set(ref _isVisibleOrEnabled, value); }
-        }
-
-        /// <summary>
-        /// Checks if user wants to add a new PICC or edit his current PICC
-        /// </summary>
-        private bool _isUserAddingANewPICC;
-        public bool IsUserAddingANewPICC
-        {
-            get { return _isUserAddingANewPICC; }
-            set { Set(ref _isUserAddingANewPICC, value); }
-        }
+        #region RelayCommands
 
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
         {
-            IsVisibleOrEnabled = true;
+            IsUserInputEnabled = true;
         }));
 
         private RelayCommand _saveButtonCommand;
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
-            if (IsUserAddingANewPICC && CurrentPICC != null)
-            {
-                CurrentPICC.RemovalDate = DateTime.Now;
-                CurrentPICC.IsNotActiveAnymore = true;
-                PreviousPICC.Add(CurrentPICC);
-            }
-            PICCModel model = new PICCModel(PiccName, DisplayingEntry.PICCModel.GuideWireLenght, Lumen, FrenchDiameter, DisplayingEntry.PICCModel.Gauge, DisplayingEntry.PICCModel.GNDMCode, DisplayingEntry.PICCModel.Barcode, DisplayingEntry.PICCModel.PictureUri);
-            PICC.CurrentPICC = new PICC(model, InsertDate, InsertCountry, City, PiccSide, PiccPosition);
-
+            await SaveToModel();
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+        }));
 
-
+        private RelayCommand _deleteButtonCommand;
+        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
+        {
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+            {                
+                await _dataService.DeltePICCAsync(_displayingPICC);                
+            }
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
         }));
 
         private RelayCommand _cancelButtonCommand;
@@ -256,15 +274,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                if (IsUserAddingANewPICC)
-                {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-
-                }
-                else
-                {
-                    IsVisibleOrEnabled = false;
-                }
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
             }
         }));
 
@@ -273,16 +283,17 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.PICCDetailViewModelSetPICCInactiveText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                CurrentPICC.RemovalDate = DateTime.Now;
-                CurrentPICC.IsNotActiveAnymore = true;
-                PreviousPICC.Add(CurrentPICC);
+                // Currently there is no possibilty to show the user a popup where he/she can select a date. 
+                // For the moment, in case of removal, todays date will be saved on DB
+                _displayingPICC.RemovalDate = DateTimeOffset.Now.Date.ToLocalTime();
 
-                PICC.CurrentPICC = null;
+                await SaveToModel();
 
                 await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
             }
         }));
 
+        #endregion
     }
 }
 

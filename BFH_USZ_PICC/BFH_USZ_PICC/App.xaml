@@ -1,13 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:BFH_USZ_PICC.ViewModels"
-    x:Class="BFH_USZ_PICC.Application">
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BFH_USZ_PICC.ViewModels"
+             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             x:Class="BFH_USZ_PICC.Application">
     <Application.Resources>
         <ResourceDictionary>
-            <x:Static Member="vm:ViewModelLocator.Instance"
+            <vm:ViewModelLocator Member="vm:ViewModelLocator.Instance"
                       x:Key="ViewModelLocator" />
+
+            <!--Converters-->
+            <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
+            <utilitys:GuideWireLenghtToTextConverter x:Key="GuideWireLenghtToTextConverter" />
+
+            <!--General App Colors-->
+            <Color x:Key="ColorButtonBackgroundGrey">#D6D7D7</Color>
+            <Color x:Key="ColorButtonBackgroundBlue">#004B86</Color>
+
+            <Color x:Key="ColorButtonForegroundBlack">#000000</Color>
+            <Color x:Key="ColorButtonForegroundWhite">#FFFFFF</Color>
+
+            <Color x:Key="ColorTextLightGrey">#004B86</Color>
+            <Color x:Key="ColorTextDarkGrey">Gray</Color>
+            <Color x:Key="ColorTextBlack">#000000</Color>
+            <Color x:Key="ColorTextBlue">#004B86</Color>
+
+            <!--General App Styles-->
+            <Style x:Key="LabelStyleTitle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorTextBlack}" />
+                <Setter Property="FontSize"
+                        Value="20" />
+            </Style>
+
+            <Style x:Key="LabelStyleDescription"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorTextDarkGrey}" />
+                <Setter Property="FontSize"
+                        Value="14" />
+            </Style>
+
+            <Style x:Key="LabelStyleContent"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorTextBlack}" />
+                <Setter Property="FontSize"
+                        Value="14" />
+            </Style>
+
+            <Style x:Key="ButtonStyleGray"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource ColorButtonBackgroundGrey}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorButtonForegroundBlack}" />
+                <Setter Property="FontSize"
+                        Value="16" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

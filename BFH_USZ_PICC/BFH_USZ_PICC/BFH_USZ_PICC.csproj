@@ -40,6 +40,15 @@
     <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
     <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release Testing|AnyCPU'">
+    <OutputPath>bin\Release Testing\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -51,6 +60,7 @@
     <Compile Include="Interfaces\IFileHelper.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
     <Compile Include="Interfaces\IKnowledgeBaseEntry.cs" />
+    <Compile Include="Interfaces\ILoadableRealmObject.cs" />
     <Compile Include="Interfaces\ILocalAppDataService.cs" />
     <Compile Include="Interfaces\ILocalUserDataService.cs" />
     <Compile Include="Interfaces\INavigable.cs" />
@@ -59,6 +69,7 @@
     <Compile Include="Interfaces\ICaller.cs" />
     <Compile Include="Interfaces\IKnowledgeEntryElement.cs" />
     <Compile Include="Interfaces\ILocalize.cs" />
+    <Compile Include="Interfaces\ISecureStorage.cs" />
     <Compile Include="Models\MaintenanceInstruction.cs" />
     <Compile Include="Models\MaintenanceInstructions.cs" />
     <Compile Include="Models\MaintenanceInstructionStep.cs" />
@@ -126,6 +137,7 @@
     <Compile Include="ViewModels\JournalEntries\InfusionViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\BloodWithdrawalViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\BandageChangingViewModel.cs" />
+    <Compile Include="ViewModels\JournalEntries\JournalEntryBaseViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\StatlockChangingViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\MicroClaveChangingViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\AdministeredDrugViewModel.cs" />
@@ -135,6 +147,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\OnBoardingViewModel.cs" />
+    <Compile Include="ViewModels\FormerPICCDetailViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\MasterDataViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />
@@ -192,6 +205,9 @@
     <Compile Include="Views\JournalOverviewPage.xaml.cs">
       <DependentUpon>JournalOverviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormerPICCDetailPage.xaml.cs">
+      <DependentUpon>FormerPICCDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OnBoarding\OnBoardingPage.xaml.cs">
       <DependentUpon>OnBoardingPage.xaml</DependentUpon>
     </Compile>
@@ -244,7 +260,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resx\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\GlossaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -487,6 +503,13 @@
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FormerPICCDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

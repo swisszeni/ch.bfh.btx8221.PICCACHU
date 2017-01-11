@@ -4,6 +4,7 @@ using System.IO;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(BFH_USZ_PICC.iOS.DependencyServices.FileHelper_iOS))]
+
 namespace BFH_USZ_PICC.iOS.DependencyServices
 {
     public class FileHelper_iOS : IFileHelper

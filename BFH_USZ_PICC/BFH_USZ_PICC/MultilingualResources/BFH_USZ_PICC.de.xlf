@@ -1032,6 +1032,27 @@
           <target state="translated">Zurück</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Button um den vorherigen Schritt anzuzeigen</note>
         </trans-unit>
+        <trans-unit id="MyPICCPageDetailButtonText" translate="yes" xml:space="preserve">
+          <source>Detail</source>
+          <target state="translated">Details</target>
+        </trans-unit>
+        <trans-unit id="MyPICCPageGoToJournalEntriesButtonText" translate="yes" xml:space="preserve">
+          <source>Journal for PICC</source>
+          <target state="translated">Notizen zu PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Button um von der PICC-Übersicht zu den Journaleinträgen zu gelangen.</note>
+        </trans-unit>
+        <trans-unit id="MyPICCPageDeletePICCWarningText" translate="yes" xml:space="preserve">
+          <source>Do you really want to delete this PICC form the database?</source>
+          <target state="translated">Wollen Sie diesen PICC wirklich von der Datenbank löschen?</target>
+        </trans-unit>
+        <trans-unit id="PICCDetailPagePICCRemovalDateText" translate="yes" xml:space="preserve">
+          <source>Removal date:</source>
+          <target state="translated">PICC inaktiv gesetzt am:</target>
+        </trans-unit>
+        <trans-unit id="FormerPICCPageTitleText" translate="yes" xml:space="preserve">
+          <source>Previous PICC detail</source>
+          <target state="translated">Früherer PICC Detail</target>
+        </trans-unit>
       </group>
     </body>
   </file>

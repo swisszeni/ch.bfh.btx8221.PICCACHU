@@ -23,7 +23,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>ch.bfh.i4mi.picc</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.4a</string>
+	<string>1.1.9999</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon@2x.png</string>
@@ -62,7 +62,7 @@
 				<key>Red</key>
 				<real>0</real>
 				<key>Green</key>
-				<real>0.329411764705882</real>
+				<real>0.32156862745098</real>
 				<key>Blue</key>
 				<real>0.635294117647059</real>
 			</dict>
@@ -70,7 +70,7 @@
 	</dict>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
-  <key>UIViewControllerBasedStatusBarAppearance</key>
-  <false/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

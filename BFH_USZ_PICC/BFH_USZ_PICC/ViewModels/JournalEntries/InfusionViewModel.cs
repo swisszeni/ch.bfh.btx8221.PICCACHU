@@ -1,7 +1,9 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,51 +16,39 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class InfusionViewModel : ViewModelBase
+    public class InfusionViewModel : JournalEntryBaseViewModel<InfusionEntry>
     {
-        private InfusionEntry _displayingEntry;
-        public InfusionEntry DisplayingEntry
+        public InfusionViewModel() { }
+
+        #region private methods
+
+        protected override void LoadFromModel()
         {
-            get { return _displayingEntry; }
-            set
+            InfusionType = _displayingEntry?.InfusionType == null ? 0 : _displayingEntry.InfusionType;
+            if(InfusionType == InfusionType.Antibiotic)
             {
-                if (Set(ref _displayingEntry, value))
-                {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = value.ProcedureDateTime;
-                    InfusionType = value.Type;
-                    InfusionAdministration = value.Administration;
-                    AntibioticName = value.TypeAntibioticName;
-                }
-
-                RaisePropertyChanged(() => Person);
-                RaisePropertyChanged(() => Institution);
-                RaisePropertyChanged(() => InfusionType);
-                RaisePropertyChanged(() => InfusionAdministration);
+                AntibioticName = _displayingEntry?.AntibioticName;
             }
+            InfusionAdministration = _displayingEntry?.InfusionAdministration == null ? 0 : _displayingEntry.InfusionAdministration;
+
+            base.LoadFromModel();
         }
 
-        private HealthPerson _person;
-        public HealthPerson Person
+        protected override void SaveToModel()
         {
-            get { return _person; }
-            set { Set(ref _person, value); }
+            _displayingEntry.InfusionType = InfusionType;
+            if (InfusionType == InfusionType.Antibiotic)
+            {
+                _displayingEntry.AntibioticName = AntibioticName;
+            }
+            _displayingEntry.InfusionAdministration = InfusionAdministration;
+
+            base.SaveToModel();
         }
 
-        private HealthInstitution _institution;
-        public HealthInstitution Institution
-        {
-            get { return _institution; }
-            set { Set(ref _institution, value); }
-        }
+        #endregion
 
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
-        {
-            get { return _procedureDate; }
-            set { Set(ref _procedureDate, value); }
-        }
+        #region public properties
 
         private InfusionType _infusionType;
         public InfusionType InfusionType
@@ -66,12 +56,10 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             get { return _infusionType; }
             set
             {
-                if (value == InfusionType.Antibiotic)
+                if (Set(ref _infusionType, value))
                 {
-                    IsTypeAntibiotic = true;
+                    RaisePropertyChanged(() => IsTypeAntibiotic);
                 }
-                else { IsTypeAntibiotic = false; }
-                Set(ref _infusionType, value);
             }
         }
 
@@ -89,59 +77,11 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _infusionAdministration, value); }
         }
 
-        private bool _isTypeAntibiotic;
         public bool IsTypeAntibiotic
         {
-            get { return _isTypeAntibiotic; }
-            set
-            {
-                if (!value)
-                {
-                    AntibioticName = null;
-                }
-                Set(ref _isTypeAntibiotic, value);
-            }
+            get { return InfusionType == InfusionType.Antibiotic; }
         }
 
-        private bool _isEnabledOrVisible;
-        public bool IsEnabledOrVisible
-        {
-            get { return _isEnabledOrVisible; }
-            set { Set(ref _isEnabledOrVisible, value); }
-        }
-
-
-        private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
-        {
-            // create a new PICCAppliedDrugEntry with the user entered information
-            InfusionEntry infusionEntry = new InfusionEntry(DateTime.Now, ProcedureDate, Institution, Person, InfusionType,
-                InfusionAdministration, AntibioticName);
-            //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(infusionEntry);
-            //close the page
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-        }));
-
-        private RelayCommand _cancelButtonCommand;
-        public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
-        {
-            //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
-        private RelayCommand _deleteButtonCommand;
-        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
-        {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
+        #endregion
     }
 }

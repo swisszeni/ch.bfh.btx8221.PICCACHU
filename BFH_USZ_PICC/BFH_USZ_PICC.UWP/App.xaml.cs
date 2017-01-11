@@ -1,5 +1,4 @@
 ﻿using BFH_USZ_PICC.Utilitys;
-using GalaSoft.MvvmLight.Ioc;
 using Microsoft.HockeyApp;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -37,13 +37,6 @@ namespace BFH_USZ_PICC.UWP
             InitializeHockeyApp();
         }
 
-        /// <summary>
-        /// Registering the platform specific parts of HockeyApp to track events and crashes.
-        /// </summary>
-        private void InitializeHockeyApp()
-        {
-            HockeyClient.Current.Configure(HockeyAppHelper.AppIds.HockeyAppId_UWP);
-        }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -89,6 +82,9 @@ namespace BFH_USZ_PICC.UWP
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
+
+            InitializeVisuals();
+
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -115,6 +111,33 @@ namespace BFH_USZ_PICC.UWP
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        /// <summary>
+        /// Registering the platform specific parts of HockeyApp to track events and crashes.
+        /// </summary>
+        private void InitializeHockeyApp()
+        {
+            HockeyClient.Current.Configure(HockeyAppHelper.AppIds.HockeyAppId_UWP);
+        }
+
+        /// <summary>
+        /// Initialize the platform specific visuals as the color of the StatusBar for W10 Mobile
+        /// </summary>
+        private void InitializeVisuals()
+        {
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusBar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                if (statusBar != null)
+                {
+                    statusBar.BackgroundOpacity = 1;
+                    // USZ Blue
+                    statusBar.BackgroundColor = Color.FromArgb(0xFF, 0x00, 0x57, 0xA2);
+                    // White
+                    statusBar.ForegroundColor = Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF);
+                }
+            }
         }
     }
 }

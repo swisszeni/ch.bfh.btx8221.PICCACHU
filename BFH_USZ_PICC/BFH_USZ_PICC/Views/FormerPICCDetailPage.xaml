@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BFH_USZ_PICC.Views.FormerPICCDetailPage"
+             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             Title="{i18n:Translate FormerPICCPageTitleText}"
+             BindingContext="{Binding [FormerPICCDetailViewModel], Source={StaticResource ViewModelLocator}}">
+  <ScrollView>
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="FillAndExpand" >
+      <Label Text="{i18n:Translate PICCDetailPagePICCModelNameText}"/>
+      <Label Text="{Binding PiccName}"/>
+      <Image x:Name="PiccImage"
+             Source="{Binding ImageSource}"
+             Aspect="AspectFit"
+             HeightRequest="200"
+             WidthRequest="100"
+             IsVisible="{Binding IsImageSet}"/>
+      <Label Text="{i18n:Translate PICCDetailPagePICCFrenchSizeText}"/>
+      <Label Text="{Binding FrenchDiameter}"/>
+      <Label Text="{i18n:Translate PICCDetailPageLumensLabelText}"/>
+      <Label Text="{Binding Lumen}"/>
+      <Label Text="{i18n:Translate PICCDetailPagePICCInsertedDateText}"/>
+      <Label Text="{Binding InsertDate, StringFormat='{}{0:dd/MM/yy}'}"/>
+      <Label Text="{i18n:Translate PICCDetailPagePICCInsertedPlaceText}" />
+      <Label Text="{Binding InsertCountry}"/>
+      <Label Text="{Binding InsertCity}"
+             IsVisible="{Binding IsCountrySet}"/>
+      <Label Text="{i18n:Translate PICCDetailPagePICCBodysideText}"/>
+      <Label Text="{Binding PiccSide}"/>
+      <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}"/>
+      <Label Text="{Binding PiccPosition}"/>
+      <Label Text="{i18n:Translate PICCDetailPagePICCRemovalDateText}"/>
+      <Label Text="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}"
+             IsVisible="{Binding IsRemovalDateSet}"/>
+    </StackLayout>
+  </ScrollView>
+</d:BaseContentPage>

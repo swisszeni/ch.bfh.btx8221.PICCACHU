@@ -173,33 +173,49 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            AllPossibleJournalEntries entry = (AllPossibleJournalEntries)value;
-
-            switch (entry)
+            // Since C# 6 can't switch over types, we have to if-else this shit
+            if (value == null)
             {
-                case AllPossibleJournalEntries.BandagesChangingEntry:
-                    return AppResources.JournalOverviewPageBandagesChangingEntry;
-                case AllPossibleJournalEntries.BloodWithdrawalEntry:
-                    return AppResources.JournalOverviewPageBloodWithdrawalEntry;
-                case AllPossibleJournalEntries.CatheterFlushEntry:
-                    return AppResources.JournalOverviewPageCatheterFlushEntry;
-                case AllPossibleJournalEntries.InfusionEntry:
-                    return AppResources.JournalOverviewPageInfusionEntry;
-                case AllPossibleJournalEntries.MicroClaveEntry:
-                    return AppResources.JournalOverviewPageMicroClaveChangingEntry;
-                case AllPossibleJournalEntries.AdministeredDrugEntry:
-                    return AppResources.JournalOverviewPageAdministeredDrugEntry;
-                case AllPossibleJournalEntries.StatlockEntry:
-                    return AppResources.JournalOverviewPageStatlockChangingEntry;
-                default:
-                    return " ";
+                return "";
             }
 
+            Type entryType = value.GetType();
+            string displayName = "";
+            if (entryType == typeof(AdministeredDrugEntry))
+            {
+                displayName = AppResources.JournalOverviewPageAdministeredDrugEntry;
+            }
+            else if (entryType == typeof(MicroClaveChangingEntry))
+            {
+                displayName = AppResources.JournalOverviewPageMicroClaveChangingEntry;
+            }
+            else if (entryType == typeof(StatlockChangingEntry))
+            {
+                displayName = AppResources.JournalOverviewPageStatlockChangingEntry;
+            }
+            else if (entryType == typeof(BloodWithdrawalEntry))
+            {
+                displayName = AppResources.JournalOverviewPageBloodWithdrawalEntry;
+            }
+            else if (entryType == typeof(BandageChangingEntry))
+            {
+                displayName = AppResources.JournalOverviewPageBandagesChangingEntry;
+            }
+            else if (entryType == typeof(InfusionEntry))
+            {
+                displayName = AppResources.JournalOverviewPageInfusionEntry;
+            }
+            else if (entryType == typeof(CatheterFlushEntry))
+            {
+                displayName = AppResources.JournalOverviewPageCatheterFlushEntry;
+            }
+
+            return displayName;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (AllPossibleJournalEntries)value;
+            return (JournalEntryType)value;
         }
 
         #endregion
@@ -316,22 +332,22 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            BandageChangingReason reason = (BandageChangingReason)value;
+            BandageChangementReason reason = (BandageChangementReason)value;
             switch (reason)
             {
-                case BandageChangingReason.NoInformation:
+                case BandageChangementReason.NoInformation:
                     return 0;
-                case BandageChangingReason.Routine:
+                case BandageChangementReason.Routine:
                     return 1;
-                case BandageChangingReason.PunctureNotCovered:
+                case BandageChangementReason.PunctureNotCovered:
                     return 2;
-                case BandageChangingReason.BandageWet:
+                case BandageChangementReason.BandageWet:
                     return 3;
-                case BandageChangingReason.BandageDoesNotStickAnymore:
+                case BandageChangementReason.BandageDoesNotStickAnymore:
                     return 4;
-                case BandageChangingReason.SecondaryBleeding:
+                case BandageChangementReason.SecondaryBleeding:
                     return 5;
-                case BandageChangingReason.Pain:
+                case BandageChangementReason.Pain:
                     return 6;
 
             }
@@ -341,7 +357,7 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (BandageChangingReason)value;
+            return (BandageChangementReason)value;
         }
 
         #endregion
@@ -353,16 +369,16 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            BandageChangingArea reason = (BandageChangingArea)value;
+            BandageChangementArea reason = (BandageChangementArea)value;
             switch (reason)
             {
-                case BandageChangingArea.NoInformation:
+                case BandageChangementArea.NoInformation:
                     return 0;
-                case BandageChangingArea.Complete:
+                case BandageChangementArea.Complete:
                     return 1;
-                case BandageChangingArea.OnlyBandage:
+                case BandageChangementArea.OnlyBandage:
                     return 2;
-                case BandageChangingArea.OnlyStatlock:
+                case BandageChangementArea.OnlyStatlock:
                     return 3;
 
             }
@@ -372,7 +388,7 @@ namespace BFH_USZ_PICC.Utilitys
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (BandageChangingArea)value;
+            return (BandageChangementArea)value;
         }
 
         #endregion

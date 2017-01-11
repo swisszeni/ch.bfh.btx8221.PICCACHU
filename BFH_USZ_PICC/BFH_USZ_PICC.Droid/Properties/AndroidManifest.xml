@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.bfh.i4mi.picc" android:installLocation="auto" android:versionName="1.0.4" android:versionCode="5">
-	<uses-sdk android:minSdkVersion="17" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ch.bfh.i4mi.picc" android:installLocation="auto" android:versionName="1.1.100" android:versionCode="5">
+	<uses-sdk android:minSdkVersion="18" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />

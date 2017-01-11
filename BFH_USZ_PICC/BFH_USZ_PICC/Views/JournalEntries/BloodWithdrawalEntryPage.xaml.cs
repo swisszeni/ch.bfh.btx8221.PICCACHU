@@ -1,36 +1,22 @@
 ﻿using BFH_USZ_PICC.Models;
 using System;
 using Xamarin.Forms;
-using static BFH_USZ_PICC.Models.JournalEntry;
 using BFH_USZ_PICC.Resx;
-using BFH_USZ_PICC.ViewModels.JournalEntries;
-
-
-
-// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace BFH_USZ_PICC.Views.JournalEntries
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class BloodWithdrawalEntryPage : BaseContentPage
     {
         public BloodWithdrawalEntryPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((BloodWithdrawalViewModel)BindingContext).DisplayingEntry = new BloodWithdrawalEntry();
-            ((BloodWithdrawalViewModel)BindingContext).IsEnabledOrVisible = true;
         }
 
-        public BloodWithdrawalEntryPage(ContentPage contained, BloodWithdrawalEntry entry) : base(contained)
+        public BloodWithdrawalEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();
-            ((BloodWithdrawalViewModel)BindingContext).DisplayingEntry = entry;
-            ((BloodWithdrawalViewModel)BindingContext).IsEnabledOrVisible = false;
-
         }
 
         void AddPickers()

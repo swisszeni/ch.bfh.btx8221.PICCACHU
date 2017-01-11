@@ -1,4 +1,7 @@
-﻿using BFH_USZ_PICC.Resx;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Resx;
+using Realms;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,27 +15,50 @@ namespace BFH_USZ_PICC.Models
     /// </summary>
     public class AdministeredDrugEntry : JournalEntry
     {
+        public override Type RealmObjectType
+        {
+            get { return typeof(AdministeredDrugEntryRO); }
+        }
         public string Drug { get; set; }
 
-        public AdministeredDrugEntry()
-        {
-            CreationDateTime = DateTime.Now;
-            ProcedureDateTime = DateTime.Now;
-            Institution = HealthInstitution.NoInformation;
-            Person = HealthPerson.NoInformation;
-            Drug = null;
+        public AdministeredDrugEntry() { }
 
-            Entry = AllPossibleJournalEntries.AdministeredDrugEntry;
-        }
-        public AdministeredDrugEntry(DateTime creationalDateTime, DateTime procedureDateTime, HealthInstitution instiution, HealthPerson person, string drug)
+        public AdministeredDrugEntry(AdministeredDrugEntryRO realmObject) : base(realmObject)
         {
-            CreationDateTime = creationalDateTime;
-            ProcedureDateTime = procedureDateTime;
-            Institution = instiution;
-            Person = person;
-            Drug = drug;
-
-            Entry = AllPossibleJournalEntries.AdministeredDrugEntry; 
+            Drug = realmObject.Drug;
         }
     }
+
+    public class AdministeredDrugEntryRO : RealmObject, ILoadableJournalEntryRealmObject
+    {
+        // Base JournalEntry values
+        [Realms.PrimaryKey]
+        public string ID { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public DateTimeOffset ExecutionDate { get; set; }
+        public int SupportingInstitution { get; set; }
+        public int SupportingPerson { get; set; }
+
+        // Typespecific values
+        public string Drug { get; set; }
+
+        public void LoadDataFromModelObject(JournalEntry model)
+        {
+            if (model.GetType() == typeof(AdministeredDrugEntry))
+            {
+                var modelObject = (AdministeredDrugEntry)model;
+                ID = modelObject.ID;
+                CreateDate = modelObject.CreateDate;
+                ExecutionDate = modelObject.ExecutionDate;
+                SupportingInstitution = (int)modelObject.SupportingInstitution;
+                SupportingPerson = (int)modelObject.SupportingPerson;
+                Drug = modelObject.Drug;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
+        }
+    } 
 }

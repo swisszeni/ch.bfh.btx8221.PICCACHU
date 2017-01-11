@@ -1,34 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.MyPICCPage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
-             Title="{i18n:Translate MyPICCPageTitleText}"
-             BindingContext="{Binding [MyPICCViewModel], Source={StaticResource ViewModelLocator}}">
-  <Grid.Resources>
-    <ResourceDictionary>
-      <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
-      <utilitys:GuideWireLenghtToTextConverter x:Key="GuideWireLenghtToTextConverter"/>
-    </ResourceDictionary>
-  </Grid.Resources>
-  <ScrollView>
-    <StackLayout Orientation="Vertical">
-      <Label Text="{i18n:Translate MyPICCPageNoPiccEnteredText}" TextColor="Gray" IsVisible="{Binding IsAPiccAdded, Converter={StaticResource NegateBooleanConverter}}"/>
-      <Button Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}" Command="{Binding AddPICCCommand}"/>
-      <Label Text="{i18n:Translate MyPICCPageCurrentPICCText}" FontSize="20"/>
-      <Button Command="{Binding CurrentPICCButtonCommand}" Text="{Binding CurrentPICC.PICCModel.PICCName}" IsVisible="{Binding IsAPiccAdded}"/>
-      <Label Text="{i18n:Translate MyPICCPagePreviousPICCText}" FontSize="20"/>
-      <ListView x:Name="FormerPICCList" ItemsSource="{Binding PreviousPICC}"
-            SelectedItem="{Binding SelectedEntry}"
-            ItemSelected="SelectedEntry">
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <TextCell Text="{Binding PICCModel.PICCName}" Detail="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}"/>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-    </StackLayout>
-  </ScrollView>
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.MyPICCPage"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   Title="{i18n:Translate MyPICCPageTitleText}"
+                   BindingContext="{Binding [MyPICCViewModel], Source={StaticResource ViewModelLocator}}">
+    <ScrollView>
+        <StackLayout Orientation="Vertical"
+                     Margin="15">
+            <!--Add PICC Button-->
+            <Button Style="{StaticResource ButtonStyleGray}"
+                    Text="{i18n:Translate MyPICCPageAddNewPICCButtonText}"
+                    Command="{Binding AddPICCCommand}" />
+            <!--Current PICC Title-->
+            <Label Style="{StaticResource LabelStyleTitle}"
+                   Text="{i18n:Translate MyPICCPageCurrentPICCText}"
+                   Margin="0,10,0,0" />
+            <!--Current PICC Information-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <!--Missing PICC Info-->
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="3"
+                       Style="{StaticResource LabelStyleDescription}"
+                       Text="{i18n:Translate MyPICCPageNoPiccEnteredText}"
+                       IsVisible="{Binding HasCurrentPicc, Converter={StaticResource NegateBooleanConverter}}" />
+                <!--PICC Info-->
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Style="{StaticResource LabelStyleDescription}"
+                       Text="{i18n:Translate PICCDetailPagePICCModelNameText}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="0"
+                       Grid.Column="2"
+                       Style="{StaticResource LabelStyleContent}"
+                       Text="{Binding CurrentPICC.PICCModel.PICCName}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       Style="{StaticResource LabelStyleDescription}"
+                       Text="{i18n:Translate PICCDetailPagePICCFrenchSizeText}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="1"
+                       Grid.Column="2"
+                       Style="{StaticResource LabelStyleContent}"
+                       Text="{Binding CurrentPICC.PICCModel.FrenchDiameter}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       Style="{StaticResource LabelStyleDescription}"
+                       Text="{i18n:Translate PICCDetailPageLumensLabelText}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="2"
+                       Grid.Column="2"
+                       Style="{StaticResource LabelStyleContent}"
+                       Text="{Binding CurrentPICC.PICCModel.Lumen}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="3"
+                       Grid.Column="0"
+                       Style="{StaticResource LabelStyleDescription}"
+                       Text="{i18n:Translate PICCDetailPagePICCInsertedDateText}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <Label Grid.Row="3"
+                       Grid.Column="2"
+                       Style="{StaticResource LabelStyleContent}"
+                       Text="{Binding CurrentPICC.InsertDate, StringFormat='{}{0:dd/MM/yy}'}"
+                       IsVisible="{Binding HasCurrentPicc}" />
+                <StackLayout Grid.Row="4"
+                             Grid.ColumnSpan="3"
+                             Orientation="Horizontal"
+                             IsVisible="{Binding HasCurrentPicc}">
+                    <Button Style="{StaticResource ButtonStyleGray}"
+                            Command="{Binding CurrentPICCButtonCommand}"
+                            Text="{i18n:Translate MyPICCPageDetailButtonText}"
+                            HorizontalOptions="FillAndExpand" />
+                    <Button Style="{StaticResource ButtonStyleGray}"
+                            Command="{Binding MoveToJournalEntryOverviewPageCommand}"
+                            Text="{i18n:Translate MyPICCPageGoToJournalEntriesButtonText}"
+                            HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </Grid>
+            <!--Previous PICC Title-->
+            <Label Style="{StaticResource LabelStyleTitle}"
+                   Text="{i18n:Translate MyPICCPagePreviousPICCText}"
+                   Margin="0,10,0,0"
+                   IsVisible="{Binding HasPreviousPicc}" />
+            <!--Previous PICC List-->
+            <ListView x:Name="FormerPICCListView"
+                      ItemsSource="{Binding PreviousPICC}"
+                      SelectedItem="{Binding SelectedEntry, Mode=TwoWay}"
+                      ItemSelected="SelectedEntry"
+                      IsVisible="{Binding HasPreviousPicc}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell x:Name="FormerPICCCell"
+                                  Text="{Binding PICCModel.PICCName}"
+                                  Detail="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}">
+                            <TextCell.ContextActions>
+                                <MenuItem  Text="{i18n:Translate DeleteButtonText}"
+                                           IsDestructive="True"
+                                           BindingContext="{Binding Source={x:Reference FormerPICCListView}, Path=BindingContext}"
+                                           Command="{Binding DeleteFormerPICCCommand}"
+                                           CommandParameter="{Binding Source={x:Reference FormerPICCCell}, Path=BindingContext}">
+                                </MenuItem>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
 </d:BaseContentPage>

@@ -78,7 +78,9 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<MicroClaveChangingViewModel>();
             SimpleIoc.Default.Register<StatlockChangingViewModel>();
             SimpleIoc.Default.Register<MasterDataViewModel>();
-            SimpleIoc.Default.Register<SettingsViewModel>();            
+            SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
+            
         }
 
         public static T Resolve<T>()

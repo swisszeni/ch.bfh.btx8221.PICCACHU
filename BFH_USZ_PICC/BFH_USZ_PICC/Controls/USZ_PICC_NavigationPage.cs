@@ -32,9 +32,21 @@ namespace BFH_USZ_PICC.Controls
             BarTextColor = Color.White;
             Pushed += Content_Pushed;
             Popped += Content_Popped;
+            PoppedToRoot += Content_PoppedToRoot;
         }
 
         #region Navigation methods
+
+        private void Content_Pushed(object sender, NavigationEventArgs e)
+        {
+            INavigable curr = null;
+            if (CurrentPage is INavigable)
+            {
+                curr = (INavigable)CurrentPage;
+            }
+            prevPage = CurrentPage;
+            curr?.OnNavigatedToAsync(null, NavigationMode.Forward);
+        }
 
         private void Content_Popped(object sender, NavigationEventArgs e)
         {
@@ -55,13 +67,20 @@ namespace BFH_USZ_PICC.Controls
             curr?.OnNavigatedToAsync(NavigationMode.Back);
         }
 
-        private void Content_Pushed(object sender, NavigationEventArgs e)
+        private void Content_PoppedToRoot(object sender, NavigationEventArgs e)
         {
+            INavigable prev = null;
             INavigable curr = null;
+            if (prevPage is INavigable)
+            {
+                prev = (INavigable)prevPage;
+            }
+
             if (CurrentPage is INavigable)
             {
                 curr = (INavigable)CurrentPage;
             }
+
             prevPage = CurrentPage;
             curr?.OnNavigatedToAsync(NavigationMode.Forward);
         }

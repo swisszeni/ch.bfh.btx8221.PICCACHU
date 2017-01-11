@@ -1,30 +1,56 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using BFH_USZ_PICC.Views.JournalEntries;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace BFH_USZ_PICC.ViewModels
 {
     class JournalOverviewViewModel : ViewModelBase
     {
+        private ILocalUserDataService _dataService;
+
         public JournalOverviewViewModel()
         {
-            JournalEntriesList = JournalEntry.AllEnteredJournalEntries;
+            //JournalEntriesList = JournalEntry.AllEnteredJournalEntries;
+            // Getting the dataservice
+            _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
+
+            // TODO: Remove, only till final navigation structure calls OnNavigatedToAsync also for root pages
+            TempLoad();
+        }
+
+        public async void TempLoad()
+        {
+            var entryList = await _dataService.GetJournalEntriesAsync();
+            JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
+        }
+
+        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        {
+            var entryList = await _dataService.GetJournalEntriesAsync();
+            JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
+
+            await base.OnNavigatedToAsync(parameter, mode);
         }
 
         /// <summary>
         /// Binds all the glossary entries to a the "GlossaryList" ListView
         /// </summary>
-        private ObservableCollection<JournalEntry> _journalEntriesList;
-        public ObservableCollection<JournalEntry> JournalEntriesList
+        private List<JournalEntry> _journalEntriesList;
+        public List<JournalEntry> JournalEntriesList
         {
             get { return _journalEntriesList; }
             set { Set(ref _journalEntriesList, value); }
@@ -38,36 +64,43 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 if (Set(() => SelectedEntry, ref _selectedEntry, value) & _selectedEntry != null)
                 {
-                    AllPossibleJournalEntries selectedEntryType = value.Entry;
-                    // TODO: FIX
-                    //switch (selectedEntryType)
-                    //{
-                    //    case AllPossibleJournalEntries.AdministeredDrugEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage), new List<object> { value }));
-                    //        return;
-                    //    case AllPossibleJournalEntries.MicroClaveEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MicroClaveChangingEntryPage), new List<object> { value }));
-                    //        return;
-                    //    case AllPossibleJournalEntries.StatlockEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(StatlockChangingEntryPage), new List<object> { value }));
-                    //        return;
-                    //    case AllPossibleJournalEntries.BloodWithdrawalEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BloodWithdrawalEntryPage), new List<object> { value }));
-                    //        return;
-                    //    case AllPossibleJournalEntries.BandagesChangingEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BandageChangingEntryPage), new List<object> { value }));
-                    //        return;
-                    //    case AllPossibleJournalEntries.InfusionEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(InfusionEntryPage), new List<object> { value }));
-                    //        return;
-                    //    case AllPossibleJournalEntries.CatheterFlushEntry:
-                    //        ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(CatheterFlushEntryPage), new List<object> { value }));
-                    //        return;
-                    //    default:
-                    //        return;
-                    //}
-                }
+                    // We have to use a fucking if-elseif because C# 6 can't switch over types yet. FML
+                    Type entryType = value.GetType();
+                    Type targetPageType = null;
+                    if(entryType == typeof(AdministeredDrugEntry))
+                    {
+                        targetPageType = typeof(AdministeredDrugEntryPage);
+                    } else if (entryType == typeof(MicroClaveChangingEntry))
+                    {
+                        targetPageType = typeof(MicroClaveChangingEntryPage);
+                    }
+                    else if (entryType == typeof(StatlockChangingEntry))
+                    {
+                        targetPageType = typeof(StatlockChangingEntryPage);
+                    }
+                    else if (entryType == typeof(BloodWithdrawalEntry))
+                    {
+                        targetPageType = typeof(BloodWithdrawalEntryPage);
+                    }
+                    else if (entryType == typeof(BandageChangingEntry))
+                    {
+                        targetPageType = typeof(BandageChangingEntryPage);
+                    }
+                    else if (entryType == typeof(InfusionEntry))
+                    {
+                        targetPageType = typeof(InfusionEntryPage);
+                    }
+                    else if (entryType == typeof(CatheterFlushEntry))
+                    {
+                        targetPageType = typeof(CatheterFlushEntryPage);
+                    }
 
+                    if(targetPageType != null)
+                    {
+                        // TODO: FIX
+                        //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType, new List<object> { value.ID }));
+                    }
+                }
             }
         }
 
@@ -82,40 +115,39 @@ namespace BFH_USZ_PICC.ViewModels
             if (selectedEntry != null && selectedEntry != AppResources.CancelButtonText)
 
             {
+                Type targetPageType = null;
                 if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AdministeredDrugEntryPage)));
-                    return;
+                    targetPageType = typeof(AdministeredDrugEntryPage);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageMicroClaveChangingEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MicroClaveChangingEntryPage)));
-                    return;
+                    targetPageType = typeof(MicroClaveChangingEntryPage);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageStatlockChangingEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(StatlockChangingEntryPage)));
-                    return;
+                    targetPageType = typeof(StatlockChangingEntryPage);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageBloodWithdrawalEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BloodWithdrawalEntryPage)));
-                    return;
+                    targetPageType = typeof(BloodWithdrawalEntryPage);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageBandagesChangingEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(BandageChangingEntryPage)));
-                    return;
+                    targetPageType = typeof(BandageChangingEntryPage);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageInfusionEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(InfusionEntryPage)));
-                    return;
+                    targetPageType = typeof(InfusionEntryPage);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageCatheterFlushEntry)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(CatheterFlushEntryPage)));
-                    return;
+                    targetPageType = typeof(CatheterFlushEntryPage);
+                }
+
+                if (targetPageType != null)
+                {
+                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType));
                 }
             }
         }));

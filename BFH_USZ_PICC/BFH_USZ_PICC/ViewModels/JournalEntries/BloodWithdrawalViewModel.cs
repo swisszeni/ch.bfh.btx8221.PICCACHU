@@ -1,7 +1,9 @@
-﻿using BFH_USZ_PICC.Models;
+﻿using BFH_USZ_PICC.Interfaces;
+using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,54 +16,31 @@ using static BFH_USZ_PICC.Models.JournalEntry;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    class BloodWithdrawalViewModel : ViewModelBase
+    public class BloodWithdrawalViewModel : JournalEntryBaseViewModel<BloodWithdrawalEntry>
     {
-        private BloodWithdrawalEntry _displayingEntry;
-        public BloodWithdrawalEntry DisplayingEntry
+        public BloodWithdrawalViewModel() { }
+
+        #region private methods
+
+        protected override void LoadFromModel()
         {
+            Flow = _displayingEntry?.Flow == null ? 0 : _displayingEntry.Flow;
+            IsNaClFlushDone = _displayingEntry?.IsNaClFlushDone == null ? false : _displayingEntry.IsNaClFlushDone;
 
-            get { return _displayingEntry; }
-            set
-            {
-                if (Set(ref _displayingEntry, value))
-                {
-                    Person = value.Person;
-                    Institution = value.Institution;
-                    ProcedureDate = value.ProcedureDateTime;
-                    Flow = value.Flow;
-                    IsNaClFlushDone = value.IsNaCiFlushDone;
-
-                    // Update bindings
-                    //RaisePropertyChanged("");
-                }
-
-                RaisePropertyChanged(() => Person);
-                RaisePropertyChanged(() => Institution);
-                RaisePropertyChanged(() => Flow);
-                RaisePropertyChanged(() => IsNaClFlushDone);
-            }
-        }
-        
-        private HealthPerson _person;
-        public HealthPerson Person
-        {
-            get { return _person; }
-            set { Set(ref _person, value); }
+            base.LoadFromModel();
         }
 
-        private HealthInstitution _institution;
-        public HealthInstitution Institution
+        protected override void SaveToModel()
         {
-            get { return _institution; }
-            set { Set(ref _institution, value); }
+            _displayingEntry.Flow = Flow;
+            _displayingEntry.IsNaClFlushDone = IsNaClFlushDone;
+
+            base.SaveToModel();
         }
 
-        private DateTime _procedureDate;
-        public DateTime ProcedureDate
-        {
-            get { return _procedureDate; }
-            set { Set(ref _procedureDate, value); }
-        }
+        #endregion
+
+        #region public properties
 
         private BloodFlow _flow;
         public BloodFlow Flow
@@ -77,42 +56,6 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             set { Set(ref _isNaClFlushDone, value); }
         }
 
-        private bool _isEnabledOrVisible;
-        public bool IsEnabledOrVisible
-        {
-            get { return _isEnabledOrVisible; }
-            set { Set(ref _isEnabledOrVisible, value); }
-        }
-
-              
-        private RelayCommand _saveButtonCommand;
-        public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () => {
-            // create a new PICCAppliedDrugEntry with the user entered information
-            BloodWithdrawalEntry entry = new BloodWithdrawalEntry(DateTime.Now, ProcedureDate, Institution, Person, IsNaClFlushDone, Flow);
-            //Add the object to the collection of JournalEntries
-            JournalEntry.AllEnteredJournalEntries.Add(entry);
-            //close the page
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-        }));
-
-        private RelayCommand _cancelButtonCommand;
-        public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
-        {
-            //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
-        private RelayCommand _deleteButtonCommand;
-        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () => {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            {
-                JournalEntry.AllEnteredJournalEntries.Remove(DisplayingEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            }
-        }));
-
+        #endregion
     }
 }
