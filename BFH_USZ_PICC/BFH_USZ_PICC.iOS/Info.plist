@@ -23,7 +23,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>ch.bfh.i4mi.picc</string>
 	<key>CFBundleVersion</key>
-	<string>9999</string>
+	<string>1.1.9999</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon@2x.png</string>
@@ -62,7 +62,7 @@
 				<key>Red</key>
 				<real>0</real>
 				<key>Green</key>
-				<real>0.325490196078431</real>
+				<real>0.32156862745098</real>
 				<key>Blue</key>
 				<real>0.635294117647059</real>
 			</dict>
