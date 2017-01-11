@@ -66,11 +66,18 @@ namespace BFH_USZ_PICC.ViewModels
 
         }
 
+        public bool HasPreviousPicc { get { return PreviousPICC != null && PreviousPICC.Count > 0; } }
         private List<PICC> _previousPICC;
         public List<PICC> PreviousPICC
         {
             get { return _previousPICC; }
-            set { Set(ref _previousPICC, value); }
+            set
+            {
+                if (Set(ref _previousPICC, value))
+                {
+                    RaisePropertyChanged(() => HasPreviousPicc);
+                }
+            }
         }
 
         private PICC _selectedEntry;
