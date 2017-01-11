@@ -14,7 +14,6 @@ namespace BFH_USZ_PICC.Services
     {
         private SQLiteAsyncConnection _database;
         private string _databaseName = "Userdata.db3";
-        private string _databaseKeyName = "UserdataDBKey";
 
         public LocalUserDataServiceSQLite()
         {
@@ -30,6 +29,19 @@ namespace BFH_USZ_PICC.Services
         private void CreateTablesIfNotExist()
         {
             _database.CreateTableAsync<UserMasterData>().Wait();
+
+            // JournalEntries
+            _database.CreateTableAsync<AdministeredDrugEntry>().Wait();
+            _database.CreateTableAsync<StatlockChangingEntry>().Wait();
+            _database.CreateTableAsync<BandageChangingEntry>().Wait();
+            _database.CreateTableAsync<BloodWithdrawalEntry>().Wait();
+            _database.CreateTableAsync<CatheterFlushEntry>().Wait();
+            _database.CreateTableAsync<InfusionEntry>().Wait();
+            _database.CreateTableAsync<MicroClaveChangingEntry>().Wait();
+
+            // PICC
+            _database.CreateTableAsync<PICC>().Wait();
+            _database.CreateTableAsync<PICCModel>().Wait();
         }
 
         public Task ResetLocalUserDataAsync()
@@ -80,75 +92,122 @@ namespace BFH_USZ_PICC.Services
         #region JournalEntries
         public async Task<List<JournalEntry>> GetJournalEntriesAsync()
         {
-            //List<JournalEntry> resultList = new List<JournalEntry>();
+            List<JournalEntry> resultList = new List<JournalEntry>();
 
-            //// Collect all journalEntries together
-            //var drugTable = _database.Table<AdministeredDrugEntry>().ToListAsync();
-            //foreach (var entry in drugTable.Result)
-            //{
-            //    resultList.Add(entry);
-            //}
+            // Collect all journalEntries together
+            resultList.AddRange(await _database.Table<AdministeredDrugEntry>().ToListAsync());
+            resultList.AddRange(await _database.Table<StatlockChangingEntry>().ToListAsync());
+            resultList.AddRange(await _database.Table<BandageChangingEntry>().ToListAsync());
+            resultList.AddRange(await _database.Table<BloodWithdrawalEntry>().ToListAsync());
+            resultList.AddRange(await _database.Table<CatheterFlushEntry>().ToListAsync());
+            resultList.AddRange(await _database.Table<InfusionEntry>().ToListAsync());
+            resultList.AddRange(await _database.Table<MicroClaveChangingEntry>().ToListAsync());
 
-            //var statlockTable = _database.Table<StatlockChangingEntry>().ToListAsync();
-            //foreach (var entry in statlockTable.Result)
-            //{
-            //    resultList.Add((entry));
-            //}
-
-            //return resultList;
-            throw new NotImplementedException();
+            return resultList;
         }
 
-        public async Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry
+        public Task<List<T>> GetJournalEntriesAsync<T>() where T : JournalEntry, new()
         {
-            throw new NotImplementedException();
+            return _database.Table<T>().ToListAsync();
         }
 
-        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry
+        public Task<T> GetJournalEntryAsync<T>(string ID) where T : JournalEntry, new()
         {
-            throw new NotImplementedException();
+            return _database.Table<T>().Where((x) => x.ID == ID).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry
+        public Task<int> SaveJournalEntryAsync<T>(T entry) where T : JournalEntry, new()
         {
-            //var newEntryType = entry.Entry;
+            Task<int> res;
+            if (String.IsNullOrEmpty(entry.ID))
+            {
+                // create the ID
+                entry.ID = Guid.NewGuid().ToString();
+                res = _database.InsertAsync(entry);
+            } else
+            {
+                res = _database.UpdateAsync(entry);
+            }
 
-            //switch (newEntryType)
-            //{
-            //    case (AllPossibleJournalEntries.AdministeredDrugEntry):
-            //        var drugEntry = (AdministeredDrugEntry)entry;
-            //        return await _database.InsertAsync(drugEntry);
-            //    case (AllPossibleJournalEntries.StatlockEntry):
-            //        var statlockEntry = (StatlockChangingEntry)entry;
-            //        return await _database.InsertAsync(statlockEntry);
-            //    default:
-            //        return 1;
-            //}
-            throw new NotImplementedException();
+            return res;
         }
 
-        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry
+        public Task<int> DeleteJournalEntryAsync<T>(T entry) where T : JournalEntry, new()
         {
-            //return _database.DeleteAsync(entry);
-            throw new NotImplementedException();
+            return _database.DeleteAsync(entry);
         }
 
         #endregion
 
         #region PICCs
-        public Task<List<PICC>> GetFormerPICCsAsync()
+
+        public async Task<List<PICC>> GetFormerPICCsAsync()
         {
-            throw new NotImplementedException();
+            var formerPiccs = await _database.Table<PICC>().Where((x) => x.RemovalDate != null).ToListAsync();
+            foreach (var formerPicc in formerPiccs)
+            {
+                formerPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == formerPicc.PICCModelID).FirstOrDefaultAsync();
+            }
+
+            return formerPiccs;
         }
 
-        public Task<PICC> GetCurrentPICCAsync()
+        public async Task<PICC> GetCurrentPICCAsync()
         {
-            throw new NotImplementedException();
+            var currentPicc = await _database.Table<PICC>().Where((x) => x.RemovalDate == null).FirstOrDefaultAsync();
+            if(currentPicc != null)
+            {
+                currentPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == currentPicc.PICCModelID).FirstOrDefaultAsync();
+            }
+
+            return currentPicc;
         }
 
-        public Task<int> SaveCurrentPICCAsync(PICC currentPICC)
+        public async Task<PICC> GetPICCAsync(string ID)
         {
-            throw new NotImplementedException();
+            var foundPicc = await _database.Table<PICC>().Where((x) => x.ID == ID).FirstOrDefaultAsync();
+            if (foundPicc != null)
+            {
+                foundPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == foundPicc.PICCModelID).FirstOrDefaultAsync();
+            }
+
+            return foundPicc;
+        }
+
+        public async Task<int> SaveCurrentPICCAsync(PICC savingPicc)
+        {
+            // Check if a new PICC is set as current or if the current picc is only modified
+            var currentPicc = await _database.Table<PICC>().Where((x) => x.RemovalDate == null).FirstOrDefaultAsync();
+            if (currentPicc == null || currentPicc.ID != savingPicc.ID)
+            {
+                // If the user has not removed the previous PICC, a removal date will be set to it (otherwise we would have two current PICCs)
+                if (currentPicc != null)
+                {
+                    currentPicc.RemovalDate = DateTimeOffset.Now.Date.ToLocalTime();
+                    await _database.UpdateAsync(currentPicc);
+                }
+
+                // Adding the PICCModel and the PICC
+                var piccModelGuid = Guid.NewGuid().ToString();
+                savingPicc.PICCModel.ID = piccModelGuid;
+                savingPicc.PICCModelID = piccModelGuid;
+                savingPicc.ID = Guid.NewGuid().ToString();
+                await _database.InsertAsync(savingPicc.PICCModel);
+                await _database.InsertAsync(savingPicc);
+            }
+            else
+            {
+                await _database.UpdateAsync(savingPicc.PICCModel);
+                await _database.UpdateAsync(savingPicc);
+            }
+
+            return 1;
+        }
+
+        public Task<int> DeltePICCAsync(PICC picc)
+        {   
+                return _database.DeleteAsync(picc);
+
         }
 
         #endregion

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
-    public abstract class JournalEntryBaseViewModel<T> : ViewModelBase where T : JournalEntry
+    public abstract class JournalEntryBaseViewModel<T> : ViewModelBase where T : JournalEntry, new()
     {
         protected ILocalUserDataService _dataService;
         protected T _displayingEntry;

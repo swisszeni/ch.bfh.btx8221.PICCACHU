@@ -34,6 +34,9 @@ using Javax.Crypto.Spec;
 /// </summary>
 namespace BFH_USZ_PICC.Droid.DependencyServices
 {
+    /// <summary>
+    /// Implements <see cref="ISecureStorage"/> for iOS using <see cref="KeyStore"/>.
+    /// </summary>
     public class SecureStorage_Droid : ISecureStorage
     {
         private static readonly string _droidKeyStore = "AndroidKeyStore";

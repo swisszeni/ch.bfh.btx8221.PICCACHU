@@ -31,14 +31,11 @@ namespace BFH_USZ_PICC.Models
 
     public class PICC
     {
-        public static PICC CurrentPICC;
-
-        public static ObservableCollection<PICC> PreviousPICC = new ObservableCollection<PICC>();
-
-
         [SQLite.PrimaryKey]
         public string ID { get; set; }
+        [SQLite.Ignore]
         public PICCModel PICCModel { get; set; }
+        public string PICCModelID { get; set; }
         public DateTimeOffset InsertDate { get; set; }
         public DateTimeOffset? RemovalDate { get; set; }
         public PICCInsertCountry InsertCountry { get; set; }

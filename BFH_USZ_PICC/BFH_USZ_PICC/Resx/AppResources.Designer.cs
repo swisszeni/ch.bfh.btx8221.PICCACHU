@@ -8,12 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BFH_USZ_PICC.Resx
-{
+namespace BFH_USZ_PICC.Resx {
     using System;
     using System.Reflection;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -24,2292 +23,1921 @@ namespace BFH_USZ_PICC.Resx
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppResources
-    {
-
+    public class AppResources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResources()
-        {
+        internal AppResources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if (object.ReferenceEquals(resourceMan, null))
-                {
+        public static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BFH_USZ_PICC.Resx.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        public static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Enter PICC manually.
         /// </summary>
-        public static string AddPICCPageAddPiccManualButtonText
-        {
-            get
-            {
+        public static string AddPICCPageAddPiccManualButtonText {
+            get {
                 return ResourceManager.GetString("AddPICCPageAddPiccManualButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please enter a PICC.
         /// </summary>
-        public static string AddPICCPagePICCEntryPlaceholderText
-        {
-            get
-            {
+        public static string AddPICCPagePICCEntryPlaceholderText {
+            get {
                 return ResourceManager.GetString("AddPICCPagePICCEntryPlaceholderText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to PICC model could not be found.
         /// </summary>
-        public static string AddPICCPagePICCNotFoundInformationText
-        {
-            get
-            {
+        public static string AddPICCPagePICCNotFoundInformationText {
+            get {
                 return ResourceManager.GetString("AddPICCPagePICCNotFoundInformationText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Scan barcode.
         /// </summary>
-        public static string AddPICCPageScanButtonText
-        {
-            get
-            {
+        public static string AddPICCPageScanButtonText {
+            get {
                 return ResourceManager.GetString("AddPICCPageScanButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Add PICC.
         /// </summary>
-        public static string AddPICCPageTitleText
-        {
-            get
-            {
+        public static string AddPICCPageTitleText {
+            get {
                 return ResourceManager.GetString("AddPICCPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date was the drug administered to you?.
         /// </summary>
-        public static string AdministeredDrugEntryPageSelectDateLabelText
-        {
-            get
-            {
+        public static string AdministeredDrugEntryPageSelectDateLabelText {
+            get {
                 return ResourceManager.GetString("AdministeredDrugEntryPageSelectDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate which drug you have received:.
         /// </summary>
-        public static string AdministeredDrugEntryPageSelectDrugLabelText
-        {
-            get
-            {
+        public static string AdministeredDrugEntryPageSelectDrugLabelText {
+            get {
                 return ResourceManager.GetString("AdministeredDrugEntryPageSelectDrugLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution has given you the drug?.
         /// </summary>
-        public static string AdministeredDrugEntryPageSelectInstitutionLabelText
-        {
-            get
-            {
+        public static string AdministeredDrugEntryPageSelectInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("AdministeredDrugEntryPageSelectInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person has given you the drug?.
         /// </summary>
-        public static string AdministeredDrugEntryPageSelectPersonLabelText
-        {
-            get
-            {
+        public static string AdministeredDrugEntryPageSelectPersonLabelText {
+            get {
                 return ResourceManager.GetString("AdministeredDrugEntryPageSelectPersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Painful.
         /// </summary>
-        public static string BandageArmProcessSituationPainfulText
-        {
-            get
-            {
+        public static string BandageArmProcessSituationPainfulText {
+            get {
                 return ResourceManager.GetString("BandageArmProcessSituationPainfulText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Reddened.
         /// </summary>
-        public static string BandageArmProcessSituationReddenedText
-        {
-            get
-            {
+        public static string BandageArmProcessSituationReddenedText {
+            get {
                 return ResourceManager.GetString("BandageArmProcessSituationReddenedText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Swollen.
         /// </summary>
-        public static string BandageArmProcessSituationSwollenText
-        {
-            get
-            {
+        public static string BandageArmProcessSituationSwollenText {
+            get {
                 return ResourceManager.GetString("BandageArmProcessSituationSwollenText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Complete.
         /// </summary>
-        public static string BandageChangingAreaCompleteText
-        {
-            get
-            {
+        public static string BandageChangingAreaCompleteText {
+            get {
                 return ResourceManager.GetString("BandageChangingAreaCompleteText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Only Bandage.
         /// </summary>
-        public static string BandageChangingAreaOnlyBandageText
-        {
-            get
-            {
+        public static string BandageChangingAreaOnlyBandageText {
+            get {
                 return ResourceManager.GetString("BandageChangingAreaOnlyBandageText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Only StatLock.
         /// </summary>
-        public static string BandageChangingAreaOnlyStatlockText
-        {
-            get
-            {
+        public static string BandageChangingAreaOnlyStatlockText {
+            get {
                 return ResourceManager.GetString("BandageChangingAreaOnlyStatlockText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to How is the situation on the arm?.
         /// </summary>
-        public static string BandageChangingEntryPageArmSituationLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPageArmSituationLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPageArmSituationLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date did you change the bandage?.
         /// </summary>
-        public static string BandageChangingEntryPageBandageChangingDateLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPageBandageChangingDateLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPageBandageChangingDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate why your bandage needs to be changed:.
         /// </summary>
-        public static string BandageChangingEntryPageBandageChangingReasonLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPageBandageChangingReasonLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPageBandageChangingReasonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution helped you to change your bandages?.
         /// </summary>
-        public static string BandageChangingEntryPageInstitutionLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPageInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPageInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate which bandage parts have been changed:.
         /// </summary>
-        public static string BandageChangingEntryPagePartsOfChaningLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPagePartsOfChaningLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPagePartsOfChaningLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person helped you to change bandages?.
         /// </summary>
-        public static string BandageChangingEntryPagePersonLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPagePersonLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPagePersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to How is the puncture site?.
         /// </summary>
-        public static string BandageChangingEntryPagePunctureSituationLabelText
-        {
-            get
-            {
+        public static string BandageChangingEntryPagePunctureSituationLabelText {
+            get {
                 return ResourceManager.GetString("BandageChangingEntryPagePunctureSituationLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Bandage does not stick anymore.
         /// </summary>
-        public static string BandageChangingReasonBandageDoesNotStickAnymoreText
-        {
-            get
-            {
+        public static string BandageChangingReasonBandageDoesNotStickAnymoreText {
+            get {
                 return ResourceManager.GetString("BandageChangingReasonBandageDoesNotStickAnymoreText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Bandage is wet.
         /// </summary>
-        public static string BandageChangingReasonBandageWetText
-        {
-            get
-            {
+        public static string BandageChangingReasonBandageWetText {
+            get {
                 return ResourceManager.GetString("BandageChangingReasonBandageWetText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Pain, irregularities.
         /// </summary>
-        public static string BandageChangingReasonPainText
-        {
-            get
-            {
+        public static string BandageChangingReasonPainText {
+            get {
                 return ResourceManager.GetString("BandageChangingReasonPainText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Puncture is not covered.
         /// </summary>
-        public static string BandageChangingReasonPunctureNotCoveredText
-        {
-            get
-            {
+        public static string BandageChangingReasonPunctureNotCoveredText {
+            get {
                 return ResourceManager.GetString("BandageChangingReasonPunctureNotCoveredText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Routinely.
         /// </summary>
-        public static string BandageChangingReasonRoutineText
-        {
-            get
-            {
+        public static string BandageChangingReasonRoutineText {
+            get {
                 return ResourceManager.GetString("BandageChangingReasonRoutineText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Secondary bleeding.
         /// </summary>
-        public static string BandageChangingReasonSecondaryBleedingText
-        {
-            get
-            {
+        public static string BandageChangingReasonSecondaryBleedingText {
+            get {
                 return ResourceManager.GetString("BandageChangingReasonSecondaryBleedingText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Liquid discharge.
         /// </summary>
-        public static string BandagePunctureSituationLiquidDischargeText
-        {
-            get
-            {
+        public static string BandagePunctureSituationLiquidDischargeText {
+            get {
                 return ResourceManager.GetString("BandagePunctureSituationLiquidDischargeText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Painful puncuture.
         /// </summary>
-        public static string BandagePunctureSituationPainfulPunctureText
-        {
-            get
-            {
+        public static string BandagePunctureSituationPainfulPunctureText {
+            get {
                 return ResourceManager.GetString("BandagePunctureSituationPainfulPunctureText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Reddened puncture.
         /// </summary>
-        public static string BandagePunctureSituationReddenedPunctureText
-        {
-            get
-            {
+        public static string BandagePunctureSituationReddenedPunctureText {
+            get {
                 return ResourceManager.GetString("BandagePunctureSituationReddenedPunctureText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Skin not irritant.
         /// </summary>
-        public static string BandagePunctureSituationSkinNotIrritantText
-        {
-            get
-            {
+        public static string BandagePunctureSituationSkinNotIrritantText {
+            get {
                 return ResourceManager.GetString("BandagePunctureSituationSkinNotIrritantText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Swollen puncture.
         /// </summary>
-        public static string BandagePunctureSituationSwollenPunctureText
-        {
-            get
-            {
+        public static string BandagePunctureSituationSwollenPunctureText {
+            get {
                 return ResourceManager.GetString("BandagePunctureSituationSwollenPunctureText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Page.
         /// </summary>
-        public static string BasePageTitleText
-        {
-            get
-            {
+        public static string BasePageTitleText {
+            get {
                 return ResourceManager.GetString("BasePageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Fast, easy.
         /// </summary>
-        public static string BloodFlowFastAndEasyText
-        {
-            get
-            {
+        public static string BloodFlowFastAndEasyText {
+            get {
                 return ResourceManager.GetString("BloodFlowFastAndEasyText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Hesitant.
         /// </summary>
-        public static string BloodFlowHesitantText
-        {
-            get
-            {
+        public static string BloodFlowHesitantText {
+            get {
                 return ResourceManager.GetString("BloodFlowHesitantText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Not at all.
         /// </summary>
-        public static string BloodFlowNoneText
-        {
-            get
-            {
+        public static string BloodFlowNoneText {
+            get {
                 return ResourceManager.GetString("BloodFlowNoneText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date did the blood withdrawal happen?.
         /// </summary>
-        public static string BloodWithdrawalEntryPageBloodWithdrawalDateLabelText
-        {
-            get
-            {
+        public static string BloodWithdrawalEntryPageBloodWithdrawalDateLabelText {
+            get {
                 return ResourceManager.GetString("BloodWithdrawalEntryPageBloodWithdrawalDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate how the blood flow was at the time of collection:.
         /// </summary>
-        public static string BloodWithdrawalEntryPageIndicateBloodFlowLabelText
-        {
-            get
-            {
+        public static string BloodWithdrawalEntryPageIndicateBloodFlowLabelText {
+            get {
                 return ResourceManager.GetString("BloodWithdrawalEntryPageIndicateBloodFlowLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution has supported you on the blood withrawal process?.
         /// </summary>
-        public static string BloodWithdrawalEntryPageInstitutionLabelText
-        {
-            get
-            {
+        public static string BloodWithdrawalEntryPageInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("BloodWithdrawalEntryPageInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Did you flush the catheter with NaCl?.
         /// </summary>
-        public static string BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText
-        {
-            get
-            {
+        public static string BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText {
+            get {
                 return ResourceManager.GetString("BloodWithdrawalEntryPageIsNaCIFlashDoneLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person has supported you on the blood withrawal process?.
         /// </summary>
-        public static string BloodWithdrawalEntryPagePersonLabelText
-        {
-            get
-            {
+        public static string BloodWithdrawalEntryPagePersonLabelText {
+            get {
                 return ResourceManager.GetString("BloodWithdrawalEntryPagePersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Your device can not call the USZ telemedicine. Contact 044 666 66 66.
         /// </summary>
-        public static string CallUSZTelemedicineNotPossibleText
-        {
-            get
-            {
+        public static string CallUSZTelemedicineNotPossibleText {
+            get {
                 return ResourceManager.GetString("CallUSZTelemedicineNotPossibleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to call USZ telemedicine?.
         /// </summary>
-        public static string CallUSZTelemedicineText
-        {
-            get
-            {
+        public static string CallUSZTelemedicineText {
+            get {
                 return ResourceManager.GetString("CallUSZTelemedicineText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Call USZ telemedicine.
         /// </summary>
-        public static string CallUSZTelemedizinButtonText
-        {
-            get
-            {
+        public static string CallUSZTelemedizinButtonText {
+            get {
                 return ResourceManager.GetString("CallUSZTelemedizinButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you want to cancel your input?.
         /// </summary>
-        public static string CancelButtonPressedConfirmationText
-        {
-            get
-            {
+        public static string CancelButtonPressedConfirmationText {
+            get {
                 return ResourceManager.GetString("CancelButtonPressedConfirmationText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        public static string CancelButtonText
-        {
-            get
-            {
+        public static string CancelButtonText {
+            get {
                 return ResourceManager.GetString("CancelButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Is a blood reflow visible?.
         /// </summary>
-        public static string CatheterFlushEntryPageBloodReflowLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPageBloodReflowLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPageBloodReflowLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date did you flush the catheter?.
         /// </summary>
-        public static string CatheterFlushEntryPageDateLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPageDateLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPageDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate why the catheter needed to be flushed:.
         /// </summary>
-        public static string CatheterFlushEntryPageFlushReasonLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPageFlushReasonLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPageFlushReasonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please specify the amount of the solution administered (in ml):.
         /// </summary>
-        public static string CatheterFlushEntryPageFlushSolutionAmountLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPageFlushSolutionAmountLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPageFlushSolutionAmountLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate which solution your catheter was flushed with:.
         /// </summary>
-        public static string CatheterFlushEntryPageFlushTypeLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPageFlushTypeLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPageFlushTypeLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution did you support on the catheter flush process?.
         /// </summary>
-        public static string CatheterFlushEntryPageInstitutionLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPageInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPageInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What is the continuity of the catheter after the irrigation?.
         /// </summary>
-        public static string CatheterFlushEntryPagePatencyAfterFlushLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPagePatencyAfterFlushLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPagePatencyAfterFlushLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person did you support on the catheter flush process?.
         /// </summary>
-        public static string CatheterFlushEntryPagePersonLabelText
-        {
-            get
-            {
+        public static string CatheterFlushEntryPagePersonLabelText {
+            get {
                 return ResourceManager.GetString("CatheterFlushEntryPagePersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Blocked.
         /// </summary>
-        public static string CatheterFlushReasonBlockedText
-        {
-            get
-            {
+        public static string CatheterFlushReasonBlockedText {
+            get {
                 return ResourceManager.GetString("CatheterFlushReasonBlockedText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Blood sampling.
         /// </summary>
-        public static string CatheterFlushReasonBloodSamplingText
-        {
-            get
-            {
+        public static string CatheterFlushReasonBloodSamplingText {
+            get {
                 return ResourceManager.GetString("CatheterFlushReasonBloodSamplingText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Partially blocked.
         /// </summary>
-        public static string CatheterFlushReasonPartiallyBlockedText
-        {
-            get
-            {
+        public static string CatheterFlushReasonPartiallyBlockedText {
+            get {
                 return ResourceManager.GetString("CatheterFlushReasonPartiallyBlockedText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Routine.
         /// </summary>
-        public static string CatheterFlushReasonRoutineText
-        {
-            get
-            {
+        public static string CatheterFlushReasonRoutineText {
+            get {
                 return ResourceManager.GetString("CatheterFlushReasonRoutineText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Flush not possible anymore.
         /// </summary>
-        public static string CatheterFlushResultFlushNotPossibleText
-        {
-            get
-            {
+        public static string CatheterFlushResultFlushNotPossibleText {
+            get {
                 return ResourceManager.GetString("CatheterFlushResultFlushNotPossibleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Without resistance continuous.
         /// </summary>
-        public static string CatheterFlushResultFlushWithoutResistanceText
-        {
-            get
-            {
+        public static string CatheterFlushResultFlushWithoutResistanceText {
+            get {
                 return ResourceManager.GetString("CatheterFlushResultFlushWithoutResistanceText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to With resistance continuous.
         /// </summary>
-        public static string CatheterFlushResultFlushWithResistanceText
-        {
-            get
-            {
+        public static string CatheterFlushResultFlushWithResistanceText {
+            get {
                 return ResourceManager.GetString("CatheterFlushResultFlushWithResistanceText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Heparin.
         /// </summary>
-        public static string CatheterFlushTypeHeparinText
-        {
-            get
-            {
+        public static string CatheterFlushTypeHeparinText {
+            get {
                 return ResourceManager.GetString("CatheterFlushTypeHeparinText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to NaCl.
         /// </summary>
-        public static string CatheterFlushTypeNaClText
-        {
-            get
-            {
+        public static string CatheterFlushTypeNaClText {
+            get {
                 return ResourceManager.GetString("CatheterFlushTypeNaClText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Urokinase.
         /// </summary>
-        public static string CatheterFlushTypeUrokinaseText
-        {
-            get
-            {
+        public static string CatheterFlushTypeUrokinaseText {
+            get {
                 return ResourceManager.GetString("CatheterFlushTypeUrokinaseText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
-        public static string DeleteButtonText
-        {
-            get
-            {
+        public static string DeleteButtonText {
+            get {
                 return ResourceManager.GetString("DeleteButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
-        public static string DisorderDetailPageActionLabelText
-        {
-            get
-            {
+        public static string DisorderDetailPageActionLabelText {
+            get {
                 return ResourceManager.GetString("DisorderDetailPageActionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Reason.
         /// </summary>
-        public static string DisorderDetailPageReasonLabelText
-        {
-            get
-            {
+        public static string DisorderDetailPageReasonLabelText {
+            get {
                 return ResourceManager.GetString("DisorderDetailPageReasonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Symptom.
         /// </summary>
-        public static string DisorderDetailPageSymptomLabelText
-        {
-            get
-            {
+        public static string DisorderDetailPageSymptomLabelText {
+            get {
                 return ResourceManager.GetString("DisorderDetailPageSymptomLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Disorder.
         /// </summary>
-        public static string DisorderDetailPageTitleText
-        {
-            get
-            {
+        public static string DisorderDetailPageTitleText {
+            get {
                 return ResourceManager.GetString("DisorderDetailPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Issue procedure steps.
         /// </summary>
-        public static string DisorderPageIssueApproachTitleText
-        {
-            get
-            {
+        public static string DisorderPageIssueApproachTitleText {
+            get {
                 return ResourceManager.GetString("DisorderPageIssueApproachTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Disorders.
         /// </summary>
-        public static string DisorderPageTitleText
-        {
-            get
-            {
+        public static string DisorderPageTitleText {
+            get {
                 return ResourceManager.GetString("DisorderPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
-        public static string EditButtonText
-        {
-            get
-            {
+        public static string EditButtonText {
+            get {
                 return ResourceManager.GetString("EditButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Solutions.
         /// </summary>
-        public static string EmergencyFlyoutAssistanceButtonText
-        {
-            get
-            {
+        public static string EmergencyFlyoutAssistanceButtonText {
+            get {
                 return ResourceManager.GetString("EmergencyFlyoutAssistanceButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline..
         /// </summary>
-        public static string EmergencyFlyoutTelemedizinDescriptionText
-        {
-            get
-            {
+        public static string EmergencyFlyoutTelemedizinDescriptionText {
+            get {
                 return ResourceManager.GetString("EmergencyFlyoutTelemedizinDescriptionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Approach in case of malfunction.
         /// </summary>
-        public static string EmergencyFlyoutTitleText
-        {
-            get
-            {
+        public static string EmergencyFlyoutTitleText {
+            get {
                 return ResourceManager.GetString("EmergencyFlyoutTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
-        public static string FailedText
-        {
-            get
-            {
+        public static string FailedText {
+            get {
                 return ResourceManager.GetString("FailedText", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous PICC detail.
+        /// </summary>
+        public static string FormerPICCPageTitleText {
+            get {
+                return ResourceManager.GetString("FormerPICCPageTitleText", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Glossary.
         /// </summary>
-        public static string GlossaryPageTitleText
-        {
-            get
-            {
+        public static string GlossaryPageTitleText {
+            get {
                 return ResourceManager.GetString("GlossaryPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
-        public static string InformationText
-        {
-            get
-            {
+        public static string InformationText {
+            get {
                 return ResourceManager.GetString("InformationText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Not possible.
         /// </summary>
-        public static string InfusionAdministrationNotPossibleText
-        {
-            get
-            {
+        public static string InfusionAdministrationNotPossibleText {
+            get {
                 return ResourceManager.GetString("InfusionAdministrationNotPossibleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Without problems.
         /// </summary>
-        public static string InfusionAdministrationWithoutProblemText
-        {
-            get
-            {
+        public static string InfusionAdministrationWithoutProblemText {
+            get {
                 return ResourceManager.GetString("InfusionAdministrationWithoutProblemText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to With resistance.
         /// </summary>
-        public static string InfusionAdministrationWithResistance
-        {
-            get
-            {
+        public static string InfusionAdministrationWithResistance {
+            get {
                 return ResourceManager.GetString("InfusionAdministrationWithResistance", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate which antibiotic you have been given:.
         /// </summary>
-        public static string InfusionEntryPageAntibioticLabelText
-        {
-            get
-            {
+        public static string InfusionEntryPageAntibioticLabelText {
+            get {
                 return ResourceManager.GetString("InfusionEntryPageAntibioticLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date was the infusion administered to you?.
         /// </summary>
-        public static string InfusionEntryPageDateLabelText
-        {
-            get
-            {
+        public static string InfusionEntryPageDateLabelText {
+            get {
                 return ResourceManager.GetString("InfusionEntryPageDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate how the flow of the infusion was during administration:.
         /// </summary>
-        public static string InfusionEntryPageInfusionFlowLabelText
-        {
-            get
-            {
+        public static string InfusionEntryPageInfusionFlowLabelText {
+            get {
                 return ResourceManager.GetString("InfusionEntryPageInfusionFlowLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution did you support?.
         /// </summary>
-        public static string InfusionEntryPageInstitutionLabelText
-        {
-            get
-            {
+        public static string InfusionEntryPageInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("InfusionEntryPageInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person did you support?.
         /// </summary>
-        public static string InfusionEntryPagePersonLabelText
-        {
-            get
-            {
+        public static string InfusionEntryPagePersonLabelText {
+            get {
                 return ResourceManager.GetString("InfusionEntryPagePersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate the type of infusion you have been given:.
         /// </summary>
-        public static string InfusionEntryPageTypeLabelText
-        {
-            get
-            {
+        public static string InfusionEntryPageTypeLabelText {
+            get {
                 return ResourceManager.GetString("InfusionEntryPageTypeLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Antibiotic.
         /// </summary>
-        public static string InfusionReasonAntibioticText
-        {
-            get
-            {
+        public static string InfusionReasonAntibioticText {
+            get {
                 return ResourceManager.GetString("InfusionReasonAntibioticText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Blood components.
         /// </summary>
-        public static string InfusionReasonBloodComponentText
-        {
-            get
-            {
+        public static string InfusionReasonBloodComponentText {
+            get {
                 return ResourceManager.GetString("InfusionReasonBloodComponentText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Chemotherapy.
         /// </summary>
-        public static string InfusionReasonChemotherapyText
-        {
-            get
-            {
+        public static string InfusionReasonChemotherapyText {
+            get {
                 return ResourceManager.GetString("InfusionReasonChemotherapyText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Examination substance.
         /// </summary>
-        public static string InfusionReasonExaminationSubstanceText
-        {
-            get
-            {
+        public static string InfusionReasonExaminationSubstanceText {
+            get {
                 return ResourceManager.GetString("InfusionReasonExaminationSubstanceText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Nutritional substance.
         /// </summary>
-        public static string InfusionReasonNutritionalSubstanceText
-        {
-            get
-            {
+        public static string InfusionReasonNutritionalSubstanceText {
+            get {
                 return ResourceManager.GetString("InfusionReasonNutritionalSubstanceText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Other infusions.
         /// </summary>
-        public static string InfusionReasonOthersText
-        {
-            get
-            {
+        public static string InfusionReasonOthersText {
+            get {
                 return ResourceManager.GetString("InfusionReasonOthersText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you want to see a maintenance instruction for this step?.
         /// </summary>
-        public static string JournalEntriesAskForMainentanceInstructionText
-        {
-            get
-            {
+        public static string JournalEntriesAskForMainentanceInstructionText {
+            get {
                 return ResourceManager.GetString("JournalEntriesAskForMainentanceInstructionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you want to delte this entry?.
         /// </summary>
-        public static string JournalEntriesDelteEntryConfirmationText
-        {
-            get
-            {
+        public static string JournalEntriesDelteEntryConfirmationText {
+            get {
                 return ResourceManager.GetString("JournalEntriesDelteEntryConfirmationText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Home care.
         /// </summary>
-        public static string JournalEntryInstitutionHomeCareText
-        {
-            get
-            {
+        public static string JournalEntryInstitutionHomeCareText {
+            get {
                 return ResourceManager.GetString("JournalEntryInstitutionHomeCareText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Hospital.
         /// </summary>
-        public static string JournalEntryInstitutionHospitalText
-        {
-            get
-            {
+        public static string JournalEntryInstitutionHospitalText {
+            get {
                 return ResourceManager.GetString("JournalEntryInstitutionHospitalText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Outpatient clinic.
         /// </summary>
-        public static string JournalEntryInstitutionOutpatienClinicText
-        {
-            get
-            {
+        public static string JournalEntryInstitutionOutpatienClinicText {
+            get {
                 return ResourceManager.GetString("JournalEntryInstitutionOutpatienClinicText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Rehabilitation.
         /// </summary>
-        public static string JournalEntryInstitutionRehabilitationText
-        {
-            get
-            {
+        public static string JournalEntryInstitutionRehabilitationText {
+            get {
                 return ResourceManager.GetString("JournalEntryInstitutionRehabilitationText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Not specified.
         /// </summary>
-        public static string JournalEntryNotSpecifiedText
-        {
-            get
-            {
+        public static string JournalEntryNotSpecifiedText {
+            get {
                 return ResourceManager.GetString("JournalEntryNotSpecifiedText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Others.
         /// </summary>
-        public static string JournalEntryOthersText
-        {
-            get
-            {
+        public static string JournalEntryOthersText {
+            get {
                 return ResourceManager.GetString("JournalEntryOthersText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Affected person.
         /// </summary>
-        public static string JournalEntryPersonAffectedPersonText
-        {
-            get
-            {
+        public static string JournalEntryPersonAffectedPersonText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonAffectedPersonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Family doctor.
         /// </summary>
-        public static string JournalEntryPersonFamilyDoctorText
-        {
-            get
-            {
+        public static string JournalEntryPersonFamilyDoctorText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonFamilyDoctorText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Health expert staff.
         /// </summary>
-        public static string JournalEntryPersonHealthExpertStaffText
-        {
-            get
-            {
+        public static string JournalEntryPersonHealthExpertStaffText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonHealthExpertStaffText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Medical technical assistant.
         /// </summary>
-        public static string JournalEntryPersonMedicalTechnicalAssistantText
-        {
-            get
-            {
+        public static string JournalEntryPersonMedicalTechnicalAssistantText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonMedicalTechnicalAssistantText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Nursing staff.
         /// </summary>
-        public static string JournalEntryPersonNursingStaffText
-        {
-            get
-            {
+        public static string JournalEntryPersonNursingStaffText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonNursingStaffText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Relative.
         /// </summary>
-        public static string JournalEntryPersonRelativeText
-        {
-            get
-            {
+        public static string JournalEntryPersonRelativeText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonRelativeText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Medical specialist.
         /// </summary>
-        public static string JournalEntryPersonSpecialistText
-        {
-            get
-            {
+        public static string JournalEntryPersonSpecialistText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonSpecialistText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to XRay staff.
         /// </summary>
-        public static string JournalEntryPersonXrayStaffText
-        {
-            get
-            {
+        public static string JournalEntryPersonXrayStaffText {
+            get {
                 return ResourceManager.GetString("JournalEntryPersonXrayStaffText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Administered drugs.
         /// </summary>
-        public static string JournalOverviewPageAdministeredDrugEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageAdministeredDrugEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageAdministeredDrugEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Bandage changing.
         /// </summary>
-        public static string JournalOverviewPageBandagesChangingEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageBandagesChangingEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageBandagesChangingEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Blood withdrawal.
         /// </summary>
-        public static string JournalOverviewPageBloodWithdrawalEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageBloodWithdrawalEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageBloodWithdrawalEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Rinse the catheter.
         /// </summary>
-        public static string JournalOverviewPageCatheterFlushEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageCatheterFlushEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageCatheterFlushEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Administered infusions.
         /// </summary>
-        public static string JournalOverviewPageInfusionEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageInfusionEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageInfusionEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Change MicroClave.
         /// </summary>
-        public static string JournalOverviewPageMicroClaveChangingEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageMicroClaveChangingEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageMicroClaveChangingEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to New entry.
         /// </summary>
-        public static string JournalOverviewPageNewEntryButtonText
-        {
-            get
-            {
+        public static string JournalOverviewPageNewEntryButtonText {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageNewEntryButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What kind of entry would you like to add?.
         /// </summary>
-        public static string JournalOverviewPageSelectANewNewEntryText
-        {
-            get
-            {
+        public static string JournalOverviewPageSelectANewNewEntryText {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageSelectANewNewEntryText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Change StatLock.
         /// </summary>
-        public static string JournalOverviewPageStatlockChangingEntry
-        {
-            get
-            {
+        public static string JournalOverviewPageStatlockChangingEntry {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageStatlockChangingEntry", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Journal.
         /// </summary>
-        public static string JournalOverviewPageTitleText
-        {
-            get
-            {
+        public static string JournalOverviewPageTitleText {
+            get {
                 return ResourceManager.GetString("JournalOverviewPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What kind of entry do you want to add?.
         /// </summary>
-        public static string JournalOverviewViewModelWhichJournalEntryText
-        {
-            get
-            {
+        public static string JournalOverviewViewModelWhichJournalEntryText {
+            get {
                 return ResourceManager.GetString("JournalOverviewViewModelWhichJournalEntryText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
-        public static string KnowledgeEntriesTitleText
-        {
-            get
-            {
+        public static string KnowledgeEntriesTitleText {
+            get {
                 return ResourceManager.GetString("KnowledgeEntriesTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Matching glossaries.
         /// </summary>
-        public static string KnowledgeEntryDetailPageMatchingGlossariesText
-        {
-            get
-            {
+        public static string KnowledgeEntryDetailPageMatchingGlossariesText {
+            get {
                 return ResourceManager.GetString("KnowledgeEntryDetailPageMatchingGlossariesText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to {0} of {1}.
         /// </summary>
-        public static string MaintenaceInstructionCurrentPageNumberText
-        {
-            get
-            {
+        public static string MaintenaceInstructionCurrentPageNumberText {
+            get {
                 return ResourceManager.GetString("MaintenaceInstructionCurrentPageNumberText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
-        public static string MaintenaceInstructionPageNextButtonText
-        {
-            get
-            {
+        public static string MaintenaceInstructionPageNextButtonText {
+            get {
                 return ResourceManager.GetString("MaintenaceInstructionPageNextButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        public static string MaintenaceInstructionPagePreviousButtonText
-        {
-            get
-            {
+        public static string MaintenaceInstructionPagePreviousButtonText {
+            get {
                 return ResourceManager.GetString("MaintenaceInstructionPagePreviousButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Maintenance instruction.
         /// </summary>
-        public static string MaintenanceInstructionTitleText
-        {
-            get
-            {
+        public static string MaintenanceInstructionTitleText {
+            get {
                 return ResourceManager.GetString("MaintenanceInstructionTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you want to back up your personal data? You can adjust the information at any time in the settings. .
         /// </summary>
-        public static string MasterDataBackUpQuestionText
-        {
-            get
-            {
+        public static string MasterDataBackUpQuestionText {
+            get {
                 return ResourceManager.GetString("MasterDataBackUpQuestionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Master data.
         /// </summary>
-        public static string MasterDataText
-        {
-            get
-            {
+        public static string MasterDataText {
+            get {
                 return ResourceManager.GetString("MasterDataText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Your birthdate is not valid and will be deleted. Continue?.
         /// </summary>
-        public static string MasterDataViewModelBirthdateNotValidText
-        {
-            get
-            {
+        public static string MasterDataViewModelBirthdateNotValidText {
+            get {
                 return ResourceManager.GetString("MasterDataViewModelBirthdateNotValidText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date has your MicroClave been exchanged?.
         /// </summary>
-        public static string MicroClaveChangingEntryPageDateLabelText
-        {
-            get
-            {
+        public static string MicroClaveChangingEntryPageDateLabelText {
+            get {
                 return ResourceManager.GetString("MicroClaveChangingEntryPageDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution did you support when changing the MicroClave?.
         /// </summary>
-        public static string MicroClaveChangingEntryPageInstitutionLabelText
-        {
-            get
-            {
+        public static string MicroClaveChangingEntryPageInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("MicroClaveChangingEntryPageInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person did you support when changing the MicroClave?.
         /// </summary>
-        public static string MicroClaveChangingEntryPagePersonLabelText
-        {
-            get
-            {
+        public static string MicroClaveChangingEntryPagePersonLabelText {
+            get {
                 return ResourceManager.GetString("MicroClaveChangingEntryPagePersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate why your MicroClave had to be exchanged:.
         /// </summary>
-        public static string MicroClaveChangingEntryPageReasonLabelText
-        {
-            get
-            {
+        public static string MicroClaveChangingEntryPageReasonLabelText {
+            get {
                 return ResourceManager.GetString("MicroClaveChangingEntryPageReasonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Pollution.
         /// </summary>
-        public static string MicroClaveChangingEntryPollutionText
-        {
-            get
-            {
+        public static string MicroClaveChangingEntryPollutionText {
+            get {
                 return ResourceManager.GetString("MicroClaveChangingEntryPollutionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Routine.
         /// </summary>
-        public static string MicroClaveChangingEntryRoutineText
-        {
-            get
-            {
+        public static string MicroClaveChangingEntryRoutineText {
+            get {
                 return ResourceManager.GetString("MicroClaveChangingEntryRoutineText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Add a new PICC.
         /// </summary>
-        public static string MyPICCPageAddNewPICCButtonText
-        {
-            get
-            {
+        public static string MyPICCPageAddNewPICCButtonText {
+            get {
                 return ResourceManager.GetString("MyPICCPageAddNewPICCButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Current PICC.
         /// </summary>
-        public static string MyPICCPageCurrentPICCText
-        {
-            get
-            {
+        public static string MyPICCPageCurrentPICCText {
+            get {
                 return ResourceManager.GetString("MyPICCPageCurrentPICCText", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete this PICC form the database?.
+        /// </summary>
+        public static string MyPICCPageDeletePICCWarningText {
+            get {
+                return ResourceManager.GetString("MyPICCPageDeletePICCWarningText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail.
+        /// </summary>
+        public static string MyPICCPageDetailButtonText {
+            get {
+                return ResourceManager.GetString("MyPICCPageDetailButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Journal for PICC.
+        /// </summary>
+        public static string MyPICCPageGoToJournalEntriesButtonText {
+            get {
+                return ResourceManager.GetString("MyPICCPageGoToJournalEntriesButtonText", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to It seems that you have not yet entered a PICC..
         /// </summary>
-        public static string MyPICCPageNoPiccEnteredText
-        {
-            get
-            {
+        public static string MyPICCPageNoPiccEnteredText {
+            get {
                 return ResourceManager.GetString("MyPICCPageNoPiccEnteredText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Previous PICC.
         /// </summary>
-        public static string MyPICCPagePreviousPICCText
-        {
-            get
-            {
+        public static string MyPICCPagePreviousPICCText {
+            get {
                 return ResourceManager.GetString("MyPICCPagePreviousPICCText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to My PICC.
         /// </summary>
-        public static string MyPICCPageTitleText
-        {
-            get
-            {
+        public static string MyPICCPageTitleText {
+            get {
                 return ResourceManager.GetString("MyPICCPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
-        public static string NoButtonText
-        {
-            get
-            {
+        public static string NoButtonText {
+            get {
                 return ResourceManager.GetString("NoButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
-        public static string OkButtonText
-        {
-            get
-            {
+        public static string OkButtonText {
+            get {
                 return ResourceManager.GetString("OkButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to There are not any complications with your PICC to be expected. For your own safety, we still would like to inform you about possible problems..
         /// </summary>
-        public static string PICCAssistanceDescriptionText
-        {
-            get
-            {
+        public static string PICCAssistanceDescriptionText {
+            get {
                 return ResourceManager.GetString("PICCAssistanceDescriptionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Add PICC.
         /// </summary>
-        public static string PICCDetailPageAddNewPICCTitle
-        {
-            get
-            {
+        public static string PICCDetailPageAddNewPICCTitle {
+            get {
                 return ResourceManager.GetString("PICCDetailPageAddNewPICCTitle", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Edit PICC.
         /// </summary>
-        public static string PICCDetailPageEditPICCTitle
-        {
-            get
-            {
+        public static string PICCDetailPageEditPICCTitle {
+            get {
                 return ResourceManager.GetString("PICCDetailPageEditPICCTitle", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Guide wire length in cm:.
         /// </summary>
-        public static string PICCDetailPageGuideWireLenghtText
-        {
-            get
-            {
+        public static string PICCDetailPageGuideWireLenghtText {
+            get {
                 return ResourceManager.GetString("PICCDetailPageGuideWireLenghtText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please enter an institution.
         /// </summary>
-        public static string PICCDetailPageInsertCityPlaceholderText
-        {
-            get
-            {
+        public static string PICCDetailPageInsertCityPlaceholderText {
+            get {
                 return ResourceManager.GetString("PICCDetailPageInsertCityPlaceholderText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Number of lumens:.
         /// </summary>
-        public static string PICCDetailPageLumensLabelText
-        {
-            get
-            {
+        public static string PICCDetailPageLumensLabelText {
+            get {
                 return ResourceManager.GetString("PICCDetailPageLumensLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to PICC body side:.
         /// </summary>
-        public static string PICCDetailPagePICCBodysideText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCBodysideText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCBodysideText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Diameter in french:.
         /// </summary>
-        public static string PICCDetailPagePICCFrenchSizeText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCFrenchSizeText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCFrenchSizeText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Inserted on:.
         /// </summary>
-        public static string PICCDetailPagePICCInsertedDateText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCInsertedDateText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCInsertedDateText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Location:.
         /// </summary>
-        public static string PICCDetailPagePICCInsertedPlaceText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCInsertedPlaceText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCInsertedPlaceText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Model name:.
         /// </summary>
-        public static string PICCDetailPagePICCModelNameText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCModelNameText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCModelNameText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to PICC position:.
         /// </summary>
-        public static string PICCDetailPagePICCPositionText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCPositionText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCPositionText", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removal date:.
+        /// </summary>
+        public static string PICCDetailPagePICCRemovalDateText {
+            get {
+                return ResourceManager.GetString("PICCDetailPagePICCRemovalDateText", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Set PICC inactive.
         /// </summary>
-        public static string PICCDetailPagePICCRemoveButtonText
-        {
-            get
-            {
+        public static string PICCDetailPagePICCRemoveButtonText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePICCRemoveButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Abroad.
         /// </summary>
-        public static string PICCDetailPagePickerCountryAbroadText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerCountryAbroadText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerCountryAbroadText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Switzerland.
         /// </summary>
-        public static string PICCDetailPagePickerCountrySwitzerlandText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerCountrySwitzerlandText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerCountrySwitzerlandText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Not defined.
         /// </summary>
-        public static string PICCDetailPagePickerNotDefinedText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerNotDefinedText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerNotDefinedText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Above elbow.
         /// </summary>
-        public static string PICCDetailPagePickerPositionAboveElbowText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerPositionAboveElbowText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerPositionAboveElbowText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Below elbow.
         /// </summary>
-        public static string PICCDetailPagePickerPositionBelowElbowText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerPositionBelowElbowText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerPositionBelowElbowText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Left.
         /// </summary>
-        public static string PICCDetailPagePickerSideLeftText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerSideLeftText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerSideLeftText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Right.
         /// </summary>
-        public static string PICCDetailPagePickerSideRightText
-        {
-            get
-            {
+        public static string PICCDetailPagePickerSideRightText {
+            get {
                 return ResourceManager.GetString("PICCDetailPagePickerSideRightText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to PICC.
         /// </summary>
-        public static string PICCDetailPageTitleText
-        {
-            get
-            {
+        public static string PICCDetailPageTitleText {
+            get {
                 return ResourceManager.GetString("PICCDetailPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to put this PICC catheter inactive?.
         /// </summary>
-        public static string PICCDetailViewModelSetPICCInactiveText
-        {
-            get
-            {
+        public static string PICCDetailViewModelSetPICCInactiveText {
+            get {
                 return ResourceManager.GetString("PICCDetailViewModelSetPICCInactiveText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Picture detail.
         /// </summary>
-        public static string PicturePageTitleText
-        {
-            get
-            {
+        public static string PicturePageTitleText {
+            get {
                 return ResourceManager.GetString("PicturePageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        public static string SaveButtonText
-        {
-            get
-            {
+        public static string SaveButtonText {
+            get {
                 return ResourceManager.GetString("SaveButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Add maintenance reminders.
         /// </summary>
-        public static string SettingsPageAddReminderButtonText
-        {
-            get
-            {
+        public static string SettingsPageAddReminderButtonText {
+            get {
                 return ResourceManager.GetString("SettingsPageAddReminderButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to App version.
         /// </summary>
-        public static string SettingsPageAppVersionText
-        {
-            get
-            {
+        public static string SettingsPageAppVersionText {
+            get {
                 return ResourceManager.GetString("SettingsPageAppVersionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you want to delete all scheduled maintenance reminders?.
         /// </summary>
-        public static string SettingsPageDelteScheduledRemindersText
-        {
-            get
-            {
+        public static string SettingsPageDelteScheduledRemindersText {
+            get {
                 return ResourceManager.GetString("SettingsPageDelteScheduledRemindersText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to After how many days will the memory be repeated?.
         /// </summary>
-        public static string SettingsPageMaintenanceReminderFrequencyText
-        {
-            get
-            {
+        public static string SettingsPageMaintenanceReminderFrequencyText {
+            get {
                 return ResourceManager.GetString("SettingsPageMaintenanceReminderFrequencyText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Your PICC should be maintained.
         /// </summary>
-        public static string SettingsPageMaintenanceReminderInformationText
-        {
-            get
-            {
+        public static string SettingsPageMaintenanceReminderInformationText {
+            get {
                 return ResourceManager.GetString("SettingsPageMaintenanceReminderInformationText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to How often should the memory be repeated?.
         /// </summary>
-        public static string SettingsPageMaintenanceReminderRepetitionText
-        {
-            get
-            {
+        public static string SettingsPageMaintenanceReminderRepetitionText {
+            get {
                 return ResourceManager.GetString("SettingsPageMaintenanceReminderRepetitionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please set time for reminder.
         /// </summary>
-        public static string SettingsPageMaintenanceReminderSetDailyTimeText
-        {
-            get
-            {
+        public static string SettingsPageMaintenanceReminderSetDailyTimeText {
+            get {
                 return ResourceManager.GetString("SettingsPageMaintenanceReminderSetDailyTimeText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please set start date.
         /// </summary>
-        public static string SettingsPageMaintenanceReminderSetStartDateText
-        {
-            get
-            {
+        public static string SettingsPageMaintenanceReminderSetStartDateText {
+            get {
                 return ResourceManager.GetString("SettingsPageMaintenanceReminderSetStartDateText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Maintenance reminder.
         /// </summary>
-        public static string SettingsPageMaintenanceReminderText
-        {
-            get
-            {
+        public static string SettingsPageMaintenanceReminderText {
+            get {
                 return ResourceManager.GetString("SettingsPageMaintenanceReminderText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to My personal data.
         /// </summary>
-        public static string SettingsPagePersonalDataButtonText
-        {
-            get
-            {
+        public static string SettingsPagePersonalDataButtonText {
+            get {
                 return ResourceManager.GetString("SettingsPagePersonalDataButtonText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Unlimited.
         /// </summary>
-        public static string SettingsPageRepetitionPickerUnlimitedRepetitionText
-        {
-            get
-            {
+        public static string SettingsPageRepetitionPickerUnlimitedRepetitionText {
+            get {
                 return ResourceManager.GetString("SettingsPageRepetitionPickerUnlimitedRepetitionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        public static string SettingsPageTitleText
-        {
-            get
-            {
+        public static string SettingsPageTitleText {
+            get {
                 return ResourceManager.GetString("SettingsPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Damaged wings.
         /// </summary>
-        public static string StatlockChangingEntryDamagedWingsText
-        {
-            get
-            {
+        public static string StatlockChangingEntryDamagedWingsText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryDamagedWingsText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to At what date has your StatLock been exchanged?.
         /// </summary>
-        public static string StatlockChangingEntryPageDateLabelText
-        {
-            get
-            {
+        public static string StatlockChangingEntryPageDateLabelText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryPageDateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Which institution did you support when changing the StatLock?.
         /// </summary>
-        public static string StatlockChangingEntryPageInstitutionLabelText
-        {
-            get
-            {
+        public static string StatlockChangingEntryPageInstitutionLabelText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryPageInstitutionLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to What person did you support when changing the StatLock?.
         /// </summary>
-        public static string StatlockChangingEntryPagePersonLabelText
-        {
-            get
-            {
+        public static string StatlockChangingEntryPagePersonLabelText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryPagePersonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Please indicate why your StatLock had to be exchanged:.
         /// </summary>
-        public static string StatlockChangingEntryPageReasonLabelText
-        {
-            get
-            {
+        public static string StatlockChangingEntryPageReasonLabelText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryPageReasonLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Pollution.
         /// </summary>
-        public static string StatlockChangingEntryPollutionText
-        {
-            get
-            {
+        public static string StatlockChangingEntryPollutionText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryPollutionText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Routine.
         /// </summary>
-        public static string StatlockChangingEntryRoutineText
-        {
-            get
-            {
+        public static string StatlockChangingEntryRoutineText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntryRoutineText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Sticks unsatisfactorily.
         /// </summary>
-        public static string StatlockChangingEntrySticksUnsatisfactorilyText
-        {
-            get
-            {
+        public static string StatlockChangingEntrySticksUnsatisfactorilyText {
+            get {
                 return ResourceManager.GetString("StatlockChangingEntrySticksUnsatisfactorilyText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Birthdate:.
         /// </summary>
-        public static string UserMasterDataPageBirthdateLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageBirthdateLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageBirthdateLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Delte my data.
         /// </summary>
-        public static string UserMasterDataPageDeleteAllMasterDataButton
-        {
-            get
-            {
+        public static string UserMasterDataPageDeleteAllMasterDataButton {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageDeleteAllMasterDataButton", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete all personal data?.
         /// </summary>
-        public static string UserMasterDataPageDelteAllPersonalDataText
-        {
-            get
-            {
+        public static string UserMasterDataPageDelteAllPersonalDataText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageDelteAllPersonalDataText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to e-Mail:.
         /// </summary>
-        public static string UserMasterDataPageEmailLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageEmailLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageEmailLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
-        public static string UserMasterDataPageFemale
-        {
-            get
-            {
+        public static string UserMasterDataPageFemale {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageFemale", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Gender:.
         /// </summary>
-        public static string UserMasterDataPageGenderLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageGenderLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageGenderLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Male.
         /// </summary>
-        public static string UserMasterDataPageMale
-        {
-            get
-            {
+        public static string UserMasterDataPageMale {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageMale", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Cellphone:.
         /// </summary>
-        public static string UserMasterDataPageMobileLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageMobileLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageMobileLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Name:.
         /// </summary>
-        public static string UserMasterDataPageNameLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageNameLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageNameLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Phone:.
         /// </summary>
-        public static string UserMasterDataPagePhoneLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPagePhoneLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPagePhoneLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Place:.
         /// </summary>
-        public static string UserMasterDataPagePlaceLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPagePlaceLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPagePlaceLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Street:.
         /// </summary>
-        public static string UserMasterDataPageStreetLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageStreetLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageStreetLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Surname:.
         /// </summary>
-        public static string UserMasterDataPageSurnameLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageSurnameLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageSurnameLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to My personal data.
         /// </summary>
-        public static string UserMasterDataPageTitleText
-        {
-            get
-            {
+        public static string UserMasterDataPageTitleText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageTitleText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to ZIP:.
         /// </summary>
-        public static string UserMasterDataPageZIPLabelText
-        {
-            get
-            {
+        public static string UserMasterDataPageZIPLabelText {
+            get {
                 return ResourceManager.GetString("UserMasterDataPageZIPLabelText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
-        public static string WarningText
-        {
-            get
-            {
+        public static string WarningText {
+            get {
                 return ResourceManager.GetString("WarningText", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
-        public static string YesButtonText
-        {
-            get
-            {
+        public static string YesButtonText {
+            get {
                 return ResourceManager.GetString("YesButtonText", resourceCulture);
             }
         }
