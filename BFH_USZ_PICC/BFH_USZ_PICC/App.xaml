@@ -6,8 +6,7 @@
              x:Class="BFH_USZ_PICC.Application">
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator Member="vm:ViewModelLocator.Instance"
-                      x:Key="ViewModelLocator" />
+            <vm:ViewModelLocator x:Key="ViewModelLocator" />
 
             <!--Converters-->
             <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />

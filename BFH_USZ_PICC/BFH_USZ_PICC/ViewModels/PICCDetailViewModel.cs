@@ -29,21 +29,22 @@ namespace BFH_USZ_PICC.ViewModels
 
         #region navigation events
 
-        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public async override Task OnNavigatedToAsync(NavigationMode mode)
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            {
-                var param = ((List<object>)parameter).First();
-                if (param.GetType() == typeof(PICCModel))
-                {
-                    _displayingPICC = new PICC() { PICCModel = (PICCModel)param, InsertDate = DateTimeOffset.Now.Date.ToLocalTime() };
-                    StartEditing();
-                }
-                else if (param.GetType() == typeof(string))
-                {
-                    _displayingPICC = await _dataService.GetPICCAsync((string)param);
-                }
-            }
+            // TODO: FIX
+            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            //{
+            //    var param = ((List<object>)parameter).First();
+            //    if (param.GetType() == typeof(PICCModel))
+            //    {
+            //        _displayingPICC = new PICC() { PICCModel = (PICCModel)param, InsertDate = DateTimeOffset.Now.Date.ToLocalTime() };
+            //        StartEditing();
+            //    }
+            //    else if (param.GetType() == typeof(string))
+            //    {
+            //        _displayingPICC = await _dataService.GetPICCAsync((string)param);
+            //    }
+            //}
 
             LoadFromModel();
         }

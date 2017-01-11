@@ -28,7 +28,7 @@ namespace BFH_USZ_PICC.ViewModels
 
         #region navigation events
 
-        public override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override Task OnNavigatedToAsync(NavigationMode mode)
         {
             PopulatePICCsAsync();
 
@@ -91,7 +91,8 @@ namespace BFH_USZ_PICC.ViewModels
                 //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
                 if (_selectedEntry != null)
                 {
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(FormerPICCDetailPage), new List<object> { SelectedEntry.ID }));
+                    // TODO: FIX
+                    // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(FormerPICCDetailPage), new List<object> { SelectedEntry.ID }));
                 }
             }
         }
@@ -103,8 +104,8 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _addPICCCommand;
         public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(async () =>
         {
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
-
+            // TODO: FIX
+            // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
         }));
 
 
@@ -119,8 +120,8 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _moveToJournalEntryOverviewPageCommand;
         public RelayCommand MoveToJournalEntryOverviewPageCommand => _moveToJournalEntryOverviewPageCommand ?? (_moveToJournalEntryOverviewPageCommand = new RelayCommand(async () =>
         {
-            await ((Shell)Application.Current.MainPage).NavigateAsync(MenuItemKey.Journal);
-
+            // TODO: FIX
+            // await ((Shell)Application.Current.MainPage).NavigateAsync(MenuItemKey.Journal);
         }));
 
         private RelayCommand<PICC> _deleteFormerPICCCommand;
@@ -130,14 +131,15 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (selectedPICC != null)
             {
-                if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
-                {
-                    await _dataService.DeltePICCAsync(selectedPICC);
-                    PopulatePICCsAsync();
-
-                }
-            }     
+                // TODO: FIX
+                //if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+                //{
+                //    await _dataService.DeltePICCAsync(selectedPICC);
+                //    PopulatePICCsAsync();
+                //}
+            }
         }
         #endregion
+
     }
 }

@@ -45,7 +45,7 @@ namespace BFH_USZ_PICC.Controls
                 curr = (INavigable)CurrentPage;
             }
             prevPage = CurrentPage;
-            curr?.OnNavigatedToAsync(null, NavigationMode.Forward);
+            curr?.OnNavigatedToAsync(NavigationMode.Forward);
         }
 
         private void Content_Popped(object sender, NavigationEventArgs e)

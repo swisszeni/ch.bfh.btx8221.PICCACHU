@@ -23,25 +23,26 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 
         #region navigation events
 
-        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override async Task OnNavigatedToAsync(NavigationMode mode)
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            {
-                // Passes an ID if there should be an existing Entry displayed
-                var id = (string)((List<object>)parameter).First();
-                if ((string)((List<object>)parameter).First() != null)
-                {
-                    // Load form Database
-                    _displayingEntry = await _dataService.GetJournalEntryAsync<T>(id);
-                } 
-            } else
-            {
-                // No existing entry, we assume we want to create a new entry
-                _displayingEntry = (T)Activator.CreateInstance(typeof(T));
-                _displayingEntry.ExecutionDate = DateTime.Now;
+            // TODO: FIX
+            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            //{
+            //    // Passes an ID if there should be an existing Entry displayed
+            //    var id = (string)((List<object>)parameter).First();
+            //    if ((string)((List<object>)parameter).First() != null)
+            //    {
+            //        // Load form Database
+            //        _displayingEntry = await _dataService.GetJournalEntryAsync<T>(id);
+            //    } 
+            //} else
+            //{
+            //    // No existing entry, we assume we want to create a new entry
+            //    _displayingEntry = (T)Activator.CreateInstance(typeof(T));
+            //    _displayingEntry.ExecutionDate = DateTime.Now;
 
-                StartEditing();
-            }
+            //    StartEditing();
+            //}
 
             LoadFromModel();
         }

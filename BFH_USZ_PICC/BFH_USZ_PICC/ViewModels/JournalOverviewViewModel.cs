@@ -38,12 +38,13 @@ namespace BFH_USZ_PICC.ViewModels
             JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
         }
 
-        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public async override Task OnNavigatedToAsync(NavigationMode mode)
         {
+            // TODO: FIX/MOVE
             var entryList = await _dataService.GetJournalEntriesAsync();
             JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
 
-            await base.OnNavigatedToAsync(parameter, mode);
+            await base.OnNavigatedToAsync(mode);
         }
 
         /// <summary>
@@ -147,7 +148,8 @@ namespace BFH_USZ_PICC.ViewModels
 
                 if (targetPageType != null)
                 {
-                    await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType));
+                    // TODO: FIX
+                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType));
                 }
             }
         }));
