@@ -6,24 +6,14 @@
              xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
              BindingContext="{Binding [SettingsViewModel], Source={StaticResource ViewModelLocator}}"
              Title="{i18n:Translate SettingsPageTitleText}">
-  <StackLayout>
+  <StackLayout Margin="15">
     <Label Text="{i18n:Translate SettingsPageAppVersionText}"/>
     <Label Text="PICCACHU Version 1.0"/>
-    <StackLayout Orientation="Horizontal">
-      <Label Text="{i18n:Translate SettingsPageMaintenanceReminderText}"/>
-      <Switch IsToggled="{Binding IsReminderSet, Mode=TwoWay}" HorizontalOptions = "CenterAndExpand"/>
-    </StackLayout>    
-    <StackLayout x:Name="EditWeeklyReminder" IsVisible="{Binding IsReminderSet}">
-      <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetStartDateText}"/>
-      <DatePicker Date="{Binding ReminderStartDate}" IsEnabled="{Binding IsReminderEditable}"/>
-      <Label Text="{i18n:Translate SettingsPageMaintenanceReminderSetDailyTimeText}"/>
-      <TimePicker Time="{Binding ReminderDayTime}" IsEnabled="{Binding IsReminderEditable}"/>
-      <Label Text="{i18n:Translate SettingsPageMaintenanceReminderFrequencyText}"/>
-      <Picker x:Name="Frequency" SelectedIndex="{Binding ReminderFrequency}" IsEnabled="{Binding IsReminderEditable}"/>
-      <Label Text="{i18n:Translate SettingsPageMaintenanceReminderRepetitionText}"/>
-      <Picker x:Name="Repetition" SelectedIndex="{Binding ReminderRepetition}" IsEnabled="{Binding IsReminderEditable}"/>
-      <Button Text="{i18n:Translate SettingsPageAddReminderButtonText}" Command="{Binding AddNotificationsCommand}" IsEnabled="{Binding IsReminderEditable}"/>
-    </StackLayout>
-        <Button x:Name="PersonalMasterData" Text="{i18n:Translate SettingsPagePersonalDataButtonText}" Command="{Binding MoveToMasterDataPageCommand}" />
+    <Button Style="{StaticResource ButtonStyleGray}"
+            Text="{i18n:Translate SettingsPageMaintenanceReminderText}"
+            Command="{Binding MoveToMasterMaintenanceReminderPageCommand}" />
+    <Button Style="{StaticResource ButtonStyleGray}"
+            Text="{i18n:Translate SettingsPagePersonalDataButtonText}"
+            Command="{Binding MoveToMasterDataPageCommand}" />
   </StackLayout>
 </d:BaseContentPage>
