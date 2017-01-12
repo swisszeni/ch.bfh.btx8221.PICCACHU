@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFH_USZ_PICC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace BFH_USZ_PICC.Interfaces
 {
     public interface IKnowledgeBaseEntry
     {
-        string Title { get; }
+        string LocalizedGroup { get; }
+        MultilingualString Group { get; }
+        string LocalizedTitle { get; }
+        MultilingualString Title { get; }
     }
 }

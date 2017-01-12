@@ -64,6 +64,7 @@
     <Compile Include="Models\MaintenanceInstructions.cs" />
     <Compile Include="Models\MaintenanceInstructionStep.cs" />
     <Compile Include="Models\MaintenanceReminder.cs" />
+    <Compile Include="Models\MultilingualString.cs" />
     <Compile Include="Models\UserMasterData.cs" />
     <Compile Include="Models\JournalEntries\StatlockChangingEntry.cs" />
     <Compile Include="Models\JournalEntries\MicroClaveChangingEntry.cs" />

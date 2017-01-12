@@ -30,33 +30,34 @@ namespace BFH_USZ_PICC.Views
             knowledgeEntryView.VerticalOptions = LayoutOptions.EndAndExpand;
 
             //check if the element is either a text or an image
-            foreach (var entry in ((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry.KnowledgeElements)
+            foreach (var entryElement in ((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry.KnowledgeElements)
             {
-                if (entry.type == "text")
+                var elementType = entryElement.GetType();
+                if (elementType == typeof(KnowledgeEntryTextElement))
                 {
 
                     knowledgeEntryView.Children.Insert(index, (new Label
                     {
-                        Text = (string)entry.element
+                        Text = (string)entryElement.Element
                     }));
 
                     index++;
 
                 }
-                else if (entry.type == "image")
+                else if (elementType == typeof(KnowledgeEntryImageElement))
                 {
-
-                    Image currentImage = (Image)entry.element;
+                    string imageSource = (string)entryElement.Element;
+                    Image currentImage = new Image { Source = imageSource};
                     currentImage.Aspect = Aspect.AspectFit;
                     //currentImage.HeightRequest = 300;
                     //currentImage.WidthRequest = 150;
+                    AddTabGestureRecognizerToImage(currentImage, imageSource);
 
-                    addTabGestureRecognizerToImage(entry);
                     knowledgeEntryView.Children.Insert(index, currentImage);
                     index++;
 
                     //Checks if a caption is set. If yes, a new label for the caption will be generated
-                    KnowledgeEntryImageElement imgElem = (KnowledgeEntryImageElement)entry;
+                    KnowledgeEntryImageElement imgElem = (KnowledgeEntryImageElement)entryElement;
                     if (imgElem.Caption != null)
                     {
                         knowledgeEntryView.Children.Insert(index, (new Label
@@ -81,7 +82,7 @@ namespace BFH_USZ_PICC.Views
         }
 
         //this method adds a gesture reognizer to an image. If the image is touched, it will be displayed in it's real size on a new page
-        private void addTabGestureRecognizerToImage(IKnowledgeEntryElement imageElem)
+        private void AddTabGestureRecognizerToImage(Image imageElem, string imageSource)
         {
 
             // Adds a Gesture Regognizer to link a word with the glossary
@@ -90,14 +91,12 @@ namespace BFH_USZ_PICC.Views
             {
                 if (imageElem != null)
                 {
-                    Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { (KnowledgeEntryImageElement)imageElem }));
+                    // TODO: FIX
+                    Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { imageSource }));
                 }
-
             };
 
-            Image image = (Image)imageElem.element;
-
-            image.GestureRecognizers.Add(tapGesture);
+            imageElem.GestureRecognizers.Add(tapGesture);
         }
 
 

@@ -8,7 +8,7 @@ namespace BFH_USZ_PICC.Interfaces
 {
     public interface IKnowledgeEntryElement
     {
-        Object element { get; }
-        string type { get; }
+        int ElementIndex { get; }
+        Object Element { get; }
     }
 }
