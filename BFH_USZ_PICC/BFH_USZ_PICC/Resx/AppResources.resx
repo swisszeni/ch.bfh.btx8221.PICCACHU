@@ -949,4 +949,8 @@
   <data name="FormerPICCPageTitleText" xml:space="preserve">
     <value>Previous PICC detail</value>
   </data>
+  <data name="MaintenaceReminderPageExplanationText" xml:space="preserve">
+    <value>If you want to remind yourself about your catheters care, you can set the necessary settings here.</value>
+    <comment>Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</comment>
+  </data>
 </root>

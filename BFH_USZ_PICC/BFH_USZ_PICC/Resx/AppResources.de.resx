@@ -845,4 +845,8 @@
   <data name="FormerPICCPageTitleText" xml:space="preserve">
     <value>Früherer PICC Detail</value>
   </data>
+  <data name="MaintenaceReminderPageExplanationText" xml:space="preserve">
+    <value>Falls Sie von Ihrer App an die Pflege des Katheters erinnert werden möchten, können Sie hier die notwendigen Einstellungen vornehmen.</value>
+    <comment>Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</comment>
+  </data>
 </root>

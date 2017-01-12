@@ -1053,6 +1053,11 @@
           <source>Previous PICC detail</source>
           <target state="translated">Früherer PICC Detail</target>
         </trans-unit>
+        <trans-unit id="MaintenaceReminderPageExplanationText" translate="yes" xml:space="preserve">
+          <source>If you want to remind yourself about your catheters care, you can set the necessary settings here.</source>
+          <target state="translated">Falls Sie von Ihrer App an die Pflege des Katheters erinnert werden möchten, können Sie hier die notwendigen Einstellungen vornehmen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</note>
+        </trans-unit>
       </group>
     </body>
   </file>

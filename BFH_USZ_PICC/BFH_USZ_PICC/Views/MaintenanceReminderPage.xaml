@@ -11,7 +11,7 @@
     <StackLayout Orientation="Vertical"
                  VerticalOptions="FillAndExpand"
                  Margin="15">
-      <Label Text="Das ist ein Text"/>
+      <Label Text="{i18n:Translate MaintenaceReminderPageExplanationText}"/>
       <Label Text="{i18n:Translate SettingsPageMaintenanceReminderText}"/>
       <Switch IsToggled="{Binding IsReminderSet, Mode=TwoWay}"
               HorizontalOptions = "Start"/>
@@ -31,9 +31,9 @@
         <Picker x:Name="Repetition"
                 SelectedIndex="{Binding ReminderRepetition}"
                 IsEnabled="{Binding IsReminderEditable}"/>
-        <Button Text="{i18n:Translate SettingsPageAddReminderButtonText}"
+        <!--<Button Text="{i18n:Translate SettingsPageAddReminderButtonText}"
                 Command="{Binding AddNotificationsCommand}"
-                IsEnabled="{Binding IsReminderEditable}"/>
+                IsEnabled="{Binding IsReminderEditable}"/>-->
       </StackLayout>
     </StackLayout>
   </ScrollView>

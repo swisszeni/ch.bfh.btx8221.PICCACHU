@@ -1205,6 +1205,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If you want to remind yourself about your catheters care, you can set the necessary settings here..
+        /// </summary>
+        public static string MaintenaceReminderPageExplanationText {
+            get {
+                return ResourceManager.GetString("MaintenaceReminderPageExplanationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maintenance instruction.
         /// </summary>
         public static string MaintenanceInstructionTitleText {
