@@ -124,7 +124,8 @@ namespace BFH_USZ_PICC.Services
                 // create the ID
                 entry.ID = Guid.NewGuid().ToString();
                 res = _database.InsertAsync(entry);
-            } else
+            }
+            else
             {
                 res = _database.UpdateAsync(entry);
             }
@@ -155,7 +156,7 @@ namespace BFH_USZ_PICC.Services
         public async Task<PICC> GetCurrentPICCAsync()
         {
             var currentPicc = await _database.Table<PICC>().Where((x) => x.RemovalDate == null).FirstOrDefaultAsync();
-            if(currentPicc != null)
+            if (currentPicc != null)
             {
                 currentPicc.PICCModel = await _database.Table<PICCModel>().Where((x) => x.ID == currentPicc.PICCModelID).FirstOrDefaultAsync();
             }
@@ -205,11 +206,14 @@ namespace BFH_USZ_PICC.Services
         }
 
         public Task<int> DeltePICCAsync(PICC picc)
-        {   
-                return _database.DeleteAsync(picc);
+        {
+            if (picc.PICCModel != null)
+            {
+                _database.DeleteAsync(picc.PICCModel);
+            }
+            return _database.DeleteAsync(picc);
 
         }
-
         #endregion
     }
 }

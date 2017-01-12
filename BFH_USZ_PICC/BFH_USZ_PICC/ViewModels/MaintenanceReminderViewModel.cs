@@ -93,8 +93,8 @@ namespace BFH_USZ_PICC.ViewModels
         {
             IsReminderEditable = false;
 
-            DateTimeOffset reminderStartDate = ReminderStartDate.Date.ToLocalTime();
-            DateTimeOffset maintenanceReminderStartDateTime = reminderStartDate.Add(ReminderDayTime);
+            DateTimeOffset reminderStartDate = ReminderStartDate.Date;
+            DateTimeOffset maintenanceReminderStartDateTime = reminderStartDate.Add(ReminderDayTime).ToLocalTime();
             maintenanceReminderStartDateTime.ToUniversalTime();
 
             if(ReminderRepetition != 0)
