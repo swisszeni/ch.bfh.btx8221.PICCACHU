@@ -9,8 +9,8 @@
         <trans-unit id="EmergencyFlyoutAssistanceButtonText" translate="yes" xml:space="preserve">
           <source>Solutions</source>
           <target state="translated">Problembehebung</target>
-          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Problembehebung" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Lösungschritte</note>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Problembehebung" übersetzt</note>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
           <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
@@ -50,8 +50,8 @@
         <trans-unit id="DisorderDetailPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorder</source>
           <target state="translated">Problem</target>
-          <note from="MultilingualEditor" annotates="source" priority="4">Wird für besseres Verständis neu mit "Problem" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Störung</note>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird für besseres Verständis neu mit "Problem" übersetzt</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageSymptomLabelText" translate="yes" xml:space="preserve">
           <source>Symptom</source>
@@ -71,8 +71,8 @@
         <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorders</source>
           <target state="translated">Probleme</target>
-          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Probleme" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Störungen</note>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Probleme" übersetzt</note>
         </trans-unit>
         <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
           <source>Issue procedure steps</source>
@@ -222,8 +222,8 @@
         <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
           <source>Journal</source>
           <target state="translated">Meine Notizen</target>
-          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu für bessers Verständnis mit "Meine Notizen" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Journal</note>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu für bessers Verständnis mit "Meine Notizen" übersetzt</note>
         </trans-unit>
         <trans-unit id="SettingsPageAppVersionText" translate="yes" xml:space="preserve">
           <source>App version</source>
@@ -748,13 +748,12 @@
         <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
           <source>Maintenance instruction</source>
           <target state="translated">Pflegeerinnerung</target>
-          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Pflegeerinnerung" übersetzt</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Titel für Wartungsanleitung (Wartungsanleitung)</note>
+          <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Pflegeerinnerung" übersetzt</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
           <source>Guide wire length in cm:</source>
-          <target state="translated">Führungsdrahtslänge in cm:
-</target>
+          <target state="translated">Führungsdrahtslänge in cm:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Führungsdrahtslänge in cm</note>
         </trans-unit>
         <trans-unit id="CancelButtonPressedConfirmationText" translate="yes" xml:space="preserve">
