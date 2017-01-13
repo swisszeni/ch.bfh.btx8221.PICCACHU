@@ -1053,6 +1053,11 @@
           <source>Previous PICC detail</source>
           <target state="translated">Früherer PICC Detail</target>
         </trans-unit>
+        <trans-unit id="MissingCameraAccessWarning" translate="yes" xml:space="preserve">
+          <source>App needs camera access to do this.</source>
+          <target state="translated">Die App benötigt für diese Funktion Zugriff auf die Kamera.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Informiert den Nutzer, dass diese Funktion ohne Zugriff auf die Kamera nicht verfügbar ist</note>
+        </trans-unit>
       </group>
     </body>
   </file>

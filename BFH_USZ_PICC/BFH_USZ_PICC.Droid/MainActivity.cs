@@ -11,6 +11,7 @@ using Xamarin.Forms;
 using HockeyApp.Android;
 using HockeyApp.Android.Metrics;
 using BFH_USZ_PICC.Utilitys;
+using Plugin.Permissions;
 
 [assembly:MetaData("net.hockeyapp.android.appIdentifier", Value=HockeyAppHelper.AppIds.HockeyAppId_Droid)]
 
@@ -34,6 +35,12 @@ namespace BFH_USZ_PICC.Droid
             CheckForUpdates();
         }
 
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            global::ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
         /// <summary>
         /// Registering the platform specific parts of HockeyApp to track events and crashes.
         /// </summary>
@@ -46,7 +53,7 @@ namespace BFH_USZ_PICC.Droid
         /// <summary>
         /// Checks HockeyApp if updats fo the App are available
         /// </summary>
-        void CheckForUpdates()
+        private void CheckForUpdates()
         {
             UpdateManager.Register(this);
         }

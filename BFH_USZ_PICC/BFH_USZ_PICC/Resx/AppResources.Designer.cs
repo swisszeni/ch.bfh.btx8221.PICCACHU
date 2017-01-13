@@ -1295,6 +1295,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to App needs camera access to do this..
+        /// </summary>
+        public static string MissingCameraAccessWarning {
+            get {
+                return ResourceManager.GetString("MissingCameraAccessWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add a new PICC.
         /// </summary>
         public static string MyPICCPageAddNewPICCButtonText {

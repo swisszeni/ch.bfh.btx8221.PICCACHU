@@ -949,4 +949,8 @@
   <data name="FormerPICCPageTitleText" xml:space="preserve">
     <value>Previous PICC detail</value>
   </data>
+  <data name="MissingCameraAccessWarning" xml:space="preserve">
+    <value>App needs camera access to do this.</value>
+    <comment>Informiert den Nutzer, dass diese Funktion ohne Zugriff auf die Kamera nicht verfügbar ist</comment>
+  </data>
 </root>
