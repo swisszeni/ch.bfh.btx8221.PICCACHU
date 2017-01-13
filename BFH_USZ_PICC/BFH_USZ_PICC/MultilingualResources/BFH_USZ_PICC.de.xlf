@@ -1047,7 +1047,8 @@
         </trans-unit>
         <trans-unit id="PICCDetailPagePICCRemovalDateText" translate="yes" xml:space="preserve">
           <source>Removal date:</source>
-          <target state="translated">PICC inaktiv gesetzt am:</target>
+          <target state="translated">Inaktiv gesetzt am:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Datum für Inaktivsetzung, mit Doppelpunkt am Schluss</note>
         </trans-unit>
         <trans-unit id="FormerPICCPageTitleText" translate="yes" xml:space="preserve">
           <source>Previous PICC detail</source>

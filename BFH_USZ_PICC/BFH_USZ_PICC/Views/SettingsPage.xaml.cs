@@ -11,10 +11,15 @@ namespace BFH_USZ_PICC.Views
     {
         public SettingsPage(ContentPage contained) : base(contained)
         {
-            InitializeComponent();
-           
+            InitializeComponent();          
 
         }
-      
+
+        // This method sets the selected picc entry to null (otherwise it would be marked).
+        private void SelectedEntry(object sender, EventArgs e)
+        {
+            SettingsListView.SelectedItem = null;
+        }
+
     }
 }

@@ -945,6 +945,7 @@
   </data>
   <data name="PICCDetailPagePICCRemovalDateText" xml:space="preserve">
     <value>Removal date:</value>
+    <comment>Datum für Inaktivsetzung, mit Doppelpunkt am Schluss</comment>
   </data>
   <data name="FormerPICCPageTitleText" xml:space="preserve">
     <value>Previous PICC detail</value>

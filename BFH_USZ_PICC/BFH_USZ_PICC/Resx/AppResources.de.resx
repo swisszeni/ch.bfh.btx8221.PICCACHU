@@ -840,7 +840,8 @@
     <value>Wollen Sie diesen PICC wirklich von der Datenbank löschen?</value>
   </data>
   <data name="PICCDetailPagePICCRemovalDateText" xml:space="preserve">
-    <value>PICC inaktiv gesetzt am:</value>
+    <value>Inaktiv gesetzt am:</value>
+    <comment>Datum für Inaktivsetzung, mit Doppelpunkt am Schluss</comment>
   </data>
   <data name="FormerPICCPageTitleText" xml:space="preserve">
     <value>Früherer PICC Detail</value>

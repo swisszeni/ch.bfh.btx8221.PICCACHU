@@ -94,8 +94,8 @@ namespace BFH_USZ_PICC.ViewModels
             else
             {
                 SettingsService.ReminderStartDateTime = DateTime.Now;
-                SettingsService.ReminderFrequency = 0;
-                SettingsService.ReminderRepetition = 6;
+                SettingsService.ReminderFrequency = 6;
+                SettingsService.ReminderRepetition = 10;
                 SettingsService.IsReminderSet = IsReminderSet;
 
                 _notifier.RemoveAllNotifications();
