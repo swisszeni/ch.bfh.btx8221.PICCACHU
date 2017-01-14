@@ -9,8 +9,8 @@
         <trans-unit id="EmergencyFlyoutAssistanceButtonText" translate="yes" xml:space="preserve">
           <source>Solutions</source>
           <target state="translated">Problembehebung</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Lösungschritte</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Problembehebung" übersetzt</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Lösungschritte</note>
         </trans-unit>
         <trans-unit id="EmergencyFlyoutTelemedizinDescriptionText" translate="yes" xml:space="preserve">
           <source>If you have any questions regarding your PICC, do not hesitate to contact the USZ hotline.</source>
@@ -50,8 +50,8 @@
         <trans-unit id="DisorderDetailPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorder</source>
           <target state="translated">Problem</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Störung</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Wird für besseres Verständis neu mit "Problem" übersetzt</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Störung</note>
         </trans-unit>
         <trans-unit id="DisorderDetailPageSymptomLabelText" translate="yes" xml:space="preserve">
           <source>Symptom</source>
@@ -71,8 +71,8 @@
         <trans-unit id="DisorderPageTitleText" translate="yes" xml:space="preserve">
           <source>Disorders</source>
           <target state="translated">Probleme</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Störungen</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Probleme" übersetzt</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Störungen</note>
         </trans-unit>
         <trans-unit id="DisorderPageIssueApproachTitleText" translate="yes" xml:space="preserve">
           <source>Issue procedure steps</source>
@@ -222,8 +222,8 @@
         <trans-unit id="JournalOverviewPageTitleText" translate="yes" xml:space="preserve">
           <source>Journal</source>
           <target state="translated">Meine Notizen</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Journal</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Wird neu für bessers Verständnis mit "Meine Notizen" übersetzt</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Journal</note>
         </trans-unit>
         <trans-unit id="SettingsPageAppVersionText" translate="yes" xml:space="preserve">
           <source>App version</source>
@@ -748,8 +748,8 @@
         <trans-unit id="MaintenanceInstructionTitleText" translate="yes" xml:space="preserve">
           <source>Maintenance instruction</source>
           <target state="translated">Pflegeerinnerung</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Titel für Wartungsanleitung (Wartungsanleitung)</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Wird neu zum besseren Verständnis mit "Pflegeerinnerung" übersetzt</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel für Wartungsanleitung (Wartungsanleitung)</note>
         </trans-unit>
         <trans-unit id="PICCDetailPageGuideWireLenghtText" translate="yes" xml:space="preserve">
           <source>Guide wire length in cm:</source>
@@ -1057,6 +1057,18 @@
           <source>If you want to remind yourself about your catheters care, you can set the necessary settings here.</source>
           <target state="translated">Falls Sie von Ihrer App an die Pflege des Katheters erinnert werden möchten, können Sie hier die notwendigen Einstellungen vornehmen.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</note>
+        </trans-unit>
+        <trans-unit id="DiscalimerPageDisclaimerText" translate="yes" xml:space="preserve">
+          <source>Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+
+Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la peris eatibusam is aut autem imporum soluptatium coritas perepratem doluptas sitatur atium, ilitat velenihictem eaquas molor serit doloratiis abo.</source>
+          <target state="translated">Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+
+Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la peris eatibusam is aut autem imporum soluptatium coritas perepratem doluptas sitatur atium, ilitat velenihictem eaquas molor serit doloratiis abo.</target>
+        </trans-unit>
+        <trans-unit id="DiscalimerPageTitle" translate="yes" xml:space="preserve">
+          <source>Disclaimer</source>
+          <target state="translated">Haftungsausschluss</target>
         </trans-unit>
       </group>
     </body>

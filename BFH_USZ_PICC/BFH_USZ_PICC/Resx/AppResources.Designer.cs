@@ -656,6 +656,26 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+        ///
+        ///Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DiscalimerPageDisclaimerText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageDisclaimerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disclaimer.
+        /// </summary>
+        public static string DiscalimerPageTitle {
+            get {
+                return ResourceManager.GetString("DiscalimerPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
         public static string DisorderDetailPageActionLabelText {

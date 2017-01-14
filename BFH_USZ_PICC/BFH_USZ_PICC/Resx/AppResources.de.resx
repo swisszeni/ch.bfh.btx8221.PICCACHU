@@ -605,8 +605,7 @@
     <comment>Titel für Wartungsanleitung (Wartungsanleitung)</comment>
   </data>
   <data name="PICCDetailPageGuideWireLenghtText" xml:space="preserve">
-    <value>Führungsdrahtslänge in cm:
-</value>
+    <value>Führungsdrahtslänge in cm:</value>
     <comment>Führungsdrahtslänge in cm</comment>
   </data>
   <data name="CancelButtonPressedConfirmationText" xml:space="preserve">
@@ -849,5 +848,13 @@
   <data name="MaintenaceReminderPageExplanationText" xml:space="preserve">
     <value>Falls Sie von Ihrer App an die Pflege des Katheters erinnert werden möchten, können Sie hier die notwendigen Einstellungen vornehmen.</value>
     <comment>Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</comment>
+  </data>
+  <data name="DiscalimerPageDisclaimerText" xml:space="preserve">
+    <value>Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+
+Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la peris eatibusam is aut autem imporum soluptatium coritas perepratem doluptas sitatur atium, ilitat velenihictem eaquas molor serit doloratiis abo.</value>
+  </data>
+  <data name="DiscalimerPageTitle" xml:space="preserve">
+    <value>Haftungsausschluss</value>
   </data>
 </root>

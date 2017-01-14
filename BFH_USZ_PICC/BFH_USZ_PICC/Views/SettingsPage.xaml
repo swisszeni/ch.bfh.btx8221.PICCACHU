@@ -13,7 +13,7 @@
               ItemSelected="SelectedEntry">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
+                <!--<ViewCell>
                     <Grid Margin="15,0,15,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -27,20 +27,9 @@
                                FontSize="14"
                                TextColor="Gray" />
                     </Grid>
-                </ViewCell>
-                <!--<TextCell Text="{Binding Title}"/>-->
+                </ViewCell>-->
+                <TextCell Text="{Binding Title}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
-    <!--<StackLayout Margin="15">
-    <Label Text="{i18n:Translate SettingsPageAppVersionText}"/>
-    <Label Text="PICCACHU Version 1.0"/>
-    <Button Style="{StaticResource ButtonStyleGray}"
-            Text="{i18n:Translate SettingsPageMaintenanceReminderText}"
-            Command="{Binding MoveToMasterMaintenanceReminderPageCommand}" />
-    <Button Style="{StaticResource ButtonStyleGray}"
-            Text="{i18n:Translate SettingsPagePersonalDataButtonText}"
-            Command="{Binding MoveToMasterDataPageCommand}" />
-  </StackLayout>-->
 </d:BaseContentPage>

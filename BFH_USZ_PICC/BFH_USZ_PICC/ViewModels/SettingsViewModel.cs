@@ -17,12 +17,12 @@ namespace BFH_USZ_PICC.ViewModels
 
     public class SettingsNavigationMenuItem
     {
-        public SettingsMenuItemKey MenuItemKey { get; set; }      
+        public SettingsMenuItemKey MenuItemKey { get; set; }
         public string Title { get; set; }
         public string Details { get; set; }
 
         public SettingsNavigationMenuItem() { }
-       
+
     }
 
     public enum SettingsMenuItemKey
@@ -30,16 +30,17 @@ namespace BFH_USZ_PICC.ViewModels
         MasterData,
         MaintenanceReminder,
         Disclaimer,
-        
+
     }
     public class SettingsViewModel : ViewModelBase
-    {      
-        public SettingsViewModel() {
+    {
+        public SettingsViewModel()
+        {
 
             SettingsList = new List<SettingsNavigationMenuItem>();
             SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, MenuItemKey = SettingsMenuItemKey.MasterData });
             SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder });
-           
+            SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, MenuItemKey = SettingsMenuItemKey.Disclaimer });
         }
 
 
@@ -59,42 +60,25 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 Set(() => SelectedEntry, ref _selectedEntry, value);
 
-                if(value != null)
+                if (value != null)
                 {
                     int key = (int)value.MenuItemKey;
                     switch (key)
                     {
                         case (int)SettingsMenuItemKey.MasterData:
-                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false })); 
+                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
                             return;
                         case (int)SettingsMenuItemKey.MaintenanceReminder:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceReminderPage)));
                             return;
                         case (int)SettingsMenuItemKey.Disclaimer:
-                            
+                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisclaimerPage)));
                             return;
-                    }                   
+                    }
                 }
 
             }
         }
 
-
-        //private RelayCommand _moveToMasterDataPageCommand;
-        //public RelayCommand MoveToMasterDataPageCommand => _moveToMasterDataPageCommand ?? (_moveToMasterDataPageCommand = new RelayCommand(() =>
-        //{
-        //    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
-
-        //}));
-
-        //private RelayCommand _moveToMasterMaintenanceReminderPageCommand;
-        //public RelayCommand MoveToMasterMaintenanceReminderPageCommand => _moveToMasterMaintenanceReminderPageCommand ?? (_moveToMasterMaintenanceReminderPageCommand = new RelayCommand(() =>
-        //{
-        //    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceReminderPage)));
-
-        //}));
-
-       
-        
     }
 }
