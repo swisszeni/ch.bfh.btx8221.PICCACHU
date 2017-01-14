@@ -1,5 +1,5 @@
 ﻿using BFH_USZ_PICC.Interfaces;
-
+using BFH_USZ_PICC.Models;
 using Xamarin.Forms;
 
 namespace BFH_USZ_PICC
@@ -40,6 +40,8 @@ namespace BFH_USZ_PICC
                 var ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
                 // set the RESX for resource localization
                 Resx.AppResources.Culture = ci;
+                // set the MultilingualString for content localization
+                MultilingualString.Culture = ci;
                 // set the Thread for locale-aware methods
                 DependencyService.Get<ILocalize>().SetLocale(ci);
             }

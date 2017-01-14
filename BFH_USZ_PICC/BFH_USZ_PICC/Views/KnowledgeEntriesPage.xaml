@@ -8,7 +8,7 @@
                    BindingContext="{Binding [KnowledgeEntriesViewModel], Source={StaticResource ViewModelLocator}}">
     <ListView x:Name="KnowledgeList"
               HorizontalOptions="CenterAndExpand"
-              GroupDisplayBinding="{Binding Title}"
+              GroupDisplayBinding="{Binding LocalizedTitle}"
               GroupShortNameBinding="{Binding ShortName}"
               ItemsSource="{Binding KnowledgeEntriesList}"
               SelectedItem="{Binding SelectedKnowledgeEntry, Mode=TwoWay}"

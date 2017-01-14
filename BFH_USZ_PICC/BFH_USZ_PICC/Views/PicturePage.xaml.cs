@@ -15,12 +15,12 @@ namespace BFH_USZ_PICC.Views
         //Counts the tabs on the displayed image
         int tapCount = 1;
 
-        public PicturePage(ContentPage contained, KnowledgeEntryImageElement source) : base(contained)
+        public PicturePage(ContentPage contained, string imageSource) : base(contained)
         {
             InitializeComponent();
            
             // Cast the ImageElemnt first to a KnowledgeEntryElement and cast its source to an Image
-            SelectedImage.Source = ((Image)((IKnowledgeEntryElement)source).element).Source;
+            SelectedImage.Source = imageSource;
 
             // Adds a Gesture Regognizer to the loaded picutre
             TapGestureRecognizer tapGesture = new TapGestureRecognizer();
@@ -37,11 +37,12 @@ namespace BFH_USZ_PICC.Views
             SelectedImage.GestureRecognizers.Add(tapGesture);
 
             // Checks if the ImageElement has a caption and add it to the label
-            if (source.Caption != null)
-            {
-                SelectedImageCaption.IsVisible = true;
-                SelectedImageCaption.Text = source.Caption;
-            }
+            // TODO: FIX caption
+            //if (source.Caption != null)
+            //{
+            //    SelectedImageCaption.IsVisible = true;
+            //    SelectedImageCaption.Text = source.Caption;
+            //}
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using Realms;
+﻿using BFH_USZ_PICC.Interfaces;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Models
-{ 
+{
     public enum Gender
     {
         Unspecified,
@@ -14,6 +15,9 @@ namespace BFH_USZ_PICC.Models
         Female
     }
 
+    /// <summary>
+    /// The Masterdata of the App user. Normaly, there is only one
+    /// </summary>
     public class UserMasterData
     {
         public UserMasterData() { }
@@ -47,7 +51,10 @@ namespace BFH_USZ_PICC.Models
         public DateTimeOffset? Birthdate { get; set; }
     }
 
-    public class UserMasterDataRO : RealmObject
+    /// <summary>
+    /// Corresponding Realm storage class for UserMasterData
+    /// </summary>
+    public class UserMasterDataRO : RealmObject, ILoadableRealmObject
     {
         [Realms.PrimaryKey]
         public int ID { get; set; }
@@ -62,19 +69,28 @@ namespace BFH_USZ_PICC.Models
         public string Mobile { get; set; }
         public DateTimeOffset? Birthdate { get; set; }
 
-        public void LoadDataFromModelObject(UserMasterData modelObject)
+        public void LoadDataFromModelObject(object model)
         {
-            ID = modelObject.ID;
-            GenderInt = (int)modelObject.Gender;
-            Surname = modelObject.Surname;
-            Name = modelObject.Name;
-            Street = modelObject.Street;
-            Zip = modelObject.Zip;
-            City = modelObject.City;
-            Email = modelObject.Email;
-            Phone = modelObject.Phone;
-            Mobile = modelObject.Mobile;
-            Birthdate = modelObject.Birthdate;
+            if (model.GetType() == typeof(UserMasterData))
+            {
+                var modelObject = (UserMasterData)model;
+                ID = modelObject.ID;
+                GenderInt = (int)modelObject.Gender;
+                Surname = modelObject.Surname;
+                Name = modelObject.Name;
+                Street = modelObject.Street;
+                Zip = modelObject.Zip;
+                City = modelObject.City;
+                Email = modelObject.Email;
+                Phone = modelObject.Phone;
+                Mobile = modelObject.Mobile;
+                Birthdate = modelObject.Birthdate;
+            }
+            else
+            {
+                // Passed wrong model to load from
+                throw new InvalidCastException();
+            }
         }
     }
 }

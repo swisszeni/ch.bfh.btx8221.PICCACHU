@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Interfaces
 {
+    public interface ILoadableRealmObject
+    {
+        void LoadDataFromModelObject(object entry);
+    }
+
     public interface ILoadableJournalEntryRealmObject
     {
         string ID { get; set; }

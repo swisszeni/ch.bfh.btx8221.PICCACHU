@@ -68,7 +68,7 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _toggleTextToVoiceCommand;
         public RelayCommand ToggleTextToVoiceCommand => _toggleTextToVoiceCommand ?? (_toggleTextToVoiceCommand = new RelayCommand(() =>
         {
-
+            // TODO: FIX
             CrossTextToSpeech.Current.Speak(MaintenanceInstruction?.InstructionSteps.ElementAt(CarouselPosition).Explanation);
             //Check if the user really wants to leave the page
             //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
