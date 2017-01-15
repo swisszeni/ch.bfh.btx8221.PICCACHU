@@ -1069,6 +1069,7 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
         <trans-unit id="DiscalimerPageTitle" translate="yes" xml:space="preserve">
           <source>Disclaimer</source>
           <target state="translated">Haftungsausschluss</target>
+        </trans-unit>
         <trans-unit id="MissingCameraAccessWarning" translate="yes" xml:space="preserve">
           <source>App needs camera access to do this.</source>
           <target state="translated">Die App benötigt für diese Funktion Zugriff auf die Kamera.</target>
