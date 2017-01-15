@@ -856,6 +856,7 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
   </data>
   <data name="DiscalimerPageTitle" xml:space="preserve">
     <value>Haftungsausschluss</value>
+  </data>
   <data name="MissingCameraAccessWarning" xml:space="preserve">
     <value>Die App benötigt für diese Funktion Zugriff auf die Kamera.</value>
     <comment>Informiert den Nutzer, dass diese Funktion ohne Zugriff auf die Kamera nicht verfügbar ist</comment>
