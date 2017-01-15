@@ -15,7 +15,8 @@
     </Grid.Resources>
     <ScrollView>
         <StackLayout Orientation="Vertical"
-                     VerticalOptions="FillAndExpand">
+                     VerticalOptions="FillAndExpand"
+                     Margin="15">
             <StackLayout Orientation="Horizontal"
                          VerticalOptions="Center">
                 <Button x:Name="EditButton"

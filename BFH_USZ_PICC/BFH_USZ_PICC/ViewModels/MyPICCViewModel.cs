@@ -43,8 +43,9 @@ namespace BFH_USZ_PICC.ViewModels
         public async void PopulatePICCsAsync()
         {
             CurrentPICC = await _dataService.GetCurrentPICCAsync();
-                                    
-            PreviousPICC = await _dataService.GetFormerPICCsAsync();
+
+            var previousPICCListUnsorted = await _dataService.GetFormerPICCsAsync();
+            PreviousPICC = previousPICCListUnsorted.OrderByDescending((x) => x.RemovalDate).ThenBy((x) => x.PICCModel.PICCName).ToList();          
         }
 
         #endregion

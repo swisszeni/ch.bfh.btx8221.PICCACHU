@@ -11,7 +11,8 @@
             <!--Converters-->
             <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
             <utilitys:GuideWireLenghtToTextConverter x:Key="GuideWireLenghtToTextConverter" />
-
+            <utilitys:RemovalDateToTextConverter x:Key="RemovalDateToTextConverter" />
+            
             <!--General App Colors-->
             <Color x:Key="ColorButtonBackgroundGrey">#D6D7D7</Color>
             <Color x:Key="ColorButtonBackgroundBlue">#004B86</Color>

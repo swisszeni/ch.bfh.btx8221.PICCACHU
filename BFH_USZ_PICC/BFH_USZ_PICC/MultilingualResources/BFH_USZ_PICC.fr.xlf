@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en" target-language="fr" original="BFH_USZ_PICC/RESX/APPRESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
@@ -1043,11 +1043,28 @@
         <trans-unit id="PICCDetailPagePICCRemovalDateText" translate="yes" xml:space="preserve">
           <source>Removal date:</source>
           <target state="new">Removal date:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Datum für Inaktivsetzung, mit Doppelpunkt am Schluss</note>
         </trans-unit>
         <trans-unit id="FormerPICCPageTitleText" translate="yes" xml:space="preserve">
           <source>Previous PICC detail</source>
           <target state="new">Previous PICC detail</target>
         </trans-unit>
+        <trans-unit id="MaintenaceReminderPageExplanationText" translate="yes" xml:space="preserve">
+          <source>If you want to remind yourself about your catheters care, you can set the necessary settings here.</source>
+          <target state="new">If you want to remind yourself about your catheters care, you can set the necessary settings here.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</note>
+        </trans-unit>
+        <trans-unit id="DiscalimerPageDisclaimerText" translate="yes" xml:space="preserve">
+          <source>Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+
+Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la peris eatibusam is aut autem imporum soluptatium coritas perepratem doluptas sitatur atium, ilitat velenihictem eaquas molor serit doloratiis abo.</source>
+          <target state="new">Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+
+Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la peris eatibusam is aut autem imporum soluptatium coritas perepratem doluptas sitatur atium, ilitat velenihictem eaquas molor serit doloratiis abo.</target>
+        </trans-unit>
+        <trans-unit id="DiscalimerPageTitle" translate="yes" xml:space="preserve">
+          <source>Disclaimer</source>
+          <target state="new">Disclaimer</target>
         <trans-unit id="MissingCameraAccessWarning" translate="yes" xml:space="preserve">
           <source>App needs camera access to do this.</source>
           <target state="new">App needs camera access to do this.</target>

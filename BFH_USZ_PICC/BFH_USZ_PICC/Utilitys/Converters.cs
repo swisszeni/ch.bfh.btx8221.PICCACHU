@@ -631,7 +631,7 @@ namespace BFH_USZ_PICC.Utilitys
                     return 1;
                 case Gender.Female:
                     return 2;
-                
+
             }
             return 0;
         }
@@ -652,7 +652,7 @@ namespace BFH_USZ_PICC.Utilitys
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double lengt = (double)value;
-          
+
             if (lengt > 1)
             {
                 return AppResources.PICCDetailPageGuideWireLenghtText + " " + lengt;
@@ -668,5 +668,30 @@ namespace BFH_USZ_PICC.Utilitys
 
         #endregion
     }
+
+    #region RemovalDateToTextConverter
+    public class RemovalDateToTextConverter : IValueConverter
+    {
+        #region IValueConverter implementation
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value.GetType() != typeof(DateTime) && value.GetType() != typeof(DateTimeOffset))
+            {
+                return null;
+            }
+
+            return String.Format("{0} {1:dd/MM/yy}", AppResources.PICCDetailPagePICCRemovalDateText, value);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (DateTime)value;
+        }
+
+        #endregion
+    }
+    #endregion
+
 }
 
