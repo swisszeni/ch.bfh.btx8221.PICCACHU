@@ -904,6 +904,11 @@
     <AndroidResource Include="Resources\drawable\disorder_icon.png" />
     <AndroidResource Include="Resources\drawable\journal_icon.png" />
     <AndroidResource Include="Resources\drawable\knowledge_icon.png" />
+    <AndroidResource Include="Resources\drawable\usz_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\usz_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\usz_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\usz_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\usz_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />

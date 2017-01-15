@@ -213,12 +213,14 @@ namespace BFH_USZ_PICC.Services
             // We want to navigate to one of the main menu entries
             // First check if we not already are on this menu entry
             Type pageType = GetPageTypeForMenuKey(key);
-            if (pageType != (mainPage.Detail as NavigationPage)?.CurrentPage.GetType())
+            if (pageType != ((mainPage.Detail as NavigationPage)?.CurrentPage as BasePage)?.GetContentType())
             {
                 var page = new BasePage(pageType);
                 (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
                 mainPage.Detail = new USZ_PICC_NavigationPage(page);
             }
+
+            mainPage.IsPresented = false;
 
             return Task.FromResult(true);
         }

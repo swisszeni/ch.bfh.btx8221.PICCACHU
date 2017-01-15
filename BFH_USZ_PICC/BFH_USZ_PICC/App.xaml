@@ -16,6 +16,7 @@
             <Color x:Key="ColorAlertRed">#A30001</Color>
             <Color x:Key="ColorUSZBlue">#0057A2</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorBlack">#000000</Color>
 
             <Color x:Key="ColorButtonBackgroundGrey">#D6D7D7</Color>
             <Color x:Key="ColorButtonBackgroundBlue">#004B86</Color>
@@ -25,14 +26,13 @@
 
             <Color x:Key="ColorTextLightGrey">#004B86</Color>
             <Color x:Key="ColorTextDarkGrey">Gray</Color>
-            <Color x:Key="ColorTextBlack">#000000</Color>
             <Color x:Key="ColorTextBlue">#004B86</Color>
 
             <!--General App Styles-->
             <Style x:Key="LabelStyleTitle"
                    TargetType="Label">
                 <Setter Property="TextColor"
-                        Value="{StaticResource ColorTextBlack}" />
+                        Value="{StaticResource ColorBlack}" />
                 <Setter Property="FontSize"
                         Value="20" />
             </Style>
@@ -48,7 +48,7 @@
             <Style x:Key="LabelStyleContent"
                    TargetType="Label">
                 <Setter Property="TextColor"
-                        Value="{StaticResource ColorTextBlack}" />
+                        Value="{StaticResource ColorBlack}" />
                 <Setter Property="FontSize"
                         Value="14" />
             </Style>

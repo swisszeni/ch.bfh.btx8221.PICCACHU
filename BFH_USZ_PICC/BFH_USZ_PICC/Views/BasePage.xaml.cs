@@ -31,6 +31,11 @@ namespace BFH_USZ_PICC.Views
             ToolbarItems.Add(alert);
         }
 
+        public Type GetContentType()
+        {
+            return _content?.GetType();
+        }
+
         #region Navigation Events
 
         protected override void OnAppearing()
