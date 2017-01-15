@@ -11,6 +11,9 @@ namespace BFH_USZ_PICC
         {
             InitializeComponent();
 
+            // Adding the ViewModelLocatory programmatically, since it is cumbersome to instanciate a Singelton in XAML
+            Application.Current.Resources.Add("ViewModelLocator", ViewModelLocator.Instance);
+
             if (Device.OS == TargetPlatform.Windows)
             {
                 InitNavigation();

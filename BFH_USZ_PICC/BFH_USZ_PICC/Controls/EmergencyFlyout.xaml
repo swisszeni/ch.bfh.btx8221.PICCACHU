@@ -1,41 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Controls.EmergencyFlyout" 
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             xmlns:local="clr-namespace:BFH_USZ_PICC.Controls;assembly=BFH_USZ_PICC.Controls"
-             RowSpacing="0">
-    <Grid.Resources>
-        <ResourceDictionary>
-            <Color x:Key="AlertRed">#A30001</Color>
-        </ResourceDictionary>
-    </Grid.Resources>
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="BFH_USZ_PICC.Controls.EmergencyFlyout"
+      xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+      xmlns:local="clr-namespace:BFH_USZ_PICC.Controls;assembly=BFH_USZ_PICC.Controls"
+      RowSpacing="0">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
     </Grid.RowDefinitions>
-    <StackLayout BackgroundColor="{StaticResource AlertRed}" Padding="20" Opacity="1" Grid.Row="0">
-        <Label Text="{i18n:Translate EmergencyFlyoutTitleText}" TextColor="White" FontSize="20"/>
-        <Label Text="{i18n:Translate PICCAssistanceDescriptionText}" TextColor="White" >
+    <StackLayout BackgroundColor="{StaticResource ColorAlertRed}"
+                 Padding="20"
+                 Opacity="1"
+                 Grid.Row="0">
+        <Label Text="{i18n:Translate EmergencyFlyoutTitleText}"
+               TextColor="White"
+               FontSize="20" />
+        <Label Text="{i18n:Translate PICCAssistanceDescriptionText}"
+               TextColor="White">
             <Label.Margin>
                 <OnPlatform x:TypeArguments="Thickness"
-            iOS="0, 15, 0, 0"
-            Android="0, 15, 0, 0"
-            WinPhone="0, 15, 0, 0" />
+                            iOS="0, 15, 0, 0"
+                            Android="0, 15, 0, 0"
+                            WinPhone="0, 15, 0, 0" />
             </Label.Margin>
         </Label>
-        <Button x:Uid="DisorderButton" Text="{i18n:Translate EmergencyFlyoutAssistanceButtonText}" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="DisorderButton_Clicked"/>
-        <Label Text="{i18n:Translate EmergencyFlyoutTelemedizinDescriptionText}" TextColor="White" >
+        <Button x:Uid="DisorderButton"
+                Text="{i18n:Translate EmergencyFlyoutAssistanceButtonText}"
+                BackgroundColor="White"
+                TextColor="{StaticResource ColorAlertRed}"
+                Clicked="DisorderButton_Clicked" />
+        <Label Text="{i18n:Translate EmergencyFlyoutTelemedizinDescriptionText}"
+               TextColor="White">
             <Label.Margin>
                 <OnPlatform x:TypeArguments="Thickness"
-            iOS="0, 15, 0, 0"
-            Android="0, 15, 0, 0"
-            WinPhone="0, 15, 0, 0" />
+                            iOS="0, 15, 0, 0"
+                            Android="0, 15, 0, 0"
+                            WinPhone="0, 15, 0, 0" />
             </Label.Margin>
         </Label>
-        <Button x:Uid="CallUSZTelemedizinButton" Text="{i18n:Translate CallUSZTelemedizinButtonText}" BackgroundColor="White" TextColor="{StaticResource AlertRed}" Clicked="CallUSZTelemedizinButton_Clicked"/>
+        <Button x:Uid="CallUSZTelemedizinButton"
+                Text="{i18n:Translate CallUSZTelemedizinButtonText}"
+                BackgroundColor="White"
+                TextColor="{StaticResource ColorAlertRed}"
+                Clicked="CallUSZTelemedizinButton_Clicked" />
     </StackLayout>
-    <Grid x:Name="BackgroundGrid" Grid.Row="1" Opacity="0.7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Gray" />
+    <Grid x:Name="BackgroundGrid"
+          Grid.Row="1"
+          Opacity="0.7"
+          HorizontalOptions="Fill"
+          VerticalOptions="Fill"
+          BackgroundColor="Gray" />
 </Grid>
 
 

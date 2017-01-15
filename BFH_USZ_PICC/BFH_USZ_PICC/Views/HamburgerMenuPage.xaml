@@ -8,11 +8,29 @@
     <Grid>
         <Grid.BackgroundColor>
             <helpers:OnCustomPlatform x:TypeArguments="Color"
-                                      Android="Blue"
-                                      iOS="Blue"
+                                      Android="{StaticResource ColorUSZBlue}"
+                                      iOS="{StaticResource ColorUSZBlue}"
                                       WinPhone="Transparent"
                                       Windows="Transparent" />
         </Grid.BackgroundColor>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--APP LOGO-->
+        
+        <!--MENU-->
+        <ListView Grid.Row="1"
+                  CachingStrategy="RecycleElement"
+                  VerticalOptions="StartAndExpand">
+            
+        </ListView>
+        
+        <!--SETTINGS-->
+        <Button Grid.Row="2" Text="Logout"
+                BorderRadius="0"
+                BorderWidth="0" />
     </Grid>
 </ContentPage>
     

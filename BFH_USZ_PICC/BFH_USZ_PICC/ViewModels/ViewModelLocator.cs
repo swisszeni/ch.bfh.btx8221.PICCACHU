@@ -15,7 +15,7 @@ using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    public class ViewModelLocator : DynamicObject
+    public sealed class ViewModelLocator : DynamicObject
     {
         private static ViewModelResolver _resolver;
 

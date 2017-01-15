@@ -28,7 +28,7 @@ namespace BFH_USZ_PICC.Controls
 
         private void Init()
         {
-            BarBackgroundColor = Color.FromHex("#0057A2");
+            BarBackgroundColor = (Color)Application.Current.Resources["ColorUSZBlue"];
             BarTextColor = Color.White;
             Pushed += Content_Pushed;
             Popped += Content_Popped;
