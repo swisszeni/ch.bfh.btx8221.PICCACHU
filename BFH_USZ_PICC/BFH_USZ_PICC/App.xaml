@@ -9,7 +9,8 @@
             <!--Converters-->
             <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
             <utilitys:GuideWireLenghtToTextConverter x:Key="GuideWireLenghtToTextConverter" />
-
+            <utilitys:RemovalDateToTextConverter x:Key="RemovalDateToTextConverter" />
+            
             <!--General App Colors-->
             <Color x:Key="ColorAlertRed">#A30001</Color>
             <Color x:Key="ColorUSZBlue">#0057A2</Color>

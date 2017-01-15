@@ -107,7 +107,7 @@
                     <DataTemplate>
                         <TextCell x:Name="FormerPICCCell"
                                   Text="{Binding PICCModel.PICCName}"
-                                  Detail="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}">
+                                  Detail="{Binding RemovalDate, Converter={StaticResource RemovalDateToTextConverter}}">
                             <TextCell.ContextActions>
                                 <MenuItem  Text="{i18n:Translate DeleteButtonText}"
                                            IsDestructive="True"
@@ -117,6 +117,7 @@
                                 </MenuItem>
                             </TextCell.ContextActions>
                         </TextCell>
+                      
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

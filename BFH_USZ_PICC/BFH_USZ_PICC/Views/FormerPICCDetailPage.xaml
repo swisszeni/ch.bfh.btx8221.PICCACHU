@@ -9,7 +9,8 @@
              BindingContext="{Binding [FormerPICCDetailViewModel], Source={StaticResource ViewModelLocator}}">
   <ScrollView>
     <StackLayout Orientation="Vertical"
-                 VerticalOptions="FillAndExpand" >
+                 VerticalOptions="FillAndExpand" 
+                 Margin="15">
       <Label Text="{i18n:Translate PICCDetailPagePICCModelNameText}"/>
       <Label Text="{Binding PiccName}"/>
       <Image x:Name="PiccImage"
@@ -35,6 +36,11 @@
       <Label Text="{i18n:Translate PICCDetailPagePICCRemovalDateText}"/>
       <Label Text="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}"
              IsVisible="{Binding IsRemovalDateSet}"/>
+      <Button x:Name="DeleteButton"
+        Text="{i18n:Translate DeleteButtonText}"
+        Command="{Binding DeleteButtonCommand}"
+        IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"
+        HorizontalOptions="FillAndExpand"/>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

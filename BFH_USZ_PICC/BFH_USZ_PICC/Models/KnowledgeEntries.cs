@@ -26,7 +26,7 @@ namespace BFH_USZ_PICC.Models
             {
                 KnowledgeEntryTypeGroup generalGroup = new KnowledgeEntryTypeGroup("Allgemein", "Allgemein");
                 KnowledgeEntryTypeGroup homeGroup = new KnowledgeEntryTypeGroup("Zuhause", "Zuhause");
-                KnowledgeEntryTypeGroup maintenanceInstructionsGroup = new KnowledgeEntryTypeGroup("Wartungsanleitungen", "Wartungsanleitungen");
+                KnowledgeEntryTypeGroup maintenanceInstructionsGroup = new KnowledgeEntryTypeGroup("Pflegeanleitungen", "Pflegeanleitungen");
                 knowledgeEntryList = new List<KnowledgeEntryTypeGroup> { generalGroup, homeGroup, maintenanceInstructionsGroup };
 
                 // "Was ist ein PICC?" page information

@@ -27,6 +27,7 @@ namespace BFH_USZ_PICC.iOS
         {
             InitializeHockeyApp();
             global::Xamarin.Forms.Forms.Init();
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new BFH_USZ_PICC.Application());
 
             // Request notification permissions from the user

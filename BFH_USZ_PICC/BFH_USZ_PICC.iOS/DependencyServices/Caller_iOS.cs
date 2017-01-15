@@ -20,15 +20,22 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             {
                 CTTelephonyNetworkInfo netInfo = new CTTelephonyNetworkInfo();
                 string mnc =  netInfo.SubscriberCellularProvider.MobileNetworkCode;
-                return !(mnc.Length == 0 || mnc == "65535");
+                return !(mnc == null || mnc.Length == 0 || mnc == "65535");
             }
             else { return false; }
         }
 
         public bool Dial(string number)
         {
-            return UIApplication.SharedApplication.OpenUrl(
-                new NSUrl("tel:" + number));
+            try
+            {
+                UIApplication.SharedApplication.OpenUrl(new NSUrl($"telprompt://{number}"), new NSDictionary(), null);
+            } catch (Exception e)
+            {
+                var test = e;
+            }
+            
+            return true;
         }
     }
 }

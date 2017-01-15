@@ -656,6 +656,26 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+        ///
+        ///Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DiscalimerPageDisclaimerText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageDisclaimerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disclaimer.
+        /// </summary>
+        public static string DiscalimerPageTitle {
+            get {
+                return ResourceManager.GetString("DiscalimerPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
         public static string DisorderDetailPageActionLabelText {
@@ -1205,6 +1225,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If you want to remind yourself about your catheters care, you can set the necessary settings here..
+        /// </summary>
+        public static string MaintenaceReminderPageExplanationText {
+            get {
+                return ResourceManager.GetString("MaintenaceReminderPageExplanationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maintenance instruction.
         /// </summary>
         public static string MaintenanceInstructionTitleText {
@@ -1291,6 +1320,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string MicroClaveChangingEntryRoutineText {
             get {
                 return ResourceManager.GetString("MicroClaveChangingEntryRoutineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to App needs camera access to do this..
+        /// </summary>
+        public static string MissingCameraAccessWarning {
+            get {
+                return ResourceManager.GetString("MissingCameraAccessWarning", resourceCulture);
             }
         }
         

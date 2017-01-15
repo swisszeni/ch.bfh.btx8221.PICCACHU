@@ -130,17 +130,7 @@ namespace BFH_USZ_PICC.ViewModels
         #endregion
 
         #region public properties
-
-        /// <summary>
-        /// Checks if parameters should be editable or not
-        /// </summary>
-        private bool _isUserInputEnabled;
-        public bool IsUserInputEnabled
-        {
-            get { return _isUserInputEnabled; }
-            set { Set(ref _isUserInputEnabled, value); }
-        }
-
+        
         private string _piccName;
         public string PiccName
         {
@@ -251,6 +241,20 @@ namespace BFH_USZ_PICC.ViewModels
 
         #endregion
 
+
+        #region relay commands
+
+        private RelayCommand _deleteButtonCommand;
+        public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
+        {
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+            {
+                await _dataService.DeltePICCAsync(_displayingPICC);
+                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+            }
+        }));
+
+        #endregion
 
     }
 }
