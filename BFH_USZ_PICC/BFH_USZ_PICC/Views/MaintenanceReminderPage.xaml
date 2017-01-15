@@ -31,9 +31,6 @@
         <Picker x:Name="Repetition"
                 SelectedIndex="{Binding ReminderRepetition}"
                 IsEnabled="{Binding IsReminderEditable}"/>
-        <!--<Button Text="{i18n:Translate SettingsPageAddReminderButtonText}"
-                Command="{Binding AddNotificationsCommand}"
-                IsEnabled="{Binding IsReminderEditable}"/>-->
       </StackLayout>
     </StackLayout>
   </ScrollView>

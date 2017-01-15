@@ -20,7 +20,6 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             noti.AlertBody = body;
             noti.AlertLaunchImage = "Icon.png";
 
-            //DateTimeOffset maintenanceReminderStartDateTimeToLocalTime = maintenanceReminderStartDateTime.ToLocalTime();
             NSDate startDateTime = DateTimeToNSDate(maintenanceReminderStartDateTime);
             
             double reminderIntervalInSeconds = DAILYSECONDS * intervalInDays;
