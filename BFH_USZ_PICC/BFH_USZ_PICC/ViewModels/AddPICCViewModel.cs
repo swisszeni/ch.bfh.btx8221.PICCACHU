@@ -3,6 +3,8 @@ using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -86,6 +88,33 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _scanButtonCommand;
         public RelayCommand ScanButtonCommand => _scanButtonCommand ?? (_scanButtonCommand = new RelayCommand(async () =>
         {
+            // Check if we have permission to access the cam
+            var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            if (status != PermissionStatus.Granted)
+            {
+                // We need permission to acces the camera!
+                if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
+                {
+                    await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.FailedText, AppResources.MissingCameraAccessWarning, AppResources.OkButtonText);
+                }
+
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera });
+                status = results[Permission.Camera];
+            }
+
+            if (status == PermissionStatus.Granted)
+            {
+                // Permission granted, show the scan page
+                ShowScanPage();
+            }
+            else if (status != PermissionStatus.Unknown)
+            {
+                await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.FailedText, AppResources.MissingCameraAccessWarning, AppResources.OkButtonText);
+            }
+        }));
+
+        private async void ShowScanPage()
+        {
             var scanPage = new ZXingScannerPage();
 
             //Disable the FlashButton
@@ -109,9 +138,7 @@ namespace BFH_USZ_PICC.ViewModels
             //Opens the scanPage with the parameters set above
 
             await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(scanPage);
-
-
-        }));
+        }
 
 
         private async void searchForAPiccModel(string nameOrBarcode)

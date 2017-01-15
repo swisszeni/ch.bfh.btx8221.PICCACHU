@@ -72,5 +72,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>NSCameraUsageDescription</key>
+  <string>Barcodescanner</string>
 </dict>
 </plist>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
@@ -856,5 +856,8 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
   </data>
   <data name="DiscalimerPageTitle" xml:space="preserve">
     <value>Haftungsausschluss</value>
+  <data name="MissingCameraAccessWarning" xml:space="preserve">
+    <value>Die App benötigt für diese Funktion Zugriff auf die Kamera.</value>
+    <comment>Informiert den Nutzer, dass diese Funktion ohne Zugriff auf die Kamera nicht verfügbar ist</comment>
   </data>
 </root>
