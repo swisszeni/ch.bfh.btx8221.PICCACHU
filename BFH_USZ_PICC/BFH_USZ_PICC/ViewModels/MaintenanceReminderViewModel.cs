@@ -21,9 +21,11 @@ namespace BFH_USZ_PICC.ViewModels
 
 
         #region navigation events
-        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override Task OnNavigatedToAsync(NavigationMode mode)
         {
             LoadFromModel();
+
+            return base.OnNavigatedToAsync(mode);
         }
 
         public override Task OnNavigatedFromAsync()
