@@ -29,6 +29,7 @@ namespace BFH_USZ_PICC.ViewModels
     {
         MasterData,
         MaintenanceReminder,
+        DataExport,
         Disclaimer,
 
     }
@@ -41,6 +42,8 @@ namespace BFH_USZ_PICC.ViewModels
             SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, MenuItemKey = SettingsMenuItemKey.MasterData });
             SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder });
             SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, MenuItemKey = SettingsMenuItemKey.Disclaimer });
+            SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.ExportPageTitle, MenuItemKey = SettingsMenuItemKey.DataExport });
+
         }
 
 
@@ -73,6 +76,9 @@ namespace BFH_USZ_PICC.ViewModels
                             return;
                         case (int)SettingsMenuItemKey.Disclaimer:
                             ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisclaimerPage)));
+                            return;
+                        case (int)SettingsMenuItemKey.DataExport:
+                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DataExportPage)));
                             return;
                     }
                 }

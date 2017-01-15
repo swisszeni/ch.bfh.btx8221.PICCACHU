@@ -1,12 +1,45 @@
 ﻿using BFH_USZ_PICC.Interfaces;
+using CsvHelper;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.Utilitys
 {
+
+    public class DatabaseExporter
+    {
+        public static async Task<string> getDatabaseCSVPath()
+        {
+
+            var csv = new CsvWriter(TextWriter.Null);
+            var entryList = await ServiceLocator.Current.GetInstance<ILocalUserDataService>().GetJournalEntriesAsync();
+
+            foreach (var item in entryList)
+            {
+                csv.WriteRecord(item);
+            }
+
+            return "BFH_USZ_PICC/DataExport.csv";
+            //return csv.Path();
+
+
+            //// create a folder, if one does not exist already
+            //IFolder rootFolder = FileSystem.Current.LocalStorage;
+            //IFolder folder = await rootFolder.CreateFolderAsync("DataExport", CreationCollisionOption.OpenIfExists);
+            //IFile file = await FileSystem.Current.LocalStorage.CreateFileAsync("DataExport.csv",
+            //    CreationCollisionOption.ReplaceExisting);
+            //await file.WriteAllTextAsync("hallo");            
+
+            //return file.Path;
+        }
+
+    }
+
     /// <summary>
     /// Helper class to transform platform culture strings
     /// </summary>

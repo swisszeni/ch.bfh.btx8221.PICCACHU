@@ -62,8 +62,8 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<MasterDataViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
-            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();     
-            
+            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();
+            SimpleIoc.Default.Register<ExportViewModel>();            
         }
 
         public static ViewModelResolver Resolver

@@ -966,4 +966,22 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
     <value>App needs camera access to do this.</value>
     <comment>Informiert den Nutzer, dass diese Funktion ohne Zugriff auf die Kamera nicht verfügbar ist</comment>
   </data>
+  <data name="ConfirmationButtonText" xml:space="preserve">
+    <value>Agree</value>
+    <comment>Zustimmen (Einverständnis geben)</comment>
+  </data>
+  <data name="ExportButtonText" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportPagePageInformationPopUpText" xml:space="preserve">
+    <value>The export takes place via a possibly unsecured connection. Would you like to continue?</value>
+    <comment>Text für PopUp vor dem Export der Behandlungsnotizen</comment>
+  </data>
+  <data name="ExportPagePageInstructionText" xml:space="preserve">
+    <value>Here you can export your journal entries. You can select through which channel you want to send the data unsecured via email.</value>
+    <comment>Erklärungstext für den Datenexport</comment>
+  </data>
+  <data name="ExportPageTitle" xml:space="preserve">
+    <value>Data export</value>
+  </data>
 </root>

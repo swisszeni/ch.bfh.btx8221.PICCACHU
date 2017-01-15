@@ -647,6 +647,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agree.
+        /// </summary>
+        public static string ConfirmationButtonText {
+            get {
+                return ResourceManager.GetString("ConfirmationButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DeleteButtonText {
@@ -762,6 +771,42 @@ namespace BFH_USZ_PICC.Resx {
         public static string EmergencyFlyoutTitleText {
             get {
                 return ResourceManager.GetString("EmergencyFlyoutTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        public static string ExportButtonText {
+            get {
+                return ResourceManager.GetString("ExportButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The export takes place via a possibly unsecured connection. Would you like to continue?.
+        /// </summary>
+        public static string ExportPagePageInformationPopUpText {
+            get {
+                return ResourceManager.GetString("ExportPagePageInformationPopUpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can export your journal entries. You can select through which channel you want to send the data unsecured via email..
+        /// </summary>
+        public static string ExportPagePageInstructionText {
+            get {
+                return ResourceManager.GetString("ExportPagePageInstructionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data export.
+        /// </summary>
+        public static string ExportPageTitle {
+            get {
+                return ResourceManager.GetString("ExportPageTitle", resourceCulture);
             }
         }
         

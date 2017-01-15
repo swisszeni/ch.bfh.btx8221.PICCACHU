@@ -1071,6 +1071,29 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
           <target state="new">App needs camera access to do this.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Informiert den Nutzer, dass diese Funktion ohne Zugriff auf die Kamera nicht verfügbar ist</note>
         </trans-unit>
+        <trans-unit id="ConfirmationButtonText" translate="yes" xml:space="preserve">
+          <source>Agree</source>
+          <target state="new">Agree</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Zustimmen (Einverständnis geben)</note>
+        </trans-unit>
+        <trans-unit id="ExportButtonText" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+        </trans-unit>
+        <trans-unit id="ExportPagePageInformationPopUpText" translate="yes" xml:space="preserve">
+          <source>The export takes place via a possibly unsecured connection. Would you like to continue?</source>
+          <target state="new">The export takes place via a possibly unsecured connection. Would you like to continue?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text für PopUp vor dem Export der Behandlungsnotizen</note>
+        </trans-unit>
+        <trans-unit id="ExportPagePageInstructionText" translate="yes" xml:space="preserve">
+          <source>Here you can export your journal entries. You can select through which channel you want to send the data unsecured via email.</source>
+          <target state="new">Here you can export your journal entries. You can select through which channel you want to send the data unsecured via email.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Erklärungstext für den Datenexport</note>
+        </trans-unit>
+        <trans-unit id="ExportPageTitle" translate="yes" xml:space="preserve">
+          <source>Data export</source>
+          <target state="new">Data export</target>
+        </trans-unit>
       </group>
     </body>
   </file>
