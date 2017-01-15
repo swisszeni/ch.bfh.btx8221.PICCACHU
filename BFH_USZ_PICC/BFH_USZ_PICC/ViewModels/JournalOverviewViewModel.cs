@@ -32,6 +32,8 @@ namespace BFH_USZ_PICC.ViewModels
             TempLoad();
         }
 
+        #region navigation events
+
         public async void TempLoad()
         {
             var entryList = await _dataService.GetJournalEntriesAsync();
@@ -47,8 +49,12 @@ namespace BFH_USZ_PICC.ViewModels
             await base.OnNavigatedToAsync(mode);
         }
 
+        #endregion
+
+        #region public properties
+
         /// <summary>
-        /// Binds all the glossary entries to a the "GlossaryList" ListView
+        /// List of all existing JournalEntry objects to display.
         /// </summary>
         private List<JournalEntry> _journalEntriesList;
         public List<JournalEntry> JournalEntriesList
@@ -57,57 +63,12 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _journalEntriesList, value); }
         }
 
-        private JournalEntry _selectedEntry;
-        public JournalEntry SelectedEntry
-        {
-            get { return _selectedEntry; }
-            set
-            {
-                if (Set(() => SelectedEntry, ref _selectedEntry, value) & _selectedEntry != null)
-                {
-                    // We have to use a fucking if-elseif because C# 6 can't switch over types yet. FML
-                    Type entryType = value.GetType();
-                    Type targetPageType = null;
-                    if(entryType == typeof(AdministeredDrugEntry))
-                    {
-                        targetPageType = typeof(AdministeredDrugEntryPage);
-                    } else if (entryType == typeof(MicroClaveChangingEntry))
-                    {
-                        targetPageType = typeof(MicroClaveChangingEntryPage);
-                    }
-                    else if (entryType == typeof(StatlockChangingEntry))
-                    {
-                        targetPageType = typeof(StatlockChangingEntryPage);
-                    }
-                    else if (entryType == typeof(BloodWithdrawalEntry))
-                    {
-                        targetPageType = typeof(BloodWithdrawalEntryPage);
-                    }
-                    else if (entryType == typeof(BandageChangingEntry))
-                    {
-                        targetPageType = typeof(BandageChangingEntryPage);
-                    }
-                    else if (entryType == typeof(InfusionEntry))
-                    {
-                        targetPageType = typeof(InfusionEntryPage);
-                    }
-                    else if (entryType == typeof(CatheterFlushEntry))
-                    {
-                        targetPageType = typeof(CatheterFlushEntryPage);
-                    }
+        #endregion
 
-                    if(targetPageType != null)
-                    {
-                        // TODO: FIX
-                        //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType, new List<object> { value.ID }));
-                    }
-                }
-            }
-        }
+        #region relay commands
 
-        // ICommand implementations
-        private RelayCommand _entryButtonCommand;
-        public RelayCommand EntryButtonCommand => _entryButtonCommand ?? (_entryButtonCommand = new RelayCommand(async () =>
+        private RelayCommand _addEntryCommand;
+        public RelayCommand AddEntryCommand => _addEntryCommand ?? (_addEntryCommand = new RelayCommand(async () =>
         {
             var selectedEntry = await Xamarin.Forms.Application.Current.MainPage.DisplayActionSheet(AppResources.JournalOverviewViewModelWhichJournalEntryText, AppResources.CancelButtonText, null,
               AppResources.JournalOverviewPageCatheterFlushEntry, AppResources.JournalOverviewPageInfusionEntry, AppResources.JournalOverviewPageAdministeredDrugEntry, AppResources.JournalOverviewPageBloodWithdrawalEntry,
@@ -153,5 +114,51 @@ namespace BFH_USZ_PICC.ViewModels
                 }
             }
         }));
+
+        private RelayCommand<JournalEntry> _itemSelectedCommand;
+        public RelayCommand<JournalEntry> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<JournalEntry>((JournalEntry selectedItem) =>
+        {
+            // Item selected, handle navigation
+            // We have to use a fucking if-elseif because C# 6 can't switch over types yet. FML
+            Type entryType = selectedItem.GetType();
+            Type targetPageType = null;
+            if (entryType == typeof(AdministeredDrugEntry))
+            {
+                targetPageType = typeof(AdministeredDrugEntryPage);
+            }
+            else if (entryType == typeof(MicroClaveChangingEntry))
+            {
+                targetPageType = typeof(MicroClaveChangingEntryPage);
+            }
+            else if (entryType == typeof(StatlockChangingEntry))
+            {
+                targetPageType = typeof(StatlockChangingEntryPage);
+            }
+            else if (entryType == typeof(BloodWithdrawalEntry))
+            {
+                targetPageType = typeof(BloodWithdrawalEntryPage);
+            }
+            else if (entryType == typeof(BandageChangingEntry))
+            {
+                targetPageType = typeof(BandageChangingEntryPage);
+            }
+            else if (entryType == typeof(InfusionEntry))
+            {
+                targetPageType = typeof(InfusionEntryPage);
+            }
+            else if (entryType == typeof(CatheterFlushEntry))
+            {
+                targetPageType = typeof(CatheterFlushEntryPage);
+            }
+
+            if (targetPageType != null)
+            {
+                // TODO: FIX
+                //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType, new List<object> { value.ID }));
+            }
+        }));
+
+        #endregion
+
     }
 }

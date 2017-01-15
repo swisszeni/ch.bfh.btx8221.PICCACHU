@@ -100,12 +100,5 @@ namespace BFH_USZ_PICC.Views
 
             image.GestureRecognizers.Add(tapGesture);
         }
-
-
-        //This method sets the selected glossary entry to null (otherwise it would be marked).
-        private void GlossaryEntrySelected(object sender, EventArgs e)
-        {
-            GlossaryList.SelectedItem = null;
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class KnowledgeEntryDetailViewModel : ViewModelBase
     {
+        #region public properties
+
         private KnowledgeEntry _displayingEntry;
         public KnowledgeEntry DisplayingEntry
         {
@@ -27,17 +30,17 @@ namespace BFH_USZ_PICC.ViewModels
 
         public List<GlossaryEntry> RelatedGlossaryEntries => DisplayingEntry?.GlossaryEntries;
 
-        private GlossaryEntry _selectedGlossaryEntry;
-        public GlossaryEntry SelectedGlossaryEntry
+        #endregion
+
+        #region relay commands
+
+        private RelayCommand<GlossaryEntry> _itemSelectedCommand;
+        public RelayCommand<GlossaryEntry> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<GlossaryEntry>((GlossaryEntry selectedItem) =>
         {
-            get { return _selectedGlossaryEntry; }
-            set
-            {
-                if (Set(ref _selectedGlossaryEntry, value) & value != null)
-                {
-                    Task alertShowing = Application.Current.MainPage.DisplayAlert(value.Word, value.Explanation, AppResources.OkButtonText);
-                }
-            }
-        }
+            // Item selected, display alertview
+            Task alertShowing = Application.Current.MainPage.DisplayAlert(selectedItem.Word, selectedItem.Explanation, AppResources.OkButtonText);
+        }));
+
+        #endregion
     }
 }

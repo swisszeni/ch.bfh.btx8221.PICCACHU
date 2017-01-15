@@ -13,11 +13,5 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
         }
-
-        //This method sets the selected knowledge entry to null (otherwise it would be marked as selected after closing the detail page).
-        void SelectedKnowledgeEntry(object sender, EventArgs e)
-        {
-            KnowledgeList.SelectedItem = null;
-        }
     }
 }

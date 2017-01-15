@@ -18,6 +18,62 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class AddPICCViewModel : ViewModelBase
     {
+        #region private methods
+
+        private async void ShowScanPage()
+        {
+            var scanPage = new ZXingScannerPage();
+
+            //Disable the FlashButton
+            scanPage.DefaultOverlayShowFlashButton = false;
+
+            //If the scaner has a result: stop scanning, close the lpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
+            scanPage.OnScanResult += (result) =>
+            {
+                scanPage.IsScanning = false;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                    if (result != null)
+                    {
+                        searchForAPiccModel(result.Text);
+                    }
+                });
+            };
+
+            //Opens the scanPage with the parameters set above
+
+            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(scanPage);
+        }
+
+        private async void searchForAPiccModel(string nameOrBarcode)
+        {
+            foreach (PICCModel piccModel in PICCModels)
+            {
+                // if either the picc name or the barcode could be found in the database
+                if ((string.Compare(piccModel.PICCName, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0) || (string.Compare(piccModel.Barcode, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0))
+                {
+                    // TODO: FIX
+                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { piccModel }));
+                    return;
+                }
+            }
+
+            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.InformationText, AppResources.AddPICCPagePICCNotFoundInformationText, AppResources.AddPICCPageAddPiccManualButtonText, AppResources.OkButtonText))
+            {
+
+                // User wants to create model manually, create a new model with the searchterm preset as text
+                PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
+                // TODO: FIX
+                // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
+            }
+        }
+
+        #endregion
+
+        #region public properties
+
         /// <summary>
         /// Get all possible PICC models. If the user searches a model, the getter compares the input string with all models
         /// and provides a selection of all models which contain the entered input.
@@ -56,20 +112,9 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        private PICCModel _selectedPicc;
-        public PICCModel SelectedPicc
-        {
-            get { return _selectedPicc; }
-            set
-            {
-                if (value != null)
-                {
-                    Set(ref _selectedPicc, value);
-                    // TODO: FIX
-                    // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
-                }
-            }
-        }
+        #endregion
+
+        #region relay commands
 
         private RelayCommand _piccSearchButtonCommand;
         public RelayCommand PiccSearchButtonCommand => _piccSearchButtonCommand ?? (_piccSearchButtonCommand = new RelayCommand(() =>
@@ -77,7 +122,6 @@ namespace BFH_USZ_PICC.ViewModels
            searchForAPiccModel(SearchedPICCText);
 
        }));
-
 
         private RelayCommand _addPiccManualButtonCommand;
         public RelayCommand AddPiccManualButtonCommand => _addPiccManualButtonCommand ?? (_addPiccManualButtonCommand = new RelayCommand(async () =>
@@ -115,56 +159,14 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }));
 
-        private async void ShowScanPage()
+        private RelayCommand<PICCModel> _itemSelectedCommand;
+        public RelayCommand<PICCModel> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<PICCModel>((PICCModel selectedItem) =>
         {
-            var scanPage = new ZXingScannerPage();
+            // Item selected, handle navigation
+            // TODO: FIX
+            // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
+        }));
 
-            //Disable the FlashButton
-            scanPage.DefaultOverlayShowFlashButton = false;
-
-            //If the scaner has a result: stop scanning, close the lpage, check if the result is not null and give the result to the "searchForAPiccModel" method. 
-            scanPage.OnScanResult += (result) =>
-            {
-                scanPage.IsScanning = false;
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-                    if (result != null)
-                    {
-                        searchForAPiccModel(result.Text);
-                    }
-                });
-            };
-
-            //Opens the scanPage with the parameters set above
-
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(scanPage);
-        }
-
-
-        private async void searchForAPiccModel(string nameOrBarcode)
-        {
-            foreach (PICCModel piccModel in PICCModels)
-            {
-                // if either the picc name or the barcode could be found in the database
-                if ((string.Compare(piccModel.PICCName, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0) || (string.Compare(piccModel.Barcode, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0))
-                {
-                    // TODO: FIX
-                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { piccModel }));
-                    return;
-                }
-            }
-
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.InformationText, AppResources.AddPICCPagePICCNotFoundInformationText, AppResources.AddPICCPageAddPiccManualButtonText, AppResources.OkButtonText))
-            {
-
-                // User wants to create model manually, create a new model with the searchterm preset as text
-                PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
-                // TODO: FIX
-                // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
-            }
-        }
-
+        #endregion
     }
 }

@@ -17,7 +17,7 @@
                TextColor="White"
                FontSize="20" />
         <Label Text="{i18n:Translate PICCAssistanceDescriptionText}"
-               TextColor="White">
+               TextColor="{StaticResource ColorWhite}">
             <Label.Margin>
                 <OnPlatform x:TypeArguments="Thickness"
                             iOS="0, 15, 0, 0"
@@ -27,7 +27,7 @@
         </Label>
         <Button x:Uid="DisorderButton"
                 Text="{i18n:Translate EmergencyFlyoutAssistanceButtonText}"
-                BackgroundColor="White"
+                BackgroundColor="{StaticResource ColorWhite}"
                 TextColor="{StaticResource ColorAlertRed}"
                 Clicked="DisorderButton_Clicked" />
         <Label Text="{i18n:Translate EmergencyFlyoutTelemedizinDescriptionText}"
@@ -41,7 +41,7 @@
         </Label>
         <Button x:Uid="CallUSZTelemedizinButton"
                 Text="{i18n:Translate CallUSZTelemedizinButtonText}"
-                BackgroundColor="White"
+                BackgroundColor="{StaticResource ColorWhite}"
                 TextColor="{StaticResource ColorAlertRed}"
                 Clicked="CallUSZTelemedizinButton_Clicked" />
     </StackLayout>

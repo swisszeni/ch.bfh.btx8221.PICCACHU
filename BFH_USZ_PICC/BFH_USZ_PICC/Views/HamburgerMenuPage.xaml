@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
              xmlns:helpers="clr-namespace:BFH_USZ_PICC.Utilitys;assembly=BFH_USZ_PICC"
+             xmlns:controls="clr-namespace:BFH_USZ_PICC.Controls;assembly=BFH_USZ_PICC"
+             xmlns:behaviors="clr-namespace:BFH_USZ_PICC.Behaviors;assembly=BFH_USZ_PICC"
              x:Class="BFH_USZ_PICC.Views.HamburgerMenuPage"
              Title=" "
              BindingContext="{Binding [MenuViewModel], Source={StaticResource ViewModelLocator}}">
@@ -18,23 +21,55 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <Grid.Margin>
+            <helpers:OnCustomPlatform x:TypeArguments="Thickness"
+                                      Android="0"
+                                      WinPhone="0"
+                                      Windows="0,0,0,-48" />
+        </Grid.Margin>
+
         <!--APP LOGO-->
-        
+
         <!--MENU-->
         <ListView Grid.Row="1"
                   CachingStrategy="RecycleElement"
-                  VerticalOptions="StartAndExpand">
-            
+                  VerticalOptions="StartAndExpand"
+                  ItemsSource="{Binding MenuItems, Mode=OneWay}"
+                  behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
+                  SeparatorVisibility="None"
+                  RowHeight="70">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="12,0" Padding="20">
+                            <Image WidthRequest="30"
+                                   HeightRequest="30"
+                                   Margin="0,0,14,0"
+                                   Source="{Binding MenuItemKey, Converter={StaticResource MenuItemKeyToIconConverter}}" />
+                            <Label Text="{Binding Title}">
+                                <Label.Style>
+                                    <OnPlatform x:TypeArguments="Style"
+                                                Android="{StaticResource MenuButtonLabelStyle}"
+                                                iOS="{StaticResource MenuButtonLabelStyle}"
+                                                WinPhone="{StaticResource UWPMenuButtonLabelStyle}" />
+                                </Label.Style>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        
+
         <!--SETTINGS-->
-        <Button Grid.Row="2" Text="Logout"
-                BorderRadius="0"
-                BorderWidth="0" />
+        <controls:SettingsButton Grid.Row="2"
+                                 HorizontalOptions="StartAndExpand"
+                                 VerticalOptions="StartAndExpand">
+
+        </controls:SettingsButton>
     </Grid>
 </ContentPage>
-    
-        <!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title=" "
              x:Name="MainPage"
@@ -120,7 +155,9 @@
                                       WinPhone="0,0,0,48"
                                       Windows="0,0,0,48" />
         </Grid.Margin>
-        --><!-- MENU --><!--
+        -->
+<!-- MENU -->
+<!--
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -129,7 +166,9 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            --><!-- BACKGROUND --><!--
+            -->
+<!-- BACKGROUND -->
+<!--
             <Image Grid.Row="0"
                    Grid.RowSpan="5">
                 <Image.Source>
@@ -161,7 +200,9 @@
                                               Windows="EndAndExpand" />
                 </Image.VerticalOptions>
             </Image>
-            --><!-- MOBILE PROFILE --><!--
+            -->
+<!-- MOBILE PROFILE -->
+<!--
             <Grid Grid.Row="0">
                 <Grid.IsVisible>
                     <OnPlatform x:TypeArguments="x:Boolean"
@@ -189,12 +230,16 @@
                            Style="{StaticResource ProfileNameLabelStyle}" />
                 </StackLayout>
             </Grid>
-            --><!-- SEPARATOR --><!--
+            -->
+<!-- SEPARATOR -->
+<!--
             <Grid Grid.Row="1"
                   BackgroundColor="{StaticResource WhiteColor}"
                   Opacity="0.2"
                   HeightRequest="1" />
-            --><!-- MENU --><!--
+            -->
+<!-- MENU -->
+<!--
             <ListView Grid.Row="2"
                       x:Name="Items"
                       CachingStrategy="RecycleElement"
@@ -258,7 +303,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            --><!-- UWP PROFILE --><!--
+            -->
+<!-- UWP PROFILE -->
+<!--
             <Grid Grid.Row="3"
                   VerticalOptions="End">
                 <Grid.IsVisible>
@@ -287,13 +334,17 @@
                            Style="{StaticResource UwpProfileNameLabelStyle}" />
                 </StackLayout>
             </Grid>
-            --><!-- SEPARATOR --><!--
+            -->
+<!-- SEPARATOR -->
+<!--
             <Grid Grid.Row="4"
                   BackgroundColor="{StaticResource WhiteColor}"
                   Opacity="0.2"
                   HeightRequest="1" />
         </Grid>
-        --><!-- LOG OUT --><!--
+        -->
+<!-- LOG OUT -->
+<!--
         <Grid Grid.Row="1">
             <Grid.IsVisible>
                 <helpers:OnCustomPlatform x:TypeArguments="x:Boolean"
@@ -320,7 +371,9 @@
                 </controls:LogoutButton.Margin>
             </controls:LogoutButton>
         </Grid>
-        --><!-- UWP DESKTOP LOG OUT --><!--
+        -->
+<!-- UWP DESKTOP LOG OUT -->
+<!--
         <Grid Grid.Row="1">
             <Grid.IsVisible>
                 <helpers:OnCustomPlatform x:TypeArguments="x:Boolean"

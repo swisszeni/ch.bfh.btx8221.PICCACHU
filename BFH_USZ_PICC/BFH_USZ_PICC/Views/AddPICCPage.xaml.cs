@@ -40,11 +40,6 @@ namespace BFH_USZ_PICC.Views
         void SearchBarFocused(object o, EventArgs e)
         {
             AllModels.IsVisible = true;
-        }
-        
-        void SelectedPicc(object o, EventArgs e)
-        {
-            AllModels.SelectedItem = null;
-        }        
+        }     
     }
 }

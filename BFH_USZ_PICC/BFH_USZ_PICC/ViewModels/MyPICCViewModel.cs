@@ -81,26 +81,9 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        private PICC _selectedEntry;
-        public PICC SelectedEntry
-        {
-            get { return _selectedEntry; }
-            set
-            {
-                Set(() => SelectedEntry, ref _selectedEntry, value);
-
-                //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
-                if (_selectedEntry != null)
-                {
-                    // TODO: FIX
-                    // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(FormerPICCDetailPage), new List<object> { SelectedEntry.ID }));
-                }
-            }
-        }
-
         #endregion
 
-        #region RelayCommands
+        #region relay commands
 
         private RelayCommand _addPICCCommand;
         public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(async () =>
@@ -110,8 +93,8 @@ namespace BFH_USZ_PICC.ViewModels
         }));
 
 
-        private RelayCommand _currentPICCButtonCommand;
-        public RelayCommand CurrentPICCButtonCommand => _currentPICCButtonCommand ?? (_currentPICCButtonCommand = new RelayCommand(async () =>
+        private RelayCommand _goToCurrentPICCDetailCommand;
+        public RelayCommand GoToCurrentPICCDetailCommand => _goToCurrentPICCDetailCommand ?? (_goToCurrentPICCDetailCommand = new RelayCommand(async () =>
         {
             // TODO: FIX
             // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC.ID }));
@@ -126,9 +109,7 @@ namespace BFH_USZ_PICC.ViewModels
         }));
 
         private RelayCommand<PICC> _deleteFormerPICCCommand;
-        public RelayCommand<PICC> DeleteFormerPICCCommand => _deleteFormerPICCCommand ?? (_deleteFormerPICCCommand = new RelayCommand<PICC>(MenuItemEvent));
-
-        public async void MenuItemEvent(PICC selectedPICC)
+        public RelayCommand<PICC> DeleteFormerPICCCommand => _deleteFormerPICCCommand ?? (_deleteFormerPICCCommand = new RelayCommand<PICC>((PICC selectedPICC) => 
         {
             if (selectedPICC != null)
             {
@@ -139,7 +120,16 @@ namespace BFH_USZ_PICC.ViewModels
                 //    PopulatePICCsAsync();
                 //}
             }
-        }
+        }));
+
+        private RelayCommand<PICC> _itemSelectedCommand;
+        public RelayCommand<PICC> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<PICC>((PICC selectedItem) =>
+        {
+            // Item selected, handle navigation
+            // TODO: FIX
+            // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(FormerPICCDetailPage), new List<object> { SelectedEntry.ID }));
+        }));
+
         #endregion
 
     }

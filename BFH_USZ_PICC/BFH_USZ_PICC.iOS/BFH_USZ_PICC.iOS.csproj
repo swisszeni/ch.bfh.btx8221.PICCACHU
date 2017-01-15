@@ -474,6 +474,7 @@
     <BundleResource Include="Resources\DoppellumigerPICC.PNG" />
     <BundleResource Include="Resources\DreilumigerPICC.PNG" />
     <BundleResource Include="Resources\EinlumigerPICC.PNG" />
+    <BundleResource Include="Resources\settings_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

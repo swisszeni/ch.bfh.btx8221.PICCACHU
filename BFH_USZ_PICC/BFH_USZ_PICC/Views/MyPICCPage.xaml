@@ -4,6 +4,7 @@
                    x:Class="BFH_USZ_PICC.Views.MyPICCPage"
                    xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
                    xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   xmlns:behaviors="clr-namespace:BFH_USZ_PICC.Behaviors;assembly=BFH_USZ_PICC"
                    Title="{i18n:Translate MyPICCPageTitleText}"
                    BindingContext="{Binding [MyPICCViewModel], Source={StaticResource ViewModelLocator}}">
     <ScrollView>
@@ -83,7 +84,7 @@
                              Orientation="Horizontal"
                              IsVisible="{Binding HasCurrentPicc}">
                     <Button Style="{StaticResource ButtonStyleGray}"
-                            Command="{Binding CurrentPICCButtonCommand}"
+                            Command="{Binding GoToCurrentPICCDetailCommand}"
                             Text="{i18n:Translate MyPICCPageDetailButtonText}"
                             HorizontalOptions="FillAndExpand" />
                     <Button Style="{StaticResource ButtonStyleGray}"
@@ -100,8 +101,7 @@
             <!--Previous PICC List-->
             <ListView x:Name="FormerPICCListView"
                       ItemsSource="{Binding PreviousPICC}"
-                      SelectedItem="{Binding SelectedEntry, Mode=TwoWay}"
-                      ItemSelected="SelectedEntry"
+                      behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
                       IsVisible="{Binding HasPreviousPicc}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

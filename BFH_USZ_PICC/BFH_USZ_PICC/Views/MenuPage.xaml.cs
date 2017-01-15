@@ -31,11 +31,11 @@ namespace BFH_USZ_PICC.Views
 
             ListViewMenu.ItemsSource = menuItems = new List<NavigationMenuItem>
                 {
-                    new NavigationMenuItem { Title = AppResources.MyPICCPageTitleText, MenuItemKey = MenuItemKey.PICC, Icon ="placeholder.png" },
-                    new NavigationMenuItem { Title = AppResources.KnowledgeEntriesTitleText, MenuItemKey = MenuItemKey.Knowledge, Icon = "placeholder.png" },
-                    new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder, Icon = "placeholder.png" },
-                    new NavigationMenuItem { Title = AppResources.JournalOverviewPageTitleText, MenuItemKey = MenuItemKey.Journal, Icon = "placeholder.png" },
-                    new NavigationMenuItem { Title = AppResources.SettingsPageTitleText, MenuItemKey = MenuItemKey.Settings, Icon = "placeholder.png" }
+                    //new NavigationMenuItem { Title = AppResources.MyPICCPageTitleText, MenuItemKey = MenuItemKey.PICC, Icon ="placeholder.png" },
+                    //new NavigationMenuItem { Title = AppResources.KnowledgeEntriesTitleText, MenuItemKey = MenuItemKey.Knowledge, Icon = "placeholder.png" },
+                    //new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder, Icon = "placeholder.png" },
+                    //new NavigationMenuItem { Title = AppResources.JournalOverviewPageTitleText, MenuItemKey = MenuItemKey.Journal, Icon = "placeholder.png" },
+                    //new NavigationMenuItem { Title = AppResources.SettingsPageTitleText, MenuItemKey = MenuItemKey.Settings, Icon = "placeholder.png" }
                 };
 
             ListViewMenu.SelectedItem = menuItems[0];

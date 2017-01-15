@@ -241,7 +241,6 @@ namespace BFH_USZ_PICC.ViewModels
 
         #endregion
 
-
         #region relay commands
 
         private RelayCommand _deleteButtonCommand;
