@@ -644,7 +644,6 @@ namespace BFH_USZ_PICC.Utilitys
         #endregion
     }
 
-
     public class GuideWireLenghtToTextConverter : IValueConverter
     {
         #region IValueConverter implementation
@@ -711,6 +710,9 @@ namespace BFH_USZ_PICC.Utilitys
                     break;
                 case MenuItemKey.Knowledge:
                     iconName = "knowledge_icon.png";
+                    break;
+                case MenuItemKey.Glossary:
+                    iconName = "glossary_icon.png";
                     break;
                 case MenuItemKey.Disorder:
                     iconName = "disorder_icon.png";

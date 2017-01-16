@@ -914,6 +914,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\emergency_icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\emergency_icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\emergency_icon.png" />
+    <AndroidResource Include="Resources\drawable\glossary_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\glossary_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\glossary_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\glossary_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\glossary_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />

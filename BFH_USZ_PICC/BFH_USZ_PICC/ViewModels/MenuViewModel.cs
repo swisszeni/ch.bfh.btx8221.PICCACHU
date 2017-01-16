@@ -18,6 +18,7 @@ namespace BFH_USZ_PICC.ViewModels
                 {
                     new NavigationMenuItem { Title = AppResources.MyPICCPageTitleText, MenuItemKey = MenuItemKey.PICC},
                     new NavigationMenuItem { Title = AppResources.KnowledgeEntriesTitleText, MenuItemKey = MenuItemKey.Knowledge},
+                    new NavigationMenuItem { Title = AppResources.GlossaryPageTitleText, MenuItemKey = MenuItemKey.Glossary},
                     new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder},
                     new NavigationMenuItem { Title = AppResources.JournalOverviewPageTitleText, MenuItemKey = MenuItemKey.Journal}
                 };

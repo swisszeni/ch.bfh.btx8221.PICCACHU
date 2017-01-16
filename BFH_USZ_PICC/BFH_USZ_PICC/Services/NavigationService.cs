@@ -211,6 +211,7 @@ namespace BFH_USZ_PICC.Services
         {
             _menuKeymappings.Add(MenuItemKey.PICC, typeof(MyPICCPage));
             _menuKeymappings.Add(MenuItemKey.Knowledge, typeof(KnowledgeEntriesPage));
+            _menuKeymappings.Add(MenuItemKey.Glossary, typeof(GlossaryPage));
             _menuKeymappings.Add(MenuItemKey.Disorder, typeof(DisorderPage));
             _menuKeymappings.Add(MenuItemKey.Journal, typeof(JournalOverviewPage));
             _menuKeymappings.Add(MenuItemKey.Settings, typeof(SettingsPage));

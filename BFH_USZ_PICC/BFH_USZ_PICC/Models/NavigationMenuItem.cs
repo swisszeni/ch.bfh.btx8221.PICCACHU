@@ -9,7 +9,8 @@ namespace BFH_USZ_PICC.Models
     public enum MenuItemKey
     {
         PICC,
-        Knowledge, 
+        Knowledge,
+        Glossary,
         Disorder,
         Journal, 
         Settings
