@@ -43,7 +43,7 @@ namespace BFH_USZ_PICC.Services
                 return NavigateToAsync<MainViewModel>();
             }
         }
-
+        
         public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase
         {
             return NavigateToAsync<TViewModel>(null);
@@ -52,6 +52,11 @@ namespace BFH_USZ_PICC.Services
         public Task NavigateToAsync(MenuItemKey pageKey)
         {
             return NavigateToAsync(pageKey, null);
+        }
+
+        public Task NavigateToAsync(Type viewModelType)
+        {
+            return NavigateToAsync(viewModelType, null);
         }
 
         public Task NavigateToAsync<TViewModel>(List<object> navParams) where TViewModel : ViewModelBase
@@ -69,6 +74,31 @@ namespace BFH_USZ_PICC.Services
         public Task NavigateToAsync(MenuItemKey pageKey, List<object> navParams)
         {
             return InternalNavigateToMenuEntryAsync(pageKey, navParams);
+        }
+
+        public Task NavigateToAsync(Type viewModelType, List<object> navParams)
+        {
+            return InternalNavigateToAsync(viewModelType, navParams);
+        }
+
+        public async Task PushViewDirectOnStack(Page pushingPage, bool modal = false)
+        {
+            INavigation nav = null;
+            if (Application.Current.MainPage is MainPage)
+            {
+                nav = (Application.Current.MainPage as MainPage).Detail.Navigation;
+            } else if(Application.Current.MainPage != null)
+            {
+                nav = Application.Current.MainPage.Navigation;
+            }
+
+            if(modal)
+            {
+                await nav?.PushAsync(pushingPage);
+            } else
+            {
+                await nav?.PushModalAsync(pushingPage);
+            }
         }
 
         public Task DeepNavigateToAsync(Type deepViewModelType, MenuItemKey basePageKey)
@@ -91,9 +121,30 @@ namespace BFH_USZ_PICC.Services
             throw new NotImplementedException();
         }
 
-        public Task NavigateBackAsync()
+        public async Task NavigateBackAsync()
         {
-            throw new NotImplementedException();
+            if (Application.Current.MainPage is MainPage)
+            {
+                var mainPage = Application.Current.MainPage as MainPage;
+                await mainPage.Detail.Navigation.PopAsync();
+            }
+            else if (Application.Current.MainPage != null)
+            {
+                await Application.Current.MainPage.Navigation.PopAsync();
+            }
+        }
+
+        public async Task NavigateBackToRootAsync()
+        {
+            if (Application.Current.MainPage is MainPage)
+            {
+                var mainPage = Application.Current.MainPage as MainPage;
+                await mainPage.Detail.Navigation.PopToRootAsync();
+            }
+            else if (Application.Current.MainPage != null)
+            {
+                await Application.Current.MainPage.Navigation.PopToRootAsync();
+            }
         }
 
         public Task RemoveLastFromBackStackAsync()
@@ -150,6 +201,8 @@ namespace BFH_USZ_PICC.Services
             // Settings
             _viewModelmappings.Add(typeof(SettingsViewModel), typeof(SettingsPage));
             _viewModelmappings.Add(typeof(MasterDataViewModel), typeof(UserMasterDataPage));
+            _viewModelmappings.Add(typeof(MaintenanceReminderViewModel), typeof(MaintenanceReminderPage));
+            _viewModelmappings.Add(typeof(DisclaimerViewModel), typeof(DisclaimerPage));
         }
 
         private void CreateMenuKeyPageMappings()
@@ -235,6 +288,8 @@ namespace BFH_USZ_PICC.Services
                 // We want to navigate to one of the most basic views within the App, set it as main page
                 page = Activator.CreateInstance(pageType) as Page;
                 Application.Current.MainPage = page;
+
+                await (page?.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
             } else if (Application.Current.MainPage is MainPage)
             {
                 // We don't want to navigate to one of the roots and the current root is the MainPage (Navigation Shell)
@@ -244,11 +299,19 @@ namespace BFH_USZ_PICC.Services
 
                 if (navigationPage != null)
                 {
-                    await navigationPage.PushAsync(page);
+                    try
+                    {
+                        await navigationPage.Navigation.PushAsync(page);
+                    } catch (Exception e)
+                    {
+                        var test = e;
+                    }
                 }
-
-                // mainPage.IsPresented = false;
+                
+                await (page as BasePage)?.ContentBindingContext?.InitializeAsync(navParams);
             }
+
+            
 
 
             //Page page = CreateAndBindPage(viewModelType, parameter);
@@ -292,7 +355,7 @@ namespace BFH_USZ_PICC.Services
             //    }
             //}
 
-            await (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
+            // await (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
         }
 
         #endregion

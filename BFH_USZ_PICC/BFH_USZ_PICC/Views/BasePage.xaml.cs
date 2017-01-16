@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using BFH_USZ_PICC.ViewModels;
 
 namespace BFH_USZ_PICC.Views
 {
@@ -30,6 +31,8 @@ namespace BFH_USZ_PICC.Views
             ToolbarItem alert = new ToolbarItem("Alarm", "icon.png", () => { EmergencyOverLay.IsVisible = !EmergencyOverLay.IsVisible; });
             ToolbarItems.Add(alert);
         }
+
+        public ViewModelBase ContentBindingContext => (ViewModelBase)_content?.BindingContext;
 
         public Type GetContentType()
         {

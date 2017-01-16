@@ -3,6 +3,7 @@ using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.ViewModels;
 using BFH_USZ_PICC.Views;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -32,10 +33,9 @@ namespace BFH_USZ_PICC.Controls
             BackgroundGrid.GestureRecognizers.Add(tapGesture);
         }
 
-        async void DisorderButton_Clicked(object sender, EventArgs e)
+        void DisorderButton_Clicked(object sender, EventArgs e)
         {
-            await ((Shell)Application.Current.MainPage).NavigateAsync(MenuItemKey.Disorder);
-                
+            ServiceLocator.Current.GetInstance<INavigationService>().NavigateToAsync(MenuItemKey.Disorder);
         }
 
         void CallUSZTelemedizinButton_Clicked(object sender, EventArgs e)
@@ -46,12 +46,14 @@ namespace BFH_USZ_PICC.Controls
             }
             else
             {
+                // TODO: handle iOS
                 Application.Current.MainPage.DisplayAlert(AppResources.FailedText, AppResources.CallUSZTelemedicineNotPossibleText, AppResources.OkButtonText);
             }
         }
 
         async void CallUSZTelemedizin()
         {
+            // TODO: handle iOS
             bool call = await Application.Current.MainPage.DisplayAlert(AppResources.InformationText, AppResources.CallUSZTelemedicineText, AppResources.YesButtonText, AppResources.NoButtonText);
             if (call)
             {

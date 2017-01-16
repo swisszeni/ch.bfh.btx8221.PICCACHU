@@ -9,7 +9,7 @@ namespace BFH_USZ_PICC.Views
 {
     public sealed partial class UserMasterDataPage : BaseContentPage
     {
-        public UserMasterDataPage(ContentPage contained, bool isEnabled) : base(contained)
+        public UserMasterDataPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
             AddPickers();

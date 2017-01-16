@@ -15,6 +15,7 @@ using Xamarin.Forms;
 using static BFH_USZ_PICC.Models.JournalEntry;
 using System.Threading.Tasks;
 using System.Linq;
+using BFH_USZ_PICC.ViewModels.JournalEntries;
 
 namespace BFH_USZ_PICC.ViewModels
 {
@@ -77,40 +78,39 @@ namespace BFH_USZ_PICC.ViewModels
             if (selectedEntry != null && selectedEntry != AppResources.CancelButtonText)
 
             {
-                Type targetPageType = null;
+                Type targetPageVMType = null;
                 if (selectedEntry == AppResources.JournalOverviewPageAdministeredDrugEntry)
                 {
-                    targetPageType = typeof(AdministeredDrugEntryPage);
+                    targetPageVMType = typeof(AdministeredDrugViewModel);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageMicroClaveChangingEntry)
                 {
-                    targetPageType = typeof(MicroClaveChangingEntryPage);
+                    targetPageVMType = typeof(MicroClaveChangingViewModel);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageStatlockChangingEntry)
                 {
-                    targetPageType = typeof(StatlockChangingEntryPage);
+                    targetPageVMType = typeof(StatlockChangingViewModel);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageBloodWithdrawalEntry)
                 {
-                    targetPageType = typeof(BloodWithdrawalEntryPage);
+                    targetPageVMType = typeof(BloodWithdrawalViewModel);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageBandagesChangingEntry)
                 {
-                    targetPageType = typeof(BandageChangingEntryPage);
+                    targetPageVMType = typeof(BandageChangingViewModel);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageInfusionEntry)
                 {
-                    targetPageType = typeof(InfusionEntryPage);
+                    targetPageVMType = typeof(InfusionViewModel);
                 }
                 else if (selectedEntry == AppResources.JournalOverviewPageCatheterFlushEntry)
                 {
-                    targetPageType = typeof(CatheterFlushEntryPage);
+                    targetPageVMType = typeof(CatheterFlushViewModel);
                 }
 
-                if (targetPageType != null)
+                if (targetPageVMType != null)
                 {
-                    // TODO: FIX
-                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType));
+                    await NavigationService.NavigateToAsync(targetPageVMType);
                 }
             }
         }));
@@ -121,40 +121,39 @@ namespace BFH_USZ_PICC.ViewModels
             // Item selected, handle navigation
             // We have to use a fucking if-elseif because C# 6 can't switch over types yet. FML
             Type entryType = selectedItem.GetType();
-            Type targetPageType = null;
+            Type targetVMType = null;
             if (entryType == typeof(AdministeredDrugEntry))
             {
-                targetPageType = typeof(AdministeredDrugEntryPage);
+                targetVMType = typeof(AdministeredDrugViewModel);
             }
             else if (entryType == typeof(MicroClaveChangingEntry))
             {
-                targetPageType = typeof(MicroClaveChangingEntryPage);
+                targetVMType = typeof(MicroClaveChangingViewModel);
             }
             else if (entryType == typeof(StatlockChangingEntry))
             {
-                targetPageType = typeof(StatlockChangingEntryPage);
+                targetVMType = typeof(StatlockChangingViewModel);
             }
             else if (entryType == typeof(BloodWithdrawalEntry))
             {
-                targetPageType = typeof(BloodWithdrawalEntryPage);
+                targetVMType = typeof(BloodWithdrawalViewModel);
             }
             else if (entryType == typeof(BandageChangingEntry))
             {
-                targetPageType = typeof(BandageChangingEntryPage);
+                targetVMType = typeof(BandageChangingViewModel);
             }
             else if (entryType == typeof(InfusionEntry))
             {
-                targetPageType = typeof(InfusionEntryPage);
+                targetVMType = typeof(InfusionViewModel);
             }
             else if (entryType == typeof(CatheterFlushEntry))
             {
-                targetPageType = typeof(CatheterFlushEntryPage);
+                targetVMType = typeof(CatheterFlushViewModel);
             }
 
-            if (targetPageType != null)
+            if (targetVMType != null)
             {
-                // TODO: FIX
-                //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(targetPageType, new List<object> { value.ID }));
+                NavigationService.NavigateToAsync(targetVMType, new List<object> { selectedItem.ID });
             }
         }));
 

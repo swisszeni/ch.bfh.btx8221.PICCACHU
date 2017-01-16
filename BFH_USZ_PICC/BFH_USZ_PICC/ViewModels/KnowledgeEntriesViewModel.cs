@@ -13,6 +13,15 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class KnowledgeEntriesViewModel : ViewModelBase
     {
+        #region navigation events
+
+        public override Task InitializeAsync(List<object> navigationData)
+        {
+            return base.InitializeAsync(navigationData);
+        }
+
+        #endregion
+
         #region public properties
 
         private List<KnowledgeEntryTypeGroup> _knowledgeEntriesList = KnowledgeEntries.getEntries();
@@ -34,18 +43,13 @@ namespace BFH_USZ_PICC.ViewModels
         {
             // Item selected, handle navigation
             var type = selectedItem.GetType();
-            // Checks if the selected values type is KnowledgeEntry. If yes, navigate forward to KnowledgeEntryDetailPage
             if (type.Equals(typeof(KnowledgeEntry)))
             {
-                // TODO: FIX
-                // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(KnowledgeEntryDetailPage), new List<object> { value }));
-
-            }// Checks if the selected values type is MaintenanceInstruction. If yes, navigate forward to the related MaintenanceInstruction
+                NavigationService.NavigateToAsync<KnowledgeEntryDetailViewModel>(new List<object> { selectedItem });
+            }
             else if (type.Equals(typeof(MaintenanceInstruction)))
             {
-                // TODO: FIX
-                // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceInstructionPage), new List<object> { value }));
-
+                NavigationService.NavigateToAsync<MaintenanceInstructionViewModel>(new List<object> { selectedItem });
             }
         }));
 

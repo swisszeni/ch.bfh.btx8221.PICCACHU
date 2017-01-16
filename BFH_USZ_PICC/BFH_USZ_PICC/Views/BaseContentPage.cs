@@ -12,23 +12,10 @@ namespace BFH_USZ_PICC.Views
     {
         public string Title { get; set; }
         public ContentPage ContainedPage { get; private set; }
-        //public NavigationEventArgs Navigation { get; private set; }
 
         public BaseContentPage(ContentPage contained)
         {
             ContainedPage = contained;
-            //Nav
-            //display
-        }
-
-        public Task DisplayAlert(string title, string message, string cancel)
-        {
-            return ContainedPage.DisplayAlert(title, message, cancel);
-        }
-
-        public Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
-        {
-            return ContainedPage.DisplayAlert(title, message, accept, cancel);
         }
 
         #region Navigation Events

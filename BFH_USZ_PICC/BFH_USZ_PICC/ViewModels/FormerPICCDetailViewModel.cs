@@ -246,10 +246,10 @@ namespace BFH_USZ_PICC.ViewModels
         private RelayCommand _deleteButtonCommand;
         public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 await _dataService.DeltePICCAsync(_displayingPICC);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+                await NavigationService.NavigateBackToRootAsync();
             }
         }));
 

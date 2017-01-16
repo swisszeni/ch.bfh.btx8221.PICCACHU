@@ -20,35 +20,10 @@ namespace BFH_USZ_PICC.Views
         public PICCDetailPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
+            // TODO: FIX problem of wrong title
+            // Title = AppResources.PICCDetailPageEditPICCTitle; 
+            // Title = AppResources.PICCDetailPageAddNewPICCTitle;      
             Title = AppResources.PICCDetailPageTitleText;
-            AddPickerItems();
-        }
-
-        /// <summary>
-        /// Constructor with a PICCModel, call when a new PICC should be created for the PICCModell passed
-        /// 
-        /// author: Raphael zenhäusern
-        /// </summary>
-        /// <param name="contained">BasePage</param>
-        /// <param name="model">PICCModel to create</param>
-        public PICCDetailPage(ContentPage contained, PICCModel model) : base(contained)
-        {
-            InitializeComponent();
-            Title = AppResources.PICCDetailPageAddNewPICCTitle;            
-            AddPickerItems();
-        }    
-
-        /// <summary>
-        /// Constructor with an ID to an existing PICC, call when a existing should be displayed/edited
-        /// 
-        /// author: Raphael zenhäusern
-        /// </summary>
-        /// <param name="contained">BasePage</param>
-        /// <param name="existingPICC">Existing PICC</param>
-        public PICCDetailPage(ContentPage contained, string existingPICCID) : base(contained)
-        {
-            InitializeComponent();
-            Title = AppResources.PICCDetailPageEditPICCTitle;            
             AddPickerItems();
         }
        

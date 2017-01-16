@@ -37,8 +37,7 @@ namespace BFH_USZ_PICC.ViewModels
         public RelayCommand<DisorderEntry> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<DisorderEntry>((DisorderEntry selectedItem) =>
         {
             // Item selected, handle navigation
-            // TODO: FIX
-            // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
+            NavigationService.NavigateToAsync<DisorderDetailViewModel>(new List<object> { selectedItem });
         }));
 
         #endregion

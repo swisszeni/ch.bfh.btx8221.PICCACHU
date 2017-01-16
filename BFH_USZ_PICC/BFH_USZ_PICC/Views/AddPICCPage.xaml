@@ -16,12 +16,12 @@
     <StackLayout Orientation="Vertical">
         <StackLayout Orientation="Vertical"
                      HorizontalOptions="Fill">
-            <SearchBar x:Name="PICCEntry"
-                       Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}"
+            <SearchBar Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}"
                        SearchCommand="{Binding PiccSearchButtonCommand}"
                        Text="{Binding SearchedPICCText}"
                        Unfocused="SearchBarUnfocused"
-                       Focused="SearchBarFocused" />
+                       Focused="SearchBarFocused"
+                       HeightRequest="50"/>
             <ListView x:Name="AllModels"
                       behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
                       IsVisible="False"

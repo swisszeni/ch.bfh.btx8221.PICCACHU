@@ -4,6 +4,7 @@ using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,8 +35,11 @@ namespace BFH_USZ_PICC.ViewModels
     }
     public class SettingsViewModel : ViewModelBase
     {
+        INavigationService _navigationService;
+
         public SettingsViewModel()
         {
+            _navigationService = ServiceLocator.Current.GetInstance<INavigationService>();
             SettingsList = new List<SettingsNavigationMenuItem>() {
                 new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, MenuItemKey = SettingsMenuItemKey.MasterData },
                 new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder },
@@ -63,13 +67,13 @@ namespace BFH_USZ_PICC.ViewModels
             switch (selectedItem.MenuItemKey)
             {
                 case SettingsMenuItemKey.MasterData:
-                    //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
+                    _navigationService.NavigateToAsync<MasterDataViewModel>(new List<object> { false });
                     return;
                 case SettingsMenuItemKey.MaintenanceReminder:
-                    //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceReminderPage)));
+                    _navigationService.NavigateToAsync<MaintenanceReminderViewModel>();
                     return;
                 case SettingsMenuItemKey.Disclaimer:
-                    //((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisclaimerPage)));
+                    _navigationService.NavigateToAsync<DisclaimerViewModel>();
                     return;
             }
         }));

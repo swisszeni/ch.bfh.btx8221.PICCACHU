@@ -131,12 +131,12 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\NavigationService_iOS.cs" />
     <Compile Include="Services\SettingsService.cs" />
-    <Compile Include="Shell.cs" />
     <Compile Include="Utilitys\Converters.cs" />
     <Compile Include="Utilitys\Extensions\TranslateExtension.cs" />
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\AddPICCViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DisclaimerViewModel.cs" />
     <Compile Include="ViewModels\DisorderDetailViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\CatheterFlushViewModel.cs" />
@@ -245,9 +245,6 @@
     <Compile Include="Views\KnowledgeEntryDetailPage.xaml.cs">
       <DependentUpon>KnowledgeEntryDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -287,10 +284,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\KnowledgeEntryDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -42,7 +42,6 @@ namespace BFH_USZ_PICC.Views
                 SelectedImageCaption.IsVisible = true;
                 SelectedImageCaption.Text = source.Caption;
             }
-
         }
     }
 }

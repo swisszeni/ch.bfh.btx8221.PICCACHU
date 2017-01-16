@@ -34,7 +34,7 @@ namespace BFH_USZ_PICC.ViewModels
 
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                    NavigationService.NavigateBackAsync();
                     if (result != null)
                     {
                         searchForAPiccModel(result.Text);
@@ -42,9 +42,8 @@ namespace BFH_USZ_PICC.ViewModels
                 });
             };
 
-            //Opens the scanPage with the parameters set above
-
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(scanPage);
+            // Opens the scanPage with the parameters set above
+            await NavigationService.PushViewDirectOnStack(scanPage);
         }
 
         private async void searchForAPiccModel(string nameOrBarcode)
@@ -54,19 +53,16 @@ namespace BFH_USZ_PICC.ViewModels
                 // if either the picc name or the barcode could be found in the database
                 if ((string.Compare(piccModel.PICCName, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0) || (string.Compare(piccModel.Barcode, nameOrBarcode, StringComparison.OrdinalIgnoreCase) == 0))
                 {
-                    // TODO: FIX
-                    // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { piccModel }));
+                    await NavigationService.NavigateToAsync<PICCDetailViewModel>(new List<object> { piccModel });
                     return;
                 }
             }
 
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.InformationText, AppResources.AddPICCPagePICCNotFoundInformationText, AppResources.AddPICCPageAddPiccManualButtonText, AppResources.OkButtonText))
+            if (await DisplayAlert(AppResources.InformationText, AppResources.AddPICCPagePICCNotFoundInformationText, AppResources.AddPICCPageAddPiccManualButtonText, AppResources.OkButtonText))
             {
-
                 // User wants to create model manually, create a new model with the searchterm preset as text
                 PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
-                // TODO: FIX
-                // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
+                await NavigationService.NavigateToAsync<PICCDetailViewModel>(new List<object> { model });
             }
         }
 
@@ -124,11 +120,10 @@ namespace BFH_USZ_PICC.ViewModels
        }));
 
         private RelayCommand _addPiccManualButtonCommand;
-        public RelayCommand AddPiccManualButtonCommand => _addPiccManualButtonCommand ?? (_addPiccManualButtonCommand = new RelayCommand(async () =>
+        public RelayCommand AddPiccManualButtonCommand => _addPiccManualButtonCommand ?? (_addPiccManualButtonCommand = new RelayCommand(() =>
         {
             PICCModel model = new PICCModel(null, 0, 0, 0, null, null, null, null);
-            // TODO: FIX
-            // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { model }));
+            NavigationService.NavigateToAsync<PICCDetailViewModel>(new List<object> { model });
         }));
 
         private RelayCommand _scanButtonCommand;
@@ -141,7 +136,7 @@ namespace BFH_USZ_PICC.ViewModels
                 // We need permission to acces the camera!
                 if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Camera))
                 {
-                    await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.FailedText, AppResources.MissingCameraAccessWarning, AppResources.OkButtonText);
+                    await DisplayAlert(AppResources.FailedText, AppResources.MissingCameraAccessWarning, AppResources.OkButtonText);
                 }
 
                 var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera });
@@ -155,7 +150,7 @@ namespace BFH_USZ_PICC.ViewModels
             }
             else if (status != PermissionStatus.Unknown)
             {
-                await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.FailedText, AppResources.MissingCameraAccessWarning, AppResources.OkButtonText);
+                await DisplayAlert(AppResources.FailedText, AppResources.MissingCameraAccessWarning, AppResources.OkButtonText);
             }
         }));
 
@@ -163,8 +158,7 @@ namespace BFH_USZ_PICC.ViewModels
         public RelayCommand<PICCModel> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<PICCModel>((PICCModel selectedItem) =>
         {
             // Item selected, handle navigation
-            // TODO: FIX
-            // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { value }));
+            NavigationService.NavigateToAsync<PICCDetailViewModel>(new List<object> { selectedItem });
         }));
 
         #endregion

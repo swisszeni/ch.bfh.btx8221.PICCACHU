@@ -22,18 +22,17 @@ namespace BFH_USZ_PICC.ViewModels
 
         public MyPICCViewModel()
         {
-            // Getting the dataservice
+            // Getting the data service
             _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
         }
 
         #region navigation events
 
-        public override Task OnNavigatedToAsync(NavigationMode mode)
+        public override Task InitializeAsync(List<object> navigationData)
         {
             PopulatePICCsAsync();
 
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
+            return base.InitializeAsync(navigationData);
         }
 
         #endregion
@@ -86,39 +85,34 @@ namespace BFH_USZ_PICC.ViewModels
         #region relay commands
 
         private RelayCommand _addPICCCommand;
-        public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(async () =>
+        public RelayCommand AddPICCCommand => _addPICCCommand ?? (_addPICCCommand = new RelayCommand(() =>
         {
-            // TODO: FIX
-            // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(AddPICCPage)));
+            NavigationService.NavigateToAsync<AddPICCViewModel>();
         }));
 
 
         private RelayCommand _goToCurrentPICCDetailCommand;
-        public RelayCommand GoToCurrentPICCDetailCommand => _goToCurrentPICCDetailCommand ?? (_goToCurrentPICCDetailCommand = new RelayCommand(async () =>
+        public RelayCommand GoToCurrentPICCDetailCommand => _goToCurrentPICCDetailCommand ?? (_goToCurrentPICCDetailCommand = new RelayCommand(() =>
         {
-            // TODO: FIX
-            // await ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(PICCDetailPage), new List<object> { CurrentPICC.ID }));
-
+            NavigationService.NavigateToAsync<PICCDetailViewModel>(new List<object> { CurrentPICC.ID });
         }));        
 
         private RelayCommand _moveToJournalEntryOverviewPageCommand;
-        public RelayCommand MoveToJournalEntryOverviewPageCommand => _moveToJournalEntryOverviewPageCommand ?? (_moveToJournalEntryOverviewPageCommand = new RelayCommand(async () =>
+        public RelayCommand MoveToJournalEntryOverviewPageCommand => _moveToJournalEntryOverviewPageCommand ?? (_moveToJournalEntryOverviewPageCommand = new RelayCommand(() =>
         {
-            // TODO: FIX
-            // await ((Shell)Application.Current.MainPage).NavigateAsync(MenuItemKey.Journal);
+            NavigationService.NavigateToAsync(MenuItemKey.Journal);
         }));
 
         private RelayCommand<PICC> _deleteFormerPICCCommand;
-        public RelayCommand<PICC> DeleteFormerPICCCommand => _deleteFormerPICCCommand ?? (_deleteFormerPICCCommand = new RelayCommand<PICC>((PICC selectedPICC) => 
+        public RelayCommand<PICC> DeleteFormerPICCCommand => _deleteFormerPICCCommand ?? (_deleteFormerPICCCommand = new RelayCommand<PICC>(async (PICC selectedPICC) => 
         {
             if (selectedPICC != null)
             {
-                // TODO: FIX
-                //if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
-                //{
-                //    await _dataService.DeltePICCAsync(selectedPICC);
-                //    PopulatePICCsAsync();
-                //}
+                if (await DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+                {
+                    await _dataService.DeltePICCAsync(selectedPICC);
+                    PopulatePICCsAsync();
+                }
             }
         }));
 
@@ -126,8 +120,7 @@ namespace BFH_USZ_PICC.ViewModels
         public RelayCommand<PICC> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<PICC>((PICC selectedItem) =>
         {
             // Item selected, handle navigation
-            // TODO: FIX
-            // ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(FormerPICCDetailPage), new List<object> { SelectedEntry.ID }));
+            NavigationService.NavigateToAsync<FormerPICCDetailViewModel>(new List<object> { selectedItem.ID });
         }));
 
         #endregion

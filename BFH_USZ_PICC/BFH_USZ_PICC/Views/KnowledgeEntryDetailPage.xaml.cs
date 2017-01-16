@@ -11,11 +11,12 @@ namespace BFH_USZ_PICC.Views
 {
     public partial class KnowledgeEntryDetailPage : BaseContentPage
     {
-        public KnowledgeEntryDetailPage(ContentPage contained, KnowledgeEntry selectedEntry) : base(contained)
+        public KnowledgeEntryDetailPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            ((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry = selectedEntry;
-            Title = selectedEntry.Title;
+            // TODO: FIX
+            //((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry = selectedEntry;
+            //Title = selectedEntry.Title;
             BuildViewElements();
         }
 

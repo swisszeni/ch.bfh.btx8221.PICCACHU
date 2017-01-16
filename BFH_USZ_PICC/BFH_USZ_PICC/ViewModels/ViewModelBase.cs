@@ -17,6 +17,8 @@ namespace BFH_USZ_PICC.ViewModels
             NavigationService = ServiceLocator.Current.GetInstance<INavigationService>();
         }
 
+        #region navigation events
+
         public virtual Task InitializeAsync(List<object> navigationData)
         {
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
@@ -34,5 +36,23 @@ namespace BFH_USZ_PICC.ViewModels
             // Return "fake task" since Task.CompletedTask is not supported in this PCL
             return Task.FromResult(false);
         }
+
+        #endregion
+
+        #region popup functionality
+
+        public Task DisplayAlert(string title, string message, string cancel)
+        {
+            // TODO: handle iOS
+            return Application.Current.MainPage?.DisplayAlert(title, message, cancel);
+        }
+
+        public Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
+        {
+            // TODO: handle iOS
+            return Application.Current.MainPage?.DisplayAlert(title, message, accept, cancel);
+        }
+
+        #endregion
     }
 }
