@@ -177,10 +177,12 @@ namespace BFH_USZ_PICC.Services
             _viewModelmappings.Add(typeof(MyPICCViewModel), typeof(MyPICCPage));
             _viewModelmappings.Add(typeof(AddPICCViewModel), typeof(AddPICCPage));
             _viewModelmappings.Add(typeof(PICCDetailViewModel), typeof(PICCDetailPage));
+            _viewModelmappings.Add(typeof(FormerPICCDetailViewModel), typeof(FormerPICCDetailPage));
 
             // Knowledge Base
             _viewModelmappings.Add(typeof(KnowledgeEntriesViewModel), typeof(KnowledgeEntriesPage));
             _viewModelmappings.Add(typeof(KnowledgeEntryDetailViewModel), typeof(KnowledgeEntryDetailPage));
+            _viewModelmappings.Add(typeof(PictureViewModel), typeof(PicturePage));
             _viewModelmappings.Add(typeof(GlossaryViewModel), typeof(GlossaryPage));
 
             // Disorders
@@ -299,65 +301,13 @@ namespace BFH_USZ_PICC.Services
 
                 if (navigationPage != null)
                 {
-                    try
-                    {
-                        await navigationPage.Navigation.PushAsync(page);
-                    } catch (Exception e)
-                    {
-                        var test = e;
-                    }
+                    await (page as BasePage)?.ContentBindingContext?.InitializeAsync(navParams);
+                    await navigationPage.Navigation.PushAsync(page);
                 }
-                
-                await (page as BasePage)?.ContentBindingContext?.InitializeAsync(navParams);
             }
-
-            
-
-
-            //Page page = CreateAndBindPage(viewModelType, parameter);
-
-            //if (page is MainPage)
-            //{
-            //    CurrentApplication.MainPage = page;
-            //}
-            //else if (page is LoginPage)
-            //{
-            //    CurrentApplication.MainPage = new CustomNavigationPage(page);
-            //}
-            //else if (CurrentApplication.MainPage is MainPage)
-            //{
-            //    var mainPage = CurrentApplication.MainPage as MainPage;
-            //    var navigationPage = mainPage.Detail as CustomNavigationPage;
-
-            //    if (navigationPage != null)
-            //    {
-            //        await navigationPage.PushAsync(page);
-            //    }
-            //    else
-            //    {
-            //        navigationPage = new CustomNavigationPage(page);
-            //        mainPage.Detail = navigationPage;
-            //    }
-
-            //    mainPage.IsPresented = false;
-            //}
-            //else
-            //{
-            //    var navigationPage = CurrentApplication.MainPage as CustomNavigationPage;
-
-            //    if (navigationPage != null)
-            //    {
-            //        await navigationPage.PushAsync(page);
-            //    }
-            //    else
-            //    {
-            //        CurrentApplication.MainPage = new CustomNavigationPage(page);
-            //    }
-            //}
-
-            // await (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
         }
 
         #endregion
+
     }
 }

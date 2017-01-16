@@ -14,15 +14,30 @@ namespace BFH_USZ_PICC.Views
         public KnowledgeEntryDetailPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            // TODO: FIX
-            //((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry = selectedEntry;
-            //Title = selectedEntry.Title;
+
+            ((KnowledgeEntryDetailViewModel)BindingContext).PropertyChanged += DisplayingEntryChanged;
+
             BuildViewElements();
+        }
+
+        private void DisplayingEntryChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(KnowledgeEntryDetailViewModel.DisplayingEntry))
+            {
+                // DisplayingEntry is updated, rebuild the view
+                BuildViewElements();
+            }
         }
 
         // this method adds all the needed knowledge elements to the correct position
         private void BuildViewElements()
         {
+            // Check that DisplayingEntry is actually set
+            if (((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry == null)
+            {
+                return;
+            }
+
             //the index variable adds the knowledgeElement to its particular position
             int index = 0;
 
@@ -91,10 +106,8 @@ namespace BFH_USZ_PICC.Views
             {
                 if (imageElem != null)
                 {
-                    // TODO: FIX
-                    // Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { (KnowledgeEntryImageElement)imageElem }));
+                    ((KnowledgeEntryDetailViewModel)BindingContext).ShowPictureDetailCommand.Execute(imageElem);
                 }
-
             };
 
             Image image = (Image)imageElem.element;

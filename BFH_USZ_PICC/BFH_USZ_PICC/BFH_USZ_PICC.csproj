@@ -155,6 +155,7 @@
     <Compile Include="ViewModels\OnBoardingViewModel.cs" />
     <Compile Include="ViewModels\FormerPICCDetailViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceReminderViewModel.cs" />
+    <Compile Include="ViewModels\PictureViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\MasterDataViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />

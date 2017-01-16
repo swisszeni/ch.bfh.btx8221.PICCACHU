@@ -63,8 +63,10 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<AddPICCViewModel>();
             SimpleIoc.Default.Register<MyPICCViewModel>();
             SimpleIoc.Default.Register<PICCDetailViewModel>();
+            SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
             SimpleIoc.Default.Register<KnowledgeEntriesViewModel>();
             SimpleIoc.Default.Register<KnowledgeEntryDetailViewModel>();
+            SimpleIoc.Default.Register<PictureViewModel>();
             SimpleIoc.Default.Register<GlossaryViewModel>();
             SimpleIoc.Default.Register<DisorderViewModel>();
             SimpleIoc.Default.Register<DisorderDetailViewModel>();
@@ -79,9 +81,8 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<StatlockChangingViewModel>();
             SimpleIoc.Default.Register<MasterDataViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
-            SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
-            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();     
-            
+            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();
+            SimpleIoc.Default.Register<DisclaimerViewModel>();
         }
 
         public static T Resolve<T>()

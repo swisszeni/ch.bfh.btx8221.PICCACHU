@@ -27,7 +27,7 @@ namespace BFH_USZ_PICC.Models
 
         }
 
-        object IKnowledgeEntryElement.element
+        public object element
         {
             get
             {
@@ -35,7 +35,7 @@ namespace BFH_USZ_PICC.Models
             }
         }
 
-        string IKnowledgeEntryElement.type
+        public string type
         {
             get
             {

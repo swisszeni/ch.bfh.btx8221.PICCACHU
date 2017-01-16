@@ -5,7 +5,8 @@
                    xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
                    xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
                    xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-                   Title="{i18n:Translate DiscalimerPageTitle}">
+                   Title="{i18n:Translate DiscalimerPageTitle}"
+                   BindingContext="{Binding [DisclaimerViewModel], Source={StaticResource ViewModelLocator}}">
   <ScrollView>
     <StackLayout Orientation="Vertical"
                  VerticalOptions="FillAndExpand"

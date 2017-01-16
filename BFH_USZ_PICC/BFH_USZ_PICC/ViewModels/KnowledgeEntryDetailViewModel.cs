@@ -12,6 +12,20 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class KnowledgeEntryDetailViewModel : ViewModelBase
     {
+        #region navigation events
+
+        public override Task InitializeAsync(List<object> navigationData)
+        {
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
+            {
+                DisplayingEntry = (KnowledgeEntry)((List<object>)navigationData).First();
+            }
+
+            return base.InitializeAsync(navigationData);
+        }
+
+        #endregion
+
         #region public properties
 
         private KnowledgeEntry _displayingEntry;
@@ -39,6 +53,13 @@ namespace BFH_USZ_PICC.ViewModels
         {
             // Item selected, display alertview
             Task alertShowing = Application.Current.MainPage.DisplayAlert(selectedItem.Word, selectedItem.Explanation, AppResources.OkButtonText);
+        }));
+
+        private RelayCommand<KnowledgeEntryImageElement> _showPictureDetailCommand;
+        public RelayCommand<KnowledgeEntryImageElement> ShowPictureDetailCommand => _showPictureDetailCommand ?? (_showPictureDetailCommand = new RelayCommand<KnowledgeEntryImageElement>((KnowledgeEntryImageElement tappedImage) =>
+        {
+            // Image tapped, display detailview
+            NavigationService.NavigateToAsync<PictureViewModel>(new List<object> { tappedImage });
         }));
 
         #endregion

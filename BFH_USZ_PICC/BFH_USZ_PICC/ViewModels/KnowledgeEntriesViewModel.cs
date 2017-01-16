@@ -13,6 +13,7 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class KnowledgeEntriesViewModel : ViewModelBase
     {
+
         #region navigation events
 
         public override Task InitializeAsync(List<object> navigationData)

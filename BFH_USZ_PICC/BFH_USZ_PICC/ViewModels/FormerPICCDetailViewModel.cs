@@ -30,19 +30,18 @@ namespace BFH_USZ_PICC.ViewModels
 
         #region navigation events
 
-        public async override Task OnNavigatedToAsync(NavigationMode mode)
+        public async override Task InitializeAsync(List<object> navigationData)
         {
-            // TODO: FIX
-            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            //{
-            //    var param = ((List<object>)parameter).First();
-            //    _displayingPICC = await _dataService.GetPICCAsync((string)param);
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
+            {
+                var param = ((List<object>)navigationData).First();
+                _displayingPICC = await _dataService.GetPICCAsync((string)param);
 
-            //}
+            }
 
             LoadFromModel();
         }
-        
+
         #endregion
 
         #region private methods

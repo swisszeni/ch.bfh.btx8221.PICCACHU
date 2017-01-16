@@ -28,7 +28,16 @@ namespace BFH_USZ_PICC.Views
 
             Title = _content.Title;
 
-            ToolbarItem alert = new ToolbarItem("Alarm", "icon.png", () => { EmergencyOverLay.IsVisible = !EmergencyOverLay.IsVisible; });
+            string iconPath = "";
+            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
+            {
+                iconPath = "Assets\\emergency_icon.png";
+            } else
+            {
+                iconPath = "emergency_icon.png";
+            }
+
+            ToolbarItem alert = new ToolbarItem("Notfall", iconPath, () => { EmergencyOverLay.IsVisible = !EmergencyOverLay.IsVisible; });
             ToolbarItems.Add(alert);
         }
 

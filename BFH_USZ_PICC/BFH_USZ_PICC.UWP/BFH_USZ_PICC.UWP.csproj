@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\disorder_icon.png" />
+    <Content Include="Assets\emergency_icon.png" />
     <Content Include="Assets\journal_icon.png" />
     <Content Include="Assets\knowledge_icon.png" />
     <Content Include="Assets\mypicc_icon.png" />

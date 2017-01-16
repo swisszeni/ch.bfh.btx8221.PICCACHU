@@ -909,6 +909,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\usz_icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\usz_icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\usz_icon.png" />
+    <AndroidResource Include="Resources\drawable\emergency_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\emergency_icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\emergency_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\emergency_icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\emergency_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
