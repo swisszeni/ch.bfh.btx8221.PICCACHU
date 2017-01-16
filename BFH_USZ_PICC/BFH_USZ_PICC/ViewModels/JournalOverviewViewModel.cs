@@ -25,29 +25,34 @@ namespace BFH_USZ_PICC.ViewModels
 
         public JournalOverviewViewModel()
         {
-            //JournalEntriesList = JournalEntry.AllEnteredJournalEntries;
             // Getting the dataservice
             _dataService = ServiceLocator.Current.GetInstance<ILocalUserDataService>();
-
-            // TODO: Remove, only till final navigation structure calls OnNavigatedToAsync also for root pages
-            TempLoad();
         }
 
         #region navigation events
 
-        public async void TempLoad()
+        public override Task InitializeAsync(List<object> navigationData)
         {
-            var entryList = await _dataService.GetJournalEntriesAsync();
-            JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
+            PopulateEntriesAsync();
+
+            return base.InitializeAsync(navigationData);
         }
 
-        public async override Task OnNavigatedToAsync(NavigationMode mode)
+        public override Task OnNavigatedToAsync(NavigationMode mode)
         {
-            // TODO: FIX/MOVE
+            PopulateEntriesAsync();
+
+            return base.OnNavigatedToAsync(mode);
+        }
+
+        #endregion
+
+        #region private methods
+
+        private async void PopulateEntriesAsync()
+        {
             var entryList = await _dataService.GetJournalEntriesAsync();
             JournalEntriesList = entryList.OrderByDescending((x) => x.ExecutionDate).ThenByDescending((x) => x.CreateDate).ToList();
-
-            await base.OnNavigatedToAsync(mode);
         }
 
         #endregion

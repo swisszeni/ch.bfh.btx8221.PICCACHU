@@ -20,8 +20,6 @@ namespace BFH_USZ_PICC.Droid
     [Activity(Label = "@string/app_name", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait) ]
     public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
     {
-        private static string _keyVaultPassword = "ljhb/6s7cvgsUAdfwe65&%dtcsHBgv";
-
         protected override void OnCreate(Bundle bundle)
         {
             FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;

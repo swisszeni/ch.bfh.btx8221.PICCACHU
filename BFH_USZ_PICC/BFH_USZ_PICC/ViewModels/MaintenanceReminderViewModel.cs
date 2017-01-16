@@ -19,7 +19,6 @@ namespace BFH_USZ_PICC.ViewModels
     {
         private IReminderNotification _notifier = DependencyService.Get<IReminderNotification>();
 
-
         #region navigation events
         public override Task OnNavigatedToAsync(NavigationMode mode)
         {

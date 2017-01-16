@@ -11,12 +11,6 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
         }
-
-        public override void OnAppearing()
-        {
-            base.OnAppearing();
-            ((MyPICCViewModel)BindingContext).PopulatePICCsAsync();
-        }
     }
 }
 

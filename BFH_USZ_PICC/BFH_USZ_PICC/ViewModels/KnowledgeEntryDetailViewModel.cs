@@ -18,7 +18,11 @@ namespace BFH_USZ_PICC.ViewModels
         {
             if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
             {
-                DisplayingEntry = (KnowledgeEntry)((List<object>)navigationData).First();
+                var param = ((List<object>)navigationData).First();
+                if (param.GetType() == typeof(KnowledgeEntry))
+                {
+                    DisplayingEntry = (KnowledgeEntry)param;
+                }
             }
 
             return base.InitializeAsync(navigationData);

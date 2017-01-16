@@ -32,7 +32,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
             {
                 ci = new CultureInfo(netLanguage);
             }
-            catch (CultureNotFoundException e1)
+            catch (CultureNotFoundException)
             {
                 // iOS locale not valid .NET culture (eg. "en-ES" : English in Spain)
                 // fallback to first characters, in this case "en"
@@ -41,7 +41,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
                     var fallback = ToDotnetFallbackLanguage(new PlatformCultureHelper(netLanguage));
                     ci = new CultureInfo(fallback);
                 }
-                catch (CultureNotFoundException e2)
+                catch (CultureNotFoundException)
                 {
                     // iOS language not valid .NET culture, falling back to English
                     ci = new CultureInfo("en");

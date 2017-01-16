@@ -245,7 +245,7 @@ namespace BFH_USZ_PICC.ViewModels
 
         #endregion
 
-        #region RelayCommands
+        #region relay commands
 
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>

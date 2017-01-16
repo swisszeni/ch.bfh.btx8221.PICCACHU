@@ -13,6 +13,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     public abstract class JournalEntryBaseViewModel<T> : ViewModelBase where T : JournalEntry, new()
     {
+        private bool _firstAppearing;
         protected ILocalUserDataService _dataService;
         protected T _displayingEntry;
 
@@ -22,14 +23,6 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         }
 
         #region navigation events
-
-        public override Task OnNavigatedFromAsync()
-        {
-            EndEditing();
-
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
-        }
 
         public override async Task InitializeAsync(List<object> navigationData)
         {
@@ -52,7 +45,39 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 StartEditing();
             }
 
+            // Initializing the flag for appearance status
+            _firstAppearing = true;
+
             LoadFromModel();
+        }
+
+        public override Task OnNavigatedToAsync(NavigationMode mode)
+        {
+            // Check if it is the first time, the view is shown after initialization (false when navigating back to this one)
+            if (_firstAppearing)
+            {
+                // first time. Call the event for the first appearance
+                OnFirstAppearance();
+            }
+
+            _firstAppearing = false;
+
+            return base.OnNavigatedToAsync(mode);
+        }
+
+        /// <summary>
+        /// Stub method to override and handle specific scenarios on first appearance
+        /// </summary>
+        public virtual void OnFirstAppearance()
+        {
+
+        }
+
+        public override Task OnNavigatedFromAsync()
+        {
+            EndEditing();
+
+            return base.OnNavigatedFromAsync();
         }
 
         #endregion

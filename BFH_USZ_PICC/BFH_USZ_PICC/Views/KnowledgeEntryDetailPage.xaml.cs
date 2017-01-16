@@ -15,6 +15,8 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
 
+            // TODO: Fix problem of wrong title
+
             ((KnowledgeEntryDetailViewModel)BindingContext).PropertyChanged += DisplayingEntryChanged;
 
             BuildViewElements();

@@ -256,7 +256,7 @@ namespace BFH_USZ_PICC.Services
             return _menuKeymappings[key];
         }
 
-        protected virtual Task InternalNavigateToMenuEntryAsync(MenuItemKey key, List<object> navParams)
+        protected virtual async Task InternalNavigateToMenuEntryAsync(MenuItemKey key, List<object> navParams)
         {
             // Check if main navigation Structure exists
             var mainPage = Application.Current.MainPage as MainPage;
@@ -271,13 +271,11 @@ namespace BFH_USZ_PICC.Services
             if (pageType != ((mainPage.Detail as NavigationPage)?.CurrentPage as BasePage)?.GetContentType())
             {
                 var page = new BasePage(pageType);
-                (page.BindingContext as ViewModelBase)?.InitializeAsync(navParams);
+                await (page as BasePage)?.ContentBindingContext?.InitializeAsync(navParams);
                 mainPage.Detail = new USZ_PICC_NavigationPage(page);
             }
 
             mainPage.IsPresented = false;
-
-            return Task.FromResult(true);
         }
 
         protected virtual async Task InternalNavigateToAsync(Type viewModelType, List<object> navParams)

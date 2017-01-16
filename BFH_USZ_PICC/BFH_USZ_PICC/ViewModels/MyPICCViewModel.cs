@@ -35,11 +35,18 @@ namespace BFH_USZ_PICC.ViewModels
             return base.InitializeAsync(navigationData);
         }
 
+        public override Task OnNavigatedToAsync(NavigationMode mode)
+        {
+            PopulatePICCsAsync();
+
+            return base.OnNavigatedToAsync(mode);
+        }
+
         #endregion
 
         #region private methods
 
-        public async void PopulatePICCsAsync()
+        private async void PopulatePICCsAsync()
         {
             CurrentPICC = await _dataService.GetCurrentPICCAsync();
 

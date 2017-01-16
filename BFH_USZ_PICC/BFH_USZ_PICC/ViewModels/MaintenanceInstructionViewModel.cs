@@ -14,19 +14,28 @@ namespace BFH_USZ_PICC.ViewModels
 {
     public class MaintenanceInstructionViewModel : ViewModelBase
     {
-        public override Task OnNavigatedToAsync(NavigationMode mode)
-        {
-            // TODO: FIX
-            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            //{
-            //    //Make sure that the new loaded instruction starts at the frist step
-            //    CarouselPosition = 0;
-            //    MaintenanceInstruction = (MaintenanceInstruction)((List<object>)parameter).First();                
 
-            //}
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
+        #region navigation events
+
+        public override Task InitializeAsync(List<object> navigationData)
+        {
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
+            {
+                var param = ((List<object>)navigationData).First();
+                if (param.GetType() == typeof(MaintenanceInstruction))
+                {
+                    // Make sure that the new loaded instruction starts at the frist step
+                    CarouselPosition = 0;
+                    MaintenanceInstruction = (MaintenanceInstruction)param;
+                }
+            }
+
+            return base.InitializeAsync(navigationData);
         }
+
+        #endregion
+
+        #region public properties
 
         private MaintenanceInstruction _maintenanceInstruction;
         public MaintenanceInstruction MaintenanceInstruction
@@ -35,10 +44,10 @@ namespace BFH_USZ_PICC.ViewModels
             set
             {
                 if (Set(ref _maintenanceInstruction, value))
-                {                   
+                {
                     RaisePropertyChanged(() => CarouselPositionText);
                     GoToPreviousStepCommand.RaiseCanExecuteChanged();
-                    GoToNextStepCommand.RaiseCanExecuteChanged();                   
+                    GoToNextStepCommand.RaiseCanExecuteChanged();
                 }
             }
         }
@@ -66,26 +75,22 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
+        #endregion
+
+        #region relay commands
+
         private RelayCommand _toggleTextToVoiceCommand;
         public RelayCommand ToggleTextToVoiceCommand => _toggleTextToVoiceCommand ?? (_toggleTextToVoiceCommand = new RelayCommand(() =>
         {
-
             CrossTextToSpeech.Current.Speak(MaintenanceInstruction?.InstructionSteps.ElementAt(CarouselPosition).Explanation);
-            //Check if the user really wants to leave the page
-            //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            //{
-            //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            //}
+
+            // TODO: FULLY IMPLEMENT
         }));
 
         private RelayCommand _toggleVoiceControlCommand;
-        public RelayCommand ToggleVoiceControlCommand => _toggleVoiceControlCommand ?? (_toggleVoiceControlCommand = new RelayCommand(async () =>
+        public RelayCommand ToggleVoiceControlCommand => _toggleVoiceControlCommand ?? (_toggleVoiceControlCommand = new RelayCommand(() =>
         {
-            //Check if the user really wants to leave the page
-            //if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
-            //{
-            //    await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
-            //}
+            // TODO: FULLY IMPLEMENT
         }));
 
         private RelayCommand _goToPreviousStepCommand;
@@ -105,5 +110,8 @@ namespace BFH_USZ_PICC.ViewModels
                 CarouselPosition++;
             }
         }, () => { return CarouselPosition < MaintenanceInstruction?.InstructionSteps.Count - 1; }));
+
+        #endregion
+        
     }
 }

@@ -36,7 +36,6 @@ namespace BFH_USZ_PICC.ViewModels
             {
                 var param = ((List<object>)navigationData).First();
                 _displayingPICC = await _dataService.GetPICCAsync((string)param);
-
             }
 
             LoadFromModel();

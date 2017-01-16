@@ -28,6 +28,35 @@ namespace BFH_USZ_PICC.ViewModels
             PopulateMasterDataAsync();
         }
 
+        #region navigation events
+
+        public override Task InitializeAsync(List<object> navigationData)
+        {
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
+            {
+                // Passes if should go in edit mode or not
+                if ((bool)((List<object>)navigationData).First())
+                {
+                    StartEditing();
+                }
+            }
+
+            LoadFromModel();
+
+            return base.InitializeAsync(navigationData);
+        }
+
+        public override Task OnNavigatedFromAsync()
+        {
+            EndEditing();
+
+            return base.OnNavigatedFromAsync();
+        }
+
+        #endregion
+
+        #region private methods
+
         private async void PopulateMasterDataAsync()
         {
             var masterDataEntries = await _dataService.GetMasterDataAsync();
@@ -35,39 +64,14 @@ namespace BFH_USZ_PICC.ViewModels
             if (masterDataEntries.Count > 0)
             {
                 _displayingmasterData = masterDataEntries.First();
-            } else
+            }
+            else
             {
                 // There is no existing MasterData, create one!
                 _displayingmasterData = new UserMasterData();
             }
 
             LoadFromModel();
-        }
-
-        public override Task OnNavigatedToAsync(NavigationMode mode)
-        {
-            // TODO: FIX
-            //if (parameter is List<object> && ((List<object>)parameter).Count > 0)
-            //{
-            //    // Passes if should go in edit mode or not
-            //    if((bool)((List<object>)parameter).First())
-            //    {
-            //        StartEditing();
-            //    }
-            //}
-
-            LoadFromModel();
-
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
-        }
-
-        public override Task OnNavigatedFromAsync()
-        {
-            EndEditing();
-
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
         }
 
         private void StartEditing()
@@ -92,11 +96,12 @@ namespace BFH_USZ_PICC.ViewModels
             Phone = _displayingmasterData?.Phone;
             Mobile = _displayingmasterData?.Mobile;
 
-            if(_displayingmasterData?.Birthdate == null)
+            if (_displayingmasterData?.Birthdate == null)
             {
                 Birthdate = DateTimeOffset.Now;
                 IsBirthdateSet = false;
-            } else
+            }
+            else
             {
                 Birthdate = (DateTimeOffset)_displayingmasterData.Birthdate;
                 IsBirthdateSet = true;
@@ -130,6 +135,10 @@ namespace BFH_USZ_PICC.ViewModels
             // Save to DB
             _dataService.SaveMasterDataAsync(_displayingmasterData);
         }
+
+        #endregion
+
+        #region public properties
 
         private bool _isUserInputEnabled;
         public bool IsUserInputEnabled
@@ -232,11 +241,16 @@ namespace BFH_USZ_PICC.ViewModels
         public bool IsBirthdateSet
         {
             get { return _isBirthdateSet; }
-            set {
+            set
+            {
                 Set(ref _isBirthdateSet, value);
                 RaisePropertyChanged(() => IsBirthdateDisplayed);
             }
         }
+
+        #endregion
+
+        #region relay commands
 
         private RelayCommand _startEditCommand;
         public RelayCommand StartEditCommand => _startEditCommand ?? (_startEditCommand = new RelayCommand(() =>
@@ -260,14 +274,15 @@ namespace BFH_USZ_PICC.ViewModels
             bool saveInput = true;
 
             if (Birthdate.Year >= DateTimeOffset.Now.Year && IsBirthdateSet)
-            {   
+            {
                 if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.MasterDataViewModelBirthdateNotValidText, AppResources.YesButtonText, AppResources.NoButtonText))
                 {
                     saveInput = false;
                     IsBirthdateSet = false;
                 };
             }
-            if (saveInput) {
+            if (saveInput)
+            {
                 EndEditing();
                 SaveToModel();
             }
@@ -283,5 +298,8 @@ namespace BFH_USZ_PICC.ViewModels
                 LoadFromModel();
             }
         }));
+
+        #endregion
+        
     }
 }
