@@ -656,13 +656,62 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+        ///   Looks up a localized string similar to repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
         ///
-        ///Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis [rest of string was truncated]&quot;;.
+        ///Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la per [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DiscalimerPageCopyrightText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageCopyrightText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Et ut aut isti repuditis.
+        /// </summary>
+        public static string DiscalimerPageCopyrightTitleText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageCopyrightTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+        ///
+        ///Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la per [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DiscalimerPageDisclaimerText {
             get {
                 return ResourceManager.GetString("DiscalimerPageDisclaimerText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Et ut aut isti.
+        /// </summary>
+        public static string DiscalimerPageDisclaimerTitleText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageDisclaimerTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus.
+        ///
+        ///Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et quatur, sitiur aut od moluptatur aut ea conseque peri sim erro essequisit remporia dem et landi dest, cone poris quunt volecab ipidero quatur ad quibusamus, et exerionem eostis peror sedipis aut int la per [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DiscalimerPageSyntaxText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageSyntaxText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to erro essequisit.
+        /// </summary>
+        public static string DiscalimerPageSyntaxTitleText {
+            get {
+                return ResourceManager.GetString("DiscalimerPageSyntaxTitleText", resourceCulture);
             }
         }
         

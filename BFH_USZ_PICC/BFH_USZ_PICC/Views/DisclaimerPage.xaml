@@ -11,7 +11,15 @@
     <StackLayout Orientation="Vertical"
                  VerticalOptions="FillAndExpand"
                  Margin="15">
+      <Label Text="{i18n:Translate DiscalimerPageDisclaimerTitleText}"
+             Style="{StaticResource LabelStyleTitle}"/>
       <Label Text="{i18n:Translate DiscalimerPageDisclaimerText}"/>
+      <Label Text="{i18n:Translate DiscalimerPageCopyrightTitleText}" 
+             Style="{StaticResource LabelStyleTitle}"/>
+      <Label Text="{i18n:Translate DiscalimerPageCopyrightText}"/>
+      <Label Text="{i18n:Translate DiscalimerPageSyntaxTitleText}" 
+             Style="{StaticResource LabelStyleTitle}"/>
+      <Label Text="{i18n:Translate DiscalimerPageSyntaxText}"/>
     </StackLayout>
   </ScrollView>
 </d:BaseContentPage>

@@ -98,12 +98,12 @@ namespace BFH_USZ_PICC.ViewModels
 
             if (_displayingmasterData?.Birthdate == null)
             {
-                Birthdate = DateTimeOffset.Now;
+                Birthdate = DateTime.Now.Date.ToLocalTime();
                 IsBirthdateSet = false;
             }
             else
             {
-                Birthdate = (DateTimeOffset)_displayingmasterData.Birthdate;
+                Birthdate = (_displayingmasterData.Birthdate).Value.Date.ToLocalTime();
                 IsBirthdateSet = true;
             }
 
@@ -215,13 +215,13 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _mobile, value); }
         }
 
-        private DateTimeOffset _birthdate;
-        public DateTimeOffset Birthdate
+        private DateTime _birthdate;
+        public DateTime Birthdate
         {
-            get { return (!IsBirthdateSet || _birthdate.Year >= DateTimeOffset.Now.Year) ? DateTimeOffset.Now : _birthdate; }
+            get { return (!IsBirthdateSet || _birthdate.Year >= DateTime.Now.Year) ? DateTime.Now : _birthdate; }
             set
             {
-                if (value.Year >= DateTimeOffset.Now.Year)
+                if (value.Year >= DateTime.Now.ToLocalTime().Year)
                 {
                     Set(ref _birthdate, value);
                     return;
@@ -269,18 +269,15 @@ namespace BFH_USZ_PICC.ViewModels
         }));
 
         private RelayCommand _saveEditCommand;
-        public RelayCommand SaveEditCommand => _saveEditCommand ?? (_saveEditCommand = new RelayCommand(async () =>
+        public RelayCommand SaveEditCommand => _saveEditCommand ?? (_saveEditCommand = new RelayCommand(() =>
         {
             bool saveInput = true;
 
-            if (Birthdate.Year >= DateTimeOffset.Now.Year && IsBirthdateSet)
+            if (Birthdate.Year >= DateTime.Now.ToLocalTime().Year)
             {
-                if (!await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.MasterDataViewModelBirthdateNotValidText, AppResources.YesButtonText, AppResources.NoButtonText))
-                {
-                    saveInput = false;
-                    IsBirthdateSet = false;
-                };
+                IsBirthdateSet = false;              
             }
+
             if (saveInput)
             {
                 EndEditing();
