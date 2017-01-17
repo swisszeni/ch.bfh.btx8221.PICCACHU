@@ -43,11 +43,13 @@ namespace BFH_USZ_PICC.ViewModels
 
         public Task DisplayAlert(string title, string message, string cancel)
         {
+            // TODO: handle iOS
             return Application.Current.MainPage?.DisplayAlert(title, message, cancel);
         }
 
         public Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
         {
+            // TODO: handle iOS
             return Application.Current.MainPage?.DisplayAlert(title, message, accept, cancel);
         }
 

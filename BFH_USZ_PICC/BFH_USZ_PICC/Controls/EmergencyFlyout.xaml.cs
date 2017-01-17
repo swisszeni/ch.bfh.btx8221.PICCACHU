@@ -7,9 +7,16 @@ using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+
+
+// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace BFH_USZ_PICC.Controls
 {
+    /// <summary>
+    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
+    /// </summary>
     public partial class EmergencyFlyout : Grid
     {
 
@@ -39,12 +46,14 @@ namespace BFH_USZ_PICC.Controls
             }
             else
             {
+                // TODO: handle iOS
                 Application.Current.MainPage.DisplayAlert(AppResources.FailedText, AppResources.CallUSZTelemedicineNotPossibleText, AppResources.OkButtonText);
             }
         }
 
         async void CallUSZTelemedizin()
         {
+            // TODO: handle iOS
             bool call = await Application.Current.MainPage.DisplayAlert(AppResources.InformationText, AppResources.CallUSZTelemedicineText, AppResources.YesButtonText, AppResources.NoButtonText);
             if (call)
             {
