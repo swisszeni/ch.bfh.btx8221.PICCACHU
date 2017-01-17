@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.PicturePage"
-             xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
-             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
-             Title="{i18n:Translate PicturePageTitleText}">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.PicturePage"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   Title="{i18n:Translate PicturePageTitleText}"
+                   BindingContext="{Binding [PictureViewModel], Source={StaticResource ViewModelLocator}}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
         <RowDefinition Height="Auto" />
-      </Grid.RowDefinitions>
-      <Image x:Name="SelectedImage" Grid.Row="0"/>
-      <Label x:Name="SelectedImageCaption" HorizontalTextAlignment="Center" Grid.Row="1" />
+    </Grid.RowDefinitions>
+    <Image x:Name="ImageView"
+           Source="{Binding ImageSource}"
+           Grid.Row="0" />
+    <Label Text="{Binding ImageCaption}"
+           IsVisible="{Binding HasImageCaption}"
+           HorizontalTextAlignment="Center"
+           Grid.Row="1" />
 </d:BaseContentPage>

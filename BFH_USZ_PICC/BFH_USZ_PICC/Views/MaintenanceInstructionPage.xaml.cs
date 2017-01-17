@@ -11,10 +11,11 @@ namespace BFH_USZ_PICC.Views
 {
     public sealed partial class MaintenanceInstructionPage : BaseContentPage
     {
-        public MaintenanceInstructionPage(ContentPage contained, MaintenanceInstruction instruction) : base(contained)
+        public MaintenanceInstructionPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            Title = instruction.Title;
+            // TODO: Fix title problem
+            // Title = instruction.Title;
         }
     }
 }

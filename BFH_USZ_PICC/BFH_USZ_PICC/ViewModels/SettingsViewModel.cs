@@ -4,6 +4,7 @@ using BFH_USZ_PICC.Resx;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,15 +35,19 @@ namespace BFH_USZ_PICC.ViewModels
     }
     public class SettingsViewModel : ViewModelBase
     {
+        INavigationService _navigationService;
+
         public SettingsViewModel()
         {
-
-            SettingsList = new List<SettingsNavigationMenuItem>();
-            SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, MenuItemKey = SettingsMenuItemKey.MasterData });
-            SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder });
-            SettingsList.Add(new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, MenuItemKey = SettingsMenuItemKey.Disclaimer });
+            _navigationService = ServiceLocator.Current.GetInstance<INavigationService>();
+            SettingsList = new List<SettingsNavigationMenuItem>() {
+                new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, MenuItemKey = SettingsMenuItemKey.MasterData },
+                new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder },
+                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, MenuItemKey = SettingsMenuItemKey.Disclaimer }
+            };
         }
 
+        #region public properties
 
         private List<SettingsNavigationMenuItem> _settingsList;
         public List<SettingsNavigationMenuItem> SettingsList
@@ -51,34 +56,28 @@ namespace BFH_USZ_PICC.ViewModels
             set { Set(ref _settingsList, value); }
         }
 
+        #endregion
 
-        private SettingsNavigationMenuItem _selectedEntry;
-        public SettingsNavigationMenuItem SelectedEntry
+        #region relay commands
+
+        private RelayCommand<SettingsNavigationMenuItem> _itemSelectedCommand;
+        public RelayCommand<SettingsNavigationMenuItem> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<SettingsNavigationMenuItem>((SettingsNavigationMenuItem selectedItem) =>
         {
-            get { return _selectedEntry; }
-            set
+            // Item selected, handle navigation
+            switch (selectedItem.MenuItemKey)
             {
-                Set(() => SelectedEntry, ref _selectedEntry, value);
-
-                if (value != null)
-                {
-                    int key = (int)value.MenuItemKey;
-                    switch (key)
-                    {
-                        case (int)SettingsMenuItemKey.MasterData:
-                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(UserMasterDataPage), new List<object> { false }));
-                            return;
-                        case (int)SettingsMenuItemKey.MaintenanceReminder:
-                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(MaintenanceReminderPage)));
-                            return;
-                        case (int)SettingsMenuItemKey.Disclaimer:
-                            ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisclaimerPage)));
-                            return;
-                    }
-                }
-
+                case SettingsMenuItemKey.MasterData:
+                    _navigationService.NavigateToAsync<MasterDataViewModel>(new List<object> { false });
+                    return;
+                case SettingsMenuItemKey.MaintenanceReminder:
+                    _navigationService.NavigateToAsync<MaintenanceReminderViewModel>();
+                    return;
+                case SettingsMenuItemKey.Disclaimer:
+                    _navigationService.NavigateToAsync<DisclaimerViewModel>();
+                    return;
             }
-        }
+        }));
 
+        #endregion
     }
 }

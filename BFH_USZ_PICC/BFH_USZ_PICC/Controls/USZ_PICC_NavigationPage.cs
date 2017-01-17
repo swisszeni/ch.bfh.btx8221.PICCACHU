@@ -15,6 +15,10 @@ namespace BFH_USZ_PICC.Controls
         {
             prevPage = root;
             Init();
+            if (root as INavigable != null)
+            {
+                ((INavigable)root).OnNavigatedToAsync(NavigationMode.Forward);
+            }
         }
 
         public USZ_PICC_NavigationPage()
@@ -24,7 +28,7 @@ namespace BFH_USZ_PICC.Controls
 
         private void Init()
         {
-            BarBackgroundColor = Color.FromHex("#0057A2");
+            BarBackgroundColor = (Color)Application.Current.Resources["ColorUSZBlue"];
             BarTextColor = Color.White;
             Pushed += Content_Pushed;
             Popped += Content_Popped;
@@ -41,7 +45,7 @@ namespace BFH_USZ_PICC.Controls
                 curr = (INavigable)CurrentPage;
             }
             prevPage = CurrentPage;
-            curr?.OnNavigatedToAsync(null, NavigationMode.Forward);
+            curr?.OnNavigatedToAsync(NavigationMode.Forward);
         }
 
         private void Content_Popped(object sender, NavigationEventArgs e)
@@ -60,7 +64,7 @@ namespace BFH_USZ_PICC.Controls
 
             prevPage = CurrentPage;
             prev?.OnNavigatedFromAsync();
-            curr?.OnNavigatedToAsync(null, NavigationMode.Back);
+            curr?.OnNavigatedToAsync(NavigationMode.Back);
         }
 
         private void Content_PoppedToRoot(object sender, NavigationEventArgs e)
@@ -78,10 +82,10 @@ namespace BFH_USZ_PICC.Controls
             }
 
             prevPage = CurrentPage;
-            prev?.OnNavigatedFromAsync();
-            curr?.OnNavigatedToAsync(null, NavigationMode.Back);
+            curr?.OnNavigatedToAsync(NavigationMode.Forward);
         }
 
         #endregion
+
     }
 }

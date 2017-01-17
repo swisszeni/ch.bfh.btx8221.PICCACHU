@@ -644,7 +644,6 @@ namespace BFH_USZ_PICC.Utilitys
         #endregion
     }
 
-
     public class GuideWireLenghtToTextConverter : IValueConverter
     {
         #region IValueConverter implementation
@@ -668,8 +667,7 @@ namespace BFH_USZ_PICC.Utilitys
 
         #endregion
     }
-
-    #region RemovalDateToTextConverter
+    
     public class RemovalDateToTextConverter : IValueConverter
     {
         #region IValueConverter implementation
@@ -691,7 +689,56 @@ namespace BFH_USZ_PICC.Utilitys
 
         #endregion
     }
-    #endregion
 
+    public class MenuItemKeyToIconConverter : IValueConverter
+    {
+        #region IValueConverter implementation
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value.GetType() != typeof(MenuItemKey))
+            {
+                return null;
+            }
+
+            MenuItemKey key = (MenuItemKey)value;
+            string iconName = "";
+            switch (key)
+            {
+                case MenuItemKey.PICC:
+                    iconName = "mypicc_icon.png";
+                    break;
+                case MenuItemKey.Knowledge:
+                    iconName = "knowledge_icon.png";
+                    break;
+                case MenuItemKey.Glossary:
+                    iconName = "glossary_icon.png";
+                    break;
+                case MenuItemKey.Disorder:
+                    iconName = "disorder_icon.png";
+                    break;
+                case MenuItemKey.Journal:
+                    iconName = "journal_icon.png";
+                    break;
+                default:
+                    iconName = "settings_icon.png";
+                    break;
+            }
+
+            if (Device.OS == TargetPlatform.Windows || Device.OS == TargetPlatform.WinPhone)
+            {
+                iconName = $"Assets\\{iconName}";
+            }
+
+            return iconName;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return MenuItemKey.Settings;
+        }
+
+        #endregion
+    }
 }
 

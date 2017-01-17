@@ -29,11 +29,19 @@ namespace BFH_USZ_PICC.ViewModels
 
         #region navigation events
 
-        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override Task OnNavigatedFromAsync()
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            EndEditing();
+
+            // Return "fake task" since Task.CompletedTask is not supported in this PCL
+            return Task.FromResult(false);
+        }
+
+        public async override Task InitializeAsync(List<object> navigationData)
+        {
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
             {
-                var param = ((List<object>)parameter).First();
+                var param = ((List<object>)navigationData).First();
                 if (param.GetType() == typeof(PICCModel))
                 {
                     _displayingPICC = new PICC() { PICCModel = (PICCModel)param, InsertDate = DateTimeOffset.Now.Date.ToLocalTime() };
@@ -42,18 +50,11 @@ namespace BFH_USZ_PICC.ViewModels
                 else if (param.GetType() == typeof(string))
                 {
                     _displayingPICC = await _dataService.GetPICCAsync((string)param);
+                    EndEditing();
                 }
             }
 
             LoadFromModel();
-        }
-
-        public override Task OnNavigatedFromAsync()
-        {
-            EndEditing();
-
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
         }
 
         #endregion
@@ -244,7 +245,7 @@ namespace BFH_USZ_PICC.ViewModels
 
         #endregion
 
-        #region RelayCommands
+        #region relay commands
 
         private RelayCommand _editButtonCommand;
         public RelayCommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(() =>
@@ -256,40 +257,39 @@ namespace BFH_USZ_PICC.ViewModels
         public RelayCommand SaveButtonCommand => _saveButtonCommand ?? (_saveButtonCommand = new RelayCommand(async () =>
         {
             await SaveToModel();
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+            await NavigationService.NavigateBackToRootAsync();
         }));
 
         private RelayCommand _deleteButtonCommand;
         public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
             {                
                 await _dataService.DeltePICCAsync(_displayingPICC);                
             }
-            await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+            await NavigationService.NavigateBackToRootAsync();
         }));
 
         private RelayCommand _cancelButtonCommand;
         public RelayCommand CancelButtonCommand => _cancelButtonCommand ?? (_cancelButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+                await NavigationService.NavigateBackToRootAsync();
             }
         }));
 
         private RelayCommand _piccRemoveButtonCommand;
         public RelayCommand PiccRemoveButtonCommand => _piccRemoveButtonCommand ?? (_piccRemoveButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.PICCDetailViewModelSetPICCInactiveText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.PICCDetailViewModelSetPICCInactiveText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 // Currently there is no possibilty to show the user a popup where he/she can select a date. 
                 // For the moment, in case of removal, todays date will be saved on DB
                 _displayingPICC.RemovalDate = DateTimeOffset.Now.Date.ToLocalTime();
 
                 await SaveToModel();
-
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                await NavigationService.NavigateBackAsync();
             }
         }));
 

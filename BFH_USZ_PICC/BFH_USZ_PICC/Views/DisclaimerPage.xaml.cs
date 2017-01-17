@@ -12,7 +12,6 @@ namespace BFH_USZ_PICC.Views
         public DisclaimerPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            
         }        
     }
 }

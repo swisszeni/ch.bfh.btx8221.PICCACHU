@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Views;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace BFH_USZ_PICC.ViewModels
 {
     class DisorderViewModel : ViewModelBase
     {
+        #region public properties
+
         /// <summary>
         /// Adds a list with all "Disorder" objects to the "ListOfDisorderEntries" variable.
         /// </summary>
@@ -26,20 +29,17 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }
 
-        private DisorderEntry _selectedSymptom;
-        public DisorderEntry SelectedSymptom
-        {
-            get { return _selectedSymptom; }
-            set
-            {
-                Set(() => SelectedSymptom, ref _selectedSymptom, value);
+        #endregion
 
-                //Checks if _selectedEntry is not null (this can be if the user leaves the app on the device back button)
-                if (_selectedSymptom != null)
-                {
-                    ((Shell)Application.Current.MainPage).Detail.Navigation.PushAsync(new BasePage(typeof(DisorderDetailPage), new List<object> { value }));
-                }
-            }
-        }
+        #region relay commands
+
+        private RelayCommand<DisorderEntry> _itemSelectedCommand;
+        public RelayCommand<DisorderEntry> ItemSelectedCommand => _itemSelectedCommand ?? (_itemSelectedCommand = new RelayCommand<DisorderEntry>((DisorderEntry selectedItem) =>
+        {
+            // Item selected, handle navigation
+            NavigationService.NavigateToAsync<DisorderDetailViewModel>(new List<object> { selectedItem });
+        }));
+
+        #endregion
     }
 }

@@ -9,14 +9,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
 {
     public sealed partial class BandageChangingEntryPage : BaseContentPage
     {
-        private bool _firstAppearing = true;
         public BandageChangingEntryPage(ContentPage contained) : base(contained)
-        {
-            InitializeComponent();
-            AddPickers();
-        }
-
-        public BandageChangingEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

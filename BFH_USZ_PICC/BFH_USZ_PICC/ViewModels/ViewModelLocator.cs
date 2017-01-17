@@ -15,11 +15,18 @@ using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    public class ViewModelLocator : DynamicObject
+    public sealed class ViewModelLocator : DynamicObject
     {
-        static ViewModelResolver _resolver;
+        private static ViewModelResolver _resolver;
 
-        public ViewModelLocator()
+        private static readonly ViewModelLocator _instance = new ViewModelLocator();
+
+        public static ViewModelLocator Instance
+        {
+            get { return _instance; }
+        }
+
+        private ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
@@ -41,12 +48,26 @@ namespace BFH_USZ_PICC.ViewModels
                 }
             }
 
+            // Register the Services
+            if(Device.OS == TargetPlatform.iOS)
+            {
+                SimpleIoc.Default.Register<INavigationService, NavigationService_iOS>();
+                SimpleIoc.Default.Register<KnowledgeBaseViewModel>();
+            } else
+            {
+                SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            }
+
             // Register the ViewModels
+            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<MenuViewModel>();
             SimpleIoc.Default.Register<AddPICCViewModel>();
             SimpleIoc.Default.Register<MyPICCViewModel>();
             SimpleIoc.Default.Register<PICCDetailViewModel>();
+            SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
             SimpleIoc.Default.Register<KnowledgeEntriesViewModel>();
             SimpleIoc.Default.Register<KnowledgeEntryDetailViewModel>();
+            SimpleIoc.Default.Register<PictureViewModel>();
             SimpleIoc.Default.Register<GlossaryViewModel>();
             SimpleIoc.Default.Register<DisorderViewModel>();
             SimpleIoc.Default.Register<DisorderDetailViewModel>();
@@ -61,10 +82,14 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<StatlockChangingViewModel>();
             SimpleIoc.Default.Register<MasterDataViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
-            SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
-            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();     
-            
+            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();
+            SimpleIoc.Default.Register<DisclaimerViewModel>();
         }
+
+        public static T Resolve<T>()
+        {
+            return ServiceLocator.Current.GetInstance<T>();
+        } 
 
         public static ViewModelResolver Resolver
         {

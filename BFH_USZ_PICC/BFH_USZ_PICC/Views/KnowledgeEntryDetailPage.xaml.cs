@@ -11,17 +11,35 @@ namespace BFH_USZ_PICC.Views
 {
     public partial class KnowledgeEntryDetailPage : BaseContentPage
     {
-        public KnowledgeEntryDetailPage(ContentPage contained, KnowledgeEntry selectedEntry) : base(contained)
+        public KnowledgeEntryDetailPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
-            ((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry = selectedEntry;
-            Title = selectedEntry.Title;
+
+            // TODO: Fix problem of wrong title
+
+            ((KnowledgeEntryDetailViewModel)BindingContext).PropertyChanged += DisplayingEntryChanged;
+
             BuildViewElements();
+        }
+
+        private void DisplayingEntryChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(KnowledgeEntryDetailViewModel.DisplayingEntry))
+            {
+                // DisplayingEntry is updated, rebuild the view
+                BuildViewElements();
+            }
         }
 
         // this method adds all the needed knowledge elements to the correct position
         private void BuildViewElements()
         {
+            // Check that DisplayingEntry is actually set
+            if (((KnowledgeEntryDetailViewModel)BindingContext).DisplayingEntry == null)
+            {
+                return;
+            }
+
             //the index variable adds the knowledgeElement to its particular position
             int index = 0;
 
@@ -90,21 +108,13 @@ namespace BFH_USZ_PICC.Views
             {
                 if (imageElem != null)
                 {
-                    Navigation.PushAsync(new BasePage(typeof(PicturePage), new List<object> { (KnowledgeEntryImageElement)imageElem }));
+                    ((KnowledgeEntryDetailViewModel)BindingContext).ShowPictureDetailCommand.Execute(imageElem);
                 }
-
             };
 
             Image image = (Image)imageElem.element;
 
             image.GestureRecognizers.Add(tapGesture);
-        }
-
-
-        //This method sets the selected glossary entry to null (otherwise it would be marked).
-        private void GlossaryEntrySelected(object sender, EventArgs e)
-        {
-            GlossaryList.SelectedItem = null;
         }
     }
 }

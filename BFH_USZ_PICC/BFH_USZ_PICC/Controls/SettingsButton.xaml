@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             x:Class="BFH_USZ_PICC.Controls.SettingsButton"
+             Spacing="0"
+             Orientation="Horizontal"
+             Margin="0,12"
+             Padding="38,20"
+             BackgroundColor="Transparent">
+    <Image WidthRequest="30"
+           HeightRequest="30"
+           Margin="0,0,14,0">
+        <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                        Android="settings_icon.png"
+                        iOS="settings_icon.png"
+                        WinPhone="Assets\settings_icon.png" />
+        </Image.Source>
+    </Image>
+    <Label Text="{i18n:Translate SettingsPageTitleText}">
+        <Label.Style>
+            <OnPlatform x:TypeArguments="Style"
+                        Android="{StaticResource MenuButtonLabelStyle}"
+                        iOS="{StaticResource MenuButtonLabelStyle}"
+                        WinPhone="{StaticResource UWPMenuButtonLabelStyle}" />
+        </Label.Style>
+    </Label>
+</StackLayout>
+    

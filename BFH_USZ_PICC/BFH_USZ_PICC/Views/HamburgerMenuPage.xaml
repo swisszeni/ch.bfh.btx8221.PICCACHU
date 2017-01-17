@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+             xmlns:helpers="clr-namespace:BFH_USZ_PICC.Utilitys;assembly=BFH_USZ_PICC"
+             xmlns:controls="clr-namespace:BFH_USZ_PICC.Controls;assembly=BFH_USZ_PICC"
+             xmlns:behaviors="clr-namespace:BFH_USZ_PICC.Behaviors;assembly=BFH_USZ_PICC"
+             x:Class="BFH_USZ_PICC.Views.HamburgerMenuPage"
+             Title=" "
+             BindingContext="{Binding [MenuViewModel], Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Grid.BackgroundColor>
+            <helpers:OnCustomPlatform x:TypeArguments="Color"
+                                      Android="{StaticResource ColorUSZBlue}"
+                                      iOS="{StaticResource ColorUSZBlue}"
+                                      WinPhone="Transparent"
+                                      Windows="Transparent" />
+        </Grid.BackgroundColor>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.Margin>
+            <helpers:OnCustomPlatform x:TypeArguments="Thickness"
+                                      Android="0"
+                                      WinPhone="0"
+                                      Windows="0,0,0,-48" />
+        </Grid.Margin>
+        <!--APP LOGO-->
+        <StackLayout Grid.Row="0"
+                     Orientation="Horizontal">
+            <StackLayout.Margin>
+                <helpers:OnCustomPlatform x:TypeArguments="Thickness"
+                                          Android="20,20,10,10"
+                                          WinPhone="20,20,10,10"
+                                          Windows="20,50,10,10" />
+            </StackLayout.Margin>
+            <Image Margin="0,0,10,0">
+                <Image.HeightRequest>
+                    <helpers:OnCustomPlatform x:TypeArguments="x:Double"
+                                              Android="30"
+                                              WinPhone="60"
+                                              Windows="60" />
+                </Image.HeightRequest>
+                <Image.Source>
+                    <helpers:OnCustomPlatform x:TypeArguments="ImageSource"
+                                              Android="usz_icon.png"
+                                              WinPhone="Assets\usz_icon.png"
+                                              Windows="Assets\usz_icon.png" />
+                </Image.Source>
+            </Image>
+            <Label Text="Project PICCACHU"
+                   FontSize="29"
+                   VerticalOptions="Center">
+                <Label.TextColor>
+                    <helpers:OnCustomPlatform x:TypeArguments="Color"
+                                              Android="{StaticResource ColorWhite}"
+                                              WinPhone="{StaticResource ColorTextDarkGrey}"
+                                              Windows="{StaticResource ColorTextDarkGrey}" />
+                </Label.TextColor>
+            </Label>
+        </StackLayout>
+
+        <!--DIVIDER-->
+        <Grid Grid.Row="1"
+              HeightRequest="1"
+              Opacity="0.2"
+              Margin="20,0">
+            <Grid.BackgroundColor>
+                <helpers:OnCustomPlatform x:TypeArguments="Color"
+                                          Android="{StaticResource ColorWhite}"
+                                          WinPhone="{StaticResource ColorBlack}"
+                                          Windows="{StaticResource ColorBlack}" />
+            </Grid.BackgroundColor>
+        </Grid>
+
+        <!--MENU-->
+        <ListView Grid.Row="2"
+                  CachingStrategy="RecycleElement"
+                  VerticalOptions="StartAndExpand"
+                  ItemsSource="{Binding MenuItems, Mode=OneWay}"
+                  behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
+                  SeparatorVisibility="None"
+                  RowHeight="70">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="12,0"
+                                     Padding="20">
+                            <Image WidthRequest="30"
+                                   HeightRequest="30"
+                                   Margin="0,0,14,0"
+                                   Source="{Binding MenuItemKey, Converter={StaticResource MenuItemKeyToIconConverter}}" />
+                            <Label Text="{Binding Title}">
+                                <Label.Style>
+                                    <OnPlatform x:TypeArguments="Style"
+                                                Android="{StaticResource MenuButtonLabelStyle}"
+                                                iOS="{StaticResource MenuButtonLabelStyle}"
+                                                WinPhone="{StaticResource UWPMenuButtonLabelStyle}" />
+                                </Label.Style>
+                            </Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--SETTINGS-->
+        <controls:SettingsButton Grid.Row="3"
+                                 HorizontalOptions="Fill"
+                                 VerticalOptions="StartAndExpand"
+                                 Command="{Binding GoToSettingsCommand}"/>
+    </Grid>
+</ContentPage>

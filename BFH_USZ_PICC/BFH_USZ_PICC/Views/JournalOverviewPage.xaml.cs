@@ -10,11 +10,5 @@ namespace BFH_USZ_PICC.Views
         {
             InitializeComponent();
         }
-
-        // This method sets the selected journal entry to null (otherwise it would be marked).
-        void SelectedEntry(object sender, EventArgs e)
-        {
-            JournalList.SelectedItem = null;
-        }
     }
 }

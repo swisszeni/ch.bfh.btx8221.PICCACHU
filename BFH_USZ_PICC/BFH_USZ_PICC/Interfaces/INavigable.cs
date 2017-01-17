@@ -15,6 +15,6 @@ namespace BFH_USZ_PICC.Interfaces
     public interface INavigable
     {
         Task OnNavigatedFromAsync();
-        Task OnNavigatedToAsync(object parameter, NavigationMode mode);
+        Task OnNavigatedToAsync(NavigationMode mode);
     }
 }

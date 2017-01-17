@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC"
+                  x:Class="BFH_USZ_PICC.Views.MainPage"
+                  BindingContext="{Binding [MainViewModel], Source={StaticResource ViewModelLocator}}">
+    <MasterDetailPage.MasterBehavior>
+        <OnPlatform x:TypeArguments="MasterBehavior"
+                    WinPhone="Popover" />
+    </MasterDetailPage.MasterBehavior>
+    <MasterDetailPage.Master>
+        <local:HamburgerMenuPage />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage BackgroundColor="Transparent" />
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

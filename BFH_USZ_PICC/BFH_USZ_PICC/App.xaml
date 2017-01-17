@@ -6,14 +6,18 @@
              x:Class="BFH_USZ_PICC.Application">
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="ViewModelLocator" />
-
             <!--Converters-->
             <utilitys:NegateBooleanConverter x:Key="NegateBooleanConverter" />
             <utilitys:GuideWireLenghtToTextConverter x:Key="GuideWireLenghtToTextConverter" />
             <utilitys:RemovalDateToTextConverter x:Key="RemovalDateToTextConverter" />
-            
+            <utilitys:MenuItemKeyToIconConverter x:Key="MenuItemKeyToIconConverter" />
+
             <!--General App Colors-->
+            <Color x:Key="ColorAlertRed">#A30001</Color>
+            <Color x:Key="ColorUSZBlue">#0057A2</Color>
+            <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorBlack">#000000</Color>
+
             <Color x:Key="ColorButtonBackgroundGrey">#D6D7D7</Color>
             <Color x:Key="ColorButtonBackgroundBlue">#004B86</Color>
 
@@ -22,14 +26,13 @@
 
             <Color x:Key="ColorTextLightGrey">#004B86</Color>
             <Color x:Key="ColorTextDarkGrey">Gray</Color>
-            <Color x:Key="ColorTextBlack">#000000</Color>
             <Color x:Key="ColorTextBlue">#004B86</Color>
 
             <!--General App Styles-->
             <Style x:Key="LabelStyleTitle"
                    TargetType="Label">
                 <Setter Property="TextColor"
-                        Value="{StaticResource ColorTextBlack}" />
+                        Value="{StaticResource ColorBlack}" />
                 <Setter Property="FontSize"
                         Value="20" />
             </Style>
@@ -45,7 +48,7 @@
             <Style x:Key="LabelStyleContent"
                    TargetType="Label">
                 <Setter Property="TextColor"
-                        Value="{StaticResource ColorTextBlack}" />
+                        Value="{StaticResource ColorBlack}" />
                 <Setter Property="FontSize"
                         Value="14" />
             </Style>
@@ -59,6 +62,24 @@
                 <Setter Property="FontSize"
                         Value="16" />
             </Style>
+            
+            <!--Specific Styles-->
+            <Style x:Key="MenuButtonLabelStyle"
+                   TargetType="{x:Type Label}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorWhite}" />
+                <Setter Property="FontSize"
+                        Value="22" />
+            </Style>
+
+            <Style x:Key="UWPMenuButtonLabelStyle"
+                   TargetType="{x:Type Label}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorUSZBlue}" />
+                <Setter Property="FontSize"
+                        Value="22" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

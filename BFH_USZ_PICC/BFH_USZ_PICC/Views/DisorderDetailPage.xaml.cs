@@ -13,7 +13,7 @@ namespace BFH_USZ_PICC.Views
 {
     public sealed partial class DisorderDetailPage : BaseContentPage
     {
-        public DisorderDetailPage(ContentPage contained, DisorderEntry selectedEntry) : base(contained)
+        public DisorderDetailPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
         }

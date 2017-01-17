@@ -8,14 +8,7 @@ namespace BFH_USZ_PICC.Views.JournalEntries
 {
     public sealed partial class MicroClaveChangingEntryPage : BaseContentPage
     {
-        private bool _firstAppearing = true;
         public MicroClaveChangingEntryPage(ContentPage contained) : base(contained)
-        {
-            InitializeComponent();
-            AddPickers();
-        }
-
-        public MicroClaveChangingEntryPage(ContentPage contained, string ID) : base(contained)
         {
             InitializeComponent();
             AddPickers();

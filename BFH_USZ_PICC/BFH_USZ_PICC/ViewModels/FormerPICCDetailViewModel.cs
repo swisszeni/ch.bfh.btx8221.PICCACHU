@@ -30,18 +30,17 @@ namespace BFH_USZ_PICC.ViewModels
 
         #region navigation events
 
-        public async override Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public async override Task InitializeAsync(List<object> navigationData)
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
             {
-                var param = ((List<object>)parameter).First();
+                var param = ((List<object>)navigationData).First();
                 _displayingPICC = await _dataService.GetPICCAsync((string)param);
-
             }
 
             LoadFromModel();
         }
-        
+
         #endregion
 
         #region private methods
@@ -240,16 +239,15 @@ namespace BFH_USZ_PICC.ViewModels
 
         #endregion
 
-
         #region relay commands
 
         private RelayCommand _deleteButtonCommand;
         public RelayCommand DeleteButtonCommand => _deleteButtonCommand ?? (_deleteButtonCommand = new RelayCommand(async () =>
         {
-            if (await ((Shell)Application.Current.MainPage).DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.MyPICCPageDeletePICCWarningText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 await _dataService.DeltePICCAsync(_displayingPICC);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopToRootAsync();
+                await NavigationService.NavigateBackToRootAsync();
             }
         }));
 

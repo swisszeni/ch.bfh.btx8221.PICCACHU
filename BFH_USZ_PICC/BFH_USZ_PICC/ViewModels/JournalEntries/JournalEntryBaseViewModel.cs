@@ -13,6 +13,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 {
     public abstract class JournalEntryBaseViewModel<T> : ViewModelBase where T : JournalEntry, new()
     {
+        private bool _firstAppearing;
         protected ILocalUserDataService _dataService;
         protected T _displayingEntry;
 
@@ -23,18 +24,19 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 
         #region navigation events
 
-        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode)
+        public override async Task InitializeAsync(List<object> navigationData)
         {
-            if (parameter is List<object> && ((List<object>)parameter).Count > 0)
+            if (navigationData is List<object> && ((List<object>)navigationData).Count > 0)
             {
                 // Passes an ID if there should be an existing Entry displayed
-                var id = (string)((List<object>)parameter).First();
-                if ((string)((List<object>)parameter).First() != null)
+                var id = (string)((List<object>)navigationData).First();
+                if ((string)((List<object>)navigationData).First() != null)
                 {
                     // Load form Database
                     _displayingEntry = await _dataService.GetJournalEntryAsync<T>(id);
-                } 
-            } else
+                }
+            }
+            else
             {
                 // No existing entry, we assume we want to create a new entry
                 _displayingEntry = (T)Activator.CreateInstance(typeof(T));
@@ -43,15 +45,39 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
                 StartEditing();
             }
 
+            // Initializing the flag for appearance status
+            _firstAppearing = true;
+
             LoadFromModel();
+        }
+
+        public override Task OnNavigatedToAsync(NavigationMode mode)
+        {
+            // Check if it is the first time, the view is shown after initialization (false when navigating back to this one)
+            if (_firstAppearing)
+            {
+                // first time. Call the event for the first appearance
+                OnFirstAppearance();
+            }
+
+            _firstAppearing = false;
+
+            return base.OnNavigatedToAsync(mode);
+        }
+
+        /// <summary>
+        /// Stub method to override and handle specific scenarios on first appearance
+        /// </summary>
+        public virtual void OnFirstAppearance()
+        {
+
         }
 
         public override Task OnNavigatedFromAsync()
         {
             EndEditing();
 
-            // Return "fake task" since Task.CompletedTask is not supported in this PCL
-            return Task.FromResult(false);
+            return base.OnNavigatedFromAsync();
         }
 
         #endregion
@@ -124,36 +150,37 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
 
         #endregion
 
-        #region RelayCommands
+        #region relay commands
 
         private RelayCommand _saveCommand;
         public RelayCommand SaveCommand => _saveCommand ?? (_saveCommand = new RelayCommand(() =>
         {
             EndEditing();
             SaveToModel();
-            ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+            NavigationService.NavigateBackAsync();
         }));
 
         private RelayCommand _cancelCommand;
         public RelayCommand CancelCommand => _cancelCommand ?? (_cancelCommand = new RelayCommand(async () =>
         {
             //Check if the user really wants to leave the page
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.CancelButtonPressedConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                await NavigationService.NavigateBackAsync();
             }
         }));
 
         private RelayCommand _deleteCommand;
         public RelayCommand DeleteCommand => _deleteCommand ?? (_deleteCommand = new RelayCommand(async () =>
         {
-            if (await Application.Current.MainPage.DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+            if (await DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
             {
                 await _dataService.DeleteJournalEntryAsync(_displayingEntry);
-                await ((Shell)Application.Current.MainPage).Detail.Navigation.PopAsync();
+                await NavigationService.NavigateBackAsync();
             }
         }));
 
         #endregion
+
     }
 }

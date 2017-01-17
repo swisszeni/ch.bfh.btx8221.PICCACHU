@@ -21,6 +21,24 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
     {
         public BandageChangingViewModel() { }
 
+        #region navigation events
+
+        /// <summary>
+        /// Displays an Alert asking the user to show the Instruction for the Maintenance
+        /// </summary>
+        public async override void OnFirstAppearance()
+        {
+            if (IsUserInputEnabled)
+            {
+                if (await DisplayAlert(AppResources.InformationText, AppResources.JournalEntriesAskForMainentanceInstructionText, AppResources.YesButtonText, AppResources.NoButtonText))
+                {
+                    await NavigationService.NavigateToAsync<MaintenanceInstructionViewModel>(new List<object> { MainentanceInstructions.getBandageChangingInstruction() });
+                }
+            }
+        }
+
+        #endregion
+
         #region private methods
 
         protected override void LoadFromModel()
@@ -76,5 +94,6 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         }
 
         #endregion
+
     }
 }
