@@ -475,6 +475,23 @@
     <BundleResource Include="Resources\DreilumigerPICC.PNG" />
     <BundleResource Include="Resources\EinlumigerPICC.PNG" />
     <BundleResource Include="Resources\settings_icon.png" />
+    <BundleResource Include="Resources\mypicc_icon.png" />
+    <BundleResource Include="Resources\mypicc_icon%402x.png" />
+    <BundleResource Include="Resources\mypicc_icon%403x.png" />
+    <BundleResource Include="Resources\settings_icon%402x.png" />
+    <BundleResource Include="Resources\settings_icon%403x.png" />
+    <BundleResource Include="Resources\knowledge_icon.png" />
+    <BundleResource Include="Resources\knowledge_icon%402x.png" />
+    <BundleResource Include="Resources\knowledge_icon%403x.png" />
+    <BundleResource Include="Resources\disorder_icon.png" />
+    <BundleResource Include="Resources\disorder_icon%402x.png" />
+    <BundleResource Include="Resources\disorder_icon%403x.png" />
+    <BundleResource Include="Resources\journal_icon.png" />
+    <BundleResource Include="Resources\journal_icon%402x.png" />
+    <BundleResource Include="Resources\journal_icon%403x.png" />
+    <BundleResource Include="Resources\emergency_icon.png" />
+    <BundleResource Include="Resources\emergency_icon%402x.png" />
+    <BundleResource Include="Resources\emergency_icon%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

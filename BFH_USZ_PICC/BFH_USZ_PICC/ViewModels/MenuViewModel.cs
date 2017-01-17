@@ -22,10 +22,15 @@ namespace BFH_USZ_PICC.ViewModels
                     new NavigationMenuItem { Title = AppResources.DisorderPageTitleText, MenuItemKey = MenuItemKey.Disorder},
                     new NavigationMenuItem { Title = AppResources.JournalOverviewPageTitleText, MenuItemKey = MenuItemKey.Journal}
                 };
+
+            _settingsMenuItem = new NavigationMenuItem { Title = AppResources.SettingsPageTitleText, MenuItemKey = MenuItemKey.Settings };
         }
 
         private List<NavigationMenuItem> _menuItems;
         public List<NavigationMenuItem> MenuItems => _menuItems;
+
+        public NavigationMenuItem _settingsMenuItem;
+        public NavigationMenuItem SettingsMenuItem => _settingsMenuItem;
 
         #region RelayCommands
 

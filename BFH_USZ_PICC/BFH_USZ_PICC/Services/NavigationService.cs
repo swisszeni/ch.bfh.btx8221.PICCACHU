@@ -81,7 +81,7 @@ namespace BFH_USZ_PICC.Services
             return InternalNavigateToAsync(viewModelType, navParams);
         }
 
-        public async Task PushViewDirectOnStack(Page pushingPage, bool modal = false)
+        public virtual async Task PushViewDirectOnStack(Page pushingPage, bool modal = false)
         {
             INavigation nav = null;
             if (Application.Current.MainPage is MainPage)
@@ -121,7 +121,7 @@ namespace BFH_USZ_PICC.Services
             throw new NotImplementedException();
         }
 
-        public async Task NavigateBackAsync()
+        public async virtual Task NavigateBackAsync()
         {
             if (Application.Current.MainPage is MainPage)
             {
@@ -134,7 +134,7 @@ namespace BFH_USZ_PICC.Services
             }
         }
 
-        public async Task NavigateBackToRootAsync()
+        public async virtual Task NavigateBackToRootAsync()
         {
             if (Application.Current.MainPage is MainPage)
             {

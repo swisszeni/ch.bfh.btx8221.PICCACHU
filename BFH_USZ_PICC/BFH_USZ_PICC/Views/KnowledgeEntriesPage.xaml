@@ -10,10 +10,12 @@
     <ListView x:Name="KnowledgeList"
               HorizontalOptions="CenterAndExpand"
               GroupDisplayBinding="{Binding Title}"
-              GroupShortNameBinding="{Binding ShortName}"
+              
               ItemsSource="{Binding KnowledgeEntriesList}"
               behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
               IsGroupingEnabled="true">
+
+        <!--GroupShortNameBinding="{Binding ShortName}"-->
         <ListView.Margin>
             <OnPlatform x:TypeArguments="Thickness"
                         iOS="20, 40, 20, 20"
