@@ -27,13 +27,7 @@ namespace BFH_USZ_PICC.iOS.DependencyServices
 
         public bool Dial(string number)
         {
-            try
-            {
-                UIApplication.SharedApplication.OpenUrl(new NSUrl($"telprompt://{number}"), new NSDictionary(), null);
-            } catch (Exception e)
-            {
-                var test = e;
-            }
+            UIApplication.SharedApplication.OpenUrl(new NSUrl($"telprompt://{number}"), new NSDictionary(), null);
             
             return true;
         }
