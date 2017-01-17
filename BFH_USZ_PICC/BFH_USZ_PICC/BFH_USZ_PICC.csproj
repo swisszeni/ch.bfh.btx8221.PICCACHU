@@ -149,6 +149,7 @@
     <Compile Include="ViewModels\JournalEntries\AdministeredDrugViewModel.cs" />
     <Compile Include="ViewModels\JournalOverviewViewModel.cs" />
     <Compile Include="ViewModels\GlossaryViewModel.cs" />
+    <Compile Include="ViewModels\KnowledgeBaseViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntriesViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
@@ -197,6 +198,9 @@
     </Compile>
     <Compile Include="Views\JournalEntries\MicroClaveChangingEntryPage.xaml.cs">
       <DependentUpon>MicroClaveChangingEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KnowledgeBasePage.xaml.cs">
+      <DependentUpon>KnowledgeBasePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -567,6 +571,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\PlainTextButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\KnowledgeBasePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

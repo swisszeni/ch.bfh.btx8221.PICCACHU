@@ -180,6 +180,7 @@ namespace BFH_USZ_PICC.Services
             _viewModelmappings.Add(typeof(FormerPICCDetailViewModel), typeof(FormerPICCDetailPage));
 
             // Knowledge Base
+            _viewModelmappings.Add(typeof(KnowledgeBaseViewModel), typeof(KnowledgeBasePage));
             _viewModelmappings.Add(typeof(KnowledgeEntriesViewModel), typeof(KnowledgeEntriesPage));
             _viewModelmappings.Add(typeof(KnowledgeEntryDetailViewModel), typeof(KnowledgeEntryDetailPage));
             _viewModelmappings.Add(typeof(PictureViewModel), typeof(PicturePage));
@@ -210,7 +211,14 @@ namespace BFH_USZ_PICC.Services
         private void CreateMenuKeyPageMappings()
         {
             _menuKeymappings.Add(MenuItemKey.PICC, typeof(MyPICCPage));
-            _menuKeymappings.Add(MenuItemKey.Knowledge, typeof(KnowledgeEntriesPage));
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                _menuKeymappings.Add(MenuItemKey.Knowledge, typeof(KnowledgeBasePage));
+            } else
+            {
+                _menuKeymappings.Add(MenuItemKey.Knowledge, typeof(KnowledgeEntriesPage));
+            }
+            
             _menuKeymappings.Add(MenuItemKey.Glossary, typeof(GlossaryPage));
             _menuKeymappings.Add(MenuItemKey.Disorder, typeof(DisorderPage));
             _menuKeymappings.Add(MenuItemKey.Journal, typeof(JournalOverviewPage));
