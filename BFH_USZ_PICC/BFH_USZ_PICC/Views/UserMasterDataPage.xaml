@@ -75,8 +75,7 @@
                    Keyboard="Telephone"
                    Text="{Binding Mobile}"
                    IsEnabled="{Binding IsUserInputEnabled}" />
-            <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"
-                   IsVisible="{Binding IsBirthdateDisplayed}" />
+            <Label Text="{i18n:Translate UserMasterDataPageBirthdateLabelText}"/>
             <DatePicker x:Name="BirthdatePicker"
                         Date="{Binding Birthdate}"
                         IsVisible="{Binding IsBirthdateDisplayed}"
