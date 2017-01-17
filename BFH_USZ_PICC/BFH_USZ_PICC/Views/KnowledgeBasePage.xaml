@@ -11,6 +11,7 @@
     <Button Grid.Row="0"
             Style="{StaticResource ButtonStyleGray}"
             Text="{Binding SwitchContextButtonString}"
+            Command="{Binding SwitchContextCommand}"
             Margin="15" />
 
 </d:BaseContentPage>

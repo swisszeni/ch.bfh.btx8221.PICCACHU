@@ -52,6 +52,7 @@ namespace BFH_USZ_PICC.ViewModels
             if(Device.OS == TargetPlatform.iOS)
             {
                 SimpleIoc.Default.Register<INavigationService, NavigationService_iOS>();
+                SimpleIoc.Default.Register<KnowledgeBaseViewModel>();
             } else
             {
                 SimpleIoc.Default.Register<INavigationService, NavigationService>();

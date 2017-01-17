@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-
+using BFH_USZ_PICC.ViewModels;
 
 namespace BFH_USZ_PICC.Views
 {
@@ -23,12 +23,36 @@ namespace BFH_USZ_PICC.Views
 
             _glossary = new GlossaryPage(contained);
             Grid.SetRow(_glossary, 1);
-            _glossary.IsVisible = false;
             Children.Add(_glossary);
 
             _knowledge = new KnowledgeEntriesPage(contained);
             Grid.SetRow(_knowledge, 1);
             Children.Add(_knowledge);
+
+            var vm = BindingContext as KnowledgeBaseViewModel;
+            if (vm != null)
+            {
+                vm.PropertyChanged += DisplayingContextChanged;
+            }
+        }
+
+        private void DisplayingContextChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(KnowledgeBaseViewModel.DisplayingSubPage))
+            {
+                // DisplayingSubPage is updated, adjust Visibility
+                // TODO: FIX TITLE
+                var vm = BindingContext as KnowledgeBaseViewModel;
+                if (vm.DisplayingSubPage == DisplayingKnowledgePage.KnowledgeEntries)
+                {
+                    _knowledge.IsVisible = true;
+                    _glossary.IsVisible = false;
+                } else
+                {
+                    _knowledge.IsVisible = false;
+                    _glossary.IsVisible = true;
+                }
+            }
         }
     }
 }
