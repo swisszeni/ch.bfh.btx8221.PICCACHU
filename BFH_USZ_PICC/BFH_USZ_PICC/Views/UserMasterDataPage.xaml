@@ -16,7 +16,7 @@
     <ScrollView>
         <StackLayout Orientation="Vertical"
                      VerticalOptions="FillAndExpand"
-                     Margin="15">
+                     Margin="15,15,15,0">
             <StackLayout Orientation="Horizontal"
                          VerticalOptions="Center">
                 <Button x:Name="EditButton"
@@ -79,9 +79,13 @@
             <DatePicker x:Name="BirthdatePicker"
                         Date="{Binding Birthdate}"
                         IsVisible="{Binding IsBirthdateDisplayed}"
-                        IsEnabled="{Binding IsUserInputEnabled}">
+                        IsEnabled="{Binding IsUserInputEnabled}"
+                        Margin="0,0,0,15">
                 <DatePicker.Format>d</DatePicker.Format>
             </DatePicker>
+          <Label x:Name="BirthdateNotSetLabel"
+                 Text="{i18n:Translate PICCDetailPagePickerNotDefinedText}"
+                 IsVisible="{Binding IsBirthdateDisplayed, Converter={StaticResource NegateBooleanConverter}}"/>
         </StackLayout>
     </ScrollView>
 </d:BaseContentPage>

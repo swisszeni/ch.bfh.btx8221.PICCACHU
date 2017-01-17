@@ -177,6 +177,7 @@
         <trans-unit id="PICCDetailPagePickerNotDefinedText" translate="yes" xml:space="preserve">
           <source>Not defined</source>
           <target state="translated">Nicht definiert</target>
+          <note from="MultilingualEditor" annotates="source" priority="4">Text, wenn bei einem Input nichts definiert wurde.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Nicht definiert</note>
         </trans-unit>
         <trans-unit id="PICCDetailPagePickerPositionBelowElbowText" translate="yes" xml:space="preserve">
