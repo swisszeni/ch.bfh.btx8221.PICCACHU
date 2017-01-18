@@ -61,10 +61,10 @@ namespace BFH_USZ_PICC.ViewModels
             // Register the ViewModels
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<MenuViewModel>();
-            SimpleIoc.Default.Register<AddPICCViewModel>();
-            SimpleIoc.Default.Register<MyPICCViewModel>();
+            SimpleIoc.Default.Register<PICCAddViewModel>();
+            SimpleIoc.Default.Register<PICCOverviewViewModel>();
             SimpleIoc.Default.Register<PICCDetailViewModel>();
-            SimpleIoc.Default.Register<FormerPICCDetailViewModel>();
+            SimpleIoc.Default.Register<PICCFormerDetailViewModel>();
             SimpleIoc.Default.Register<KnowledgeEntriesViewModel>();
             SimpleIoc.Default.Register<KnowledgeEntryDetailViewModel>();
             SimpleIoc.Default.Register<PictureViewModel>();
@@ -80,10 +80,11 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<InfusionViewModel>();
             SimpleIoc.Default.Register<MicroClaveChangingViewModel>();
             SimpleIoc.Default.Register<StatlockChangingViewModel>();
-            SimpleIoc.Default.Register<MasterDataViewModel>();
+            SimpleIoc.Default.Register<SettingsMasterDataViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
-            SimpleIoc.Default.Register<MaintenanceReminderViewModel>();
-            SimpleIoc.Default.Register<DisclaimerViewModel>();
+            SimpleIoc.Default.Register<SettingsMaintenanceReminderViewModel>();
+            SimpleIoc.Default.Register<SettingsDisclaimerViewModel>();
+            SimpleIoc.Default.Register<SettingsImprintViewModel>();
         }
 
         public static T Resolve<T>()

@@ -63,6 +63,9 @@
     <Compile Include="Controls\SettingsButton.xaml.cs">
       <DependentUpon>SettingsButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SpeechButton.xaml.cs">
+      <DependentUpon>SpeechButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\USZ_PICC_NavigationPage.cs" />
     <Compile Include="Interfaces\IFileHelper.cs" />
     <Compile Include="Interfaces\IHockeyEventService.cs" />
@@ -134,9 +137,9 @@
     <Compile Include="Utilitys\Converters.cs" />
     <Compile Include="Utilitys\Extensions\TranslateExtension.cs" />
     <Compile Include="Utilitys\Helpers.cs" />
-    <Compile Include="ViewModels\AddPICCViewModel.cs" />
+    <Compile Include="ViewModels\PICCAddViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\DisclaimerViewModel.cs" />
+    <Compile Include="ViewModels\SettingsDisclaimerViewModel.cs" />
     <Compile Include="ViewModels\DisorderDetailViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
     <Compile Include="ViewModels\JournalEntries\CatheterFlushViewModel.cs" />
@@ -154,14 +157,15 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\OnBoardingViewModel.cs" />
-    <Compile Include="ViewModels\FormerPICCDetailViewModel.cs" />
-    <Compile Include="ViewModels\MaintenanceReminderViewModel.cs" />
+    <Compile Include="ViewModels\PICCFormerDetailViewModel.cs" />
+    <Compile Include="ViewModels\SettingsImprintViewModel.cs" />
+    <Compile Include="ViewModels\SettingsMaintenanceReminderViewModel.cs" />
     <Compile Include="ViewModels\PictureViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\MasterDataViewModel.cs" />
+    <Compile Include="ViewModels\SettingsMasterDataViewModel.cs" />
     <Compile Include="ViewModels\MaintenanceInstructionViewModel.cs" />
     <Compile Include="ViewModels\KnowledgeEntryDetailViewModel.cs" />
-    <Compile Include="ViewModels\MyPICCViewModel.cs" />
+    <Compile Include="ViewModels\PICCOverviewViewModel.cs" />
     <Compile Include="ViewModels\PICCDetailViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
@@ -169,8 +173,8 @@
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddPICCPage.xaml.cs">
-      <DependentUpon>AddPICCPage.xaml</DependentUpon>
+    <Compile Include="Views\PICCAddPage.xaml.cs">
+      <DependentUpon>PICCAddPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DisorderDetailPage.xaml.cs">
       <DependentUpon>DisorderDetailPage.xaml</DependentUpon>
@@ -217,26 +221,29 @@
     <Compile Include="Views\JournalOverviewPage.xaml.cs">
       <DependentUpon>JournalOverviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormerPICCDetailPage.xaml.cs">
-      <DependentUpon>FormerPICCDetailPage.xaml</DependentUpon>
+    <Compile Include="Views\PICCFormerDetailPage.xaml.cs">
+      <DependentUpon>PICCFormerDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OnBoarding\OnBoardingPage.xaml.cs">
       <DependentUpon>OnBoardingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MaintenanceReminderPage.xaml.cs">
-      <DependentUpon>MaintenanceReminderPage.xaml</DependentUpon>
+    <Compile Include="Views\SettingsImprintPage.xaml.cs">
+      <DependentUpon>SettingsImprintPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DisclaimerPage.xaml.cs">
-      <DependentUpon>DisclaimerPage.xaml</DependentUpon>
+    <Compile Include="Views\SettingsMaintenanceReminderPage.xaml.cs">
+      <DependentUpon>SettingsMaintenanceReminderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserMasterDataPage.xaml.cs">
-      <DependentUpon>UserMasterDataPage.xaml</DependentUpon>
+    <Compile Include="Views\SettingsDisclaimerPage.xaml.cs">
+      <DependentUpon>SettingsDisclaimerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsMasterDataPage.xaml.cs">
+      <DependentUpon>SettingsMasterDataPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PICCDetailPage.xaml.cs">
       <DependentUpon>PICCDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MyPICCPage.xaml.cs">
-      <DependentUpon>MyPICCPage.xaml</DependentUpon>
+    <Compile Include="Views\PICCOverviewPage.xaml.cs">
+      <DependentUpon>PICCOverviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GlossaryPage.xaml.cs">
       <DependentUpon>GlossaryPage.xaml</DependentUpon>
@@ -263,6 +270,7 @@
     <EmbeddedResource Include="Resx\AppResources.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.de.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resx\AppResources.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -294,7 +302,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\MyPICCPage.xaml">
+    <EmbeddedResource Include="Views\PICCOverviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -424,7 +432,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\AddPICCPage.xaml">
+    <EmbeddedResource Include="Views\PICCAddPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -465,7 +473,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\UserMasterDataPage.xaml">
+    <EmbeddedResource Include="Views\SettingsMasterDataPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -522,7 +530,7 @@
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\FormerPICCDetailPage.xaml">
+    <EmbeddedResource Include="Views\PICCFormerDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -558,13 +566,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\MaintenanceReminderPage.xaml">
+    <EmbeddedResource Include="Views\SettingsMaintenanceReminderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\DisclaimerPage.xaml">
+    <EmbeddedResource Include="Views\SettingsDisclaimerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -577,6 +585,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\KnowledgeBasePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SettingsImprintPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\SpeechButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

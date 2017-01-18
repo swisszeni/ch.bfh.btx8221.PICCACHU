@@ -174,10 +174,10 @@ namespace BFH_USZ_PICC.Services
             _viewModelmappings.Add(typeof(OnBoardingViewModel), typeof(OnBoardingPage));
 
             // My PICC
-            _viewModelmappings.Add(typeof(MyPICCViewModel), typeof(MyPICCPage));
-            _viewModelmappings.Add(typeof(AddPICCViewModel), typeof(AddPICCPage));
+            _viewModelmappings.Add(typeof(PICCOverviewViewModel), typeof(PICCOverviewPage));
+            _viewModelmappings.Add(typeof(PICCAddViewModel), typeof(PICCAddPage));
             _viewModelmappings.Add(typeof(PICCDetailViewModel), typeof(PICCDetailPage));
-            _viewModelmappings.Add(typeof(FormerPICCDetailViewModel), typeof(FormerPICCDetailPage));
+            _viewModelmappings.Add(typeof(PICCFormerDetailViewModel), typeof(PICCFormerDetailPage));
 
             // Knowledge Base
             _viewModelmappings.Add(typeof(KnowledgeBaseViewModel), typeof(KnowledgeBasePage));
@@ -203,14 +203,15 @@ namespace BFH_USZ_PICC.Services
 
             // Settings
             _viewModelmappings.Add(typeof(SettingsViewModel), typeof(SettingsPage));
-            _viewModelmappings.Add(typeof(MasterDataViewModel), typeof(UserMasterDataPage));
-            _viewModelmappings.Add(typeof(MaintenanceReminderViewModel), typeof(MaintenanceReminderPage));
-            _viewModelmappings.Add(typeof(DisclaimerViewModel), typeof(DisclaimerPage));
+            _viewModelmappings.Add(typeof(SettingsMasterDataViewModel), typeof(SettingsMasterDataPage));
+            _viewModelmappings.Add(typeof(SettingsMaintenanceReminderViewModel), typeof(SettingsMaintenanceReminderPage));
+            _viewModelmappings.Add(typeof(SettingsDisclaimerViewModel), typeof(SettingsDisclaimerPage));
+            _viewModelmappings.Add(typeof(SettingsImprintViewModel), typeof(SettingsImprintPage));
         }
 
         private void CreateMenuKeyPageMappings()
         {
-            _menuKeymappings.Add(MenuItemKey.PICC, typeof(MyPICCPage));
+            _menuKeymappings.Add(MenuItemKey.PICC, typeof(PICCOverviewPage));
             if (Device.OS == TargetPlatform.iOS)
             {
                 _menuKeymappings.Add(MenuItemKey.Knowledge, typeof(KnowledgeBasePage));
@@ -277,10 +278,16 @@ namespace BFH_USZ_PICC.Services
             // We want to navigate to one of the main menu entries
             // First check if we not already are on this menu entry
             Type pageType = GetPageTypeForMenuKey(key);
-            if (pageType != ((mainPage.Detail as NavigationPage)?.CurrentPage as BasePage)?.GetContentType())
+            var currNavPage = (mainPage.Detail as NavigationPage);
+            if (pageType != (currNavPage?.CurrentPage as BasePage)?.GetContentType())
             {
                 var page = new BasePage(pageType);
                 await (page as BasePage)?.ContentBindingContext?.InitializeAsync(navParams);
+                // Pop current stack to root. technically this shouldn't be a problem. but if the construct stays in memory, it could get one
+                if(currNavPage != null)
+                {
+                    await currNavPage.PopToRootAsync();
+                }
                 mainPage.Detail = new USZ_PICC_NavigationPage(page);
             }
 

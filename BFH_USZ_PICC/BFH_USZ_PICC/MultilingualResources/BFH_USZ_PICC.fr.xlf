@@ -1099,6 +1099,31 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
           <source>erro essequisit</source>
           <target state="new">erro essequisit</target>
         </trans-unit>
+        <trans-unit id="DisclaimerPageDescription" translate="yes" xml:space="preserve">
+          <source>The legal information</source>
+          <target state="new">The legal information</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für den Disclaimer</note>
+        </trans-unit>
+        <trans-unit id="MaintenanceReminderPageDescription" translate="yes" xml:space="preserve">
+          <source>Set a reminder to clean your PICC</source>
+          <target state="new">Set a reminder to clean your PICC</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für die Wartungserinnerungen</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageDescription" translate="yes" xml:space="preserve">
+          <source>Alter the personal info about you</source>
+          <target state="new">Alter the personal info about you</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für die Stammdaten</note>
+        </trans-unit>
+        <trans-unit id="ImprintPageDescription" translate="yes" xml:space="preserve">
+          <source>Who made this awesome App?</source>
+          <target state="new">Who made this awesome App?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für das Impressum</note>
+        </trans-unit>
+        <trans-unit id="ImprintPageTitle" translate="yes" xml:space="preserve">
+          <source>Imprint</source>
+          <target state="new">Imprint</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel für die Impressumsseite</note>
+        </trans-unit>
       </group>
     </body>
   </file>

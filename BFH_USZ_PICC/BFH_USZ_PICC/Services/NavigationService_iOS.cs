@@ -67,7 +67,7 @@ namespace BFH_USZ_PICC.Services
             }
         }
 
-        protected override Task InternalNavigateToMenuEntryAsync(MenuItemKey key, List<object> navParams)
+        protected async override Task InternalNavigateToMenuEntryAsync(MenuItemKey key, List<object> navParams)
         {
             // Check if main navigation Structure exists
             var mainPage = Application.Current.MainPage as MainPage_iOS;
@@ -79,12 +79,16 @@ namespace BFH_USZ_PICC.Services
             // We want to navigate to one of the main menu entries
             // First check if we not already are on this menu entry
             Type pageType = GetPageTypeForMenuKey(key);
-            if (pageType != ((mainPage.CurrentPage as NavigationPage)?.CurrentPage as BasePage)?.GetContentType())
+            var currNavPage = (mainPage.CurrentPage as NavigationPage);
+            if (pageType != (currNavPage?.CurrentPage as BasePage)?.GetContentType())
             {
+                // Pop current stack to root. technically this shouldn't be a problem. but if the construct stays in memory, it could get one
+                if (currNavPage != null)
+                {
+                    await currNavPage.PopToRootAsync();
+                }
                 mainPage.TrySetCurrentPage(pageType);
             }
-
-            return Task.FromResult(true);
         }
 
         protected async override Task InternalNavigateToAsync(Type viewModelType, List<object> navParams)

@@ -8,23 +8,43 @@
                    Title="{i18n:Translate KnowledgeEntriesTitleText}"
                    BindingContext="{Binding [KnowledgeEntriesViewModel], Source={StaticResource ViewModelLocator}}">
     <ListView x:Name="KnowledgeList"
-              HorizontalOptions="CenterAndExpand"
+              SeparatorVisibility="None"
+              HasUnevenRows="True"
               GroupDisplayBinding="{Binding Title}"
-              
               ItemsSource="{Binding KnowledgeEntriesList}"
               behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
               IsGroupingEnabled="true">
-
-        <!--GroupShortNameBinding="{Binding ShortName}"-->
-        <ListView.Margin>
-            <OnPlatform x:TypeArguments="Thickness"
-                        iOS="20, 40, 20, 20"
-                        Android="20, 20, 20, 20"
-                        WinPhone="20, 20, 20, 20" />
-        </ListView.Margin>
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell Height="50">
+                    <ViewCell.View>
+                        <StackLayout Padding="20,0">
+                            <Label Margin="0,12,0,8"
+                                   Style="{StaticResource LabelStyleTitle}"
+                                   Text="{Binding Title}"
+                                   LineBreakMode="WordWrap" />
+                            <Grid HeightRequest="1"
+                                  BackgroundColor="{StaticResource ColorUSZBlue}" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Title}" />
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Padding="20,0">
+                            <Label Margin="0,10,0,10"
+                                   Style="{StaticResource LabelStyleCellTitle}"
+                                   Text="{Binding Title}"
+                                   LineBreakMode="WordWrap" />
+                            <Grid HeightRequest="1"
+                                  Opacity="0.2"
+                                  BackgroundColor="{StaticResource ColorBlack}" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

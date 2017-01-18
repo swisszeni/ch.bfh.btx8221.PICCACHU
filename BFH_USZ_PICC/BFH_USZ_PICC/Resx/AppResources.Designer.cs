@@ -725,6 +725,15 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The legal information.
+        /// </summary>
+        public static string DisclaimerPageDescription {
+            get {
+                return ResourceManager.GetString("DisclaimerPageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
         public static string DisorderDetailPageActionLabelText {
@@ -838,6 +847,24 @@ namespace BFH_USZ_PICC.Resx {
         public static string GlossaryPageTitleText {
             get {
                 return ResourceManager.GetString("GlossaryPageTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Who made this awesome App?.
+        /// </summary>
+        public static string ImprintPageDescription {
+            get {
+                return ResourceManager.GetString("ImprintPageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imprint.
+        /// </summary>
+        public static string ImprintPageTitle {
+            get {
+                return ResourceManager.GetString("ImprintPageTitle", resourceCulture);
             }
         }
         
@@ -1288,6 +1315,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string MaintenanceInstructionTitleText {
             get {
                 return ResourceManager.GetString("MaintenanceInstructionTitleText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set a reminder to clean your PICC.
+        /// </summary>
+        public static string MaintenanceReminderPageDescription {
+            get {
+                return ResourceManager.GetString("MaintenanceReminderPageDescription", resourceCulture);
             }
         }
         
@@ -1900,6 +1936,15 @@ namespace BFH_USZ_PICC.Resx {
         public static string UserMasterDataPageDelteAllPersonalDataText {
             get {
                 return ResourceManager.GetString("UserMasterDataPageDelteAllPersonalDataText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alter the personal info about you.
+        /// </summary>
+        public static string UserMasterDataPageDescription {
+            get {
+                return ResourceManager.GetString("UserMasterDataPageDescription", resourceCulture);
             }
         }
         

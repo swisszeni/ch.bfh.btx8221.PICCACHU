@@ -34,11 +34,12 @@
             </StackLayout>
         </Grid>
         <cv:CarouselView x:Name="InstructionCarousel" Grid.Row="1"
+                         BackgroundColor="Transparent"
                          ItemsSource="{Binding MaintenanceInstruction.InstructionSteps}"
                          Position="{Binding CarouselPosition, Mode=TwoWay}">
             <cv:CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <ScrollView>
+                    <ScrollView BackgroundColor="Transparent">
                         <StackLayout>
                             <Image Source="{Binding ImageUrl}"
                                    Margin="10,10,10,10" />

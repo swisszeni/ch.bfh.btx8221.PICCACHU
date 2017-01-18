@@ -985,4 +985,24 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
   <data name="DiscalimerPageSyntaxTitleText" xml:space="preserve">
     <value>erro essequisit</value>
   </data>
+  <data name="DisclaimerPageDescription" xml:space="preserve">
+    <value>The legal information</value>
+    <comment>Beschreibt den Sinn der Seite für den Disclaimer</comment>
+  </data>
+  <data name="ImprintPageDescription" xml:space="preserve">
+    <value>Who made this awesome App?</value>
+    <comment>Beschreibt den Sinn der Seite für das Impressum</comment>
+  </data>
+  <data name="ImprintPageTitle" xml:space="preserve">
+    <value>Imprint</value>
+    <comment>Titel für die Impressumsseite</comment>
+  </data>
+  <data name="MaintenanceReminderPageDescription" xml:space="preserve">
+    <value>Set a reminder to clean your PICC</value>
+    <comment>Beschreibt den Sinn der Seite für die Wartungserinnerungen</comment>
+  </data>
+  <data name="UserMasterDataPageDescription" xml:space="preserve">
+    <value>Alter the personal info about you</value>
+    <comment>Beschreibt den Sinn der Seite für die Stammdaten</comment>
+  </data>
 </root>

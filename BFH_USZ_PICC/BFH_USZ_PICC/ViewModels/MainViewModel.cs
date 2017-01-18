@@ -18,7 +18,7 @@ namespace BFH_USZ_PICC.ViewModels
         {
             return Task.WhenAll(
                 MenuViewModel.InitializeAsync(navigationData),
-                NavigationService.NavigateToAsync<MyPICCViewModel>()
+                NavigationService.NavigateToAsync<PICCOverviewViewModel>()
                 );
         }
     }

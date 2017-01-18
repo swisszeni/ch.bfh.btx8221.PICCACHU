@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   x:Class="BFH_USZ_PICC.Views.PICCAddPage"
+                   xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
+                   xmlns:helpers="clr-namespace:BFH_USZ_PICC.Utilitys;assembly=BFH_USZ_PICC"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   xmlns:behaviors="clr-namespace:BFH_USZ_PICC.Behaviors;assembly=BFH_USZ_PICC"
+                   Title="{i18n:Translate AddPICCPageTitleText}"
+                   BindingContext="{Binding [PICCAddViewModel], Source={StaticResource ViewModelLocator}}">
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical"
+                     HorizontalOptions="Fill">
+            <SearchBar Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}"
+                       CancelButtonColor="Blue"
+                       SearchCommand="{Binding PiccSearchButtonCommand}"
+                       Text="{Binding SearchedPICCText}"
+                       Unfocused="SearchBarUnfocused"
+                       Focused="SearchBarFocused">
+                <SearchBar.HeightRequest>
+                    <helpers:OnCustomPlatform x:TypeArguments="x:Double"
+                                              iOS="50"
+                                              Android="50"
+                                              Windows="45"
+                                              WinPhone="45"/>
+                </SearchBar.HeightRequest>
+                <SearchBar.Margin>
+                    <helpers:OnCustomPlatform x:TypeArguments="Thickness"
+                                              iOS="0"
+                                              Android="0,5,0,0"
+                                              WinPhone="15,15,15,0"
+                                              Windows="15,15,15,0" />
+                </SearchBar.Margin>
+            </SearchBar>
+            <ListView x:Name="AllModels"
+                      behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      IsVisible="False"
+                      ItemsSource="{Binding PICCModels}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="20,0">
+                                    <Label Margin="0,4,0,0"
+                                           Style="{StaticResource LabelStyleCellTitle}"
+                                           Text="{Binding PICCName}"
+                                           LineBreakMode="WordWrap" />
+                                    <Label Margin="0,-4,0,0"
+                                           Style="{StaticResource LabelStyleDescription}"
+                                           Text="{Binding GuideWireLenght, Converter={StaticResource GuideWireLenghtToTextConverter}}"
+                                           LineBreakMode="WordWrap" />
+                                    <Grid HeightRequest="1"
+                                          Opacity="0.2"
+                                          BackgroundColor="{StaticResource ColorBlack}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <Button x:Name="ScanButton"
+                Text="{i18n:Translate AddPICCPageScanButtonText}"
+                Command="{Binding ScanButtonCommand}" />
+        <Button x:Name="AddPiccManualButton"
+                Text="{i18n:Translate AddPICCPageAddPiccManualButtonText}"
+                Command="{Binding AddPiccManualButtonCommand}" />
+    </StackLayout>
+</d:BaseContentPage>

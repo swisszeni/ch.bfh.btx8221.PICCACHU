@@ -37,6 +37,14 @@
                         Value="20" />
             </Style>
 
+            <Style x:Key="LabelStyleCellTitle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorUSZBlue}" />
+                <Setter Property="FontSize"
+                        Value="16" />
+            </Style>
+
             <Style x:Key="LabelStyleDescription"
                    TargetType="Label">
                 <Setter Property="TextColor"

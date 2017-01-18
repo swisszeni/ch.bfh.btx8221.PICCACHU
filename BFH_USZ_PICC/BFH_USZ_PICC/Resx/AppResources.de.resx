@@ -213,7 +213,7 @@
     <comment>Knopf (Button) für das Anrufen der USZ Telemedizin</comment>
   </data>
   <data name="SettingsPageMaintenanceReminderText" xml:space="preserve">
-    <value>Pflegeerinnerung einrichten</value>
+    <value>Pflegeerinnerung</value>
     <comment>Wartungserinnerung</comment>
   </data>
   <data name="SettingsPageAddReminderButtonText" xml:space="preserve">
@@ -877,5 +877,25 @@ Das UniversitätsSpital Zürich behält sich das Recht vor, jederzeit und ohne V
   </data>
   <data name="DiscalimerPageSyntaxTitleText" xml:space="preserve">
     <value>Schreibweisen</value>
+  </data>
+  <data name="DisclaimerPageDescription" xml:space="preserve">
+    <value>Rechtliche Infos zur App</value>
+    <comment>Beschreibt den Sinn der Seite für den Disclaimer</comment>
+  </data>
+  <data name="MaintenanceReminderPageDescription" xml:space="preserve">
+    <value>Richten Sie eine Pflegeerinnerung zum PICC ein</value>
+    <comment>Beschreibt den Sinn der Seite für die Wartungserinnerungen</comment>
+  </data>
+  <data name="UserMasterDataPageDescription" xml:space="preserve">
+    <value>Bearbeiten Sie Ihre persönlichen Infos</value>
+    <comment>Beschreibt den Sinn der Seite für die Stammdaten</comment>
+  </data>
+  <data name="ImprintPageDescription" xml:space="preserve">
+    <value>Wer hat diese geniale App gemacht?</value>
+    <comment>Beschreibt den Sinn der Seite für das Impressum</comment>
+  </data>
+  <data name="ImprintPageTitle" xml:space="preserve">
+    <value>Impressum</value>
+    <comment>Titel für die Impressumsseite</comment>
   </data>
 </root>

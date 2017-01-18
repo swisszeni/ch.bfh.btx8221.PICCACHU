@@ -263,7 +263,7 @@
         </trans-unit>
         <trans-unit id="SettingsPageMaintenanceReminderText" translate="yes" xml:space="preserve">
           <source>Maintenance reminder</source>
-          <target state="translated">Pflegeerinnerung einrichten</target>
+          <target state="translated">Pflegeerinnerung</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Wartungserinnerung</note>
         </trans-unit>
         <trans-unit id="SettingsPageAddReminderButtonText" translate="yes" xml:space="preserve">
@@ -1101,6 +1101,31 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
         <trans-unit id="DiscalimerPageSyntaxTitleText" translate="yes" xml:space="preserve">
           <source>erro essequisit</source>
           <target state="translated">Schreibweisen</target>
+        </trans-unit>
+        <trans-unit id="DisclaimerPageDescription" translate="yes" xml:space="preserve">
+          <source>The legal information</source>
+          <target state="translated">Rechtliche Infos zur App</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für den Disclaimer</note>
+        </trans-unit>
+        <trans-unit id="MaintenanceReminderPageDescription" translate="yes" xml:space="preserve">
+          <source>Set a reminder to clean your PICC</source>
+          <target state="translated">Richten Sie eine Pflegeerinnerung zum PICC ein</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für die Wartungserinnerungen</note>
+        </trans-unit>
+        <trans-unit id="UserMasterDataPageDescription" translate="yes" xml:space="preserve">
+          <source>Alter the personal info about you</source>
+          <target state="translated">Bearbeiten Sie Ihre persönlichen Infos</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für die Stammdaten</note>
+        </trans-unit>
+        <trans-unit id="ImprintPageDescription" translate="yes" xml:space="preserve">
+          <source>Who made this awesome App?</source>
+          <target state="translated">Wer hat diese geniale App gemacht?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für das Impressum</note>
+        </trans-unit>
+        <trans-unit id="ImprintPageTitle" translate="yes" xml:space="preserve">
+          <source>Imprint</source>
+          <target state="translated">Impressum</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel für die Impressumsseite</note>
         </trans-unit>
       </group>
     </body>

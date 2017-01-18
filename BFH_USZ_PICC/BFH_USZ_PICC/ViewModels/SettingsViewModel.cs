@@ -31,7 +31,7 @@ namespace BFH_USZ_PICC.ViewModels
         MasterData,
         MaintenanceReminder,
         Disclaimer,
-
+        Imprint
     }
     public class SettingsViewModel : ViewModelBase
     {
@@ -41,9 +41,9 @@ namespace BFH_USZ_PICC.ViewModels
         {
             _navigationService = ServiceLocator.Current.GetInstance<INavigationService>();
             SettingsList = new List<SettingsNavigationMenuItem>() {
-                new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, MenuItemKey = SettingsMenuItemKey.MasterData },
-                new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder },
-                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, MenuItemKey = SettingsMenuItemKey.Disclaimer }
+                new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, Details = AppResources.UserMasterDataPageDescription, MenuItemKey = SettingsMenuItemKey.MasterData },
+                new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, Details = AppResources.MaintenanceReminderPageDescription, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder },
+                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, Details = AppResources.DisclaimerPageDescription, MenuItemKey = SettingsMenuItemKey.Disclaimer }
             };
         }
 
@@ -67,13 +67,13 @@ namespace BFH_USZ_PICC.ViewModels
             switch (selectedItem.MenuItemKey)
             {
                 case SettingsMenuItemKey.MasterData:
-                    _navigationService.NavigateToAsync<MasterDataViewModel>(new List<object> { false });
+                    _navigationService.NavigateToAsync<SettingsMasterDataViewModel>(new List<object> { false });
                     return;
                 case SettingsMenuItemKey.MaintenanceReminder:
-                    _navigationService.NavigateToAsync<MaintenanceReminderViewModel>();
+                    _navigationService.NavigateToAsync<SettingsMaintenanceReminderViewModel>();
                     return;
                 case SettingsMenuItemKey.Disclaimer:
-                    _navigationService.NavigateToAsync<DisclaimerViewModel>();
+                    _navigationService.NavigateToAsync<SettingsDisclaimerViewModel>();
                     return;
             }
         }));

@@ -33,7 +33,7 @@
                      Orientation="Horizontal">
             <StackLayout.Margin>
                 <helpers:OnCustomPlatform x:TypeArguments="Thickness"
-                                          Android="20,20,10,10"
+                                          Android="20,40,10,10"
                                           WinPhone="20,20,10,10"
                                           Windows="20,50,10,10" />
             </StackLayout.Margin>
