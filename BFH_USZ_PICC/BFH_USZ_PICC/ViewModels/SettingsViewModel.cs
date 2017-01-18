@@ -30,6 +30,7 @@ namespace BFH_USZ_PICC.ViewModels
     {
         MasterData,
         MaintenanceReminder,
+        Database,
         Disclaimer,
         Imprint
     }
@@ -43,7 +44,9 @@ namespace BFH_USZ_PICC.ViewModels
             SettingsList = new List<SettingsNavigationMenuItem>() {
                 new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, Details = AppResources.UserMasterDataPageDescription, MenuItemKey = SettingsMenuItemKey.MasterData },
                 new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, Details = AppResources.MaintenanceReminderPageDescription, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder },
-                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, Details = AppResources.DisclaimerPageDescription, MenuItemKey = SettingsMenuItemKey.Disclaimer }
+                new SettingsNavigationMenuItem { Title = AppResources.SettingsDatabasePageTitle, Details = AppResources.SettingsDatabasePageDescription, MenuItemKey = SettingsMenuItemKey.Database },
+                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, Details = AppResources.DisclaimerPageDescription, MenuItemKey = SettingsMenuItemKey.Disclaimer },
+                new SettingsNavigationMenuItem { Title = AppResources.ImprintPageTitle, Details = AppResources.ImprintPageDescription, MenuItemKey = SettingsMenuItemKey.Imprint }
             };
         }
 
@@ -72,8 +75,14 @@ namespace BFH_USZ_PICC.ViewModels
                 case SettingsMenuItemKey.MaintenanceReminder:
                     _navigationService.NavigateToAsync<SettingsMaintenanceReminderViewModel>();
                     return;
+                case SettingsMenuItemKey.Database:
+                    _navigationService.NavigateToAsync<SettingsDatabaseViewModel>();
+                    return;
                 case SettingsMenuItemKey.Disclaimer:
                     _navigationService.NavigateToAsync<SettingsDisclaimerViewModel>();
+                    return;
+                case SettingsMenuItemKey.Imprint:
+                    _navigationService.NavigateToAsync<SettingsImprintViewModel>();
                     return;
             }
         }));

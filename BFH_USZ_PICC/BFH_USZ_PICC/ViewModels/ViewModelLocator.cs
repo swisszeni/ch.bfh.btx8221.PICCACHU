@@ -85,6 +85,7 @@ namespace BFH_USZ_PICC.ViewModels
             SimpleIoc.Default.Register<SettingsMaintenanceReminderViewModel>();
             SimpleIoc.Default.Register<SettingsDisclaimerViewModel>();
             SimpleIoc.Default.Register<SettingsImprintViewModel>();
+            SimpleIoc.Default.Register<SettingsDatabaseViewModel>();
         }
 
         public static T Resolve<T>()

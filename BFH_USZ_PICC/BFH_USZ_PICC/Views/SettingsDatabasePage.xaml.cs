@@ -8,11 +8,15 @@ using Xamarin.Forms;
 
 namespace BFH_USZ_PICC.Views
 {
-    public partial class SettingsImprintPage : BaseContentPage
+    public partial class SettingsDatabasePage : BaseContentPage
     {
-        public SettingsImprintPage(ContentPage contained) : base(contained)
+        public SettingsDatabasePage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
         }
+
+        #region relay commands
+
+        #endregion
     }
 }

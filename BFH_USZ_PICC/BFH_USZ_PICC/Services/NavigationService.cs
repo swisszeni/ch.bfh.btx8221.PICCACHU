@@ -207,6 +207,7 @@ namespace BFH_USZ_PICC.Services
             _viewModelmappings.Add(typeof(SettingsMaintenanceReminderViewModel), typeof(SettingsMaintenanceReminderPage));
             _viewModelmappings.Add(typeof(SettingsDisclaimerViewModel), typeof(SettingsDisclaimerPage));
             _viewModelmappings.Add(typeof(SettingsImprintViewModel), typeof(SettingsImprintPage));
+            _viewModelmappings.Add(typeof(SettingsDatabaseViewModel), typeof(SettingsDatabasePage));
         }
 
         private void CreateMenuKeyPageMappings()

@@ -1005,4 +1005,36 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
     <value>Alter the personal info about you</value>
     <comment>Beschreibt den Sinn der Seite für die Stammdaten</comment>
   </data>
+  <data name="DatabasePageBackupExplanation" xml:space="preserve">
+    <value>Enable this function to include the local data in the backup of your device. Take notice that, once included in the backup, the data may be sent to a server outside the country and without you having control of it.</value>
+    <comment>Erklärungstext für den Datenbackup</comment>
+  </data>
+  <data name="DatabasePageBackupTitle" xml:space="preserve">
+    <value>Backup</value>
+    <comment>Abschnittstitel für das Datenbackup</comment>
+  </data>
+  <data name="DatabasePageDataexportExplanation" xml:space="preserve">
+    <value>Allows you to export your journal entries. You can select through which channel you want to send the data in a later step.</value>
+    <comment>Erklärungstext für den Datenexport</comment>
+  </data>
+  <data name="DatabasePageDataexportInformationPopUpText" xml:space="preserve">
+    <value>The export takes place via a possibly unsecured connection. Would you like to continue?</value>
+    <comment>Text für PopUp vor dem Export der Behandlungsnotizen</comment>
+  </data>
+  <data name="DatabasePageDataexportTitle" xml:space="preserve">
+    <value>Export of the data</value>
+    <comment>Abschnittstitel für den Datenexport</comment>
+  </data>
+  <data name="SettingsDatabasePageDescription" xml:space="preserve">
+    <value>Configure backup and export of the data</value>
+    <comment>Beschreibt den Sinn der Seite für die Datenbankeinstellungen</comment>
+  </data>
+  <data name="SettingsDatabasePageTitle" xml:space="preserve">
+    <value>Database</value>
+    <comment>Titel Text für die Seite "Datenbank" in den Einstellungen</comment>
+  </data>
+  <data name="DatabasePageDataexportButtonText" xml:space="preserve">
+    <value>Export</value>
+    <comment>Text für den Button um den Export der Daten zu beginnen</comment>
+  </data>
 </root>

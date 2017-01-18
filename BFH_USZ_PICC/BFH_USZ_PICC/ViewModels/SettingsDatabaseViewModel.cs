@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BFH_USZ_PICC.ViewModels
 {
-    public class SettingsImprintViewModel : ViewModelBase
+    public class SettingsDatabaseViewModel : ViewModelBase
     {
+
     }
 }

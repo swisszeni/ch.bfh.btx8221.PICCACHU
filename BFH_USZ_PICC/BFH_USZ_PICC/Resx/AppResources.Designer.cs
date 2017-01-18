@@ -647,6 +647,60 @@ namespace BFH_USZ_PICC.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable this function to include the local data in the backup of your device. Take notice that, once included in the backup, the data may be sent to a server outside the country and without you having control of it..
+        /// </summary>
+        public static string DatabasePageBackupExplanation {
+            get {
+                return ResourceManager.GetString("DatabasePageBackupExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        public static string DatabasePageBackupTitle {
+            get {
+                return ResourceManager.GetString("DatabasePageBackupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        public static string DatabasePageDataexportButtonText {
+            get {
+                return ResourceManager.GetString("DatabasePageDataexportButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allows you to export your journal entries. You can select through which channel you want to send the data in a later step..
+        /// </summary>
+        public static string DatabasePageDataexportExplanation {
+            get {
+                return ResourceManager.GetString("DatabasePageDataexportExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The export takes place via a possibly unsecured connection. Would you like to continue?.
+        /// </summary>
+        public static string DatabasePageDataexportInformationPopUpText {
+            get {
+                return ResourceManager.GetString("DatabasePageDataexportInformationPopUpText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export of the data.
+        /// </summary>
+        public static string DatabasePageDataexportTitle {
+            get {
+                return ResourceManager.GetString("DatabasePageDataexportTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DeleteButtonText {
@@ -1729,6 +1783,24 @@ namespace BFH_USZ_PICC.Resx {
         public static string SaveButtonText {
             get {
                 return ResourceManager.GetString("SaveButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure backup and export of the data.
+        /// </summary>
+        public static string SettingsDatabasePageDescription {
+            get {
+                return ResourceManager.GetString("SettingsDatabasePageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Database.
+        /// </summary>
+        public static string SettingsDatabasePageTitle {
+            get {
+                return ResourceManager.GetString("SettingsDatabasePageTitle", resourceCulture);
             }
         }
         

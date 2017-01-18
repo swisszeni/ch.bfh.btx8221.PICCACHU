@@ -1124,6 +1124,46 @@ Et ut aut isti repuditis qui ium nonsecturia quis incientiae laborem elliquis et
           <target state="new">Imprint</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Titel für die Impressumsseite</note>
         </trans-unit>
+        <trans-unit id="DatabasePageBackupExplanation" translate="yes" xml:space="preserve">
+          <source>Enable this function to include the local data in the backup of your device. Take notice that, once included in the backup, the data may be sent to a server outside the country and without you having control of it.</source>
+          <target state="new">Enable this function to include the local data in the backup of your device. Take notice that, once included in the backup, the data may be sent to a server outside the country and without you having control of it.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Erklärungstext für den Datenbackup</note>
+        </trans-unit>
+        <trans-unit id="DatabasePageBackupTitle" translate="yes" xml:space="preserve">
+          <source>Backup</source>
+          <target state="new">Backup</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Abschnittstitel für das Datenbackup</note>
+        </trans-unit>
+        <trans-unit id="DatabasePageDataexportExplanation" translate="yes" xml:space="preserve">
+          <source>Allows you to export your journal entries. You can select through which channel you want to send the data in a later step.</source>
+          <target state="new">Allows you to export your journal entries. You can select through which channel you want to send the data in a later step.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Erklärungstext für den Datenexport</note>
+        </trans-unit>
+        <trans-unit id="DatabasePageDataexportInformationPopUpText" translate="yes" xml:space="preserve">
+          <source>The export takes place via a possibly unsecured connection. Would you like to continue?</source>
+          <target state="new">The export takes place via a possibly unsecured connection. Would you like to continue?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text für PopUp vor dem Export der Behandlungsnotizen</note>
+        </trans-unit>
+        <trans-unit id="DatabasePageDataexportTitle" translate="yes" xml:space="preserve">
+          <source>Export of the data</source>
+          <target state="new">Export of the data</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Abschnittstitel für den Datenexport</note>
+        </trans-unit>
+        <trans-unit id="SettingsDatabasePageDescription" translate="yes" xml:space="preserve">
+          <source>Configure backup and export of the data</source>
+          <target state="new">Configure backup and export of the data</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Beschreibt den Sinn der Seite für die Datenbankeinstellungen</note>
+        </trans-unit>
+        <trans-unit id="SettingsDatabasePageTitle" translate="yes" xml:space="preserve">
+          <source>Database</source>
+          <target state="new">Database</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Titel Text für die Seite "Datenbank" in den Einstellungen</note>
+        </trans-unit>
+        <trans-unit id="DatabasePageDataexportButtonText" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text für den Button um den Export der Daten zu beginnen</note>
+        </trans-unit>
       </group>
     </body>
   </file>

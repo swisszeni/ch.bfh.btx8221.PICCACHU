@@ -138,7 +138,7 @@
     <Compile Include="Utilitys\Extensions\TranslateExtension.cs" />
     <Compile Include="Utilitys\Helpers.cs" />
     <Compile Include="ViewModels\PICCAddViewModel.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\SettingsDatabaseViewModel.cs" />
     <Compile Include="ViewModels\SettingsDisclaimerViewModel.cs" />
     <Compile Include="ViewModels\DisorderDetailViewModel.cs" />
     <Compile Include="ViewModels\DisorderViewModel.cs" />
@@ -227,6 +227,9 @@
     <Compile Include="Views\OnBoarding\OnBoardingPage.xaml.cs">
       <DependentUpon>OnBoardingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SettingsDatabasePage.xaml.cs">
+      <DependentUpon>SettingsDatabasePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsImprintPage.xaml.cs">
       <DependentUpon>SettingsImprintPage.xaml</DependentUpon>
     </Compile>
@@ -283,6 +286,7 @@
     <EmbeddedResource Include="Resx\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\GlossaryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -597,6 +601,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\SpeechButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SettingsDatabasePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
