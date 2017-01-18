@@ -92,7 +92,7 @@ namespace BFH_USZ_PICC.Services
                 nav = Application.Current.MainPage.Navigation;
             }
 
-            if(modal)
+            if(!modal)
             {
                 await nav?.PushAsync(pushingPage);
             } else
