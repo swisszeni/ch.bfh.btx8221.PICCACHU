@@ -45,7 +45,7 @@
             </ListView.Margin>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell x:Name="JournalEntriesViewCell">
                         <ViewCell.View>
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
@@ -57,8 +57,16 @@
                                            HorizontalOptions="EndAndExpand" />
                                 </StackLayout>
                             </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
+                        </ViewCell.View> 
+                  <ViewCell.ContextActions>
+                    <MenuItem  Text="{i18n:Translate DeleteButtonText}"
+                               IsDestructive="True"
+                               BindingContext="{Binding Source={x:Reference JournalList}, Path=BindingContext}"
+                               Command="{Binding DeleteJournalEntryCommand}"
+                               CommandParameter="{Binding Source={x:Reference JournalEntriesViewCell}, Path=BindingContext}">
+                    </MenuItem>
+                  </ViewCell.ContextActions>
+                  </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
