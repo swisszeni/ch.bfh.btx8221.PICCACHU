@@ -162,6 +162,68 @@ namespace BFH_USZ_PICC.ViewModels
             }
         }));
 
+        private RelayCommand<JournalEntry> _deleteJournalEntryCommand;
+        public RelayCommand<JournalEntry> DeleteJournalEntryCommand => _deleteJournalEntryCommand ?? (_deleteJournalEntryCommand = new RelayCommand<JournalEntry>(async (JournalEntry selectedEntry) =>
+        {
+            if (selectedEntry != null)
+            {
+                if (await DisplayAlert(AppResources.WarningText, AppResources.JournalEntriesDelteEntryConfirmationText, AppResources.YesButtonText, AppResources.NoButtonText))
+                {
+                    #region cast
+                    //We have to cast the given journalEntry, otherwise we cannot call the "DelteJournalEntryAsync" method
+                    var entryType = selectedEntry.GetType();
+
+                    if (entryType == typeof(AdministeredDrugEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((AdministeredDrugEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else if (entryType == typeof(BandageChangingEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((BandageChangingEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else if (entryType == typeof(BloodWithdrawalEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((BloodWithdrawalEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else if (entryType == typeof(CatheterFlushEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((CatheterFlushEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else if (entryType == typeof(InfusionEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((InfusionEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else if (entryType == typeof(MicroClaveChangingEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((MicroClaveChangingEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else if (entryType == typeof(StatlockChangingEntry))
+                    {
+                        await _dataService.DeleteJournalEntryAsync((StatlockChangingEntry)selectedEntry);
+                        PopulateEntriesAsync();
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    #endregion
+                }                
+            }
+        }));
+
         #endregion
 
     }
