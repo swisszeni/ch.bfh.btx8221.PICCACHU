@@ -45,6 +45,14 @@
                         Value="16" />
             </Style>
 
+            <Style x:Key="LabelStyleCellContent"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorTextDarkGrey}" />
+                <Setter Property="FontSize"
+                        Value="16" />
+            </Style>
+
             <Style x:Key="LabelStyleDescription"
                    TargetType="Label">
                 <Setter Property="TextColor"
@@ -70,7 +78,27 @@
                 <Setter Property="FontSize"
                         Value="16" />
             </Style>
-            
+
+            <Style x:Key="ButtonStyleBlue"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource ColorUSZBlue}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorButtonForegroundWhite}" />
+                <Setter Property="FontSize"
+                        Value="16" />
+            </Style>
+
+            <Style x:Key="ButtonStyleRed"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource ColorAlertRed}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource ColorButtonForegroundWhite}" />
+                <Setter Property="FontSize"
+                        Value="16" />
+            </Style>
+
             <!--Specific Styles-->
             <Style x:Key="MenuButtonLabelStyle"
                    TargetType="{x:Type Label}">

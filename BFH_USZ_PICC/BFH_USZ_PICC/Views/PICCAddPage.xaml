@@ -9,9 +9,10 @@
                    xmlns:behaviors="clr-namespace:BFH_USZ_PICC.Behaviors;assembly=BFH_USZ_PICC"
                    Title="{i18n:Translate AddPICCPageTitleText}"
                    BindingContext="{Binding [PICCAddViewModel], Source={StaticResource ViewModelLocator}}">
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical"
+                 Padding="15">
         <StackLayout Orientation="Vertical"
-                     HorizontalOptions="Fill">
+                     HorizontalOptions="Fill" >
             <SearchBar Placeholder="{i18n:Translate AddPICCPagePICCEntryPlaceholderText}"
                        CancelButtonColor="Blue"
                        SearchCommand="{Binding PiccSearchButtonCommand}"
@@ -63,9 +64,12 @@
             </ListView>
         </StackLayout>
         <Button x:Name="ScanButton"
+                Style="{StaticResource ButtonStyleBlue}"
                 Text="{i18n:Translate AddPICCPageScanButtonText}"
                 Command="{Binding ScanButtonCommand}" />
         <Button x:Name="AddPiccManualButton"
+                Margin="0,10,0,0"
+                Style="{StaticResource ButtonStyleGray}"
                 Text="{i18n:Translate AddPICCPageAddPiccManualButtonText}"
                 Command="{Binding AddPiccManualButtonCommand}" />
     </StackLayout>

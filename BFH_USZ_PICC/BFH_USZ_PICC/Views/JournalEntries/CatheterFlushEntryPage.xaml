@@ -17,8 +17,12 @@
             <utilitys:FlushResultToIndexConverter x:Key="FlushResultToIndexConverter" />
         </ResourceDictionary>
     </Grid.Resources>
-    <ScrollView>
-        <StackLayout Orientation="Vertical">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <ScrollView Grid.Row="0">
+        <StackLayout Orientation="Vertical" Padding="15">
             <Label Text="{i18n:Translate CatheterFlushEntryPageFlushReasonLabelText}"
                    VerticalTextAlignment="Center"
                    FontSize="20" />
@@ -67,18 +71,27 @@
             <Picker x:Name="HealthPersonPicker"
                     SelectedIndex="{Binding SupportingPerson, Converter={StaticResource HealthPersonToIndexConverter}}"
                     IsEnabled="{Binding IsUserInputEnabled}" />
-            <Button x:Name="SaveDrugEntryButton"
-                    Text="{i18n:Translate SaveButtonText}"
-                    Command="{Binding SaveCommand}"
-                    IsVisible="{Binding IsUserInputEnabled}" />
-            <Button x:Name="CancelDrugEntryButton"
-                    Text="{i18n:Translate CancelButtonText}"
-                    Command="{Binding CancelCommand}"
-                    IsVisible="{Binding IsUserInputEnabled}" />
-            <Button x:Name="DeleteButton"
-                    Text="{i18n:Translate DeleteButtonText}"
-                    Command="{Binding DeleteCommand}"
-                    IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}" />
         </StackLayout>
     </ScrollView>
+    <StackLayout Grid.Row="1"
+                 Orientation="Horizontal">
+        <Button x:Name="CancelDrugEntryButton"
+                Style="{StaticResource ButtonStyleGray}"
+                Text="{i18n:Translate CancelButtonText}"
+                Command="{Binding CancelCommand}"
+                IsVisible="{Binding IsUserInputEnabled}"
+                HorizontalOptions="FillAndExpand" />
+        <Button x:Name="SaveDrugEntryButton"
+                Style="{StaticResource ButtonStyleBlue}"
+                Text="{i18n:Translate SaveButtonText}"
+                Command="{Binding SaveCommand}"
+                IsVisible="{Binding IsUserInputEnabled}"
+                HorizontalOptions="FillAndExpand" />
+        <Button x:Name="DeleteButton"
+                Style="{StaticResource ButtonStyleRed}"
+                Text="{i18n:Translate DeleteButtonText}"
+                Command="{Binding DeleteCommand}"
+                IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"
+                HorizontalOptions="FillAndExpand" />
+    </StackLayout>
 </d:BaseContentPage>

@@ -7,39 +7,62 @@
                    xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
                    Title="{i18n:Translate FormerPICCPageTitleText}"
                    BindingContext="{Binding [PICCFormerDetailViewModel], Source={StaticResource ViewModelLocator}}">
-    <ScrollView>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <ScrollView Grid.Row="0">
         <StackLayout Orientation="Vertical"
                      VerticalOptions="FillAndExpand"
-                     Margin="15,15,15,0">
-            <Label Text="{i18n:Translate PICCDetailPagePICCModelNameText}" />
-            <Label Text="{Binding PiccName}" />
+                     Padding="15">
+            <Label Text="{i18n:Translate PICCDetailPagePICCModelNameText}"
+                   Style="{StaticResource LabelStyleDescription}"/>
+            <Label Text="{Binding PiccName}"
+                   Style="{StaticResource LabelStyleContent}" />
             <Image Source="{Binding ImageSource}"
                    Aspect="AspectFit"
                    HeightRequest="200"
                    WidthRequest="100"
                    IsVisible="{Binding IsImageSet}" />
-            <Label Text="{i18n:Translate PICCDetailPagePICCFrenchSizeText}" />
-            <Label Text="{Binding FrenchDiameter}" />
-            <Label Text="{i18n:Translate PICCDetailPageLumensLabelText}" />
-            <Label Text="{Binding Lumen}" />
-            <Label Text="{i18n:Translate PICCDetailPagePICCInsertedDateText}" />
-            <Label Text="{Binding InsertDate, StringFormat='{}{0:dd/MM/yy}'}" />
-            <Label Text="{i18n:Translate PICCDetailPagePICCInsertedPlaceText}" />
-            <Label Text="{Binding InsertCountry}" />
+            <Label Text="{i18n:Translate PICCDetailPagePICCFrenchSizeText}"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="{Binding FrenchDiameter}"
+                   Style="{StaticResource LabelStyleContent}" />
+            <Label Text="{i18n:Translate PICCDetailPageLumensLabelText}"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="{Binding Lumen}"
+                   Style="{StaticResource LabelStyleContent}" />
+            <Label Text="{i18n:Translate PICCDetailPagePICCInsertedDateText}"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="{Binding InsertDate, StringFormat='{}{0:dd/MM/yy}'}"
+                   Style="{StaticResource LabelStyleContent}" />
+            <Label Text="{i18n:Translate PICCDetailPagePICCInsertedPlaceText}"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="{Binding InsertCountry}"
+                   Style="{StaticResource LabelStyleContent}" />
             <Label Text="{Binding InsertCity}"
-                   IsVisible="{Binding IsCountrySet}" />
-            <Label Text="{i18n:Translate PICCDetailPagePICCBodysideText}" />
-            <Label Text="{Binding PiccSide}" />
-            <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}" />
-            <Label Text="{Binding PiccPosition}" />
-            <Label Text="{i18n:Translate PICCDetailPagePICCRemovalDateText}" />
+                   IsVisible="{Binding IsCountrySet}"
+                   Style="{StaticResource LabelStyleContent}" />
+            <Label Text="{i18n:Translate PICCDetailPagePICCBodysideText}"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="{Binding PiccSide}"
+                   Style="{StaticResource LabelStyleContent}" />
+            <Label Text="{i18n:Translate PICCDetailPagePICCPositionText}"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="{Binding PiccPosition}"
+                   Style="{StaticResource LabelStyleContent}" />
+            <Label Text="{i18n:Translate PICCDetailPagePICCRemovalDateText}"
+                   Style="{StaticResource LabelStyleDescription}" />
             <Label Text="{Binding RemovalDate, StringFormat='{}{0:dd/MM/yy}'}"
-                   IsVisible="{Binding IsRemovalDateSet}" />
-            <Button Margin="0,0,0,15"
-                    Text="{i18n:Translate DeleteButtonText}"
-                    Command="{Binding DeleteButtonCommand}"
-                    IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"
-                    HorizontalOptions="FillAndExpand" />
+                   IsVisible="{Binding IsRemovalDateSet}"
+                   Style="{StaticResource LabelStyleContent}" />
+
         </StackLayout>
     </ScrollView>
+    <Button Grid.Row="1"
+            Style="{StaticResource ButtonStyleRed}"
+            Text="{i18n:Translate DeleteButtonText}"
+            Command="{Binding DeleteButtonCommand}"
+            IsVisible="{Binding IsUserInputEnabled, Converter={StaticResource NegateBooleanConverter}}"
+            HorizontalOptions="FillAndExpand" />
 </d:BaseContentPage>

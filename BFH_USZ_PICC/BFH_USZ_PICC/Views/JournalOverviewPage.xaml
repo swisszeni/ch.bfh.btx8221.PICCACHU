@@ -8,69 +8,64 @@
                    xmlns:utilitys="clr-namespace:BFH_USZ_PICC.Utilitys"
                    Title="{i18n:Translate JournalOverviewPageTitleText}"
                    BindingContext="{Binding [JournalOverviewViewModel], Source={StaticResource ViewModelLocator}}">
-    <Grid>
-        <Grid.Resources>
-            <ResourceDictionary>
-                <utilitys:AllPossibleJournalEntriesToStringConverter x:Key="AllPossibleJournalEntriesToStringConverter" />
-            </ResourceDictionary>
-        </Grid.Resources>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Button x:Name="NewEntryButton"
-                Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}"
-                Image="placeholder.png"
-                FontSize="20"
-                Grid.Row="0"
-                Command="{Binding AddEntryCommand}">
-            <Button.Margin>
-                <OnPlatform x:TypeArguments="Thickness"
-                            iOS="20, 40, 20, 0"
-                            Android="20, 20, 20, 0"
-                            WinPhone="20, 20, 20, 0" />
-            </Button.Margin>
-        </Button>
-        <ListView x:Name="JournalList"
-                  ItemsSource="{Binding JournalEntriesList}"
-                  behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
-                  HorizontalOptions="CenterAndExpand"
-                  Grid.Row="1"
-                  Grid.RowSpan="1">
-            <ListView.Margin>
-                <OnPlatform x:TypeArguments="Thickness"
-                            iOS="20, 40, 20, 20"
-                            Android="20, 20, 20, 20"
-                            WinPhone="20, 20, 20, 20" />
-            </ListView.Margin>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell x:Name="JournalEntriesViewCell">
-                        <ViewCell.View>
+    <Grid.Resources>
+        <ResourceDictionary>
+            <utilitys:AllPossibleJournalEntriesToStringConverter x:Key="AllPossibleJournalEntriesToStringConverter" />
+        </ResourceDictionary>
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Button x:Name="NewEntryButton"
+            Text="{i18n:Translate JournalOverviewPageNewEntryButtonText}"
+            Style="{StaticResource ButtonStyleGray}"
+            FontSize="20"
+            Grid.Row="0"
+            Command="{Binding AddEntryCommand}"
+            Margin="20">
+    </Button>
+    <ListView x:Name="JournalList"
+              ItemsSource="{Binding JournalEntriesList}"
+              behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
+              SeparatorVisibility="None"
+              HasUnevenRows="True"
+              Grid.Row="1"
+              Grid.RowSpan="1">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell x:Name="JournalEntriesViewCell">
+                    <ViewCell.View>
+                        <StackLayout Orientation="Vertical" Padding="20,0">
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding Converter={StaticResource AllPossibleJournalEntriesToStringConverter}}"
                                            VerticalTextAlignment="Start"
                                            FontSize="20" />
                                     <Label Text="{Binding ExecutionDate, StringFormat='{}{0:dd/MM/yy}'}"
+                                           Style="{StaticResource LabelStyleCellContent}"
                                            VerticalTextAlignment="Start"
                                            HorizontalOptions="EndAndExpand" />
                                 </StackLayout>
                             </StackLayout>
-                        </ViewCell.View> 
-                  <ViewCell.ContextActions>
-                    <MenuItem  Text="{i18n:Translate DeleteButtonText}"
-                               IsDestructive="True"
-                               BindingContext="{Binding Source={x:Reference JournalList}, Path=BindingContext}"
-                               Command="{Binding DeleteJournalEntryCommand}"
-                               CommandParameter="{Binding Source={x:Reference JournalEntriesViewCell}, Path=BindingContext}">
-                    </MenuItem>
-                  </ViewCell.ContextActions>
-                  </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <!--<ListView x:Name="ChoseAJournalEntry" IsVisible="False"  Grid.Row="0" Grid.RowSpan="2" BackgroundColor="White">
+                            <Grid HeightRequest="1"
+                                  Opacity="0.2"
+                                  BackgroundColor="{StaticResource ColorBlack}" />
+                        </StackLayout>
+                    </ViewCell.View>
+                    <ViewCell.ContextActions>
+                        <MenuItem  Text="{i18n:Translate DeleteButtonText}"
+                                   IsDestructive="True"
+                                   BindingContext="{Binding Source={x:Reference JournalList}, Path=BindingContext}"
+                                   Command="{Binding DeleteJournalEntryCommand}"
+                                   CommandParameter="{Binding Source={x:Reference JournalEntriesViewCell}, Path=BindingContext}">
+                        </MenuItem>
+                    </ViewCell.ContextActions>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <!--<ListView x:Name="ChoseAJournalEntry" IsVisible="False"  Grid.Row="0" Grid.RowSpan="2" BackgroundColor="White">
       <ListView.Margin>
         <OnPlatform x:TypeArguments="Thickness"
               iOS="20, 40, 20, 20"
@@ -98,5 +93,4 @@
         <Button x:Name="NewEntryCancelButton" Text="{i18n:Translate CancelButtonText}" Clicked="NewEntryCancelButtonClicked"/>
       </ListView.Footer>
     </ListView>-->
-    </Grid>
 </d:BaseContentPage>

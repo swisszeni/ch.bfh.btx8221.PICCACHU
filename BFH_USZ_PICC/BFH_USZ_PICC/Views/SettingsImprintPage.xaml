@@ -21,8 +21,8 @@
                    Style="{StaticResource LabelStyleDescription}" />
             <Label Text="Ersteller: Florian Schnyder, Raphael Zenhäusern"
                    Style="{StaticResource LabelStyleDescription}" />
-            <!--<Label Text="Essenslieferant: Michael LehRmann"
-                   Style="{StaticResource LabelStyleDescription}" />-->
+            <Label Text="Essenslieferant: Michael LehRmann"
+                   Style="{StaticResource LabelStyleDescription}" />
         </StackLayout>
     </ScrollView>
 </d:BaseContentPage>

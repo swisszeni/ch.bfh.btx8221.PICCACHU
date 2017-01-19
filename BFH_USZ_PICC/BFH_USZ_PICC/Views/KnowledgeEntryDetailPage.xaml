@@ -8,17 +8,25 @@
                    BindingContext="{Binding [KnowledgeEntryDetailViewModel], Source={StaticResource ViewModelLocator}}">
     <ListView x:Name="GlossaryList"
               ItemsSource="{Binding RelatedGlossaryEntries}"
+              SeparatorVisibility="None"
+              HasUnevenRows="True"
               behaviors:ItemTappedBehavior.ItemTappedCommand="{Binding ItemSelectedCommand}"
               IsPullToRefreshEnabled="false">
-        <ListView.Margin>
-            <OnPlatform x:TypeArguments="Thickness"
-                        iOS="20, 40, 20, 20"
-                        Android="20, 20, 20, 20"
-                        WinPhone="20, 20, 20, 20" />
-        </ListView.Margin>
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Word}" />
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Padding="20,0">
+                            <Label Margin="0,10,0,10"
+                                   Style="{StaticResource LabelStyleCellTitle}"
+                                   Text="{Binding Word}"
+                                   LineBreakMode="WordWrap" />
+                            <Grid HeightRequest="1"
+                                  Opacity="0.2"
+                                  BackgroundColor="{StaticResource ColorBlack}" />
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

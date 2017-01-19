@@ -95,6 +95,8 @@ namespace BFH_USZ_PICC.Views
                 HorizontalTextAlignment = TextAlignment.Start
             }));
 
+            knowledgeEntryView.Padding = new Thickness(15);
+
             GlossaryList.Header = knowledgeEntryView;
         }
 
