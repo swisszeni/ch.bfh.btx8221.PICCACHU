@@ -43,7 +43,8 @@ namespace BFH_USZ_PICC.ViewModels
             SettingsList = new List<SettingsNavigationMenuItem>() {
                 new SettingsNavigationMenuItem { Title = AppResources.UserMasterDataPageTitleText, Details = AppResources.UserMasterDataPageDescription, MenuItemKey = SettingsMenuItemKey.MasterData },
                 new SettingsNavigationMenuItem { Title = AppResources.SettingsPageMaintenanceReminderText, Details = AppResources.MaintenanceReminderPageDescription, MenuItemKey = SettingsMenuItemKey.MaintenanceReminder },
-                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, Details = AppResources.DisclaimerPageDescription, MenuItemKey = SettingsMenuItemKey.Disclaimer }
+                new SettingsNavigationMenuItem { Title = AppResources.DiscalimerPageTitle, Details = AppResources.DisclaimerPageDescription, MenuItemKey = SettingsMenuItemKey.Disclaimer },
+                new SettingsNavigationMenuItem { Title = AppResources.ImprintPageTitle, Details = AppResources.ImprintPageDescription, MenuItemKey = SettingsMenuItemKey.Imprint }
             };
         }
 
@@ -74,6 +75,9 @@ namespace BFH_USZ_PICC.ViewModels
                     return;
                 case SettingsMenuItemKey.Disclaimer:
                     _navigationService.NavigateToAsync<SettingsDisclaimerViewModel>();
+                    return;
+                case SettingsMenuItemKey.Imprint:
+                    _navigationService.NavigateToAsync<SettingsImprintViewModel>();
                     return;
             }
         }));

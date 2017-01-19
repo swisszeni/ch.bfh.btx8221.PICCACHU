@@ -850,11 +850,7 @@
     <comment>Erklärung, dass der User auf dieser Seite eine Pflegeerinnerung einrichten kann</comment>
   </data>
   <data name="DiscalimerPageDisclaimerText" xml:space="preserve">
-    <value>Das Internetportal des UniversitätsSpitals Zürich (USZ) stellt Ihnen vielfältige und qualitativ hochstehende Informationen zur Verfügung. Wir sind bestrebt, diese Informationen korrekt und dem aktuellen Wissensstand entsprechend wiederzugeben, doch können wir keinerlei Gewähr hinsichtlich inhaltlicher Richtigkeit, Genauigkeit, Aktualität und Vollständigkeit übernehmen. Aus den Informationen lassen sich zudem keinerlei Rechte ableiten. Allfällige medizinische Ratschläge sind nach bestem Wissen und Gewissen zusammengestellt, ersetzen jedoch keinesfalls einen Arztbesuch und werden auf eigenes Risiko befolgt. 
-
-Das UniversitätsSpital Zürich haftet für keinerlei Schäden, die aus der Nutzung des Internetportals - namentlich aufgrund von Fehlinformationen oder technischen Störungen - entstanden sind. Auch für den Inhalt und die korrekte Funktionsweise fremder Websites, die durch eine Verlinkung erreichbar sind, kann keine Haftung übernommen werden. 
-
-Das UniversitätsSpital Zürich behält sich das Recht vor, jederzeit und ohne Vorankündigung das Betreiben des Internetportals aufzugeben und/oder dessen Inhalt zu verändern, zu ergänzen oder zu löschen.</value>
+    <value>Hier kommt der Disclaimer</value>
   </data>
   <data name="DiscalimerPageTitle" xml:space="preserve">
     <value>Haftungsausschluss</value>
@@ -867,13 +863,13 @@ Das UniversitätsSpital Zürich behält sich das Recht vor, jederzeit und ohne V
     <value>Haftung</value>
   </data>
   <data name="DiscalimerPageCopyrightText" xml:space="preserve">
-    <value>Der gesamte Inhalt und die Struktur des Internetportals des UniversitätsSpitals Zürich sind urheberrechtlich geschützt. Das Herunterladen oder Ausdrucken einzelner Seiten oder Dokumente für den privaten, nicht gewerblichen Gebrauch ist gestattet Die Vervielfältigung einzelner Seiten oder Dokumente für öffentliche jedoch nicht kommerzielle Zwecke ist erlaubt, wenn dabei auf die Urheberrechte des UniversitätsSpitals Zürich und auf den Vorbehalt betreffend weitergehende und gewerbliche Nutzung hingewiesen wird. Die weitergehende Nutzung, insbesondere die vollständige oder teilweise Vervielfältigung zu gewerblichen Zwecken, die elektronische oder mit anderen Mitteln erfolgte Verbreitung, die Modifikation und die Verknüpfung zu gewerblichen und/oder öffentlichen Zwecken bedarf der vorherigen schriftlichen Zustimmung des UniversitätsSpitals Zürich.</value>
+    <value>Hier kommt der Disclaimer</value>
   </data>
   <data name="DiscalimerPageCopyrightTitleText" xml:space="preserve">
     <value>Urheberrechte</value>
   </data>
   <data name="DiscalimerPageSyntaxText" xml:space="preserve">
-    <value>Aus Gründen der besseren Lesbarkeit verzichten wir an vielen Stellen auf die Nennung beider Geschlechter. Wir weisen jedoch an dieser Stelle ausdrücklich darauf hin, dass wir auf der gesamten Website und in allen Dokumenten männliche und weibliche Personen gleichberechtigt ansprechen.</value>
+    <value>Hier kommt der Disclaimer</value>
   </data>
   <data name="DiscalimerPageSyntaxTitleText" xml:space="preserve">
     <value>Schreibweisen</value>

@@ -1,6 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BFH_USZ_PICC.Views.SettingsImprintPage">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-</ContentPage>
+<d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
+                   xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
+                   x:Class="BFH_USZ_PICC.Views.SettingsImprintPage"
+                   Title="{i18n:Translate ImprintPageTitle}"
+                   BindingContext="{Binding [SettingsImprintViewModel], Source={StaticResource ViewModelLocator}}">
+    <ScrollView>
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="FillAndExpand"
+                     Padding="15">
+            <!--INFO-->
+            <Label Text="Über die App"
+                   Style="{StaticResource LabelStyleTitle}" />
+            <Label Text="Name: Project PICCACHU"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="Version: 1.0.4"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="Veröffentlichungsdatum: 19.01.2017"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <Label Text="Ersteller: Florian Schnyder, Raphael Zenhäusern"
+                   Style="{StaticResource LabelStyleDescription}" />
+            <!--<Label Text="Essenslieferant: Michael LehRmann"
+                   Style="{StaticResource LabelStyleDescription}" />-->
+        </StackLayout>
+    </ScrollView>
+</d:BaseContentPage>

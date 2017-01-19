@@ -1,6 +1,7 @@
 ﻿using BFH_USZ_PICC.Interfaces;
 using BFH_USZ_PICC.Models;
 using BFH_USZ_PICC.Resx;
+using BFH_USZ_PICC.Utilitys;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.Practices.ServiceLocation;
 using System;
@@ -116,6 +117,42 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
             _dataService.SaveJournalEntryAsync<T>(_displayingEntry);
         }
 
+        private void LoggEntryCreation()
+        {
+            string loggingEvent = null;
+            Type entryType = typeof(T);
+            if (entryType == typeof(AdministeredDrugEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalAdministredDrugEntryCreated;
+            }
+            else if (entryType == typeof(BandageChangingEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalBandageChangingEntryCreated;
+            }
+            else if (entryType == typeof(BloodWithdrawalEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalBloodWithdrawalEntryCreated;
+            }
+            else if (entryType == typeof(CatheterFlushEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalCatheterFlushEntryCreated;
+            }
+            else if (entryType == typeof(InfusionEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalInfusionEntryCreated;
+            }
+            else if (entryType == typeof(MicroClaveChangingEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalMicroClaveChangingEntryCreated;
+            }
+            else if (entryType == typeof(StatlockChangingEntry))
+            {
+                loggingEvent = HockeyAppHelper.Events.JournalStatlockChangingEntryCreated;
+            }
+
+            HockeyAppHelper.TrackEvent(loggingEvent);
+        }
+
         #endregion
 
         #region public properties
@@ -157,6 +194,7 @@ namespace BFH_USZ_PICC.ViewModels.JournalEntries
         {
             EndEditing();
             SaveToModel();
+            LoggEntryCreation();
             NavigationService.NavigateBackAsync();
         }));
 

@@ -126,6 +126,7 @@
     <Content Include="Assets\knowledge_icon.png" />
     <Content Include="Assets\mypicc_icon.png" />
     <Content Include="Assets\settings_icon.png" />
+    <Content Include="Assets\speaker.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-125.png" />
     <Content Include="Assets\SplashScreen.scale-150.png" />

@@ -891,6 +891,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\glossary_icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\glossary_icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\glossary_icon.png" />
+    <AndroidResource Include="Resources\drawable\speaker.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\speaker.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\speaker.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\speaker.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\speaker.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />

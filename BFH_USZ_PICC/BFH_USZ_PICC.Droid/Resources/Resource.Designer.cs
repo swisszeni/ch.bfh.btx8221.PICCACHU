@@ -2444,8 +2444,8 @@ namespace BFH_USZ_PICC.Droid
 			// aapt resource value: 0x7f0200b5
 			public const int mypicc_icon = 2130837685;
 			
-			// aapt resource value: 0x7f0200ce
-			public const int notification_template_icon_bg = 2130837710;
+			// aapt resource value: 0x7f0200cf
+			public const int notification_template_icon_bg = 2130837711;
 			
 			// aapt resource value: 0x7f0200b6
 			public const int PiccPlatzierung = 2130837686;
@@ -2457,67 +2457,70 @@ namespace BFH_USZ_PICC.Droid
 			public const int settings_icon = 2130837688;
 			
 			// aapt resource value: 0x7f0200b9
-			public const int splash_screen = 2130837689;
+			public const int speaker = 2130837689;
 			
 			// aapt resource value: 0x7f0200ba
-			public const int StatLock1 = 2130837690;
+			public const int splash_screen = 2130837690;
 			
 			// aapt resource value: 0x7f0200bb
-			public const int StatLock2 = 2130837691;
+			public const int StatLock1 = 2130837691;
 			
 			// aapt resource value: 0x7f0200bc
-			public const int StatLock3 = 2130837692;
+			public const int StatLock2 = 2130837692;
 			
 			// aapt resource value: 0x7f0200bd
-			public const int StatLock4 = 2130837693;
+			public const int StatLock3 = 2130837693;
 			
 			// aapt resource value: 0x7f0200be
-			public const int StatLock5 = 2130837694;
+			public const int StatLock4 = 2130837694;
 			
 			// aapt resource value: 0x7f0200bf
-			public const int StatLock6 = 2130837695;
+			public const int StatLock5 = 2130837695;
 			
 			// aapt resource value: 0x7f0200c0
-			public const int StatLock7 = 2130837696;
+			public const int StatLock6 = 2130837696;
 			
 			// aapt resource value: 0x7f0200c1
-			public const int usz_icon = 2130837697;
+			public const int StatLock7 = 2130837697;
 			
 			// aapt resource value: 0x7f0200c2
-			public const int Verbandswechsel1 = 2130837698;
+			public const int usz_icon = 2130837698;
 			
 			// aapt resource value: 0x7f0200c3
-			public const int Verbandswechsel10 = 2130837699;
+			public const int Verbandswechsel1 = 2130837699;
 			
 			// aapt resource value: 0x7f0200c4
-			public const int Verbandswechsel11 = 2130837700;
+			public const int Verbandswechsel10 = 2130837700;
 			
 			// aapt resource value: 0x7f0200c5
-			public const int Verbandswechsel12 = 2130837701;
+			public const int Verbandswechsel11 = 2130837701;
 			
 			// aapt resource value: 0x7f0200c6
-			public const int Verbandswechsel2 = 2130837702;
+			public const int Verbandswechsel12 = 2130837702;
 			
 			// aapt resource value: 0x7f0200c7
-			public const int Verbandswechsel3 = 2130837703;
+			public const int Verbandswechsel2 = 2130837703;
 			
 			// aapt resource value: 0x7f0200c8
-			public const int Verbandswechsel4 = 2130837704;
+			public const int Verbandswechsel3 = 2130837704;
 			
 			// aapt resource value: 0x7f0200c9
-			public const int Verbandswechsel5 = 2130837705;
+			public const int Verbandswechsel4 = 2130837705;
 			
 			// aapt resource value: 0x7f0200ca
-			public const int Verbandswechsel6 = 2130837706;
+			public const int Verbandswechsel5 = 2130837706;
 			
 			// aapt resource value: 0x7f0200cb
-			public const int Verbandswechsel7 = 2130837707;
+			public const int Verbandswechsel6 = 2130837707;
 			
 			// aapt resource value: 0x7f0200cc
-			public const int Verbandswechsel8 = 2130837708;
+			public const int Verbandswechsel7 = 2130837708;
 			
 			// aapt resource value: 0x7f0200cd
-			public const int Verbandswechsel9 = 2130837709;
+			public const int Verbandswechsel8 = 2130837709;
+			
+			// aapt resource value: 0x7f0200ce
+			public const int Verbandswechsel9 = 2130837710;
 			
 			static Drawable()
 			{

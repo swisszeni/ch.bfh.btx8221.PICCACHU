@@ -14,6 +14,14 @@ namespace BFH_USZ_PICC.Views
         public MaintenanceInstructionPage(ContentPage contained) : base(contained)
         {
             InitializeComponent();
+            if (Device.OS == TargetPlatform.Windows)
+            {
+                ToggleTextToVoiceButton.Image = "Assets\\speaker.png";
+            } else
+            {
+                ToggleTextToVoiceButton.Image = "speaker.png";
+            }
+            
             // TODO: Fix title problem
             // Title = instruction.Title;
         }

@@ -2,6 +2,7 @@
 <d:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                    x:Class="BFH_USZ_PICC.Views.MaintenanceInstructionPage"
+                   xmlns:helpers="clr-namespace:BFH_USZ_PICC.Utilitys;assembly=BFH_USZ_PICC"
                    xmlns:d="clr-namespace:BFH_USZ_PICC.Views;assembly=BFH_USZ_PICC.Views"
                    xmlns:i18n="clr-namespace:BFH_USZ_PICC.Utilitys.Extensions"
                    xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
@@ -12,7 +13,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Padding="10,0">
+        <Grid Grid.Row="0"
+              Padding="10,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
@@ -24,16 +26,17 @@
             <StackLayout Grid.Column="2"
                          Orientation="Horizontal"
                          HorizontalOptions="End">
-                <Button Text="V"
-                        BackgroundColor="Gray"
+                <Button x:Name="ToggleTextToVoiceButton"
+                        BackgroundColor="Transparent"
                         Command="{Binding ToggleTextToVoiceCommand}" />
-                <Button Text="D"
+                <!--<Button Text="D"
                         Margin="10,0"
                         BackgroundColor="Gray"
-                        Command="{Binding ToggleVoiceControlCommand}" />
+                        Command="{Binding ToggleVoiceControlCommand}" />-->
             </StackLayout>
         </Grid>
-        <cv:CarouselView x:Name="InstructionCarousel" Grid.Row="1"
+        <cv:CarouselView x:Name="InstructionCarousel"
+                         Grid.Row="1"
                          BackgroundColor="Transparent"
                          ItemsSource="{Binding MaintenanceInstruction.InstructionSteps}"
                          Position="{Binding CarouselPosition, Mode=TwoWay}">
@@ -70,7 +73,7 @@
                     TextColor="White"
                     BackgroundColor="Transparent"
                     FontAttributes="Bold"
-                    Command="{Binding GoToNextStepCommand}"/>
+                    Command="{Binding GoToNextStepCommand}" />
         </Grid>
     </Grid>
 </d:BaseContentPage>

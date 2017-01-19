@@ -62,6 +62,14 @@ namespace BFH_USZ_PICC.Utilitys
         /// </summary>
         public static class Events
         {
+            public const string JournalAdministredDrugEntryCreated = "User created Journal Entry Type AdministredDrug";
+            public const string JournalBandageChangingEntryCreated = "User created Journal Entry Type BandageChanging";
+            public const string JournalBloodWithdrawalEntryCreated = "User created Journal Entry Type BloodWithdrawal";
+            public const string JournalCatheterFlushEntryCreated = "User created Journal Entry Type CatheterFlush";
+            public const string JournalInfusionEntryCreated = "User created Journal Entry Type Infusion";
+            public const string JournalMicroClaveChangingEntryCreated = "User created Journal Entry Type MicroClaveChanging";
+            public const string JournalStatlockChangingEntryCreated = "User created Journal Entry Type StatlockChanging";
+
             public const string JournalDataExported = "User exported Journal Data";
         }
 
